@@ -1,0 +1,51 @@
+---
+title: "Next run queue"
+description: "Understand what is ready for the next pipeline run and how daily limits affect it."
+icon: "list-checks"
+---
+
+The **Home → Next run** cards predict the work the next complete pipeline run can perform. They use the same eligibility rules and daily limits as the pipeline.
+
+## Read a queue card
+
+Each card shows:
+
+- **ready count** — contacts eligible for that step now
+- **daily limit** — maximum work the active seats can perform in that step
+- **run count** — the smaller of ready count and limit
+- **queued remainder** — eligible contacts that stay queued because of the cap
+- **preview** — examples of contacts at the front of the queue
+
+For example, `10 / 20` means 10 contacts are ready and the limit allows up to 20, so all 10 can run. If 35 contacts are ready with a limit of 20, the card shows 20 and leaves 15 queued.
+
+## The five queue cards
+
+| Card | Ready when |
+| --- | --- |
+| **Connection requests** | The contact has an owner, passes the pipeline gate, has no open stop condition, and is eligible for LinkedIn. |
+| **Messages** | Research is available and no initial message has been generated yet. |
+| **Outreach** | An email or LinkedIn message is approved and has not been sent. |
+| **Follow-up email** | An email was sent, the next follow-up is due, the cap is not reached, and no reply or terminal thread state exists. |
+| **Follow-up LinkedIn** | A LinkedIn message was sent, the follow-up is due, the cap is not reached, and neither channel has a reply. |
+
+Research and enrichment can occur between the visible cards. They do not have a separate user-configurable queue tile.
+
+## Why a contact may not be ready
+
+A contact can be held because:
+
+- its ICP score is below the pipeline threshold
+- it has no active owner or usable channel
+- research or enrichment is still missing
+- its message is waiting for approval
+- the next follow-up is not due yet
+- the daily limit is `0` or already consumed
+- it replied, has an outcome, or is archived
+- its company is blacklisted
+- the connected account needs attention
+
+<Note>
+  The queue is a forecast, not a promise that every action will succeed. Account state, source data, reply checks, or external platform responses can still cause an item to be skipped safely during the run.
+</Note>
+
+See [Run the pipeline](/operate/run-the-pipeline) to start or stop work.

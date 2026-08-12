@@ -1,0 +1,65 @@
+---
+title: "Add prospects"
+description: "Add contacts from Sales Navigator, CSV files, or company-level contact search."
+icon: "user-plus"
+---
+
+Open **Add to Pipeline** to supply Sales Navigator sources, upload your own list, or search companies already in the dashboard.
+
+<Columns cols={3}>
+  <Card title="Submit URLs" icon="link">
+    Collect people or companies from saved Sales Navigator searches and lists.
+  </Card>
+  <Card title="Upload CSV" icon="file-spreadsheet">
+    Import a list you already own and map every row to a seat.
+  </Card>
+  <Card title="Search" icon="search">
+    Find matching contacts at companies already in the dashboard.
+  </Card>
+</Columns>
+
+## Submit Sales Navigator URLs
+
+Use one of these source types:
+
+- a saved search whose URL contains `savedSearchId`
+- a people list whose path contains `/lists/people/`
+- a company list whose path contains `/lists/company/`
+
+For each URL, add an optional segment label and expected result count. The expected count helps estimate the size and possible credit use; it is not a guaranteed outcome.
+
+Company sources still need contact search. People sources already identify individuals but can still require research, enrichment, scoring, and filtering.
+
+## Upload a CSV
+
+Every row needs an owner. Supply the owner in the file or select a seat during import. The owner is also applied to the company and determines which connected accounts handle outreach.
+
+The CSV import itself does not use credits. Optional research, search, email lookup, phone lookup, or profile enrichment can use credits.
+
+Before importing:
+
+- remove records you are not allowed to contact
+- include a stable identifier such as LinkedIn URL or business email when available
+- keep company names and domains consistent
+- add customers, competitors, partners, and live deals to the blacklist
+
+## Search existing companies
+
+Select how many companies to process or choose companies manually. The search starts with high-priority companies that do not yet have contacts. It applies the Tier 1 titles, fallback roles, location rules, exclusions, and maximum contacts per company from **Settings → Targeting**.
+
+<Warning>
+  Search results can consume credits even when a returned candidate later fails granular ICP filters or is removed as a duplicate. Review a small sample before running a large search.
+</Warning>
+
+## How contacts reach the queue
+
+A newly added contact does not necessarily appear in every queue immediately. The agent checks:
+
+1. the company blacklist
+2. owner and active-seat assignment
+3. the pipeline ICP threshold
+4. available channel and contact data
+5. whether the person is already active, stopped, or archived
+6. whether the next action fits under the seat's daily limit
+
+The **Home → Next run** cards show contacts that are ready now. Learn how to [read the queue](/operate/next-run-queue).

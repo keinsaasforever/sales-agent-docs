@@ -1,0 +1,80 @@
+---
+title: "ICP and scoring"
+description: "Define who the Sales Agent should target and how candidates qualify for outreach."
+icon: "target"
+---
+
+Your ideal customer profile (ICP) controls contact search, candidate scoring, and eligibility for the outreach pipeline. Configure it under **Settings → Targeting**.
+
+## Start with the free-text ICP
+
+Describe the combination you actually want, not a broad market category. Include details such as:
+
+- business model and industry
+- company size or growth stage
+- geography
+- buyer role and seniority
+- relevant technologies or commercial signals
+- exclusions and poor-fit patterns
+
+For example:
+
+> DACH-based food technology companies with fewer than 50 employees and strong recent growth. Target a newly appointed Head of Marketing or Marketing Director located in DACH.
+
+The agent evaluates this description together with the structured criteria below.
+
+## Configure the structured criteria
+
+| Setting | How it is used |
+| --- | --- |
+| **Job titles — Tier 1** | Primary roles you want to reach. Use specific decision-maker or champion titles. |
+| **Job titles — Tier 2** | Executive fallback roles, such as founder or managing director, when Tier 1 is unavailable. |
+| **Excluded job titles** | Roles that must be skipped even if they appear in source results. |
+| **Locations** | Countries or regions to target. Leave empty for no location filter. |
+| **Industries** | Industries to prioritize. Leave empty for no industry filter. |
+| **Company size** | Target employee ranges. Unknown company sizes are not automatically rejected. |
+| **ICP keywords** | Specialties, business models, or other terms that indicate fit. |
+| **Max contacts per company** | Hard cap on people searched at each company. Three to four is the normal starting point; ten is the maximum. |
+
+## Understand the score
+
+Each company and contact can receive a 0–100 ICP score. The score weights are relative:
+
+- job fit
+- industry fit
+- location fit
+
+The weights do not need to add up to 100. The dashboard normalizes them. A weight of `6, 3, 1` means job fit contributes 60%, industry 30%, and location 10%.
+
+## Use the two thresholds
+
+### Pipeline ICP threshold
+
+Only contacts at or above this score enter automated outreach. Set it to `0` to allow every contact.
+
+### Phone enrichment threshold
+
+Only contacts at or above this score receive automatic phone lookup. Below the threshold, the dashboard asks for confirmation before a manual lookup. Set it to `0` to disable the threshold.
+
+<Warning>
+  Do not lower a threshold only to fill a queue. First confirm that the source, owner assignment, exclusions, and score criteria are correct. A fuller queue with weaker candidates spends capacity and credits without improving fit.
+</Warning>
+
+## Refresh existing scores
+
+Changing criteria can make existing scores outdated:
+
+- If you change only the weights, use **Recompute**. The existing score inputs are recalculated without AI or credits.
+- If you change the ICP meaning, use **AI rescore** so existing contacts are evaluated against the new criteria.
+
+Newly added contacts use the current settings automatically.
+
+## Credits and filtering
+
+Search work can return candidates that later fail your job-title exclusions, ICP requirements, deduplication, or company checks. Credits pay for returned search or enrichment results—not only the contacts that finally enter the pipeline.
+
+<Tip>
+  When filters are granular, expect the agent to inspect more candidates than the number ultimately accepted. Start with a small company batch and review the result quality before scaling the search.
+</Tip>
+
+Next, choose how to [add prospects](/configure/add-prospects).

@@ -1,0 +1,51 @@
+---
+title: "Pipeline stage reference"
+description: "Reference for every derived stage and human outcome shown in the Sales Agent."
+icon: "milestone"
+---
+
+The Sales Agent derives stages from activity and stop conditions. The highest-priority applicable fact determines the displayed stage.
+
+## Active progress stages
+
+| Stage | Meaning |
+| --- | --- |
+| **New** | The prospect exists but no research or outreach action is recorded yet. |
+| **Researched** | Enrichment or research is available. |
+| **Invite Sent** | A LinkedIn connection request was sent. |
+| **Connected** | The LinkedIn connection was accepted. |
+| **Messaged** | An initial email or LinkedIn message was sent. |
+| **Followed Up** | At least one follow-up was sent and the sequence is not complete. |
+| **To Call** | The automated sequence is complete or digital channels are exhausted, and a phone number is available. |
+| **Replied** | A reply was detected on email or LinkedIn. |
+
+## Human sales outcomes
+
+| Stage / outcome | Meaning |
+| --- | --- |
+| **Meeting** | A meeting is booked or the conversation has moved to a person. |
+| **Offer Sent** | A commercial proposal was sent. |
+| **Closed Deal** | The opportunity was won. |
+| **Not Interested** | The prospect declined. |
+| **Lost Deal** | A progressed opportunity was lost. |
+| **Unreachable** | No configured automated channel remains usable. |
+
+Every outcome stops automated outreach.
+
+## Archived
+
+**Archived** hides and stops the prospect without deleting history. The previous outcome remains attached. Unarchiving restores the record, but an existing outcome continues to stop outreach.
+
+## Precedence rules
+
+The display follows these principles:
+
+1. **Archived** takes precedence over everything else.
+2. A human outcome such as **Closed Deal** takes precedence over a historical reply.
+3. A detected reply takes precedence over normal outreach progress.
+4. An unreachable prospect with a phone number appears as **To Call** rather than **Unreachable**.
+5. Otherwise the stage reflects the furthest recorded automated action.
+
+<Note>
+  Returning a prospect to **In play** clears the outcome only. It does not clear its action history, so the stage is recalculated from the remaining facts.
+</Note>

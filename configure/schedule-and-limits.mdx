@@ -1,0 +1,76 @@
+---
+title: "Schedule and limits"
+description: "Configure when each seat runs, how many actions it performs, and how channels and approvals behave."
+icon: "calendar-clock"
+---
+
+Open **Settings → Schedule** to configure each seat. A seat owns its schedule, daily amounts, and channel routing. Follow-up and delivery rules are shared across the client.
+
+## Configure the run time
+
+For each seat:
+
+1. select the representative
+2. turn **Schedule enabled** on or off
+3. choose active days
+4. set the start time
+5. confirm the timezone
+
+When scheduling is off, the seat runs only when you select **Run Now**. The dashboard currently schedules one complete run per selected day.
+
+<Warning>
+  Treat the scheduled time as an automation window. Do not use LinkedIn manually while the run is active. A working window should allow roughly two to five hours for a full run, depending on the configured volume.
+</Warning>
+
+## Set daily action limits
+
+The limits are per seat and per day:
+
+| Limit | What it controls |
+| --- | --- |
+| **Connection requests** | New LinkedIn invitations. The dashboard caps this setting at 20. |
+| **Messages** | New personalized messages generated. |
+| **Outreach** | LinkedIn messages ready to send. |
+| **Emails** | Initial emails. Leave empty to follow the Outreach limit. |
+| **Follow-up emails** | Due email follow-ups sent that day. |
+| **Follow-up LinkedIn** | Due LinkedIn follow-ups sent that day. |
+
+The **Next run** count is the smaller of eligible contacts and the relevant daily limit. Extra contacts remain queued.
+
+Start with low limits and increase gradually during warm-up. A normal Sales Navigator plan is built around roughly 100 contacts per week per account. Higher SSI may allow more, but neither reach nor account safety is guaranteed.
+
+## Choose the channel behavior
+
+For each seat, choose:
+
+- **Always** — LinkedIn and email both run.
+- **Off** — no LinkedIn actions; email can still run.
+- **Prioritize emails** — email goes first and LinkedIn follows afterward.
+
+Optional inactive-profile rules can route dormant LinkedIn profiles to email only. You can also warm up a prospect by liking up to two recent posts before connecting.
+
+## Configure follow-ups
+
+The client-wide maximum is:
+
+- up to three email follow-ups
+- up to one LinkedIn follow-up
+
+Set a channel to `0` to turn its follow-ups off. Follow-ups use working-day spacing:
+
+- first follow-up: 4 working days after the previous message
+- second email follow-up: 7 working days after the previous email follow-up
+- third email follow-up: 10 working days after the previous email follow-up
+
+A reply on either channel stops automated follow-ups across both channels.
+
+## Save and verify
+
+After saving, return to **Home** and check:
+
+- **Schedule** shows Active for the intended seats
+- **Daily limits** match the combined active-seat capacity
+- **Approval** shows the intended delivery mode
+- **Next run** reflects the expected caps
+
+If the schedule is off, **Run Now** remains available for manual runs.

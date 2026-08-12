@@ -1,0 +1,52 @@
+---
+title: "Stages and outcomes"
+description: "Understand derived pipeline stages, set human outcomes, and stop or restart outreach safely."
+icon: "milestone"
+---
+
+Stages and outcomes answer different questions:
+
+- A **stage** says what has happened so far. The Sales Agent derives it from recorded activity.
+- An **outcome** records a human decision or sales result. Every outcome stops automated outreach.
+
+## Stages are automatic
+
+You cannot manually select **Invited**, **Connected**, **Messaged**, or **Replied**. Those stages appear when the corresponding action or event is recorded.
+
+Examples:
+
+- sending a connection request produces **Invite Sent**
+- detecting an accepted request produces **Connected**
+- sending an initial email or LinkedIn message produces **Messaged**
+- detecting a reply produces **Replied**
+
+See the [pipeline stage reference](/reference/pipeline-stages) for every stage.
+
+## Outcomes are manual controls
+
+Open a prospect and use the outcome selector:
+
+| Outcome | When to use it |
+| --- | --- |
+| **Meeting** | A meeting is booked or the conversation has entered your direct sales process. |
+| **Offer Sent** | You sent a commercial proposal. |
+| **Closed Deal** | The opportunity was won. |
+| **Not Interested** | The prospect declined and should receive no more automated outreach. |
+| **Lost Deal** | A progressed opportunity was lost. |
+| **Unreachable** | The available automated channels are exhausted or invalid. |
+
+Every option displays “stops outreach” because it removes the prospect from all automated steps.
+
+## Use In play carefully
+
+**In play** means no outcome is set. Returning a stopped prospect to **In play** can make it eligible again based on its existing history.
+
+<Warning>
+  Changing an outcome back to **In play** does not erase sent messages, follow-up counts, replies, or connection history. The next eligible action is derived from those existing facts.
+</Warning>
+
+## Archive versus outcome
+
+Archiving hides a prospect and stops automation without changing its outcome. Unarchiving restores the previous state. If the prospect still has an outcome, it remains stopped after unarchiving.
+
+Use an outcome to record why the sales process ended or moved to a person. Use archive to remove a record from the active view without rewriting its history.
