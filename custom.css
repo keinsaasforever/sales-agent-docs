@@ -1,0 +1,16 @@
+/* Keep Mintlify's primary actions and navigation readable in dark mode. */
+.dark [class~="dark:text-primary-light"],
+.dark [class~="hover:dark:text-primary-light"]:hover {
+  color: #a5b4fc !important;
+}
+
+.dark [class~="dark:bg-primary-light"] {
+  background-color: #4f46e5 !important;
+  color: #ffffff !important;
+}
+
+.dark [class~="dark:bg-primary-light"]:hover {
+  background-color: #4338ca !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
