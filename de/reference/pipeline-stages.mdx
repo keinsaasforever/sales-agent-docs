@@ -1,0 +1,51 @@
+---
+title: "Referenz der Pipeline-Stages"
+description: "Referenz für jede abgeleitete Stage und jedes menschliche Outcome im Sales Agent."
+icon: "milestone"
+---
+
+Der Sales Agent leitet Stages aus Aktivitäten und Stoppbedingungen ab. Der zutreffende Fakt mit der höchsten Priorität bestimmt die angezeigte Stage.
+
+## Aktive Fortschritts-Stages
+
+| Stage | Bedeutung |
+| --- | --- |
+| **New** | Der Prospect existiert, aber es wurde noch keine Recherche oder Outreach-Aktion aufgezeichnet. |
+| **Researched** | Anreicherung oder Recherche ist verfügbar. |
+| **Invite Sent** | Eine LinkedIn-Kontaktanfrage wurde gesendet. |
+| **Connected** | Die LinkedIn-Verbindung wurde angenommen. |
+| **Messaged** | Eine erste E-Mail oder LinkedIn-Nachricht wurde gesendet. |
+| **Followed Up** | Mindestens ein Follow-up wurde gesendet und die Sequenz ist noch nicht abgeschlossen. |
+| **To Call** | Die automatisierte Sequenz ist abgeschlossen oder digitale Kanäle sind ausgeschöpft und eine Telefonnummer ist verfügbar. |
+| **Replied** | Eine Antwort per E-Mail oder LinkedIn wurde erkannt. |
+
+## Menschliche Vertriebs-Outcomes
+
+| Stage / Outcome | Bedeutung |
+| --- | --- |
+| **Meeting** | Ein Termin wurde vereinbart oder das Gespräch wurde an einen Menschen übergeben. |
+| **Offer Sent** | Ein kommerzielles Angebot wurde gesendet. |
+| **Closed Deal** | Die Opportunity wurde gewonnen. |
+| **Not Interested** | Der Prospect hat abgelehnt. |
+| **Lost Deal** | Eine fortgeschrittene Opportunity wurde verloren. |
+| **Unreachable** | Kein konfigurierter automatisierter Kanal ist mehr nutzbar. |
+
+Jedes Outcome stoppt automatisierte Ansprache.
+
+## Archived
+
+**Archived** blendet den Prospect aus und stoppt ihn, ohne die Historie zu löschen. Das vorherige Outcome bleibt bestehen. Beim Wiederherstellen kehrt der Datensatz zurück, ein bestehendes Outcome stoppt die Ansprache jedoch weiterhin.
+
+## Prioritätsregeln
+
+Die Anzeige folgt diesen Grundsätzen:
+
+1. **Archived** hat Vorrang vor allem anderen.
+2. Ein menschliches Outcome wie **Closed Deal** hat Vorrang vor einer historischen Antwort.
+3. Eine erkannte Antwort hat Vorrang vor normalem Outreach-Fortschritt.
+4. Ein nicht erreichbarer Prospect mit Telefonnummer erscheint als **To Call** statt als **Unreachable**.
+5. Andernfalls zeigt die Stage die am weitesten fortgeschrittene aufgezeichnete automatisierte Aktion.
+
+<Note>
+  Das Zurücksetzen auf **In play** löscht nur das Outcome. Es löscht nicht die Aktionshistorie; die Stage wird aus den verbleibenden Fakten neu berechnet.
+</Note>

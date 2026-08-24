@@ -2,7 +2,7 @@
 
 ## About this project
 
-- This repository contains the customer-facing English documentation for the keinsaas Sales Agent.
+- This repository contains the customer-facing English and German documentation for the keinsaas Sales Agent.
 - The site is built with Mintlify. Pages are MDX files and site configuration lives in `docs.json`.
 - The Sales Agent product repository is the primary source for shipped UI and behavior.
 - The live Sales Agent Terms and Privacy Policy are authoritative for legal wording. Documentation should explain only the operational parts customers need and link to the legal pages.
@@ -29,7 +29,10 @@
 
 ## Style
 
-- Write in English, active voice, and second person.
+- Write in the page's configured language, active voice, and second person.
+- Keep English pages at their current paths and mirror German translations under `de/`.
+- Keep navigation, frontmatter, and internal links localized. Preserve exact English UI labels when they identify controls in the dashboard.
+- Update the matching German page whenever English source content changes.
 - Use sentence case for headings.
 - Start with what the user can accomplish, then explain how.
 - Keep paragraphs short and make procedures scannable.

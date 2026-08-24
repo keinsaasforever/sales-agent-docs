@@ -1,0 +1,51 @@
+---
+title: "Next run queue"
+description: "Verstehe, was für den nächsten Pipeline-Lauf bereitsteht und wie Tageslimits wirken."
+icon: "list-checks"
+---
+
+Die Karten unter **Home → Next run** sagen voraus, welche Arbeit der nächste vollständige Pipeline-Lauf ausführen kann. Sie verwenden dieselben Eignungsregeln und Tageslimits wie die Pipeline.
+
+## Queue-Karte lesen
+
+Jede Karte zeigt:
+
+- **ready count** — aktuell für diesen Schritt geeignete Kontakte
+- **daily limit** — maximale Arbeit, die aktive Seats in diesem Schritt ausführen können
+- **run count** — der kleinere Wert aus ready count und limit
+- **queued remainder** — geeignete Kontakte, die wegen des Limits in der Queue bleiben
+- **preview** — Beispiele für Kontakte am Anfang der Queue
+
+`10 / 20` bedeutet zum Beispiel, dass 10 Kontakte bereit sind und das Limit bis zu 20 zulässt; alle 10 können verarbeitet werden. Sind 35 Kontakte bei einem Limit von 20 bereit, zeigt die Karte 20 und lässt 15 in der Queue.
+
+## Die fünf Queue-Karten
+
+| Karte | Bereit, wenn |
+| --- | --- |
+| **Connection requests** | Der Kontakt hat einen Owner, besteht das Pipeline-Gate, hat keine offene Stoppbedingung und ist für LinkedIn geeignet. |
+| **Messages** | Recherche ist vorhanden und es wurde noch keine Erstnachricht erstellt. |
+| **Outreach** | Eine E-Mail oder LinkedIn-Nachricht ist freigegeben und noch nicht gesendet. |
+| **Follow-up email** | Eine E-Mail wurde gesendet, das nächste Follow-up ist fällig, das Maximum ist nicht erreicht und es liegt weder eine Antwort noch ein beendeter Thread vor. |
+| **Follow-up LinkedIn** | Eine LinkedIn-Nachricht wurde gesendet, das Follow-up ist fällig, das Maximum ist nicht erreicht und keiner der Kanäle hat eine Antwort. |
+
+Recherche und Anreicherung können zwischen den sichtbaren Karten stattfinden. Sie haben keine eigene konfigurierbare Queue-Kachel.
+
+## Warum ein Kontakt nicht bereit sein kann
+
+Ein Kontakt kann zurückgehalten werden, weil:
+
+- sein ICP-Score unter dem Pipeline-Schwellenwert liegt
+- kein aktiver Owner oder nutzbarer Kanal vorhanden ist
+- Recherche oder Anreicherung noch fehlt
+- seine Nachricht auf Freigabe wartet
+- das nächste Follow-up noch nicht fällig ist
+- das Tageslimit `0` ist oder bereits ausgeschöpft wurde
+- er geantwortet hat, ein Outcome besitzt oder archiviert ist
+- sein Unternehmen auf der Blacklist steht
+- das verbundene Konto Aufmerksamkeit benötigt
+
+<Note>
+  Die Queue ist eine Prognose und keine Garantie, dass jede Aktion gelingt. Kontozustand, Quelldaten, Antwortprüfungen oder Reaktionen externer Plattformen können noch dazu führen, dass ein Eintrag während des Laufs sicher übersprungen wird.
+</Note>
+
+Unter [Pipeline ausführen](/de/operate/run-the-pipeline) erfährst du, wie du Arbeit startest oder stoppst.
