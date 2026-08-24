@@ -1,0 +1,68 @@
+---
+title: "Run the pipeline"
+sidebarTitle: "Run Pipeline"
+description: "Start the complete pipeline, begin at an advanced step, stop safely, and follow progress."
+icon: "play"
+---
+
+You can start the pipeline manually at any time from **Home**, or let a schedule trigger it automatically. Either way, the same eligibility rules, daily limits, and delivery modes apply.
+
+## Run the complete pipeline
+
+Select **Run Now** on the **Home** page to begin a full pipeline run. The system cascades through every eligible step for every active seat in this order:
+
+<Steps>
+  <Step title="Connection requests">
+    Sends LinkedIn connection requests to contacts who are eligible and have not yet been invited.
+  </Step>
+  <Step title="Research and message preparation">
+    Enriches contact data and generates personalised outreach messages ready for approval or automatic delivery.
+  </Step>
+  <Step title="Approved outreach">
+    Delivers approved LinkedIn messages and emails that have not yet been sent, up to the seat's daily limit.
+  </Step>
+  <Step title="Due follow-ups">
+    Processes due email and LinkedIn follow-ups for contacts who have not yet replied.
+  </Step>
+</Steps>
+
+The run executes in the background — you can leave the page and monitor progress under **Activity**.
+
+<Warning>
+  Keep LinkedIn closed while the pipeline is running. Performing manual LinkedIn actions from the same account during the automation window can interfere with the run and trigger platform-level friction.
+</Warning>
+
+## Start at an advanced step
+
+Open **Advanced** on the **Home** page when you want to skip earlier steps intentionally:
+
+- **Messages** — start with research-complete prospects that still need message generation, then continue into outreach and follow-ups.
+- **Outreach** — start with contacts whose messages are approved and unsent, then continue into follow-ups. Skips connection and research steps entirely.
+- **Follow-ups** — process only due follow-ups for contacts who have already received initial outreach.
+
+Starting at a later step does not change the eligibility of any contact. Every step still applies its normal gates, daily limits, and delivery mode checks. Use this option to catch up on a specific phase, not to bypass safety checks.
+
+## Stop a run
+
+Select **Stop** while a pipeline run is active. The current step finishes and saves its result before the run winds down — no action is left in an unknown or partial state.
+
+<Warning>
+  Stopping a run prevents future steps in that run from executing. It does not undo or recall anything that has already been sent.
+</Warning>
+
+The final status of every run appears in **Activity**:
+
+| Status | What it means |
+| --- | --- |
+| **Succeeded** | The run reached normal completion. A succeeded run can still process zero items when nothing is eligible. |
+| **Stopped** | You stopped the run manually before all steps completed. |
+| **Failed** | An error prevented the run from completing normally. |
+| **Skipped** | A guard condition or empty queue prevented work in a specific step. |
+
+## Scheduled runs
+
+When a seat's schedule is active, the pipeline starts automatically on the days and times you select in **Settings → Schedule**. The dashboard prevents two pipeline runs from overlapping — if a scheduled run starts while a manual run is still active, the scheduled run waits.
+
+Manual **Run Now** is always available even when a schedule is configured. Use it to process urgent work outside normal hours without disabling the schedule.
+
+For diagnosing runs that finish without producing the expected work, see [Activity and troubleshooting](/operate/activity-and-troubleshooting).

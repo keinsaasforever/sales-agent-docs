@@ -1,0 +1,63 @@
+---
+title: "Pipeline Stage and Outcome Reference for Sales Agent"
+sidebarTitle: "Pipeline Stages"
+description: "Every derived stage and human outcome in the Sales Agent pipeline, with the full precedence rules that determine what stage is displayed."
+icon: "milestone"
+---
+
+Stages in the Sales Agent are **derived from activity** — they are not moved manually like cards on a board. The highest-priority applicable fact about a prospect determines which stage is displayed at any given moment.
+
+## Active progress stages
+
+These eight stages reflect the furthest automated action recorded for a prospect.
+
+| Stage | Meaning |
+| --- | --- |
+| **New** | The prospect exists in the pipeline but no research or outreach action has been recorded yet. |
+| **Researched** | Enrichment or research data is available for the prospect. |
+| **Invite Sent** | A LinkedIn connection request has been sent and is pending acceptance. |
+| **Connected** | The LinkedIn connection request was accepted. |
+| **Messaged** | An initial email or LinkedIn message has been sent. |
+| **Followed Up** | At least one follow-up message has been sent and the sequence is not yet complete. |
+| **To Call** | The automated digital sequence is complete or channels are exhausted, and a phone number is available. |
+| **Replied** | A reply was detected on email or LinkedIn. |
+
+## Human sales outcomes
+
+Human outcomes are set manually to record the real-world result of a conversation. Every outcome immediately stops all further automated outreach for that prospect.
+
+| Outcome | Meaning |
+| --- | --- |
+| **Meeting** | A meeting is booked or the conversation has moved to a human-to-human interaction. |
+| **Offer Sent** | A commercial proposal has been sent to the prospect. |
+| **Closed Deal** | The opportunity was won. |
+| **Not Interested** | The prospect has declined. |
+| **Lost Deal** | A progressed opportunity did not result in a sale. |
+| **Unreachable** | No configured automated channel remains usable for this prospect. |
+
+<Note>
+  A prospect showing **Unreachable** who also has a valid phone number on record is displayed as **To Call** instead, so the record surfaces in call queues rather than being treated as a dead end.
+</Note>
+
+## Archived
+
+Marking a prospect **Archived** hides the record from standard pipeline views and stops all outreach — without deleting the prospect's history or messages.
+
+- The previous outcome, if any, remains attached to the record.
+- Unarchiving restores the record to pipeline views, but an existing human outcome continues to stop automated outreach until it is cleared.
+
+Use **Archived** for prospects you want to set aside indefinitely without losing the conversation history.
+
+## Precedence rules
+
+When multiple facts apply to the same prospect, the displayed stage follows these rules in order:
+
+1. **Archived takes precedence over everything.** An archived prospect is never shown as active, regardless of any other fact.
+2. **A human outcome takes precedence over a historical reply.** If you have recorded **Closed Deal** but a reply was also detected, the outcome is displayed.
+3. **A detected reply takes precedence over normal outreach progress.** A prospect who replied is shown as **Replied** even if further follow-ups were scheduled.
+4. **Unreachable with a phone number appears as To Call.** The phone path is surfaced instead of the dead-end label.
+5. **Otherwise, the stage reflects the furthest recorded automated action.**
+
+<Note>
+  Returning a prospect to **In play** clears the recorded outcome only. It does **not** erase action history, so the displayed stage is immediately recalculated from the remaining facts (research, sent messages, replies, etc.).
+</Note>

@@ -1,0 +1,66 @@
+---
+title: "Import and Add Prospects to the Sales Agent Pipeline"
+sidebarTitle: "Add Prospects"
+description: "Import contacts from Sales Navigator URLs, CSV uploads, or company-level search — and understand exactly how a contact qualifies for the queue."
+icon: "user-plus"
+---
+
+Open **Add to Pipeline** to supply the Sales Agent with contacts. You can submit Sales Navigator sources, upload a list you already own, or search companies already in the dashboard.
+
+<CardGroup cols={3}>
+  <Card title="Submit URLs" icon="link">
+    Collect people or companies from saved Sales Navigator searches and lists.
+  </Card>
+  <Card title="Upload CSV" icon="file-spreadsheet">
+    Import a list you already own and map every row to a seat.
+  </Card>
+  <Card title="Search" icon="magnifying-glass">
+    Find matching contacts at companies already in the dashboard.
+  </Card>
+</CardGroup>
+
+## Submit Sales Navigator URLs
+
+Paste one or more Sales Navigator URLs. The agent accepts three source types:
+
+- a **saved search** whose URL contains `savedSearchId`
+- a **people list** whose path contains `/lists/people/`
+- a **company list** whose path contains `/lists/company/`
+
+For each URL, add an optional segment label and an expected result count. The expected count helps estimate size and potential credit use — it is not a guaranteed outcome.
+
+Company sources identify organizations but still require a separate contact search to find individuals. People sources already point to specific contacts but can still require research, enrichment, scoring, and filtering before anyone enters the pipeline.
+
+## Upload a CSV
+
+Every row in the file must have an owner. Provide the owner column in the file itself or select a seat during the import step. The seat you assign also becomes the owner of the related company record and determines which connected accounts handle outreach.
+
+The CSV import itself does not consume credits. Subsequent steps — optional research, email lookup, phone lookup, or profile enrichment — may use credits.
+
+**Before you import, run through this checklist:**
+
+- Remove any records you are not permitted to contact.
+- Include a stable identifier — such as a LinkedIn URL or business email — wherever available.
+- Keep company names and domains consistent across rows.
+- Add existing customers, competitors, partners, and live deals to the [blacklist](/configure/blacklist) first.
+
+## Search existing companies
+
+Select how many companies to process at once, or pick specific companies manually. The search begins with high-priority companies that do not yet have contacts. It applies your **Tier 1** titles, fallback roles, location rules, exclusions, and the **Max contacts per company** cap from **Settings → Targeting**.
+
+<Warning>
+  Search results can consume credits even when a returned candidate later fails granular ideal customer profile (ICP) filters or is removed as a duplicate. Review a small sample before running a large search.
+</Warning>
+
+## How contacts reach the queue
+
+Adding a contact does not guarantee immediate appearance in every queue. Before a contact becomes an active prospect, the agent checks all of the following:
+
+1. **Company blacklist** — the company must not be blocked.
+2. **Owner and active-seat assignment** — the contact must be assigned to a seat that is currently active.
+3. **Pipeline ICP threshold** — the contact's score must meet or exceed the configured minimum.
+4. **Available channel and contact data** — a reachable LinkedIn profile or valid email address must be present.
+5. **Current status** — the contact must not already be active, stopped, or archived.
+6. **Daily limit headroom** — the next planned action must fit within the seat's remaining daily allowance.
+
+The **Home → Next run** cards show every contact that is ready for the upcoming run. Learn how to [read the queue](/operate/next-run-queue).

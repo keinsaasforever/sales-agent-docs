@@ -1,0 +1,104 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "luma",
+  "name": "Sales Agent",
+  "description": "Guides for configuring and operating the keinsaas Sales Agent.",
+  "colors": {
+    "primary": "#0c04e4",
+    "light": "#ECEBE6",
+    "dark": "#050404"
+  },
+  "favicon": "https://media.brand.dev/e1e16793-d6b7-4265-916c-b8459c8b33ef.svg",
+  "logo": {
+    "light": "https://media.brand.dev/c0375b4c-4715-4920-a84d-446cdc8e2e69.svg",
+    "dark": "https://media.brand.dev/c0375b4c-4715-4920-a84d-446cdc8e2e69.svg"
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Get started",
+        "icon": "rocket",
+        "pages": [
+          "index",
+          "getting-started/quickstart",
+          "getting-started/how-it-works",
+          "getting-started/daily-workflow"
+        ]
+      },
+      {
+        "group": "Configure",
+        "icon": "sliders-horizontal",
+        "pages": [
+          "configure/icp-and-scoring",
+          "configure/add-prospects",
+          "configure/messaging-playbook",
+          "configure/schedule-and-limits",
+          "configure/blacklist"
+        ]
+      },
+      {
+        "group": "Operate",
+        "icon": "workflow",
+        "pages": [
+          "operate/next-run-queue",
+          "operate/run-the-pipeline",
+          "operate/review-messages",
+          "operate/stages-and-outcomes",
+          "operate/replies-and-handoff",
+          "operate/activity-and-troubleshooting"
+        ]
+      },
+      {
+        "group": "Safety & Rules",
+        "icon": "shield-check",
+        "pages": [
+          "safety/linkedin-hygiene",
+          "safety/credits",
+          "safety/responsible-use"
+        ]
+      },
+      {
+        "group": "Reference",
+        "icon": "book-open",
+        "pages": [
+          "reference/pipeline-stages",
+          "reference/glossary"
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@keinsaas.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open dashboard",
+      "href": "https://sales.keinsaas.com"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity"
+    ]
+  },
+  "seo": {
+    "indexing": "all"
+  },
+  "background": {
+    "color": {
+      "light": "#F7F6F3",
+      "dark": "#151313"
+    }
+  }
+}

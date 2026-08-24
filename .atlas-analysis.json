@@ -1,0 +1,87 @@
+{
+  "projectType": "saas",
+  "projectName": "Sales Agent",
+  "projectDescription": "An AI-powered sales automation tool that finds, scores, and contacts business prospects through LinkedIn and email on a configurable schedule.",
+  "theme": "luma",
+  "primaryColor": "#0c04e4",
+  "lightColor": "#14141c",
+  "darkColor": null,
+  "navigation": {
+    "groups": [
+      {
+        "group": "Get started",
+        "icon": "rocket",
+        "pages": [
+          "index",
+          "getting-started/quickstart",
+          "getting-started/how-it-works",
+          "getting-started/daily-workflow"
+        ]
+      },
+      {
+        "group": "Configure",
+        "icon": "sliders-horizontal",
+        "pages": [
+          "configure/icp-and-scoring",
+          "configure/add-prospects",
+          "configure/messaging-playbook",
+          "configure/schedule-and-limits",
+          "configure/blacklist"
+        ]
+      },
+      {
+        "group": "Operate",
+        "icon": "workflow",
+        "pages": [
+          "operate/next-run-queue",
+          "operate/run-the-pipeline",
+          "operate/review-messages",
+          "operate/stages-and-outcomes",
+          "operate/replies-and-handoff",
+          "operate/activity-and-troubleshooting"
+        ]
+      },
+      {
+        "group": "Safety and rules",
+        "icon": "shield-check",
+        "pages": [
+          "safety/linkedin-hygiene",
+          "safety/credits",
+          "safety/responsible-use"
+        ]
+      },
+      {
+        "group": "Reference",
+        "icon": "book-open",
+        "pages": [
+          "reference/pipeline-stages",
+          "reference/glossary"
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "AI-powered ICP scoring (0–100) with structured criteria and relative weights",
+    "Multi-channel outreach via LinkedIn and email with configurable sequencing",
+    "Per-seat scheduling, daily action limits, and delivery mode controls",
+    "Automated follow-up sequences (up to 3 email + 1 LinkedIn follow-up)",
+    "Approval workflow — review, edit, regenerate, or reject messages before send",
+    "Next run queue dashboard showing real-time pipeline forecasts",
+    "Cross-channel reply detection that stops automation on both channels",
+    "Blacklist for customers, competitors, partners, and active deals",
+    "Credits system for contact search and enrichment work",
+    "LinkedIn hygiene safeguards including pacing, warm-up, and session management"
+  ],
+  "publicApiSurface": [
+    "Settings → Targeting (ICP, scoring, pipeline threshold)",
+    "Settings → Prompts (messaging playbook, voice, sign-offs)",
+    "Settings → Schedule (run time, daily limits, channel behavior, delivery mode)",
+    "Settings → Blacklist (company name and domain exclusions)",
+    "Settings → Account (LinkedIn session cookie reconnect)",
+    "Add to Pipeline (Sales Navigator URLs, CSV upload, company contact search)",
+    "Home → Next run (queue cards: connection requests, messages, outreach, follow-ups)",
+    "Messages (edit, regenerate, reject, approve outreach)",
+    "Activity (run status: started, succeeded, skipped, stopped, failed)",
+    "Credits (balance, ledger, purchase)"
+  ]
+}

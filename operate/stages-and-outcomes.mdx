@@ -1,0 +1,63 @@
+---
+title: "Stages and outcomes"
+sidebarTitle: "Stages & Outcomes"
+description: "Understand derived pipeline stages, set human outcomes, and stop or restart outreach safely."
+icon: "milestone"
+---
+
+Every prospect in the Sales Agent carries two pieces of status information that serve different purposes:
+
+- A **stage** describes what has happened so far. The Sales Agent derives it automatically from recorded activity — you cannot set it manually.
+- An **outcome** records a human decision or a sales result. Setting any outcome stops all automated outreach for that prospect immediately.
+
+Understanding the distinction helps you know when to intervene and what each status actually means.
+
+## Stages are automatic
+
+Stages update as the pipeline acts on a prospect or as the prospect responds. You cannot select **Invited**, **Connected**, **Messaged**, or **Replied** from a dropdown — they appear when the corresponding event is recorded.
+
+For example:
+
+- Sending a connection request produces **Invite Sent**
+- Detecting an accepted connection produces **Connected**
+- Sending an initial email or LinkedIn message produces **Messaged**
+- Detecting a reply on either channel produces **Replied**
+
+The Sales Agent derives every stage from the underlying facts. That makes stages a reliable audit trail of what actually happened, independent of human judgment.
+
+See the [pipeline stage reference](/reference/pipeline-stages) for a complete list of every stage and the conditions that trigger it.
+
+## Outcomes are manual controls
+
+Open a prospect's profile and use the outcome selector to record a human decision. Every outcome immediately stops automated outreach for that prospect.
+
+| Outcome | When to use it |
+| --- | --- |
+| **Meeting** | A meeting is booked or the conversation has entered your direct sales process. |
+| **Offer Sent** | You have sent a commercial proposal to the prospect. |
+| **Closed Deal** | The opportunity was won and the deal is complete. |
+| **Not Interested** | The prospect declined and should receive no further automated outreach. |
+| **Lost Deal** | A progressed opportunity was lost after a proposal or active discussion. |
+| **Unreachable** | All available automated channels are exhausted or invalid for this contact. |
+
+All six options display "stops outreach" because they all remove the prospect from automated steps. The distinction between them is for your reporting and pipeline visibility — not for changing automation behaviour.
+
+## Use In play carefully
+
+**In play** is the default state: no outcome is set, and automation can still claim the prospect for eligible steps. Returning a stopped prospect to **In play** can make it eligible for automated work again based on its existing history.
+
+<Warning>
+  Changing an outcome back to **In play** does not erase sent messages, follow-up counts, replies, or connection history. The next eligible action is determined by those existing facts — a prospect who has already received three follow-ups will not restart from scratch.
+</Warning>
+
+Before returning a prospect to **In play**, review their activity timeline to understand exactly which automated step would run next.
+
+## Archive versus outcome
+
+Archiving a prospect hides them from the active view and stops automation — but it does not change the outcome field and does not delete any history.
+
+- **Unarchiving** restores the previous state. If the prospect still has an outcome set, they remain stopped after unarchiving.
+- **Outcome** records *why* the sales process ended or moved to a human conversation.
+- **Archive** removes a record from the active view without rewriting or deleting its history.
+
+Use an outcome when the sales result is known. Use archive to declutter the active view for records that no longer need attention, such as contacts who left a company or were added in error.

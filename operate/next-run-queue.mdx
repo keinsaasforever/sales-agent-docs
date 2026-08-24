@@ -1,0 +1,56 @@
+---
+title: "Next run queue"
+sidebarTitle: "Next Run Queue"
+description: "Understand what is ready for the next pipeline run and how daily limits affect it."
+icon: "list-checks"
+---
+
+The **Home → Next run** cards predict the work the next complete pipeline run can perform. They use the same eligibility rules and daily limits as the pipeline.
+
+## Read a queue card
+
+Each card shows:
+
+| Field | What it means |
+| --- | --- |
+| **Ready count** | Number of contacts currently eligible for that step |
+| **Daily limit** | Maximum actions your active seats can take in that step today |
+| **Run count** | The smaller of ready count and daily limit — what will actually run |
+| **Queued remainder** | Eligible contacts that stay queued because the cap is full |
+| **Preview** | A sample of the contacts at the front of the queue |
+
+**Example:** If 35 contacts are ready for outreach but the daily limit is 20, the card shows a run count of 20 and a queued remainder of 15. Those 15 stay in queue and are prioritised on the next run.
+
+<Note>
+  The queue is a forecast, not a guarantee that every action will succeed. Account state, source data, reply checks, or platform responses can still cause individual items to be safely skipped during the run.
+</Note>
+
+## The five queue cards
+
+| Card | A contact is ready when… |
+| --- | --- |
+| **Connection requests** | The contact has an owner, passes the pipeline gate, has no open stop condition, and is eligible for LinkedIn outreach. |
+| **Messages** | Research is available and no initial message has been generated for this contact yet. |
+| **Outreach** | An email or LinkedIn message is approved and has not yet been sent. |
+| **Follow-up email** | An email was previously sent, the next follow-up date is due, the cap is not reached, and no reply or terminal thread state exists. |
+| **Follow-up LinkedIn** | A LinkedIn message was sent, the follow-up date is due, the cap is not reached, and neither channel has recorded a reply. |
+
+Research and enrichment steps can occur between visible cards. They do not have a separate user-configurable queue tile.
+
+## Why a contact may not be ready
+
+If a contact is absent from the queue, one of these conditions is holding it back:
+
+- Its ICP score falls below the pipeline threshold
+- It has no active owner or no usable outreach channel
+- Research or enrichment data is still missing
+- Its generated message is waiting for your approval
+- The next follow-up is not yet due
+- The daily limit is set to `0` or has already been consumed for today
+- It has replied, has an outcome set, or has been archived
+- Its company name or domain is on the blacklist
+- The connected LinkedIn or email account needs attention
+
+Work through this list top-to-bottom whenever a contact you expect to see is missing. Most cases resolve by checking the contact's profile, the seat's account status, or the limit configuration.
+
+Ready to start work? See [Run the pipeline](/operate/run-the-pipeline) for manual and scheduled run options.

@@ -1,0 +1,56 @@
+---
+title: "Blacklist Companies and Domains to Exclude from Outreach"
+sidebarTitle: "Blacklist"
+description: "Block specific companies by name or domain so the Sales Agent never contacts existing customers, competitors, partners, or active deals."
+icon: "ban"
+---
+
+Use **Settings → Blacklist** to prevent the Sales Agent from contacting companies you should never reach. The blacklist is checked during every search, import, and pipeline run.
+
+Typical entries include:
+
+- **Existing customers** — companies already in a commercial relationship with you
+- **Active opportunities** — deals currently in your CRM pipeline
+- **Partners** — referral or technology partners you should not cold-contact
+- **Competitors** — organizations you do not want to tip off
+- **Employers or affiliated companies** — organizations with a conflict of interest
+- **Opt-outs** — companies that have explicitly asked not to be contacted
+
+## Add entries
+
+Navigate to **Settings → Blacklist** and enter one or more of the following:
+
+- **Company name** — matched against names found across sources
+- **Domain** — matched against the company's web domain (e.g., `acme.com`)
+- **CSV upload** — bulk-add entries from a spreadsheet with name and domain columns
+
+The Sales Agent normalizes names and domains and silently skips entries that already exist on the list.
+
+**Prefer domains over names.** Company names vary across sources — the same business may appear as "Acme Corp," "Acme Corporation," or "ACME." A domain is a more reliable identifier and produces fewer missed matches.
+
+## Understand the immediate effect
+
+Saving a blacklist entry triggers reconciliation across the entire live pipeline — not just future searches.
+
+<Warning>
+  As soon as you save an entry, any prospects in the active pipeline that match the company or domain are stopped immediately. Review the name and domain carefully before you save. The confirmation dialog shows how many live prospects will be affected.
+</Warning>
+
+Stopped prospects are archived rather than deleted. Their full history — messages sent, replies, enrichment data — remains accessible. No outreach is sent to them after the entry is saved.
+
+## Remove an entry
+
+To remove a company from the blacklist, find the entry in **Settings → Blacklist** and delete it. Removal triggers a re-evaluation of prospects that were archived because of that block.
+
+Archived prospects can become active again if:
+
+- no other blacklist entry still matches them, and
+- no separate outcome (reply, manual stop, or archive) is already recorded for them.
+
+## Plan ahead before large imports
+
+<Tip>
+  Add all relevant entries to the blacklist before running a large CSV import or Search. Blocking a company after the agent has already researched and enriched its contacts wastes the credits spent on that work — and stops prospects mid-pipeline rather than preventing them from entering it.
+</Tip>
+
+For guidance on importing contacts, see [Add Prospects](/configure/add-prospects).

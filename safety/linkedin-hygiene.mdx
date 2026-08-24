@@ -1,0 +1,89 @@
+---
+title: "LinkedIn Account Safety and Hygiene for Sales Agent"
+sidebarTitle: "LinkedIn Hygiene"
+description: "Key practices that protect your LinkedIn account from restrictions while the Sales Agent performs paced, automated outreach on your behalf."
+icon: "shield-check"
+---
+
+LinkedIn account safety cannot be guaranteed. keinsaas applies pacing, warm-up, withdrawal, and session-pause measures, but you remain responsible for following these practices throughout your campaign.
+
+<Warning>
+  Do not use LinkedIn manually while the Sales Agent is active or during a scheduled automation window. Running manual and automated activity at the same time is the single highest-risk behaviour you can control.
+</Warning>
+
+## Required account practices
+
+### Warm up gradually
+
+Plan a gradual warm-up over roughly two months. Start with low daily and weekly limits, then increase them only as the account builds a pattern of normal activity.
+
+An SSI above 70 may support higher volume in some situations, but it does not guarantee a specific limit or remove the risk of restriction. Treat the SSI as one signal, not a threshold that unlocks higher activity.
+
+### Keep one account per device
+
+Do not run multiple automated LinkedIn accounts from the same device. Keep each account's session, browser environment, and schedule completely separate.
+
+### Renew the session promptly
+
+LinkedIn session cookies require periodic renewal — typically around once a month. During the first month, the account may need additional re-logins while it settles.
+
+When you receive a reconnect notification:
+
+<Steps>
+  <Step title="Pause all activity">
+    Stop any running manual and automated LinkedIn work before proceeding.
+  </Step>
+  <Step title="Sign in to LinkedIn">
+    Open LinkedIn in your browser and sign in to the correct account.
+  </Step>
+  <Step title="Open Account settings">
+    In the Sales Agent, navigate to **Settings → Account**.
+  </Step>
+  <Step title="Paste the fresh session cookie">
+    Use the reconnect control to paste the updated `li_at` session cookie value.
+  </Step>
+  <Step title="Wait for confirmation">
+    Do not start a new run until the Sales Agent confirms the session is active.
+  </Step>
+</Steps>
+
+<Warning>
+  Never email your session cookie or paste it into a support message. Anyone who holds the `li_at` value can act as your LinkedIn account.
+</Warning>
+
+### Respect the configured schedule and limits
+
+Treat roughly **100 Sales Navigator contacts per week per account** as the normal planning ceiling. Accounts with higher SSI may be able to sustain more. LinkedIn Premium accounts without Sales Navigator generally support less. Actual platform behaviour can change without notice, and no particular volume is guaranteed.
+
+Configure your schedule to match working hours and keep daily limits conservative, especially on newer accounts.
+
+### Keep pending invitations under control
+
+A large backlog of unanswered invitations increases restriction risk. The Sales Agent withdraws stale pending invitations at regular intervals so the pending queue stays manageable and allows an email path to continue when a LinkedIn connection is not accepted.
+
+Review your pending queue occasionally and avoid sending bursts of invitations outside of normal working patterns.
+
+## Safety measures in the product
+
+Depending on your configuration, the Sales Agent can apply the following safeguards automatically:
+
+- **Pacing** — distributes actions across daily limits and scheduled windows instead of sending them in bursts
+- **Warm-up likes** — likes recent posts before a connection request to establish a light signal of prior engagement
+- **Inactive-profile skipping** — avoids sending invitations to profiles that show no recent activity
+- **Cross-channel routing** — moves a prospect to email when LinkedIn is unavailable or blocked
+- **Reply-detected stop** — halts further automated steps on both channels once a reply is detected
+- **Human outcome stop** — stops every pipeline step immediately after you record an outcome
+- **Stale invitation withdrawal** — automatically withdraws unanswered invitations beyond a configured age
+- **Session pause** — pauses scheduled work when a session needs renewal
+
+These measures reduce risk. They do not eliminate it.
+
+## If LinkedIn restricts the account
+
+1. Stop all automation and manual outreach immediately.
+2. Follow LinkedIn's verification or recovery instructions exactly.
+3. Contact [support@keinsaas.com](mailto:support@keinsaas.com) before reconnecting the Sales Agent or resuming any schedule.
+
+Do not attempt to work around a restriction by creating a second account on the same device or network.
+
+Read the binding [Sales Agent Terms](https://keinsaas.com/de/sales-agent-terms#linkedin-hygiene) for the complete account-hygiene obligations.

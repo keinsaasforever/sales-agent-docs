@@ -1,0 +1,91 @@
+---
+title: "Configure Your Schedule, Daily Limits, and Channels"
+sidebarTitle: "Schedule"
+description: "Set run times, daily action caps, channel routing, and follow-up spacing so each seat operates at the right pace and on the right channels."
+icon: "calendar-clock"
+---
+
+Open **Settings → Schedule** to configure each seat individually. A seat owns its run schedule and daily limits. Follow-up counts and delivery mode are shared settings that apply across all seats.
+
+## Configure the run time
+
+For each seat, complete these steps:
+
+<Steps>
+  <Step title="Select the representative">
+    Choose the sales rep whose LinkedIn and email accounts will execute outreach.
+  </Step>
+  <Step title="Enable or disable the schedule">
+    Toggle **Schedule enabled** on to run automatically, or leave it off to run only on demand via **Run Now**.
+  </Step>
+  <Step title="Choose active days">
+    Select the days of the week the seat should run.
+  </Step>
+  <Step title="Set the start time">
+    Pick the time of day the run begins.
+  </Step>
+  <Step title="Confirm the timezone">
+    Verify the timezone matches the representative's working location.
+  </Step>
+</Steps>
+
+The dashboard schedules one complete run per active day. When scheduling is off, the seat remains inactive until you trigger **Run Now** manually.
+
+<Warning>
+  Treat the scheduled window as an automation period. Do not use LinkedIn manually while a run is active — concurrent activity can cause unexpected behavior. Allow roughly two to five hours for a full run, depending on your configured volume.
+</Warning>
+
+## Set daily action limits
+
+Limits are per seat and reset each calendar day. Use them to control pace during warm-up and to stay within comfortable activity levels.
+
+| Limit | What it controls |
+|---|---|
+| **Connection requests** | New LinkedIn invitations sent. The dashboard caps this setting at 20 per day. |
+| **Messages** | New personalized messages generated for the day. |
+| **Outreach** | LinkedIn messages ready to send in a single run. |
+| **Emails** | Initial outbound emails. Leave empty to follow the Outreach limit. |
+| **Follow-up emails** | Due email follow-ups sent that day. |
+| **Follow-up LinkedIn** | Due LinkedIn follow-ups sent that day. |
+
+The **Next run** count shown on the Home dashboard is the smaller of your eligible contacts and the relevant daily limit. Contacts beyond the cap remain queued and are picked up in a later run.
+
+Start with conservative limits and increase them gradually through the warm-up period. A normal Sales Navigator plan supports roughly 100 contacts per week per account as a ceiling. Higher SSI may allow more, but neither reach nor account safety is guaranteed. keinsaas applies available safety measures; you remain responsible for following [LinkedIn hygiene rules](/safety/linkedin-hygiene).
+
+## Choose the channel behavior
+
+For each seat, select one of these channel modes:
+
+- **Always** — both LinkedIn and email run as configured.
+- **Off** — no LinkedIn actions are taken; email can still run.
+- **Prioritize emails** — email outreach runs first; LinkedIn follows only afterward.
+
+You can also enable optional inactive-profile rules to route dormant LinkedIn profiles to email only, and configure post-like warm-up to like up to two recent posts before sending a connection request.
+
+## Configure follow-ups
+
+The client-wide maximum follow-up counts are:
+
+- up to **3 email follow-ups**
+- up to **1 LinkedIn follow-up**
+
+Set either channel's follow-up count to `0` to turn it off entirely. Follow-ups are spaced by working days, not calendar days:
+
+| Follow-up | When it sends |
+|---|---|
+| First follow-up (any channel) | 4 working days after the previous message |
+| Second email follow-up | 7 working days after the previous email follow-up |
+| Third email follow-up | 10 working days after the previous email follow-up |
+
+A reply on either channel stops all automated follow-ups across both channels for that prospect.
+
+## Save and verify
+
+After saving your schedule settings, return to **Home** and confirm:
+
+- [ ] **Schedule** shows **Active** for every seat you intended to enable
+- [ ] **Daily limits** reflect the combined capacity across active seats
+- [ ] **Approval** shows the delivery mode you configured
+- [ ] **Next run** count reflects the expected caps
+
+If a seat's schedule shows as off, **Run Now** is still available for manual runs at any time.

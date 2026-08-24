@@ -1,0 +1,77 @@
+---
+title: "Sales Agent Glossary: Key Terms and Concepts Explained"
+sidebarTitle: "Glossary"
+description: "Plain-language definitions of all 15 key terms used throughout the Sales Agent dashboard, pipeline, configuration, and documentation."
+icon: "book-a"
+---
+
+Use this glossary whenever you encounter an unfamiliar term in the dashboard or docs. Terms are listed in alphabetical order.
+
+<AccordionGroup>
+  <Accordion title="Active seat">
+    A seat that is permitted to participate in both manual pipeline actions and scheduled automation runs. Only active seats consume daily action limits and appear in the next-run queue forecast. A seat can be deactivated to pause its outreach without removing it from the account.
+  </Accordion>
+
+  <Accordion title="Blacklist">
+    A client-wide list of company names and domains that must never receive outreach. When you add a company or domain to the blacklist, the Sales Agent stops all existing prospects at that company immediately and excludes future matches before they enter the pipeline. See also: [Credits](/safety/credits) — blacklist entries added before a search prevent credits being spent on candidates who would be rejected anyway.
+  </Accordion>
+
+  <Accordion title="Contact">
+    A person imported, collected, or found for your account — before outreach has started. A contact becomes a **prospect** once it is being actively worked by the outreach pipeline. Contacts that do not meet the pipeline threshold or are otherwise ineligible remain as contacts without consuming outreach actions.
+  </Accordion>
+
+  <Accordion title="Credits">
+    The unit used to pay for search and enrichment work. Credits are charged when results are returned — not only when those results pass your filters and enter the pipeline. Each seat starts with 300 credits; additional credits can be purchased from the **Credits** page. Credits are non-refundable and unused credits are forfeited when a subscription ends. See [Credits](/safety/credits) for full details.
+  </Accordion>
+
+  <Accordion title="Email draft mode">
+    A delivery setting that creates email messages as drafts in the connected mailbox instead of sending them automatically. Use draft mode when you want a human to review and send each email — for example, on campaigns with specific claims or sensitive audiences.
+  </Accordion>
+
+  <Accordion title="ICP">
+    **Ideal Customer Profile** — the free-text description and structured rules (titles, company size, industry, location, exclusions, etc.) that define which companies and contacts are a good fit for your offer. The ICP drives automated scoring and is used to filter candidates during search. Configure your ICP in **Settings → ICP**.
+  </Accordion>
+
+  <Accordion title="ICP score">
+    A normalised fit score from 0 to 100 assigned to each contact based on how well it matches your configured ICP criteria and their relative weights. The score is recalculated when the ICP changes. Use the **pipeline threshold** to control which scores qualify a contact for automated outreach.
+  </Accordion>
+
+  <Accordion title="In play">
+    A prospect that does not currently have a human outcome recorded. An in-play prospect is eligible to be claimed by the next automated pipeline step when all other conditions (schedule, daily limits, channel availability) are met. Setting an outcome removes a prospect from in play. Clearing the outcome returns it to in play — though its action history is preserved and the displayed stage is recalculated from that history.
+  </Accordion>
+
+  <Accordion title="Next run queue">
+    The forecast shown on the **Home** page listing the contacts ready for each pipeline step in the upcoming scheduled run. The queue is capped by the active seats' remaining daily limits. Use it to predict how many actions will fire before adjusting limits or schedules.
+  </Accordion>
+
+  <Accordion title="Outcome">
+    A human-set result recorded on a prospect to reflect a real-world event: **Meeting**, **Offer Sent**, **Closed Deal**, **Not Interested**, **Lost Deal**, or **Unreachable**. Every outcome immediately stops all automated outreach for that prospect. Outcomes take precedence over detected replies and normal stage progress when determining the displayed stage. See [Pipeline Stages](/reference/pipeline-stages) for full precedence rules.
+  </Accordion>
+
+  <Accordion title="Pipeline threshold">
+    The minimum ICP score a contact must reach before the Sales Agent includes it in automated outreach. Contacts that fall below the threshold remain in the contact list but do not progress through the pipeline. Setting the threshold to zero turns filtering off and allows all contacts to enter outreach regardless of score.
+  </Accordion>
+
+  <Accordion title="Prospect">
+    A contact that has an outreach state and history in the Sales Agent pipeline — i.e., a contact the agent is actively working or has previously worked. Prospects have stages, outcomes, message history, and enrichment data attached to them.
+  </Accordion>
+
+  <Accordion title="Seat">
+    One sales representative's working identity inside the Sales Agent. A seat bundles together:
+    - one LinkedIn account (and its session cookie)
+    - one connected email account
+    - a seat owner and their permissions
+    - a schedule and daily action limits
+    - message voice and sign-off settings
+
+    Each active seat can run its own outreach pipeline. Seat count determines the number of LinkedIn accounts you can operate simultaneously.
+  </Accordion>
+
+  <Accordion title="SSI">
+    **Social Selling Index** — LinkedIn's own measure of how effectively an account builds relationships and engages with content. A higher SSI can support a stronger account profile and may allow somewhat higher outreach volumes in practice, but it does not guarantee specific action limits or protect the account from restriction. See [LinkedIn Hygiene](/safety/linkedin-hygiene) for guidance on volume planning.
+  </Accordion>
+
+  <Accordion title="Stage">
+    A label derived automatically from recorded facts about a prospect — such as enrichment completed, messages sent, replies detected, outcomes set, and archive state. Stages are not moved manually; the Sales Agent calculates the correct stage based on the highest-priority applicable fact. See [Pipeline Stages](/reference/pipeline-stages) for the full list and precedence rules.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,71 @@
+---
+title: "Replies and handoff"
+sidebarTitle: "Replies & Handoff"
+description: "Understand when automation stops after a reply, how to take over a live conversation, and what To Call means for your next action."
+icon: "handshake"
+---
+
+The Sales Agent monitors both email and LinkedIn for prospect replies and stops automated follow-ups the moment engagement is detected. Knowing exactly when and how handoff happens lets you take over at the right moment without competing with automation.
+
+## Cross-channel stop behavior
+
+A reply on **either** channel stops follow-ups on **both** channels:
+
+- A reply detected on **email** stops pending LinkedIn follow-ups for that prospect.
+- A reply detected on **LinkedIn** stops pending email follow-ups for that prospect.
+
+This prevents the other channel from continuing its sequence after the person has already responded. The prospect moves to the **Replied** stage unless a human outcome such as **Meeting** or **Closed Deal** is already recorded.
+
+The cross-channel stop is deliberate. Even if your LinkedIn message sparked a reply that only arrived in email, the Sales Agent treats the engagement as complete contact and halts the automated sequence on both sides.
+
+## Take over the conversation
+
+When a reply arrives, move quickly and personally:
+
+<Steps>
+  <Step title="Read the full thread">
+    Open the source channel — Gmail, Outlook, or LinkedIn — and read the complete conversation in context before responding.
+  </Step>
+  <Step title="Respond personally">
+    Reply directly from your connected LinkedIn or email account. Your personal reply is the handoff. Do not use the Sales Agent to send further automated messages once a conversation is live.
+  </Step>
+  <Step title="Add context to the prospect record">
+    Record useful notes, next steps, or background detail in the prospect profile. This keeps the record useful if the opportunity is reassigned or revisited later.
+  </Step>
+  <Step title="Set the Meeting outcome">
+    As soon as the conversation enters your sales process, set the outcome to **Meeting**. This confirms the handoff and ensures automation does not reclaim the prospect.
+  </Step>
+  <Step title="Advance the outcome as the deal progresses">
+    Update to **Offer Sent**, **Closed Deal**, **Not Interested**, or **Lost Deal** as the opportunity moves forward. Keeping the outcome current gives you accurate pipeline visibility.
+  </Step>
+</Steps>
+
+Your direct replies and the outcome flag work together to keep the prospect out of automated claims. A **Replied** stage alone halts follow-ups, but setting an explicit outcome protects against edge cases where the prospect is returned to **In play** inadvertently.
+
+## To Call
+
+The **To Call** stage appears automatically when two conditions are true: the configured automated sequence for the prospect is complete, and a usable phone number is available. It can also appear when digital channels are exhausted but phone outreach remains a viable option.
+
+**To Call** is a signal, not an automated action. It means the Sales Agent has done what it can and the next step belongs to you.
+
+After the call, set the outcome that reflects the result:
+
+- Positive conversation → **Meeting**
+- Deal in progress → **Offer Sent**
+- No answer, permanently unreachable → **Unreachable**
+- Declined → **Not Interested**
+
+Leaving the prospect **In play** after a call can allow another automated action if the full sequence is not yet complete — review the activity timeline before leaving the outcome unset.
+
+## Out-of-office and delivery problems
+
+Not all replies indicate real engagement:
+
+- An **out-of-office** auto-reply defers the next scheduled follow-up until the stated return date. It does not count as a positive reply and does not trigger the **Replied** stage.
+- A **failed email delivery** can trigger a contact-data check when an alternative address is available. The sequence pauses while the check runs and resumes if a valid address is found.
+
+These cases are handled automatically. You do not need to intervene unless the prospect remains stuck after the expected return date or after address resolution completes.
+
+<Tip>
+  Handle reply notifications before reviewing new outreach. Taking over an active conversation delivers more value than filling the next queue. Set your outcomes before running the next pipeline step so you don't reach contacts who have already responded.
+</Tip>
