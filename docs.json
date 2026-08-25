@@ -6,7 +6,7 @@
   "colors": {
     "primary": "#0c04e4",
     "light": "#ECEBE6",
-    "dark": "#050404"
+    "dark": "#6B65F2"
   },
   "favicon": "https://media.brand.dev/e1e16793-d6b7-4265-916c-b8459c8b33ef.svg",
   "logo": {
@@ -17,71 +17,147 @@
     "library": "lucide"
   },
   "navigation": {
-    "groups": [
+    "languages": [
       {
-        "group": "Get started",
-        "icon": "rocket",
-        "pages": [
-          "index",
-          "getting-started/quickstart",
-          "getting-started/how-it-works",
-          "getting-started/daily-workflow"
+        "language": "en",
+        "default": true,
+        "navbar": {
+          "links": [
+            {
+              "label": "Support",
+              "href": "mailto:support@keinsaas.com"
+            }
+          ],
+          "primary": {
+            "type": "button",
+            "label": "Open dashboard",
+            "href": "https://sales.keinsaas.com"
+          }
+        },
+        "groups": [
+          {
+            "group": "Get started",
+            "icon": "rocket",
+            "pages": [
+              "index",
+              "getting-started/quickstart",
+              "getting-started/how-it-works",
+              "getting-started/daily-workflow"
+            ]
+          },
+          {
+            "group": "Configure",
+            "icon": "sliders-horizontal",
+            "pages": [
+              "configure/icp-and-scoring",
+              "configure/add-prospects",
+              "configure/messaging-playbook",
+              "configure/schedule-and-limits",
+              "configure/blacklist"
+            ]
+          },
+          {
+            "group": "Operate",
+            "icon": "workflow",
+            "pages": [
+              "operate/next-run-queue",
+              "operate/run-the-pipeline",
+              "operate/review-messages",
+              "operate/stages-and-outcomes",
+              "operate/replies-and-handoff",
+              "operate/activity-and-troubleshooting"
+            ]
+          },
+          {
+            "group": "Safety and rules",
+            "icon": "shield-check",
+            "pages": [
+              "safety/linkedin-hygiene",
+              "safety/credits",
+              "safety/responsible-use"
+            ]
+          },
+          {
+            "group": "Reference",
+            "icon": "book-open",
+            "expanded": false,
+            "pages": [
+              "reference/pipeline-stages",
+              "reference/glossary"
+            ]
+          }
         ]
       },
       {
-        "group": "Configure",
-        "icon": "sliders-horizontal",
-        "pages": [
-          "configure/icp-and-scoring",
-          "configure/add-prospects",
-          "configure/messaging-playbook",
-          "configure/schedule-and-limits",
-          "configure/blacklist"
-        ]
-      },
-      {
-        "group": "Operate",
-        "icon": "workflow",
-        "pages": [
-          "operate/next-run-queue",
-          "operate/run-the-pipeline",
-          "operate/review-messages",
-          "operate/stages-and-outcomes",
-          "operate/replies-and-handoff",
-          "operate/activity-and-troubleshooting"
-        ]
-      },
-      {
-        "group": "Safety & Rules",
-        "icon": "shield-check",
-        "pages": [
-          "safety/linkedin-hygiene",
-          "safety/credits",
-          "safety/responsible-use"
-        ]
-      },
-      {
-        "group": "Reference",
-        "icon": "book-open",
-        "pages": [
-          "reference/pipeline-stages",
-          "reference/glossary"
+        "language": "de",
+        "navbar": {
+          "links": [
+            {
+              "label": "Support",
+              "href": "mailto:support@keinsaas.com"
+            }
+          ],
+          "primary": {
+            "type": "button",
+            "label": "Dashboard öffnen",
+            "href": "https://sales.keinsaas.com"
+          }
+        },
+        "groups": [
+          {
+            "group": "Erste Schritte",
+            "icon": "rocket",
+            "pages": [
+              "de/index",
+              "de/getting-started/quickstart",
+              "de/getting-started/how-it-works",
+              "de/getting-started/daily-workflow"
+            ]
+          },
+          {
+            "group": "Konfiguration",
+            "icon": "sliders-horizontal",
+            "pages": [
+              "de/configure/icp-and-scoring",
+              "de/configure/add-prospects",
+              "de/configure/messaging-playbook",
+              "de/configure/schedule-and-limits",
+              "de/configure/blacklist"
+            ]
+          },
+          {
+            "group": "Betrieb",
+            "icon": "workflow",
+            "pages": [
+              "de/operate/next-run-queue",
+              "de/operate/run-the-pipeline",
+              "de/operate/review-messages",
+              "de/operate/stages-and-outcomes",
+              "de/operate/replies-and-handoff",
+              "de/operate/activity-and-troubleshooting"
+            ]
+          },
+          {
+            "group": "Sicherheit und Regeln",
+            "icon": "shield-check",
+            "pages": [
+              "de/safety/linkedin-hygiene",
+              "de/safety/credits",
+              "de/safety/responsible-use"
+            ]
+          },
+          {
+            "group": "Referenz",
+            "icon": "book-open",
+            "expanded": false,
+            "pages": [
+              "de/reference/pipeline-stages",
+              "de/reference/glossary"
+            ]
+          }
         ]
       }
     ]
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:support@keinsaas.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Open dashboard",
-      "href": "https://sales.keinsaas.com"
-    }
   },
   "contextual": {
     "options": [

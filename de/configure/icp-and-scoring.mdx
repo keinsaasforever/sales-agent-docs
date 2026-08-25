@@ -1,0 +1,80 @@
+---
+title: "ICP und Scoring"
+description: "Definiere deine Zielgruppe und lege fest, wie Kandidaten sich für die Ansprache qualifizieren."
+icon: "target"
+---
+
+Dein Ideal Customer Profile (ICP) steuert Kontaktsuche, Kandidatenbewertung und Eignung für die Outreach-Pipeline. Konfiguriere es unter **Settings → Targeting**.
+
+## Mit der freien ICP-Beschreibung beginnen
+
+Beschreibe die Kombination, die du wirklich suchst, statt einer breiten Marktkategorie. Berücksichtige zum Beispiel:
+
+- Geschäftsmodell und Branche
+- Unternehmensgröße oder Wachstumsphase
+- Region
+- Käuferrolle und Seniorität
+- relevante Technologien oder kommerzielle Signale
+- Ausschlüsse und Merkmale schlechter Eignung
+
+Beispiel:
+
+> Foodtech-Unternehmen in der DACH-Region mit weniger als 50 Mitarbeitenden und starkem aktuellem Wachstum. Zielpersonen sind neu ernannte Head of Marketing oder Marketing Directors mit Standort in der DACH-Region.
+
+Der Agent bewertet diese Beschreibung gemeinsam mit den strukturierten Kriterien.
+
+## Strukturierte Kriterien konfigurieren
+
+| Einstellung | Verwendung |
+| --- | --- |
+| **Job titles — Tier 1** | Primäre Zielrollen. Nutze konkrete Entscheider- oder Champion-Titel. |
+| **Job titles — Tier 2** | Executive-Fallbacks wie Founder oder Managing Director, wenn Tier 1 nicht verfügbar ist. |
+| **Excluded job titles** | Rollen, die selbst dann übersprungen werden, wenn sie in den Quelldaten erscheinen. |
+| **Locations** | Zielländer oder -regionen. Leer lassen, wenn kein Standortfilter gelten soll. |
+| **Industries** | Zu priorisierende Branchen. Leer lassen, wenn kein Branchenfilter gelten soll. |
+| **Company size** | Zielgrößen nach Mitarbeiterzahl. Unbekannte Größen werden nicht automatisch abgelehnt. |
+| **ICP keywords** | Spezialisierungen, Geschäftsmodelle oder weitere Begriffe, die Eignung anzeigen. |
+| **Max contacts per company** | Feste Obergrenze für gesuchte Personen je Unternehmen. Drei bis vier sind ein normaler Startwert, zehn das Maximum. |
+
+## Score verstehen
+
+Unternehmen und Kontakte können einen ICP-Score von 0 bis 100 erhalten. Die Gewichtungen sind relativ:
+
+- Job-Fit
+- Branchen-Fit
+- Standort-Fit
+
+Die Gewichtungen müssen zusammen nicht 100 ergeben. Das Dashboard normalisiert sie. Eine Gewichtung von `6, 3, 1` bedeutet 60 % Job-Fit, 30 % Branche und 10 % Standort.
+
+## Die zwei Schwellenwerte verwenden
+
+### Pipeline ICP threshold
+
+Nur Kontakte mit mindestens diesem Score gelangen in die automatisierte Ansprache. Mit `0` lässt du alle Kontakte zu.
+
+### Phone enrichment threshold
+
+Nur Kontakte mit mindestens diesem Score erhalten automatisch eine Telefonsuche. Unterhalb des Schwellenwerts fragt das Dashboard vor einer manuellen Suche nach Bestätigung. Mit `0` deaktivierst du den Schwellenwert.
+
+<Warning>
+  Senke einen Schwellenwert nicht nur, um eine Queue zu füllen. Prüfe zuerst Quelle, Owner-Zuweisung, Ausschlüsse und Score-Kriterien. Eine größere Queue mit schwächeren Kandidaten verbraucht Kapazität und Credits, ohne den Fit zu verbessern.
+</Warning>
+
+## Bestehende Scores aktualisieren
+
+Änderungen an Kriterien können bestehende Scores veralten lassen:
+
+- Wenn du nur Gewichtungen änderst, nutze **Recompute**. Die bestehenden Score-Bestandteile werden ohne AI oder Credits neu berechnet.
+- Wenn sich die Bedeutung des ICP ändert, nutze **AI rescore**, damit bestehende Kontakte nach den neuen Kriterien beurteilt werden.
+
+Neu hinzugefügte Kontakte verwenden automatisch die aktuellen Einstellungen.
+
+## Credits und Filterung
+
+Eine Suche kann Kandidaten zurückgeben, die später an Jobtitel-Ausschlüssen, ICP-Anforderungen, Deduplizierung oder Unternehmensprüfungen scheitern. Credits werden für zurückgegebene Such- oder Anreicherungsergebnisse berechnet, nicht nur für Kontakte, die schließlich in die Pipeline gelangen.
+
+<Tip>
+  Bei granularen Filtern muss der Agent voraussichtlich mehr Kandidaten prüfen, als letztlich akzeptiert werden. Beginne mit einer kleinen Unternehmensauswahl und prüfe die Ergebnisqualität, bevor du die Suche skalierst.
+</Tip>
+
+Als Nächstes wählst du, wie du [Prospects hinzufügst](/de/configure/add-prospects).
