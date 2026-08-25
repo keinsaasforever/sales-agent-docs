@@ -1,0 +1,65 @@
+---
+title: "Prospects hinzufügen"
+description: "Füge Kontakte aus Sales Navigator, CSV-Dateien oder einer Kontaktsuche auf Unternehmensebene hinzu."
+icon: "user-plus"
+---
+
+Öffne **Add to Pipeline**, um Sales-Navigator-Quellen bereitzustellen, eine eigene Liste hochzuladen oder bei bereits im Dashboard vorhandenen Unternehmen zu suchen.
+
+<Columns cols={3}>
+  <Card title="URLs einreichen" icon="link">
+    Sammle Personen oder Unternehmen aus gespeicherten Sales-Navigator-Suchen und -Listen.
+  </Card>
+  <Card title="CSV hochladen" icon="file-spreadsheet">
+    Importiere eine eigene Liste und ordne jede Zeile einem Seat zu.
+  </Card>
+  <Card title="Suchen" icon="search">
+    Finde passende Kontakte bei Unternehmen, die bereits im Dashboard vorhanden sind.
+  </Card>
+</Columns>
+
+## Sales-Navigator-URLs einreichen
+
+Verwende einen dieser Quelltypen:
+
+- eine gespeicherte Suche, deren URL `savedSearchId` enthält
+- eine Personenliste mit `/lists/people/` im Pfad
+- eine Unternehmensliste mit `/lists/company/` im Pfad
+
+Füge für jede URL optional eine Segmentbezeichnung und eine erwartete Ergebnisanzahl hinzu. Die erwartete Anzahl hilft, Größe und möglichen Credit-Verbrauch einzuschätzen; sie ist keine Ergebnisgarantie.
+
+Unternehmensquellen benötigen noch eine Kontaktsuche. Personenquellen identifizieren bereits Personen, können aber weiterhin Recherche, Anreicherung, Scoring und Filterung erfordern.
+
+## CSV hochladen
+
+Jede Zeile benötigt einen Owner. Gib ihn in der Datei an oder wähle beim Import einen Seat. Der Owner wird auch dem Unternehmen zugewiesen und bestimmt, welche verbundenen Konten die Ansprache ausführen.
+
+Der CSV-Import selbst verbraucht keine Credits. Optionale Recherche, Suche, E-Mail- oder Telefonsuche und Profilanreicherung können Credits verbrauchen.
+
+Vor dem Import:
+
+- entferne Datensätze, die du nicht kontaktieren darfst
+- nimm nach Möglichkeit eine stabile Kennung wie LinkedIn-URL oder geschäftliche E-Mail-Adresse auf
+- halte Unternehmensnamen und Domains konsistent
+- füge Kunden, Wettbewerber, Partner und aktive Deals zur Blacklist hinzu
+
+## In bestehenden Unternehmen suchen
+
+Wähle die Anzahl zu verarbeitender Unternehmen oder einzelne Unternehmen manuell aus. Die Suche beginnt mit hoch priorisierten Unternehmen ohne Kontakte. Sie berücksichtigt Tier-1-Titel, Fallback-Rollen, Standortregeln, Ausschlüsse und die maximale Kontaktzahl je Unternehmen aus **Settings → Targeting**.
+
+<Warning>
+  Suchergebnisse können Credits verbrauchen, auch wenn ein zurückgegebener Kandidat später an granularen ICP-Filtern scheitert oder als Duplikat entfernt wird. Prüfe eine kleine Stichprobe, bevor du eine große Suche startest.
+</Warning>
+
+## So gelangen Kontakte in die Queue
+
+Ein neu hinzugefügter Kontakt erscheint nicht zwingend sofort in jeder Queue. Der Agent prüft:
+
+1. die Unternehmens-Blacklist
+2. Owner- und aktive Seat-Zuweisung
+3. den Pipeline-ICP-Schwellenwert
+4. verfügbare Kanäle und Kontaktdaten
+5. ob die Person aktiv, gestoppt oder archiviert ist
+6. ob die nächste Aktion in das Tageslimit des Seats passt
+
+Die Karten unter **Home → Next run** zeigen aktuell bereite Kontakte. Erfahre, wie du [die Queue liest](/de/operate/next-run-queue).

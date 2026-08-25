@@ -1,0 +1,63 @@
+---
+title: "Activity und Fehlerbehebung"
+description: "Interpretiere Workflow-Läufe und untersuche leere Queues, übersprungene Arbeit, Freigaben oder Kontoprobleme."
+icon: "activity"
+---
+
+Öffne **Activity**, um Pipeline-Läufe, Auslöser, Fortschritt und Endstatus zu sehen. Beginne dort, wenn Verhalten unerwartet ist.
+
+## Laufstatus
+
+| Status | Bedeutung |
+| --- | --- |
+| **Started / Running** | Arbeit ist im Hintergrund aktiv. |
+| **Succeeded** | Der Lauf wurde normal beendet. Ein erfolgreicher Lauf kann trotzdem null Einträge verarbeiten, wenn nichts geeignet ist. |
+| **Skipped** | Ein Guard oder eine leere Queue hat Arbeit in diesem Schritt verhindert. |
+| **Stopped** | Ein Mensch hat den Lauf vor Abschluss aller Schritte gestoppt. |
+| **Failed** | Ein Fehler hat den normalen Abschluss verhindert. |
+
+## Wenn die Next run queue leer ist
+
+Prüfe der Reihe nach:
+
+1. **Active seat** — der Kontakt hat einen Owner und der Seat ist aktiv.
+2. **ICP gate** — der Kontakt erfüllt Pipeline-Schwellenwert und aktuelle Kriterien.
+3. **Blacklist** — weder Unternehmensname noch Domain sind blockiert.
+4. **Stop state** — der Prospect hat kein Outcome und ist nicht archiviert.
+5. **Required data** — der nächste Schritt hat die nötigen Recherche-, Kanal- oder Nachrichtendaten.
+6. **Approval** — erstellte Nachrichten sind freigegeben, wenn das erforderlich ist.
+7. **Cadence** — das nächste Follow-up ist tatsächlich fällig.
+8. **Limits** — das relevante Tageslimit liegt über `0` und hat Kapazität.
+9. **Connected account** — LinkedIn- und E-Mail-Verbindungen sind für den gewählten Kanal gültig.
+
+## Wenn ein Lauf gelingt, aber nichts sendet
+
+Meist hat kein Eintrag zum Versandzeitpunkt alle Sicherheits- und Eignungsprüfungen bestanden. Prüfe:
+
+- neu erkannte Antworten
+- Verbindungsstatus und Kanalverfügbarkeit
+- Freigabestatus
+- bereits gesendete Nachrichten
+- gestoppte oder archivierte Prospects
+- Tageslimits und Fälligkeiten
+
+Das System überspringt einen unsicheren Versand eher, als eine Dublette zu senden oder jemanden nach einer Antwort weiter zu kontaktieren.
+
+## Wenn ein Lauf fehlschlägt
+
+Öffne die Laufdetails und notiere fehlgeschlagenen Schritt und Zeitpunkt. Starte einen fehlgeschlagenen LinkedIn-Lauf nicht wiederholt neu. Prüfe die Kontoverbindungen und kontaktiere [support@keinsaas.com](mailto:support@keinsaas.com) mit:
+
+- Vertreter oder Seat
+- Zeitpunkt des Laufs
+- fehlgeschlagenem Schritt
+- erwartetem Verhalten
+
+Sende keine Passwörter oder LinkedIn-Cookies per E-Mail.
+
+## Wenn deine LinkedIn-Session abläuft
+
+Der Sales Agent pausiert LinkedIn-Arbeit und benachrichtigt dich. Öffne **Settings → Account**, verbinde LinkedIn mit einem neuen Session-Cookie und warte auf die Bestätigung, bevor du einen weiteren Lauf startest.
+
+<Warning>
+  Gleiche ein Konto- oder Queue-Problem nicht durch stark erhöhte Limits aus. Untersuche zuerst die fehlende Eignung oder Verbindung.
+</Warning>
