@@ -1,0 +1,130 @@
+---
+title: "Sales-Agent-Ablauf: Automatisierung und menschliche Übergaben"
+sidebarTitle: "Agent-Ablauf"
+description: "Erkunde die vollständige Logik des Sales Agent mit ICP-Änderungen, Suchen, Freigaben, Antworten, Calls, Outcomes und optionalen Kanalpfaden."
+icon: "route"
+mode: "wide"
+---
+
+import { SalesAgentFlow } from "/snippets/sales-agent-flow.jsx";
+
+Der Sales Agent führt jeden Kontakt durch abgesicherte Schritte. Du entscheidest, wen du ansprichst und wann die Arbeit beginnt. Der Agent recherchiert und sendet geeigneten Outreach. Eine Antwort oder ein menschliches Outcome übergibt die Kontrolle an dich und stoppt die Automatisierung sofort.
+
+<Info>
+  Die interaktive Auswahl erklärt, wie Konfiguration den Pfad verändert. Sie liest und ändert keine Kontodaten. Reale Einstellungen änderst du im [Sales-Agent-Dashboard](https://sales.keinsaas.com).
+</Info>
+
+## Pipeline-Konfiguration ausprobieren
+
+<SalesAgentFlow language="de" />
+
+## Vollständiger kommentierter Ablauf
+
+Das Diagramm zeigt alle Hauptzweige einschließlich optionaler Freigabe und der beiden menschlichen Übergaben nach dem Outreach.
+
+```mermaid placement="top-left" actions={true}
+%%{init: {'flowchart': {'defaultRenderer': 'elk'}}}%%
+flowchart TD
+  H1["Mensch: ICP definieren oder ändern"] --> D1{"Was wurde geändert?"}
+  D1 -->|Nur Gewichte| H2["Mensch: Scores neu berechnen"]
+  D1 -->|Bedeutung oder Kriterien| H3["Mensch: bestehende Kontakte mit AI rescore prüfen"]
+  D1 -->|Nichts| H4["Mensch: Suche oder Import starten"]
+  H2 --> H4
+  H3 --> H4
+
+  H4 --> A1["Agent: Kandidaten finden oder importieren"]
+  A1 --> A2["Agent: deduplizieren, Blacklist prüfen und scoren"]
+  A2 --> D2{"Pipeline-Schwellenwert und Eignungsregeln erfüllt?"}
+  D2 -->|Nein| X1["Als Kontakt außerhalb des automatisierten Outreach behalten"]
+  D2 -->|Ja| Q["Geeignet für die Next run queue"]
+
+  H5["Mensch: Zeitplan aktivieren oder Run Now wählen"] --> Q
+  Q --> A3["Agent: Prospect recherchieren und anreichern"]
+  A3 --> D3{"Welche Kanäle sind verfügbar?"}
+  D3 -->|LinkedIn| L1["Einladen, auf Verbindung warten und Nachricht vorbereiten"]
+  D3 -->|E-Mail| E1["Erste E-Mail vorbereiten"]
+  D3 -->|Beide| B1["Geeignete LinkedIn- und E-Mail-Pfade vorbereiten"]
+
+  L1 --> D4{"Nachrichtenfreigabe erforderlich?"}
+  E1 --> D4
+  B1 --> D4
+  D4 -->|Ja| H6["Mensch: bearbeiten, regenerieren, verwerfen oder freigeben"]
+  D4 -->|Nein| A4["Agent: automatischen Versand einreihen"]
+  H6 --> A5["Agent: freigegebenen Outreach in einem geeigneten Lauf senden"]
+  A4 --> A5
+
+  A5 --> D5{"Antwort oder menschliches Outcome erkannt?"}
+  D5 -->|Antwort oder Outcome| S1["Automatisierung sofort auf beiden Kanälen stoppen"]
+  D5 -->|Nein| A6["Agent: fällige Follow-ups senden<br/>bis zu 3 E-Mail + 1 LinkedIn"]
+  A6 --> D6{"Jetzt Antwort oder Outcome?"}
+  D6 -->|Ja| S1
+  D6 -->|Nein, Follow-ups verbleiben| A6
+  D6 -->|Nein, Sequenz beendet| D7{"Nutzbare Telefonnummer?"}
+
+  S1 --> H7["Mensch: Verlauf lesen, persönlich antworten und Outcome setzen"]
+  D7 -->|Ja| H8["Mensch: Prospect anrufen und Ergebnis dokumentieren"]
+  D7 -->|Nein| H9["Mensch: prüfen und gegebenenfalls Unreachable setzen"]
+  H7 --> S2["Outcome hält Prospect aus der Automatisierung"]
+  H8 --> S2
+  H9 --> S2
+
+  H10["Mensch: während eines aktiven Laufs Stop wählen"] --> S3["Laufende Verarbeitung stoppt sofort;<br/>abgeschlossene Sends bleiben bestehen"]
+  H11["Mensch: jederzeit ein Outcome setzen"] --> S2
+  H12["Mensch: Prospect archivieren oder Unternehmen sperren"] --> S4["Zukünftigen automatisierten Outreach sofort stoppen"]
+
+  classDef human fill:#FEF3C7,stroke:#D97706,color:#451A03,stroke-width:1.5px;
+  classDef agent fill:#DBEAFE,stroke:#2563EB,color:#172554,stroke-width:1.5px;
+  classDef gate fill:#F4F4F5,stroke:#71717A,color:#18181B,stroke-width:1.5px;
+  classDef stop fill:#D1FAE5,stroke:#059669,color:#022C22,stroke-width:1.5px;
+  classDef hold fill:#EDE9FE,stroke:#7C3AED,color:#2E1065,stroke-width:1.5px;
+  class H1,H2,H3,H4,H5,H6,H7,H8,H9,H10,H11,H12 human;
+  class A1,A2,A3,A4,A5,A6,L1,E1,B1 agent;
+  class D1,D2,D3,D4,D5,D6,D7 gate;
+  class S1,S2,S3,S4 stop;
+  class Q,X1 hold;
+```
+
+## Wo du eingreifst
+
+| Moment | Deine Aktion | Nächster Schritt des Agenten |
+| --- | --- | --- |
+| **ICP-Einrichtung oder -Änderung** | Targeting, Ausschlüsse, Gewichte oder Schwellenwerte bearbeiten. Bestehende Scores bei Aufforderung aktualisieren. | Nutzt den aktuellen Score und Schwellenwert für neue Kandidaten und deren zukünftige Queue-Eignung. |
+| **Suche oder Import** | Sales-Navigator-Quelle starten, CSV hochladen oder bei bestehenden Unternehmen suchen. | Findet Kandidaten, filtert, dedupliziert und vergibt Scores. Credits gelten für gefundene Such- oder Anreicherungsergebnisse, nicht nur für endgültige Treffer. |
+| **Start des Laufs** | Zeitplan des Seats aktivieren oder **Run Now** wählen. | Beansprucht nur aktuell geeignete Arbeit innerhalb der Tageslimits des Seats. |
+| **Nachrichtenprüfung, wenn aktiviert** | Entwurf bearbeiten, regenerieren, verwerfen oder freigeben. | Sendet eine freigegebene Nachricht erst in einem geeigneten Lauf; die Freigabe selbst sendet nicht. |
+| **Antwort** | Vollständigen Verlauf lesen, persönlich antworten und passendes Outcome setzen. | Stoppt automatisierte Follow-ups auf E-Mail und LinkedIn sofort. |
+| **Keine Antwort nach Follow-ups** | Prospects unter **To Call** mit vorhandener Telefonnummer bearbeiten; sonst prüfen, ob **Unreachable** passt. | Lässt die digitale Sequenz beendet, sobald die konfigurierten Follow-ups ausgeschöpft sind. |
+| **Vertriebsfortschritt** | **Meeting**, **Offer Sent**, **Closed Deal**, **Not interesting**, **Lost Deal** oder **Unreachable** setzen. | Entfernt den Prospect sofort aus allen automatisierten Claims. |
+
+## Optionale Pfade
+
+<AccordionGroup>
+  <Accordion title="Freigabe an oder aus">
+    Bei aktivierter Freigabe warten erstellte E-Mail- und LinkedIn-Nachrichten unter **Messages** auf deine Prüfung. Beim automatischen Versand entfällt der Freigabeschritt, du bleibst aber für den generierten Inhalt verantwortlich.
+  </Accordion>
+  <Accordion title="Geplante oder manuelle Läufe">
+    Ein Zeitplan startet an den konfigurierten Tagen zur gewählten Zeit einen vollständigen Lauf. **Run Now** startet dieselbe abgesicherte Pipeline bei Bedarf. Erweiterte Läufe können bei Messages, Outreach oder Follow-ups beginnen, ohne Eignungsprüfungen zu umgehen.
+  </Accordion>
+  <Accordion title="LinkedIn, E-Mail oder beides">
+    Du kannst LinkedIn für einen Seat deaktivieren, während E-Mail weiterläuft. Sind beide Kanäle verfügbar, nutzt der Agent jeden Pfad entsprechend deinen Einstellungen. Eine Antwort auf einem Kanal stoppt Follow-ups auf beiden.
+  </Accordion>
+  <Accordion title="Follow-ups und telefonische Übergabe">
+    Setze die Follow-up-Anzahl eines Kanals auf `0`, um die Schleife zu entfernen. Das unterstützte Maximum beträgt drei E-Mail-Follow-ups plus ein LinkedIn-Follow-up. Nach Ende der Sequenz erscheinen Prospects mit nutzbarer Telefonnummer für einen menschlichen Call.
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+  **Stages sind Fakten, keine Steuerung.** Du verschiebst einen Prospect nicht von **Invite Sent** zu **Connected** oder **Messaged**. Setze ein menschliches [Outcome](/de/operate/stages-and-outcomes), wenn sich die Vertriebssituation ändert. Jedes Outcome stoppt Outreach sofort.
+</Warning>
+
+<CardGroup cols={3}>
+  <Card title="Targeting konfigurieren" icon="target" href="/de/configure/icp-and-scoring">
+    Definiere ICP, Score-Gewichte und Pipeline-Schwellenwert.
+  </Card>
+  <Card title="Lauf konfigurieren" icon="calendar-clock" href="/de/configure/schedule-and-limits">
+    Wähle Kanäle, Freigaben, Follow-ups, Zeitpläne und Limits.
+  </Card>
+  <Card title="Übergaben bearbeiten" icon="handshake" href="/de/operate/replies-and-handoff">
+    Übernimm Antworten und arbeite die menschliche Call-Queue ab.
+  </Card>
+</CardGroup>

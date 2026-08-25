@@ -42,6 +42,7 @@
               "index",
               "getting-started/quickstart",
               "getting-started/how-it-works",
+              "getting-started/agent-flow",
               "getting-started/daily-workflow"
             ]
           },
@@ -111,6 +112,7 @@
               "de/index",
               "de/getting-started/quickstart",
               "de/getting-started/how-it-works",
+              "de/getting-started/agent-flow",
               "de/getting-started/daily-workflow"
             ]
           },

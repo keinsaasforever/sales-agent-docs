@@ -1,0 +1,130 @@
+---
+title: "Sales Agent flow: automation and human handoffs"
+sidebarTitle: "Agent Flow"
+description: "Explore the complete Sales Agent logic, including ICP changes, searches, approvals, replies, calls, outcomes, and optional channel paths."
+icon: "route"
+mode: "wide"
+---
+
+import { SalesAgentFlow } from "/snippets/sales-agent-flow.jsx";
+
+The Sales Agent moves each contact through guarded steps. You decide who to target and when work starts. The agent researches, prepares, and sends eligible outreach. A reply or human outcome hands control back to you and stops automation immediately.
+
+<Info>
+  The interactive controls below explain how configuration changes the path. They do not read or update your account. Change real settings in the [Sales Agent dashboard](https://sales.keinsaas.com).
+</Info>
+
+## Try a pipeline configuration
+
+<SalesAgentFlow language="en" />
+
+## Complete annotated flow
+
+This diagram shows every main branch, including optional approval and the two human handoffs after outreach.
+
+```mermaid placement="top-left" actions={true}
+%%{init: {'flowchart': {'defaultRenderer': 'elk'}}}%%
+flowchart TD
+  H1["Human: define or change the ICP"] --> D1{"What changed?"}
+  D1 -->|Weights only| H2["Human: Recompute scores"]
+  D1 -->|ICP meaning or criteria| H3["Human: AI rescore existing contacts"]
+  D1 -->|Nothing| H4["Human: launch a search or import"]
+  H2 --> H4
+  H3 --> H4
+
+  H4 --> A1["Agent: retrieve or import candidates"]
+  A1 --> A2["Agent: de-duplicate, check blacklist, and score"]
+  A2 --> D2{"Meets pipeline threshold and eligibility rules?"}
+  D2 -->|No| X1["Keep as contact outside automated outreach"]
+  D2 -->|Yes| Q["Eligible for the Next run queue"]
+
+  H5["Human: enable a schedule or select Run Now"] --> Q
+  Q --> A3["Agent: research and enrich prospect"]
+  A3 --> D3{"Which channels are available?"}
+  D3 -->|LinkedIn| L1["Invite, wait for connection, and prepare message"]
+  D3 -->|Email| E1["Prepare initial email"]
+  D3 -->|Both| B1["Prepare eligible LinkedIn and email paths"]
+
+  L1 --> D4{"Message approval required?"}
+  E1 --> D4
+  B1 --> D4
+  D4 -->|Yes| H6["Human: edit, regenerate, reject, or approve"]
+  D4 -->|No| A4["Agent: queue automatic delivery"]
+  H6 --> A5["Agent: send approved outreach on an eligible run"]
+  A4 --> A5
+
+  A5 --> D5{"Reply or human outcome detected?"}
+  D5 -->|Reply or outcome| S1["Stop automation immediately on both channels"]
+  D5 -->|No| A6["Agent: send due follow-ups<br/>up to 3 email + 1 LinkedIn"]
+  A6 --> D6{"Reply or outcome now?"}
+  D6 -->|Yes| S1
+  D6 -->|No, follow-ups remain| A6
+  D6 -->|No, sequence complete| D7{"Usable phone number?"}
+
+  S1 --> H7["Human: read the thread, reply personally, and set an outcome"]
+  D7 -->|Yes| H8["Human: call the prospect and record the result"]
+  D7 -->|No| H9["Human: review and mark Unreachable when appropriate"]
+  H7 --> S2["Outcome keeps prospect out of automation"]
+  H8 --> S2
+  H9 --> S2
+
+  H10["Human: select Stop during an active run"] --> S3["Current processing stops immediately;<br/>completed sends remain"]
+  H11["Human: set an outcome at any point"] --> S2
+  H12["Human: archive prospect or blacklist company"] --> S4["Stop future automated outreach immediately"]
+
+  classDef human fill:#FEF3C7,stroke:#D97706,color:#451A03,stroke-width:1.5px;
+  classDef agent fill:#DBEAFE,stroke:#2563EB,color:#172554,stroke-width:1.5px;
+  classDef gate fill:#F4F4F5,stroke:#71717A,color:#18181B,stroke-width:1.5px;
+  classDef stop fill:#D1FAE5,stroke:#059669,color:#022C22,stroke-width:1.5px;
+  classDef hold fill:#EDE9FE,stroke:#7C3AED,color:#2E1065,stroke-width:1.5px;
+  class H1,H2,H3,H4,H5,H6,H7,H8,H9,H10,H11,H12 human;
+  class A1,A2,A3,A4,A5,A6,L1,E1,B1 agent;
+  class D1,D2,D3,D4,D5,D6,D7 gate;
+  class S1,S2,S3,S4 stop;
+  class Q,X1 hold;
+```
+
+## Where you intervene
+
+| Moment | Your action | What the agent does next |
+| --- | --- | --- |
+| **ICP setup or change** | Edit targeting, exclusions, weights, or thresholds. Refresh existing scores when prompted. | Uses the current score and threshold for new candidates and future queue eligibility. |
+| **Search or import** | Launch a Sales Navigator source, upload a CSV, or search at existing companies. | Retrieves candidates, applies filters, de-duplicates, and scores. Credits apply to found search or enrichment results, not only final matches. |
+| **Run start** | Enable the seat schedule or select **Run Now**. | Claims only currently eligible work within the seat's daily limits. |
+| **Message review, when enabled** | Edit, regenerate, reject, or approve the draft. | Sends an approved message only on an eligible run; approval itself does not send. |
+| **Reply** | Read the complete thread, reply personally, and set the appropriate outcome. | Stops automated follow-ups on email and LinkedIn immediately. |
+| **No reply after follow-ups** | Work prospects in **To Call** when a phone number is available; otherwise review whether **Unreachable** is appropriate. | Leaves the digital sequence stopped once its configured follow-ups are exhausted. |
+| **Sales progress** | Set **Meeting**, **Offer Sent**, **Closed Deal**, **Not interesting**, **Lost Deal**, or **Unreachable**. | Removes the prospect from every automated claim immediately. |
+
+## Optional paths
+
+<AccordionGroup>
+  <Accordion title="Approval on or off">
+    With approval on, generated email and LinkedIn messages wait for your review in **Messages**. With automatic delivery on, the approval step disappears, but you remain responsible for the generated content.
+  </Accordion>
+  <Accordion title="Scheduled or manual runs">
+    A schedule starts a complete run on the configured days and time. **Run Now** starts the same guarded pipeline on demand. Advanced runs can start at Messages, Outreach, or Follow-ups without bypassing eligibility checks.
+  </Accordion>
+  <Accordion title="LinkedIn, email, or both">
+    You can turn LinkedIn off for a seat while email continues. When both channels are available, the agent uses each path according to your settings. A reply on either channel stops follow-ups on both.
+  </Accordion>
+  <Accordion title="Follow-ups and phone handoff">
+    Set a channel's follow-up count to `0` to remove that loop. The supported maximum is three email follow-ups plus one LinkedIn follow-up. After the sequence is exhausted, prospects with a usable phone number surface for a human call.
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+  **Stages are facts, not controls.** You do not drag a prospect from **Invite Sent** to **Connected** or **Messaged**. Set a human [outcome](/operate/stages-and-outcomes) when the sales situation changes. Any outcome stops outreach immediately.
+</Warning>
+
+<CardGroup cols={3}>
+  <Card title="Configure targeting" icon="target" href="/configure/icp-and-scoring">
+    Define the ICP, scoring weights, and pipeline threshold.
+  </Card>
+  <Card title="Configure the run" icon="calendar-clock" href="/configure/schedule-and-limits">
+    Choose channels, approvals, follow-ups, schedules, and limits.
+  </Card>
+  <Card title="Handle handoffs" icon="handshake" href="/operate/replies-and-handoff">
+    Take over replies and work the human call queue.
+  </Card>
+</CardGroup>
