@@ -1,52 +1,90 @@
 ---
 title: "Stages und Outcomes"
-description: "Verstehe abgeleitete Pipeline-Stages, setze menschliche Outcomes und stoppe oder starte Ansprache sicher neu."
+description: "Verstehe abgeleitete Pipeline-Stages, setze Outcomes und stoppe oder starte Ansprache sicher neu, für eine Person oder ein ganzes Unternehmen."
 icon: "milestone"
 ---
 
 Stages und Outcomes beantworten unterschiedliche Fragen:
 
-- Eine **Stage** zeigt, was bisher passiert ist. Der Sales Agent leitet sie aus aufgezeichneten Aktivitäten ab.
-- Ein **Outcome** hält eine menschliche Entscheidung oder ein Vertriebsergebnis fest. Jedes Outcome stoppt automatisierte Ansprache.
+- Eine **Stage** zeigt, was bisher passiert ist. Der Sales Agent leitet sie aus aufgezeichneten Aktivitäten ab. Du kannst sie nicht manuell setzen.
+- Ein **Outcome** hält eine Entscheidung oder ein Vertriebsergebnis fest. Jedes Outcome stoppt die automatisierte Ansprache sofort.
 
 ## Stages sind automatisch
 
-Du kannst **Invited**, **Connected**, **Messaged** oder **Replied** nicht manuell auswählen. Diese Stages erscheinen, wenn die entsprechende Aktion oder das Ereignis aufgezeichnet wird.
+Du kannst **Invite Sent**, **Connected**, **Messaged** oder **Replied** nicht manuell auswählen. Diese Stages erscheinen, wenn die entsprechende Aktion oder das Ereignis aufgezeichnet wird.
 
 Beispiele:
 
 - eine gesendete Kontaktanfrage ergibt **Invite Sent**
 - eine erkannte Annahme ergibt **Connected**
 - eine erste E-Mail oder LinkedIn-Nachricht ergibt **Messaged**
-- eine erkannte Antwort ergibt **Replied**
+- eine erkannte Antwort ergibt je nach Inhalt **Replied**, **Declined** oder **Not right now**
+
+**Declined** und **Not right now** sind keine Outcomes. Die Sequenz ist gestoppt, weil die Person geantwortet hat, der Prospect bleibt aber im Spiel und kann später erneut angesprochen werden. Wie Antworten eingeordnet werden, steht unter [Antworten und Übergabe](/de/operate/replies-and-handoff).
+
+Unter **Prospects → Prospects** hat jede Stage einen eigenen Tab mit Anzahl. Die Tab-Leiste zeigt die Outreach-Stages, **To Call**, **Replied**, **Declined** und **Not right now**. Über **Tabs** fügst du weitere hinzu, etwa **Meeting** oder **Archived**. **To Call** ist eine Anrufliste, keine Stage: Ein Prospect darauf erscheint zusätzlich unter seiner Stage.
 
 Alle Stages findest du in der [Referenz der Pipeline-Stages](/de/reference/pipeline-stages).
 
 ## Outcomes sind manuelle Steuerungen
 
-Öffne einen Prospect und verwende die Outcome-Auswahl:
+Öffne einen Prospect und verwende die Outcome-Auswahl neben dem Namen. Jedes Outcome stoppt die automatisierte Ansprache sofort.
 
 | Outcome | Verwendung |
 | --- | --- |
 | **Meeting** | Ein Termin wurde vereinbart oder das Gespräch ist in deinen direkten Vertriebsprozess übergegangen. |
 | **Offer Sent** | Du hast ein kommerzielles Angebot gesendet. |
 | **Closed Deal** | Die Opportunity wurde gewonnen. |
-| **Not Interested** | Der Prospect hat abgelehnt und soll keine automatisierte Ansprache mehr erhalten. |
+| **Not interesting** | Der Lead ist für dich nicht interessant und soll keine automatisierte Ansprache mehr erhalten. |
+| **Asked to stop** | Die Person möchte nicht mehr kontaktiert werden. |
+| **Wrong person** | Nicht die Person, die du erreichen willst, etwa weil sie das Unternehmen verlassen hat oder die falsche Rolle hat. |
 | **Lost Deal** | Eine fortgeschrittene Opportunity wurde verloren. |
 | **Unreachable** | Die verfügbaren automatisierten Kanäle sind ausgeschöpft oder ungültig. |
 
-Jede Option zeigt „stops outreach“, weil sie den Prospect aus allen automatisierten Schritten entfernt.
+Jede Option zeigt „stops outreach“ im Menü. Einige Outcomes setzt der Sales Agent selbst: **Asked to stop**, wenn eine Antwort darum bittet, und **Unreachable**, wenn weder E-Mail-Adresse noch LinkedIn-Profil übrig ist. Ein erfasster Anruf kann **Meeting**, **Asked to stop** oder **Wrong person** setzen (siehe [Anrufe](/de/operate/replies-and-handoff#die-to-call-liste-abtelefonieren)).
+
+Liegt eine Antwort vor und ist kein Outcome gesetzt, zeigt die Auswahl **Replied** statt **In play**, weil die Antwort die Sequenz bereits gestoppt hat.
+
+### Grund ergänzen
+
+Nachdem du **Not interesting**, **Wrong person** oder **Lost Deal** gewählt oder einen Prospect archiviert hast, fragt ein kleines Feld nach dem Grund. Die Angabe ist freiwillig: Klicke daneben, um sie zu überspringen. Ein gespeicherter Grund erscheint in der **Timeline** des Prospects, damit du ihn auch Monate später noch siehst. Wenn du das Outcome änderst, wird der Grund gelöscht.
+
+### Mehrere Prospects auf einmal stoppen
+
+Wähle Zeilen unter **Prospects** (oder im Tab **Contacts**) aus und wähle **Set outcome…** oder **Archive**. Ein Bestätigungsdialog zeigt, wie viele Zeilen sich ändern, und überspringt Zeilen, die dieses Outcome schon haben oder archiviert sind. Das Sammelmenü bietet **Not interesting**, **Asked to stop**, **Wrong person** und **Unreachable**. Deal-Outcomes wie **Meeting** setzt du einzeln pro Prospect.
+
+Bei **Not interesting** und **Archive** kann der Dialog zusätzlich das ganze Unternehmen jeder ausgewählten Person stoppen (bis zu 50 ausgewählte Zeilen). Siehe [Ein ganzes Unternehmen stoppen](#ein-ganzes-unternehmen-stoppen).
 
 ## In play vorsichtig verwenden
 
-**In play** bedeutet, dass kein Outcome gesetzt ist. Wenn du einen gestoppten Prospect auf **In play** zurücksetzt, kann er anhand seiner bestehenden Historie wieder geeignet werden.
+**In play** bedeutet, dass kein Outcome gesetzt ist und die Automatisierung den Prospect für geeignete Schritte übernehmen kann. Wenn du einen gestoppten Prospect auf **In play** zurücksetzt, kann er anhand seiner bestehenden Historie wieder geeignet werden.
 
 <Warning>
   Das Zurücksetzen eines Outcomes auf **In play** löscht keine gesendeten Nachrichten, Follow-up-Zähler, Antworten oder Verbindungshistorie. Die nächste geeignete Aktion wird aus diesen bestehenden Fakten abgeleitet.
 </Warning>
 
+Prüfe vor dem Zurücksetzen die Timeline, damit du weißt, welcher automatisierte Schritt als Nächstes laufen würde.
+
+## Der Deal liegt beim Unternehmen
+
+Ein Deal läuft mit einem Unternehmen, nicht nur mit einer Person. Wenn du bei einem Prospect **Meeting**, **Offer Sent**, **Closed Deal** oder **Lost Deal** setzt, dann:
+
+- bekommt das Unternehmen dieselbe Stage und diese Person wird sein **primary**-Kontakt
+- stoppt die Ansprache aller anderen Personen in diesem Unternehmen
+- kommt das Unternehmen auf deine Blacklist, damit eine spätere Suche es nicht zurückbringt
+
+Wenn du eine Antwort als **Positive** markierst, passiert dasselbe mit der Unternehmens-Stage **In conversation**. So gestoppte Kolleginnen und Kollegen zeigen **Stopped — the company has a deal stage**. Mit **Keep in outreach** neben einer Person holst du nur diese eine Person zurück.
+
+Um die Stage selbst zu verwalten, öffne das Unternehmen unter **Companies** und nutze die Auswahl **Deal**: **In conversation**, **Meeting**, **Offer sent**, **Closed deal**, **Lost deal** oder **Not interesting**. Ist noch kein primary-Kontakt gesetzt, wähle **Make primary** bei der Person, mit der der Deal läuft. Setze die Stage auf **Reaching out — automatic** zurück, um alles rückgängig zu machen: Gestoppte Kolleginnen und Kollegen kehren in die Ansprache zurück und der Blacklist-Eintrag wird entfernt. Setzt du den primary-Kontakt auf **In play** zurück, wird die Unternehmens-Stage gelöscht, die sein Outcome gesetzt hat.
+
+### Ein ganzes Unternehmen stoppen
+
+Wenn du jemanden als **Not interesting** markierst oder archivierst, fragt das Prospect-Panel: **Not interesting for all of** des Unternehmens? Wähle **Whole company**, um alle dort zu stoppen und das Unternehmen auf deine Blacklist zu setzen, oder **Just this one**, um es bei dieser Person zu belassen. Nach einem Stopp für das ganze Unternehmen öffnet **Spare someone** den Tab **Colleagues**, wo du einzelne Personen in der Ansprache behältst.
+
 ## Archivierung und Outcome
 
-Archivieren blendet einen Prospect aus und stoppt die Automatisierung, ohne sein Outcome zu ändern. Beim Wiederherstellen kehrt der vorherige Zustand zurück. Hat der Prospect weiterhin ein Outcome, bleibt er auch nach dem Wiederherstellen gestoppt.
+Archivieren blendet einen Prospect aus und stoppt die Automatisierung, ohne sein Outcome zu ändern oder Historie zu löschen. Beim Wiederherstellen kehrt der vorherige Zustand zurück. Hat der Prospect weiterhin ein Outcome, bleibt er auch nach dem Wiederherstellen gestoppt.
+
+Archivierte Prospects findest du im Tab **Archived**. Hat der Sales Agent sie archiviert, nennt ihre Stage den Grund, etwa **Company blacklisted** oder **The company has a deal stage**.
 
 Nutze ein Outcome, um zu erfassen, warum der Vertriebsprozess beendet oder an einen Menschen übergeben wurde. Nutze das Archiv, um einen Datensatz aus der aktiven Ansicht zu entfernen, ohne seine Historie umzuschreiben.

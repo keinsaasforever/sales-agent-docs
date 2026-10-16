@@ -1,51 +1,77 @@
 ---
-title: "Referenz der Pipeline-Stages"
-description: "Referenz für jede abgeleitete Stage und jedes menschliche Outcome im Sales Agent."
+title: "Referenz der Pipeline-Stages und Outcomes im Sales Agent"
+sidebarTitle: "Pipeline-Stages"
+description: "Jede abgeleitete Stage und jedes Outcome in der Sales-Agent-Pipeline, mit den vollständigen Vorrangregeln, die bestimmen, welche Stage angezeigt wird."
 icon: "milestone"
 ---
 
-Der Sales Agent leitet Stages aus Aktivitäten und Stoppbedingungen ab. Der zutreffende Fakt mit der höchsten Priorität bestimmt die angezeigte Stage.
+Stages im Sales Agent werden **aus Aktivitäten abgeleitet**: Du verschiebst sie nicht manuell wie Karten auf einem Board. Der zutreffende Fakt mit der höchsten Priorität über einen Prospect bestimmt, welche Stage zu einem Zeitpunkt angezeigt wird.
 
 ## Aktive Fortschritts-Stages
 
+Diese sechs Stages zeigen die am weitesten fortgeschrittene automatisierte Aktion, die für einen Prospect aufgezeichnet ist.
+
 | Stage | Bedeutung |
 | --- | --- |
-| **New** | Der Prospect existiert, aber es wurde noch keine Recherche oder Outreach-Aktion aufgezeichnet. |
-| **Researched** | Anreicherung oder Recherche ist verfügbar. |
-| **Invite Sent** | Eine LinkedIn-Kontaktanfrage wurde gesendet. |
-| **Connected** | Die LinkedIn-Verbindung wurde angenommen. |
+| **New** | Der Prospect existiert in der Pipeline, aber es wurde noch keine Recherche oder Outreach-Aktion aufgezeichnet. |
+| **Researched** | Anreicherungs- oder Recherchedaten zum Prospect sind verfügbar. |
+| **Invite Sent** | Eine LinkedIn-Kontaktanfrage wurde gesendet und wartet auf Annahme. |
+| **Connected** | Die LinkedIn-Kontaktanfrage wurde angenommen. |
 | **Messaged** | Eine erste E-Mail oder LinkedIn-Nachricht wurde gesendet. |
-| **Followed Up** | Mindestens ein Follow-up wurde gesendet und die Sequenz ist noch nicht abgeschlossen. |
-| **To Call** | Die automatisierte Sequenz ist abgeschlossen oder digitale Kanäle sind ausgeschöpft und eine Telefonnummer ist verfügbar. |
-| **Replied** | Eine Antwort per E-Mail oder LinkedIn wurde erkannt. |
+| **Followed Up** | Mindestens eine Follow-up-Nachricht wurde gesendet. |
 
-## Menschliche Vertriebs-Outcomes
+## Antwort-Stages
 
-| Stage / Outcome | Bedeutung |
+Eine Antwort per E-Mail oder LinkedIn stoppt die automatisierte Ansprache auf beiden Kanälen. Die Stage zeigt, was die Antwort sagt:
+
+| Stage | Bedeutung |
 | --- | --- |
-| **Meeting** | Ein Termin wurde vereinbart oder das Gespräch wurde an einen Menschen übergeben. |
-| **Offer Sent** | Ein kommerzielles Angebot wurde gesendet. |
-| **Closed Deal** | Die Opportunity wurde gewonnen. |
-| **Not Interested** | Der Prospect hat abgelehnt. |
-| **Lost Deal** | Eine fortgeschrittene Opportunity wurde verloren. |
-| **Unreachable** | Kein konfigurierter automatisierter Kanal ist mehr nutzbar. |
+| **Replied** | Eine positive oder neutrale Antwort oder eine, die der Assistent noch nicht gelesen hat. Sie wartet auf deine Antwort. |
+| **Declined** | Eine negative Antwort. Sie ist kein Outcome: Du kannst die Person später selbst wieder ansprechen. |
+| **Not right now** | Ein Timing-Einwand: Der Prospect hat einen späteren Zeitpunkt genannt. |
 
-Jedes Outcome stoppt automatisierte Ansprache.
+## Outcomes
+
+Outcomes halten das reale Ergebnis eines Gesprächs fest. Jedes Outcome stoppt sofort die gesamte weitere automatisierte Ansprache für diesen Prospect.
+
+| Outcome | Bedeutung |
+| --- | --- |
+| **Meeting** | Ein Termin wurde vereinbart oder das Gespräch ist in eine Interaktion von Mensch zu Mensch übergegangen. |
+| **Offer Sent** | Ein kommerzielles Angebot wurde an den Prospect gesendet. |
+| **Closed Deal** | Die Opportunity wurde gewonnen. |
+| **Not interesting** | Du hast entschieden, dass der Lead für dich nicht interessant ist. |
+| **Asked to stop** | Der Prospect hat darum gebeten, nicht mehr kontaktiert zu werden. |
+| **Wrong person** | Nicht die Person, die du erreichen willst, etwa weil sie das Unternehmen verlassen hat oder eine andere Rolle hat. |
+| **Lost Deal** | Eine fortgeschrittene Opportunity hat nicht zu einem Verkauf geführt. |
+| **Unreachable** | Kein konfigurierter automatisierter Kanal ist für diesen Prospect mehr nutzbar. |
+
+Du setzt Outcomes selbst. Zwei setzt der Sales Agent selbst: **Unreachable**, wenn kein Kanal mehr bleibt, und **Asked to stop**, wenn eine Antwort darum bittet.
+
+**Meeting**, **Offer Sent** oder **Closed Deal** oder eine als positiv markierte Antwort setzen außerdem die Stage des Unternehmens unter **Companies**, stoppen die Ansprache seiner anderen Kontakte und setzen das Unternehmen auf deine Sperrliste. Unter **Settings → Schedule → When a company says yes** legst du fest, ob eine Antwort, die der Assistent als interessiert liest, dasselbe auslöst.
+
+## To-Call-Liste
+
+**To Call** ist ein Tab unter **Prospects**, keine Stage: Ein Lead kann **Messaged** sein und gleichzeitig angerufen werden sollen. Ein Lead mit nutzbarer Telefonnummer landet dort zu dem Zeitpunkt, den du unter **Settings → Targeting → Call list** wählst (standardmäßig, wenn alle Follow-ups gesendet sind). Ein Lead mit **Unreachable** und Telefonnummer steht unabhängig davon, was du wählst, auf der Liste. Eine Antwort oder ein anderes Outcome nimmt ihn herunter.
 
 ## Archived
 
-**Archived** blendet den Prospect aus und stoppt ihn, ohne die Historie zu löschen. Das vorherige Outcome bleibt bestehen. Beim Wiederherstellen kehrt der Datensatz zurück, ein bestehendes Outcome stoppt die Ansprache jedoch weiterhin.
+Wenn du einen Prospect als **Archived** markierst, blendet das den Datensatz in den Standardansichten der Pipeline aus und stoppt jede Ansprache, ohne die Historie oder Nachrichten des Prospects zu löschen. Der Sales Agent archiviert Prospects auch selbst, etwa wenn du ihr Unternehmen auf die Blacklist setzt; der Datensatz zeigt dann den Grund, zum Beispiel **Company blacklisted**.
+
+- Das vorherige Outcome, falls vorhanden, bleibt am Datensatz bestehen.
+- Beim Wiederherstellen kehrt der Datensatz in die Pipeline-Ansichten zurück, aber ein bestehendes Outcome stoppt die automatisierte Ansprache weiterhin, bis du es löschst.
+
+Nutze **Archived** für Prospects, die du auf unbestimmte Zeit beiseitelegen willst, ohne die Gesprächshistorie zu verlieren.
 
 ## Prioritätsregeln
 
-Die Anzeige folgt diesen Grundsätzen:
+Treffen mehrere Fakten auf denselben Prospect zu, folgt die angezeigte Stage diesen Regeln in dieser Reihenfolge:
 
-1. **Archived** hat Vorrang vor allem anderen.
-2. Ein menschliches Outcome wie **Closed Deal** hat Vorrang vor einer historischen Antwort.
-3. Eine erkannte Antwort hat Vorrang vor normalem Outreach-Fortschritt.
-4. Ein nicht erreichbarer Prospect mit Telefonnummer erscheint als **To Call** statt als **Unreachable**.
-5. Andernfalls zeigt die Stage die am weitesten fortgeschrittene aufgezeichnete automatisierte Aktion.
+1. **Archived hat Vorrang vor allem anderen.** Ein archivierter Prospect wird nie als aktiv angezeigt, unabhängig von allen anderen Fakten.
+2. **Ein Outcome außer Unreachable hat Vorrang vor einer Antwort.** Hast du **Closed Deal** erfasst und wurde zusätzlich eine Antwort erkannt, wird das Outcome angezeigt.
+3. **Eine erkannte Antwort hat Vorrang vor allem Folgenden.** Ein Prospect, der geantwortet hat, zeigt **Replied**, **Declined** oder **Not right now**, auch wenn er später als **Unreachable** markiert wurde.
+4. **Danach folgt Unreachable.** Eine Telefonnummer ändert die Stage nicht; sie setzt den Lead auf die **To Call**-Liste.
+5. **Andernfalls zeigt die Stage die am weitesten fortgeschrittene aufgezeichnete automatisierte Aktion.**
 
 <Note>
-  Das Zurücksetzen auf **In play** löscht nur das Outcome. Es löscht nicht die Aktionshistorie; die Stage wird aus den verbleibenden Fakten neu berechnet.
+  Das Zurücksetzen eines Prospects auf **In play** löscht nur das erfasste Outcome. Es löscht **nicht** die Aktionshistorie; die angezeigte Stage wird deshalb sofort aus den verbleibenden Fakten (Recherche, gesendete Nachrichten, Antworten usw.) neu berechnet.
 </Note>

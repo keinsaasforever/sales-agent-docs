@@ -41,8 +41,10 @@
             "pages": [
               "index",
               "getting-started/quickstart",
+              "getting-started/seats-and-accounts",
               "getting-started/how-it-works",
               "getting-started/agent-flow",
+              "getting-started/dashboard",
               "getting-started/daily-workflow"
             ]
           },
@@ -64,9 +66,11 @@
               "operate/next-run-queue",
               "operate/run-the-pipeline",
               "operate/review-messages",
+              "operate/prospects-and-companies",
               "operate/stages-and-outcomes",
               "operate/replies-and-handoff",
-              "operate/activity-and-troubleshooting"
+              "operate/activity-and-troubleshooting",
+              "operate/jobs"
             ]
           },
           {
@@ -111,8 +115,10 @@
             "pages": [
               "de/index",
               "de/getting-started/quickstart",
+              "de/getting-started/seats-and-accounts",
               "de/getting-started/how-it-works",
               "de/getting-started/agent-flow",
+              "de/getting-started/dashboard",
               "de/getting-started/daily-workflow"
             ]
           },
@@ -134,9 +140,11 @@
               "de/operate/next-run-queue",
               "de/operate/run-the-pipeline",
               "de/operate/review-messages",
+              "de/operate/prospects-and-companies",
               "de/operate/stages-and-outcomes",
               "de/operate/replies-and-handoff",
-              "de/operate/activity-and-troubleshooting"
+              "de/operate/activity-and-troubleshooting",
+              "de/operate/jobs"
             ]
           },
           {

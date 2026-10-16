@@ -1,33 +1,86 @@
 ---
 title: "Review messages"
 sidebarTitle: "Review Messages"
-description: "Edit, regenerate, reject, or approve AI-generated outreach in the Sales Agent dashboard before any message reaches a prospect."
+description: "Edit, approve, regenerate, or stop AI-generated outreach in the Sales Agent dashboard before any message reaches a prospect."
 icon: "message-square-check"
 ---
 
-Open **Messages** to see generated email and LinkedIn messages. When approval is required under **Settings → Schedule**, every generated message waits here before it can be sent.
+Open **Messages** to see every generated first message, email and LinkedIn, that has not been sent yet. When approval is required, each one waits here until you approve it. Follow-ups never wait here: they are written and sent automatically during the run, whatever the approval setting.
+
+As a member, you see the messages of your own seats. As an admin, you see the whole account. When the queue holds messages from more than one seat, use the **All seats** menu to show one seat.
+
+## Read the queue
+
+The list sits on the left and the open message on the right. On a phone, the message opens over the list. Use the tabs to switch lists:
+
+| Tab | What it lists |
+| --- | --- |
+| **Needs approval** | Messages waiting for your decision. Shown only while approval is required. |
+| **Next to send** | Approved messages. Called **Queued** when approval is off. The count includes only messages the next run will send; a line under the tabs says how many listed messages are not going out on the next run. |
+| **Not going out** | Drafts that cannot be sent: the seat is switched off, LinkedIn is off for the seat, LinkedIn is closed for this contact, or there is no deliverable address. |
+
+A badge on a row shows its state:
+
+| Badge | What it means |
+| --- | --- |
+| **Sending** | A running pipeline is sending this message. |
+| **Held back** | The message is not sent as it stands. See [Held-back messages](#held-back-messages). |
+| **Waiting** | The message waits for something first, for example its LinkedIn invite or a reconnected LinkedIn account. The open message says what. |
+| **Approve to send** | Approval is off, but this message was written while it was on, so it waits for your approval. |
+
+The open message shows the contact, company, seat, and the date it was generated. A line at the top says what the message was built on, such as a signal from the contact's LinkedIn posts, or that it was written from their role and company. Email messages show the **To** address. Expand **Strategy brief** to see why the message was written.
 
 ## Message actions
 
 ### Edit
 
-Change the subject line or message body while keeping the existing research context and messaging strategy. Use **Edit** for a targeted wording correction — fixing a name, adjusting a tone, or shortening a sentence — where the underlying approach is sound.
+Change the subject or message body directly in the open message. Changes are saved when you press `⌘S` (`Ctrl+S` on Windows), when you approve, or when you move to another message. **Discard** drops unsaved changes. On LinkedIn messages, the subject is used only if LinkedIn delivers the message as an InMail.
 
-### Regenerate
-
-Discard the current draft entirely and produce a new message from scratch. Choose **Regenerate** when the strategy itself is wrong: the angle is off, the proof point is irrelevant, or the message doesn't fit the persona. Avoid regenerating for minor wording preferences; small edits are faster and preserve the research investment.
-
-### Reject
-
-Remove the message from the send queue without deleting the contact or company record. A rejected message stops that outreach cycle for the contact. The contact remains in the pipeline and can receive a new message on the next eligible run.
+Use editing for a targeted wording correction, such as fixing a name, adjusting the tone, or shortening a sentence, where the underlying approach is sound. The agent never overwrites a message you edited, and an edited message is never held back for age. With approval off, a saved edit is what the next run sends.
 
 ### Approve
 
-Mark an email or LinkedIn message as ready to send. Approval does not trigger immediate delivery — the message enters the outreach queue and waits for the next pipeline run and the seat's daily limit.
+Select **Approve**, or **Save & approve** when you have unsaved changes, to mark a message ready to send. Approval does not trigger immediate delivery: the message waits for the next pipeline run and the seat's daily limit. The next message in the list opens.
+
+### Regenerate
+
+Discard the current draft and have the agent write a new one on the next message run. To get it sooner, run **Messages** from **Advanced** on **Home**. Choose **Regenerate** when the strategy itself is wrong: the angle is off, the proof point is irrelevant, or the message doesn't fit the persona.
+
+Before you confirm, describe what was wrong in **Optional: what was wrong with it?** Without a reason, you get the same angle in different words.
+
+**Regenerate** is unavailable when nothing would rewrite the draft, for example when the contact has not been researched yet, the seat has no mailbox connected, or the LinkedIn invite has not gone out. The open message says why.
+
+### Not interesting
+
+Select **Not interesting** to stop outreach to this person. Their outcome becomes **Not interesting** and their drafts leave the queue; the contact and company records stay. Select **All of** the company instead to do the same for everyone there: the company's stage becomes **Not interesting** and the company is added to your blacklist.
+
+To fix a bad draft without stopping the person, use **Regenerate** instead.
+
+<Tip>
+  Press `j` and `k` to move through the list, and `⌘↵` to approve the open message.
+</Tip>
+
+## Held-back messages
+
+When approval is required and **Hold back stale drafts** is on under **Settings → Schedule**, a message written from a LinkedIn post or another signal more than 30 days ago is held back instead of sent. A message whose signal has ended is held back whatever the approval setting. Messages written from someone's role and company, and messages you edited, are never held back for age.
+
+A banner at the top of **Messages** counts held-back messages. Each one is rewritten from current research on the next message run. To send the copy as it stands, select **Send anyway** in the open message. This approves the copy and restarts its 30-day window.
+
+## LinkedIn messages and the invite
+
+A LinkedIn message is written once the connection request has gone out, and it is sent after the invite, not before. Until then it shows **Waiting**. If the invite is still pending, the message shows the date of the next try. On a seat set to send the LinkedIn invite first, the email waits until the invite is out, for 7 days at most.
+
+## Approval on or off
+
+An admin chooses the delivery mode under **Settings → Schedule → Outreach delivery**: **Approve every message from the dashboard** or **Send everything automatically**. New accounts start with approval on.
+
+With approval off, new messages are approved as they are written. They appear under **Queued**, and you can still edit them before the next run sends them.
+
+When an admin switches approval off, messages still waiting for approval are approved on save. With **Hold back stale drafts** on, those written from a post or signal more than 30 days ago are rewritten first; where nothing can rewrite them yet, they stay held back for you to decide.
 
 ## Review the strategy, not only grammar
 
-Expand each message to read its strategy brief before approving. Confirm all of the following:
+Open the **Strategy brief** of each message before approving. Confirm all of the following:
 
 - [ ] The person and company details are correct and current
 - [ ] The message reflects the prospect's actual role and context
@@ -45,11 +98,11 @@ Expand each message to read its strategy brief before approving. Confirm all of 
 
 Existing drafted or approved messages are not automatically regenerated when you update the messaging playbook. New settings take effect only for messages generated after the change.
 
-To apply updated playbook settings to contacts that already have a draft:
+To apply updated playbook settings to messages that already have a draft:
 
-1. Open **Messages** and filter for the affected contacts.
-2. **Reject** or **Regenerate** each existing draft.
-3. Run the pipeline to produce new drafts under the updated settings.
+1. Open **Messages** and pick the affected seat in **All seats** if needed.
+2. Select **Regenerate** on each existing draft.
+3. Run the pipeline, or **Messages** from **Advanced**, to produce new drafts under the updated settings.
 4. Keep approval mode enabled until the updated output looks stable before switching to automatic delivery.
 
 See [Messaging playbook](/configure/messaging-playbook) for the settings that control tone, persona, proof points, and call-to-action for new messages.

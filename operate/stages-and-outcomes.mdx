@@ -1,63 +1,97 @@
 ---
 title: "Stages and outcomes"
 sidebarTitle: "Stages & Outcomes"
-description: "Understand derived pipeline stages, set human outcomes, and stop or restart outreach safely."
+description: "Understand derived pipeline stages, set outcomes, and stop or restart outreach safely, for one person or a whole company."
 icon: "milestone"
 ---
 
 Every prospect in the Sales Agent carries two pieces of status information that serve different purposes:
 
-- A **stage** describes what has happened so far. The Sales Agent derives it automatically from recorded activity — you cannot set it manually.
-- An **outcome** records a human decision or a sales result. Setting any outcome stops all automated outreach for that prospect immediately.
+- A **stage** describes what has happened so far. The Sales Agent derives it automatically from recorded activity. You cannot set it manually.
+- An **outcome** records a decision or a sales result. Setting any outcome stops all automated outreach for that prospect immediately.
 
 Understanding the distinction helps you know when to intervene and what each status actually means.
 
 ## Stages are automatic
 
-Stages update as the pipeline acts on a prospect or as the prospect responds. You cannot select **Invited**, **Connected**, **Messaged**, or **Replied** from a dropdown — they appear when the corresponding event is recorded.
+Stages update as the pipeline acts on a prospect or as the prospect responds. You cannot select **Invite Sent**, **Connected**, **Messaged**, or **Replied** from a dropdown. They appear when the corresponding event is recorded.
 
 For example:
 
 - Sending a connection request produces **Invite Sent**
 - Detecting an accepted connection produces **Connected**
 - Sending an initial email or LinkedIn message produces **Messaged**
-- Detecting a reply on either channel produces **Replied**
+- Detecting a reply on either channel produces **Replied**, **Declined**, or **Not right now**, depending on what the reply says
 
-The Sales Agent derives every stage from the underlying facts. That makes stages a reliable audit trail of what actually happened, independent of human judgment.
+**Declined** and **Not right now** are not outcomes. The sequence has stopped because the person replied, but the prospect stays in play and can be approached again later. See [Replies and handoff](/operate/replies-and-handoff) for how replies are sorted.
+
+On **Prospects → Prospects**, each stage has its own tab with a count. The tab bar shows the outreach stages, **To Call**, **Replied**, **Declined**, and **Not right now**. Use **Tabs** to add others, such as **Meeting** or **Archived**. **To Call** is a call list, not a stage: a prospect on it also appears under its stage.
 
 See the [pipeline stage reference](/reference/pipeline-stages) for a complete list of every stage and the conditions that trigger it.
 
 ## Outcomes are manual controls
 
-Open a prospect's profile and use the outcome selector to record a human decision. Every outcome immediately stops automated outreach for that prospect.
+Open a prospect and use the outcome selector next to the name. Every outcome immediately stops automated outreach for that prospect.
 
 | Outcome | When to use it |
 | --- | --- |
 | **Meeting** | A meeting is booked or the conversation has entered your direct sales process. |
 | **Offer Sent** | You have sent a commercial proposal to the prospect. |
 | **Closed Deal** | The opportunity was won and the deal is complete. |
-| **Not Interested** | The prospect declined and should receive no further automated outreach. |
+| **Not interesting** | The lead is not interesting for you and should receive no further automated outreach. |
+| **Asked to stop** | The person asked not to be contacted again. |
+| **Wrong person** | Not the person you want to reach, for example because they left the company or hold the wrong role. |
 | **Lost Deal** | A progressed opportunity was lost after a proposal or active discussion. |
 | **Unreachable** | All available automated channels are exhausted or invalid for this contact. |
 
-All six options display "stops outreach" because they all remove the prospect from automated steps. The distinction between them is for your reporting and pipeline visibility — not for changing automation behaviour.
+Every option shows "stops outreach" in the menu. The Sales Agent also sets some outcomes itself: **Asked to stop** when a reply asks to stop, and **Unreachable** when no email address or LinkedIn profile is left to use. A logged call can set **Meeting**, **Asked to stop**, or **Wrong person** (see [calls](/operate/replies-and-handoff#call-the-to-call-list)).
+
+When a reply is on file and no outcome is set, the selector shows **Replied** instead of **In play**, because the reply has already stopped the sequence.
+
+### Add a reason
+
+After you choose **Not interesting**, **Wrong person**, or **Lost Deal**, or archive a prospect, a small box asks why. The reason is optional: click away to skip it. A saved reason appears on the prospect's **Timeline**, so you can still see why months later. Changing the outcome clears the reason.
+
+### Stop several prospects at once
+
+Select rows on **Prospects** (or in the **Contacts** tab) and choose **Set outcome…** or **Archive**. A confirmation dialog shows how many rows will change and skips those that already have that outcome or are archived. The bulk menu offers **Not interesting**, **Asked to stop**, **Wrong person**, and **Unreachable**. Set deal outcomes such as **Meeting** one prospect at a time.
+
+For **Not interesting** and **Archive**, the dialog can also stop each selected person's whole company (up to 50 selected rows). See [Stop a whole company](#stop-a-whole-company).
 
 ## Use In play carefully
 
 **In play** is the default state: no outcome is set, and automation can still claim the prospect for eligible steps. Returning a stopped prospect to **In play** can make it eligible for automated work again based on its existing history.
 
 <Warning>
-  Changing an outcome back to **In play** does not erase sent messages, follow-up counts, replies, or connection history. The next eligible action is determined by those existing facts — a prospect who has already received three follow-ups will not restart from scratch.
+  Changing an outcome back to **In play** does not erase sent messages, follow-up counts, replies, or connection history. The next eligible action is determined by those existing facts. A prospect who has already received three follow-ups will not restart from scratch.
 </Warning>
 
-Before returning a prospect to **In play**, review their activity timeline to understand exactly which automated step would run next.
+Before returning a prospect to **In play**, review their timeline to understand exactly which automated step would run next.
+
+## The deal lives on the company
+
+A deal is with a company, not only with one person. When you set **Meeting**, **Offer Sent**, **Closed Deal**, or **Lost Deal** on a prospect, the Sales Agent:
+
+- gives the company the same stage and makes this person its **primary** contact
+- stops outreach to everyone else at that company
+- adds the company to your blacklist, so a later search does not bring it back
+
+Marking a reply **Positive** does the same with the company stage **In conversation**. Colleagues stopped this way show **Stopped — the company has a deal stage**. Select **Keep in outreach** next to a colleague to put that one person back.
+
+To manage the stage yourself, open the company on **Companies** and use the **Deal** selector: **In conversation**, **Meeting**, **Offer sent**, **Closed deal**, **Lost deal**, or **Not interesting**. If no primary contact is set yet, choose **Make primary** next to the person the deal is with. Set the stage back to **Reaching out — automatic** to undo it: stopped colleagues return to outreach and the blacklist entry is removed. Returning the primary contact to **In play** clears the company stage that the outcome set.
+
+### Stop a whole company
+
+When you mark someone **Not interesting** or archive them, the prospect panel asks: **Not interesting for all of** the company? Select **Whole company** to stop everyone there and add the company to your blacklist, or **Just this one** to keep it to this person. After a whole-company stop, use **Spare someone** to open the **Colleagues** tab and keep individual people in outreach.
 
 ## Archive versus outcome
 
-Archiving a prospect hides them from the active view and stops automation — but it does not change the outcome field and does not delete any history.
+Archiving a prospect hides them from the active view and stops automation, but it does not change the outcome and does not delete any history.
 
 - **Unarchiving** restores the previous state. If the prospect still has an outcome set, they remain stopped after unarchiving.
 - **Outcome** records *why* the sales process ended or moved to a human conversation.
 - **Archive** removes a record from the active view without rewriting or deleting its history.
 
-Use an outcome when the sales result is known. Use archive to declutter the active view for records that no longer need attention, such as contacts who left a company or were added in error.
+Archived prospects are on the **Archived** tab. Their stage says why they stopped when the Sales Agent archived them, for example **Company blacklisted** or **The company has a deal stage**.
+
+Use an outcome when the sales result is known. Use archive to declutter the active view for records that no longer need attention, such as contacts who were added in error.

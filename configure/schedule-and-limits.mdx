@@ -1,70 +1,87 @@
 ---
 title: "Configure Your Schedule, Daily Limits, and Channels"
 sidebarTitle: "Schedule"
-description: "Set run times, daily action caps, channel routing, and follow-up spacing so each seat operates at the right pace and on the right channels."
+description: "Set channels, run times, daily limits, LinkedIn options, and follow-up spacing so each seat operates at the right pace and on the right channels."
 icon: "calendar-clock"
 ---
 
-Open **Settings → Schedule** to configure each seat individually. A seat owns its run schedule and daily limits. Follow-up counts and delivery mode are shared settings that apply across all seats.
+Open **Settings → Schedule** to configure each seat individually. A seat owns its outreach channel, run schedule, and daily limits. Cards marked **(all reps)** hold shared settings that apply across all seats. With more than one seat, pick the seat under **Rep** at the top.
+
+You can change your own seat's channel, schedule, and daily limits. Only admins can change the shared settings.
+
+## Choose the outreach channel
+
+In the **Outreach channel** card, set **LinkedIn outreach** for the seat:
+
+- **Both together** — LinkedIn and email run in parallel, so more prospects enter the pipeline each day.
+- **LinkedIn first** — the connection request goes out before the first email. Prospects you cannot reach on LinkedIn are emailed right away, and anyone still waiting after a week is emailed too.
+- **Off** — no LinkedIn actions for this seat; email outreach still runs.
+
+The card warns you when the seat has no LinkedIn account or mailbox connected. Connect them under **Settings → Account**.
 
 ## Configure the run time
 
-For each seat, complete these steps:
+In the **Workflow Schedule** card, complete these steps:
 
 <Steps>
-  <Step title="Select the representative">
-    Choose the sales rep whose LinkedIn and email accounts will execute outreach.
-  </Step>
   <Step title="Enable or disable the schedule">
     Toggle **Schedule enabled** on to run automatically, or leave it off to run only on demand via **Run Now**.
   </Step>
   <Step title="Choose active days">
-    Select the days of the week the seat should run.
+    Under **Days**, select the days of the week the seat should run.
   </Step>
   <Step title="Set the start time">
-    Pick the time of day the run begins.
+    Pick the **Start time**. Each run starts up to 20 minutes after this time.
   </Step>
   <Step title="Confirm the timezone">
-    Verify the timezone matches the representative's working location.
+    Verify the **Timezone** matches the representative's working location.
   </Step>
 </Steps>
 
-The dashboard schedules one complete run per active day. When scheduling is off, the seat remains inactive until you trigger **Run Now** manually.
+The dashboard schedules one run per selected day. When scheduling is off, the seat remains inactive until you trigger **Run Now** manually.
 
 <Warning>
-  Treat the scheduled window as an automation period. Do not use LinkedIn manually while a run is active — concurrent activity can cause unexpected behavior. Allow roughly two to five hours for a full run, depending on your configured volume.
+  Treat the scheduled window as an automation period. Do not use LinkedIn manually while a run is active — concurrent activity can cause unexpected behavior. The **Daily Limits** card shows when a run is usually done. A single run may take at most five hours; if your limits would need longer, the card tells you to lower them.
 </Warning>
 
-## Set daily action limits
+## Set daily limits
 
-Limits are per seat and reset each calendar day. Use them to control pace during warm-up and to stay within comfortable activity levels.
+Limits are per seat and reset each calendar day. The **Daily Limits** card groups them by channel, and each field shows what is safe for the seat right now.
 
-| Limit | What it controls |
-|---|---|
-| **Connection requests** | New LinkedIn invitations sent. The dashboard caps this setting at 20 per day. |
-| **Messages** | New personalized messages generated for the day. |
-| **Outreach** | LinkedIn messages ready to send in a single run. |
-| **Emails** | Initial outbound emails. Leave empty to follow the Outreach limit. |
-| **Follow-up emails** | Due email follow-ups sent that day. |
-| **Follow-up LinkedIn** | Due LinkedIn follow-ups sent that day. |
+| Channel | Limit | What it controls |
+|---|---|---|
+| LinkedIn | **New people per day** | Connection requests sent. The dashboard caps this at 20 per day. |
+| LinkedIn | **Messages to new connections per day** | First messages once an invite is accepted. |
+| LinkedIn | **Follow-ups per day** | LinkedIn follow-ups when the first message gets no answer. |
+| Email | **New people per day** | First emails sent. |
+| Email | **Follow-ups per day** | Email follow-ups when an email gets no answer. It cannot be 0, because the same step picks up replies and bounces. To send no email follow-ups, set **Email follow-ups** to 0 instead. |
 
-The **Next run** count shown on the Home dashboard is the smaller of your eligible contacts and the relevant daily limit. Contacts beyond the cap remain queued and are picked up in a later run.
+The LinkedIn limits are hidden when LinkedIn outreach is **Off**. At most the higher of the two **New people per day** numbers enter the pipeline each day, because LinkedIn and email reach the same people. People still waiting for their first message count toward it, so a run tops the pipeline up instead of growing it. The **Next run** count shown on the Home dashboard is the smaller of your eligible contacts and the relevant daily limit. Contacts beyond the cap remain queued and are picked up in a later run.
 
-Start with conservative limits and increase them gradually through the warm-up period. A normal Sales Navigator plan supports roughly 100 contacts per week per account as a ceiling. Higher SSI may allow more, but neither reach nor account safety is guaranteed. keinsaas applies available safety measures; you remain responsible for following [LinkedIn hygiene rules](/safety/linkedin-hygiene).
+Start low and raise the limits over the first weeks:
 
-## Choose the channel behavior
+- **LinkedIn** warms up from the seat's first invite: about 3 a day in week 1, 10 a day from week 2, and up to 20 a day from week 4. After the warm-up, Free and Premium accounts stay at about 10 a day. The warm-up starts over after 30 days without an invite. Enter the seat's **Social Selling Index (SSI)** from Sales Navigator to help judge how high it can go.
+- **Email** follows the mailbox state you select: **New mailbox** (about 3 a day), **Some sending history** (about 10 a day), or **Mailbox warmed** (no warm-up limit).
 
-For each seat, select one of these channel modes:
+No limit rises on its own. When a seat reaches the next LinkedIn warm-up week, a to-do and the notification bell offer **Raise to** the new number in one click.
 
-- **Always** — both LinkedIn and email run as configured.
-- **Off** — no LinkedIn actions are taken; email can still run.
-- **Prioritize emails** — email outreach runs first; LinkedIn follows only afterward.
+A normal Sales Navigator plan supports roughly 100 contacts per week per account as a ceiling. Higher SSI may allow more, but neither reach nor account safety is guaranteed. keinsaas applies available safety measures; you remain responsible for following [LinkedIn hygiene rules](/safety/linkedin-hygiene).
 
-You can also enable optional inactive-profile rules to route dormant LinkedIn profiles to email only, and configure post-like warm-up to like up to two recent posts before sending a connection request.
+The **Sent per day** card shows the most the scheduled runs can send on each day of the week, for all active seats together. Fewer usually go out, because each message needs someone ready for it. Runs started by hand come on top.
+
+## Set LinkedIn options
+
+The **LinkedIn options (all reps)** card controls how LinkedIn behaves for every seat:
+
+- **No profile picture and few connections** — prospects without a profile picture and with fewer connections than **Connections below** get email only. Checked before the connection request.
+- **No posts or comments in the last 30 days** — checked during research, after the connection request, so it skips the LinkedIn message, not the request. It needs **Export LinkedIn posts and comments** switched on in **Settings → Targeting**.
+- **Like recent posts before connecting** — likes up to two of the prospect's recent posts before the connection request.
+- **InMail fallback** — sends the message as an InMail when a connection request has not been accepted after the waiting period. InMails use the seat's own Sales Navigator InMail credits, so a seat without Sales Navigator sends them only to people with an open profile, who can be messaged for free. When off, messages wait for the connection. People with an open profile are messaged straight away either way.
+- **LinkedIn send delay (hours)** — how long to wait after a connection request before the first LinkedIn message.
 
 ## Configure follow-ups
 
-The client-wide maximum follow-up counts are:
+In the **Follow-ups (all reps)** card, the client-wide maximum follow-up counts are:
 
 - up to **3 email follow-ups**
 - up to **1 LinkedIn follow-up**
@@ -79,12 +96,18 @@ Set either channel's follow-up count to `0` to turn it off entirely. Follow-ups 
 
 A reply on either channel stops all automated follow-ups across both channels for that prospect.
 
+## Choose delivery and company stops
+
+**Outreach delivery (all reps)** sets whether you approve every message first. See [Messaging](/configure/messaging-playbook#decide-how-much-to-review).
+
+**When a company says yes (all reps)** decides what stops outreach to a whole company. Marking a **Meeting**, **Offer Sent**, or **Closed Deal**, or marking a reply as positive, sets the company's stage, stops outreach to its other contacts, and adds it to your blacklist. Under **What counts as a yes**, choose **Only what you mark yourself**, or **Also a reply the assistant reads as interested** to let a positive reply start this on its own.
+
 ## Save and verify
 
-After saving your schedule settings, return to **Home** and confirm:
+Select **Save schedule**, then return to **Home** and confirm:
 
-- [ ] **Schedule** shows **Active** for every seat you intended to enable
-- [ ] **Daily limits** reflect the combined capacity across active seats
+- [ ] **Schedule** shows **Active** for the seats you intended to enable
+- [ ] **Daily Limits** shows the new people per day you expect on LinkedIn and email
 - [ ] **Approval** shows the delivery mode you configured
 - [ ] **Next run** count reflects the expected caps
 

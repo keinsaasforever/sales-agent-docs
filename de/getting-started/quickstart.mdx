@@ -4,7 +4,7 @@ description: "Vom aktivierten Konto zum kontrollierten ersten Sales-Agent-Lauf."
 icon: "rocket"
 ---
 
-Nutze diese Checkliste, nachdem keinsaas dein Konto aktiviert hat. Öffne das [Sales Agent Dashboard](https://sales.keinsaas.com) und gehe von der Konfiguration bis zum kontrollierten ersten Lauf durch die folgenden Schritte.
+Nutze diese Checkliste, nachdem keinsaas dein Konto aktiviert hat. Vor der Aktivierung durchläufst du den Einrichtungsassistenten im Dashboard; danach führt keinsaas einen kurzen Testlauf durch und schaltet den Agenten frei, meist innerhalb von zwei bis drei Werktagen. Öffne das [Sales Agent Dashboard](https://sales.keinsaas.com) und gehe von der Konfiguration bis zum kontrollierten ersten Lauf durch die folgenden Schritte.
 
 ## Voraussetzungen
 
@@ -12,34 +12,40 @@ Du benötigst:
 
 - ein aktives Sales-Agent-Konto
 - mindestens einen aktiven Seat
-- ein verbundenes LinkedIn-Konto, E-Mail-Konto oder beides für diesen Seat
-- die Berechtigung, kundenweite Einstellungen zu bearbeiten, wenn du Targeting, Limits oder Freigaben verwaltest
+- ein verbundenes LinkedIn-Konto, E-Mail-Konto oder beides für diesen Seat (siehe [Seats, Rollen und Konten](/de/getting-started/seats-and-accounts))
+- die Rolle **Admin**, um Targeting, Prompts, Blacklist, Freigaben und andere Einstellungen für alle Seats zu ändern
+
+<Note>
+  Jeder Seat enthält **300 Start-Credits** für Suche und Anreicherung. Den Stand siehst du auf **Home**; Admins laden unter **Credits** auf. Prüfe ihn, bevor du große Suchen startest.
+</Note>
 
 <Steps>
   <Step title="Zielgruppe bestätigen">
     Öffne **Settings → Targeting**. Prüfe ICP-Beschreibung, Jobtitel, Standorte, Branchen, Ausschlüsse und Pipeline-Schwellenwert.
 
-    Wenn du Kriterien änderst, die bestehende Scores beeinflussen, nutze die erneute Bewertung, damit ältere Kontakte nach den neuen Regeln beurteilt werden.
+    Wenn du Kriterien änderst, die bestehende Scores beeinflussen, bestätige die Aufforderung zur Score-Aktualisierung, damit ältere Kontakte nach den neuen Regeln beurteilt werden. Die Aktualisierung läuft im Hintergrund.
   </Step>
   <Step title="Kontakte hinzufügen">
-    Öffne **Add to Pipeline** und wähle eine Sales-Navigator-Suche oder -Liste, einen CSV-Upload oder die Kontaktsuche bei bestehenden Unternehmen.
+    Öffne **Add to Pipeline** und wähle **Submit URLs** für eine Sales-Navigator-Suche oder -Liste, **Upload CSV** oder **Search** für die Kontaktsuche bei bestehenden Unternehmen.
 
     Weise jeden Kontakt einem Seat zu. Der Owner bestimmt, welches Konto die Ansprache ausführt.
   </Step>
   <Step title="Messaging-Playbook prüfen">
-    Öffne **Settings → Prompts**. Prüfe Positionierung, Proof Points, Call-to-Action, kanalspezifischen Schreibstil, Grußformeln und E-Mail-Signatur.
+    Öffne **Settings → Prompts**. Prüfe dein Unternehmen und Angebot, deine Zielgruppe, den Call-to-Action und deine Erfolgsgeschichten.
+
+    Danach prüft jeder Seat-Owner unter **Settings → Account** den **Writing style** und **How messages end** (Grußformeln und E-Mail-Signatur) seines Seats.
   </Step>
   <Step title="Versandkontrollen wählen">
-    Öffne **Settings → Schedule**. Verlange für den ersten Lauf die Freigabe jeder E-Mail- und LinkedIn-Nachricht. Halte die anfänglichen Tageslimits niedrig.
+    Öffne **Settings → Schedule**. Stelle für den ersten Lauf **Outreach delivery (all reps)** auf **Approve every message from the dashboard**, damit jede erste E-Mail- und LinkedIn-Nachricht auf dich wartet. Follow-ups gehen automatisch raus. Halte die anfänglichen Tageslimits niedrig.
   </Step>
   <Step title="Bestehende Beziehungen schützen">
     Füge Kunden, Wettbewerber, Partner und aktive Opportunities unter **Settings → Blacklist** hinzu. Beim Speichern werden passende Prospects in der laufenden Pipeline sofort gestoppt.
   </Step>
   <Step title="Nächsten Lauf prüfen">
-    Kehre zu **Home** zurück. Die Karten unter **Next run** zeigen, wie viele Kontakte für jeden Schritt bereit sind und wie viele innerhalb der aktuellen Tageslimits verarbeitet werden können.
+    Kehre zu **Home** zurück. Die Karten unter [**Next run**](/de/operate/next-run-queue) zeigen, wie viele Kontakte für jeden Schritt bereit sind und wie viele innerhalb der aktuellen Tageslimits verarbeitet werden können.
   </Step>
   <Step title="Lauf starten">
-    Wähle **Run Now** für die vollständige Pipeline. Lass LinkedIn geschlossen, solange der Lauf aktiv ist. Verfolge den Fortschritt unter **Activity**.
+    Wähle auf **Home** **Run Now** für die vollständige Pipeline. Das startet nur deine eigenen Seats. Lass LinkedIn geschlossen, solange der Lauf aktiv ist. Verfolge den Fortschritt unter **Activity**.
   </Step>
   <Step title="Nachrichten und Antworten bearbeiten">
     Gib ausstehende Nachrichten unter **Messages** frei oder bearbeite sie. Wenn ein Prospect antwortet, übernimm das Gespräch und setze das passende Outcome, sobald er in deinen Vertriebsprozess eintritt.

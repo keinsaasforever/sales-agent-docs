@@ -1,0 +1,60 @@
+---
+title: "Prospects und Unternehmen"
+description: "Finde Personen und Unternehmen, lies den Datensatz eines Prospects, halte Notizen und Telefonnummern aktuell und entscheide über Kontakte, die der Sales Agent angehalten hat."
+icon: "users"
+---
+
+**Prospects** enthält alle Personen, die du kennst, in zwei Tabs: **Contacts** listet alle hinzugefügten oder gefundenen Personen, **Prospects** die Personen, die die Outreach-Pipeline bearbeitet. **Companies** zeigt dieselben Personen nach Unternehmen gruppiert.
+
+## Contacts und Prospects
+
+Im Tab **Contacts** zeigt die Spalte **Stage** die Stage jedes Kontakts, der bereits Prospect ist. Ein Kontakt, der noch nicht in der Ansprache ist, zeigt **Queued**, wenn der erste Pipeline-Schritt ihn übernimmt, oder **Not in pipeline**, wenn nicht. Fahre mit der Maus über das Badge, um den Grund zu sehen. Die Spalte **Company match** zeigt **Needs review**, **Confirmed wrong** oder **Changed employer** für [angehaltene Kontakte](#angehaltene-kontakte).
+
+Der Tab **Prospects** hat einen Tab pro Stage (siehe [Stages und Outcomes](/de/operate/stages-and-outcomes)). Wähle eine Zeile, um den Prospect zu öffnen. In der Liste öffnet ein Klick auf das Datum **Email Sent** oder **LinkedIn Sent** oder auf das **Reply**-Badge direkt die Timeline des Prospects, ein Hover bietet den E-Mail- oder LinkedIn-Verlauf an.
+
+Wähle mehrere Zeilen, um sie gemeinsam zu bearbeiten: **Set outcome…**, **Archive**, **Find email**, **Find phone** oder **Find both**. Unter **Prospects** bieten Zeilen, bei denen LinkedIn übersprungen wurde, zusätzlich **Retry LinkedIn**. Suchen können Credits verbrauchen.
+
+## Der Datensatz eines Prospects
+
+Ein Prospect öffnet sich in einem Seitenpanel mit der Outcome-Auswahl und **Archive** neben dem Namen und vier Tabs.
+
+### Info
+
+- **They replied** und **Call**: die Antwort- und die Anrufkarte, wenn sie zutreffen. Siehe [Antworten und Übergabe](/de/operate/replies-and-handoff).
+- **Contact**: Wähle ein Feld, um es zu bearbeiten. **Persona** bestimmt, mit welchem Nachrichten-Prompt der Kontakt angeschrieben wird. Eine Zeile **Skipped** bedeutet, dass LinkedIn für diesen Prospect geschlossen ist und die Ansprache nur per E-Mail weiterläuft.
+- **Enrichment**: alle gefundenen E-Mail-Adressen und Telefonnummern mit ihrem Status. Wähle **Bad** bei einer falschen E-Mail-Adresse: Der Sales Agent markiert sie und sucht eine andere. Zu Telefonnummern siehe [Wenn die Nummer falsch ist](/de/operate/replies-and-handoff#wenn-die-nummer-falsch-ist). **Find email**, **Find phone** und **Find both** erscheinen, wenn etwas fehlt.
+- **Company**: die Unternehmensdaten, bearbeitbar, und **Open company page**.
+- **Cheat sheet**: Vorbereitungsnotizen für einen Anruf. Mit **Edit** änderst du sie.
+
+### Timeline
+
+Oben im Tab öffnen **View Email** und **View LinkedIn** den Verlauf. **Current state** sagt dann, warum die Ansprache gestoppt oder pausiert ist, etwa **Outreach ended · Meeting** mit deinem Grund, **Paused — out of office** oder **LinkedIn stopped** mit dem Grund. Darunter steht jedes Ereignis mit Datum: Kontaktanfragen, entworfene, freigegebene und gesendete Nachrichten, Antworten, Notizen und Anrufe. **Show more** zeigt eine Nachricht vollständig. Eine LinkedIn-Nachricht, die nicht rausging, zeigt **Not delivered** mit dem Grund von LinkedIn.
+
+### Notes
+
+Mit **Add note** erfasst du Kontext. Notizen stehen neueste zuerst, mit Namen der Autorin oder des Autors, Datum und **edited**, sobald sie geändert wurden. Nur wer eine Notiz geschrieben hat, kann sie bearbeiten oder löschen. Eine Notiz ohne Autor, etwa aus einem Import, kann jeder bearbeiten und niemand löschen. Erfasste Anrufe erscheinen hier mit ihrem Ergebnis.
+
+### Colleagues
+
+Weitere Personen im selben Unternehmen mit ihrer Stage. Wähle eine Person, um sie zu öffnen. Ist noch niemand sonst hinterlegt, öffnet **Find more** eine Suche nach Personen im Unternehmen. Wer durch eine Unternehmens-Stage gestoppt wurde, zeigt **Keep in outreach**. Members sehen eventuell **A colleague is already in touch with this company.**, wenn jemand auf einem anderen Seat dort bereits eine Person kontaktiert hat.
+
+## Angehaltene Kontakte
+
+Der Sales Agent hält manche Kontakte aus der Ansprache heraus, bis du entscheidest. Öffne einen Kontakt, der noch kein Prospect ist, im Tab **Contacts**, um den Hinweis und seine Buttons zu sehen. Ein angehaltener Prospect zeigt in seiner Timeline unter **Current state** **Parked — company mismatch** oder **Parked — changed employer**.
+
+- **Needs review**: Die E-Mail-Adresse gehört zu einem anderen Unternehmen, die Person arbeitet also eventuell nicht beim Zielunternehmen. Wähle **This is the right company — add to outreach** oder **Confirm wrong — keep out**. Ein bestätigter Kontakt zeigt **Confirmed wrong** und lässt sich mit **Actually the right company — add to outreach** trotzdem aufnehmen.
+- **Changed employer**: Laut Lebenslauf hat die Person das Unternehmen verlassen. Der Hinweis nennt den neuen Arbeitgeber, wenn er bekannt ist, und die alte Adresse wird nicht verwendet. Arbeitet die Person noch dort, wähle **Still works here — keep in outreach**.
+- **Email address to check**: Eine Adresse wurde auf einer Domain gefunden, die nicht als Domain des Unternehmens bestätigt ist, und wurde deshalb nicht verwendet. Admins wählen **Use this email**, das die Adresse für dieses Unternehmen speichert und einmal prüft, oder **Not their address**. Members sehen die Adresse und können einen Admin fragen.
+
+Warten Adressen auf eine Prüfung, sehen Admins auf Home und in **Tasks** eine Aufgabe mit der Anzahl der Kontakte, deren E-Mail-Adresse auf ihre Prüfung wartet. **Check** öffnet den Tab **Contacts** gefiltert auf **Email to check**.
+
+## Companies
+
+**Companies** listet alle Unternehmen in deiner Pipeline. Die Spalte **Stage** zeigt die Deal-Stage, die du gesetzt hast, in Vollgrün, sonst die weiteste Stage, die ein Prospect dort erreicht hat. **Primary contact** nennt die Person, mit der der Deal läuft, und **ICP Score** ist der Score des Unternehmens.
+
+Ein geöffnetes Unternehmen zeigt:
+
+- **Deal**: die Stage des Unternehmens. Siehe [Der Deal liegt beim Unternehmen](/de/operate/stages-and-outcomes#der-deal-liegt-beim-unternehmen).
+- **Identity** und **Firmographics**: Website, LinkedIn-Seite, Standort, Branche, Mitarbeiterzahl und ähnliche Angaben.
+- **Scoring**: den **ICP Score** des Unternehmens und, wenn vorhanden, **Why**.
+- **Contacts**: alle Personen im Unternehmen mit ihrer Stage, **Make primary** und **Keep in outreach** für Personen, die durch die Deal-Stage gestoppt wurden.
