@@ -1,53 +1,75 @@
 ---
 title: "Pipeline ausführen"
-description: "Starte die vollständige Pipeline, beginne bei einem späteren Schritt, stoppe sicher und verfolge den Fortschritt."
+description: "Starte die vollständige Pipeline, führe einen Teil einzeln aus, stoppe sicher und verfolge den Fortschritt."
 icon: "play"
 ---
 
-Du kannst die Pipeline automatisch nach Zeitplan oder manuell über **Home** ausführen.
+Du kannst die Pipeline jederzeit manuell über die Karte **Run pipeline** auf **Home** starten oder automatisch nach dem Zeitplan eines Seats ausführen lassen. In beiden Fällen gelten dieselben Eignungsregeln, Tageslimits und Versandmodi.
 
 ## Vollständige Pipeline ausführen
 
-Wähle **Run Now**, um beim Verbindungsschritt zu beginnen und alle weiteren geeigneten Schritte für jeden aktiven Seat abzuarbeiten:
+Wähle **Run Now**, um einen vollständigen Lauf für deine eigenen aktiven Seats zu starten. Das gilt für Member und Admins gleichermaßen: Der Seat eines Kollegen läuft nach seinem eigenen Zeitplan oder wenn sein Owner **Run Now** wählt.
 
-1. Kontaktanfragen
-2. Recherche und Nachrichtenvorbereitung
-3. freigegebener Outreach
-4. fällige E-Mail- und LinkedIn-Follow-ups
+Jeder Seat arbeitet diese Schritte der Reihe nach ab:
 
-Die Arbeit läuft im Hintergrund. Du kannst die Seite verlassen und den Fortschritt unter **Activity** verfolgen.
+1. **Antworten und E-Mail-Follow-ups** — prüft das Postfach des Seats auf Antworten, Bounces und Abwesenheitsnotizen und sendet dann fällige E-Mail-Follow-ups. Weil das zuerst passiert, bekommt niemand, der geantwortet hat, im selben Lauf noch eine Nachricht.
+2. **Neue Prospects und Kontaktanfragen** — nimmt neue Kontakte bis zum Tageslimit auf und sendet LinkedIn-Kontaktanfragen.
+3. **Recherche und Nachrichten** — recherchiert neue Prospects und schreibt personalisierte Erstnachrichten, bereit zur Freigabe oder zum automatischen Versand.
+4. **Outreach** — sendet freigegebene E-Mails und LinkedIn-Nachrichten, die noch nicht versendet sind, bis zu den Tageslimits des Seats.
+5. **LinkedIn-Follow-ups** — sendet fällige LinkedIn-Follow-ups an Kontakte ohne Antwort.
+
+Jeder Schritt holt sich seine eigenen geeigneten Kontakte. Ein Schritt ohne Arbeit hält den nächsten also nicht auf. Auf einem Seat mit ausgeschaltetem oder pausiertem LinkedIn werden die LinkedIn-Aktionen übersprungen, E-Mail läuft weiter.
+
+Die Arbeit läuft im Hintergrund. Solange sie aktiv ist, zeigt die Karte **Pipeline running** mit einem Link zu **Activity**. Am Ende zeigt sie **Pipeline finished — see Activity for results.** Ein vollständiger Lauf kann einige Stunden dauern, weil LinkedIn-Aktionen zeitlich verteilt werden.
 
 <Warning>
   Lass LinkedIn geschlossen, solange die Pipeline läuft. Führe während des Automatisierungsfensters keine manuelle LinkedIn-Arbeit mit demselben Konto aus.
 </Warning>
 
-## Bei einem späteren Schritt beginnen
+Zeigt **Home** für einen Seat **LinkedIn is paused**, wähle zuerst **Reconnect LinkedIn**. Sonst überspringt der Lauf alle LinkedIn-Schritte dieses Seats.
 
-Öffne **Advanced**, wenn du frühere Arbeit bewusst überspringen möchtest:
+## Einen Teil einzeln ausführen
 
-- **Messages** — mit vollständig recherchierten Prospects beginnen, die eine Nachricht benötigen, und anschließend Outreach und Follow-ups ausführen.
-- **Outreach** — mit freigegebenen, noch nicht versendeten Nachrichten beginnen und anschließend Follow-ups ausführen.
-- **Follow-ups** — nur fällige Follow-ups verarbeiten.
+Öffne **Advanced** in der Karte **Run pipeline**, um einen einzelnen Teil der Pipeline auszuführen:
 
-Ein späterer Einstieg macht ungeeignete Prospects nicht geeignet. Jeder Schritt wendet weiterhin seine normalen Gates und Limits an.
+- **Messages** — schreibt Erstnachrichten für recherchierte Prospects. Sendet nichts.
+- **Outreach** — sendet freigegebene E-Mails und LinkedIn-Nachrichten. Nimmt keine neuen Kontakte auf und schreibt keine neuen Nachrichten.
+- **Follow-ups** — prüft auf Antworten und sendet nur fällige E-Mail- und LinkedIn-Follow-ups.
+
+Jeder Teil endet mit seinem eigenen Schritt und läuft nicht in spätere Schritte weiter. Jeder Teil wendet weiterhin seine normalen Gates, Tageslimits und den Versandmodus an. Ist die Freigabe ausgeschaltet, gehen Nachrichten aus einem **Messages**-Lauf mit dem nächsten **Outreach**- oder vollständigen Lauf hinaus.
+
+## Tageslimits und wiederholte Läufe
+
+Limits gelten pro Tag, ab Mitternacht in der Zeitzone des Seats. Ist ein Seat heute schon gelaufen, nutzt **Run Now** nur, was von jedem Limit übrig ist.
+
+Jeder Seat führt nur einen Lauf gleichzeitig aus. Solange auf einem Seat ein Lauf aktiv ist, beginnt kein neuer Start für diesen Seat, und **Run Now** meldet **A run is already in progress.**
 
 ## Lauf stoppen
 
-Wähle **Stop**, während die Pipeline aktiv ist. Die laufende Verarbeitung stoppt sofort; bereits abgeschlossene oder versendete Aktionen bleiben bestehen.
+**Stop** erscheint in der Karte **Run pipeline**, solange ein Lauf aktiv ist. Als Member stoppst du die Läufe deiner eigenen Seats. Als Admin stoppst du alle Läufe deines Kontos, auch die von Kollegen. Ein Admin ohne eigenen Seat sieht die Karte nur mit **Stop**.
+
+- Ein Lauf, der in den ersten rund 30 Sekunden gestoppt wird, wird abgebrochen, bevor etwas hinausgeht: **Run stopped. Nothing was sent.**
+- Ein weiter fortgeschrittener Lauf schließt den Kontakt ab, den er gerade bearbeitet, speichert ihn und nimmt keinen neuen mehr: **Stopping — finishing the current step so nothing is lost.**
 
 <Warning>
-  Bereits Versendetes kann nicht zurückgerufen werden. Das Stoppen verhindert spätere Arbeit, macht abgeschlossene Aktionen aber nicht rückgängig.
+  Das Stoppen verhindert weitere Arbeit in diesem Lauf. Bereits Versendetes wird nicht rückgängig gemacht oder zurückgerufen.
 </Warning>
 
-Der Endstatus erscheint unter **Activity**:
+Der Status jedes Laufs erscheint unter **Activity**, jeder Schritt unter seinem Lauf:
 
-- **Succeeded** — der Lauf wurde normal abgeschlossen.
-- **Stopped** — ein Mensch hat den Lauf vor Abschluss aller Arbeit gestoppt.
-- **Failed** — ein Fehler hat den normalen Abschluss verhindert.
-- **Skipped** — keine geeignete Arbeit oder ein Guard hat die Ausführung verhindert.
+- **Started** / **Running** — der Lauf ist aktiv.
+- **Succeeded** — der Lauf hat Arbeit erledigt und nichts ist fehlgeschlagen.
+- **Completed with issues** — ein Teil der Arbeit ist gelungen, mindestens ein Eintrag oder Schritt ist fehlgeschlagen.
+- **Skipped** — es gab nichts zu tun, oder jeder Eintrag wurde aus einem erfassten Grund übersprungen. Nichts ist fehlgeschlagen.
+- **Stopped** — jemand hat den Lauf vor Abschluss aller Schritte gestoppt.
+- **Failed** — Einträge oder Schritte sind fehlgeschlagen und nichts ist gelungen.
 
 ## Geplante Läufe
 
-Ist der Zeitplan eines Seats aktiv, startet er automatisch an den gewählten Tagen und zur gewählten Zeit. **Run Now** bleibt verfügbar, das Dashboard verhindert jedoch überlappende Pipeline-Starts.
+Ist **Schedule enabled** für einen Seat unter **Settings → Schedule** aktiv, startet die Pipeline automatisch an den gewählten Tagen, bis zu 20 Minuten nach der Startzeit. Die Karte **Schedule** auf **Home** zeigt, ob Zeitpläne aktiv sind und wann sie laufen.
+
+Ist zur geplanten Zeit noch ein Lauf auf dem Seat aktiv, beginnt der geplante Start nicht. Scheitert der Start eines geplanten Laufs aus technischen Gründen, wird er bis zu 30 Minuten lang automatisch wiederholt.
+
+**Run Now** bleibt immer verfügbar, auch mit Zeitplan. Hat keiner deiner Seats einen Zeitplan, sagt die Karte **Run pipeline** das und verlinkt auf **Set up a daily schedule**.
 
 Nutze [Activity und Fehlerbehebung](/de/operate/activity-and-troubleshooting), wenn ein Lauf nicht die erwartete Arbeit ausführt.

@@ -38,23 +38,23 @@ A search result is not a promise of ICP fit. The agent may need to inspect more 
 
 ### 3. Per-seat settings decide how work is performed
 
-Each seat has its own owner, connected accounts, schedule, channel choice, and daily action limits. Client-wide rules control follow-up counts, approvals, inactive-profile handling, and the shared messaging playbook.
+Each seat has its own owner, connected accounts, schedule, channel choice, daily action limits, sign-offs, and writing style. Client-wide rules, which only admins change, control follow-up counts, approvals, inactive-profile handling, and the shared messaging playbook. See [Seats, roles, and accounts](/getting-started/seats-and-accounts).
 
 ### 4. Queue rules decide what happens next
 
-The **Next run** cards show contacts currently eligible for connection requests, message generation, outreach, and channel-specific follow-ups. Each card applies the relevant daily limit.
+The **Next run** cards show how many contacts are ready for each step: **New Prospects**, **Message**, **Outreach**, **Follow-up Email**, and **Follow-up LinkedIn**. Each card is capped by the relevant daily limit.
 
 ### 5. Replies and outcomes stop automation
 
-A detected reply on either channel stops follow-ups across both channels. A person can also set an outcome such as **Meeting**, **Offer Sent**, or **Not Interested**. Every outcome removes the prospect from automated work.
+A detected reply on either channel stops follow-ups across both channels. A person can also set an outcome such as **Meeting**, **Offer Sent**, or **Not interesting**. Every outcome removes the prospect from automated work.
 
 <Note>
-  Pipeline stages are derived from recorded activity. You do not manually move a prospect from **Invited** to **Connected** or **Messaged**. You set an [outcome](/operate/stages-and-outcomes) when human judgment is required.
+  Pipeline stages are derived from recorded activity. You do not manually move a prospect from **Invite Sent** to **Connected** or **Messaged**. You set an [outcome](/operate/stages-and-outcomes) when human judgment is required.
 </Note>
 
 ## Channels work together
 
-You can run LinkedIn and email together, turn LinkedIn off for a seat, or prioritize email while LinkedIn follows afterward. If a LinkedIn path becomes unavailable, an eligible email path can continue. A reply on either channel closes the automated sequence.
+Each seat's **LinkedIn outreach** setting is **Both together**, **LinkedIn first**, or **Off**. With **LinkedIn first**, the connection request goes out before the first email; prospects you cannot reach on LinkedIn are emailed right away, and anyone still waiting after a week is emailed too. With **Off**, email outreach still runs. If a LinkedIn path becomes unavailable, an eligible email path can continue. A reply on either channel closes the automated sequence.
 
 Read the [pipeline stage reference](/reference/pipeline-stages) for every label shown in the dashboard.
 

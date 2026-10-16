@@ -1,15 +1,15 @@
 ---
 title: "Define Your Ideal Customer Profile and Scoring Criteria"
 sidebarTitle: "ICP & Scoring"
-description: "Set up targeting criteria and score thresholds so the Sales Agent evaluates and prioritizes the right candidates for your pipeline."
+description: "Set up targeting criteria, filters, and score thresholds so the Sales Agent evaluates and prioritizes the right candidates for your pipeline."
 icon: "target"
 ---
 
-Your ideal customer profile (ICP) drives every stage of the Sales Agent — contact search, candidate scoring, and eligibility for automated outreach. Configure everything under **Settings → Targeting**.
+Your ideal customer profile (ICP) drives every stage of the Sales Agent — contact search, candidate scoring, and eligibility for automated outreach. Configure everything under **Settings → Targeting**. Only admins of your account see this page. Save the ICP fields with **Save targeting**.
 
 ## Start with the free-text ICP
 
-Write a concrete description of the combination you actually want to reach, not a broad market category. A focused description produces more relevant scores than a vague one.
+Write a concrete description in **Your ICP in your own words**: the combination you actually want to reach, not a broad market category. A focused description produces more relevant scores than a vague one.
 
 Include details such as:
 
@@ -24,30 +24,47 @@ Include details such as:
 
 > DACH-based food technology companies with fewer than 50 employees and strong recent growth. Target a newly appointed Head of Marketing or Marketing Director located in DACH.
 
-The agent evaluates this free-text description together with the structured criteria below.
+The AI scores every company and contact against this description together with the structured criteria below.
 
 ## Configure the structured criteria
 
 | Setting | How it is used |
 |---|---|
-| **Job titles — Tier 1** | Primary roles you want to reach. Use specific decision-maker or champion titles. |
-| **Job titles — Tier 2** | Executive fallback roles — such as Founder or Managing Director — used when no Tier 1 contact is available. |
-| **Excluded job titles** | Roles that are always skipped, even when they appear in source results. |
-| **Locations** | Countries or regions to target. Leave empty for no location filter. |
-| **Industries** | Industries to prioritize. Leave empty for no industry filter. |
-| **Company size** | Target employee ranges. Contacts at companies with unknown sizes are not automatically rejected. |
-| **ICP keywords** | Specialties, business models, or other terms that indicate fit. |
-| **Max contacts per company** | Hard cap on the number of people searched at each company. Three to four is a normal starting point; ten is the maximum. |
+| **Job Titles — Tier 1 (primary ICP)** | The roles you actually want. Searched first at every company. |
+| **Job Titles — Tier 2 (fallback)** | Roles you would take instead, such as Managing Director at a small company or an adjacent role. Searched only at companies where no Tier 1 title was found. |
+| **Seniority Levels** | The levels you want to talk to, from **C-level / Owner** to **Entry / Junior**. Leave everything unticked for no preference. |
+| **Excluded Job Titles** | Titles to keep out of outreach, even when they appear in search results. |
+| **Locations** | Countries to target. Leave empty for no location filter. |
+| **DACH only** | Only people living in Germany, Austria, Switzerland, or Liechtenstein. Overrides **Locations** for people, not for company headquarters, and stops LinkedIn invites to people outside that region. |
+| **Industries** | LinkedIn industries to focus on. Leave empty for no industry filter. |
+| **Company Size** | Headcount ranges to target. Nothing selected means no size filter. Companies whose headcount is unknown are never filtered out. |
+| **ICP Keywords** | Specialties, business models, or other terms that indicate a fitting company. |
+| **Max Contacts per Company** | Hard cap on the number of people searched at each company. Three to four is a normal starting point; ten is the maximum. |
+| **Fill up to the max** | When the first source finds fewer people than your maximum, the next sources are asked too. Costs about three times the search credits. |
+| **Retry bad emails at another source** | When a found email turns out invalid, bounces, or sits on a domain that is not the company's, the contact is looked up again at the next source. Each retry costs extra credits. |
+
+## Contacts outside your filters
+
+**Excluded Job Titles**, **Seniority Levels**, **Locations**, and **Company Size** are hard filters. A contact who fails one is kept but set aside without a seat, so no outreach starts for them. Search results that land there still cost the credits that found them.
+
+- Missing information passes. A contact whose seniority, location, or company size is unknown is never set aside for it.
+- A location fails only when neither the person nor the company is in your target locations.
+- A title you listed under Tier 1 or Tier 2 wins over **Excluded Job Titles** and **Seniority Levels**.
+- Contacts already in outreach are not affected by later filter changes.
+
+On **Prospects**, the **Contacts** tab shows these contacts with the stage **Not in pipeline**. Hover the badge to see the reason, for example `Outside your filters: …`. When you loosen a filter and refresh the scores, contacts that now pass get their seat back.
 
 ## Understand the score
 
-Each contact receives a 0–100 ICP score. Three factors contribute to the score, and their relative weights are configurable:
+Each contact receives a 0–100 ICP score. Half of it comes from the person, half from the company:
 
-- **Job fit** — how closely the person's role matches your Tier 1 and Tier 2 titles
-- **Industry fit** — how well the company's industry aligns with your target list
-- **Location fit** — whether the contact is based in a targeted region
+- **Job fit** — how closely the person's title matches your Tier 1 and Tier 2 titles and seniority levels
+- **Location fit** — whether the person and the company are in your target locations; it counts in both halves
+- **Industry fit** — the company's industry, rated on a built-in industry scale. Your **Industries** list counts through the AI company review instead.
 
-Weights are relative, not absolute. A weight setting of `6, 3, 1` means job fit contributes 60%, industry 30%, and location 10%. The dashboard normalizes the values automatically — they do not need to add up to 100.
+An AI review of each company against your ICP then moves the score: up 15 points for a clear fit, down 15 for a poor fit, unchanged when the result is unclear or the company has not been reviewed yet.
+
+Set the factors under **ICP Score Weights**. The weights are relative and do not need to add up to 100. Next to each one, the dashboard shows its real share of the score (**= X% of score**). Because the score is split into two halves, the defaults of 50, 30, and 20 make job fit about 36%, industry fit 30%, and location fit 34% of the score.
 
 ## Use the two thresholds
 
@@ -55,26 +72,58 @@ Weights are relative, not absolute. A weight setting of `6, 3, 1` means job fit 
 
 Only contacts at or above this score enter automated outreach. Set it to `0` to allow every contact through regardless of score.
 
-### Phone enrichment threshold
+### Phone enrichment ICP threshold
 
-Only contacts at or above this score receive automatic phone lookup. Below the threshold the dashboard prompts for manual confirmation before a lookup runs. Set it to `0` to disable the threshold entirely.
+Only contacts at or above this score get a phone lookup: in automated outreach runs, in scheduled searching, and in lookups you start yourself. Below the threshold, the dashboard asks you to confirm before a lookup you start runs. Set it to `0` to disable the threshold.
+
+If this threshold is lower than the pipeline threshold, the dashboard warns you: those contacts would get a paid phone lookup but never enter the pipeline. Select **Raise it to** to align the two.
 
 <Warning>
   Do not lower a threshold just to fill the queue. First verify that your source, owner assignment, exclusions, and scoring criteria are correct. A fuller queue built on weaker candidates spends credits and outreach capacity without improving fit quality.
 </Warning>
 
+## Choose the queue order
+
+**Queue order** sets the order in which prospects are worked:
+
+- **ICP with company grouping** keeps one company's contacts together, so the account is approached as one conversation. Companies are ranked by their best-scoring contact.
+- **ICP only** works contacts strictly by score.
+
+Sorting a table on screen does not change this order.
+
 ## Refresh existing scores
 
-When you update your criteria, contacts scored under the old settings become outdated. Choose the right refresh method:
+When you save a change that affects existing scores, the dashboard asks you to refresh them:
 
-- **Recompute** — use this when you change only the score weights. Existing inputs are recalculated without using AI or credits.
-- **AI rescore** — use this when you change the meaning of the ICP itself. Existing contacts are re-evaluated against the updated free-text and criteria.
+- **Recompute scores now** appears when you changed weights, job titles, seniority levels, excluded titles, or company sizes. It recalculates instantly, without AI or credits, and applies your filters to existing contacts again.
+- **Update scores now** appears when you changed the free-text ICP, locations, industries, or keywords. The AI re-evaluates your companies in the background, so you can keep working. A status line at the top of every page shows the progress. If the update stops, select **Try again** there.
 
-Contacts added after a settings change are always scored against the current configuration automatically.
+If you choose **Later**, the to-do **ICP scores need updating** stays in your notifications until you run the refresh. Contacts added after a settings change are always scored against the current configuration.
+
+## Set buying signals
+
+The **Buying signals** card defines what counts as a reason to write to a company now. Companies with a fresh signal are contacted first, and the message builds on the signal.
+
+- **What you sell** — a few sentences on your offer and who buys it. Every event found is judged against it.
+- **Which events count** — pick three to five questions. An event counts only when it answers yes to one of them. Each question shows its strength and, once there is data, how many first messages that used it were answered in the last 90 days.
+- **Which signals each persona hears about** — limit which signals are used in messages to each persona.
+- **Not a signal** — events that should never count, such as awards.
+- **Minimum signal score** — a signal scoring below this never reaches a message.
+- **Use a signal for (days)** — how long a signal is used in messages, counted from the day it happened. A signal without a date gets half that time.
+
+Save the card with **Save signals**. The signal search runs only once keinsaas switches it on with you; each company searched costs 1 credit.
+
+## Other targeting settings
+
+- **Export LinkedIn posts and comments** — when on, the agent reads what each prospect recently posted or commented on LinkedIn before writing to them. It takes a few minutes per prospect. Turning it off also disables the **Settings → Schedule** rule **No posts or comments in the last 30 days**.
+- **Phone lookups per seat** — whether each seat buys phone numbers at all, for contacts at or above the phone enrichment threshold. Email is always looked up. A lookup you start yourself runs regardless, and credits are charged only when a number is found.
+- **Call list** — **Show a lead on the To Call tab** decides how early a lead with a phone number appears there, from **When the invite is sent** to **When all follow-ups are done (default)**, or **Never**. A lead you can no longer reach any other way always appears. This setting never changes what the agent sends.
+
+The **Sales Navigator searches** card and **Keep my pipeline full** bring in new contacts automatically. See [Add prospects](/configure/add-prospects).
 
 ## Credits and filtering
 
-Credits pay for returned search and enrichment results — not only for the contacts that ultimately enter your pipeline. Candidates that later fail job-title exclusions, ICP requirements, deduplication checks, or company validation still consume the credit that retrieved them.
+Credits pay for returned search and enrichment results — not only for the contacts that ultimately enter your pipeline. Candidates that later fall outside your filters, fail ICP requirements, or are removed as duplicates still consume the credit that retrieved them.
 
 <Tip>
   When your filters are granular, expect the agent to inspect more candidates than the number it ultimately accepts. Run a small company batch first and review the quality of results before scaling up your search.

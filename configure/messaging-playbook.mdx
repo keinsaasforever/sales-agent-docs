@@ -1,38 +1,56 @@
 ---
 title: "Configure Your Messaging Playbook and Message Approval"
 sidebarTitle: "Messaging"
-description: "Shape your positioning, writing style, proof points, and sign-offs — then choose how closely you review outgoing LinkedIn messages and emails."
+description: "Shape your positioning, proof points, writing style, and sign-offs — then choose how closely you review outgoing LinkedIn messages and emails."
 icon: "message-square-text"
 ---
 
-The messaging playbook tells the Sales Agent what to say and how to say it. Configure it under **Settings → Prompts**. Changes apply to new messages generated after you save; messages already queued are not retroactively updated.
+The messaging playbook tells the Sales Agent what to say about you. Configure it under **Settings → Prompts**; only admins of your account see this page. How the agent writes — structure, length, and tone rules — is maintained by keinsaas and applies to every message. Each seat's writing style and sign-offs live under **Settings → Account**.
 
-## Build the shared message strategy
+Prompt changes apply to new messages generated after you save; messages already drafted are not rewritten.
 
-Use the playbook to make the following explicit for every seat:
+## Add success stories
 
-- **Positioning** — what problem you solve and for whom
-- **Proof and success stories** — specific examples or results the agent may reference
-- **Audience hooks** — angles most likely to resonate with your target personas
-- **Language guardrails** — words, claims, and approaches to use or avoid
-- **Offer structure** — the value you provide before asking for a call or meeting
-- **Compliance requirements** — market-specific or regulatory restrictions
-- **Persona differentiation** — distinct approaches for champions versus economic decision-makers
+The **Success stories** card holds the real results messages may cite. For each story, enter the company, what you did in one or two sentences, and the result. You can save up to ten, add them in bulk with **Import CSV**, or start from **Download example CSV**.
 
-Concrete examples teach tone and style far more effectively than adjectives such as "professional" or "friendly." Include one to three messages you would be comfortable sending yourself.
+Each message cites at most one story, and the agent picks the one that fits the prospect best. A story with a concrete number lands hardest, so the dashboard flags a story without a result. With no stories saved, messages are written without proof instead of inventing any.
+
+## Write a prompt for each persona
+
+Select **New Prompt** to describe your company for one persona, or edit an existing one. Each prompt has these fields:
+
+| Field | What to put in it |
+|---|---|
+| **Persona** | The persona this prompt is for. |
+| **Your company & offer** | What you sell and why it is worth a reply: your positioning and the problem you solve. |
+| **Who you target & what signals matter** | The pains to look for and which buying signals rank highest. |
+| **Persona notes (optional)** | What lands with this persona: emphasis and wording, not strategy. Champions and economic decision-makers usually need different notes. |
+| **CTA / offer** | What the message closes on, ideally a value you offer before asking for a meeting. Leave it empty to close on a low-barrier question instead. |
+
+Use these fields to make your audience hooks, language guardrails, and compliance requirements explicit.
+
+By default, keinsaas's rules for structure, length, subject, CTA, and opening win where your notes disagree. Tick **My notes above win over the default writing rules** to let your notes apply for that persona; the prompt then shows **Your rules win**. Either way, the agent never invents a fact, a number, or a customer, and never writes a closing.
+
+A persona marked **Custom** uses a prompt keinsaas wrote for you. Only its CTA can be edited here.
 
 ## Configure each seat's voice
 
-LinkedIn and email have separate writing-style fields because the channels behave differently in length, formality, and format. For each seat, adjust:
+Under **Settings → Account**, the **Writing style** card holds **Email — writing style** and **LinkedIn — writing style** for the selected seat. The channels have separate fields because they differ in length, formality, and format. The styles were built from the example messages given during setup; edit them to adjust:
 
 - tone and greeting style
 - message length
 - level of formality
 - sentence rhythm and structure
 
-For multilingual outreach, configure a dedicated sign-off for each supported language so the closing always matches the language of the message body.
+The seat's owner edits its writing style. Concrete examples teach tone far more effectively than adjectives such as "professional" or "friendly."
 
 ## Keep sign-offs and signatures separate
+
+The **How messages end** card on **Settings → Account** sets the closings for the selected seat. The sender adds them after the message is written, so a change applies to every message sent after you save.
+
+- **LinkedIn sign-off** — appended to the first LinkedIn message, in the language it is written in. Leave a language empty for no LinkedIn sign-off in that language.
+- **Email sign-off** — the closing line above your signature, one per language, so the closing always matches the language of the message body.
+- **Email signature** — your contact block, appended under the sign-off.
 
 The Sales Agent assembles each outbound email in a fixed order:
 
@@ -40,10 +58,10 @@ The Sales Agent assembles each outbound email in a fixed order:
 2. Language-specific email sign-off
 3. Email signature
 
-The LinkedIn sign-off is appended to every LinkedIn message and follow-up.
+The **How every email ends** preview shows the result. A warning appears when your sign-offs or signature do not mention the LinkedIn account or mailbox the messages actually send from.
 
 <Warning>
-  Do not place a closing phrase such as "Best regards" or "Kind regards" inside your email signature. The configured sign-off is added automatically as a separate step — including one in the signature as well will produce two closings in every message.
+  Do not place a closing phrase such as "Best regards" or "Kind regards" inside your email signature. The configured sign-off is added automatically as a separate step — including one in the signature as well will produce two closings in every message. The preview warns you when your signature starts with a closing line.
 </Warning>
 
 Keep cold-email signatures lean. Your name, role, company, and essential contact details are enough. Avoid images and unnecessary links, as they can affect email deliverability.
@@ -56,6 +74,10 @@ Under **Settings → Schedule → Outreach delivery**, choose one of two deliver
 |---|---|
 | **Approve every message from the dashboard** | Hold every generated email and LinkedIn message in **Messages** until you approve it. |
 | **Send everything automatically** | Make generated messages eligible for automatic sending without a dashboard approval step. |
+
+When you switch from approval to automatic sending, messages still waiting for approval are approved on save. With **Hold back stale drafts** on, the ones written from an old post or signal are rewritten first.
+
+While approval is on, **Hold back stale drafts** keeps a message written from a LinkedIn post or another signal more than 30 days ago from being sent; it is rewritten on the next run instead. Messages built from someone's role and company are never held back.
 
 For a new playbook or after a significant update, require approval for every message until the output quality is consistently correct. Switch to automatic delivery only after you have reviewed a representative sample.
 

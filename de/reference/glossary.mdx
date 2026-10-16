@@ -1,50 +1,85 @@
 ---
-title: "Glossar"
-description: "Definitionen der Begriffe im Sales Agent Dashboard und in der Dokumentation."
+title: "Sales Agent Glossar: Wichtige Begriffe und Konzepte erklärt"
+sidebarTitle: "Glossar"
+description: "Verständliche Definitionen von 17 zentralen Begriffen im Sales Agent Dashboard, in der Pipeline, in der Konfiguration und in der Dokumentation."
 icon: "book-a"
 ---
 
+Nutze dieses Glossar, wenn dir im Dashboard oder in der Dokumentation ein unbekannter Begriff begegnet. Die Begriffe stehen in alphabetischer Reihenfolge.
+
 <AccordionGroup>
   <Accordion title="Active seat">
-    Ein Seat, der an manuellen und geplanten Pipeline-Läufen teilnehmen darf.
+    Ein Seat, der sowohl an manuellen Pipeline-Aktionen als auch an geplanten Automatisierungsläufen teilnehmen darf. Nur aktive Seats verbrauchen Tageslimits für Aktionen und erscheinen in der Prognose der Next run queue. Ein Seat lässt sich deaktivieren, um seine Ansprache zu pausieren, ohne ihn aus dem Konto zu entfernen.
   </Accordion>
+
   <Accordion title="Blacklist">
-    Eine kundenweite Liste von Unternehmensnamen und Domains, die keine Ansprache erhalten dürfen. Beim Speichern werden passende bestehende Prospects sofort gestoppt.
+    Eine kundenweite Liste von Unternehmensnamen und Domains, die nie Ansprache erhalten dürfen. Wenn du ein Unternehmen oder eine Domain auf die Blacklist setzt, stoppt der Sales Agent sofort alle bestehenden Prospects in diesem Unternehmen und schließt künftige Treffer aus, bevor sie in die Pipeline gelangen. Siehe auch [Credits](/de/safety/credits): Blacklist-Einträge, die du vor einer Suche anlegst, verhindern, dass Credits für Kandidaten ausgegeben werden, die ohnehin abgelehnt würden.
   </Accordion>
+
+  <Accordion title="Buying signal">
+    Ein Ereignis in einem Unternehmen, das jetzt einen Bedarf für dein Angebot nahelegt, etwa eine Übernahme, eine neue Führungskraft, Einstellungen, eine Finanzierung oder eine Expansion. Admins legen unter **Settings → Targeting → Buying signals** fest, welche Ereignisse zählen. Unternehmen mit frischem Signal werden zuerst kontaktiert, und die Nachricht kann darauf aufbauen. **Buying intent** (0–100) unter **Companies** und **Intent** bei Kontakten zeigen, wie viele frische, starke Signale ein Unternehmen hat; die Spalten erscheinen nur, wenn ein Unternehmen eines hat. Die Suche läuft, sobald keinsaas sie mit dir einschaltet; jedes durchsuchte Unternehmen kostet 1 Credit.
+  </Accordion>
+
   <Accordion title="Contact">
-    Eine Person, die für dein Konto importiert, gesammelt oder gefunden wurde. Ein Contact wird zum Prospect, wenn er von der Outreach-Pipeline bearbeitet wird.
+    Eine Person, die für dein Konto importiert, gesammelt oder gefunden wurde, bevor die Ansprache begonnen hat. Ein Contact wird zum **Prospect**, sobald ihn die Outreach-Pipeline aktiv bearbeitet. Contacts, die den Pipeline-Schwellenwert nicht erreichen oder aus anderen Gründen nicht infrage kommen, bleiben als Contacts bestehen, ohne Outreach-Aktionen zu verbrauchen.
   </Accordion>
+
   <Accordion title="Credits">
-    Einheit für Such- und Anreicherungsarbeit. Zurückgegebene Ergebnisse können Credits verbrauchen, auch wenn eine spätere Filterung ihre Aufnahme in die Ansprache verhindert.
+    Die Einheit, mit der Such- und Anreicherungsarbeit bezahlt wird. Credits werden berechnet, wenn Ergebnisse zurückgegeben werden, nicht erst, wenn sie deine Filter bestehen und in die Pipeline gelangen. Jeder Seat startet mit 300 Credits; Admins kaufen weitere auf der Seite **Credits**, einmalig oder als monatlichen Plan. Credits sind nicht erstattungsfähig, und ungenutzte Credits verfallen, wenn ein Abonnement endet. Details stehen unter [Credits](/de/safety/credits).
   </Accordion>
+
   <Accordion title="ICP">
-    Ideal Customer Profile: freie und strukturierte Regeln zur Bewertung des Fits von Unternehmen und Kontakten.
+    **Ideal Customer Profile**: die freie Textbeschreibung und die strukturierten Regeln (Titel, Unternehmensgröße, Branche, Standort, Ausschlüsse usw.), die festlegen, welche Unternehmen und Kontakte gut zu deinem Angebot passen. Das ICP steuert das automatische Scoring und filtert Kandidaten während der Suche. Konfiguriere dein ICP unter **Settings → Targeting**.
   </Accordion>
+
   <Accordion title="ICP score">
-    Normalisierter Fit-Score von 0 bis 100 auf Basis der konfigurierten Kriterien und relativen Gewichtungen.
+    Ein normalisierter Fit-Score von 0 bis 100 dafür, wie gut ein Kontakt zu deinen konfigurierten ICP-Kriterien und deren relativer Gewichtung passt. Unternehmen haben einen eigenen ICP-Score, den du unter **Companies** siehst, und der Score eines Kontakts berücksichtigt den seines Unternehmens. Änderst du deine ICP-Kriterien, zeigt das Dashboard **ICP scores need updating**; die Aktualisierung läuft dann im Hintergrund. Mit dem **Pipeline threshold** steuerst du, welche Scores einen Kontakt für automatisierte Ansprache qualifizieren.
   </Accordion>
+
   <Accordion title="In play">
-    Ein Prospect ohne menschliches Outcome. Er kann von einem automatisierten Schritt beansprucht werden, wenn die übrigen Eignungsbedingungen erfüllt sind.
+    Ein Prospect, für den derzeit kein Outcome erfasst ist. Ein Prospect in play kann vom nächsten automatisierten Pipeline-Schritt beansprucht werden, wenn alle übrigen Bedingungen (Zeitplan, Tageslimits, Kanalverfügbarkeit) erfüllt sind. Mit dem Setzen eines Outcomes verlässt ein Prospect den Zustand in play. Löschst du das Outcome, kehrt er dorthin zurück; seine Aktionshistorie bleibt dabei erhalten, und die angezeigte Stage wird aus dieser Historie neu berechnet. Hat der Prospect geantwortet, zeigt das Outcome-Menü stattdessen **Replied**, weil die automatisierte Ansprache bereits gestoppt ist.
   </Accordion>
+
+  <Accordion title="Needs review">
+    Ein Unternehmen, über das der Sales Agent nicht allein entscheiden kann: Es ist möglicherweise dasselbe Unternehmen wie ein anderes unter anderem Namen oder anderer Website, oder es ist möglicherweise insolvent. Admins öffnen **Companies**, wählen **Needs review** und entscheiden jeden Fall (**Same company** oder **Different companies**, **Confirmed** oder **Not insolvent**). Eine bestätigte Insolvenz setzt das Unternehmen auf deine Blacklist. Bei Kontakten markiert **Needs review** Personen, die möglicherweise für ein anderes Unternehmen arbeiten als hinterlegt.
+  </Accordion>
+
   <Accordion title="Next run queue">
-    Prognose auf der Home-Seite für Kontakte, die für jeden sichtbaren Pipeline-Schritt bereit sind, begrenzt durch die Tageslimits aktiver Seats.
+    Die Prognose im Bereich **Next run** auf **Home** mit den Kontakten, die im kommenden geplanten Lauf für jeden Pipeline-Schritt bereitstehen. Die Queue ist durch die verbleibenden Tageslimits der aktiven Seats begrenzt. Nutze sie, um vorherzusagen, wie viele Aktionen ausgelöst werden, bevor du Limits oder Zeitpläne anpasst.
   </Accordion>
+
   <Accordion title="Outcome">
-    Ein von einem Menschen gesetztes Ergebnis wie Meeting, Offer Sent, Closed Deal, Not Interested, Lost Deal oder Unreachable. Jedes Outcome stoppt die Automatisierung.
+    Ein Ergebnis, das du an einem Prospect erfasst, um ein Ereignis aus der Praxis abzubilden: **Meeting**, **Offer Sent**, **Closed Deal**, **Not interesting**, **Asked to stop**, **Wrong person**, **Lost Deal** oder **Unreachable**. Du setzt Outcomes selbst; der Sales Agent setzt **Unreachable** und **Asked to stop** selbst, wenn kein Kanal mehr bleibt oder eine Antwort darum bittet. Jedes Outcome stoppt sofort die gesamte automatisierte Ansprache für diesen Prospect. Outcomes außer **Unreachable** haben bei der Bestimmung der angezeigten Stage Vorrang vor erkannten Antworten und dem normalen Stage-Fortschritt. Die vollständigen Vorrangregeln stehen unter [Pipeline-Stages](/de/reference/pipeline-stages).
   </Accordion>
+
   <Accordion title="Pipeline threshold">
-    Mindest-ICP-Score, den ein Kontakt für automatisierte Ansprache benötigt. Ein Wert von null schaltet den Schwellenwert aus.
+    Der Mindest-ICP-Score, den ein Kontakt erreichen muss, bevor ihn der Sales Agent in die automatisierte Ansprache aufnimmt, eingestellt als **Pipeline ICP threshold** unter **Settings → Targeting**. Kontakte unter dem Schwellenwert bleiben in der Kontaktliste, durchlaufen die Pipeline aber nicht. Ein Wert von null schaltet die Filterung aus und lässt alle Kontakte unabhängig vom Score in die Ansprache.
   </Accordion>
+
   <Accordion title="Prospect">
-    Ein Contact mit Outreach-Status und -Historie in der Sales-Agent-Pipeline.
+    Ein Contact mit Outreach-Status und -Historie in der Sales-Agent-Pipeline, also ein Contact, den der Agent aktiv bearbeitet oder früher bearbeitet hat. An Prospects hängen Stages, Outcomes, Nachrichtenverlauf und Anreicherungsdaten.
   </Accordion>
+
   <Accordion title="Seat">
-    Arbeitsidentität eines Vertriebsmitarbeiters. Ein Seat umfasst ein LinkedIn-Konto, ein E-Mail-Konto, einen Owner, einen Zeitplan, Tageslimits, Stimme und Grußformeln.
+    Die Arbeitsidentität einer Vertriebsperson im Sales Agent. Ein Seat bündelt:
+    - ein LinkedIn-Konto, verbunden über eine LinkedIn-Anmeldung
+    - ein verbundenes E-Mail-Konto
+    - einen Seat-Owner und dessen Berechtigungen
+    - einen Zeitplan und Tageslimits für Aktionen
+    - Einstellungen für Stimme und Grußformeln
+
+    Jeder aktive Seat kann seine eigene Outreach-Pipeline betreiben. Die Anzahl der Seats bestimmt, wie viele LinkedIn-Konten du gleichzeitig betreiben kannst.
   </Accordion>
+
   <Accordion title="SSI">
-    LinkedIn Social Selling Index. Ein höherer Score kann ein stärkeres Kontoprofil unterstützen, garantiert aber weder Aktionslimits noch Kontosicherheit.
+    **Social Selling Index**: LinkedIns eigenes Maß dafür, wie wirksam ein Konto Beziehungen aufbaut und mit Inhalten interagiert. Ihn gibt es nur mit Sales Navigator; du trägst ihn unter **Settings → Schedule** ein. Ein höherer SSI kann ein stärkeres Kontoprofil unterstützen und in der Praxis etwas höhere Ansprachevolumen erlauben, garantiert aber weder bestimmte Aktionslimits noch schützt er das Konto vor Einschränkungen. Hinweise zur Volumenplanung findest du unter [LinkedIn-Hygiene](/de/safety/linkedin-hygiene).
   </Accordion>
+
   <Accordion title="Stage">
-    Eine aus Fakten wie Recherche, gesendeten Nachrichten, Antworten, Outcomes und Archivstatus abgeleitete Bezeichnung. Sie wird nicht manuell durch ein Board verschoben.
+    Eine Bezeichnung, die automatisch aus erfassten Fakten über einen Prospect abgeleitet wird, etwa abgeschlossene Anreicherung, gesendete Nachrichten, erkannte Antworten, gesetzte Outcomes und Archivstatus. Stages werden nicht manuell verschoben; der Sales Agent berechnet die richtige Stage aus dem zutreffenden Fakt mit der höchsten Priorität. Die vollständige Liste und die Vorrangregeln stehen unter [Pipeline-Stages](/de/reference/pipeline-stages).
+  </Accordion>
+
+  <Accordion title="To Call">
+    Ein Tab unter **Prospects** mit den Leads, die dein Team anrufen sollte. Er ist keine Stage: Ein Lead kann **Messaged** sein und gleichzeitig angerufen werden sollen. **Settings → Targeting → Call list** legt fest, wie früh ein Lead mit Telefonnummer dort landet. Siehe [Pipeline-Stages](/de/reference/pipeline-stages#to-call-liste).
   </Accordion>
 </AccordionGroup>

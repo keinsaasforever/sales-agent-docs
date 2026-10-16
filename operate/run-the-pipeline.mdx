@@ -1,68 +1,90 @@
 ---
 title: "Run the pipeline"
 sidebarTitle: "Run Pipeline"
-description: "Start the complete pipeline, begin at an advanced step, stop safely, and follow progress."
+description: "Start the complete pipeline, run one part on its own, stop safely, and follow progress."
 icon: "play"
 ---
 
-You can start the pipeline manually at any time from **Home**, or let a schedule trigger it automatically. Either way, the same eligibility rules, daily limits, and delivery modes apply.
+You can start the pipeline manually at any time from the **Run pipeline** card on **Home**, or let a seat's schedule start it automatically. Either way, the same eligibility rules, daily limits, and delivery modes apply.
 
 ## Run the complete pipeline
 
-Select **Run Now** on the **Home** page to begin a full pipeline run. The system cascades through every eligible step for every active seat in this order:
+Select **Run Now** to start a full run for your own active seats. This is the same for members and admins: a colleague's seat runs on its own schedule or when its owner selects **Run Now**.
+
+Each seat works through these steps in order:
 
 <Steps>
-  <Step title="Connection requests">
-    Sends LinkedIn connection requests to contacts who are eligible and have not yet been invited.
+  <Step title="Replies and email follow-ups">
+    Checks the seat's mailbox for replies, bounces, and out-of-office notes, then sends due email follow-ups. Because this happens first, nobody who answered gets another message in the same run.
   </Step>
-  <Step title="Research and message preparation">
-    Enriches contact data and generates personalised outreach messages ready for approval or automatic delivery.
+  <Step title="New prospects and connection requests">
+    Takes on new contacts up to the daily limit and sends LinkedIn connection requests.
   </Step>
-  <Step title="Approved outreach">
-    Delivers approved LinkedIn messages and emails that have not yet been sent, up to the seat's daily limit.
+  <Step title="Research and messages">
+    Researches new prospects and writes personalised first messages, ready for approval or automatic delivery.
   </Step>
-  <Step title="Due follow-ups">
-    Processes due email and LinkedIn follow-ups for contacts who have not yet replied.
+  <Step title="Outreach">
+    Sends approved emails and LinkedIn messages that have not gone out yet, up to the seat's daily limits.
+  </Step>
+  <Step title="LinkedIn follow-ups">
+    Sends due LinkedIn follow-ups to contacts who have not replied.
   </Step>
 </Steps>
 
-The run executes in the background — you can leave the page and monitor progress under **Activity**.
+Each step picks up its own eligible contacts, so a step with nothing to do does not stop the next one. On a seat with LinkedIn switched off or paused, the LinkedIn actions are skipped and email continues.
+
+The run executes in the background. While it is active, the card shows **Pipeline running** with a link to **Activity**. When it ends, the card shows **Pipeline finished — see Activity for results.** A full run can take a few hours, because LinkedIn actions are spaced out.
 
 <Warning>
   Keep LinkedIn closed while the pipeline is running. Performing manual LinkedIn actions from the same account during the automation window can interfere with the run and trigger platform-level friction.
 </Warning>
 
-## Start at an advanced step
+If **Home** shows **LinkedIn is paused** for a seat, select **Reconnect LinkedIn** first. Otherwise the run skips every LinkedIn step for that seat.
 
-Open **Advanced** on the **Home** page when you want to skip earlier steps intentionally:
+## Run one part on its own
 
-- **Messages** — start with research-complete prospects that still need message generation, then continue into outreach and follow-ups.
-- **Outreach** — start with contacts whose messages are approved and unsent, then continue into follow-ups. Skips connection and research steps entirely.
-- **Follow-ups** — process only due follow-ups for contacts who have already received initial outreach.
+Open **Advanced** in the **Run pipeline** card to run a single part of the pipeline:
 
-Starting at a later step does not change the eligibility of any contact. Every step still applies its normal gates, daily limits, and delivery mode checks. Use this option to catch up on a specific phase, not to bypass safety checks.
+- **Messages** — writes first messages for researched prospects. Sends nothing.
+- **Outreach** — sends approved emails and LinkedIn messages. Takes on no new contacts and writes no new messages.
+- **Follow-ups** — checks for replies and sends due email and LinkedIn follow-ups only.
+
+Each part stops at its end; it does not continue into later steps. Every part still applies its normal gates, daily limits, and delivery mode. With approval switched off, messages written by a **Messages** run go out on the next **Outreach** or full run.
+
+## Daily limits and repeated runs
+
+Limits count per day, from midnight in the seat's timezone. If a seat already ran today, **Run Now** only uses what is left of each limit.
+
+Each seat runs one pipeline at a time. While a run is active on a seat, a new start for that seat does not begin, and **Run Now** reports **A run is already in progress.**
 
 ## Stop a run
 
-Select **Stop** while a pipeline run is active. Active processing stops immediately; actions that already completed or were sent remain in place.
+**Stop** appears in the **Run pipeline** card while a run is active. As a member, it stops the runs on your own seats. As an admin, it stops every run in your account, including colleagues' seats. An admin without a seat of their own sees the card with **Stop** only.
+
+- A run stopped within about 30 seconds of starting is cancelled before anything goes out: **Run stopped. Nothing was sent.**
+- A run that is further along finishes the contact it is working on, saves it, and takes no new one: **Stopping — finishing the current step so nothing is lost.**
 
 <Warning>
-  Stopping a run prevents future steps in that run from executing. It does not undo or recall anything that has already been sent.
+  Stopping a run prevents further work in that run. It does not undo or recall anything that has already been sent.
 </Warning>
 
-The final status of every run appears in **Activity**:
+The status of every run appears in **Activity**, with each step listed under its run:
 
 | Status | What it means |
 | --- | --- |
-| **Succeeded** | The run reached normal completion. A succeeded run can still process zero items when nothing is eligible. |
-| **Stopped** | You stopped the run manually before all steps completed. |
-| **Failed** | An error prevented the run from completing normally. |
-| **Skipped** | A guard condition or empty queue prevented work in a specific step. |
+| **Started** / **Running** | The run is active. |
+| **Succeeded** | The run did work and nothing failed. |
+| **Completed with issues** | Some work succeeded and at least one item or step failed. |
+| **Skipped** | There was nothing to do, or every item was skipped for a recorded reason. Nothing failed. |
+| **Stopped** | Someone stopped the run before all steps completed. |
+| **Failed** | Items or steps failed and nothing succeeded. |
 
 ## Scheduled runs
 
-When a seat's schedule is active, the pipeline starts automatically on the days and times you select in **Settings → Schedule**. The dashboard prevents two pipeline runs from overlapping — if a scheduled run starts while a manual run is still active, the scheduled run waits.
+When **Schedule enabled** is on for a seat under **Settings → Schedule**, the pipeline starts automatically on the selected days, up to 20 minutes after the start time. The **Schedule** card on **Home** shows whether schedules are active and when they run.
 
-Manual **Run Now** is always available even when a schedule is configured. Use it to process urgent work outside normal hours without disabling the schedule.
+If a run is still active on the seat at the scheduled time, the scheduled start does not begin. If a scheduled run fails to start for a technical reason, it is retried automatically for up to 30 minutes.
+
+**Run Now** is always available, even when a schedule is configured. Use it to process urgent work outside normal hours without disabling the schedule. If no seat of yours has a schedule, the **Run pipeline** card says so and links to **Set up a daily schedule**.
 
 For diagnosing runs that finish without producing the expected work, see [Activity and troubleshooting](/operate/activity-and-troubleshooting).

@@ -1,47 +1,107 @@
 ---
 title: "Nachrichten prüfen"
-description: "Bearbeite, regeneriere, verwerfe oder bestätige personalisierte Ansprache vor dem Versand."
+description: "Bearbeite, bestätige, regeneriere oder stoppe personalisierte Ansprache vor dem Versand."
 icon: "message-square-check"
 ---
 
-Öffne **Messages**, um generierte E-Mail- und LinkedIn-Nachrichten zu prüfen. Wenn die Freigabe unter **Settings → Schedule** aktiviert ist, wartet jede Nachricht hier auf deine Entscheidung.
+Öffne **Messages**, um jede generierte Erstnachricht per E-Mail und LinkedIn zu sehen, die noch nicht versendet ist. Ist die Freigabe aktiv, wartet jede davon hier auf deine Entscheidung. Follow-ups warten nie hier: Sie werden während des Laufs automatisch geschrieben und versendet, unabhängig von der Freigabe-Einstellung.
+
+Als Member siehst du die Nachrichten deiner eigenen Seats, als Admin das ganze Konto. Enthält die Queue Nachrichten mehrerer Seats, zeigst du über das Menü **All seats** einen einzelnen Seat.
+
+## Queue lesen
+
+Links steht die Liste, rechts die geöffnete Nachricht. Auf dem Smartphone öffnet sich die Nachricht über der Liste. Mit den Tabs wechselst du die Liste:
+
+| Tab | Inhalt |
+| --- | --- |
+| **Needs approval** | Nachrichten, die auf deine Entscheidung warten. Nur sichtbar, solange die Freigabe aktiv ist. |
+| **Next to send** | Freigegebene Nachrichten. Heißt **Queued**, wenn die Freigabe aus ist. Die Zahl zählt nur Nachrichten, die der nächste Lauf versendet; eine Zeile unter den Tabs nennt, wie viele gelistete Nachrichten beim nächsten Lauf nicht hinausgehen. |
+| **Not going out** | Entwürfe, die nicht versendet werden können: Der Seat ist ausgeschaltet, LinkedIn ist für den Seat aus, LinkedIn ist für diesen Kontakt geschlossen oder es gibt keine zustellbare Adresse. |
+
+Ein Badge in der Zeile zeigt den Zustand:
+
+| Badge | Bedeutung |
+| --- | --- |
+| **Sending** | Ein laufender Pipeline-Lauf versendet diese Nachricht. |
+| **Held back** | Die Nachricht wird so nicht versendet. Siehe [Zurückgehaltene Nachrichten](#zurückgehaltene-nachrichten). |
+| **Waiting** | Die Nachricht wartet erst auf etwas, etwa auf ihre LinkedIn-Einladung oder ein neu verbundenes LinkedIn-Konto. Die geöffnete Nachricht sagt, worauf. |
+| **Approve to send** | Die Freigabe ist aus, aber diese Nachricht entstand, als sie aktiv war. Sie wartet deshalb auf deine Freigabe. |
+
+Die geöffnete Nachricht zeigt Kontakt, Unternehmen, Seat und Erstellungsdatum. Eine Zeile oben sagt, worauf die Nachricht aufbaut, etwa auf ein Signal aus den LinkedIn-Posts des Kontakts oder nur auf Rolle und Unternehmen. E-Mails zeigen die Adresse unter **To**. Klappe **Strategy brief** auf, um zu sehen, warum die Nachricht so geschrieben wurde.
 
 ## Nachrichtenaktionen
 
 ### Edit
 
-Ändere Betreff oder Text und behalte Recherche und Strategie bei. Nutze dies für gezielte Korrekturen.
+Ändere Betreff oder Text direkt in der geöffneten Nachricht. Änderungen werden gespeichert, wenn du `⌘S` (`Ctrl+S` unter Windows) drückst, freigibst oder zu einer anderen Nachricht wechselst. **Discard** verwirft ungespeicherte Änderungen. Bei LinkedIn-Nachrichten wird der Betreff nur genutzt, wenn LinkedIn die Nachricht als InMail zustellt.
 
-### Regenerate
-
-Verwirf den aktuellen Entwurf und erstelle eine neue Nachricht. Nutze Regeneration, wenn der Ansatz falsch ist, nicht für kleine sprachliche Änderungen.
-
-### Reject
-
-Entferne die Nachricht aus der Versand-Queue. Das Verwerfen löscht weder Kontakt noch Unternehmen.
+Nutze die Bearbeitung für gezielte Korrekturen am Wortlaut, etwa einen Namen korrigieren, den Ton anpassen oder einen Satz kürzen, wenn der Ansatz stimmt. Der Agent überschreibt eine bearbeitete Nachricht nie, und sie wird nie wegen ihres Alters zurückgehalten. Ist die Freigabe aus, versendet der nächste Lauf die gespeicherte Fassung.
 
 ### Approve
 
-Gib eine E-Mail- oder LinkedIn-Nachricht für den Versand frei. Die Freigabe versendet nicht sofort; die Nachricht wartet auf den nächsten Outreach-Lauf und das Tageslimit des Seats.
+Wähle **Approve**, bei ungespeicherten Änderungen **Save & approve**, um eine Nachricht für den Versand freizugeben. Die Freigabe versendet nicht sofort; die Nachricht wartet auf den nächsten Lauf und das Tageslimit des Seats. Danach öffnet sich die nächste Nachricht der Liste.
+
+### Regenerate
+
+Verwirf den aktuellen Entwurf; der Agent schreibt beim nächsten Nachrichtenlauf einen neuen. Schneller geht es mit **Messages** unter **Advanced** auf **Home**. Wähle **Regenerate**, wenn die Strategie selbst nicht stimmt, nicht für kleine sprachliche Änderungen: Der Blickwinkel passt nicht, der Proof Point ist irrelevant oder die Nachricht passt nicht zur Persona.
+
+Beschreibe vor dem Bestätigen unter **Optional: what was wrong with it?**, was nicht gepasst hat. Ohne Grund bekommst du denselben Ansatz in anderen Worten.
+
+**Regenerate** ist nicht verfügbar, wenn nichts den Entwurf neu schreiben würde, etwa weil der Kontakt noch nicht recherchiert ist, der Seat kein Postfach verbunden hat oder die LinkedIn-Einladung noch nicht versendet ist. Die geöffnete Nachricht nennt den Grund.
+
+### Not interesting
+
+Wähle **Not interesting**, um die Ansprache dieser Person zu stoppen. Ihr Outcome wird **Not interesting** und ihre Entwürfe verlassen die Queue; Kontakt und Unternehmen bleiben erhalten. Wähle stattdessen **All of** das Unternehmen, um dasselbe für alle dort zu tun: Die Stage des Unternehmens wird **Not interesting** und das Unternehmen kommt auf deine Blacklist.
+
+Einen schlechten Entwurf korrigierst du ohne Stopp mit **Regenerate**.
+
+<Tip>
+  Mit `j` und `k` bewegst du dich durch die Liste, mit `⌘↵` gibst du die geöffnete Nachricht frei.
+</Tip>
+
+## Zurückgehaltene Nachrichten
+
+Ist die Freigabe aktiv und **Hold back stale drafts** unter **Settings → Schedule** eingeschaltet, wird eine Nachricht, die aus einem LinkedIn-Post oder einem anderen Signal von vor mehr als 30 Tagen entstand, zurückgehalten statt versendet. Eine Nachricht, deren Signal abgelaufen ist, wird unabhängig von der Freigabe zurückgehalten. Nachrichten, die auf Rolle und Unternehmen aufbauen, und von dir bearbeitete Nachrichten werden nie wegen ihres Alters zurückgehalten.
+
+Ein Hinweis oben auf **Messages** zählt die zurückgehaltenen Nachrichten. Jede wird beim nächsten Nachrichtenlauf aus aktueller Recherche neu geschrieben. Um die Fassung so zu versenden, wie sie ist, wähle **Send anyway** in der geöffneten Nachricht. Das gibt diese Fassung frei und startet ihr 30-Tage-Fenster neu.
+
+## LinkedIn-Nachrichten und die Einladung
+
+Eine LinkedIn-Nachricht wird geschrieben, sobald die Kontaktanfrage versendet ist, und geht erst nach der Einladung hinaus. Bis dahin zeigt sie **Waiting**. Ist die Einladung noch offen, zeigt die Nachricht das Datum des nächsten Versuchs. Auf einem Seat, der zuerst die LinkedIn-Einladung sendet, wartet die E-Mail, bis die Einladung versendet ist, höchstens 7 Tage.
+
+## Freigabe an oder aus
+
+Ein Admin wählt den Versandmodus unter **Settings → Schedule → Outreach delivery**: **Approve every message from the dashboard** oder **Send everything automatically**. Neue Konten starten mit aktiver Freigabe.
+
+Ist die Freigabe aus, werden neue Nachrichten beim Schreiben freigegeben. Sie erscheinen unter **Queued**, und du kannst sie bis zum nächsten Lauf noch bearbeiten.
+
+Schaltet ein Admin die Freigabe aus, werden Nachrichten, die noch auf Freigabe warten, beim Speichern freigegeben. Ist **Hold back stale drafts** an, werden solche, die aus einem Post oder Signal von vor mehr als 30 Tagen entstanden, vorher neu geschrieben; wo noch nichts sie neu schreiben kann, bleiben sie zurückgehalten, bis du entscheidest.
 
 ## Strategie statt nur Grammatik prüfen
 
-Klappe eine Nachricht auf, prüfe das Strategie-Briefing und bestätige:
+Öffne vor der Freigabe den **Strategy brief** jeder Nachricht und bestätige alle folgenden Punkte:
 
-- Person und Unternehmen sind korrekt
-- Nachricht entspricht der aktuellen Rolle und dem Kontext
-- Proof Point ist korrekt und zulässig
-- Call-to-Action passt zur Persona
-- Sprache und Formalität sind angemessen
-- Grußformel passt zum Vertreter
-- Nachricht enthält keine unbelegte Aussage
+- [ ] Die Angaben zu Person und Unternehmen sind korrekt und aktuell
+- [ ] Die Nachricht entspricht der tatsächlichen Rolle und dem Kontext des Prospects
+- [ ] Proof Points und Fallbeispiele sind korrekt und zur Verwendung zulässig
+- [ ] Der Call-to-Action passt zur Persona und zur Phase der Beziehung
+- [ ] Sprache, Formalität und Tonlage passen zum Empfänger
+- [ ] Name und Titel in der Grußformel passen zum sendenden Vertreter
+- [ ] Keine Aussage in der Nachricht ist unbelegt oder potenziell irreführend
 
 <Warning>
-  AI-generierter Text kann sachlich falsch oder unangebracht sein, obwohl er natürlich klingt. Automatischer Versand überträgt die Prüfverantwortung auf dich; er beseitigt sie nicht.
+  AI-generierter Text kann sachlich falsch oder unangebracht sein, obwohl er flüssig und natürlich klingt. Automatischer Versand überträgt die Prüfverantwortung auf dich; er beseitigt sie nicht. Behandle jede Nachricht wie deine eigene, bevor du sie freigibst oder den automatischen Versand aktivierst.
 </Warning>
 
 ## Nach einer Playbook-Änderung
 
-Bestehende Entwürfe werden nicht automatisch neu erstellt. Regeneriere betroffene Nachrichten oder verwirf sie und lass Ersatz vorbereiten. Lass die Freigabe aktiv, bis die aktualisierten Ergebnisse stabil sind.
+Bestehende Entwürfe und freigegebene Nachrichten werden nicht automatisch neu erstellt, wenn du das Messaging-Playbook aktualisierst. Neue Einstellungen wirken nur für Nachrichten, die nach der Änderung generiert werden.
 
-Unter [Messaging-Playbook](/de/configure/messaging-playbook) findest du die Einstellungen, die neue Nachrichten formen.
+So wendest du aktualisierte Playbook-Einstellungen auf Nachrichten an, die schon einen Entwurf haben:
+
+1. Öffne **Messages** und wähle bei Bedarf den betroffenen Seat unter **All seats**.
+2. Wähle bei jedem bestehenden Entwurf **Regenerate**.
+3. Führe die Pipeline oder **Messages** unter **Advanced** aus, um neue Entwürfe mit den aktualisierten Einstellungen zu erzeugen.
+4. Lass die Freigabe aktiv, bis die aktualisierten Ergebnisse stabil wirken, bevor du auf automatischen Versand umstellst.
+
+Unter [Messaging-Playbook](/de/configure/messaging-playbook) findest du die Einstellungen, die Ton, Persona, Proof Points und Call-to-Action neuer Nachrichten steuern.

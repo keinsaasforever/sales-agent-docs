@@ -1,39 +1,84 @@
 ---
 title: "Antworten und Übergabe"
-description: "Erkenne, wann die Automatisierung stoppt und wie du ein Gespräch übernimmst."
+description: "Erkenne, wann die Automatisierung nach einer Antwort stoppt, wie Antworten eingeordnet werden, wie du ein Gespräch übernimmst und die To Call-Liste abarbeitest."
 icon: "handshake"
 ---
 
-Der Sales Agent überwacht Antworten, damit die automatisierte Ansprache nicht fortgesetzt wird, nachdem ein Prospect reagiert hat.
+Der Sales Agent überwacht E-Mail und LinkedIn auf Antworten und stoppt automatisierte Follow-ups, sobald eine Reaktion erkannt wird. So übernimmst du im richtigen Moment, ohne mit der Automatisierung zu konkurrieren.
 
 ## Kanalübergreifendes Stoppverhalten
 
-Eine erkannte E-Mail-Antwort stoppt LinkedIn-Follow-ups. Eine erkannte LinkedIn-Antwort stoppt E-Mail-Follow-ups. So setzt der andere Kanal eine Sequenz nicht fort, nachdem die Person geantwortet hat.
+Eine erkannte E-Mail-Antwort stoppt LinkedIn-Follow-ups. Eine erkannte LinkedIn-Antwort stoppt E-Mail-Follow-ups. So setzt der andere Kanal eine Sequenz nicht fort, nachdem die Person geantwortet hat. Das gilt auch, wenn deine LinkedIn-Nachricht eine Antwort ausgelöst hat, die nur per E-Mail ankommt.
 
-Der Prospect wechselt zu **Replied**, sofern nicht bereits ein späteres menschliches Outcome wie **Meeting** oder **Closed Deal** gesetzt ist.
+## Wie Antworten eingeordnet werden
+
+Der Sales Agent liest jede Antwort und ordnet sie ein. Die Spalte **Reply** unter **Prospects** zeigt das Ergebnis.
+
+| Antwort | Ergebnis |
+| --- | --- |
+| Interessiert oder noch nicht bewertet | Stage **Replied** |
+| Eine LinkedIn-Floskel wie „danke fürs Vernetzen“ | Stage **Replied**, angezeigt als **Neutral**. Die nächste Nachricht wird neu bewertet. |
+| Ein Nein | Stage **Declined**, kein Outcome |
+| Ein späterer Zeitpunkt, etwa „nächstes Quartal“ | Stage **Not right now**, kein Outcome |
+| Eine Bitte, nicht mehr zu schreiben | Outcome **Asked to stop** |
+| Nicht die richtige Person | Stage **Declined**. Nennt die Antwort jemand anderen, zeigt die Spalte **Reply** **Referral** und die Timeline **Referred to** mit dem Namen. |
+
+**Declined** und **Not right now** lassen den Prospect im Spiel, sodass du ihn später erneut ansprechen kannst. **Asked to stop** ist ein Outcome und hält ihn aus jeder automatisierten Ansprache heraus.
+
+## Bewertung prüfen
+
+Öffne einen Prospect, der geantwortet hat. Der Tab **Info** beginnt mit der Karte **They replied**, die Antwort und Datum zeigt, mit bereits ausgewählter automatischer Bewertung. Wähle **Positive**, **Not right now** oder **Negative**, um sie zu korrigieren, oder wähle die markierte Bewertung erneut, um sie zu entfernen. Eine Antwort, die als **Asked to stop**, **Wrong person** oder **Email bounced** endete, wird angezeigt, lässt sich hier aber nicht ändern: Ändere stattdessen das Outcome. **Later** blendet die Karte aus, bis du den Prospect erneut öffnest.
+
+Wenn du eine Antwort als **Positive** markierst, kommt das Unternehmen auf **In conversation** und die Ansprache der Kolleginnen und Kollegen des Prospects stoppt. Siehe [Der Deal liegt beim Unternehmen](/de/operate/stages-and-outcomes#der-deal-liegt-beim-unternehmen).
 
 ## Gespräch übernehmen
 
 Wenn eine Antwort eintrifft:
 
-1. vollständigen Verlauf im Quellkanal lesen
-2. persönlich über das verbundene LinkedIn- oder E-Mail-Konto antworten
-3. nützlichen Kontext oder Notizen beim Prospect erfassen
-4. **Meeting** setzen, wenn das Gespräch in deinen Vertriebsprozess übergeht
-5. Outcome bei Bedarf zu **Offer Sent**, **Closed Deal** oder **Lost Deal** weiterentwickeln
+1. **Verlauf öffnen:** **Reply now** auf der Antwortkarte öffnet den genauen E-Mail- oder LinkedIn-Verlauf in einem neuen Tab. Der Tab **Timeline** hat **View Email** und **View LinkedIn**, jeweils mit dem Postfach oder Seat, zu dem der Verlauf gehört. In der Liste **Prospects** zeigt ein Hover über das Datum **Email Sent** oder **LinkedIn Sent** oder über das **Reply**-Badge dieselben Buttons. Ein Verlauf öffnet sich nur, wenn du in diesem Postfach oder im LinkedIn dieses Seats angemeldet bist. Ist der genaue Verlauf nicht bekannt, fehlt der Button.
+2. **Persönlich antworten:** über das verbundene LinkedIn- oder E-Mail-Konto. Deine persönliche Antwort ist die Übergabe.
+3. **Kontext erfassen:** im Tab **Notes** mit **Add note**. Jede Notiz zeigt, wer sie geschrieben hat, und nur die Person, die sie geschrieben hat, kann sie bearbeiten oder löschen.
+4. **Meeting** setzen, wenn das Gespräch in deinen Vertriebsprozess übergeht.
+5. Outcome bei Bedarf zu **Offer Sent**, **Closed Deal**, **Not interesting** oder **Lost Deal** weiterentwickeln.
 
-Deine direkte Antwort soll nicht mit Automatisierung konkurrieren. Das Antwortsignal oder ausgewählte Outcome hält den Prospect aus automatisierten Claims heraus.
+Home und **Tasks** zeigen, wie viele Prospects geantwortet haben und auf dich warten. Ein Prospect verlässt diese Zahl, wenn du ein Outcome setzt oder die Antwort als **Negative** oder **Not right now** markierst.
 
-## To Call
+## Die To-Call-Liste abtelefonieren
 
-Die Stage **To Call** erscheint, wenn die konfigurierte automatisierte Sequenz abgeschlossen und eine nutzbare Telefonnummer vorhanden ist. Sie kann auch erscheinen, wenn digitale Kanäle ausgeschöpft sind, Telefonansprache aber noch möglich ist.
+Der Tab **To Call** unter **Prospects** listet Prospects mit funktionierender Telefonnummer, die für einen Anruf fällig sind. Standardmäßig kommt ein Prospect auf die Liste, wenn alle Follow-ups gesendet sind. Admins ändern das unter **Settings → Targeting** im Bereich **Call list** (**Show a lead on the To Call tab**): **Never**, **When the invite is sent**, **When the invite is accepted**, **When the first message goes out** oder **When all follow-ups are done (default)**. Die Einstellung ändert nie, was der Agent sendet oder wann.
 
-Setze nach dem Anruf das passende Outcome. Bleibt der Prospect **In play**, kann eine weitere geeignete automatisierte Aktion stattfinden, falls seine bestehende Sequenz nicht vollständig abgeschlossen ist.
+Ein Prospect mit **Unreachable** und Telefonnummer steht immer auf der Liste. Ein Prospect, der geantwortet hat, nicht.
+
+**To Call** ist ein Signal, keine automatisierte Aktion. Der nächste Schritt liegt bei dir.
+
+### Anruf erfassen
+
+Die Karte **Call** im Tab **Info** zeigt die Nummer zum Wählen. Wähle **Yes, I called**, ergänze optional eine Zusammenfassung und wähle das Ergebnis:
+
+| Ergebnis | Was passiert |
+| --- | --- |
+| **Positive** | Outcome **Meeting**. Stoppt die Ansprache. |
+| **Negative** | Outcome **Asked to stop**. Stoppt die Ansprache. |
+| **Wrong person** | Outcome **Wrong person**. Stoppt die Ansprache. |
+| **Nobody answered** | Wird mit deiner Notiz erfasst. Die Ansprache läuft weiter und der Prospect bleibt auf **To Call**. |
+
+Hat der Prospect bereits **Offer Sent**, **Closed Deal** oder **Lost Deal**, behält ein erfasster Anruf dieses Outcome. Die Karte zählt unbeantwortete Versuche. **Not yet** blendet die Karte vorerst aus. Ein erfasster Anruf zeigt, wer ihn eingetragen hat, und **Clear outcome** entfernt das Ergebnis und stellt das vorherige Outcome wieder her.
+
+### Wenn die Nummer falsch ist
+
+Wähle unter der Nummer **Number doesn't work** oder **Wrong person on this number** (jemand anderes nimmt ab). Das markiert die Nummer, nicht die Person: Die Ansprache läuft weiter und die nächste hinterlegte Nummer übernimmt. Im Bereich **Enrichment** hat jede Nummer die Buttons **Works**, **Doesn't work** und **Wrong person**, ältere Nummern liegen hinter **more numbers**. Markierst du die letzte Nummer als nicht funktionierend, fragt der Sales Agent, ob er eine neue suchen soll. Das kann Credits verbrauchen.
+
+Hat die Suche nichts gefunden, steht dort **No phone found**. Mit **Add number** trägst du eine Nummer ein, die du schon kennst, mit **Find phone** startest du eine Suche.
 
 ## Abwesenheit und Zustellprobleme
 
-Eine Abwesenheitsnotiz kann das nächste Follow-up bis zum Rückkehrdatum verschieben. Eine fehlgeschlagene E-Mail-Zustellung kann eine weitere Kontaktdatenprüfung auslösen, wenn eine Alternative verfügbar ist. Diese Fälle zählen nicht als positive Antwort.
+- Eine **Abwesenheitsnotiz** ist keine Antwort. Der Sales Agent liest das Rückkehrdatum und hält E-Mail- und LinkedIn-Follow-ups bis zum Werktag danach zurück, höchstens 90 Tage. Ohne lesbares Datum wartet er fünf Werktage. Unter **Current state** in der Timeline steht **Paused — out of office** mit dem frühesten Follow-up-Datum, die Spalte **Reply** zeigt **Out of office**. Eine echte Antwort oder ein Bounce beendet die Pause.
+- Eine automatische Antwort, laut der die Person das **Unternehmen verlassen** hat, gilt als falsche Person, nicht als Abwesenheit.
+- Nennt eine automatische Antwort die **neue E-Mail-Adresse** der Person, gehen Follow-ups an diese Adresse.
+- Ein **Bounce** markiert die Adresse als nicht funktionierend und sie wird nie wieder verwendet. Der Sales Agent sucht eine andere Adresse, was Credits verbrauchen kann. Findet er eine, läuft die Sequenz dort weiter. Sonst geht es nur über LinkedIn weiter, oder der Prospect wird **Unreachable**, wenn LinkedIn nicht verfügbar ist.
+
+Diese Fälle laufen automatisch. Greife nur ein, wenn ein Prospect nach dem Rückkehrdatum oder nach der Adresssuche hängen bleibt.
 
 <Tip>
-  Bearbeite Antwortbenachrichtigungen, bevor du neuen Outreach prüfst. Aktive Gespräche zu übernehmen schafft schneller Wert, als zuerst die nächste Queue zu füllen.
+  Bearbeite Antworten, bevor du neuen Outreach prüfst. Aktive Gespräche zu übernehmen schafft schneller Wert, als zuerst die nächste Queue zu füllen. Setze Outcomes vor dem nächsten Pipeline-Schritt, damit niemand angeschrieben wird, der schon geantwortet hat.
 </Tip>

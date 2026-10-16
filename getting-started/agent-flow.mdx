@@ -8,7 +8,7 @@ mode: "wide"
 
 import { SalesAgentFlow } from "/snippets/sales-agent-flow.jsx";
 
-The Sales Agent moves each contact through guarded steps. You decide who to target and when work starts. The agent researches, prepares, and sends eligible outreach. A reply or human outcome hands control back to you and stops automation immediately.
+The Sales Agent moves each contact through guarded steps. You decide who to target and when work starts. The agent researches, prepares, and sends eligible outreach. A reply or outcome hands control back to you and stops automation immediately.
 
 <Info>
   The interactive controls below explain how configuration changes the path. They do not read or update your account. Change real settings in the [Sales Agent dashboard](https://sales.keinsaas.com).
@@ -26,8 +26,8 @@ This diagram shows every main branch, including optional approval and the two hu
 %%{init: {'flowchart': {'defaultRenderer': 'elk'}}}%%
 flowchart TD
   H1["Human: define or change the ICP"] --> D1{"What changed?"}
-  D1 -->|Weights only| H2["Human: Recompute scores"]
-  D1 -->|ICP meaning or criteria| H3["Human: AI rescore existing contacts"]
+  D1 -->|Weights only| H2["Human: Recompute scores now<br/>instant, no AI"]
+  D1 -->|ICP meaning or criteria| H3["Human: Update scores now<br/>AI rescore in the background"]
   D1 -->|Nothing| H4["Human: launch a search or import"]
   H2 --> H4
   H3 --> H4
@@ -48,12 +48,12 @@ flowchart TD
   L1 --> D4{"Message approval required?"}
   E1 --> D4
   B1 --> D4
-  D4 -->|Yes| H6["Human: edit, regenerate, reject, or approve"]
+  D4 -->|Yes| H6["Human: edit, regenerate, approve,<br/>or mark Not interesting"]
   D4 -->|No| A4["Agent: queue automatic delivery"]
   H6 --> A5["Agent: send approved outreach on an eligible run"]
   A4 --> A5
 
-  A5 --> D5{"Reply or human outcome detected?"}
+  A5 --> D5{"Reply or outcome detected?"}
   D5 -->|Reply or outcome| S1["Stop automation immediately on both channels"]
   D5 -->|No| A6["Agent: send due follow-ups<br/>up to 3 email + 1 LinkedIn"]
   A6 --> D6{"Reply or outcome now?"}
@@ -62,13 +62,13 @@ flowchart TD
   D6 -->|No, sequence complete| D7{"Usable phone number?"}
 
   S1 --> H7["Human: read the thread, reply personally, and set an outcome"]
-  D7 -->|Yes| H8["Human: call the prospect and record the result"]
+  D7 -->|Yes, by default| H8["Human: call the prospect and record the result"]
   D7 -->|No| H9["Human: review and mark Unreachable when appropriate"]
   H7 --> S2["Outcome keeps prospect out of automation"]
   H8 --> S2
   H9 --> S2
 
-  H10["Human: select Stop during an active run"] --> S3["Current processing stops immediately;<br/>completed sends remain"]
+  H10["Human: select Stop during an active run"] --> S3["No new work starts;<br/>completed sends remain"]
   H11["Human: set an outcome at any point"] --> S2
   H12["Human: archive prospect or blacklist company"] --> S4["Stop future automated outreach immediately"]
 
@@ -90,26 +90,26 @@ flowchart TD
 | --- | --- | --- |
 | **ICP setup or change** | Edit targeting, exclusions, weights, or thresholds. Refresh existing scores when prompted. | Uses the current score and threshold for new candidates and future queue eligibility. |
 | **Search or import** | Launch a Sales Navigator source, upload a CSV, or search at existing companies. | Retrieves candidates, applies filters, de-duplicates, and scores. Credits apply to found search or enrichment results, not only final matches. |
-| **Run start** | Enable the seat schedule or select **Run Now**. | Claims only currently eligible work within the seat's daily limits. |
-| **Message review, when enabled** | Edit, regenerate, reject, or approve the draft. | Sends an approved message only on an eligible run; approval itself does not send. |
+| **Run start** | Enable the seat schedule or select **Run Now**, which starts your own seats. | Claims only currently eligible work within the seat's daily limits. |
+| **Message review, when enabled** | Edit, regenerate, or approve the first message, or mark the prospect **Not interesting**. **All of** the company also stops colleagues there and blocks the company. | Sends an approved message only on an eligible run; approval itself does not send. |
 | **Reply** | Read the complete thread, reply personally, and set the appropriate outcome. | Stops automated follow-ups on email and LinkedIn immediately. |
-| **No reply after follow-ups** | Work prospects in **To Call** when a phone number is available; otherwise review whether **Unreachable** is appropriate. | Leaves the digital sequence stopped once its configured follow-ups are exhausted. |
-| **Sales progress** | Set **Meeting**, **Offer Sent**, **Closed Deal**, **Not interesting**, **Lost Deal**, or **Unreachable**. | Removes the prospect from every automated claim immediately. |
+| **No reply after follow-ups** | Work prospects in **To Call** when a phone number is available; otherwise review whether **Unreachable** is appropriate. | Leaves the digital sequence stopped once its configured follow-ups are exhausted. By default, prospects join **To Call** at this point; an admin can choose an earlier moment in **Settings → Targeting**. |
+| **Sales progress** | Set **Meeting**, **Offer Sent**, **Closed Deal**, **Not interesting**, **Asked to stop**, **Wrong person**, **Lost Deal**, or **Unreachable**. | Removes the prospect from every automated claim immediately. |
 
 ## Optional paths
 
 <AccordionGroup>
   <Accordion title="Approval on or off">
-    With approval on, generated email and LinkedIn messages wait for your review in **Messages**. With automatic delivery on, the approval step disappears, but you remain responsible for the generated content.
+    With **Approve every message from the dashboard**, first email and LinkedIn messages wait for your review in **Messages**. Follow-ups always send automatically. With **Send everything automatically**, the approval step disappears, but you remain responsible for the generated content. Only admins change this setting.
   </Accordion>
   <Accordion title="Scheduled or manual runs">
-    A schedule starts a complete run on the configured days and time. **Run Now** starts the same guarded pipeline on demand. Advanced runs can start at Messages, Outreach, or Follow-ups without bypassing eligibility checks.
+    A schedule starts a complete run on the configured days and time. **Run Now** starts the same guarded pipeline on demand for your own seats. Under **Advanced** you can run one part on its own: **Messages** writes drafts without sending, **Outreach** sends messages that are ready, and **Follow-ups** only sends due follow-ups. None of them bypasses eligibility checks.
   </Accordion>
   <Accordion title="LinkedIn, email, or both">
-    You can turn LinkedIn off for a seat while email continues. When both channels are available, the agent uses each path according to your settings. A reply on either channel stops follow-ups on both.
+    Each seat runs LinkedIn **Both together** with email, **LinkedIn first**, or **Off** while email continues. A reply on either channel stops follow-ups on both.
   </Accordion>
   <Accordion title="Follow-ups and phone handoff">
-    Set a channel's follow-up count to `0` to remove that loop. The supported maximum is three email follow-ups plus one LinkedIn follow-up. After the sequence is exhausted, prospects with a usable phone number surface for a human call.
+    Set a channel's follow-up count to `0` to remove that loop. The supported maximum is three email follow-ups plus one LinkedIn follow-up. By default, prospects with a usable phone number surface for a human call after the sequence is exhausted.
   </Accordion>
 </AccordionGroup>
 

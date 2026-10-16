@@ -1,14 +1,14 @@
 ---
 title: "ICP und Scoring"
-description: "Definiere deine Zielgruppe und lege fest, wie Kandidaten sich für die Ansprache qualifizieren."
+description: "Definiere deine Zielgruppe, Filter und Schwellenwerte und lege fest, wie Kandidaten sich für die Ansprache qualifizieren."
 icon: "target"
 ---
 
-Dein Ideal Customer Profile (ICP) steuert Kontaktsuche, Kandidatenbewertung und Eignung für die Outreach-Pipeline. Konfiguriere es unter **Settings → Targeting**.
+Dein Ideal Customer Profile (ICP) steuert Kontaktsuche, Kandidatenbewertung und Eignung für die Outreach-Pipeline. Konfiguriere es unter **Settings → Targeting**. Nur Admins deines Kontos sehen diese Seite. Die ICP-Felder speicherst du mit **Save targeting**.
 
 ## Mit der freien ICP-Beschreibung beginnen
 
-Beschreibe die Kombination, die du wirklich suchst, statt einer breiten Marktkategorie. Berücksichtige zum Beispiel:
+Beschreibe unter **Your ICP in your own words** die Kombination, die du wirklich suchst, statt einer breiten Marktkategorie. Berücksichtige zum Beispiel:
 
 - Geschäftsmodell und Branche
 - Unternehmensgröße oder Wachstumsphase
@@ -21,30 +21,47 @@ Beispiel:
 
 > Foodtech-Unternehmen in der DACH-Region mit weniger als 50 Mitarbeitenden und starkem aktuellem Wachstum. Zielpersonen sind neu ernannte Head of Marketing oder Marketing Directors mit Standort in der DACH-Region.
 
-Der Agent bewertet diese Beschreibung gemeinsam mit den strukturierten Kriterien.
+Die AI bewertet jedes Unternehmen und jeden Kontakt anhand dieser Beschreibung und der strukturierten Kriterien.
 
 ## Strukturierte Kriterien konfigurieren
 
 | Einstellung | Verwendung |
 | --- | --- |
-| **Job titles — Tier 1** | Primäre Zielrollen. Nutze konkrete Entscheider- oder Champion-Titel. |
-| **Job titles — Tier 2** | Executive-Fallbacks wie Founder oder Managing Director, wenn Tier 1 nicht verfügbar ist. |
-| **Excluded job titles** | Rollen, die selbst dann übersprungen werden, wenn sie in den Quelldaten erscheinen. |
-| **Locations** | Zielländer oder -regionen. Leer lassen, wenn kein Standortfilter gelten soll. |
-| **Industries** | Zu priorisierende Branchen. Leer lassen, wenn kein Branchenfilter gelten soll. |
-| **Company size** | Zielgrößen nach Mitarbeiterzahl. Unbekannte Größen werden nicht automatisch abgelehnt. |
-| **ICP keywords** | Spezialisierungen, Geschäftsmodelle oder weitere Begriffe, die Eignung anzeigen. |
-| **Max contacts per company** | Feste Obergrenze für gesuchte Personen je Unternehmen. Drei bis vier sind ein normaler Startwert, zehn das Maximum. |
+| **Job Titles — Tier 1 (primary ICP)** | Die Rollen, die du wirklich erreichen willst. Werden in jedem Unternehmen zuerst gesucht. |
+| **Job Titles — Tier 2 (fallback)** | Rollen, die du ersatzweise nimmst, etwa Geschäftsführung in kleinen Unternehmen oder eine angrenzende Rolle. Werden nur in Unternehmen gesucht, in denen kein Tier-1-Titel gefunden wurde. |
+| **Seniority Levels** | Die Ebenen, mit denen du sprechen willst, von **C-level / Owner** bis **Entry / Junior**. Lässt du alles leer, gilt keine Vorgabe. |
+| **Excluded Job Titles** | Titel, die von der Ansprache ausgeschlossen bleiben, auch wenn sie in Suchergebnissen erscheinen. |
+| **Locations** | Zielländer. Leer lassen, wenn kein Standortfilter gelten soll. |
+| **DACH only** | Nur Personen mit Wohnort in Deutschland, Österreich, der Schweiz oder Liechtenstein. Überschreibt **Locations** für Personen, nicht für den Firmensitz, und stoppt LinkedIn-Einladungen an Personen außerhalb dieser Region. |
+| **Industries** | LinkedIn-Branchen, auf die du dich konzentrierst. Leer lassen, wenn kein Branchenfilter gelten soll. |
+| **Company Size** | Zielgrößen nach Mitarbeiterzahl. Ohne Auswahl gilt kein Größenfilter. Unternehmen mit unbekannter Größe werden nie herausgefiltert. |
+| **ICP Keywords** | Spezialisierungen, Geschäftsmodelle oder weitere Begriffe, die ein passendes Unternehmen anzeigen. |
+| **Max Contacts per Company** | Feste Obergrenze für gesuchte Personen je Unternehmen. Drei bis vier sind ein normaler Startwert, zehn das Maximum. |
+| **Fill up to the max** | Findet die erste Quelle weniger Personen als dein Maximum, werden auch die nächsten Quellen gefragt. Kostet etwa das Dreifache an Such-Credits. |
+| **Retry bad emails at another source** | Erweist sich eine gefundene E-Mail-Adresse als ungültig, prallt sie ab oder liegt sie auf einer fremden Domain, wird der Kontakt bei der nächsten Quelle erneut gesucht. Jeder neue Versuch kostet zusätzliche Credits. |
+
+## Kontakte außerhalb deiner Filter
+
+**Excluded Job Titles**, **Seniority Levels**, **Locations** und **Company Size** sind harte Filter. Ein Kontakt, der einen davon nicht erfüllt, bleibt erhalten, wird aber ohne Seat zurückgestellt. Für ihn startet keine Ansprache. Suchergebnisse, die dort landen, kosten trotzdem die Credits, mit denen sie gefunden wurden.
+
+- Fehlende Angaben gelten als bestanden. Ein Kontakt mit unbekannter Seniorität, unbekanntem Standort oder unbekannter Unternehmensgröße wird deswegen nie zurückgestellt.
+- Der Standort scheitert nur, wenn weder die Person noch das Unternehmen in deinen Zielregionen liegt.
+- Ein Titel, den du unter Tier 1 oder Tier 2 eingetragen hast, hat Vorrang vor **Excluded Job Titles** und **Seniority Levels**.
+- Kontakte, die bereits angesprochen werden, sind von späteren Filteränderungen nicht betroffen.
+
+Unter **Prospects** zeigt der Tab **Contacts** diese Kontakte mit der Stage **Not in pipeline**. Fahre mit der Maus über das Badge, um den Grund zu sehen, etwa `Outside your filters: …`. Lockerst du einen Filter und aktualisierst die Scores, erhalten Kontakte, die ihn jetzt bestehen, ihren Seat zurück.
 
 ## Score verstehen
 
-Unternehmen und Kontakte können einen ICP-Score von 0 bis 100 erhalten. Die Gewichtungen sind relativ:
+Jeder Kontakt erhält einen ICP-Score von 0 bis 100. Die eine Hälfte stammt von der Person, die andere vom Unternehmen:
 
-- Job-Fit
-- Branchen-Fit
-- Standort-Fit
+- **Job fit** — wie gut der Titel der Person zu deinen Tier-1- und Tier-2-Titeln und Senioritätsstufen passt
+- **Location fit** — ob Person und Unternehmen in deinen Zielregionen liegen; zählt in beiden Hälften
+- **Industry fit** — die Branche des Unternehmens auf einer festen, eingebauten Branchenskala. Deine Liste unter **Industries** fließt stattdessen über die AI-Prüfung des Unternehmens ein.
 
-Die Gewichtungen müssen zusammen nicht 100 ergeben. Das Dashboard normalisiert sie. Eine Gewichtung von `6, 3, 1` bedeutet 60 % Job-Fit, 30 % Branche und 10 % Standort.
+Danach verschiebt eine AI-Prüfung jedes Unternehmens anhand deines ICP den Score: 15 Punkte nach oben bei klarer Eignung, 15 nach unten bei schlechter Eignung, unverändert, wenn das Ergebnis unklar ist oder das Unternehmen noch nicht geprüft wurde.
+
+Die Faktoren stellst du unter **ICP Score Weights** ein. Die Gewichtungen sind relativ und müssen zusammen nicht 100 ergeben. Neben jeder Gewichtung zeigt das Dashboard ihren tatsächlichen Anteil am Score (**= X% of score**). Weil der Score aus zwei Hälften besteht, ergeben die Standardwerte 50, 30 und 20 etwa 36 % Job-Fit, 30 % Branchen-Fit und 34 % Standort-Fit.
 
 ## Die zwei Schwellenwerte verwenden
 
@@ -52,26 +69,58 @@ Die Gewichtungen müssen zusammen nicht 100 ergeben. Das Dashboard normalisiert 
 
 Nur Kontakte mit mindestens diesem Score gelangen in die automatisierte Ansprache. Mit `0` lässt du alle Kontakte zu.
 
-### Phone enrichment threshold
+### Phone enrichment ICP threshold
 
-Nur Kontakte mit mindestens diesem Score erhalten automatisch eine Telefonsuche. Unterhalb des Schwellenwerts fragt das Dashboard vor einer manuellen Suche nach Bestätigung. Mit `0` deaktivierst du den Schwellenwert.
+Nur Kontakte mit mindestens diesem Score erhalten eine Telefonsuche: in automatisierten Läufen, bei der geplanten Suche und bei Suchen, die du selbst startest. Unterhalb des Schwellenwerts fragt das Dashboard vor einer selbst gestarteten Suche nach Bestätigung. Mit `0` deaktivierst du den Schwellenwert.
+
+Liegt dieser Schwellenwert unter dem Pipeline-Schwellenwert, warnt das Dashboard: Diese Kontakte bekämen eine bezahlte Telefonsuche, gelangten aber nie in die Pipeline. Mit **Raise it to** gleichst du beide an.
 
 <Warning>
   Senke einen Schwellenwert nicht nur, um eine Queue zu füllen. Prüfe zuerst Quelle, Owner-Zuweisung, Ausschlüsse und Score-Kriterien. Eine größere Queue mit schwächeren Kandidaten verbraucht Kapazität und Credits, ohne den Fit zu verbessern.
 </Warning>
 
+## Reihenfolge der Queue wählen
+
+**Queue order** legt fest, in welcher Reihenfolge Prospects bearbeitet werden:
+
+- **ICP with company grouping** hält die Kontakte eines Unternehmens zusammen, sodass der Account wie ein Gespräch angegangen wird. Unternehmen werden nach ihrem bestbewerteten Kontakt gereiht.
+- **ICP only** bearbeitet Kontakte strikt nach Score.
+
+Das Sortieren einer Tabelle auf dem Bildschirm ändert diese Reihenfolge nicht.
+
 ## Bestehende Scores aktualisieren
 
-Änderungen an Kriterien können bestehende Scores veralten lassen:
+Speicherst du eine Änderung, die bestehende Scores betrifft, bietet das Dashboard eine Aktualisierung an:
 
-- Wenn du nur Gewichtungen änderst, nutze **Recompute**. Die bestehenden Score-Bestandteile werden ohne AI oder Credits neu berechnet.
-- Wenn sich die Bedeutung des ICP ändert, nutze **AI rescore**, damit bestehende Kontakte nach den neuen Kriterien beurteilt werden.
+- **Recompute scores now** erscheint, wenn du Gewichtungen, Jobtitel, Senioritätsstufen, ausgeschlossene Titel oder Unternehmensgrößen geändert hast. Die Neuberechnung läuft sofort, ohne AI und ohne Credits, und wendet deine Filter erneut auf bestehende Kontakte an.
+- **Update scores now** erscheint, wenn du die freie ICP-Beschreibung, Standorte, Branchen oder Keywords geändert hast. Die AI bewertet deine Unternehmen im Hintergrund neu, du kannst weiterarbeiten. Eine Statuszeile oben auf jeder Seite zeigt den Fortschritt. Bricht die Aktualisierung ab, wähle dort **Try again**.
 
-Neu hinzugefügte Kontakte verwenden automatisch die aktuellen Einstellungen.
+Wählst du **Later**, bleibt die Aufgabe **ICP scores need updating** in deinen Benachrichtigungen, bis du die Aktualisierung startest. Neu hinzugefügte Kontakte verwenden automatisch die aktuellen Einstellungen.
+
+## Kaufsignale festlegen
+
+Die Karte **Buying signals** legt fest, was als Anlass gilt, ein Unternehmen jetzt anzuschreiben. Unternehmen mit einem frischen Signal werden zuerst kontaktiert, und die Nachricht baut darauf auf.
+
+- **What you sell** — ein paar Sätze zu deinem Angebot und wer es kauft. Jedes gefundene Ereignis wird daran gemessen.
+- **Which events count** — wähle drei bis fünf Fragen. Ein Ereignis zählt nur, wenn es eine davon mit Ja beantwortet. Jede Frage zeigt ihre Stärke und, sobald Daten vorliegen, wie viele erste Nachrichten damit in den letzten 90 Tagen beantwortet wurden.
+- **Which signals each persona hears about** — schränkt ein, welche Signale in Nachrichten an jede Persona genutzt werden.
+- **Not a signal** — Ereignisse, die nie zählen sollen, etwa Auszeichnungen.
+- **Minimum signal score** — ein Signal unter diesem Wert erreicht nie eine Nachricht.
+- **Use a signal for (days)** — wie lange ein Signal in Nachrichten genutzt wird, gezählt ab dem Tag des Ereignisses. Ein Signal ohne Datum erhält die halbe Zeit.
+
+Speichere die Karte mit **Save signals**. Die Signalsuche läuft erst, wenn keinsaas sie mit dir einschaltet; jedes durchsuchte Unternehmen kostet 1 Credit.
+
+## Weitere Targeting-Einstellungen
+
+- **Export LinkedIn posts and comments** — ist die Option aktiv, liest der Agent vor dem Schreiben, was ein Prospect kürzlich auf LinkedIn gepostet oder kommentiert hat. Das dauert einige Minuten pro Prospect. Schaltest du sie aus, wirkt auch die Regel **No posts or comments in the last 30 days** unter **Settings → Schedule** nicht mehr.
+- **Phone lookups per seat** — ob ein Seat überhaupt Telefonnummern kauft, für Kontakte ab dem Schwellenwert für die Telefonsuche. E-Mail-Adressen werden immer gesucht. Eine selbst gestartete Suche läuft unabhängig davon; Credits werden nur berechnet, wenn eine Nummer gefunden wird.
+- **Call list** — **Show a lead on the To Call tab** legt fest, wie früh ein Lead mit Telefonnummer dort erscheint, von **When the invite is sent** bis **When all follow-ups are done (default)**, oder **Never**. Ein Lead, den du auf keinem anderen Weg mehr erreichst, erscheint immer. Diese Einstellung ändert nie, was der Agent sendet.
+
+Die Karte **Sales Navigator searches** und **Keep my pipeline full** bringen neue Kontakte automatisch herein. Siehe [Prospects hinzufügen](/de/configure/add-prospects).
 
 ## Credits und Filterung
 
-Eine Suche kann Kandidaten zurückgeben, die später an Jobtitel-Ausschlüssen, ICP-Anforderungen, Deduplizierung oder Unternehmensprüfungen scheitern. Credits werden für zurückgegebene Such- oder Anreicherungsergebnisse berechnet, nicht nur für Kontakte, die schließlich in die Pipeline gelangen.
+Eine Suche kann Kandidaten zurückgeben, die später außerhalb deiner Filter liegen, an ICP-Anforderungen scheitern oder als Duplikat entfernt werden. Credits werden für zurückgegebene Such- oder Anreicherungsergebnisse berechnet, nicht nur für Kontakte, die schließlich in die Pipeline gelangen.
 
 <Tip>
   Bei granularen Filtern muss der Agent voraussichtlich mehr Kandidaten prüfen, als letztlich akzeptiert werden. Beginne mit einer kleinen Unternehmensauswahl und prüfe die Ergebnisqualität, bevor du die Suche skalierst.

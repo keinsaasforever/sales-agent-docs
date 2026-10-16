@@ -42,7 +42,7 @@ const COPY = {
       "You set the target profile, exclusions, score weights, and pipeline threshold in Settings → Targeting.",
     rescoreTitle: "Refresh scores after an ICP change",
     rescoreText:
-      "You choose Recompute for weight-only changes or AI rescore when the meaning of the ICP changed.",
+      "After a weights-only change you select Recompute scores now (instant, no AI). When the ICP criteria changed you select Update scores now, which rescores with AI in the background.",
     sourceTitle: "Launch the source",
     sourceText: (source) =>
       `You start a ${source}. Search work can use credits for returned candidates even when some later fail granular filters.`,
@@ -56,7 +56,7 @@ const COPY = {
     triggerSchedule:
       "The configured seat schedule starts the run on its selected days and time.",
     triggerManual:
-      "You select Run Now. The same eligibility rules and daily limits still apply.",
+      "You select Run Now, which starts your own seats. The same eligibility rules and daily limits still apply.",
     researchTitle: "Research and prepare outreach",
     researchText:
       "The agent enriches eligible prospects, gathers usable context, and prepares the enabled channel paths.",
@@ -70,7 +70,7 @@ const COPY = {
       "Enable at least one channel in Settings → Schedule before expecting outreach work in the queue.",
     approvalTitle: "Review the generated messages",
     approvalText:
-      "You edit, regenerate, reject, or approve pending messages. Approval queues the message; it does not send it immediately.",
+      "You edit, regenerate, or approve pending first messages, or mark the prospect Not interesting. Approval queues the message; it does not send it immediately. Follow-ups send automatically.",
     autoTitle: "Use automatic delivery",
     autoText:
       "The agent can send an eligible generated message on the next run without a dashboard approval step. You remain responsible for its content.",
@@ -92,12 +92,12 @@ const COPY = {
       "Automation stops immediately across both channels. You read the full thread, reply personally, and set the appropriate outcome.",
     noReplyTitle: "No reply after the configured sequence",
     callText:
-      "When the digital sequence is exhausted, a prospect with a usable phone number appears in To Call. You make the call and record the result.",
+      "By default, a prospect with a usable phone number appears in To Call once the digital sequence is exhausted. You make the call and record the result.",
     reviewText:
       "You review the prospect and record the appropriate outcome. Mark the prospect Unreachable when no usable path remains.",
     outcomeTitle: "A human outcome ends automation",
     outcomeText:
-      "Meeting, Offer Sent, Closed Deal, Not interesting, Lost Deal, or Unreachable stops all automated steps immediately.",
+      "Any outcome, such as Meeting, Offer Sent, Closed Deal, Not interesting, Asked to stop, Wrong person, Lost Deal, or Unreachable, stops all automated steps immediately.",
     globalStop:
       "At any point, archiving the prospect, adding its company to the blacklist, or setting an outcome stops future automated work.",
     linkedinLabel: "LinkedIn",
@@ -146,7 +146,7 @@ const COPY = {
       "Du legst Zielprofil, Ausschlüsse, Score-Gewichte und Pipeline-Schwellenwert unter Settings → Targeting fest.",
     rescoreTitle: "Scores nach einer ICP-Änderung aktualisieren",
     rescoreText:
-      "Du wählst Recompute bei reinen Gewichtsänderungen oder AI rescore, wenn sich die Bedeutung des ICP geändert hat.",
+      "Nach einer reinen Gewichtsänderung wählst du Recompute scores now (sofort, ohne AI). Haben sich die ICP-Kriterien geändert, wählst du Update scores now; die AI bewertet dann im Hintergrund neu.",
     sourceTitle: "Quelle starten",
     sourceText: (source) =>
       `Du startest ${source}. Sucharbeit kann Credits für gefundene Kandidaten verbrauchen, auch wenn einige später granulare Filter nicht erfüllen.`,
@@ -160,7 +160,7 @@ const COPY = {
     triggerSchedule:
       "Der konfigurierte Zeitplan des Seats startet den Lauf an den ausgewählten Tagen zur festgelegten Zeit.",
     triggerManual:
-      "Du wählst Run Now. Die gleichen Eignungsregeln und Tageslimits gelten weiterhin.",
+      "Du wählst Run Now; das startet deine eigenen Seats. Die gleichen Eignungsregeln und Tageslimits gelten weiterhin.",
     researchTitle: "Recherche und Outreach vorbereiten",
     researchText:
       "Der Agent reichert geeignete Prospects an, sammelt nutzbaren Kontext und bereitet die aktivierten Kanalpfade vor.",
@@ -174,7 +174,7 @@ const COPY = {
       "Aktiviere mindestens einen Kanal unter Settings → Schedule, bevor du Outreach-Arbeit in der Queue erwartest.",
     approvalTitle: "Erstellte Nachrichten prüfen",
     approvalText:
-      "Du bearbeitest, regenerierst, verwirfst oder genehmigst ausstehende Nachrichten. Eine Freigabe stellt die Nachricht in die Queue; sie wird nicht sofort gesendet.",
+      "Du bearbeitest, regenerierst oder genehmigst ausstehende erste Nachrichten oder setzt den Prospect auf Not interesting. Eine Freigabe stellt die Nachricht in die Queue; sie wird nicht sofort gesendet. Follow-ups gehen automatisch raus.",
     autoTitle: "Automatischen Versand nutzen",
     autoText:
       "Der Agent kann eine geeignete erstellte Nachricht im nächsten Lauf ohne Freigabeschritt im Dashboard senden. Du bleibst für den Inhalt verantwortlich.",
@@ -196,12 +196,12 @@ const COPY = {
       "Die Automatisierung stoppt sofort auf beiden Kanälen. Du liest den vollständigen Verlauf, antwortest persönlich und setzt das passende Outcome.",
     noReplyTitle: "Keine Antwort nach der konfigurierten Sequenz",
     callText:
-      "Ist die digitale Sequenz ausgeschöpft, erscheint ein Prospect mit nutzbarer Telefonnummer unter To Call. Du führst den Anruf und dokumentierst das Ergebnis.",
+      "Standardmäßig erscheint ein Prospect mit nutzbarer Telefonnummer unter To Call, sobald die digitale Sequenz ausgeschöpft ist. Du führst den Anruf und dokumentierst das Ergebnis.",
     reviewText:
       "Du prüfst den Prospect und setzt das passende Outcome. Markiere ihn als Unreachable, wenn kein nutzbarer Pfad mehr besteht.",
     outcomeTitle: "Ein menschliches Outcome beendet die Automatisierung",
     outcomeText:
-      "Meeting, Offer Sent, Closed Deal, Not interesting, Lost Deal oder Unreachable stoppt sofort alle automatisierten Schritte.",
+      "Jedes Outcome, etwa Meeting, Offer Sent, Closed Deal, Not interesting, Asked to stop, Wrong person, Lost Deal oder Unreachable, stoppt sofort alle automatisierten Schritte.",
     globalStop:
       "Zu jedem Zeitpunkt stoppen Archivieren, ein neuer Blacklist-Treffer oder ein gesetztes Outcome alle zukünftigen automatisierten Schritte.",
     linkedinLabel: "LinkedIn",

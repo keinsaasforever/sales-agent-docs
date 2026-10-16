@@ -1,7 +1,7 @@
 ---
 title: "Sales Agent Glossary: Key Terms and Concepts Explained"
 sidebarTitle: "Glossary"
-description: "Plain-language definitions of 14 key terms used throughout the Sales Agent dashboard, pipeline, configuration, and documentation."
+description: "Plain-language definitions of 17 key terms used throughout the Sales Agent dashboard, pipeline, configuration, and documentation."
 icon: "book-a"
 ---
 
@@ -16,12 +16,16 @@ Use this glossary whenever you encounter an unfamiliar term in the dashboard or 
     A client-wide list of company names and domains that must never receive outreach. When you add a company or domain to the blacklist, the Sales Agent stops all existing prospects at that company immediately and excludes future matches before they enter the pipeline. See also: [Credits](/safety/credits) — blacklist entries added before a search prevent credits being spent on candidates who would be rejected anyway.
   </Accordion>
 
+  <Accordion title="Buying signal">
+    An event at a company that suggests a need for your offer now, such as an acquisition, a new leader, hiring, funding, or expansion. Admins define which events count under **Settings → Targeting → Buying signals**. Companies with a fresh signal are contacted first, and the message can build on the signal. **Buying intent** (0–100) on **Companies**, and **Intent** on contacts, show how many fresh, strong signals a company has; the columns appear only when a company has one. The search runs once keinsaas switches it on with you; each company searched costs 1 credit.
+  </Accordion>
+
   <Accordion title="Contact">
     A person imported, collected, or found for your account — before outreach has started. A contact becomes a **prospect** once it is being actively worked by the outreach pipeline. Contacts that do not meet the pipeline threshold or are otherwise ineligible remain as contacts without consuming outreach actions.
   </Accordion>
 
   <Accordion title="Credits">
-    The unit used to pay for search and enrichment work. Credits are charged when results are returned — not only when those results pass your filters and enter the pipeline. Each seat starts with 300 credits; additional credits can be purchased from the **Credits** page. Credits are non-refundable and unused credits are forfeited when a subscription ends. See [Credits](/safety/credits) for full details.
+    The unit used to pay for search and enrichment work. Credits are charged when results are returned — not only when those results pass your filters and enter the pipeline. Each seat starts with 300 credits; admins buy more on the **Credits** page, once or as a monthly plan. Credits are non-refundable and unused credits are forfeited when a subscription ends. See [Credits](/safety/credits) for full details.
   </Accordion>
 
   <Accordion title="ICP">
@@ -29,23 +33,27 @@ Use this glossary whenever you encounter an unfamiliar term in the dashboard or 
   </Accordion>
 
   <Accordion title="ICP score">
-    A normalised fit score from 0 to 100 assigned to each contact based on how well it matches your configured ICP criteria and their relative weights. The score is recalculated when the ICP changes. Use the **pipeline threshold** to control which scores qualify a contact for automated outreach.
+    A normalised fit score from 0 to 100 based on how well a contact matches your configured ICP criteria and their relative weights. Companies have their own ICP score, shown on **Companies**, and a contact's score takes its company's score into account. When you change your ICP criteria, the dashboard shows **ICP scores need updating**; the update then runs in the background. Use the **pipeline threshold** to control which scores qualify a contact for automated outreach.
   </Accordion>
 
   <Accordion title="In play">
-    A prospect that does not currently have a human outcome recorded. An in-play prospect is eligible to be claimed by the next automated pipeline step when all other conditions (schedule, daily limits, channel availability) are met. Setting an outcome removes a prospect from in play. Clearing the outcome returns it to in play — though its action history is preserved and the displayed stage is recalculated from that history.
+    A prospect that does not currently have an outcome recorded. An in-play prospect is eligible to be claimed by the next automated pipeline step when all other conditions (schedule, daily limits, channel availability) are met. Setting an outcome removes a prospect from in play. Clearing the outcome returns it to in play — though its action history is preserved and the displayed stage is recalculated from that history. A prospect that replied shows **Replied** in the outcome menu instead, because automated outreach has already stopped.
+  </Accordion>
+
+  <Accordion title="Needs review">
+    A company the Sales Agent cannot decide on alone: it may be the same company as another one under a different name or website, or it may be insolvent. Admins open **Companies**, select **Needs review**, and decide each one (**Same company** or **Different companies**, **Confirmed** or **Not insolvent**). A confirmed insolvency adds the company to your blacklist. On contacts, **Needs review** marks someone who may work for a different company than the one on file.
   </Accordion>
 
   <Accordion title="Next run queue">
-    The forecast shown on the **Home** page listing the contacts ready for each pipeline step in the upcoming scheduled run. The queue is capped by the active seats' remaining daily limits. Use it to predict how many actions will fire before adjusting limits or schedules.
+    The forecast shown in the **Next run** section on **Home** listing the contacts ready for each pipeline step in the upcoming scheduled run. The queue is capped by the active seats' remaining daily limits. Use it to predict how many actions will fire before adjusting limits or schedules.
   </Accordion>
 
   <Accordion title="Outcome">
-    A human-set result recorded on a prospect to reflect a real-world event: **Meeting**, **Offer Sent**, **Closed Deal**, **Not Interested**, **Lost Deal**, or **Unreachable**. Every outcome immediately stops all automated outreach for that prospect. Outcomes take precedence over detected replies and normal stage progress when determining the displayed stage. See [Pipeline Stages](/reference/pipeline-stages) for full precedence rules.
+    A result recorded on a prospect to reflect a real-world event: **Meeting**, **Offer Sent**, **Closed Deal**, **Not interesting**, **Asked to stop**, **Wrong person**, **Lost Deal**, or **Unreachable**. You set outcomes yourself; the Sales Agent sets **Unreachable** and **Asked to stop** on its own when no channel is left or a reply asks it to stop. Every outcome immediately stops all automated outreach for that prospect. Outcomes other than **Unreachable** take precedence over detected replies and normal stage progress when determining the displayed stage. See [Pipeline Stages](/reference/pipeline-stages) for full precedence rules.
   </Accordion>
 
   <Accordion title="Pipeline threshold">
-    The minimum ICP score a contact must reach before the Sales Agent includes it in automated outreach. Contacts that fall below the threshold remain in the contact list but do not progress through the pipeline. Setting the threshold to zero turns filtering off and allows all contacts to enter outreach regardless of score.
+    The minimum ICP score a contact must reach before the Sales Agent includes it in automated outreach, set as **Pipeline ICP threshold** under **Settings → Targeting**. Contacts that fall below the threshold remain in the contact list but do not progress through the pipeline. Setting the threshold to zero turns filtering off and allows all contacts to enter outreach regardless of score.
   </Accordion>
 
   <Accordion title="Prospect">
@@ -54,7 +62,7 @@ Use this glossary whenever you encounter an unfamiliar term in the dashboard or 
 
   <Accordion title="Seat">
     One sales representative's working identity inside the Sales Agent. A seat bundles together:
-    - one LinkedIn account (and its session cookie)
+    - one LinkedIn account, connected through a LinkedIn sign-in
     - one connected email account
     - a seat owner and their permissions
     - a schedule and daily action limits
@@ -64,10 +72,14 @@ Use this glossary whenever you encounter an unfamiliar term in the dashboard or 
   </Accordion>
 
   <Accordion title="SSI">
-    **Social Selling Index** — LinkedIn's own measure of how effectively an account builds relationships and engages with content. A higher SSI can support a stronger account profile and may allow somewhat higher outreach volumes in practice, but it does not guarantee specific action limits or protect the account from restriction. See [LinkedIn Hygiene](/safety/linkedin-hygiene) for guidance on volume planning.
+    **Social Selling Index** — LinkedIn's own measure of how effectively an account builds relationships and engages with content. It exists only with Sales Navigator; enter it under **Settings → Schedule**. A higher SSI can support a stronger account profile and may allow somewhat higher outreach volumes in practice, but it does not guarantee specific action limits or protect the account from restriction. See [LinkedIn Hygiene](/safety/linkedin-hygiene) for guidance on volume planning.
   </Accordion>
 
   <Accordion title="Stage">
     A label derived automatically from recorded facts about a prospect — such as enrichment completed, messages sent, replies detected, outcomes set, and archive state. Stages are not moved manually; the Sales Agent calculates the correct stage based on the highest-priority applicable fact. See [Pipeline Stages](/reference/pipeline-stages) for the full list and precedence rules.
+  </Accordion>
+
+  <Accordion title="To Call">
+    A tab on **Prospects** listing the leads your team should phone. It is not a stage: a lead can be **Messaged** and due a call at the same time. **Settings → Targeting → Call list** decides how early a lead with a phone number lands there. See [Pipeline Stages](/reference/pipeline-stages#to-call-list).
   </Accordion>
 </AccordionGroup>

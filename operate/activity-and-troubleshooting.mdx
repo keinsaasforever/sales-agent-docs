@@ -1,62 +1,79 @@
 ---
 title: "Activity and troubleshooting"
 sidebarTitle: "Troubleshooting"
-description: "Read run statuses in Activity, diagnose empty queues and skipped steps, fix LinkedIn session issues, and know when to contact support."
+description: "Read run statuses in Activity, diagnose empty queues and skipped steps, reconnect LinkedIn or your mailbox, and know when to contact support."
 icon: "activity"
 ---
 
-Open **Activity** to see every pipeline run: its trigger, progress through each step, and final status. It is the first place to check whenever a run produces unexpected results — too little sent, nothing sent at all, or an outright failure.
+Open **Activity** to see your 50 most recent runs: searches, enrichment, imports, and pipeline runs. It is the first place to check whenever a run produces unexpected results: too little sent, nothing sent at all, or an outright failure.
+
+## Read the Activity table
+
+Each pipeline run is one row, with its steps listed underneath it in the order they ran, such as **Enrichment**, **Message writing**, **Email sending**, or **LinkedIn messages**. For every row you see:
+
+- **Affected**: the contacts or companies the run touched, linked so you can open them
+- **Trigger**: how the run started
+- **Status**: the result, with a short reason underneath when something went wrong
+- **Processed**, **Succeeded**, and **Failed**: the item counts
+- **Started** and **Duration**
+
+Admins also see a **Seat** column. Members see only their own seats' runs. **Search jobs & CSVs** opens the list of searches and CSV imports.
 
 ## Run statuses
 
-| Status | What it means |
-| --- | --- |
-| **Started / Running** | Work is active in the background. Steps are still completing. |
-| **Succeeded** | The run finished normally. A succeeded run can still process zero items when nothing is eligible — success means no error occurred, not that messages were sent. |
-| **Skipped** | A guard condition or an empty queue prevented a specific step from running. Other steps in the same run may have completed normally. |
-| **Stopped** | You stopped the run manually before every step completed. Work up to that point was saved. |
-| **Failed** | An error prevented the run from completing normally. Review the run details for the failed step and timestamp. |
+Each run and each step closes as **Succeeded**, **Completed with issues**, **Skipped**, **Stopped**, or **Failed**. [Run the pipeline](/operate/run-the-pipeline#stop-a-run) explains each one. A run's status sums up its steps, so a **Succeeded** run can contain **Skipped** steps.
+
+When you can fix the cause yourself, the reason under the status says so, for example **LinkedIn session expired — reconnect it under Settings → Account.** or **Email account disconnected — reconnect it under Settings → Account.** Any other error reads **Something went wrong — we've been notified.**
 
 ## If the Next run queue is empty
 
 Work through this checklist in order before starting a run:
 
-1. **Active seat** — confirm the contact has an owner and that the seat is active, not paused or disconnected.
-2. **ICP gate** — verify the contact meets the current ICP threshold and pipeline criteria.
-3. **Blacklist** — check that neither the company name nor its domain appears on your blacklist.
-4. **Stop state** — confirm the prospect has no outcome set and has not been archived.
-5. **Required data** — ensure the next step has the research, channel, or message data it needs to proceed.
-6. **Approval** — if approval mode is on, check that generated messages have been approved and are waiting in the outreach queue.
-7. **Cadence** — verify the next follow-up date is actually due today, not tomorrow or later.
-8. **Limits** — confirm the relevant daily limit is above `0` and that today's allocation has not already been consumed.
-9. **Connected account** — check that LinkedIn and email connections are valid and show a healthy status in **Settings → Account**.
+1. **Active seat**: confirm the contact has an owner and that the seat is active, not paused or disconnected.
+2. **ICP gate**: verify the contact meets the current ICP threshold and pipeline criteria.
+3. **Blacklist**: check that neither the company name nor its domain appears on your blacklist.
+4. **Stop state**: confirm the prospect has no outcome set and has not been archived.
+5. **Required data**: ensure the next step has the research, channel, or message data it needs to proceed.
+6. **Approval**: if approval mode is on, check that generated messages have been approved and are waiting in the outreach queue.
+7. **Cadence**: verify the next follow-up date is actually due today, not tomorrow or later.
+8. **Limits**: confirm the relevant daily limit is above `0` and that today's allocation has not already been consumed.
+9. **Connected account**: check that LinkedIn and email show a healthy status in **Settings → Account**.
+10. **Credits**: when the balance runs out, new contacts get no email or phone lookups until you top up. Follow-ups and replies keep running.
 
 Most empty-queue cases trace back to items 1, 6, 8, or 9. Resolve those first.
 
-## If a run succeeds but sends nothing
+To see why one contact is not moving, open **Prospects → Contacts**. A contact without a prospect yet shows **Queued** or **Not in pipeline** in the **Stage** column. Hover the badge for the reason, such as no seat assigned, an ICP score below the pipeline minimum, or a company match that needs review (see [Prospects and companies](/operate/prospects-and-companies#contacts-held-back)).
 
-A succeeded run that delivers zero messages means every eligible item failed an eligibility or safety check at send time — not that the pipeline itself broke. Review:
+## If a run sends nothing
 
-- **Newly detected replies** — prospects who replied since the last run are automatically excluded from follow-ups.
-- **Connection state** — a disconnected seat blocks LinkedIn steps even when the run reports success.
-- **Approval state** — messages awaiting approval in the queue are not sent until approved.
-- **Already-sent messages** — duplicates are detected and skipped silently.
-- **Stopped or archived prospects** — prospects stopped or archived between queue preview and run time are skipped.
-- **Daily limits and due dates** — limits may have been reached earlier in the day by a scheduled run.
+When a sending step such as **Email sending**, **LinkedIn messages**, or **Email follow-ups** shows **Skipped**, it had nothing to do or skipped every item for a recorded reason. Nothing broke. The run itself can still read **Succeeded** because another step did work. Review:
 
-The system prefers skipping an uncertain send over delivering a duplicate or contacting someone after a reply. A zero-send success is safer than an incorrect delivery.
+- **Newly detected replies**: prospects who replied since the last run are automatically excluded from follow-ups.
+- **Connection state**: a disconnected seat blocks LinkedIn steps.
+- **Approval state**: messages awaiting approval in the queue are not sent until approved.
+- **Already-sent messages**: duplicates are detected and skipped silently.
+- **Stopped or archived prospects**: prospects stopped or archived between queue preview and run time are skipped.
+- **Daily limits and due dates**: limits may have been reached earlier in the day by a scheduled run.
+
+The system prefers skipping an uncertain send over delivering a duplicate or contacting someone after a reply. A skipped send is safer than an incorrect delivery.
+
+## If LinkedIn was skipped for a prospect
+
+Some prospects continue by email only, for example when LinkedIn could not open the profile or the invite was not accepted. The **LinkedIn** column on **Prospects** then shows **Skipped** with the reason, and the timeline shows **LinkedIn stopped** with the reason.
+
+If the reason no longer applies, select those prospects and choose **Retry LinkedIn**. They go back into the LinkedIn queue for the next run. If the reason still holds, the next run skips them again.
 
 ## If a run fails
 
 <Steps>
-  <Step title="Open the run details">
-    In **Activity**, click the failed run to see the step that failed and the exact timestamp.
+  <Step title="Find the failed step">
+    In **Activity**, find the failed run and the step under it that failed. Read the reason under its status.
   </Step>
   <Step title="Do not repeatedly restart">
     Do not keep triggering new runs for a failing LinkedIn step. Repeated attempts can compound the underlying problem.
   </Step>
   <Step title="Check account connections">
-    Go to **Settings → Account** and confirm your LinkedIn and email connections are healthy. A session expiry is the most common cause of a failed run.
+    Go to **Settings → Account** and confirm your LinkedIn and email connections are healthy. An expired LinkedIn or mailbox sign-in is the most common cause of a failed run.
   </Step>
   <Step title="Contact support">
     If the problem persists, email [support@keinsaas.com](mailto:support@keinsaas.com) with:
@@ -65,31 +82,43 @@ The system prefers skipping an uncertain send over delivering a duplicate or con
     - The step that failed
     - What you expected to happen
 
-    Do not include passwords or LinkedIn session cookies in your support email.
+    Do not include passwords in your support email.
   </Step>
 </Steps>
 
-## If your LinkedIn session expires
+## If LinkedIn or your mailbox disconnects
 
-The Sales Agent pauses all LinkedIn work and sends you a notification when it detects a session expiry. Follow these steps to restore it:
+When LinkedIn asks for a new sign-in, the Sales Agent pauses all LinkedIn work for that seat: connection requests, LinkedIn messages, and LinkedIn follow-ups stop, while emails continue. When an Outlook sign-in expires, emails, email follow-ups, and reply checks stop, while LinkedIn continues.
+
+You see it in several places:
+
+- the notification bell: **LinkedIn is paused — reconnect** or **Outlook is disconnected — sign in again**
+- a red banner on Home, and an item in **Tasks**
+- **Settings → Account**: the LinkedIn card shows **Login needed**, the email card shows **Sign-in expired**
+
+For LinkedIn, the seat's owner also receives an email with a link to reconnect.
 
 <Steps>
   <Step title="Open Settings → Account">
-    Navigate to **Settings → Account** in the Sales Agent dashboard.
+    Open the affected seat. Only the seat's owner can connect it.
   </Step>
-  <Step title="Reconnect LinkedIn">
-    Follow the on-screen instructions to reconnect with a fresh session. This typically requires logging into LinkedIn in your browser and completing the connection flow.
+  <Step title="Reconnect">
+    For LinkedIn, select **Reconnect** and sign in on the guided page. Your password and two-factor code stay with LinkedIn. For Outlook, select **Reconnect Outlook** and sign in with the mailbox the seat sends from.
   </Step>
   <Step title="Wait for confirmation">
-    Wait until the account status shows a healthy, connected state before taking any further action.
+    Wait until the LinkedIn card shows **Connected** or the email card shows **Outlook connected** before taking any further action.
   </Step>
   <Step title="Resume the pipeline">
-    Once the connection is confirmed, resume your normal run schedule or trigger a manual **Run Now**.
+    LinkedIn restarts from where it left off. Resume your normal run schedule or trigger a manual **Run Now**.
   </Step>
 </Steps>
 
+Reconnect the same LinkedIn account. Switching to a different one is covered in [Seats and accounts](/getting-started/seats-and-accounts).
+
+If the LinkedIn card shows **Temporarily unavailable**, the problem is on our side and keinsaas is working on it. You do not need to do anything.
+
 <Warning>
-  Do not respond to an empty queue or a failed run by sharply raising your daily limits. Higher limits do not fix an eligibility problem or a broken connection — they only increase the potential impact of misconfigured outreach. Diagnose the root cause first, then run at normal limits.
+  Do not respond to an empty queue or a failed run by sharply raising your daily limits. Higher limits do not fix an eligibility problem or a broken connection. They only increase the potential impact of misconfigured outreach. Diagnose the root cause first, then run at normal limits.
 </Warning>
 
 For full status definitions, see [Run the pipeline](/operate/run-the-pipeline). For eligibility troubleshooting, see [Next run queue](/operate/next-run-queue).

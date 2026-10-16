@@ -7,6 +7,8 @@ icon: "credit-card"
 
 Credits pay for the search and enrichment work performed for your account. Each seat starts with 300 credits. Understanding when credits are spent — and why a found result may not become an active prospect — helps you plan your usage and avoid surprises.
 
+Admins see the **Credits** page and buy credits. Members see the balance on **Home** and ask an admin to top up.
+
 ## What "found" means
 
 A **found** item is data returned by a search or enrichment operation, such as a candidate profile, a business email address, or a phone number. It is not a guarantee that the item satisfies every requirement in your ICP or that it will enter the outreach pipeline.
@@ -27,20 +29,23 @@ As a result, finding 20 candidates can produce fewer than 20 prospects in active
   The tighter and more granular your filters, the more candidates the system may need to evaluate to find the final matches. Budget credits for the full search effort, not only for the number of prospects that ultimately reach the pipeline.
 </Warning>
 
-## Common credit-using work
+## What uses credits
 
-Credits are consumed when the Sales Agent performs any of the following on your behalf:
+| Work | Credits |
+| --- | --- |
+| Contact search at target companies | Billed per lookup attempt |
+| Business email lookup | 0.5–3 credits per email found |
+| Phone number lookup | 3–7 credits per number found |
+| Retrying a bad email at another source | Extra credits per retry, even if the same address comes back |
+| Buying-signal search | 1 credit per company searched |
 
-- contact search at target companies
-- business email lookup
-- phone number lookup
-- additional research or enrichment requested for a contact
+Email and phone lookups only charge credits when a result is found. Buying-signal search runs only after keinsaas switches it on with you; see **Buying signals** on **Settings → Targeting**.
 
 <Note>
-  Uploading a CSV yourself does **not** consume credits. Optional enrichment you trigger during or after the import — such as email lookup or phone lookup — can consume credits.
+  Uploading a CSV, importing from Sales Navigator, and typing in a phone number yourself do **not** consume credits. Optional enrichment you trigger during or after an import — such as email lookup or phone lookup — can consume credits.
 </Note>
 
-The exact credit cost varies by the type of data requested and the effort required to obtain it. The dashboard shows estimates before supported manual operations and records every charge in the credit ledger.
+Before a search or lookup you start yourself, the dashboard shows **Estimated credits** and stops the run if your balance does not cover it. Every charge appears in **Transaction History** on the **Credits** page.
 
 ## Monitor usage
 
@@ -48,12 +53,23 @@ Open **Credits** at any time to see:
 
 | Field | What it shows |
 | --- | --- |
-| **Current balance** | Credits available for future work |
-| **Total purchased** | All credits ever added to your account |
-| **Total used** | Cumulative credits consumed |
-| **Transaction ledger** | Individual entries for recent searches and enrichments |
+| **Current Balance** | Credits available for future work |
+| **Total Purchased** | All credits you have bought; starter credits are not included |
+| **Total Used** | Cumulative credits consumed |
+| **Transaction History** | Every top-up and charge, newest first, 50 per page |
 
-Review your balance before starting a large search or enrichment batch. A low balance can prevent later pipeline stages from obtaining the data they need to progress prospects.
+Each entry has a type, such as **Top-up**, **Grant** (starter credits), **Monthly plan**, **Contact search**, **Email lookup**, **Phone lookup**, or **Signal search**. For a contact search, **Description** shows the company domain that was searched.
+
+Review your balance before starting a large search or enrichment batch.
+
+## When credits run low
+
+| Balance | What happens |
+| --- | --- |
+| Below 200 | **Credits running low** appears on **Home** and in the notifications, and the balance turns red. Admins get one email. |
+| Below 5 | **Enrichment is paused**: new contacts get no email or phone lookups. Follow-ups, replies, and sends keep running. Admins get one email. |
+
+Both warnings clear once a top-up brings the balance back above the threshold.
 
 ## Reduce avoidable usage
 
@@ -62,14 +78,27 @@ Follow these practices to get the most value from your credit balance:
 1. **Finalise your ICP and exclusions** before running a large search — avoid paying to find candidates you will immediately discard.
 2. **Add your blacklist** before importing or searching, so blacklisted companies are excluded from the start.
 3. **Start with a small company sample** to validate filter results before scaling up.
-4. **Use a phone-enrichment threshold** — only look up phone numbers for prospects who meet a minimum ICP score.
+4. **Set a phone threshold** — **Phone enrichment ICP threshold** on **Settings → Targeting** limits phone lookups to contacts at or above a minimum ICP score. Keep it at or above your **Pipeline ICP threshold**: below it, you pay for numbers of people who never enter the pipeline.
 5. **Avoid re-searching companies** that have already been fully processed.
 6. **Correct wrong data promptly** so the Sales Agent can use the next available source intentionally rather than retrying the same broken path.
 7. **Review your pipeline threshold** — if many found contacts are rejected by scoring, a slightly relaxed or tightened threshold may reduce wasted lookups.
 
-## Purchasing and cancellation
+## Buy credits
 
-You can buy additional credits at any time from the **Credits** page. Keep the following in mind:
+Admins buy credits on **Credits → Buy Credits**:
+
+1. Choose **One-off** or **Monthly**.
+2. Pick an amount between 1,000 and 100,000 credits, in steps of 100.
+3. Check the price: 1 credit = €0.10 net, larger amounts get an automatic volume discount, and **Monthly** is cheaper per credit. VAT is added at checkout.
+4. Select **Pay** or **Subscribe** and complete the payment.
+
+Credits appear once the payment is confirmed, usually within seconds. With **Monthly**, the same amount is added every month, and the **Credits** page shows a **Monthly credit plan** card with the next date. You can have one monthly plan at a time. Change or cancel it under **Settings → Account → Billing** with **Manage billing**, which also holds your invoices and payment method.
+
+## Seats and starter credits
+
+A seat is one LinkedIn account and one email account and includes 300 starter credits. When you sign up, the plan page opens in German; select **EN** to switch. You pick **Monthly** (€299 per month, 3-month minimum term) or **Yearly** (€239 per month, billed yearly), plus VAT. You can add credits to the same checkout with **Optionally add credits now**, at the one-off credit price. The seat checkout accepts a promotion code. For more seats or an additional email account, contact keinsaas.
+
+## Purchasing and cancellation
 
 - Credits are **non-refundable** once granted.
 - Unused credits are **forfeited** when your subscription ends.

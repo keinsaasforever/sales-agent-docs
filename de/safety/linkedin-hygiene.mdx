@@ -10,50 +10,75 @@ Die Sicherheit eines LinkedIn-Kontos kann nicht garantiert werden. keinsaas setz
   Nutze LinkedIn nicht manuell, während der Sales Agent aktiv ist oder innerhalb eines geplanten Automatisierungsfensters. Gleichzeitige manuelle und automatisierte Aktivität ist das größte Risiko, das du selbst kontrollieren kannst.
 </Warning>
 
+## Limits je Kontotyp
+
+Die Kontoart bestimmt, wie viele Einladungen und Nachrichten pro Woche sicher möglich sind. Der Sales Agent liest sie aus deinem LinkedIn-Login und zeigt unter **Settings → Account** am Seat ein **Sales Navigator**-Badge, wenn er eines findet.
+
+| Kontotyp | Wochenvolumen nach dem Warm-up |
+| --- | --- |
+| **Free & Premium** | bis 50 pro Woche |
+| **Sales Navigator** | 100–200 pro Woche, je nach SSI (bis zu 200 ab SSI 70, nicht garantiert) |
+
+Das Limit gilt für Kontaktanfragen und LinkedIn-Nachrichten jeweils getrennt. keinsaas empfiehlt ausdrücklich Sales Navigator: Es erlaubt mehr Volumen und ist stabiler. Ein Seat ohne Sales Navigator sendet keine InMails, außer an Personen mit offenem Profil; seine Nachrichten warten, bis die Einladung angenommen ist.
+
+Diese Werte sind Empfehlungen auf Basis des aktuellen Verhaltens von LinkedIn, keine Zusicherungen. LinkedIn kann seine Limits ohne Vorankündigung ändern.
+
 ## Erforderliche Kontopraktiken
 
 ### Langsam aufwärmen
 
-Plane ein schrittweises Warm-up über ungefähr zwei Monate. Beginne mit niedrigen Limits und erhöhe sie erst, wenn sich normale Kontoaktivität etabliert hat. Ein SSI über 70 kann in manchen Fällen mehr Volumen ermöglichen, garantiert aber weder ein bestimmtes Limit noch Schutz vor Einschränkungen.
+Beginne niedrig und erhöhe das Volumen über die ersten Wochen. Unter **Settings → Schedule** zeigt die Karte **Daily Limits** für jeden Seat die Warm-up-Woche und unter jedem Feld einen empfohlenen Wert:
+
+- Woche 1: bis 3 Kontaktanfragen pro Tag
+- Woche 2 und 3: bis 10 pro Tag
+- ab Woche 4: bis 20 pro Tag mit Sales Navigator, etwa 10 pro Tag mit Free und Premium, innerhalb des Wochenlimits deiner Kontoart
+
+Das sind Empfehlungen, keine erzwungenen Limits: Du kannst höhere Werte speichern, nur Kontaktanfragen bleiben auf 20 pro Tag begrenzt.
+
+Das Warm-up zählt ab der ersten echten Einladung des Seats. Nach 30 Tagen ohne Einladung beginnt es von vorn. Kein Limit steigt von selbst: Erreicht ein Seat die nächste Stufe, zeigt Home **LinkedIn warm-up week** mit einem **Raise to**-Button, und du entscheidest. Die Zeitplan-Einstellungen selbst findest du unter [Zeitplan und Limits](/de/configure/schedule-and-limits).
+
+Plane je nach Entwicklung deines SSI vier bis acht Wochen ein, bis ein Konto mit vollem Volumen läuft.
+
+### SSI und Profil pflegen
+
+Trage deinen **Social Selling Index (SSI)** unter **Settings → Schedule** ein. Ihn gibt es nur mit Sales Navigator; deinen Wert findest du unter [linkedin.com/sales/ssi](https://www.linkedin.com/sales/ssi). Ein SSI ab 70 kann mehr Wochenvolumen ermöglichen, garantiert aber weder ein bestimmtes Limit noch Schutz vor Einschränkungen.
+
+Unter 30 zeigt das Dashboard **Your SSI is below 30 – here's how to raise it**: Vernetze dich mit mehr Kontakten aus deinem Bereich, kommentiere, like und teile Beiträge (oder poste selbst) und optimiere dein Profil. Derselbe Leitfaden enthält Profiltipps für Käufer (Headline, Banner, Foto, Info, Berufserfahrung, Empfehlungen), die du kopieren oder herunterladen kannst.
 
 ### Ein Konto pro Gerät
 
 Betreibe nicht mehrere automatisierte LinkedIn-Konten auf demselben Gerät. Halte Session und Arbeitsumgebung jedes Kontos getrennt.
 
-### Session zeitnah erneuern
+### Zeitnah neu verbinden
 
-Das LinkedIn-Session-Cookie muss normalerweise regelmäßig erneuert werden, häufig etwa einmal im Monat. Im ersten Monat können zusätzliche Anmeldungen nötig sein, während sich das Konto einspielt.
+Von Zeit zu Zeit verlangt LinkedIn eine neue Anmeldung. Der Seat zeigt dann **Login needed**, und Home zeigt **LinkedIn is paused**. Kontaktanfragen, LinkedIn-Nachrichten und LinkedIn-Follow-ups stoppen, bis du neu verbindest; E-Mail läuft weiter.
 
-Wenn du benachrichtigt wirst:
+1. manuelle LinkedIn-Arbeit pausieren
+2. **Settings → Account** im Sales Agent öffnen und den Seat wählen
+3. auf der Karte **LinkedIn** **Reconnect** wählen und dich auf der geführten Seite anmelden; Passwort und Zwei-Faktor-Codes bleiben bei LinkedIn, und nur der Owner des Seats kann ihn verbinden
+4. vor einem weiteren Lauf warten, bis das Badge **Connected** zeigt; LinkedIn macht dort weiter, wo es aufgehört hat
 
-1. manuelle und automatisierte LinkedIn-Arbeit pausieren
-2. beim richtigen LinkedIn-Konto anmelden
-3. **Settings → Account** im Sales Agent öffnen
-4. das neue `li_at`-Session-Cookie über die Reconnect-Steuerung einfügen
-5. vor einem weiteren Lauf auf die Bestätigung warten
+Verbinde dasselbe LinkedIn-Konto erneut. Ersetzt du es durch ein anderes Konto, werden die LinkedIn-Unterhaltungen des bisherigen geschlossen; siehe [Seats und Konten](/de/getting-started/seats-and-accounts).
 
-Sende ein Session-Cookie nie per E-Mail und füge es nicht in eine Support-Nachricht ein.
-
-### Zeitplan und Limits einhalten
-
-Plane mit ungefähr 100 Sales-Navigator-Kontakten pro Woche und Konto als normaler Obergrenze. Ein höherer SSI kann mehr ermöglichen. LinkedIn Premium ohne Sales Navigator unterstützt in der Regel weniger. Das tatsächliche Plattformverhalten kann sich ändern; ein bestimmtes Volumen wird nicht garantiert.
+Gib dein LinkedIn-Passwort oder einen Bestätigungscode nie weiter, auch nicht an den Support.
 
 ### Ausstehende Einladungen kontrollieren
 
-Der Sales Agent zieht alte ausstehende Einladungen in regelmäßigen Abständen zurück. Das hält die ausstehende Queue gesünder und ermöglicht die Fortsetzung eines geeigneten E-Mail-Pfads, wenn keine LinkedIn-Verbindung zustande kommt.
+Einmal pro Woche zieht der Sales Agent Einladungen zurück, die seit mehr als 30 Tagen ausstehen; deine neuesten ausstehenden Einladungen bleiben bestehen. Ein zurückgezogener Prospect wird mit **Invite withdrawn** markiert und läuft per E-Mail weiter, wenn eine Adresse vorhanden ist.
 
 ## Sicherheitsmaßnahmen im Produkt
 
 Je nach Konfiguration kann der Sales Agent:
 
-- Aktionen über Tageslimits und geplante Zeitfenster takten
-- Prospects durch Likes auf aktuelle Beiträge vor der Kontaktanfrage aufwärmen
-- vermutlich inaktive Profile überspringen
+- Aktionen über Tageslimits und geplante Zeitfenster takten; Kontaktanfragen sind auf 20 pro Tag und Seat begrenzt
+- mit **Like recent posts before connecting** bis zu 2 aktuelle Beiträge eines Prospects vor der Kontaktanfrage liken
+- mit **Skip inactive profiles** inaktiv wirkende Profile zu E-Mail leiten und mit dem Grund markieren: **No profile picture and few connections** überspringt die Kontaktanfrage, sobald beides bekannt ist, und **No posts or comments in the last 30 days** überspringt die LinkedIn-Nachricht, nicht die Anfrage
 - einen Prospect zu E-Mail leiten, wenn LinkedIn nicht verfügbar ist
 - beide Kanäle nach einer erkannten Antwort stoppen
-- nach einem menschlichen Outcome jeden Pipeline-Schritt stoppen
-- alte ausstehende Einladungen zurückziehen
-- Arbeit pausieren, wenn eine Session erneuert werden muss
+- nach einem Outcome jeden Pipeline-Schritt stoppen
+- höchstens ein LinkedIn-Follow-up senden, 4 Arbeitstage nach der ersten Nachricht und nur für erste Nachrichten der letzten 60 Tage
+- Einladungen zurückziehen, die seit mehr als 30 Tagen ausstehen
+- LinkedIn-Arbeit pausieren, wenn LinkedIn eine neue Anmeldung verlangt
 
 Diese Maßnahmen reduzieren Risiken, beseitigen sie aber nicht.
 

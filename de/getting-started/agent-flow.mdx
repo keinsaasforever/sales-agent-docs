@@ -26,8 +26,8 @@ Das Diagramm zeigt alle Hauptzweige einschließlich optionaler Freigabe und der 
 %%{init: {'flowchart': {'defaultRenderer': 'elk'}}}%%
 flowchart TD
   H1["Mensch: ICP definieren oder ändern"] --> D1{"Was wurde geändert?"}
-  D1 -->|Nur Gewichte| H2["Mensch: Scores neu berechnen"]
-  D1 -->|Bedeutung oder Kriterien| H3["Mensch: bestehende Kontakte mit AI rescore prüfen"]
+  D1 -->|Nur Gewichte| H2["Mensch: Recompute scores now<br/>sofort, ohne AI"]
+  D1 -->|Bedeutung oder Kriterien| H3["Mensch: Update scores now<br/>AI-Neubewertung im Hintergrund"]
   D1 -->|Nichts| H4["Mensch: Suche oder Import starten"]
   H2 --> H4
   H3 --> H4
@@ -48,7 +48,7 @@ flowchart TD
   L1 --> D4{"Nachrichtenfreigabe erforderlich?"}
   E1 --> D4
   B1 --> D4
-  D4 -->|Ja| H6["Mensch: bearbeiten, regenerieren, verwerfen oder freigeben"]
+  D4 -->|Ja| H6["Mensch: bearbeiten, regenerieren, freigeben<br/>oder Not interesting setzen"]
   D4 -->|Nein| A4["Agent: automatischen Versand einreihen"]
   H6 --> A5["Agent: freigegebenen Outreach in einem geeigneten Lauf senden"]
   A4 --> A5
@@ -62,13 +62,13 @@ flowchart TD
   D6 -->|Nein, Sequenz beendet| D7{"Nutzbare Telefonnummer?"}
 
   S1 --> H7["Mensch: Verlauf lesen, persönlich antworten und Outcome setzen"]
-  D7 -->|Ja| H8["Mensch: Prospect anrufen und Ergebnis dokumentieren"]
+  D7 -->|Ja, standardmäßig| H8["Mensch: Prospect anrufen und Ergebnis dokumentieren"]
   D7 -->|Nein| H9["Mensch: prüfen und gegebenenfalls Unreachable setzen"]
   H7 --> S2["Outcome hält Prospect aus der Automatisierung"]
   H8 --> S2
   H9 --> S2
 
-  H10["Mensch: während eines aktiven Laufs Stop wählen"] --> S3["Laufende Verarbeitung stoppt sofort;<br/>abgeschlossene Sends bleiben bestehen"]
+  H10["Mensch: während eines aktiven Laufs Stop wählen"] --> S3["Keine neue Arbeit startet;<br/>abgeschlossene Sends bleiben bestehen"]
   H11["Mensch: jederzeit ein Outcome setzen"] --> S2
   H12["Mensch: Prospect archivieren oder Unternehmen sperren"] --> S4["Zukünftigen automatisierten Outreach sofort stoppen"]
 
@@ -90,26 +90,26 @@ flowchart TD
 | --- | --- | --- |
 | **ICP-Einrichtung oder -Änderung** | Targeting, Ausschlüsse, Gewichte oder Schwellenwerte bearbeiten. Bestehende Scores bei Aufforderung aktualisieren. | Nutzt den aktuellen Score und Schwellenwert für neue Kandidaten und deren zukünftige Queue-Eignung. |
 | **Suche oder Import** | Sales-Navigator-Quelle starten, CSV hochladen oder bei bestehenden Unternehmen suchen. | Findet Kandidaten, filtert, dedupliziert und vergibt Scores. Credits gelten für gefundene Such- oder Anreicherungsergebnisse, nicht nur für endgültige Treffer. |
-| **Start des Laufs** | Zeitplan des Seats aktivieren oder **Run Now** wählen. | Beansprucht nur aktuell geeignete Arbeit innerhalb der Tageslimits des Seats. |
-| **Nachrichtenprüfung, wenn aktiviert** | Entwurf bearbeiten, regenerieren, verwerfen oder freigeben. | Sendet eine freigegebene Nachricht erst in einem geeigneten Lauf; die Freigabe selbst sendet nicht. |
+| **Start des Laufs** | Zeitplan des Seats aktivieren oder **Run Now** wählen; das startet deine eigenen Seats. | Beansprucht nur aktuell geeignete Arbeit innerhalb der Tageslimits des Seats. |
+| **Nachrichtenprüfung, wenn aktiviert** | Erste Nachricht bearbeiten, regenerieren oder freigeben oder den Prospect auf **Not interesting** setzen. **All of** des Unternehmens stoppt auch die Kollegen dort und sperrt das Unternehmen. | Sendet eine freigegebene Nachricht erst in einem geeigneten Lauf; die Freigabe selbst sendet nicht. |
 | **Antwort** | Vollständigen Verlauf lesen, persönlich antworten und passendes Outcome setzen. | Stoppt automatisierte Follow-ups auf E-Mail und LinkedIn sofort. |
-| **Keine Antwort nach Follow-ups** | Prospects unter **To Call** mit vorhandener Telefonnummer bearbeiten; sonst prüfen, ob **Unreachable** passt. | Lässt die digitale Sequenz beendet, sobald die konfigurierten Follow-ups ausgeschöpft sind. |
-| **Vertriebsfortschritt** | **Meeting**, **Offer Sent**, **Closed Deal**, **Not interesting**, **Lost Deal** oder **Unreachable** setzen. | Entfernt den Prospect sofort aus allen automatisierten Claims. |
+| **Keine Antwort nach Follow-ups** | Prospects unter **To Call** mit vorhandener Telefonnummer bearbeiten; sonst prüfen, ob **Unreachable** passt. | Lässt die digitale Sequenz beendet, sobald die konfigurierten Follow-ups ausgeschöpft sind. Standardmäßig kommen Prospects zu diesem Zeitpunkt auf **To Call**; ein Admin kann unter **Settings → Targeting** einen früheren Zeitpunkt wählen. |
+| **Vertriebsfortschritt** | **Meeting**, **Offer Sent**, **Closed Deal**, **Not interesting**, **Asked to stop**, **Wrong person**, **Lost Deal** oder **Unreachable** setzen. | Entfernt den Prospect sofort aus allen automatisierten Claims. |
 
 ## Optionale Pfade
 
 <AccordionGroup>
   <Accordion title="Freigabe an oder aus">
-    Bei aktivierter Freigabe warten erstellte E-Mail- und LinkedIn-Nachrichten unter **Messages** auf deine Prüfung. Beim automatischen Versand entfällt der Freigabeschritt, du bleibst aber für den generierten Inhalt verantwortlich.
+    Mit **Approve every message from the dashboard** warten erste E-Mail- und LinkedIn-Nachrichten unter **Messages** auf deine Prüfung. Follow-ups gehen immer automatisch raus. Mit **Send everything automatically** entfällt der Freigabeschritt, du bleibst aber für den generierten Inhalt verantwortlich. Diese Einstellung ändern nur Admins.
   </Accordion>
   <Accordion title="Geplante oder manuelle Läufe">
-    Ein Zeitplan startet an den konfigurierten Tagen zur gewählten Zeit einen vollständigen Lauf. **Run Now** startet dieselbe abgesicherte Pipeline bei Bedarf. Erweiterte Läufe können bei Messages, Outreach oder Follow-ups beginnen, ohne Eignungsprüfungen zu umgehen.
+    Ein Zeitplan startet an den konfigurierten Tagen zur gewählten Zeit einen vollständigen Lauf. **Run Now** startet dieselbe abgesicherte Pipeline bei Bedarf für deine eigenen Seats. Unter **Advanced** kannst du einen Teil einzeln ausführen: **Messages** schreibt Entwürfe, ohne zu senden, **Outreach** sendet bereitstehende Nachrichten und **Follow-ups** sendet nur fällige Follow-ups. Keiner davon umgeht Eignungsprüfungen.
   </Accordion>
   <Accordion title="LinkedIn, E-Mail oder beides">
-    Du kannst LinkedIn für einen Seat deaktivieren, während E-Mail weiterläuft. Sind beide Kanäle verfügbar, nutzt der Agent jeden Pfad entsprechend deinen Einstellungen. Eine Antwort auf einem Kanal stoppt Follow-ups auf beiden.
+    Jeder Seat nutzt LinkedIn **Both together** mit E-Mail, **LinkedIn first** oder **Off**, während E-Mail weiterläuft. Eine Antwort auf einem Kanal stoppt Follow-ups auf beiden.
   </Accordion>
   <Accordion title="Follow-ups und telefonische Übergabe">
-    Setze die Follow-up-Anzahl eines Kanals auf `0`, um die Schleife zu entfernen. Das unterstützte Maximum beträgt drei E-Mail-Follow-ups plus ein LinkedIn-Follow-up. Nach Ende der Sequenz erscheinen Prospects mit nutzbarer Telefonnummer für einen menschlichen Call.
+    Setze die Follow-up-Anzahl eines Kanals auf `0`, um die Schleife zu entfernen. Das unterstützte Maximum beträgt drei E-Mail-Follow-ups plus ein LinkedIn-Follow-up. Standardmäßig erscheinen Prospects mit nutzbarer Telefonnummer nach Ende der Sequenz für einen menschlichen Call.
   </Accordion>
 </AccordionGroup>
 

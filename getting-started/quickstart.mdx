@@ -5,7 +5,7 @@ description: "Step-by-step checklist to configure your audience, messaging, and 
 icon: "rocket"
 ---
 
-Use this checklist after keinsaas activates your account. Open the [Sales Agent dashboard](https://sales.keinsaas.com) and follow the steps from configuration to a controlled first run.
+Use this checklist after keinsaas activates your account. Before activation you complete the setup wizard in the dashboard; keinsaas then runs a short test and switches the agent on, usually within two to three business days. Open the [Sales Agent dashboard](https://sales.keinsaas.com) and follow the steps from configuration to a controlled first run.
 
 ## Prerequisites
 
@@ -13,38 +13,40 @@ You need:
 
 - an active Sales Agent account
 - at least one active seat
-- a connected LinkedIn account, email account, or both for that seat
-- permission to edit client-wide settings if you manage targeting, limits, or approvals
+- a connected LinkedIn account, email account, or both for that seat (see [Seats, roles, and accounts](/getting-started/seats-and-accounts))
+- the **Admin** role to change targeting, prompts, the blacklist, approvals, and other settings that apply to all seats
 
 <Note>
-  Each seat includes **300 starter credits** to fund search and enrichment. Check your balance under **Settings → Billing** before running large searches.
+  Each seat includes **300 starter credits** to fund search and enrichment. The balance shows on **Home**; admins top up under **Credits**. Check it before running large searches.
 </Note>
 
 <Steps>
   <Step title="Confirm your audience">
     Open **Settings → Targeting**. Review the ideal customer profile (ICP) description, job titles, locations, industries, exclusions, and pipeline threshold.
 
-    If you change criteria that affect existing scores, use the rescore prompt so old contacts are evaluated against the new rules.
+    If you change criteria that affect existing scores, accept the prompt to update scores so old contacts are evaluated against the new rules. The update runs in the background.
   </Step>
   <Step title="Add contacts">
-    Open **Add to Pipeline** and choose a Sales Navigator search or list, a CSV upload, or contact search at your existing companies.
+    Open **Add to Pipeline** and choose **Submit URLs** for a Sales Navigator search or list, **Upload CSV**, or **Search** for contacts at your existing companies.
 
     Assign every contact to a seat. The owner determines which account performs the outreach.
   </Step>
   <Step title="Review the messaging playbook">
-    Open **Settings → Prompts**. Check the positioning, proof points, call to action, channel-specific writing style, sign-offs, and email signature.
+    Open **Settings → Prompts**. Check your company and offer, who you target, the call to action, and your success stories.
+
+    Each seat owner then checks the seat's **Writing style** and **How messages end** (sign-offs and email signature) under **Settings → Account**.
   </Step>
   <Step title="Choose delivery controls">
-    Open **Settings → Schedule**. For a first run, require approval for every email and LinkedIn message. Keep the initial daily limits conservative.
+    Open **Settings → Schedule**. For a first run, set **Outreach delivery (all reps)** to **Approve every message from the dashboard**, so every first email and LinkedIn message waits for you. Follow-ups send automatically. Keep the initial daily limits conservative.
   </Step>
   <Step title="Protect existing relationships">
     Add customers, competitors, partners, and active opportunities under **Settings → Blacklist**. Saving immediately stops matching prospects already in the pipeline.
   </Step>
   <Step title="Inspect the next run">
-    Return to **Home**. The **Next run** cards show how many contacts are ready for each step and how many fit under the current daily limits.
+    Return to **Home**. The [**Next run**](/operate/next-run-queue) cards show how many contacts are ready for each step and how many fit under the current daily limits.
   </Step>
   <Step title="Start the run">
-    Select **Run Now** for the complete pipeline. Keep LinkedIn closed while the run is active. Follow progress from **Activity**.
+    Select **Run Now** on **Home** for the complete pipeline. It starts your own seats only. Keep LinkedIn closed while the run is active. Follow progress from **Activity**.
   </Step>
   <Step title="Handle messages and replies">
     Approve or edit queued messages under **Messages**. When a prospect replies, take over the conversation and set the appropriate outcome when it enters your sales process.

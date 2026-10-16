@@ -1,57 +1,76 @@
 ---
 title: "Zeitplan und Limits"
-description: "Konfiguriere, wann jeder Seat läuft, wie viele Aktionen er ausführt und wie Kanäle und Freigaben arbeiten."
+description: "Konfiguriere Kanäle, Laufzeiten, Tageslimits, LinkedIn-Optionen und Follow-up-Abstände für jeden Seat."
 icon: "calendar-clock"
 ---
 
-Öffne **Settings → Schedule**, um jeden Seat zu konfigurieren. Ein Seat hat einen eigenen Zeitplan, Tagesmengen und eine eigene Kanalsteuerung. Follow-up- und Versandregeln gelten kundenweit.
+Öffne **Settings → Schedule**, um jeden Seat zu konfigurieren. Ein Seat hat einen eigenen Outreach-Kanal, Zeitplan und eigene Tageslimits. Karten mit **(all reps)** enthalten gemeinsame Einstellungen für alle Seats. Bei mehreren Seats wählst du den Seat oben unter **Rep**.
+
+Kanal, Zeitplan und Tageslimits deines eigenen Seats kannst du selbst ändern. Die gemeinsamen Einstellungen ändern nur Admins.
+
+## Outreach-Kanal wählen
+
+Lege in der Karte **Outreach channel** unter **LinkedIn outreach** fest:
+
+- **Both together** — LinkedIn und E-Mail laufen parallel, sodass täglich mehr Prospects in die Pipeline gelangen.
+- **LinkedIn first** — die Kontaktanfrage geht vor der ersten E-Mail raus. Wer auf LinkedIn nicht erreichbar ist, erhält sofort eine E-Mail, und wer nach einer Woche noch wartet, ebenfalls.
+- **Off** — keine LinkedIn-Aktionen für diesen Seat; E-Mail-Ansprache läuft weiter.
+
+Die Karte warnt dich, wenn für den Seat kein LinkedIn-Konto oder Postfach verbunden ist. Verbinde sie unter **Settings → Account**.
 
 ## Laufzeit konfigurieren
 
-Für jeden Seat:
+In der Karte **Workflow Schedule**:
 
-1. Vertreter auswählen
-2. **Schedule enabled** ein- oder ausschalten
-3. aktive Tage wählen
-4. Startzeit festlegen
-5. Zeitzone bestätigen
+1. **Schedule enabled** ein- oder ausschalten
+2. unter **Days** die aktiven Tage wählen
+3. die **Start time** festlegen; jeder Lauf startet bis zu 20 Minuten danach
+4. die **Timezone** bestätigen
 
-Ist der Zeitplan deaktiviert, läuft der Seat nur, wenn du **Run Now** auswählst. Das Dashboard plant derzeit einen vollständigen Lauf pro ausgewähltem Tag.
+Ist der Zeitplan deaktiviert, läuft der Seat nur, wenn du **Run Now** auswählst. Das Dashboard plant einen Lauf pro ausgewähltem Tag.
 
 <Warning>
-  Behandle die geplante Zeit als Automatisierungsfenster. Nutze LinkedIn nicht manuell, während der Lauf aktiv ist. Je nach konfiguriertem Volumen sollte ein Arbeitsfenster ungefähr zwei bis fünf Stunden für einen vollständigen Lauf vorsehen.
+  Behandle die geplante Zeit als Automatisierungsfenster. Nutze LinkedIn nicht manuell, während der Lauf aktiv ist. Die Karte **Daily Limits** zeigt, wann ein Lauf üblicherweise fertig ist. Ein einzelner Lauf darf höchstens fünf Stunden dauern; bräuchten deine Limits länger, fordert dich die Karte auf, sie zu senken.
 </Warning>
 
 ## Tageslimits festlegen
 
-Die Limits gelten pro Seat und Tag:
+Die Limits gelten pro Seat und Kalendertag. Die Karte **Daily Limits** gruppiert sie nach Kanal, und jedes Feld zeigt, was für den Seat gerade sicher ist.
 
-| Limit | Steuerung |
-| --- | --- |
-| **Connection requests** | Neue LinkedIn-Einladungen. Das Dashboard begrenzt diese Einstellung auf 20. |
-| **Messages** | Neue personalisierte Nachrichten, die erstellt werden. |
-| **Outreach** | LinkedIn-Nachrichten, die zum Versand bereit sind. |
-| **Emails** | Erste E-Mails. Leer lassen, um dem Outreach-Limit zu folgen. |
-| **Follow-up emails** | An diesem Tag fällige E-Mail-Follow-ups. |
-| **Follow-up LinkedIn** | An diesem Tag fällige LinkedIn-Follow-ups. |
+| Kanal | Limit | Steuerung |
+| --- | --- | --- |
+| LinkedIn | **New people per day** | Gesendete Kontaktanfragen. Das Dashboard begrenzt diesen Wert auf 20 pro Tag. |
+| LinkedIn | **Messages to new connections per day** | Erste Nachrichten nach angenommener Einladung. |
+| LinkedIn | **Follow-ups per day** | LinkedIn-Follow-ups, wenn die erste Nachricht unbeantwortet bleibt. |
+| E-Mail | **New people per day** | Gesendete erste E-Mails. |
+| E-Mail | **Follow-ups per day** | E-Mail-Follow-ups, wenn eine E-Mail unbeantwortet bleibt. Der Wert kann nicht 0 sein, weil derselbe Schritt Antworten und Bounces erkennt. Für keine E-Mail-Follow-ups setze stattdessen **Email follow-ups** auf 0. |
 
-Die **Next run**-Anzahl ist der kleinere Wert aus geeigneten Kontakten und relevantem Tageslimit. Weitere Kontakte bleiben in der Queue.
+Ist LinkedIn auf **Off** gestellt, sind die LinkedIn-Limits ausgeblendet. Pro Tag gelangen höchstens so viele neue Personen in die Pipeline, wie der höhere der beiden **New people per day**-Werte erlaubt, denn LinkedIn und E-Mail erreichen dieselben Personen. Personen, die noch auf ihre erste Nachricht warten, zählen mit; ein Lauf füllt die Pipeline also auf, statt sie wachsen zu lassen. Die **Next run**-Anzahl ist der kleinere Wert aus geeigneten Kontakten und relevantem Tageslimit. Weitere Kontakte bleiben in der Queue.
 
-Beginne mit niedrigen Limits und erhöhe sie während des Warm-ups langsam. Ein normaler Sales-Navigator-Plan basiert auf ungefähr 100 Kontakten pro Woche und Konto. Ein höherer SSI kann mehr ermöglichen, aber weder Reichweite noch Kontosicherheit sind garantiert.
+Beginne niedrig und erhöhe die Limits über die ersten Wochen:
 
-## Kanalverhalten wählen
+- **LinkedIn** wärmt sich ab der ersten Einladung des Seats auf: etwa 3 pro Tag in Woche 1, 10 pro Tag ab Woche 2 und bis zu 20 pro Tag ab Woche 4. Nach dem Warm-up bleiben Free- und Premium-Konten bei etwa 10 pro Tag. Nach 30 Tagen ohne Einladung beginnt das Warm-up von vorn. Trage den **Social Selling Index (SSI)** des Seats aus Sales Navigator ein, um besser einzuschätzen, wie hoch er gehen kann.
+- **E-Mail** richtet sich nach dem gewählten Postfachstatus: **New mailbox** (etwa 3 pro Tag), **Some sending history** (etwa 10 pro Tag) oder **Mailbox warmed** (kein Warm-up-Limit).
 
-Wähle für jeden Seat:
+Kein Limit steigt von selbst. Erreicht ein Seat die nächste LinkedIn-Warm-up-Woche, bieten eine Aufgabe und die Benachrichtigungsglocke **Raise to** mit einem Klick an.
 
-- **Always** — LinkedIn und E-Mail laufen beide.
-- **Off** — keine LinkedIn-Aktionen; E-Mail kann weiterlaufen.
-- **Prioritize emails** — E-Mail läuft zuerst, LinkedIn folgt danach.
+Ein normaler Sales-Navigator-Plan unterstützt als Obergrenze ungefähr 100 Kontakte pro Woche und Konto. Ein höherer SSI kann mehr ermöglichen, aber weder Reichweite noch Kontosicherheit sind garantiert. keinsaas setzt verfügbare Schutzmaßnahmen ein; du bleibst für die Einhaltung der [LinkedIn-Hygieneregeln](/de/safety/linkedin-hygiene) verantwortlich.
 
-Optionale Regeln für inaktive Profile können ruhende LinkedIn-Profile ausschließlich an E-Mail weiterleiten. Du kannst einen Prospect außerdem aufwärmen, indem du vor der Kontaktanfrage bis zu zwei aktuelle Beiträge likest.
+Die Karte **Sent per day** zeigt, wie viel die geplanten Läufe an jedem Wochentag höchstens senden können, für alle aktiven Seats zusammen. Meist geht weniger raus, weil jede Nachricht jemanden braucht, der bereit ist. Manuell gestartete Läufe kommen hinzu.
+
+## LinkedIn-Optionen festlegen
+
+Die Karte **LinkedIn options (all reps)** steuert LinkedIn für alle Seats:
+
+- **No profile picture and few connections** — Prospects ohne Profilbild und mit weniger Kontakten als **Connections below** erhalten nur E-Mails. Wird vor der Kontaktanfrage geprüft.
+- **No posts or comments in the last 30 days** — wird bei der Recherche nach der Kontaktanfrage geprüft und überspringt daher die LinkedIn-Nachricht, nicht die Anfrage. Setzt voraus, dass **Export LinkedIn posts and comments** unter **Settings → Targeting** aktiv ist.
+- **Like recent posts before connecting** — liked vor der Kontaktanfrage bis zu zwei aktuelle Beiträge des Prospects.
+- **InMail fallback** — sendet die Nachricht als InMail, wenn eine Kontaktanfrage nach der Wartezeit nicht angenommen wurde. InMails verbrauchen die Sales-Navigator-InMail-Credits des Seats; ein Seat ohne Sales Navigator sendet sie daher nur an Personen mit offenem Profil, die kostenlos angeschrieben werden können. Ist die Option aus, warten Nachrichten auf die Verbindung. Personen mit offenem Profil werden in beiden Fällen sofort angeschrieben.
+- **LinkedIn send delay (hours)** — wie lange nach einer Kontaktanfrage bis zur ersten LinkedIn-Nachricht gewartet wird.
 
 ## Follow-ups konfigurieren
 
-Das kundenweite Maximum beträgt:
+Das kundenweite Maximum in der Karte **Follow-ups (all reps)** beträgt:
 
 - bis zu drei E-Mail-Follow-ups
 - bis zu ein LinkedIn-Follow-up
@@ -64,12 +83,18 @@ Setze einen Kanal auf `0`, um seine Follow-ups auszuschalten. Follow-ups verwend
 
 Eine Antwort auf einem Kanal stoppt automatisierte Follow-ups auf beiden Kanälen.
 
+## Versand und Unternehmensstopps wählen
+
+**Outreach delivery (all reps)** legt fest, ob du jede Nachricht vorher freigibst. Siehe [Messaging-Playbook](/de/configure/messaging-playbook#umfang-der-prüfung-festlegen).
+
+**When a company says yes (all reps)** entscheidet, was die Ansprache an ein ganzes Unternehmen stoppt. Markierst du ein **Meeting**, **Offer Sent** oder einen **Closed Deal** oder eine Antwort als positiv, erhält das Unternehmen diese Stage, die Ansprache an seine übrigen Kontakte stoppt und es landet auf deiner Blacklist. Wähle unter **What counts as a yes** **Only what you mark yourself** oder **Also a reply the assistant reads as interested**, damit auch eine positive Antwort das von selbst auslöst.
+
 ## Speichern und prüfen
 
-Kehre nach dem Speichern zu **Home** zurück und prüfe:
+Wähle **Save schedule**, kehre zu **Home** zurück und prüfe:
 
-- **Schedule** zeigt für die vorgesehenen Seats Active
-- **Daily limits** entsprechen der kombinierten Kapazität aktiver Seats
+- **Schedule** zeigt für die vorgesehenen Seats **Active**
+- **Daily Limits** zeigt die erwarteten neuen Personen pro Tag für LinkedIn und E-Mail
 - **Approval** zeigt den vorgesehenen Versandmodus
 - **Next run** spiegelt die erwarteten Obergrenzen wider
 

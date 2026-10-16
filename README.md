@@ -27,7 +27,7 @@ mint a11y
 
 ## Publishing
 
-The Mintlify GitHub app builds a preview for pull requests. Changes publish after they are merged into `main`.
+The site's Mintlify plan has no preview deployments (they need Pro), so the pull request check reports "skipping"; preview a branch locally with `mint dev`. Changes publish after they are merged into `main`.
 
 ## Localization
 
