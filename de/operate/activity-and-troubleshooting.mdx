@@ -1,52 +1,52 @@
 ---
-title: "Activity und Fehlerbehebung"
+title: "Aktivität und Fehlerbehebung"
 sidebarTitle: "Fehlerbehebung"
-description: "Lies Laufstatus in Activity, untersuche leere Queues und übersprungene Schritte, verbinde LinkedIn oder dein Postfach neu und erfahre, wann du den Support kontaktierst."
+description: "Lies den Laufstatus unter Aktivität, untersuche leere Queues und übersprungene Schritte, verbinde LinkedIn oder dein Postfach neu und erfahre, wann du den Support kontaktierst."
 icon: "activity"
 ---
 
-Öffne **Activity**, um deine 50 letzten Läufe zu sehen: Suchen, Anreicherung, Importe und Pipeline-Läufe. Dort schaust du zuerst nach, wenn ein Lauf unerwartete Ergebnisse liefert: zu wenig gesendet, gar nichts gesendet oder ein glatter Fehlschlag.
+Öffne **Aktivität**, um deine 50 letzten Läufe zu sehen: Suchen, Anreicherung, Importe und Pipeline-Läufe. Dort schaust du zuerst nach, wenn ein Lauf unerwartete Ergebnisse liefert: zu wenig gesendet, gar nichts gesendet oder ein glatter Fehlschlag.
 
-## Activity-Tabelle lesen
+## Tabelle unter Aktivität lesen
 
-Jeder Pipeline-Lauf ist eine Zeile, darunter stehen seine Schritte in der Reihenfolge, in der sie liefen, etwa **Enrichment**, **Message writing**, **Email sending** oder **LinkedIn messages**. Für jede Zeile siehst du:
+Jeder Pipeline-Lauf ist eine Zeile, darunter stehen seine Schritte in der Reihenfolge, in der sie liefen, etwa **Anreicherung**, **Nachrichten verfassen**, **E-Mail-Versand** oder **LinkedIn-Nachrichten**. Für jede Zeile siehst du:
 
-- **Affected**: die Kontakte oder Unternehmen, die der Lauf betroffen hat, verlinkt zum Öffnen
-- **Trigger**: wie der Lauf gestartet wurde
+- **Betroffen**: die Kontakte oder Unternehmen, die der Lauf betroffen hat, verlinkt zum Öffnen
+- **Auslöser**: wie der Lauf gestartet wurde
 - **Status**: das Ergebnis, mit einem kurzen Grund darunter, wenn etwas schiefging
-- **Processed**, **Succeeded** und **Failed**: die Anzahl der Einträge
-- **Started** und **Duration**
+- **Verarbeitet**, **Erfolgreich** und **Fehlgeschlagen**: die Anzahl der Einträge
+- **Gestartet** und **Dauer**
 
-Admins sehen zusätzlich die Spalte **Seat**. Members sehen nur die Läufe ihrer eigenen Seats. **Search jobs & CSVs** öffnet die Liste der Suchen und CSV-Importe.
+Admins sehen zusätzlich die Spalte **Seat**. Mitglieder sehen nur die Läufe ihrer eigenen Seats. **Suchjobs & CSVs** öffnet die Liste der Suchen und CSV-Importe.
 
 ## Laufstatus
 
-Jeder Lauf und jeder Schritt endet mit **Succeeded**, **Completed with issues**, **Skipped**, **Stopped** oder **Failed**. [Pipeline ausführen](/de/operate/run-the-pipeline#lauf-stoppen) erklärt jeden Status. Der Status eines Laufs fasst seine Schritte zusammen, daher kann ein Lauf mit **Succeeded** Schritte mit **Skipped** enthalten.
+Jeder Lauf und jeder Schritt endet mit **Erfolgreich**, **Mit Problemen abgeschlossen**, **Übersprungen**, **Gestoppt** oder **Fehlgeschlagen**. [Pipeline ausführen](/de/operate/run-the-pipeline#lauf-stoppen) erklärt jeden Status. Der Status eines Laufs fasst seine Schritte zusammen, daher kann ein Lauf mit **Erfolgreich** Schritte mit **Übersprungen** enthalten.
 
-Wenn du die Ursache selbst beheben kannst, sagt es der Grund unter dem Status, etwa **LinkedIn session expired — reconnect it under Settings → Account.**, **Email account disconnected — reconnect it under Settings → Account.** oder **Credits could not be charged — check your balance under Credits.** Jeder andere Fehler lautet **Something went wrong — we've been notified.** Die [Jobs-Seite](/de/operate/jobs#wenn-ein-job-scheitert) verwendet dieselben Worte.
+Wenn du die Ursache selbst beheben kannst, sagt es der Grund unter dem Status, etwa **LinkedIn-Sitzung abgelaufen – verbinde dein LinkedIn-Konto unter Einstellungen → Konto erneut.**, **E-Mail-Konto getrennt – verbinde es unter Einstellungen → Konto erneut.** oder **Credits konnten nicht abgebucht werden – prüfe dein Guthaben unter Credits.** Jeder andere Fehler lautet **Etwas ist schiefgelaufen – wir wurden benachrichtigt.** Die [Jobs-Seite](/de/operate/jobs#wenn-ein-job-scheitert) verwendet dieselben Worte.
 
-## Wenn die Next run queue leer ist
+## Wenn die Warteschlange unter Nächster Durchlauf leer ist
 
 Gehe diese Checkliste der Reihe nach durch, bevor du einen Lauf startest:
 
-1. **Active seat**: Prüfe, ob der Kontakt einen Owner hat und der Seat aktiv ist, nicht pausiert oder getrennt.
+1. **Active seat**: Prüfe, ob der Kontakt einen Inhaber hat und der Seat aktiv ist, nicht pausiert oder getrennt.
 2. **ICP gate**: Prüfe, ob der Kontakt den aktuellen ICP-Schwellenwert und die Pipeline-Kriterien erfüllt.
-3. **Blacklist**: Prüfe, dass weder der Unternehmensname noch die Domain auf deiner Blacklist stehen.
-4. **Stop state**: Prüfe, dass für den Prospect kein Outcome gesetzt und er nicht archiviert ist.
+3. **Sperrliste**: Prüfe, dass weder der Unternehmensname noch die Domain auf deiner Sperrliste stehen.
+4. **Stop state**: Prüfe, dass für den Prospect kein Ergebnis gesetzt und er nicht archiviert ist.
 5. **Required data**: Stelle sicher, dass der nächste Schritt die nötigen Recherche-, Kanal- oder Nachrichtendaten hat.
-6. **Approval**: Ist die Freigabe aktiv, prüfe, ob erstellte Nachrichten freigegeben wurden und in der Outreach-Queue warten.
+6. **Freigabe**: Ist die Freigabe aktiv, prüfe, ob erstellte Nachrichten freigegeben wurden und in der Outreach-Queue warten.
 7. **Cadence**: Prüfe, ob das nächste Follow-up tatsächlich heute fällig ist, nicht erst morgen oder später.
 8. **Limits**: Prüfe, ob das relevante Tageslimit über `0` liegt und die heutige Zuteilung nicht schon aufgebraucht ist.
-9. **Connected account**: Prüfe, dass LinkedIn und E-Mail unter **Settings → Account** einen gesunden Status zeigen.
+9. **Connected account**: Prüfe, dass LinkedIn und E-Mail unter **Einstellungen → Konto** einen gesunden Status zeigen.
 10. **Credits**: Ist das Guthaben aufgebraucht, bekommen neue Kontakte keine E-Mail- oder Telefonsuche, bis du aufstockst. Follow-ups und Antworten laufen weiter.
 
 Die meisten Fälle einer leeren Queue gehen auf Punkt 1, 6, 8 oder 9 zurück. Kläre diese zuerst.
 
-Um zu sehen, warum ein einzelner Kontakt nicht weiterkommt, öffne **Prospects → Contacts**. Ein Kontakt, der noch kein Prospect ist, zeigt in der Spalte **Stage** **Queued** oder **Not in pipeline**. Fahre mit der Maus über das Badge, um den Grund zu sehen, etwa kein zugewiesener Seat, ein ICP-Score unter dem Pipeline-Minimum oder ein Unternehmensabgleich, der geprüft werden muss (siehe [Prospects und Unternehmen](/de/operate/prospects-and-companies#angehaltene-kontakte)).
+Um zu sehen, warum ein einzelner Kontakt nicht weiterkommt, öffne **Prospects → Kontakte**. Ein Kontakt, der noch kein Prospect ist, zeigt in der Spalte **Phase** **In Warteschlange** oder **Nicht in der Pipeline**. Fahre mit der Maus über das Badge, um den Grund zu sehen, etwa kein zugewiesener Seat, ein ICP-Score unter dem Pipeline-Minimum oder ein Unternehmensabgleich, der geprüft werden muss (siehe [Prospects und Unternehmen](/de/operate/prospects-and-companies#angehaltene-kontakte)).
 
 ## Wenn ein Lauf nichts sendet
 
-Zeigt ein Versandschritt wie **Email sending**, **LinkedIn messages** oder **Email follow-ups** **Skipped**, hatte er nichts zu tun oder hat jeden Eintrag aus einem erfassten Grund übersprungen. Kaputt ist nichts. Der Lauf selbst kann trotzdem **Succeeded** zeigen, weil ein anderer Schritt gearbeitet hat. Prüfe:
+Zeigt ein Versandschritt wie **E-Mail-Versand**, **LinkedIn-Nachrichten** oder **E-Mail-Follow-ups** **Übersprungen**, hatte er nichts zu tun oder hat jeden Eintrag aus einem erfassten Grund übersprungen. Kaputt ist nichts. Der Lauf selbst kann trotzdem **Erfolgreich** zeigen, weil ein anderer Schritt gearbeitet hat. Prüfe:
 
 - **Neu erkannte Antworten**: Prospects, die seit dem letzten Lauf geantwortet haben, werden automatisch von Follow-ups ausgeschlossen.
 - **Verbindungsstatus**: Ein getrennter Seat blockiert die LinkedIn-Schritte.
@@ -59,21 +59,21 @@ Das System überspringt einen unsicheren Versand eher, als eine Dublette zu send
 
 ## Wenn LinkedIn für einen Prospect übersprungen wurde
 
-Manche Prospects laufen nur per E-Mail weiter, etwa wenn LinkedIn das Profil nicht öffnen konnte oder die Einladung nicht angenommen wurde. Die Spalte **LinkedIn** unter **Prospects** zeigt dann **Skipped** mit dem Grund, die Timeline **LinkedIn stopped** mit dem Grund.
+Manche Prospects laufen nur per E-Mail weiter, etwa wenn LinkedIn das Profil nicht öffnen konnte oder die Einladung nicht angenommen wurde. Die Spalte **LinkedIn** unter **Prospects** zeigt dann **Übersprungen** mit dem Grund, und der Tab **Verlauf** zeigt **LinkedIn gestoppt** mit dem Grund.
 
-Trifft der Grund nicht mehr zu, wähle diese Prospects aus und wähle **Retry LinkedIn**. Sie kommen für den nächsten Lauf zurück in die LinkedIn-Queue. Gilt der Grund weiterhin, überspringt der nächste Lauf sie erneut.
+Trifft der Grund nicht mehr zu, wähle diese Prospects aus und wähle **LinkedIn erneut versuchen**. Sie kommen für den nächsten Lauf zurück in die LinkedIn-Queue. Gilt der Grund weiterhin, überspringt der nächste Lauf sie erneut.
 
 ## Wenn ein Lauf fehlschlägt
 
 <Steps>
   <Step title="Fehlgeschlagenen Schritt finden">
-    Suche in **Activity** den fehlgeschlagenen Lauf und den Schritt darunter, der fehlgeschlagen ist. Lies den Grund unter seinem Status.
+    Suche in **Aktivität** den fehlgeschlagenen Lauf und den Schritt darunter, der fehlgeschlagen ist. Lies den Grund unter seinem Status.
   </Step>
   <Step title="Nicht wiederholt neu starten">
     Starte nicht immer wieder neue Läufe für einen fehlschlagenden LinkedIn-Schritt. Wiederholte Versuche können das zugrunde liegende Problem verschärfen.
   </Step>
   <Step title="Kontoverbindungen prüfen">
-    Öffne **Settings → Account** und prüfe, dass deine LinkedIn- und E-Mail-Verbindungen gesund sind. Eine abgelaufene LinkedIn- oder Postfach-Anmeldung ist die häufigste Ursache für einen fehlgeschlagenen Lauf.
+    Öffne **Einstellungen → Konto** und prüfe, dass deine LinkedIn- und E-Mail-Verbindungen gesund sind. Eine abgelaufene LinkedIn- oder Postfach-Anmeldung ist die häufigste Ursache für einen fehlgeschlagenen Lauf.
   </Step>
   <Step title="Support kontaktieren">
     Besteht das Problem weiter, schreibe an [support@keinsaas.com](mailto:support@keinsaas.com) mit:
@@ -92,30 +92,30 @@ Wenn LinkedIn eine neue Anmeldung verlangt, pausiert der Sales Agent alle Linked
 
 Du siehst das an mehreren Stellen:
 
-- in der Benachrichtigungsglocke: **LinkedIn is paused — reconnect** oder **Outlook is disconnected — sign in again**
-- als rotes Banner auf Home und als Eintrag in **Tasks**
-- unter **Settings → Account**: Die LinkedIn-Karte zeigt **Login needed**, die E-Mail-Karte **Sign-in expired**
+- in der Benachrichtigungsglocke: **LinkedIn ist pausiert – verbinde es erneut** oder **Outlook ist getrennt – melde dich erneut an**
+- als rotes Banner auf **Start** und als Eintrag in **Aufgaben**
+- unter **Einstellungen → Konto**: Die LinkedIn-Karte zeigt **Anmeldung nötig**, die E-Mail-Karte **Anmeldung abgelaufen**
 
-Bei LinkedIn bekommt der Owner des Seats außerdem eine E-Mail mit einem Link zum Neuverbinden.
+Bei LinkedIn bekommt der Inhaber des Seats außerdem eine E-Mail mit einem Link zum Neuverbinden.
 
 <Steps>
-  <Step title="Settings → Account öffnen">
-    Öffne den betroffenen Seat. Nur der Owner des Seats kann ihn verbinden.
+  <Step title="Einstellungen → Konto öffnen">
+    Öffne den betroffenen Seat. Nur der Inhaber des Seats kann ihn verbinden.
   </Step>
   <Step title="Neu verbinden">
-    Für LinkedIn wähle **Reconnect** und melde dich auf der geführten Seite an. Passwort und Zwei-Faktor-Code bleiben bei LinkedIn. Für Outlook wähle **Reconnect Outlook** und melde dich mit dem Postfach an, aus dem der Seat sendet.
+    Für LinkedIn wähle **Erneut verbinden** und melde dich auf der geführten Seite an. Passwort und Zwei-Faktor-Code bleiben bei LinkedIn. Für Outlook wähle **Outlook erneut verbinden** und melde dich mit dem Postfach an, aus dem der Seat sendet.
   </Step>
   <Step title="Auf die Bestätigung warten">
-    Warte, bis die LinkedIn-Karte **Connected** oder die E-Mail-Karte **Outlook connected** zeigt, bevor du weitere Schritte unternimmst.
+    Warte, bis die LinkedIn-Karte **Verbunden** oder die E-Mail-Karte **Outlook verbunden** zeigt, bevor du weitere Schritte unternimmst.
   </Step>
   <Step title="Pipeline fortsetzen">
-    LinkedIn macht dort weiter, wo es aufgehört hat. Setze deinen normalen Zeitplan fort oder starte manuell mit **Run Now**.
+    LinkedIn macht dort weiter, wo es aufgehört hat. Setze deinen normalen Zeitplan fort oder starte manuell mit **Jetzt starten**.
   </Step>
 </Steps>
 
 Verbinde dasselbe LinkedIn-Konto neu. Den Wechsel zu einem anderen Konto beschreibt [Seats und Konten](/de/getting-started/seats-and-accounts).
 
-Zeigt die LinkedIn-Karte **Temporarily unavailable**, liegt das Problem bei uns und keinsaas kümmert sich darum. Du musst nichts tun.
+Zeigt die LinkedIn-Karte **Vorübergehend nicht verfügbar**, liegt das Problem bei uns und keinsaas kümmert sich darum. Du musst nichts tun.
 
 ## Wenn dein E-Mail-Anbieter den Versand blockiert
 
@@ -123,20 +123,20 @@ Verweigert dein E-Mail-Anbieter den Versand für ein Postfach, etwa weil deine I
 
 Du siehst das an mehreren Stellen:
 
-- in der Benachrichtigungsglocke: **Email sending paused: mailbox blocked**, mit dem Postfach
-- als rotes Banner auf Home und als Eintrag in **Tasks**, jeweils mit **See options**
-- unter **Settings → Account**: Die E-Mail-Karte zeigt **Sending paused**
-- in einer E-Mail an den Owner des Seats oder, wenn der Seat keinen Owner hat, an deine Admins
+- in der Benachrichtigungsglocke: **E-Mail-Versand pausiert: Postfach gesperrt**, mit dem Postfach
+- als rotes Banner auf **Start** und als Eintrag in **Aufgaben**, jeweils mit **Optionen ansehen**
+- unter **Einstellungen → Konto**: Die E-Mail-Karte zeigt **Versand pausiert**
+- in einer E-Mail an den Inhaber des Seats oder, wenn der Seat keinen Inhaber hat, an deine Admins
 
 <Steps>
-  <Step title="Settings → Account öffnen">
-    Öffne den betroffenen Seat. Ein pausierter Seat bietet nur **Resume sending** und **Disconnect**, weil **Reconnect** eine Sperre bei deinem Anbieter nicht aufheben kann.
+  <Step title="Einstellungen → Konto öffnen">
+    Öffne den betroffenen Seat. Ein pausierter Seat bietet nur **Versand fortsetzen** und **Trennen**, weil **Erneut verbinden** eine Sperre bei deinem Anbieter nicht aufheben kann.
   </Step>
   <Step title="Die IT bitten, das Postfach zu entsperren">
-    Öffne **A note for your IT**, kopiere die Notiz für deinen Anbieter (Gmail / Google Workspace oder Outlook / Microsoft 365) und schicke sie an die Person, die deine E-Mail verwaltet.
+    Öffne **Eine Notiz für deine IT**, kopiere die Notiz für deinen Anbieter (Gmail / Google Workspace oder Outlook / Microsoft 365) und schicke sie an die Person, die deine E-Mail verwaltet.
   </Step>
   <Step title="Fortsetzen">
-    Ist das Postfach entsperrt, wähle **Resume sending**. Verweigert der Anbieter es weiterhin, pausiert der Versand erneut. Oder wähle **Disconnect** und verbinde ein anderes Postfach.
+    Ist das Postfach entsperrt, wähle **Versand fortsetzen**. Verweigert der Anbieter es weiterhin, pausiert der Versand erneut. Oder wähle **Trennen** und verbinde ein anderes Postfach.
   </Step>
 </Steps>
 
@@ -144,4 +144,4 @@ Du siehst das an mehreren Stellen:
   Reagiere auf eine leere Queue oder einen fehlgeschlagenen Lauf nicht damit, deine Tageslimits stark zu erhöhen. Höhere Limits beheben weder ein Eignungsproblem noch eine unterbrochene Verbindung. Sie vergrößern nur die möglichen Folgen falsch konfigurierter Ansprache. Finde zuerst die Ursache und laufe dann mit normalen Limits.
 </Warning>
 
-Die vollständigen Status-Definitionen findest du unter [Pipeline ausführen](/de/operate/run-the-pipeline). Zur Fehlersuche bei der Eignung siehe [Next run queue](/de/operate/next-run-queue).
+Die vollständigen Status-Definitionen findest du unter [Pipeline ausführen](/de/operate/run-the-pipeline). Zur Fehlersuche bei der Eignung siehe [Nächster Durchlauf](/de/operate/next-run-queue).

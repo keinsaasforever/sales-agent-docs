@@ -4,11 +4,11 @@ description: "Starte die vollständige Pipeline, führe einen Teil einzeln aus, 
 icon: "play"
 ---
 
-Du kannst die Pipeline jederzeit manuell über die Karte **Run pipeline** auf **Home** starten oder automatisch nach dem Zeitplan eines Seats ausführen lassen. In beiden Fällen gelten dieselben Eignungsregeln, Tageslimits und Versandmodi.
+Du kannst die Pipeline jederzeit manuell über die Karte **Pipeline starten** auf **Start** starten oder automatisch nach dem Zeitplan eines Seats ausführen lassen. In beiden Fällen gelten dieselben Eignungsregeln, Tageslimits und Versandmodi.
 
 ## Vollständige Pipeline ausführen
 
-Wähle **Run Now**, um einen vollständigen Lauf für deine eigenen aktiven Seats zu starten. Das gilt für Member und Admins gleichermaßen: Der Seat eines Kollegen läuft nach seinem eigenen Zeitplan oder wenn sein Owner **Run Now** wählt.
+Wähle **Jetzt starten**, um einen vollständigen Lauf für deine eigenen aktiven Seats zu starten. Das gilt für Mitglieder und Admins gleichermaßen: Der Seat eines Kollegen läuft nach seinem eigenen Zeitplan oder wenn sein Inhaber **Jetzt starten** wählt.
 
 Jeder Seat arbeitet diese Schritte der Reihe nach ab:
 
@@ -20,56 +20,56 @@ Jeder Seat arbeitet diese Schritte der Reihe nach ab:
 
 Jeder Schritt holt sich seine eigenen geeigneten Kontakte. Ein Schritt ohne Arbeit hält den nächsten also nicht auf. Auf einem Seat mit ausgeschaltetem oder pausiertem LinkedIn werden die LinkedIn-Aktionen übersprungen, E-Mail läuft weiter.
 
-Die Arbeit läuft im Hintergrund. Solange sie aktiv ist, zeigt die Karte **Pipeline running** mit einem Link zu **Activity**. Am Ende zeigt sie **Pipeline finished — see Activity for results.** Ein vollständiger Lauf kann einige Stunden dauern, weil LinkedIn-Aktionen zeitlich verteilt werden.
+Die Arbeit läuft im Hintergrund. Solange sie aktiv ist, zeigt die Karte **Pipeline läuft** mit einem Link zu **Aktivität**. Am Ende zeigt sie **Pipeline abgeschlossen – Ergebnisse findest du unter Aktivität.** Ein vollständiger Lauf kann einige Stunden dauern, weil LinkedIn-Aktionen zeitlich verteilt werden.
 
 <Warning>
   Lass LinkedIn geschlossen, solange die Pipeline läuft. Führe während des Automatisierungsfensters keine manuelle LinkedIn-Arbeit mit demselben Konto aus.
 </Warning>
 
-Zeigt **Home** für einen Seat **LinkedIn is paused**, wähle zuerst **Reconnect LinkedIn**. Sonst überspringt der Lauf alle LinkedIn-Schritte dieses Seats.
+Zeigt **Start** für einen Seat **LinkedIn ist pausiert**, wähle zuerst **LinkedIn erneut verbinden**. Sonst überspringt der Lauf alle LinkedIn-Schritte dieses Seats.
 
 ## Einen Teil einzeln ausführen
 
-Öffne **Advanced** in der Karte **Run pipeline**, um einen einzelnen Teil der Pipeline auszuführen:
+Öffne **Erweitert** in der Karte **Pipeline starten**, um einen einzelnen Teil der Pipeline auszuführen:
 
-- **Messages** — schreibt Erstnachrichten für recherchierte Prospects. Sendet nichts.
+- **Nachrichten** — schreibt Erstnachrichten für recherchierte Prospects. Sendet nichts.
 - **Outreach** — sendet freigegebene E-Mails und LinkedIn-Nachrichten. Nimmt keine neuen Kontakte auf und schreibt keine neuen Nachrichten.
 - **Follow-ups** — prüft auf Antworten und sendet nur fällige E-Mail- und LinkedIn-Follow-ups.
 
-Jeder Teil endet mit seinem eigenen Schritt und läuft nicht in spätere Schritte weiter. Jeder Teil wendet weiterhin seine normalen Gates, Tageslimits und den Versandmodus an. Ist die Freigabe ausgeschaltet, gehen Nachrichten aus einem **Messages**-Lauf mit dem nächsten **Outreach**- oder vollständigen Lauf hinaus.
+Jeder Teil endet mit seinem eigenen Schritt und läuft nicht in spätere Schritte weiter. Jeder Teil wendet weiterhin seine normalen Gates, Tageslimits und den Versandmodus an. Ist die Freigabe ausgeschaltet, gehen Nachrichten aus einem **Nachrichten**-Lauf mit dem nächsten **Outreach**- oder vollständigen Lauf hinaus.
 
 ## Tageslimits und wiederholte Läufe
 
-Limits gelten pro Tag, ab Mitternacht in der Zeitzone des Seats. Ist ein Seat heute schon gelaufen, nutzt **Run Now** nur, was von jedem Limit übrig ist.
+Limits gelten pro Tag, ab Mitternacht in der Zeitzone des Seats. Ist ein Seat heute schon gelaufen, nutzt **Jetzt starten** nur, was von jedem Limit übrig ist.
 
-Jeder Seat führt nur einen Lauf gleichzeitig aus. Solange auf einem Seat ein Lauf aktiv ist, beginnt kein neuer Start für diesen Seat, und **Run Now** meldet **A run is already in progress.**
+Jeder Seat führt nur einen Lauf gleichzeitig aus. Solange auf einem Seat ein Lauf aktiv ist, beginnt kein neuer Start für diesen Seat, und **Jetzt starten** meldet **Ein Durchlauf läuft bereits.**
 
 ## Lauf stoppen
 
-**Stop** erscheint in der Karte **Run pipeline**, solange ein Lauf aktiv ist. Als Member stoppst du die Läufe deiner eigenen Seats. Als Admin stoppst du alle Läufe deines Kontos, auch die von Kollegen. Ein Admin ohne eigenen Seat sieht die Karte nur mit **Stop**.
+**Stoppen** erscheint in der Karte **Pipeline starten**, solange ein Lauf aktiv ist. Als Mitglied stoppst du die Läufe deiner eigenen Seats. Als Admin stoppst du alle Läufe deines Kontos, auch die von Kollegen. Ein Admin ohne eigenen Seat sieht die Karte nur mit **Stoppen**.
 
-- Ein Lauf, der in den ersten rund 30 Sekunden gestoppt wird, wird abgebrochen, bevor etwas hinausgeht: **Run stopped. Nothing was sent.**
-- Ein weiter fortgeschrittener Lauf schließt den Kontakt ab, den er gerade bearbeitet, speichert ihn und nimmt keinen neuen mehr: **Stopping — finishing the current step so nothing is lost.**
+- Ein Lauf, der in den ersten rund 30 Sekunden gestoppt wird, wird abgebrochen, bevor etwas hinausgeht: **Durchlauf gestoppt. Es wurde nichts gesendet.**
+- Ein weiter fortgeschrittener Lauf schließt den Kontakt ab, den er gerade bearbeitet, speichert ihn und nimmt keinen neuen mehr: **Wird gestoppt – der aktuelle Schritt wird noch abgeschlossen, damit nichts verloren geht.**
 
 <Warning>
   Das Stoppen verhindert weitere Arbeit in diesem Lauf. Bereits Versendetes wird nicht rückgängig gemacht oder zurückgerufen.
 </Warning>
 
-Der Status jedes Laufs erscheint unter **Activity**, jeder Schritt unter seinem Lauf:
+Der Status jedes Laufs erscheint unter **Aktivität**, jeder Schritt unter seinem Lauf:
 
-- **Started** / **Running** — der Lauf ist aktiv.
-- **Succeeded** — der Lauf hat Arbeit erledigt und nichts ist fehlgeschlagen.
-- **Completed with issues** — ein Teil der Arbeit ist gelungen, mindestens ein Eintrag oder Schritt ist fehlgeschlagen.
-- **Skipped** — es gab nichts zu tun, oder jeder Eintrag wurde aus einem erfassten Grund übersprungen. Nichts ist fehlgeschlagen.
-- **Stopped** — jemand hat den Lauf vor Abschluss aller Schritte gestoppt.
-- **Failed** — Einträge oder Schritte sind fehlgeschlagen und nichts ist gelungen.
+- **Gestartet** / **Läuft** — der Lauf ist aktiv.
+- **Erfolgreich** — der Lauf hat Arbeit erledigt und nichts ist fehlgeschlagen.
+- **Mit Problemen abgeschlossen** — ein Teil der Arbeit ist gelungen, mindestens ein Eintrag oder Schritt ist fehlgeschlagen.
+- **Übersprungen** — es gab nichts zu tun, oder jeder Eintrag wurde aus einem erfassten Grund übersprungen. Nichts ist fehlgeschlagen.
+- **Gestoppt** — jemand hat den Lauf vor Abschluss aller Schritte gestoppt.
+- **Fehlgeschlagen** — Einträge oder Schritte sind fehlgeschlagen und nichts ist gelungen.
 
 ## Geplante Läufe
 
-Ist **Schedule enabled** für einen Seat unter **Settings → Schedule** aktiv, startet die Pipeline automatisch an den gewählten Tagen, bis zu 20 Minuten nach der Startzeit. Die Karte **Schedule** auf **Home** zeigt, ob Zeitpläne aktiv sind und wann sie laufen.
+Ist **Zeitplan aktiviert** für einen Seat unter **Einstellungen → Zeitplan** aktiv, startet die Pipeline automatisch an den gewählten Tagen, bis zu 20 Minuten nach der Startzeit. Die Karte **Zeitplan** auf **Start** zeigt, ob Zeitpläne aktiv sind und wann sie laufen.
 
 Ist zur geplanten Zeit noch ein Lauf auf dem Seat aktiv, beginnt der geplante Start nicht. Scheitert der Start eines geplanten Laufs aus technischen Gründen, wird er bis zu 30 Minuten lang automatisch wiederholt.
 
-**Run Now** bleibt immer verfügbar, auch mit Zeitplan. Hat keiner deiner Seats einen Zeitplan, sagt die Karte **Run pipeline** das und verlinkt auf **Set up a daily schedule**.
+**Jetzt starten** bleibt immer verfügbar, auch mit Zeitplan. Hat keiner deiner Seats einen Zeitplan, sagt die Karte **Pipeline starten** das und verlinkt auf **Richte einen täglichen Zeitplan ein**.
 
-Nutze [Activity und Fehlerbehebung](/de/operate/activity-and-troubleshooting), wenn ein Lauf nicht die erwartete Arbeit ausführt.
+Nutze [Aktivität und Fehlerbehebung](/de/operate/activity-and-troubleshooting), wenn ein Lauf nicht die erwartete Arbeit ausführt.

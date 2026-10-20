@@ -31,7 +31,7 @@
 
 - Write in the page's configured language, active voice, and second person.
 - Keep English pages at their current paths and mirror German translations under `de/`.
-- Keep navigation, frontmatter, and internal links localized. Preserve exact English UI labels when they identify controls in the dashboard.
+- Keep navigation, frontmatter, and internal links localized. On English pages, preserve exact English UI labels when they identify controls in the dashboard. German pages use the German dashboard's labels exactly as `messages/de.po` in the Sales Agent repo has them.
 - Update the matching German page whenever English source content changes.
 - Use sentence case for headings.
 - Start with what the user can accomplish, then explain how.

@@ -1,12 +1,12 @@
 ---
-title: "Next run queue"
+title: "Nächster Durchlauf"
 description: "Verstehe, was für den nächsten Pipeline-Lauf bereitsteht und wie Tageslimits wirken."
 icon: "list-checks"
 ---
 
-Die Karten unter **Next run** auf **Home** sagen voraus, welche Arbeit der nächste vollständige Pipeline-Lauf ausführen kann. Sie verwenden dieselben Eignungsregeln und Tageslimits wie die Pipeline.
+Die Karten unter **Nächster Durchlauf** auf **Start** sagen voraus, welche Arbeit der nächste vollständige Pipeline-Lauf ausführen kann. Sie verwenden dieselben Eignungsregeln und Tageslimits wie die Pipeline.
 
-Als Member zeigen die Karten deine eigenen Seats. Als Admin zeigen sie alle aktiven Seats deines Kontos.
+Als Mitglied zeigen die Karten deine eigenen Seats. Als Admin zeigen sie alle aktiven Seats deines Kontos.
 
 ## Queue-Karte lesen
 
@@ -15,11 +15,11 @@ Jede Karte zeigt:
 | Teil | Bedeutung |
 | --- | --- |
 | **Zahl** | Wie viele Kontakte der nächste Lauf in diesem Schritt bearbeitet: die bereiten Kontakte, begrenzt durch das Tageslimit |
-| **Fußzeile** | **N more queued (capped)**, wenn mehr Kontakte bereit sind, als das Limit zulässt, **All ready will run** oder **No contacts ready** |
+| **Fußzeile** | **N weitere in der Warteschlange (begrenzt)**, wenn mehr Kontakte bereit sind, als das Limit zulässt, **Alle bereitstehenden Kontakte werden verarbeitet** oder **Keine Kontakte bereit** |
 | **Namen** | Bis zu fünf Kontakte am Anfang der Queue, mit ihrem Unternehmen |
 | **Tooltip** | Fahre über die Karte, um zu sehen, was sie zählt und wie hoch ihr Tageslimit ist |
 
-**Beispiel:** Sind 35 Kontakte für Outreach bereit und das Tageslimit liegt bei 20, zeigt die Karte 20 und **15 more queued (capped)**. Diese 15 bleiben für einen späteren Lauf in der Queue.
+**Beispiel:** Sind 35 Kontakte für Outreach bereit und das Tageslimit liegt bei 20, zeigt die Karte 20 und **15 weitere in der Warteschlange (begrenzt)**. Diese 15 bleiben für einen späteren Lauf in der Queue.
 
 <Note>
   Die Queue ist eine Prognose und keine Garantie, dass jede Aktion gelingt. Kontozustand, Quelldaten, Antwortprüfungen oder Reaktionen externer Plattformen können noch dazu führen, dass ein Eintrag während des Laufs sicher übersprungen wird. Limits gelten pro Tag: Ist heute schon ein Lauf gelaufen, nutzt ein zweiter Lauf am selben Tag nur, was von jedem Limit übrig ist.
@@ -29,13 +29,13 @@ Jede Karte zeigt:
 
 | Karte | Bereit, wenn |
 | --- | --- |
-| **New Prospects** | Der Kontakt hat einen Owner, erreicht den Mindest-ICP-Score, ist noch nicht in der Pipeline und sein Unternehmen hat keine Deal-Stage. Ist LinkedIn aktiv, zählt die Karte auch Prospects, die auf ihre LinkedIn-Einladung warten. |
-| **Message** | Die Recherche ist abgeschlossen und der Prospect braucht noch eine Erstnachricht auf einem Kanal, den sein Seat senden kann. |
+| **Neue Prospects** | Der Kontakt hat einen Inhaber, erreicht den Mindest-ICP-Score, ist noch nicht in der Pipeline und sein Unternehmen hat keine Deal-Phase. Ist LinkedIn aktiv, zählt die Karte auch Prospects, die auf ihre LinkedIn-Einladung warten. |
+| **Nachricht** | Die Recherche ist abgeschlossen und der Prospect braucht noch eine Erstnachricht auf einem Kanal, den sein Seat senden kann. |
 | **Outreach** | Eine E-Mail oder LinkedIn-Nachricht ist freigegeben, noch nicht gesendet und wird nicht zurückgehalten. Eine LinkedIn-Nachricht braucht außerdem eine bereits versendete Einladung. |
-| **Follow-up Email** | Eine E-Mail wurde gesendet, das nächste Follow-up ist fällig, das Maximum ist nicht erreicht und es liegt weder eine Antwort noch ein beendeter Thread vor. |
-| **Follow-up LinkedIn** | Eine LinkedIn-Nachricht wurde gesendet, das Follow-up ist fällig, das Maximum ist nicht erreicht und keiner der Kanäle hat eine Antwort. |
+| **Follow-up-E-Mail** | Eine E-Mail wurde gesendet, das nächste Follow-up ist fällig, das Maximum ist nicht erreicht und es liegt weder eine Antwort noch ein beendeter Thread vor. |
+| **LinkedIn-Follow-up** | Eine LinkedIn-Nachricht wurde gesendet, das Follow-up ist fällig, das Maximum ist nicht erreicht und keiner der Kanäle hat eine Antwort. |
 
-**New Prospects** nimmt weniger neue Personen auf, wenn bereits Kontakte auf eine Einladung oder eine erste E-Mail warten. So wächst der Rückstau nicht schneller, als deine Seats senden können. Ist LinkedIn auf allen Seats aus oder pausiert, zählt **New Prospects** nur neue Kontakte und **Follow-up LinkedIn** bleibt bei 0.
+**Neue Prospects** nimmt weniger neue Personen auf, wenn bereits Kontakte auf eine Einladung oder eine erste E-Mail warten. So wächst der Rückstau nicht schneller, als deine Seats senden können. Ist LinkedIn auf allen Seats aus oder pausiert, zählt **Neue Prospects** nur neue Kontakte und **LinkedIn-Follow-up** bleibt bei 0.
 
 Recherche und Anreicherung können zwischen den sichtbaren Karten stattfinden. Sie haben keine eigene konfigurierbare Queue-Kachel.
 
@@ -44,16 +44,16 @@ Recherche und Anreicherung können zwischen den sichtbaren Karten stattfinden. S
 Ein Kontakt kann zurückgehalten werden, weil:
 
 - sein ICP-Score unter dem Pipeline-Schwellenwert liegt
-- kein aktiver Owner oder nutzbarer Kanal vorhanden ist
-- sein Unternehmen bereits eine Stage hat, etwa **Meeting** oder **Not interesting**, und Kollegen deshalb nicht aufgenommen werden
+- kein aktiver Inhaber oder nutzbarer Kanal vorhanden ist
+- sein Unternehmen bereits eine Phase hat, etwa **Termin** oder **Nicht interessant**, und Kollegen deshalb nicht aufgenommen werden
 - er geparkt ist, weil er möglicherweise nicht mehr im Unternehmen arbeitet
 - Recherche oder Anreicherung noch fehlt
 - seine Nachricht auf Freigabe wartet oder zurückgehalten wird (siehe [Nachrichten prüfen](/de/operate/review-messages))
 - das nächste Follow-up noch nicht fällig ist oder eine Abwesenheitsnotiz es auf das Rückkehrdatum verschoben hat
 - das Tageslimit `0` ist oder bereits ausgeschöpft wurde
-- er geantwortet hat, ein Outcome besitzt oder archiviert ist
-- sein Unternehmen auf der Blacklist steht
-- das verbundene LinkedIn- oder E-Mail-Konto Aufmerksamkeit benötigt, auch ein Postfach, für das dein Anbieter den Versand blockiert hat (siehe [Aktivität und Fehlersuche](/de/operate/activity-and-troubleshooting#wenn-dein-e-mail-anbieter-den-versand-blockiert))
+- er geantwortet hat, ein Ergebnis besitzt oder archiviert ist
+- sein Unternehmen auf der Sperrliste steht
+- das verbundene LinkedIn- oder E-Mail-Konto Aufmerksamkeit benötigt, auch ein Postfach, für das dein Anbieter den Versand blockiert hat (siehe [Aktivität und Fehlerbehebung](/de/operate/activity-and-troubleshooting#wenn-dein-e-mail-anbieter-den-versand-blockiert))
 
 Gehe diese Liste von oben nach unten durch, wenn ein Kontakt fehlt, den du erwartest. Die meisten Fälle klären sich, wenn du das Profil des Kontakts, den Kontostatus des Seats oder die Limit-Konfiguration prüfst.
 
