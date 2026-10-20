@@ -7,7 +7,7 @@ icon: "credit-card"
 
 Credits bezahlen die Such- und Anreicherungsarbeit für dein Konto. Jeder Seat startet mit 300 Credits. Wenn du verstehst, wann Credits verbraucht werden und warum ein gefundenes Ergebnis kein aktiver Prospect werden muss, kannst du deine Nutzung planen und Überraschungen vermeiden.
 
-Admins sehen die Seite **Credits** und kaufen Credits. Members sehen den Kontostand auf **Home** und bitten einen Admin, Credits aufzuladen.
+Admins sehen die Seite **Credits** und kaufen Credits. Mitglieder sehen den Kontostand auf **Start** und bitten einen Admin, Credits aufzuladen.
 
 ## Was „gefunden“ bedeutet
 
@@ -17,7 +17,7 @@ Nachdem Daten zurückgegeben wurden, kann der Sales Agent sie weiterhin ablehnen
 
 - granularer Jobtitel- oder Standortfilter
 - ausgeschlossener Titelmuster
-- Treffern auf Unternehmens- oder Domain-Blacklist
+- Treffern auf Unternehmens- oder Domain-Sperrliste
 - ICP-Scoring unter deinem Pipeline-Schwellenwert
 - Duplikaterkennung
 - Abweichungen bei Unternehmen oder Identität (falsches Unternehmen)
@@ -39,13 +39,13 @@ Nachdem Daten zurückgegeben wurden, kann der Sales Agent sie weiterhin ablehnen
 | erneute Suche nach einer fehlerhaften E-Mail bei einer anderen Quelle | zusätzliche Credits pro Versuch, auch wenn dieselbe Adresse zurückkommt |
 | Suche nach Kaufsignalen | 1 Credit pro durchsuchtem Unternehmen |
 
-E-Mail- und Telefonsuchen verbrauchen nur Credits, wenn ein Ergebnis gefunden wird. Die Suche nach Kaufsignalen läuft erst, wenn keinsaas sie mit dir einschaltet; siehe **Buying signals** unter **Settings → Targeting**.
+E-Mail- und Telefonsuchen verbrauchen nur Credits, wenn ein Ergebnis gefunden wird. Die Suche nach Kaufsignalen läuft erst, wenn keinsaas sie mit dir einschaltet; siehe **Kaufsignale** unter **Einstellungen → Zielgruppe**.
 
 <Note>
   Das Hochladen einer CSV, Importe aus Sales Navigator und selbst eingetragene Telefonnummern verbrauchen **keine** Credits. Optionale Anreicherung, die du während oder nach einem Import auslöst, etwa E-Mail- oder Telefonsuche, kann Credits verbrauchen.
 </Note>
 
-Vor einer Suche oder Anreicherung, die du selbst startest, zeigt das Dashboard **Estimated credits** und stoppt den Lauf, wenn dein Kontostand nicht reicht. Jede Abbuchung erscheint in der **Transaction History** auf der Seite **Credits**.
+Vor einer Suche oder Anreicherung, die du selbst startest, zeigt das Dashboard **Geschätzte Credits** und stoppt den Lauf, wenn dein Kontostand nicht reicht. Jede Abbuchung erscheint im **Transaktionsverlauf** auf der Seite **Credits**.
 
 ## Nutzung überwachen
 
@@ -53,12 +53,12 @@ Vor einer Suche oder Anreicherung, die du selbst startest, zeigt das Dashboard *
 
 | Feld | Was es zeigt |
 | --- | --- |
-| **Current Balance** | Credits, die für künftige Arbeit verfügbar sind |
-| **Total Purchased** | Alle Credits, die du gekauft hast; Start-Credits sind nicht enthalten |
-| **Total Used** | Insgesamt verbrauchte Credits |
-| **Transaction History** | Jede Aufladung und Abbuchung, neueste zuerst, 50 pro Seite |
+| **Aktuelles Guthaben** | Credits, die für künftige Arbeit verfügbar sind |
+| **Insgesamt gekauft** | Alle Credits, die du gekauft hast; Start-Credits sind nicht enthalten |
+| **Insgesamt verbraucht** | Insgesamt verbrauchte Credits |
+| **Transaktionsverlauf** | Jede Aufladung und Abbuchung, neueste zuerst, 50 pro Seite |
 
-Jeder Eintrag hat einen Typ, etwa **Top-up**, **Grant** (Start-Credits), **Monthly plan**, **Contact search**, **Email lookup**, **Phone lookup** oder **Signal search**. Bei einer Kontaktsuche zeigt **Description** die durchsuchte Unternehmensdomain.
+Jeder Eintrag hat einen Typ, etwa **Aufladung**, **Gutschrift** (Start-Credits), **Monatsplan**, **Kontaktsuche**, **E-Mail-Suche**, **Telefonnummernsuche** oder **Signalsuche**. Bei einer Kontaktsuche zeigt **Beschreibung** die durchsuchte Unternehmensdomain.
 
 Prüfe den Kontostand, bevor du eine große Suche oder Anreicherung startest.
 
@@ -66,8 +66,8 @@ Prüfe den Kontostand, bevor du eine große Suche oder Anreicherung startest.
 
 | Kontostand | Was passiert |
 | --- | --- |
-| unter 200 | **Credits running low** erscheint auf **Home** und in den Benachrichtigungen, der Kontostand wird rot. Admins erhalten eine E-Mail. |
-| unter 5 | **Enrichment is paused**: Neue Kontakte erhalten keine E-Mail- oder Telefonsuche. Follow-ups, Antworten und Versand laufen weiter. Admins erhalten eine E-Mail. |
+| unter 200 | **Credits werden knapp** erscheint auf **Start** und in den Benachrichtigungen, der Kontostand wird rot. Admins erhalten eine E-Mail. |
+| unter 5 | **Anreicherung ist pausiert**: Neue Kontakte erhalten keine E-Mail- oder Telefonsuche. Follow-ups, Antworten und Versand laufen weiter. Admins erhalten eine E-Mail. |
 
 Beide Hinweise verschwinden, sobald eine Aufladung den Kontostand wieder über die Schwelle bringt.
 
@@ -76,23 +76,23 @@ Beide Hinweise verschwinden, sobald eine Aufladung den Kontostand wieder über d
 Mit diesen Vorgehensweisen holst du den meisten Nutzen aus deinem Kontostand:
 
 1. **Lege dein ICP und deine Ausschlüsse fest**, bevor du eine große Suche startest, damit du nicht für Kandidaten zahlst, die du sofort verwirfst.
-2. **Pflege deine Blacklist** vor Import oder Suche, damit gesperrte Unternehmen von Anfang an ausgeschlossen sind.
+2. **Pflege deine Sperrliste** vor Import oder Suche, damit gesperrte Unternehmen von Anfang an ausgeschlossen sind.
 3. **Beginne mit einer kleinen Unternehmensstichprobe**, um die Filterergebnisse zu prüfen, bevor du hochskalierst.
-4. **Setze eine Telefon-Schwelle**: **Phone enrichment ICP threshold** unter **Settings → Targeting** begrenzt Telefonsuchen auf Kontakte ab einem Mindest-ICP-Score. Halte ihn mindestens auf dem **Pipeline ICP threshold**, sonst bezahlst du Nummern von Personen, die nie in die Pipeline kommen.
+4. **Setze eine Telefon-Schwelle**: **ICP-Schwellenwert für die Telefonanreicherung** unter **Einstellungen → Zielgruppe** begrenzt Telefonsuchen auf Kontakte ab einem Mindest-ICP-Score. Halte ihn mindestens auf dem **ICP-Schwellenwert für die Pipeline**, sonst bezahlst du Nummern von Personen, die nie in die Pipeline kommen.
 5. **Durchsuche bereits vollständig verarbeitete Unternehmen nicht erneut.**
 6. **Korrigiere falsche Daten zeitnah**, damit der Sales Agent bewusst die nächste verfügbare Quelle nutzen kann, statt denselben fehlerhaften Weg zu wiederholen.
 7. **Prüfe deinen Pipeline-Schwellenwert**: Werden viele gefundene Kontakte vom Scoring abgelehnt, kann ein etwas gelockerter oder strengerer Schwellenwert unnötige Suchen verringern.
 
 ## Credits kaufen
 
-Admins kaufen Credits unter **Credits → Buy Credits**:
+Admins kaufen Credits unter **Credits → Credits kaufen**:
 
-1. **One-off** oder **Monthly** wählen.
+1. **Einmalig** oder **Monatlich** wählen.
 2. Eine Menge zwischen 1.000 und 100.000 Credits in 100er-Schritten wählen.
-3. Preis prüfen: 1 Credit = 0,10 € netto, größere Mengen erhalten automatisch Mengenrabatt, und **Monthly** ist pro Credit günstiger. Die Mehrwertsteuer kommt beim Checkout hinzu.
-4. **Pay** oder **Subscribe** wählen und die Zahlung abschließen.
+3. Preis prüfen: 1 Credit = 0,10 € netto, größere Mengen erhalten automatisch Mengenrabatt, und **Monatlich** ist pro Credit günstiger. Die Mehrwertsteuer kommt beim Checkout hinzu.
+4. **Bezahlen** oder **Abonnieren** wählen und die Zahlung abschließen.
 
-Credits erscheinen, sobald die Zahlung bestätigt ist, meist innerhalb von Sekunden. Mit **Monthly** kommt dieselbe Menge jeden Monat hinzu, und die Seite **Credits** zeigt eine Karte **Monthly credit plan** mit dem nächsten Datum. Du kannst einen monatlichen Plan gleichzeitig haben. Ändern oder kündigen kannst du ihn unter **Settings → Account → Billing** mit **Manage billing**; dort findest du auch Rechnungen und Zahlungsmittel.
+Credits erscheinen, sobald die Zahlung bestätigt ist, meist innerhalb von Sekunden. Mit **Monatlich** kommt dieselbe Menge jeden Monat hinzu, und die Seite **Credits** zeigt eine Karte **Monatlicher Credit-Plan** mit dem nächsten Datum. Du kannst einen monatlichen Plan gleichzeitig haben. Ändern oder kündigen kannst du ihn unter **Einstellungen → Konto → Abrechnung** mit **Abrechnung verwalten**; dort findest du auch Rechnungen und Zahlungsmittel.
 
 ## Seats und Start-Credits
 

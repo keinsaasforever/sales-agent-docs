@@ -1,11 +1,11 @@
 ---
-title: "Blacklist: Unternehmen und Domains von der Ansprache ausschließen"
-sidebarTitle: "Blacklist"
+title: "Sperrliste: Unternehmen und Domains von der Ansprache ausschließen"
+sidebarTitle: "Sperrliste"
 description: "Sperre Unternehmen nach Name oder Domain, damit der Sales Agent nie bestehende Kunden, Wettbewerber, Partner oder laufende Deals kontaktiert."
 icon: "ban"
 ---
 
-Nutze **Settings → Blacklist**, um zu verhindern, dass der Sales Agent Unternehmen kontaktiert, die du nie ansprechen solltest. Nur Admins deines Kontos sehen diese Seite. Die Blacklist wird bei jeder Suche, jedem Import und jedem Pipeline-Lauf geprüft.
+Nutze **Einstellungen → Sperrliste**, um zu verhindern, dass der Sales Agent Unternehmen kontaktiert, die du nie ansprechen solltest. Nur Admins deines Kontos sehen diese Seite. Die Sperrliste wird bei jeder Suche, jedem Import und jedem Pipeline-Lauf geprüft.
 
 Typische Einträge sind:
 
@@ -18,42 +18,42 @@ Typische Einträge sind:
 
 ## Einträge hinzufügen
 
-Gib in der Karte **Blocked Companies & Domains** eines der folgenden Felder oder beide ein und wähle **Add**:
+Gib in der Karte **Gesperrte Unternehmen & Domains** eines der folgenden Felder oder beide ein und wähle **Hinzufügen**:
 
-- **Company name**: wird mit den Namen abgeglichen, die in den Quellen auftauchen
+- **Unternehmensname**: wird mit den Namen abgeglichen, die in den Quellen auftauchen
 - **Domain**: wird mit der Web-Domain des Unternehmens abgeglichen (z. B. `acme.com`)
 
-Für viele Einträge auf einmal wähle **Upload CSV**. Die Datei braucht eine Spalte für Unternehmensnamen, für Domains oder beide; eine einzelne Spalte ohne Kopfzeile wird als Unternehmensnamen gelesen.
+Für viele Einträge auf einmal wähle **CSV hochladen**. Die Datei braucht eine Spalte für Unternehmensnamen, für Domains oder beide; eine einzelne Spalte ohne Kopfzeile wird als Unternehmensnamen gelesen.
 
 Der Sales Agent normalisiert Namen und Domains und überspringt Einträge, die schon auf der Liste stehen, ohne Meldung. Ein Eintrag greift auch bei einem Unternehmen unter den anderen Domains und Namen, unter denen es bekannt ist, etwa einer Länderseite.
 
 **Nutze lieber Domains als Namen.** Unternehmensnamen variieren je nach Quelle: Dasselbe Unternehmen kann als „Acme Corp“, „Acme Corporation“ oder „ACME“ auftauchen. Eine Domain ist eine verlässlichere Kennung und führt zu weniger verpassten Treffern.
 
-Unternehmen landen auch automatisch auf der Liste, wenn du ein **Meeting**, **Offer Sent** oder einen **Closed Deal** mit ihnen markierst. Siehe [Wenn ein Unternehmen Ja sagt](/de/configure/schedule-and-limits#versand-und-unternehmensstopps-wählen).
+Unternehmen landen auch automatisch auf der Liste, wenn du eine Person des Unternehmens als **Termin**, **Angebot gesendet** oder **Deal abgeschlossen** markierst. Siehe [Wenn ein Unternehmen zusagt](/de/configure/schedule-and-limits#versand-und-unternehmensstopps-wählen).
 
 ## Sofortige Wirkung verstehen
 
-Beim Speichern eines Blacklist-Eintrags wird die gesamte laufende Pipeline abgeglichen, nicht nur künftige Suchen.
+Beim Speichern eines Eintrags auf der Sperrliste wird die gesamte laufende Pipeline abgeglichen, nicht nur künftige Suchen.
 
 <Warning>
-  Sobald du einen Eintrag speicherst, werden alle Prospects in der aktiven Pipeline, die zum Unternehmen oder zur Domain passen, sofort gestoppt. Es gibt keinen Bestätigungsschritt, prüfe Namen und Domain also sorgfältig, bevor du **Add** wählst oder eine Datei hochlädst. Die Zusammenfassung nach dem Speichern zeigt, wie viele Prospects in deiner Pipeline gestoppt wurden.
+  Sobald du einen Eintrag speicherst, werden alle Prospects in der aktiven Pipeline, die zum Unternehmen oder zur Domain passen, sofort gestoppt. Es gibt keinen Bestätigungsschritt, prüfe Namen und Domain also sorgfältig, bevor du **Hinzufügen** wählst oder eine Datei hochlädst. Die Zusammenfassung nach dem Speichern zeigt, wie viele Prospects in deiner Pipeline gestoppt wurden.
 </Warning>
 
 Gestoppte Prospects werden archiviert und nicht gelöscht. Ihre gesamte Historie (gesendete Nachrichten, Antworten, Anreicherungsdaten) bleibt abrufbar. Nachdem der Eintrag gespeichert ist, geht keine Ansprache mehr an sie.
 
 ## Eintrag entfernen
 
-Um ein Unternehmen von der Blacklist zu nehmen, suche den Eintrag unter **Settings → Blacklist** und lösche ihn. Das Entfernen löst eine erneute Bewertung der Prospects aus, die wegen dieses Eintrags archiviert wurden, und die Zusammenfassung zeigt, wie viele wieder aktiviert wurden.
+Um ein Unternehmen von der Sperrliste zu nehmen, suche den Eintrag unter **Einstellungen → Sperrliste** und lösche ihn. Das Entfernen löst eine erneute Bewertung der Prospects aus, die wegen dieses Eintrags archiviert wurden, und die Zusammenfassung zeigt, wie viele wieder aktiviert wurden.
 
 Archivierte Prospects können wieder aktiv werden, wenn:
 
-- kein anderer Blacklist-Eintrag mehr auf sie passt und
-- für sie nicht bereits ein separates Outcome (Antwort, manueller Stopp oder Archivierung) erfasst ist.
+- kein anderer Eintrag auf der Sperrliste mehr auf sie passt und
+- für sie nicht bereits ein separates Ergebnis (Antwort, manueller Stopp oder Archivierung) erfasst ist.
 
 ## Vor großen Importen vorausplanen
 
 <Tip>
-  Trage alle relevanten Einträge in die Blacklist ein, bevor du einen großen CSV-Import oder eine Suche startest. Sperrst du ein Unternehmen erst, nachdem der Agent seine Kontakte schon recherchiert und angereichert hat, sind die dafür ausgegebenen Credits verschwendet, und Prospects werden mitten in der Pipeline gestoppt, statt gar nicht erst hineinzukommen.
+  Trage alle relevanten Einträge in die Sperrliste ein, bevor du einen großen CSV-Import oder eine Suche startest. Sperrst du ein Unternehmen erst, nachdem der Agent seine Kontakte schon recherchiert und angereichert hat, sind die dafür ausgegebenen Credits verschwendet, und Prospects werden mitten in der Pipeline gestoppt, statt gar nicht erst hineinzukommen.
 </Tip>
 
 Hinweise zum Import von Kontakten findest du unter [Prospects hinzufügen](/de/configure/add-prospects).

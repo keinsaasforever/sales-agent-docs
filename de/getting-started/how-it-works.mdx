@@ -1,6 +1,6 @@
 ---
 title: "So funktioniert der Sales Agent"
-description: "Verstehe, wie Quellen, ICP-Scoring, Queues, Nachrichten und Outcomes zusammenspielen."
+description: "Verstehe, wie Quellen, ICP-Scoring, Queues, Nachrichten und Ergebnisse zusammenspielen."
 icon: "workflow"
 ---
 
@@ -10,7 +10,7 @@ Der Sales Agent besteht aus einer Abfolge abgesicherter Schritte. Ein Kontakt ko
 flowchart LR
   A[Quellen] --> B[Kandidaten]
   B --> C[ICP-Scoring]
-  C --> D[Next run queue]
+  C --> D[Nächster Durchlauf]
   D --> E[Recherche]
   E --> F[Nachrichtenerstellung]
   F --> G{Freigabe nötig?}
@@ -18,7 +18,7 @@ flowchart LR
   G -->|Nein| I[Versand]
   H --> I
   I --> J[Follow-ups]
-  J --> K{Antwort oder Outcome?}
+  J --> K{Antwort oder Ergebnis?}
   K -->|Nein| J
   K -->|Ja| L[Automatisierung stoppt]
 ```
@@ -27,9 +27,9 @@ flowchart LR
 
 ### 1. Quellen bestimmen, wer aufgenommen werden kann
 
-Du kannst Sales-Navigator-Suchen oder -Listen bereitstellen, eine CSV importieren oder bei bereits im Dashboard vorhandenen Unternehmen nach Kontakten suchen. Die Blacklist wird geprüft, bevor neue Personen aufgenommen werden.
+Du kannst Sales-Navigator-Suchen oder -Listen bereitstellen, eine CSV importieren oder bei bereits im Dashboard vorhandenen Unternehmen nach Kontakten suchen. Die Sperrliste wird geprüft, bevor neue Personen aufgenommen werden.
 
-### 2. Targeting bestimmt, wer geeignet ist
+### 2. Die Zielgruppe bestimmt, wer geeignet ist
 
 Der Agent bewertet Kandidaten anhand deines Ideal Customer Profile (ICP). Strukturierte Kriterien und relative Gewichtungen ergeben einen Score von 0 bis 100. Der Pipeline-Schwellenwert kann Kontakte mit niedrigem Score von der Ansprache ausschließen.
 
@@ -37,25 +37,25 @@ Ein Suchergebnis ist keine Garantie für ICP-Fit. Der Agent muss unter Umstände
 
 ### 3. Seat-Einstellungen bestimmen die Ausführung
 
-Jeder Seat hat einen eigenen Owner, verbundene Konten, einen Zeitplan, eine Kanalauswahl, Tageslimits, Grußformeln und einen Schreibstil. Kundenweite Regeln, die nur Admins ändern, steuern Follow-up-Anzahlen, Freigaben, den Umgang mit inaktiven Profilen und das gemeinsame Messaging-Playbook. Siehe [Seats, Rollen und Konten](/de/getting-started/seats-and-accounts).
+Jeder Seat hat einen eigenen Inhaber, verbundene Konten, einen Zeitplan, eine Kanalauswahl, Tageslimits, Grußformeln und einen Schreibstil. Kundenweite Regeln, die nur Admins ändern, steuern Follow-up-Anzahlen, Freigaben, den Umgang mit inaktiven Profilen und das gemeinsame Messaging-Playbook. Siehe [Seats, Rollen und Konten](/de/getting-started/seats-and-accounts).
 
 ### 4. Queue-Regeln bestimmen den nächsten Schritt
 
-Die Karten unter **Next run** zeigen, wie viele Kontakte für jeden Schritt bereit sind: **New Prospects**, **Message**, **Outreach**, **Follow-up Email** und **Follow-up LinkedIn**. Jede Karte ist durch das relevante Tageslimit begrenzt.
+Die Karten unter **Nächster Durchlauf** zeigen, wie viele Kontakte für jeden Schritt bereit sind: **Neue Prospects**, **Nachricht**, **Outreach**, **Follow-up-E-Mail** und **LinkedIn-Follow-up**. Jede Karte ist durch das relevante Tageslimit begrenzt.
 
-### 5. Antworten und Outcomes stoppen die Automatisierung
+### 5. Antworten und Ergebnisse stoppen die Automatisierung
 
-Eine erkannte Antwort auf einem der beiden Kanäle stoppt Follow-ups kanalübergreifend. Du kannst außerdem ein Outcome wie **Meeting**, **Offer Sent** oder **Not interesting** setzen. Jedes Outcome entfernt den Prospect aus der automatisierten Verarbeitung.
+Eine erkannte Antwort auf einem der beiden Kanäle stoppt Follow-ups kanalübergreifend. Du kannst außerdem ein Ergebnis wie **Termin**, **Angebot gesendet** oder **Nicht interessant** setzen. Jedes Ergebnis entfernt den Prospect aus der automatisierten Verarbeitung.
 
 <Note>
-  Pipeline-Stages werden aus aufgezeichneten Aktivitäten abgeleitet. Du verschiebst einen Prospect nicht manuell von **Invite Sent** zu **Connected** oder **Messaged**. Wenn menschliche Beurteilung nötig ist, setzt du ein [Outcome](/de/operate/stages-and-outcomes).
+  Pipeline-Phasen werden aus aufgezeichneten Aktivitäten abgeleitet. Du verschiebst einen Prospect nicht manuell von **Kontaktanfrage gesendet** zu **Verbunden** oder **Angeschrieben**. Wenn menschliche Beurteilung nötig ist, setzt du ein [Ergebnis](/de/operate/stages-and-outcomes).
 </Note>
 
 ## So arbeiten die Kanäle zusammen
 
-Die Einstellung **LinkedIn outreach** eines Seats steht auf **Both together**, **LinkedIn first** oder **Off**. Bei **LinkedIn first** geht die Kontaktanfrage vor der ersten E-Mail raus; Prospects, die auf LinkedIn nicht erreichbar sind, erhalten sofort eine E-Mail, und wer nach einer Woche noch wartet, ebenfalls. Bei **Off** läuft der E-Mail-Outreach weiter. Wenn ein LinkedIn-Pfad nicht verfügbar ist, kann ein geeigneter E-Mail-Pfad fortgesetzt werden. Eine Antwort auf einem der Kanäle beendet die automatisierte Sequenz.
+Die Einstellung **LinkedIn-Outreach** eines Seats steht auf **Beides zusammen**, **Zuerst LinkedIn** oder **Aus**. Bei **Zuerst LinkedIn** geht die Kontaktanfrage vor der ersten E-Mail raus; Prospects, die auf LinkedIn nicht erreichbar sind, erhalten sofort eine E-Mail, und wer nach einer Woche noch wartet, ebenfalls. Bei **Aus** läuft der E-Mail-Outreach weiter. Wenn ein LinkedIn-Pfad nicht verfügbar ist, kann ein geeigneter E-Mail-Pfad fortgesetzt werden. Eine Antwort auf einem der Kanäle beendet die automatisierte Sequenz.
 
-In der [Referenz der Pipeline-Stages](/de/reference/pipeline-stages) findest du alle im Dashboard angezeigten Bezeichnungen.
+In der [Referenz der Pipeline-Phasen](/de/reference/pipeline-stages) findest du alle im Dashboard angezeigten Bezeichnungen.
 
 <Card title="Vollständigen Agent-Ablauf erkunden" icon="route" href="/de/getting-started/agent-flow">
   Ändere Kanäle, Freigaben, Zeitpläne, Follow-ups und menschliche Übergaben in einer interaktiven Pipeline-Ansicht.

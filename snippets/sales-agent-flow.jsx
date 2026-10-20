@@ -117,7 +117,7 @@ const COPY = {
     },
     runModes: {
       schedule: "Zeitplan",
-      manual: "Run Now",
+      manual: "Jetzt starten",
     },
     toggles: {
       linkedin: "LinkedIn",
@@ -143,24 +143,24 @@ const COPY = {
     optional: "Optional",
     icpTitle: "ICP definieren oder ändern",
     icpText:
-      "Du legst Zielprofil, Ausschlüsse, Score-Gewichte und Pipeline-Schwellenwert unter Settings → Targeting fest.",
+      "Du legst Zielprofil, Ausschlüsse, Score-Gewichte und Pipeline-Schwellenwert unter Einstellungen → Zielgruppe fest.",
     rescoreTitle: "Scores nach einer ICP-Änderung aktualisieren",
     rescoreText:
-      "Das Speichern einer reinen Gewichtsänderung berechnet bestehende Scores sofort neu (ohne AI). Haben sich die ICP-Kriterien geändert, wählst du Update scores now; die AI bewertet dann im Hintergrund neu.",
+      "Das Speichern einer reinen Gewichtsänderung berechnet bestehende Scores sofort neu (ohne AI). Haben sich die ICP-Kriterien geändert, wählst du Scores jetzt aktualisieren; die AI bewertet dann im Hintergrund neu.",
     sourceTitle: "Quelle starten",
     sourceText: (source) =>
       `Du startest ${source}. Sucharbeit kann Credits für gefundene Kandidaten verbrauchen, auch wenn einige später granulare Filter nicht erfüllen.`,
-    qualifyTitle: "Sammeln, deduplizieren, Blacklist prüfen und scoren",
+    qualifyTitle: "Sammeln, deduplizieren, Sperrliste prüfen und scoren",
     qualifyText:
       "Der Agent prüft Quelldaten, entfernt blockierte oder doppelte Einträge und vergibt einen ICP-Score.",
     thresholdTitle: "Besteht der Kontakt das Pipeline-Gate?",
     thresholdText:
-      "Kontakte unter dem Schwellenwert bleiben in der Kontaktliste. Geeignete Kontakte können in die Next run queue gelangen.",
+      "Kontakte unter dem Schwellenwert bleiben in der Kontaktliste. Geeignete Kontakte können in die Warteschlange unter Nächster Durchlauf gelangen.",
     triggerTitle: "Pipeline starten",
     triggerSchedule:
       "Der konfigurierte Zeitplan des Seats startet den Lauf an den ausgewählten Tagen zur festgelegten Zeit.",
     triggerManual:
-      "Du wählst Run Now; das startet deine eigenen Seats. Die gleichen Eignungsregeln und Tageslimits gelten weiterhin.",
+      "Du wählst Jetzt starten; das startet deine eigenen Seats. Die gleichen Eignungsregeln und Tageslimits gelten weiterhin.",
     researchTitle: "Recherche und Outreach vorbereiten",
     researchText:
       "Der Agent reichert geeignete Prospects an, sammelt nutzbaren Kontext und bereitet die aktivierten Kanalpfade vor.",
@@ -171,10 +171,10 @@ const COPY = {
         : "Es ist kein Outreach-Kanal aktiv. Der Prospect kann deshalb nicht zu einem automatisierten Versand weiterlaufen.",
     noChannelTitle: "Kein automatisierter Outreach-Pfad",
     noChannelText:
-      "Aktiviere mindestens einen Kanal unter Settings → Schedule, bevor du Outreach-Arbeit in der Queue erwartest.",
+      "Aktiviere mindestens einen Kanal unter Einstellungen → Zeitplan, bevor du Outreach-Arbeit in der Queue erwartest.",
     approvalTitle: "Erstellte Nachrichten prüfen",
     approvalText:
-      "Du bearbeitest, regenerierst oder genehmigst ausstehende erste Nachrichten oder setzt den Prospect auf Not interesting. Eine Freigabe stellt die Nachricht in die Queue; sie wird nicht sofort gesendet. Follow-ups gehen automatisch raus.",
+      "Du bearbeitest, regenerierst oder genehmigst ausstehende erste Nachrichten oder setzt den Prospect auf Nicht interessant. Eine Freigabe stellt die Nachricht in die Queue; sie wird nicht sofort gesendet. Follow-ups gehen automatisch raus.",
     autoTitle: "Automatischen Versand nutzen",
     autoText:
       "Der Agent kann eine geeignete erstellte Nachricht im nächsten Lauf ohne Freigabeschritt im Dashboard senden. Du bleibst für den Inhalt verantwortlich.",
@@ -186,24 +186,24 @@ const COPY = {
       const parts = [];
       if (email) parts.push("bis zu 3 E-Mail-Follow-ups");
       if (linkedin) parts.push("bis zu 1 LinkedIn-Follow-up");
-      return `Die Werktags-Kadenz läuft mit ${parts.join(" und ")} weiter, solange keine Antwort und kein Outcome vorliegt.`;
+      return `Die Werktags-Kadenz läuft mit ${parts.join(" und ")} weiter, solange keine Antwort und kein Ergebnis vorliegt.`;
     },
     noFollowupTitle: "Automatisierte Follow-ups überspringen",
     noFollowupText:
       "Wenn Follow-ups auf 0 stehen, wechselt der Ablauf nach dem Erstkontakt zur menschlichen Prüfung.",
     replyTitle: "Auf einem Kanal wird eine Antwort erkannt",
     replyText:
-      "Die Automatisierung stoppt sofort auf beiden Kanälen. Du liest den vollständigen Verlauf, antwortest persönlich und setzt das passende Outcome.",
+      "Die Automatisierung stoppt sofort auf beiden Kanälen. Du liest den vollständigen Verlauf, antwortest persönlich und setzt das passende Ergebnis.",
     noReplyTitle: "Keine Antwort nach der konfigurierten Sequenz",
     callText:
-      "Standardmäßig erscheint ein Prospect mit nutzbarer Telefonnummer unter To Call, sobald die digitale Sequenz ausgeschöpft ist. Du führst den Anruf und dokumentierst das Ergebnis.",
+      "Standardmäßig erscheint ein Prospect mit nutzbarer Telefonnummer unter Anzurufen, sobald die digitale Sequenz ausgeschöpft ist. Du führst den Anruf und dokumentierst das Ergebnis.",
     reviewText:
-      "Du prüfst den Prospect und setzt das passende Outcome. Markiere ihn als Unreachable, wenn kein nutzbarer Pfad mehr besteht.",
-    outcomeTitle: "Ein menschliches Outcome beendet die Automatisierung",
+      "Du prüfst den Prospect und setzt das passende Ergebnis. Markiere ihn als Nicht erreichbar, wenn kein nutzbarer Pfad mehr besteht.",
+    outcomeTitle: "Ein menschliches Ergebnis beendet die Automatisierung",
     outcomeText:
-      "Jedes Outcome, etwa Meeting, Offer Sent, Closed Deal, Not interesting, Asked to stop, Wrong person, Lost Deal oder Unreachable, stoppt sofort alle automatisierten Schritte.",
+      "Jedes Ergebnis, etwa Termin, Angebot gesendet, Deal abgeschlossen, Nicht interessant, Stopp gewünscht, Falsche Person, Deal verloren oder Nicht erreichbar, stoppt sofort alle automatisierten Schritte.",
     globalStop:
-      "Zu jedem Zeitpunkt stoppen Archivieren, ein neuer Blacklist-Treffer oder ein gesetztes Outcome alle zukünftigen automatisierten Schritte.",
+      "Zu jedem Zeitpunkt stoppen Archivieren, ein neuer Treffer auf der Sperrliste oder ein gesetztes Ergebnis alle zukünftigen automatisierten Schritte.",
     linkedinLabel: "LinkedIn",
     emailLabel: "E-Mail",
   },
