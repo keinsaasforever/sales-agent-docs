@@ -70,11 +70,12 @@ The bell next to the search icon shows a red count of new items. Opening it mark
 
 ## Emails from the Sales Agent
 
-The Sales Agent also writes to you. Each mail goes to the seat's owner, or to your account's admins when the seat has no owner, in English or German, and links back to the dashboard.
+The Sales Agent also writes to you, in English or German, and each mail links back to the dashboard. Mails about a seat go to its owner, or to your account's admins when the seat has no owner.
 
 - **Run summary**: after a pipeline run. The subject says what went out, for example "18 messages sent today". The mail counts connection requests, emails, LinkedIn messages, and follow-ups, and a **Waiting for you** box lists your to-dos: messages to approve, prospects who replied and wait on you, prospects to call, and open questions from keinsaas. A run that sent nothing, prepared nothing, and has nothing to approve sends no mail.
 - **New people found**: after a contact search or a list import that found someone. It lists up to 10 people by title and company, best ICP match first, with a button that opens exactly those people on **Contacts** (the **Added since …** filter). Credits appear only when some were used.
 - **Signals found**: after a buying-signal search that found something new. It lists up to 10 companies with the type and date of the event, with a button to **Companies** filtered to **Buying signals**. It is never sent for zero.
+- **Weekly digest**: once a week, sent by the first pipeline run of the week (weeks start on Monday, Berlin time). It goes to every login on your account and compares the last 7 days with the 7 days before: highlights such as meetings and positive replies, and one row for each count that is not zero, such as replies, messages sent, connection requests, new contacts, and companies with a buying signal. A percentage change shows only when the week before had at least 5. A **Waiting for you** line adds the recipient's own to-dos. An account whose agent does not run that week gets no digest, and neither does a week with nothing in it.
 - **Email sending paused**: when your mail provider blocks a mailbox. See [Activity and troubleshooting](/operate/activity-and-troubleshooting#if-your-mail-provider-blocks-sending).
 
 An enrichment run sends no mail. The bell shows **Enrichment finished** and **Jobs** lists the run.
