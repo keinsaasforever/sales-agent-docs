@@ -26,7 +26,7 @@ This diagram shows every main branch, including optional approval and the two hu
 %%{init: {'flowchart': {'defaultRenderer': 'elk'}}}%%
 flowchart TD
   H1["Human: define or change the ICP"] --> D1{"What changed?"}
-  D1 -->|Weights only| H2["Human: Recompute scores now<br/>instant, no AI"]
+  D1 -->|Weights only| H2["Agent: recalculates scores on save<br/>instant, no AI"]
   D1 -->|ICP meaning or criteria| H3["Human: Update scores now<br/>AI rescore in the background"]
   D1 -->|Nothing| H4["Human: launch a search or import"]
   H2 --> H4
@@ -77,8 +77,8 @@ flowchart TD
   classDef gate fill:#F4F4F5,stroke:#71717A,color:#18181B,stroke-width:1.5px;
   classDef stop fill:#D1FAE5,stroke:#059669,color:#022C22,stroke-width:1.5px;
   classDef hold fill:#EDE9FE,stroke:#7C3AED,color:#2E1065,stroke-width:1.5px;
-  class H1,H2,H3,H4,H5,H6,H7,H8,H9,H10,H11,H12 human;
-  class A1,A2,A3,A4,A5,A6,L1,E1,B1 agent;
+  class H1,H3,H4,H5,H6,H7,H8,H9,H10,H11,H12 human;
+  class A1,A2,A3,A4,A5,A6,H2,L1,E1,B1 agent;
   class D1,D2,D3,D4,D5,D6,D7 gate;
   class S1,S2,S3,S4 stop;
   class Q,X1 hold;
@@ -88,8 +88,8 @@ flowchart TD
 
 | Moment | Your action | What the agent does next |
 | --- | --- | --- |
-| **ICP setup or change** | Edit targeting, exclusions, weights, or thresholds. Refresh existing scores when prompted. | Uses the current score and threshold for new candidates and future queue eligibility. |
-| **Search or import** | Launch a Sales Navigator source, upload a CSV, or search at existing companies. | Retrieves candidates, applies filters, de-duplicates, and scores. Credits apply to found search or enrichment results, not only final matches. |
+| **ICP setup or change** | Edit targeting, exclusions, weights, or thresholds. Accept the prompt to update scores when it appears. | Uses the current score and threshold for new candidates and future queue eligibility. |
+| **Search or import** | Launch a Sales Navigator source, upload a CSV of people or companies, or search at existing companies. | Retrieves candidates, applies filters, de-duplicates, and scores. Credits apply to found search or enrichment results, not only final matches. |
 | **Run start** | Enable the seat schedule or select **Run Now**, which starts your own seats. | Claims only currently eligible work within the seat's daily limits. |
 | **Message review, when enabled** | Edit, regenerate, or approve the first message, or mark the prospect **Not interesting**. **All of** the company also stops colleagues there and blocks the company. | Sends an approved message only on an eligible run; approval itself does not send. |
 | **Reply** | Read the complete thread, reply personally, and set the appropriate outcome. | Stops automated follow-ups on email and LinkedIn immediately. |

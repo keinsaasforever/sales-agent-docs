@@ -15,7 +15,7 @@ Das Menü links enthält **Home**, **Tasks**, **Companies**, **Prospects**, **Me
 - Wähle das Suchsymbol oder drücke **⌘K** (**Strg+K**), um Personen, Unternehmen und Notizen zu durchsuchen.
 - Klappe das Menü mit **⌘B** (**Strg+B**) auf Symbole zusammen. Das Dashboard merkt sich deine Wahl.
 - Auf dem Smartphone öffnest du das Menü über den Button oben rechts. Es füllt den Bildschirm; du schließt es mit dem **X**.
-- **Support**, **Sign out** und der Wechsel zwischen hellem und dunklem Design liegen ganz unten.
+- **Support**, **Sign out**, der Wechsel zwischen hellem und dunklem Design und das Sprachmenü liegen ganz unten. Siehe [Sprache](#sprache).
 
 ## Home
 
@@ -23,7 +23,7 @@ Home beginnt mit einer Zusammenfassung dessen, was dein Agent erledigt hat und w
 
 <Steps>
   <Step title="Warnungen">
-    Rote und gelbe Hinweise stehen ganz oben, wenn Arbeit gestoppt ist oder gleich stoppt: **LinkedIn is paused**, **Outlook is disconnected**, **Credits running low** oder **Enrichment is paused**. Jeder verlinkt zur Lösung.
+    Rote und gelbe Hinweise stehen ganz oben, wenn Arbeit gestoppt ist oder gleich stoppt: **LinkedIn is paused**, **Outlook is disconnected**, **Email sending paused**, **Credits running low** oder **Enrichment is paused**. Jeder verlinkt zur Lösung.
   </Step>
   <Step title="Aktivitätskarten">
     Sieben Karten zählen **Signals found**, **Contacts found**, **Invited**, **Accepted**, **Messaged**, **Followed up** und **Replied** für **Last 24 hours**, **Last 7 days** oder **Last 30 days**. Personen zählen einmal, auch wenn sie über beide Kanäle erreicht wurden.
@@ -63,10 +63,75 @@ Auf anderen Seiten zeigt ein Button **Todo list** unten rechts die Zahl offener 
 
 Die Glocke neben dem Suchsymbol zeigt eine rote Zahl neuer Einträge. Beim Öffnen gelten sie als gesehen. Sie gruppiert:
 
-- **Needs attention**: offene Fragen, eine pausierte LinkedIn-Session, ein getrenntes Postfach oder aufgebrauchte InMail-Credits.
+- **Needs attention**: offene Fragen, eine pausierte LinkedIn-Session, ein getrenntes Postfach, ein Postfach, für das dein Anbieter den Versand blockiert hat, oder aufgebrauchte InMail-Credits.
 - **Suggestions**: ein Warm-up-Schritt für LinkedIn, den du mit einem Klick übernimmst.
 - **New Replies**, **Pending Approvals** und **Call Prospect**: eine Zeile pro Person, die den Prospect oder die Nachrichten-Queue öffnet.
 - **Completed**: abgeschlossene Suchen, Importe und Anreicherungen, auch fehlgeschlagene oder solche mit Problemen.
+
+## E-Mails vom Sales Agent
+
+Der Sales Agent schreibt dir auch per E-Mail, auf Deutsch oder Englisch, und jede Mail verlinkt zurück ins Dashboard. Mails zu einem Seat gehen an seinen Owner oder, wenn der Seat keinen Owner hat, an die Admins deines Kontos.
+
+- **Laufzusammenfassung**: nach einem Pipeline-Lauf. Der Betreff nennt, was rausgegangen ist, zum Beispiel „18 Nachrichten verschickt“. Die Mail zählt Kontaktanfragen, E-Mails, LinkedIn-Nachrichten und Follow-ups, und eine Box **Wartet auf dich** listet deine Aufgaben: freizugebende Nachrichten, Prospects, die geantwortet haben und auf dich warten, anzurufende Prospects und offene Fragen von keinsaas. Ein Lauf, der nichts gesendet, nichts vorbereitet hat und nichts zur Freigabe hat, sendet keine Mail.
+- **Neue Kontakte gefunden**: nach einer Kontaktsuche oder einem Listenimport, der jemanden gefunden hat. Die Mail listet bis zu 10 Personen nach Titel und Unternehmen, die besten ICP-Treffer zuerst, mit einem Button, der genau diese Personen unter **Contacts** öffnet (der Filter **Added since …**). Credits erscheinen nur, wenn welche verbraucht wurden.
+- **Signale gefunden**: nach einer Kaufsignal-Suche, die etwas Neues gefunden hat. Die Mail listet bis zu 10 Unternehmen mit Art und Datum des Ereignisses, mit einem Button zu **Companies**, gefiltert auf **Buying signals**. Sie wird nie für null Treffer gesendet.
+- **Wochenübersicht**: einmal pro Woche, gesendet vom ersten Pipeline-Lauf der Woche (die Woche beginnt am Montag, Berliner Zeit). Sie geht an jeden Login deines Kontos und vergleicht die letzten 7 Tage mit den 7 Tagen davor: Highlights wie Termine und positive Antworten und eine Zeile für jede Zahl, die nicht null ist, etwa Antworten, verschickte Nachrichten, Kontaktanfragen, neue Kontakte und Unternehmen mit Kaufsignal. Eine prozentuale Veränderung erscheint nur, wenn die Woche davor mindestens 5 hatte. Eine Zeile **Wartet auf dich** ergänzt die eigenen Aufgaben des Empfängers. Ein Konto, dessen Agent in dieser Woche nicht läuft, erhält keine Wochenübersicht, ebenso eine Woche, in der nichts passiert ist.
+- **E-Mail-Versand pausiert**: wenn dein E-Mail-Anbieter ein Postfach blockiert. Siehe [Aktivität und Fehlerbehebung](/de/operate/activity-and-troubleshooting#wenn-dein-e-mail-anbieter-den-versand-blockiert).
+
+Ein Anreicherungslauf sendet keine Mail. Die Glocke zeigt **Enrichment finished**, und **Jobs** listet den Lauf.
+
+## Sprache
+
+Das Dashboard gibt es auf Englisch und Deutsch. Öffne das Sprachmenü unten im Menü oder auf den Seiten für Anmeldung, Onboarding und Upgrade und wähle **English** oder **Deutsch**. Deine Wahl wird an deinem Login gespeichert und folgt dir auf jedes Gerät. Die Anmeldeseite startet in der Sprache deines Browsers.
+
+Die Sprache ändert, was du im Dashboard liest. Sie ändert nicht die Sprache, in der dein Agent Nachrichten schreibt. Manche Texte, die das System während eines Laufs schreibt, etwa Aktivitätszusammenfassungen und Signal-Bezeichnungen, sind noch auf Englisch.
+
+### Namen im deutschen Dashboard
+
+Diese Dokumentation nennt Bedienelemente mit ihrem englischen Namen. Nutzt du das Dashboard auf Deutsch, heißen sie dort so:
+
+| In dieser Dokumentation | Im deutschen Dashboard |
+| --- | --- |
+| **Home** | **Start** |
+| **Tasks** | **Aufgaben** |
+| **Companies** | **Unternehmen** |
+| **Contacts** | **Kontakte** |
+| **Messages** | **Nachrichten** |
+| **Activity** | **Aktivität** |
+| **Add to Pipeline** | **Zur Pipeline hinzufügen** |
+| **Settings** | **Einstellungen** |
+| **Targeting** | **Zielgruppe** |
+| **Blacklist** | **Sperrliste** |
+| **Schedule** | **Zeitplan** |
+| **Account** | **Konto** |
+| **Next run** | **Nächster Durchlauf** |
+| **Run Now** | **Jetzt starten** |
+| **Stage** | **Phase** |
+| **Outcome**, **Set outcome…** | **Ergebnis**, **Ergebnis festlegen…** |
+| **Owner** | **Inhaber** |
+| **Needs review** | **Zu prüfen** |
+| **Company Fit** | **Unternehmens-Fit** |
+| **Size fit** | **Größenpassung** |
+| **Low**, **Medium**, **High**, **Excellent** | **Niedrig**, **Mittel**, **Hoch**, **Exzellent** |
+| **People from Companies** | **Personen aus Unternehmen** |
+| **Upload CSV** | **CSV hochladen** |
+| **Hand over** | **Übergeben** |
+| **Same company**, **Different companies** | **Dasselbe Unternehmen**, **Verschiedene Unternehmen** |
+| **Sending paused**, **Resume sending** | **Versand pausiert**, **Versand fortsetzen** |
+
+Die Stages und Outcomes heißen im deutschen Dashboard so:
+
+| In dieser Dokumentation | Im deutschen Dashboard |
+| --- | --- |
+| **New**, **Researched** | **Neu**, **Recherchiert** |
+| **Invite Sent**, **Connected** | **Kontaktanfrage gesendet**, **Verbunden** |
+| **Messaged**, **Followed Up** | **Angeschrieben**, **Nachgefasst** |
+| **Replied**, **Declined**, **Not right now** | **Geantwortet**, **Abgelehnt**, **Nicht jetzt** |
+| **Meeting**, **Offer Sent** | **Termin**, **Angebot gesendet** |
+| **Closed Deal**, **Lost Deal** | **Deal abgeschlossen**, **Deal verloren** |
+| **Not interesting**, **Wrong person** | **Nicht interessant**, **Falsche Person** |
+| **Asked to stop**, **Unreachable** | **Stopp gewünscht**, **Nicht erreichbar** |
+| **In play**, **Archived** | **Im Outreach**, **Archiviert** |
 
 ## Support
 

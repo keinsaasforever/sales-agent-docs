@@ -23,7 +23,7 @@ Admins also see a **Seat** column. Members see only their own seats' runs. **Sea
 
 Each run and each step closes as **Succeeded**, **Completed with issues**, **Skipped**, **Stopped**, or **Failed**. [Run the pipeline](/operate/run-the-pipeline#stop-a-run) explains each one. A run's status sums up its steps, so a **Succeeded** run can contain **Skipped** steps.
 
-When you can fix the cause yourself, the reason under the status says so, for example **LinkedIn session expired — reconnect it under Settings → Account.** or **Email account disconnected — reconnect it under Settings → Account.** Any other error reads **Something went wrong — we've been notified.**
+When you can fix the cause yourself, the reason under the status says so, for example **LinkedIn session expired — reconnect it under Settings → Account.**, **Email account disconnected — reconnect it under Settings → Account.**, or **Credits could not be charged — check your balance under Credits.** Any other error reads **Something went wrong — we've been notified.** The [Jobs page](/operate/jobs#when-a-job-fails) uses the same words.
 
 ## If the Next run queue is empty
 
@@ -116,6 +116,29 @@ For LinkedIn, the seat's owner also receives an email with a link to reconnect.
 Reconnect the same LinkedIn account. Switching to a different one is covered in [Seats and accounts](/getting-started/seats-and-accounts).
 
 If the LinkedIn card shows **Temporarily unavailable**, the problem is on our side and keinsaas is working on it. You do not need to do anything.
+
+## If your mail provider blocks sending
+
+When your mail provider refuses to send for a mailbox, for example because your IT department blocked it as a sender, the Sales Agent pauses email for that mailbox instead of trying again. Emails and email follow-ups on every seat that uses the mailbox are on hold until someone resumes them. LinkedIn is unaffected. A refusal is never read as a bounce, so no email address is marked bad because of it.
+
+You see it in several places:
+
+- the notification bell: **Email sending paused: mailbox blocked**, with the mailbox
+- a red banner on Home and an item in **Tasks**, each with **See options**
+- **Settings → Account**: the email card shows **Sending paused**
+- an email to the seat's owner, or to your admins when the seat has no owner
+
+<Steps>
+  <Step title="Open Settings → Account">
+    Open the affected seat. A paused seat offers only **Resume sending** and **Disconnect**, because **Reconnect** cannot lift a block at your provider.
+  </Step>
+  <Step title="Ask your IT to unblock the mailbox">
+    Open **A note for your IT**, copy the note for your provider (Gmail / Google Workspace or Outlook / Microsoft 365), and send it to whoever manages your email.
+  </Step>
+  <Step title="Resume">
+    Once the mailbox is unblocked, select **Resume sending**. If the provider still refuses it, sending pauses again. Or select **Disconnect** and connect a different mailbox.
+  </Step>
+</Steps>
 
 <Warning>
   Do not respond to an empty queue or a failed run by sharply raising your daily limits. Higher limits do not fix an eligibility problem or a broken connection. They only increase the potential impact of misconfigured outreach. Diagnose the root cause first, then run at normal limits.

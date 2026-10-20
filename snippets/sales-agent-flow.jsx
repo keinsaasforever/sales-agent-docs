@@ -42,7 +42,7 @@ const COPY = {
       "You set the target profile, exclusions, score weights, and pipeline threshold in Settings → Targeting.",
     rescoreTitle: "Refresh scores after an ICP change",
     rescoreText:
-      "After a weights-only change you select Recompute scores now (instant, no AI). When the ICP criteria changed you select Update scores now, which rescores with AI in the background.",
+      "Saving a weights-only change recalculates existing scores at once (instant, no AI). When the ICP criteria changed you select Update scores now, which rescores with AI in the background.",
     sourceTitle: "Launch the source",
     sourceText: (source) =>
       `You start a ${source}. Search work can use credits for returned candidates even when some later fail granular filters.`,
@@ -146,7 +146,7 @@ const COPY = {
       "Du legst Zielprofil, Ausschlüsse, Score-Gewichte und Pipeline-Schwellenwert unter Settings → Targeting fest.",
     rescoreTitle: "Scores nach einer ICP-Änderung aktualisieren",
     rescoreText:
-      "Nach einer reinen Gewichtsänderung wählst du Recompute scores now (sofort, ohne AI). Haben sich die ICP-Kriterien geändert, wählst du Update scores now; die AI bewertet dann im Hintergrund neu.",
+      "Das Speichern einer reinen Gewichtsänderung berechnet bestehende Scores sofort neu (ohne AI). Haben sich die ICP-Kriterien geändert, wählst du Update scores now; die AI bewertet dann im Hintergrund neu.",
     sourceTitle: "Quelle starten",
     sourceText: (source) =>
       `Du startest ${source}. Sucharbeit kann Credits für gefundene Kandidaten verbrauchen, auch wenn einige später granulare Filter nicht erfüllen.`,

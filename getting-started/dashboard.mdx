@@ -15,7 +15,7 @@ The menu on the left holds **Home**, **Tasks**, **Companies**, **Prospects**, **
 - Select the search icon or press **⌘K** (**Ctrl+K**) to search people, companies, and notes.
 - Collapse the menu to icons with **⌘B** (**Ctrl+B**). The dashboard remembers your choice.
 - On a phone, open the menu with the button in the top-right corner. It fills the screen; close it with the **X**.
-- **Support**, **Sign out**, and the light or dark theme switch sit at the bottom.
+- **Support**, **Sign out**, the light or dark theme switch, and the language menu sit at the bottom. See [Language](#language).
 
 ## Home
 
@@ -23,7 +23,7 @@ Home opens with a summary of what your agent did and what needs you.
 
 <Steps>
   <Step title="Warnings">
-    Red and amber banners appear above everything else when work has stopped or is about to: **LinkedIn is paused**, **Outlook is disconnected**, **Credits running low**, or **Enrichment is paused**. Each links to the fix.
+    Red and amber banners appear above everything else when work has stopped or is about to: **LinkedIn is paused**, **Outlook is disconnected**, **Email sending paused**, **Credits running low**, or **Enrichment is paused**. Each links to the fix.
   </Step>
   <Step title="Activity cards">
     Seven cards count **Signals found**, **Contacts found**, **Invited**, **Accepted**, **Messaged**, **Followed up**, and **Replied** for **Last 24 hours**, **Last 7 days**, or **Last 30 days**. People count once, even when they were reached on both channels.
@@ -63,10 +63,28 @@ On other pages, a **Todo list** button in the bottom-right corner shows the open
 
 The bell next to the search icon shows a red count of new items. Opening it marks them as seen. It groups:
 
-- **Needs attention**: open questions, a paused LinkedIn session, a disconnected mailbox, or no InMail credits left.
+- **Needs attention**: open questions, a paused LinkedIn session, a disconnected mailbox, a mailbox your provider blocked from sending, or no InMail credits left.
 - **Suggestions**: a LinkedIn warm-up step you can accept with one click.
 - **New Replies**, **Pending Approvals**, and **Call Prospect**: one line per person, opening that prospect or the message queue.
 - **Completed**: finished searches, imports, and enrichments, including ones that failed or finished with issues.
+
+## Emails from the Sales Agent
+
+The Sales Agent also writes to you, in English or German, and each mail links back to the dashboard. Mails about a seat go to its owner, or to your account's admins when the seat has no owner.
+
+- **Run summary**: after a pipeline run. The subject says what went out, for example "18 messages sent today". The mail counts connection requests, emails, LinkedIn messages, and follow-ups, and a **Waiting for you** box lists your to-dos: messages to approve, prospects who replied and wait on you, prospects to call, and open questions from keinsaas. A run that sent nothing, prepared nothing, and has nothing to approve sends no mail.
+- **New people found**: after a contact search or a list import that found someone. It lists up to 10 people by title and company, best ICP match first, with a button that opens exactly those people on **Contacts** (the **Added since …** filter). Credits appear only when some were used.
+- **Signals found**: after a buying-signal search that found something new. It lists up to 10 companies with the type and date of the event, with a button to **Companies** filtered to **Buying signals**. It is never sent for zero.
+- **Weekly digest**: once a week, sent by the first pipeline run of the week (weeks start on Monday, Berlin time). It goes to every login on your account and compares the last 7 days with the 7 days before: highlights such as meetings and positive replies, and one row for each count that is not zero, such as replies, messages sent, connection requests, new contacts, and companies with a buying signal. A percentage change shows only when the week before had at least 5. A **Waiting for you** line adds the recipient's own to-dos. An account whose agent does not run that week gets no digest, and neither does a week with nothing in it.
+- **Email sending paused**: when your mail provider blocks a mailbox. See [Activity and troubleshooting](/operate/activity-and-troubleshooting#if-your-mail-provider-blocks-sending).
+
+An enrichment run sends no mail. The bell shows **Enrichment finished** and **Jobs** lists the run.
+
+## Language
+
+The dashboard comes in English and German. Open the language menu at the bottom of the menu, or on the sign-in, onboarding, and upgrade pages, and choose **English** or **Deutsch**. Your choice is saved to your login and follows you to every device. The sign-in page starts in your browser's language.
+
+The language changes what you read in the dashboard. It does not change the language your agent writes messages in. Some texts the system writes while it runs, such as activity summaries and signal labels, are still in English.
 
 ## Support
 

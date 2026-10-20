@@ -1,27 +1,27 @@
 ---
 title: "Import and Add Prospects to the Sales Agent Pipeline"
 sidebarTitle: "Add Prospects"
-description: "Import contacts from Sales Navigator URLs, CSV uploads, or company-level search, bring them in on a schedule, and understand exactly how a contact qualifies for the queue."
+description: "Import contacts from Sales Navigator, CSV uploads of people or companies, or company-level search, bring them in on a schedule, and understand exactly how a contact qualifies for the queue."
 icon: "user-plus"
 ---
 
-Open **Add to Pipeline** to supply the Sales Agent with contacts. You can submit Sales Navigator sources, upload a list you already own, or search companies already in the dashboard. Admins can also let new contacts arrive every day on their own.
+Open **Add to Pipeline** to supply the Sales Agent with contacts. You can add Sales Navigator searches and lists, upload a list of people or companies you already own, or search for people at companies already in the dashboard. Admins can also let new contacts arrive every day on their own.
 
 <CardGroup cols={3}>
-  <Card title="Submit URLs" icon="link">
+  <Card title="Sales Navigator" icon="link">
     Collect people or companies from saved Sales Navigator searches and lists.
   </Card>
   <Card title="Upload CSV" icon="file-spreadsheet">
-    Import a list you already own and map every row to a seat.
+    Import a list of people or companies and map every row to a seat.
   </Card>
-  <Card title="Search" icon="search">
+  <Card title="People from Companies" icon="search">
     Find matching contacts at companies already in the dashboard.
   </Card>
 </CardGroup>
 
-## Submit Sales Navigator URLs
+## Add Sales Navigator searches and lists
 
-On the **Submit URLs** tab, paste one or more Sales Navigator URLs. The agent accepts three source types:
+On the **Sales Navigator** tab, paste one or more Sales Navigator URLs. The agent accepts three source types:
 
 - a **saved search** whose URL contains `savedSearchId`
 - a **people list** whose path contains `/lists/people/`
@@ -34,7 +34,7 @@ What happens next depends on the seat:
 - **The seat's LinkedIn login has Sales Navigator:** the URLs are added to that seat's saved searches, and new people from them are imported every day once an admin switches on **Import from Sales Navigator** (see below).
 - **Any other seat:** keinsaas processes the searches and adds the results to your pipeline. Track progress on the **Jobs** page.
 
-Company sources identify organizations but still require a separate contact search to find individuals. People sources already point to specific contacts but can still require research, enrichment, scoring, and filtering before anyone enters the pipeline.
+People sources already point to specific contacts but can still require research, enrichment, scoring, and filtering before anyone enters the pipeline. Company sources identify organizations: on a seat with Sales Navigator, the daily import also finds the people (see below). For any other seat, a company source still needs a contact search to find individuals.
 
 ## Import from Sales Navigator every day
 
@@ -43,17 +43,43 @@ Admins manage daily imports in **Settings → Targeting**:
 1. In the **Sales Navigator searches** card, paste a saved search or list URL, choose the **Seat that saved it**, add an optional name, and select **Add**. Only seats whose LinkedIn login has Sales Navigator can be picked, because only the seat that saved a search can import it.
 2. In the **ICP Targeting** card, switch on **Import from Sales Navigator**; the import is off until an admin switches it on. Set **Up to** how many new people arrive per day (at most 100). Then select **Save targeting**.
 
-Each search has its own switch and shows how many of its results have been read. LinkedIn shows only the first 2,500 results of a search, so narrow a larger search to reach the rest. Importing is free. Imported people are checked, filtered, and scored like every other contact; lookups for their contact details are charged as usual.
+Each search has its own switch and shows how many of its results have been read. LinkedIn shows only the first 2,500 results of a search, so narrow a larger search to reach the rest. Importing is free. Imported people are checked, filtered, and scored like every other contact; lookups for their contact details are charged as usual. People who list no employer, for example self-employed, are skipped: they do not become contacts and no company is created for them.
+
+For a company list or a saved company search, the Sales Agent first looks each company up and scores its **Company Fit**. It then finds people at the companies that reach your **Pipeline ICP threshold**, with a Sales Navigator search that uses your job titles, up to **Max Contacts per Company**. The line under each search counts its companies, how many have a **Company Fit** at your threshold, and the people found. A company gets its **Company Fit** once its data is complete.
 
 ## Upload a CSV
 
-On the **Upload CSV** tab, drop a file with a header row. Commas, semicolons, and tabs all work as separators, and German column names such as **Vorname**, **Nachname**, **Unternehmen**, or **Webseite** are recognized. The preview lists the columns it detected.
+On the **Upload CSV** tab, drop a file with a header row. Commas, semicolons, and tabs all work as separators. The file can list people or companies.
 
-Every row needs a LinkedIn profile URL, or a person's name together with the company's domain. A list of companies without people cannot be imported here yet; the dashboard tells you why when no row is ready. Rows that only have a name or an email can be completed for you with **Request enrichment**, at 1 credit per row.
+The tab shows every column of your file with a sample value and the field it fills, so you can check the mapping before you import:
+
+1. Next to **This file lists**, choose **People** or **Companies**. The Sales Agent picks one from your columns: a file with company columns and no person column is a company list. A choice you make yourself is kept.
+2. In the **Our field** column, check each suggestion. Change it from the dropdown, or choose **ignore** to leave a column out. A field you pick always wins over a suggestion.
+
+The Sales Agent reads column names it knows, including German ones such as **Vorname**, **Nachname**, **Unternehmen**, or **Webseite**. For columns whose names it does not recognize, an AI check suggests a field from the column names and up to three sample rows. **Checking the columns…** shows while it runs, and the import button waits until it is done.
+
+The fields you can map:
+
+| File lists | Fields |
+| --- | --- |
+| **People** | **First name**, **Last name**, **Full name**, **Job title**, **Headline**, **Person location**, **Country**, **Language**, **Email**, **LinkedIn profile**, **LinkedIn member id**, **Sales Navigator link**, **Company name**, **Website**, **Company LinkedIn page**, **Company location**, **Industry**, **Employees**, **Owner** |
+| **Companies** | **Company name**, **Website**, **Company LinkedIn page**, **Company location**, **Country**, **Industry**, **Employees**, **Description**, **Owner** |
+
+**Employees** takes a number such as `1,200` or a size range such as `51-200`.
+
+### People
+
+Every row needs a LinkedIn profile URL, or a person's name together with the company's website. Rows without a LinkedIn profile URL are imported all the same; the Sales Agent completes their LinkedIn profiles afterwards, which you can follow on **Jobs**. The tab counts the rows it cannot import; open the hint next to the count to see why. Rows that only have a name or an email can be completed for you with **Request enrichment**, at 1 credit per row.
+
+### Companies
+
+Every row needs a company name or a website. The import adds the companies and charges no credits. It does not look for people: people at these companies come from your automatic search, so an admin switches on **Keep my pipeline full** in **Settings → Targeting** (members ask an admin). A company without a website is added, but nobody is searched there yet, because people are found through a company's website. A company that is already in the dashboard is matched, and only its empty fields are filled.
+
+### Owner and result
 
 Every row must also have an owner. Provide an `owner` column with each seat's owner key, or select a seat during the import step. The seat you assign also becomes the owner of the related company record and determines which connected accounts handle outreach.
 
-The result shows how many contacts were inserted, how many were **Already there**, and how many were skipped, for example because the company is on your blacklist. Contacts outside your targeting filters are added without a seat, so no outreach starts for them.
+For people, the result shows how many contacts were inserted, how many were **Already there**, and how many were skipped, for example because the company is on your blacklist. For companies, it shows how many were added, were already there, are on your blocked list, or have no website. Contacts outside your targeting filters are added without a seat, so no outreach starts for them.
 
 The CSV import itself does not consume credits. Subsequent steps — completing rows, email lookup, phone lookup, or profile enrichment — may use credits.
 
@@ -66,7 +92,7 @@ The CSV import itself does not consume credits. Subsequent steps — completing 
 
 ## Search existing companies
 
-On the **Search** tab, choose **Top N by priority** to search the highest-scoring companies that have no contacts yet, or **Pick specific companies** to choose them yourself. A company already searched without results is skipped unless you pick it again.
+On the **People from Companies** tab, choose **Top N by priority** to search the highest-scoring companies that have no contacts yet, or **Pick specific companies** to choose them yourself. A company already searched without results is skipped unless you pick it again.
 
 Set **Contacts per company** (the default comes from **Max Contacts per Company**) and optionally switch on **Find emails** or **Find phones** for the best new contacts. The **Estimated cost** updates as you change the settings, and a confirmation shows your balance after the search.
 
@@ -78,13 +104,13 @@ The search needs at least one Tier 1 title in **Settings → Targeting**, and ev
 
 ## Search on a schedule
 
-Admins can switch on **Keep my pipeline full** in **Settings → Targeting** and save with **Save targeting**. It searches your next-best companies by ICP score once every weekday, from the hour you pick:
+Admins can switch on **Keep my pipeline full** in **Settings → Targeting** and save with **Save targeting**. It searches your next-best companies by **Company Fit** once every weekday, from the hour you pick:
 
 - **Search** sets how many companies are searched per day.
 - **Pause when** sets how many people may already be waiting before the search pauses. It resumes once the queue drops.
 - **Email addresses** and **Phone numbers** look up contact details right after the search instead of when contacts enter outreach.
 
-The block shows how many credits a run reserves and how many runs your balance covers. If the balance cannot cover even the smallest run, the switch stays off. Only companies at or above your pipeline ICP threshold, without contacts, and with an owner seat are searched.
+The block shows how many credits a run reserves and how many runs your balance covers. If the balance cannot cover even the smallest run, the switch stays off. Only companies without contacts and with an owner seat are searched, and only those whose **Company Fit** is at or above your **Pipeline ICP threshold** or not scored yet.
 
 ## How contacts reach the queue
 

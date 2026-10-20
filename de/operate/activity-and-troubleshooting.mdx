@@ -23,7 +23,7 @@ Admins sehen zusätzlich die Spalte **Seat**. Members sehen nur die Läufe ihrer
 
 Jeder Lauf und jeder Schritt endet mit **Succeeded**, **Completed with issues**, **Skipped**, **Stopped** oder **Failed**. [Pipeline ausführen](/de/operate/run-the-pipeline#lauf-stoppen) erklärt jeden Status. Der Status eines Laufs fasst seine Schritte zusammen, daher kann ein Lauf mit **Succeeded** Schritte mit **Skipped** enthalten.
 
-Wenn du die Ursache selbst beheben kannst, sagt es der Grund unter dem Status, etwa **LinkedIn session expired — reconnect it under Settings → Account.** oder **Email account disconnected — reconnect it under Settings → Account.** Jeder andere Fehler lautet **Something went wrong — we've been notified.**
+Wenn du die Ursache selbst beheben kannst, sagt es der Grund unter dem Status, etwa **LinkedIn session expired — reconnect it under Settings → Account.**, **Email account disconnected — reconnect it under Settings → Account.** oder **Credits could not be charged — check your balance under Credits.** Jeder andere Fehler lautet **Something went wrong — we've been notified.** Die [Jobs-Seite](/de/operate/jobs#wenn-ein-job-scheitert) verwendet dieselben Worte.
 
 ## Wenn die Next run queue leer ist
 
@@ -116,6 +116,29 @@ Bei LinkedIn bekommt der Owner des Seats außerdem eine E-Mail mit einem Link zu
 Verbinde dasselbe LinkedIn-Konto neu. Den Wechsel zu einem anderen Konto beschreibt [Seats und Konten](/de/getting-started/seats-and-accounts).
 
 Zeigt die LinkedIn-Karte **Temporarily unavailable**, liegt das Problem bei uns und keinsaas kümmert sich darum. Du musst nichts tun.
+
+## Wenn dein E-Mail-Anbieter den Versand blockiert
+
+Verweigert dein E-Mail-Anbieter den Versand für ein Postfach, etwa weil deine IT es als Absender gesperrt hat, pausiert der Sales Agent E-Mails für dieses Postfach, statt es erneut zu versuchen. E-Mails und E-Mail-Follow-ups aller Seats, die das Postfach nutzen, sind angehalten, bis jemand sie fortsetzt. LinkedIn ist nicht betroffen. Eine Verweigerung wird nie als Bounce gelesen, deshalb wird deswegen keine E-Mail-Adresse als fehlerhaft markiert.
+
+Du siehst das an mehreren Stellen:
+
+- in der Benachrichtigungsglocke: **Email sending paused: mailbox blocked**, mit dem Postfach
+- als rotes Banner auf Home und als Eintrag in **Tasks**, jeweils mit **See options**
+- unter **Settings → Account**: Die E-Mail-Karte zeigt **Sending paused**
+- in einer E-Mail an den Owner des Seats oder, wenn der Seat keinen Owner hat, an deine Admins
+
+<Steps>
+  <Step title="Settings → Account öffnen">
+    Öffne den betroffenen Seat. Ein pausierter Seat bietet nur **Resume sending** und **Disconnect**, weil **Reconnect** eine Sperre bei deinem Anbieter nicht aufheben kann.
+  </Step>
+  <Step title="Die IT bitten, das Postfach zu entsperren">
+    Öffne **A note for your IT**, kopiere die Notiz für deinen Anbieter (Gmail / Google Workspace oder Outlook / Microsoft 365) und schicke sie an die Person, die deine E-Mail verwaltet.
+  </Step>
+  <Step title="Fortsetzen">
+    Ist das Postfach entsperrt, wähle **Resume sending**. Verweigert der Anbieter es weiterhin, pausiert der Versand erneut. Oder wähle **Disconnect** und verbinde ein anderes Postfach.
+  </Step>
+</Steps>
 
 <Warning>
   Reagiere auf eine leere Queue oder einen fehlgeschlagenen Lauf nicht damit, deine Tageslimits stark zu erhöhen. Höhere Limits beheben weder ein Eignungsproblem noch eine unterbrochene Verbindung. Sie vergrößern nur die möglichen Folgen falsch konfigurierter Ansprache. Finde zuerst die Ursache und laufe dann mit normalen Limits.
