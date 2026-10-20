@@ -9,11 +9,11 @@ icon: "users"
 
 ## Contacts and prospects
 
-On the **Contacts** tab, the **Stage** column shows the stage of each contact who is already a prospect. A contact who is not in outreach yet shows **Queued** when the first pipeline step will pick them up, or **Not in pipeline** when it will not. Hover the badge to see why. The **Company match** column shows **Needs review**, **Confirmed wrong**, or **Changed employer** for [contacts held back](#contacts-held-back).
+On the **Contacts** tab, the **Stage** column shows the stage of each contact who is already a prospect. A contact who is not in outreach yet shows **Queued** when the first pipeline step will pick them up, or **Not in pipeline** when it will not. Hover the badge to see why. The **Company match** column shows **Needs review**, **Confirmed wrong**, or **Changed employer** for [contacts held back](#contacts-held-back). The **ICP** column shows the contact's score as a chip colored by its band; see [Read the score chips](/configure/icp-and-scoring#read-the-score-chips).
 
 The **Prospects** tab has one tab per stage (see [Stages and outcomes](/operate/stages-and-outcomes)). Select a row to open the prospect. On the list, select the **Email Sent** or **LinkedIn Sent** date or the **Reply** badge to open the prospect's timeline directly, or hover them to open the email or LinkedIn thread.
 
-Select several rows to act on them together: **Set outcome…**, **Archive**, **Find email**, **Find phone**, or **Find both**. On **Prospects**, rows whose LinkedIn was skipped also offer **Retry LinkedIn**. Lookups may use credits.
+Select several rows to act on them together: **Set outcome…**, **Archive**, **Find email**, **Find phone**, or **Find both**. On **Prospects**, rows whose LinkedIn was skipped also offer **Retry LinkedIn**. Admins also see **Hand over**, which moves people to another seat; see [Hand people or a company to another seat](#hand-people-or-a-company-to-another-seat). Lookups may use credits.
 
 ## The prospect record
 
@@ -22,9 +22,9 @@ A prospect opens in a side panel with the outcome selector and **Archive** next 
 ### Info
 
 - **They replied** and **Call**: the reply and the call cards, when they apply. See [Replies and handoff](/operate/replies-and-handoff).
-- **Contact**: select a field to edit it. **Persona** decides which message prompt the contact is written with. A **Skipped** row means LinkedIn is closed for this prospect and outreach continues by email only.
+- **Contact**: select a field to edit it. **Language**, **Country**, and **Seniority** are chosen from a list, so a value is always stored the same way. **Language** offers the languages the contact's seat writes in, and **Country** is the person's own, not the company's. **Persona** decides which message prompt the contact is written with. A **Skipped** row means LinkedIn is closed for this prospect and outreach continues by email only.
 - **Enrichment**: every email address and phone number found, each with its status. Select **Bad** on an email address that is wrong: the Sales Agent marks it and looks for another one. For phone numbers, see [when the number is wrong](/operate/replies-and-handoff#when-the-number-is-wrong). **Find email**, **Find phone**, and **Find both** appear when something is missing.
-- **Company**: the company's details, editable, and **Open company page**.
+- **Company**: the company's details, editable, and **Open company page**. The size **Range** is chosen from LinkedIn's headcount ranges.
 - **Cheat sheet**: prep notes for a call. Select **Edit** to change them.
 
 ### Timeline
@@ -41,21 +41,42 @@ Other people at the same company, with their stage. Select one to open them. Whe
 
 ## Contacts held back
 
-The Sales Agent keeps some contacts out of outreach until you decide. Open a contact who is not a prospect yet from the **Contacts** tab to see the notice and its buttons. A prospect held back shows **Parked — company mismatch** or **Parked — changed employer** under **Current state** on its timeline.
+The Sales Agent keeps some contacts out of outreach until you decide. Open the contact from the **Contacts** tab, or the prospect from the **Prospects** tab, to see the notice and its buttons at the top of the **Info** tab. Both panels offer the same buttons. A prospect held back shows **Parked — company mismatch** or **Parked — changed employer** under **Current state** on its timeline.
 
 - **Needs review**: the email address belongs to another company, so the person may not work at the company you targeted. Select **This is the right company — add to outreach**, or **Confirm wrong — keep out**. A contact you confirmed shows **Confirmed wrong** and can still be added with **Actually the right company — add to outreach**.
-- **Changed employer**: the person's job history says they left the company. The notice names the new employer when it is known, and their old address is not used. If they still work there, select **Still works here — keep in outreach**.
-- **Email address to check**: an address was found on a domain not confirmed as the company's, so it was not used. Admins can select **Use this email**, which saves the address for that company and checks it once, or **Not their address**. Members see the address and can ask an admin.
+- **Changed employer**: the person's job history, or an automatic reply from their mailbox, says they left the company. A person who asks not to be contacted in such a reply is never filed here. The notice names the new employer when it is known, and their old address is not used. If they still work there, select **Still works here — keep in outreach**.
+- **Email address to check**: a search, an import, or an enrichment returned an address on a domain not confirmed as the company's, so it was not used. The person is not set aside for it. Admins can select **Use this email**, which saves the address for that company and checks it once, or **Not their address**. Members see the address and can ask an admin.
 
 When addresses wait for a check, admins see a task on Home and in **Tasks** saying how many contacts have an email address waiting for your check. **Check** opens the **Contacts** tab filtered to **Email to check**.
 
 ## Companies
 
-**Companies** lists every company in your pipeline. The **Stage** column shows the deal stage you set, in solid green, or otherwise the furthest stage any prospect there has reached. **Primary contact** names the person the deal is with, and **ICP Score** is the company's score.
+**Companies** lists every company in your pipeline. The **Stage** column shows the deal stage you set, in solid green, or otherwise the furthest stage any prospect there has reached. **Primary contact** names the person the deal is with, and **Company Fit** is the company's own 0–100 score, shown as a chip colored by its band (see [Read the score chips](/configure/icp-and-scoring#read-the-score-chips)).
 
 Open a company to see:
 
 - **Deal**: the company's stage. See [the deal lives on the company](/operate/stages-and-outcomes#the-deal-lives-on-the-company).
 - **Identity** and **Firmographics**: website, LinkedIn page, location, industry, headcount, and similar details.
-- **Scoring**: the company's **ICP Score** and, when available, **Why**.
+- **Scoring**: the company's **Company Fit** and, when available, **Why**.
 - **Contacts**: everyone at the company with their stage, **Make primary**, and **Keep in outreach** for colleagues stopped by the deal stage.
+
+### Review duplicate companies
+
+When the Sales Agent suspects that two companies in your list are one, the company shows a **Needs review** box that names the other one. **Needs review · N** above the list filters to these companies, and admins see a task on Home. Only admins decide:
+
+- **Same company** merges the two at once. The people, signals, and history of the newer company move to the older one, and the older one fills only the details it lacks. The newer company leaves **Companies**, search, and the **Add to Pipeline** company picker. A toast says how many people, signals, and history entries moved. The dashboard has no undo for a merge, so contact support if you merged by mistake.
+- **Different companies** keeps both and ends the question.
+
+If one of the two companies has a deal stage, it applies to everyone at the merged company. The same box also asks whether a company may be insolvent; see the [glossary](/reference/glossary).
+
+## Hand people or a company to another seat
+
+Admins can hand people to another seat, so that seat's LinkedIn account and mailbox reach them. Select **Hand over** in a contact, prospect, or company panel. On **Contacts** and **Prospects**, select rows and use **Hand over (N)**. The button appears only when that person would move.
+
+1. Choose the seat. Your own seat is not in the list, because you hand people away.
+2. Choose the scope: **Their whole company (recommended)** moves everyone there who has not been contacted yet, together with the company itself. **Only this person** or **Only these people** moves just them. Handing over whole companies works for up to 50 companies at a time.
+3. Read the summary, which lists who moves, who stays, and the company rows that move, then confirm with **Hand to** and the seat's name.
+
+Only people nobody has contacted yet change seat. A person with a sent message, a reply, a call, or a deal outcome stays, because that conversation lives in the old seat's LinkedIn account and mailbox. When a company is split between two seats, the summary warns you: someone who sees only one seat does not see the other seat's replies, and a meeting or positive reply on either one stops outreach to everyone at the company.
+
+Unsent drafts of the people who move are deleted, and the new seat writes its own. New people found in a country that belongs to another seat still go to that seat; the summary names it. While a run is active on one of the seats involved, wait until it has finished.

@@ -1,7 +1,7 @@
 ---
 title: "Sales Agent Glossary: Key Terms and Concepts Explained"
 sidebarTitle: "Glossary"
-description: "Plain-language definitions of 17 key terms used throughout the Sales Agent dashboard, pipeline, configuration, and documentation."
+description: "Plain-language definitions of 18 key terms used throughout the Sales Agent dashboard, pipeline, configuration, and documentation."
 icon: "book-a"
 ---
 
@@ -20,6 +20,10 @@ Use this glossary whenever you encounter an unfamiliar term in the dashboard or 
     An event at a company that suggests a need for your offer now, such as an acquisition, a new leader, hiring, funding, or expansion. Admins define which events count under **Settings → Targeting → Buying signals**. Companies with a fresh signal are contacted first, and the message can build on the signal. **Buying intent** (0–100) on **Companies**, and **Intent** on contacts, show how many fresh, strong signals a company has; the columns appear only when a company has one. The search runs once keinsaas switches it on with you; each company searched costs 1 credit.
   </Accordion>
 
+  <Accordion title="Company Fit">
+    The company's own 0–100 score for how well it matches your ICP, shown in the **Company Fit** column on **Companies** and in the company, contact, and prospect panels. It is half of every contact's **ICP** score. Scores show as a chip colored by band: **Low** below 50, **Medium** 50 to 69, **High** 70 to 85, **Excellent** above 85. See [ICP and scoring](/configure/icp-and-scoring#read-the-score-chips).
+  </Accordion>
+
   <Accordion title="Contact">
     A person imported, collected, or found for your account — before outreach has started. A contact becomes a **prospect** once it is being actively worked by the outreach pipeline. Contacts that do not meet the pipeline threshold or are otherwise ineligible remain as contacts without consuming outreach actions.
   </Accordion>
@@ -33,7 +37,7 @@ Use this glossary whenever you encounter an unfamiliar term in the dashboard or 
   </Accordion>
 
   <Accordion title="ICP score">
-    A normalised fit score from 0 to 100 based on how well a contact matches your configured ICP criteria and their relative weights. Companies have their own ICP score, shown on **Companies**, and a contact's score takes its company's score into account. When you change your ICP criteria, the dashboard shows **ICP scores need updating**; the update then runs in the background. Use the **pipeline threshold** to control which scores qualify a contact for automated outreach.
+    A normalised fit score from 0 to 100 based on how well a contact matches your configured ICP criteria and their relative weights. A contact's score is called **ICP**. Companies have their own score, **Company Fit**, shown on **Companies**, and a contact's score takes its company's score into account. When you change your ICP criteria, the dashboard shows **ICP scores need updating**; the update then runs in the background. Use the **pipeline threshold** to control which scores qualify a contact for automated outreach.
   </Accordion>
 
   <Accordion title="In play">
@@ -41,7 +45,7 @@ Use this glossary whenever you encounter an unfamiliar term in the dashboard or 
   </Accordion>
 
   <Accordion title="Needs review">
-    A company the Sales Agent cannot decide on alone: it may be the same company as another one under a different name or website, or it may be insolvent. Admins open **Companies**, select **Needs review**, and decide each one (**Same company** or **Different companies**, **Confirmed** or **Not insolvent**). A confirmed insolvency adds the company to your blacklist. On contacts, **Needs review** marks someone who may work for a different company than the one on file.
+    A company the Sales Agent cannot decide on alone: it may be the same company as another one under a different name or website, or it may be insolvent. Admins open **Companies**, select **Needs review**, and decide each one (**Same company** or **Different companies**, **Confirmed** or **Not insolvent**). **Same company** merges the two at once; see [Review duplicate companies](/operate/prospects-and-companies#review-duplicate-companies). A confirmed insolvency adds the company to your blacklist. On contacts, **Needs review** marks someone who may work for a different company than the one on file.
   </Accordion>
 
   <Accordion title="Next run queue">

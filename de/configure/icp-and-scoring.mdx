@@ -34,7 +34,7 @@ Die AI bewertet jedes Unternehmen und jeden Kontakt anhand dieser Beschreibung u
 | **Locations** | Zielländer. Leer lassen, wenn kein Standortfilter gelten soll. |
 | **DACH only** | Nur Personen mit Wohnort in Deutschland, Österreich, der Schweiz oder Liechtenstein. Überschreibt **Locations** für Personen, nicht für den Firmensitz, und stoppt LinkedIn-Einladungen an Personen außerhalb dieser Region. |
 | **Industries** | LinkedIn-Branchen, auf die du dich konzentrierst. Leer lassen, wenn kein Branchenfilter gelten soll. |
-| **Company Size** | Zielgrößen nach Mitarbeiterzahl. Ohne Auswahl gilt kein Größenfilter. Unternehmen mit unbekannter Größe werden nie herausgefiltert. |
+| **Company Size** | Zielgrößen nach Mitarbeiterzahl. Ohne Auswahl gilt kein Größenfilter. Unternehmen mit unbekannter Größe werden nie herausgefiltert. Die Bereiche fließen auch über **Size fit** in den Score ein. |
 | **ICP Keywords** | Spezialisierungen, Geschäftsmodelle oder weitere Begriffe, die ein passendes Unternehmen anzeigen. |
 | **Max Contacts per Company** | Feste Obergrenze für gesuchte Personen je Unternehmen. Drei bis vier sind ein normaler Startwert, zehn das Maximum. |
 | **Fill up to the max** | Findet die erste Quelle weniger Personen als dein Maximum, werden auch die nächsten Quellen gefragt. Kostet etwa das Dreifache an Such-Credits. |
@@ -53,15 +53,29 @@ Unter **Prospects** zeigt der Tab **Contacts** diese Kontakte mit der Stage **No
 
 ## Score verstehen
 
-Jeder Kontakt erhält einen ICP-Score von 0 bis 100. Die eine Hälfte stammt von der Person, die andere vom Unternehmen:
+Jeder Kontakt erhält einen **ICP**-Score von 0 bis 100. Die eine Hälfte stammt von der Person, die andere vom Unternehmen. Der eigene Score des Unternehmens von 0 bis 100 heißt **Company Fit**.
 
 - **Job fit** — wie gut der Titel der Person zu deinen Tier-1- und Tier-2-Titeln und Senioritätsstufen passt
 - **Location fit** — ob Person und Unternehmen in deinen Zielregionen liegen; zählt in beiden Hälften
 - **Industry fit** — die Branche des Unternehmens auf einer festen, eingebauten Branchenskala. Deine Liste unter **Industries** fließt stattdessen über die AI-Prüfung des Unternehmens ein.
+- **Size fit** — wie gut die Mitarbeiterzahl des Unternehmens zu deinen **Company Size**-Bereichen passt. Er zählt nur, wenn du Größen ausgewählt hast und die Größe des Unternehmens bekannt ist.
 
-Danach verschiebt eine AI-Prüfung jedes Unternehmens anhand deines ICP den Score: 15 Punkte nach oben bei klarer Eignung, 15 nach unten bei schlechter Eignung, unverändert, wenn das Ergebnis unklar ist oder das Unternehmen noch nicht geprüft wurde.
+Danach verschiebt eine AI-Prüfung jedes Unternehmens anhand deines ICP den Score: 15 Punkte nach oben bei klarer Eignung, 15 nach unten bei schlechter Eignung, unverändert, wenn das Ergebnis unklar ist oder das Unternehmen noch nicht geprüft wurde. Die Prüfung liest die Beschreibung des Unternehmens und seine eigenen Schlüsselwörter.
 
-Die Faktoren stellst du unter **ICP Score Weights** ein. Die Gewichtungen sind relativ und müssen zusammen nicht 100 ergeben. Neben jeder Gewichtung zeigt das Dashboard ihren tatsächlichen Anteil am Score (**= X% of score**). Weil der Score aus zwei Hälften besteht, ergeben die Standardwerte 50, 30 und 20 etwa 36 % Job-Fit, 30 % Branchen-Fit und 34 % Standort-Fit.
+Die Faktoren stellst du unter **ICP Score Weights** ein. Die Gewichtungen sind relativ und müssen zusammen nicht 100 ergeben. Neben jeder Gewichtung zeigt das Dashboard ihren tatsächlichen Anteil am Score (**= X% of score**). **Size fit** startet bei 0 und zählt daher erst, wenn du ihn erhöhst. Weil der Score aus zwei Hälften besteht, ergeben die Standardwerte 50, 30, 20 und 0 etwa 36 % Job-Fit, 30 % Branchen-Fit und 34 % Standort-Fit. Mit **Size fit** auf 20 und ausgewählten Größen werden daraus 36 %, 21 %, 29 % und 14 %.
+
+### Score-Chips lesen
+
+**Prospects → Contacts** und **Prospects → Prospects** zeigen den Score des Kontakts in der Spalte **ICP**. **Companies** zeigt den Score des Unternehmens in **Company Fit**. Die Panels von Kontakt und Prospect zeigen beide; das Unternehmenspanel zeigt **Company Fit**. Jeder Score erscheint als Chip, eingefärbt nach seinem Band:
+
+| Band | Score |
+| --- | --- |
+| **Low** | unter 50 |
+| **Medium** | 50 bis 69 |
+| **High** | 70 bis 85 |
+| **Excellent** | über 85 |
+
+Tabellen zeigen die Zahl; fahre mit der Maus über den Chip, um das Band zu sehen. Panels zeigen Zahl und Band. Ein **!** neben einem Score bedeutet, dass er veraltet ist: Du hast dein Targeting geändert, nachdem er berechnet wurde (siehe [Bestehende Scores aktualisieren](#bestehende-scores-aktualisieren)).
 
 ## Die zwei Schwellenwerte verwenden
 
@@ -90,12 +104,12 @@ Das Sortieren einer Tabelle auf dem Bildschirm ändert diese Reihenfolge nicht.
 
 ## Bestehende Scores aktualisieren
 
-Speicherst du eine Änderung, die bestehende Scores betrifft, bietet das Dashboard eine Aktualisierung an:
+Das Speichern unter **Settings → Targeting** aktualisiert die Scores, die allein der Code neu berechnen kann, sofort und ohne AI und Credits:
 
-- **Recompute scores now** erscheint, wenn du Gewichtungen, Jobtitel, Senioritätsstufen, ausgeschlossene Titel oder Unternehmensgrößen geändert hast. Die Neuberechnung läuft sofort, ohne AI und ohne Credits, und wendet deine Filter erneut auf bestehende Kontakte an.
-- **Update scores now** erscheint, wenn du die freie ICP-Beschreibung, Standorte, Branchen oder Keywords geändert hast. Die AI bewertet deine Unternehmen im Hintergrund neu, du kannst weiterarbeiten. Eine Statuszeile oben auf jeder Seite zeigt den Fortschritt. Bricht die Aktualisierung ab, wähle dort **Try again**.
+- Speicherst du eine Änderung an Gewichtungen (auch **Size fit**), Jobtiteln, Senioritätsstufen, ausgeschlossenen Titeln, Unternehmensgrößen oder Standorten, werden die Scores bestehender Kontakte neu berechnet und deine Filter erneut auf sie angewendet. Du musst nichts anklicken.
+- Speicherst du eine Änderung an der freien ICP-Beschreibung, an Standorten, Branchen oder Keywords, fragt das Dashboard zusätzlich **Update ICP scores?**. **Update scores now** lässt die AI deine Unternehmen im Hintergrund neu bewerten, du kannst weiterarbeiten. Eine Statuszeile oben auf jeder Seite zeigt den Fortschritt. Bricht die Aktualisierung ab, wähle dort **Try again**. Mit **Later** überspringst du sie.
 
-Wählst du **Later**, bleibt die Aufgabe **ICP scores need updating** in deinen Benachrichtigungen, bis du die Aktualisierung startest. Neu hinzugefügte Kontakte verwenden automatisch die aktuellen Einstellungen.
+Ist die sofortige Neuberechnung nicht durchgelaufen, erscheint in deinen Benachrichtigungen die Aufgabe **ICP scores need updating** mit **Recompute scores now**. Wählst du **Later**, bleibt die Aufgabe, bis du die AI-Aktualisierung startest. Neu hinzugefügte Kontakte verwenden automatisch die aktuellen Einstellungen.
 
 ## Kaufsignale festlegen
 

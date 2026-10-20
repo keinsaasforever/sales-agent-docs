@@ -37,7 +37,7 @@ The AI scores every company and contact against this description together with t
 | **Locations** | Countries to target. Leave empty for no location filter. |
 | **DACH only** | Only people living in Germany, Austria, Switzerland, or Liechtenstein. Overrides **Locations** for people, not for company headquarters, and stops LinkedIn invites to people outside that region. |
 | **Industries** | LinkedIn industries to focus on. Leave empty for no industry filter. |
-| **Company Size** | Headcount ranges to target. Nothing selected means no size filter. Companies whose headcount is unknown are never filtered out. |
+| **Company Size** | Headcount ranges to target. Nothing selected means no size filter. Companies whose headcount is unknown are never filtered out. The ranges also feed **Size fit** in the score. |
 | **ICP Keywords** | Specialties, business models, or other terms that indicate a fitting company. |
 | **Max Contacts per Company** | Hard cap on the number of people searched at each company. Three to four is a normal starting point; ten is the maximum. |
 | **Fill up to the max** | When the first source finds fewer people than your maximum, the next sources are asked too. Costs about three times the search credits. |
@@ -56,15 +56,29 @@ On **Prospects**, the **Contacts** tab shows these contacts with the stage **Not
 
 ## Understand the score
 
-Each contact receives a 0–100 ICP score. Half of it comes from the person, half from the company:
+Each contact receives a 0–100 **ICP** score. Half of it comes from the person, half from the company. The company's own 0–100 score is called **Company Fit**.
 
 - **Job fit** — how closely the person's title matches your Tier 1 and Tier 2 titles and seniority levels
 - **Location fit** — whether the person and the company are in your target locations; it counts in both halves
 - **Industry fit** — the company's industry, rated on a built-in industry scale. Your **Industries** list counts through the AI company review instead.
+- **Size fit** — how well the company's headcount fits your **Company Size** ranges. It counts only when you have picked sizes and the company's size is known.
 
-An AI review of each company against your ICP then moves the score: up 15 points for a clear fit, down 15 for a poor fit, unchanged when the result is unclear or the company has not been reviewed yet.
+An AI review of each company against your ICP then moves the score: up 15 points for a clear fit, down 15 for a poor fit, unchanged when the result is unclear or the company has not been reviewed yet. The review reads the company's description and its own keywords.
 
-Set the factors under **ICP Score Weights**. The weights are relative and do not need to add up to 100. Next to each one, the dashboard shows its real share of the score (**= X% of score**). Because the score is split into two halves, the defaults of 50, 30, and 20 make job fit about 36%, industry fit 30%, and location fit 34% of the score.
+Set the factors under **ICP Score Weights**. The weights are relative and do not need to add up to 100. Next to each one, the dashboard shows its real share of the score (**= X% of score**). **Size fit** starts at 0, so it counts only once you raise it. Because the score is split into two halves, the defaults of 50, 30, 20, and 0 make job fit about 36%, industry fit 30%, and location fit 34% of the score. With **Size fit** at 20 and sizes picked, the shares become 36%, 21%, 29%, and 14%.
+
+### Read the score chips
+
+**Prospects → Contacts** and **Prospects → Prospects** show the contact's score in the **ICP** column. **Companies** shows the company's score in **Company Fit**. The contact and prospect panels show both; the company panel shows **Company Fit**. Every score appears as a chip colored by its band:
+
+| Band | Score |
+| --- | --- |
+| **Low** | below 50 |
+| **Medium** | 50 to 69 |
+| **High** | 70 to 85 |
+| **Excellent** | above 85 |
+
+Tables show the number; hover the chip to see the band. Panels show the number and the band. A **!** next to a score means it is outdated: you changed your targeting after it was calculated (see [Refresh existing scores](#refresh-existing-scores)).
 
 ## Use the two thresholds
 
@@ -93,12 +107,12 @@ Sorting a table on screen does not change this order.
 
 ## Refresh existing scores
 
-When you save a change that affects existing scores, the dashboard asks you to refresh them:
+Saving **Settings → Targeting** refreshes the scores that code alone can recalculate, at once, without AI or credits:
 
-- **Recompute scores now** appears when you changed weights, job titles, seniority levels, excluded titles, or company sizes. It recalculates instantly, without AI or credits, and applies your filters to existing contacts again.
-- **Update scores now** appears when you changed the free-text ICP, locations, industries, or keywords. The AI re-evaluates your companies in the background, so you can keep working. A status line at the top of every page shows the progress. If the update stops, select **Try again** there.
+- Saving a change to weights (**Size fit** included), job titles, seniority levels, excluded titles, company sizes, or locations recalculates the scores of existing contacts and applies your filters to them again. There is nothing to click.
+- Saving a change to the free-text ICP, locations, industries, or keywords also asks **Update ICP scores?**. **Update scores now** has the AI re-evaluate your companies in the background, so you can keep working. A status line at the top of every page shows the progress. If the update stops, select **Try again** there. Choose **Later** to skip it.
 
-If you choose **Later**, the to-do **ICP scores need updating** stays in your notifications until you run the refresh. Contacts added after a settings change are always scored against the current configuration.
+If the instant recalculation has not landed, the to-do **ICP scores need updating** appears in your notifications with **Recompute scores now**. After you choose **Later**, the to-do stays until you run the AI refresh. Contacts added after a settings change are always scored against the current configuration.
 
 ## Set buying signals
 

@@ -8,11 +8,11 @@ icon: "users"
 
 ## Contacts und Prospects
 
-Im Tab **Contacts** zeigt die Spalte **Stage** die Stage jedes Kontakts, der bereits Prospect ist. Ein Kontakt, der noch nicht in der Ansprache ist, zeigt **Queued**, wenn der erste Pipeline-Schritt ihn übernimmt, oder **Not in pipeline**, wenn nicht. Fahre mit der Maus über das Badge, um den Grund zu sehen. Die Spalte **Company match** zeigt **Needs review**, **Confirmed wrong** oder **Changed employer** für [angehaltene Kontakte](#angehaltene-kontakte).
+Im Tab **Contacts** zeigt die Spalte **Stage** die Stage jedes Kontakts, der bereits Prospect ist. Ein Kontakt, der noch nicht in der Ansprache ist, zeigt **Queued**, wenn der erste Pipeline-Schritt ihn übernimmt, oder **Not in pipeline**, wenn nicht. Fahre mit der Maus über das Badge, um den Grund zu sehen. Die Spalte **Company match** zeigt **Needs review**, **Confirmed wrong** oder **Changed employer** für [angehaltene Kontakte](#angehaltene-kontakte). Die Spalte **ICP** zeigt den Score des Kontakts als Chip, eingefärbt nach seinem Band; siehe [Score-Chips lesen](/de/configure/icp-and-scoring#score-chips-lesen).
 
 Der Tab **Prospects** hat einen Tab pro Stage (siehe [Stages und Outcomes](/de/operate/stages-and-outcomes)). Wähle eine Zeile, um den Prospect zu öffnen. In der Liste öffnet ein Klick auf das Datum **Email Sent** oder **LinkedIn Sent** oder auf das **Reply**-Badge direkt die Timeline des Prospects, ein Hover bietet den E-Mail- oder LinkedIn-Verlauf an.
 
-Wähle mehrere Zeilen, um sie gemeinsam zu bearbeiten: **Set outcome…**, **Archive**, **Find email**, **Find phone** oder **Find both**. Unter **Prospects** bieten Zeilen, bei denen LinkedIn übersprungen wurde, zusätzlich **Retry LinkedIn**. Suchen können Credits verbrauchen.
+Wähle mehrere Zeilen, um sie gemeinsam zu bearbeiten: **Set outcome…**, **Archive**, **Find email**, **Find phone** oder **Find both**. Unter **Prospects** bieten Zeilen, bei denen LinkedIn übersprungen wurde, zusätzlich **Retry LinkedIn**. Admins sehen außerdem **Hand over**, das Personen an einen anderen Seat übergibt; siehe [Personen oder ein Unternehmen an einen anderen Seat abgeben](#personen-oder-ein-unternehmen-an-einen-anderen-seat-abgeben). Suchen können Credits verbrauchen.
 
 ## Der Datensatz eines Prospects
 
@@ -21,9 +21,9 @@ Ein Prospect öffnet sich in einem Seitenpanel mit der Outcome-Auswahl und **Arc
 ### Info
 
 - **They replied** und **Call**: die Antwort- und die Anrufkarte, wenn sie zutreffen. Siehe [Antworten und Übergabe](/de/operate/replies-and-handoff).
-- **Contact**: Wähle ein Feld, um es zu bearbeiten. **Persona** bestimmt, mit welchem Nachrichten-Prompt der Kontakt angeschrieben wird. Eine Zeile **Skipped** bedeutet, dass LinkedIn für diesen Prospect geschlossen ist und die Ansprache nur per E-Mail weiterläuft.
+- **Contact**: Wähle ein Feld, um es zu bearbeiten. **Language**, **Country** und **Seniority** wählst du aus einer Liste, damit ein Wert immer gleich gespeichert wird. **Language** bietet die Sprachen, in denen der Seat des Kontakts schreibt, und **Country** ist das Land der Person, nicht des Unternehmens. **Persona** bestimmt, mit welchem Nachrichten-Prompt der Kontakt angeschrieben wird. Eine Zeile **Skipped** bedeutet, dass LinkedIn für diesen Prospect geschlossen ist und die Ansprache nur per E-Mail weiterläuft.
 - **Enrichment**: alle gefundenen E-Mail-Adressen und Telefonnummern mit ihrem Status. Wähle **Bad** bei einer falschen E-Mail-Adresse: Der Sales Agent markiert sie und sucht eine andere. Zu Telefonnummern siehe [Wenn die Nummer falsch ist](/de/operate/replies-and-handoff#wenn-die-nummer-falsch-ist). **Find email**, **Find phone** und **Find both** erscheinen, wenn etwas fehlt.
-- **Company**: die Unternehmensdaten, bearbeitbar, und **Open company page**.
+- **Company**: die Unternehmensdaten, bearbeitbar, und **Open company page**. Die Größe **Range** wählst du aus den Mitarbeiterbereichen von LinkedIn.
 - **Cheat sheet**: Vorbereitungsnotizen für einen Anruf. Mit **Edit** änderst du sie.
 
 ### Timeline
@@ -40,21 +40,42 @@ Weitere Personen im selben Unternehmen mit ihrer Stage. Wähle eine Person, um s
 
 ## Angehaltene Kontakte
 
-Der Sales Agent hält manche Kontakte aus der Ansprache heraus, bis du entscheidest. Öffne einen Kontakt, der noch kein Prospect ist, im Tab **Contacts**, um den Hinweis und seine Buttons zu sehen. Ein angehaltener Prospect zeigt in seiner Timeline unter **Current state** **Parked — company mismatch** oder **Parked — changed employer**.
+Der Sales Agent hält manche Kontakte aus der Ansprache heraus, bis du entscheidest. Öffne den Kontakt im Tab **Contacts** oder den Prospect im Tab **Prospects**, um den Hinweis und seine Buttons oben im Tab **Info** zu sehen. Beide Panels bieten dieselben Buttons. Ein angehaltener Prospect zeigt in seiner Timeline unter **Current state** **Parked — company mismatch** oder **Parked — changed employer**.
 
 - **Needs review**: Die E-Mail-Adresse gehört zu einem anderen Unternehmen, die Person arbeitet also eventuell nicht beim Zielunternehmen. Wähle **This is the right company — add to outreach** oder **Confirm wrong — keep out**. Ein bestätigter Kontakt zeigt **Confirmed wrong** und lässt sich mit **Actually the right company — add to outreach** trotzdem aufnehmen.
-- **Changed employer**: Laut Lebenslauf hat die Person das Unternehmen verlassen. Der Hinweis nennt den neuen Arbeitgeber, wenn er bekannt ist, und die alte Adresse wird nicht verwendet. Arbeitet die Person noch dort, wähle **Still works here — keep in outreach**.
-- **Email address to check**: Eine Adresse wurde auf einer Domain gefunden, die nicht als Domain des Unternehmens bestätigt ist, und wurde deshalb nicht verwendet. Admins wählen **Use this email**, das die Adresse für dieses Unternehmen speichert und einmal prüft, oder **Not their address**. Members sehen die Adresse und können einen Admin fragen.
+- **Changed employer**: Laut Lebenslauf oder laut einer automatischen Antwort aus ihrem Postfach hat die Person das Unternehmen verlassen. Wer in einer solchen Antwort bittet, nicht kontaktiert zu werden, wird hier nie eingeordnet. Der Hinweis nennt den neuen Arbeitgeber, wenn er bekannt ist, und die alte Adresse wird nicht verwendet. Arbeitet die Person noch dort, wähle **Still works here — keep in outreach**.
+- **Email address to check**: Eine Suche, ein Import oder eine Anreicherung hat eine Adresse auf einer Domain geliefert, die nicht als Domain des Unternehmens bestätigt ist, und sie wurde deshalb nicht verwendet. Die Person wird dafür nicht zurückgestellt. Admins wählen **Use this email**, das die Adresse für dieses Unternehmen speichert und einmal prüft, oder **Not their address**. Members sehen die Adresse und können einen Admin fragen.
 
 Warten Adressen auf eine Prüfung, sehen Admins auf Home und in **Tasks** eine Aufgabe mit der Anzahl der Kontakte, deren E-Mail-Adresse auf ihre Prüfung wartet. **Check** öffnet den Tab **Contacts** gefiltert auf **Email to check**.
 
 ## Companies
 
-**Companies** listet alle Unternehmen in deiner Pipeline. Die Spalte **Stage** zeigt die Deal-Stage, die du gesetzt hast, in Vollgrün, sonst die weiteste Stage, die ein Prospect dort erreicht hat. **Primary contact** nennt die Person, mit der der Deal läuft, und **ICP Score** ist der Score des Unternehmens.
+**Companies** listet alle Unternehmen in deiner Pipeline. Die Spalte **Stage** zeigt die Deal-Stage, die du gesetzt hast, in Vollgrün, sonst die weiteste Stage, die ein Prospect dort erreicht hat. **Primary contact** nennt die Person, mit der der Deal läuft, und **Company Fit** ist der eigene Score des Unternehmens von 0 bis 100, dargestellt als Chip, eingefärbt nach seinem Band (siehe [Score-Chips lesen](/de/configure/icp-and-scoring#score-chips-lesen)).
 
 Ein geöffnetes Unternehmen zeigt:
 
 - **Deal**: die Stage des Unternehmens. Siehe [Der Deal liegt beim Unternehmen](/de/operate/stages-and-outcomes#der-deal-liegt-beim-unternehmen).
 - **Identity** und **Firmographics**: Website, LinkedIn-Seite, Standort, Branche, Mitarbeiterzahl und ähnliche Angaben.
-- **Scoring**: den **ICP Score** des Unternehmens und, wenn vorhanden, **Why**.
+- **Scoring**: den **Company Fit** des Unternehmens und, wenn vorhanden, **Why**.
 - **Contacts**: alle Personen im Unternehmen mit ihrer Stage, **Make primary** und **Keep in outreach** für Personen, die durch die Deal-Stage gestoppt wurden.
+
+### Doppelte Unternehmen klären
+
+Vermutet der Sales Agent, dass zwei Unternehmen in deiner Liste eins sind, zeigt das Unternehmen eine Box **Needs review**, die das andere nennt. **Needs review · N** über der Liste filtert diese Unternehmen, und Admins sehen auf Home eine Aufgabe. Nur Admins entscheiden:
+
+- **Same company** führt die beiden sofort zusammen. Personen, Signale und Verlauf des neueren Unternehmens gehen auf das ältere über, und das ältere füllt nur die Angaben, die ihm fehlen. Das neuere Unternehmen verschwindet aus **Companies**, der Suche und der Unternehmensauswahl unter **Add to Pipeline**. Ein Hinweis nennt, wie viele Personen, Signale und Verlaufseinträge übergegangen sind. Das Dashboard kennt kein Rückgängigmachen einer Zusammenführung; wende dich an den Support, wenn du versehentlich zusammengeführt hast.
+- **Different companies** behält beide und beendet die Frage.
+
+Hat eines der beiden Unternehmen eine Deal-Stage, gilt sie für alle im zusammengeführten Unternehmen. Dieselbe Box fragt auch, ob ein Unternehmen insolvent sein könnte; siehe das [Glossar](/de/reference/glossary).
+
+## Personen oder ein Unternehmen an einen anderen Seat abgeben
+
+Admins können Personen an einen anderen Seat übergeben, damit dessen LinkedIn-Konto und Postfach sie erreicht. Wähle **Hand over** im Panel eines Kontakts, Prospects oder Unternehmens. Wähle in **Contacts** und **Prospects** Zeilen aus und nutze **Hand over (N)**. Der Button erscheint nur, wenn die Person tatsächlich wechseln würde.
+
+1. Wähle den Seat. Dein eigener Seat steht nicht in der Liste, weil du Personen abgibst.
+2. Wähle den Umfang: **Their whole company (recommended)** verschiebt alle dort, die noch nicht kontaktiert wurden, zusammen mit dem Unternehmen selbst. **Only this person** oder **Only these people** verschiebt nur sie. Ganze Unternehmen lassen sich bis zu 50 Unternehmen auf einmal übergeben.
+3. Lies die Zusammenfassung, die nennt, wer wechselt, wer bleibt und welche Unternehmenszeilen mitgehen, und bestätige mit **Hand to** und dem Namen des Seats.
+
+Nur Personen, die noch niemand kontaktiert hat, wechseln den Seat. Wer eine gesendete Nachricht, eine Antwort, einen Anruf oder ein Deal-Outcome hat, bleibt, denn dieses Gespräch liegt im LinkedIn-Konto und Postfach des alten Seats. Wird ein Unternehmen auf zwei Seats aufgeteilt, warnt dich die Zusammenfassung: Wer nur einen Seat sieht, sieht die Antworten des anderen nicht, und ein Termin oder eine positive Antwort auf einem von beiden stoppt die Ansprache aller Personen im Unternehmen.
+
+Ungesendete Entwürfe der Personen, die wechseln, werden gelöscht, und der neue Seat schreibt eigene. Neue Personen aus einem Land, das zum Gebiet eines anderen Seats gehört, gehen weiterhin an diesen Seat; die Zusammenfassung nennt ihn. Läuft gerade ein Durchlauf auf einem der beteiligten Seats, warte, bis er beendet ist.

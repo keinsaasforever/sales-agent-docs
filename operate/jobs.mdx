@@ -18,7 +18,7 @@ As a member, you see the jobs of your own seats. As an admin, you see the whole 
 | **Started** | When the job started |
 | **Type** | The kind of job, such as **Contact search**, **CSV import**, or **Contact enrichment** |
 | **Rep** | The seat the job ran for |
-| **Status** | Whether the job is still running, succeeded, or failed |
+| **Status** | Whether the job is still running, succeeded, or failed, with the reason in plain words when something went wrong |
 | **Scope** | What the job covered: companies searched, URLs submitted, or contacts |
 | **Results** | For a search: leads returned → leads kept and added to your contacts |
 | **Credits** | Credits charged for the job |
@@ -38,3 +38,15 @@ If credits run out during a search, the job still finishes and its status shows 
 When a member's search finds leads that belong to a colleague's territory, those leads go to the colleague's seat and the row says how many went there.
 
 Select **Refresh** to update the list while a job is running.
+
+## When a job fails
+
+A failed job shows what you can do about it, in the same words as on **Activity**:
+
+- **LinkedIn session expired — reconnect it under Settings → Account.**
+- **Email account disconnected — reconnect it under Settings → Account.**
+- **Another search was already running — start it again once that one is done.**
+- **Credits could not be charged — check your balance under Credits.**
+- **The blacklist could not be read, so nothing was searched — try again.**
+
+Any other error reads **Something went wrong — we've been notified.**

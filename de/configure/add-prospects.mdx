@@ -1,26 +1,26 @@
 ---
 title: "Prospects hinzufügen"
-description: "Füge Kontakte aus Sales Navigator, CSV-Dateien oder einer Kontaktsuche auf Unternehmensebene hinzu, lass sie automatisch hereinkommen und verstehe, wann ein Kontakt in die Queue gelangt."
+description: "Füge Kontakte aus Sales Navigator, CSV-Dateien mit Personen oder Unternehmen oder einer Kontaktsuche auf Unternehmensebene hinzu, lass sie automatisch hereinkommen und verstehe, wann ein Kontakt in die Queue gelangt."
 icon: "user-plus"
 ---
 
-Öffne **Add to Pipeline**, um Sales-Navigator-Quellen bereitzustellen, eine eigene Liste hochzuladen oder bei bereits im Dashboard vorhandenen Unternehmen zu suchen. Admins können neue Kontakte außerdem täglich automatisch hereinholen lassen.
+Öffne **Add to Pipeline**, um Sales-Navigator-Suchen und -Listen hinzuzufügen, eine eigene Liste mit Personen oder Unternehmen hochzuladen oder bei bereits im Dashboard vorhandenen Unternehmen nach Personen zu suchen. Admins können neue Kontakte außerdem täglich automatisch hereinholen lassen.
 
 <Columns cols={3}>
-  <Card title="URLs einreichen" icon="link">
+  <Card title="Sales Navigator" icon="link">
     Sammle Personen oder Unternehmen aus gespeicherten Sales-Navigator-Suchen und -Listen.
   </Card>
   <Card title="CSV hochladen" icon="file-spreadsheet">
-    Importiere eine eigene Liste und ordne jede Zeile einem Seat zu.
+    Importiere eine Liste mit Personen oder Unternehmen und ordne jede Zeile einem Seat zu.
   </Card>
-  <Card title="Suchen" icon="search">
+  <Card title="Personen aus Unternehmen" icon="search">
     Finde passende Kontakte bei Unternehmen, die bereits im Dashboard vorhanden sind.
   </Card>
 </Columns>
 
-## Sales-Navigator-URLs einreichen
+## Sales-Navigator-Suchen und -Listen hinzufügen
 
-Füge im Tab **Submit URLs** eine oder mehrere Sales-Navigator-URLs ein. Verwende einen dieser Quelltypen:
+Füge im Tab **Sales Navigator** eine oder mehrere Sales-Navigator-URLs ein. Verwende einen dieser Quelltypen:
 
 - eine gespeicherte Suche, deren URL `savedSearchId` enthält
 - eine Personenliste mit `/lists/people/` im Pfad
@@ -33,7 +33,7 @@ Was danach passiert, hängt vom Seat ab:
 - **Der LinkedIn-Login des Seats hat Sales Navigator:** Die URLs landen bei den gespeicherten Suchen dieses Seats. Neue Personen daraus werden täglich importiert, sobald ein Admin **Import from Sales Navigator** einschaltet (siehe unten).
 - **Jeder andere Seat:** keinsaas verarbeitet die Suchen und fügt die Ergebnisse deiner Pipeline hinzu. Den Fortschritt siehst du auf der Seite **Jobs**.
 
-Unternehmensquellen benötigen noch eine Kontaktsuche. Personenquellen identifizieren bereits Personen, können aber weiterhin Recherche, Anreicherung, Scoring und Filterung erfordern.
+Personenquellen identifizieren bereits Personen, können aber weiterhin Recherche, Anreicherung, Scoring und Filterung erfordern. Unternehmensquellen identifizieren Organisationen: Bei einem Seat mit Sales Navigator findet der tägliche Import auch die Personen (siehe unten). Bei jedem anderen Seat braucht eine Unternehmensquelle weiterhin eine Kontaktsuche.
 
 ## Täglich aus Sales Navigator importieren
 
@@ -42,17 +42,43 @@ Admins steuern den täglichen Import unter **Settings → Targeting**:
 1. Füge in der Karte **Sales Navigator searches** die URL einer gespeicherten Suche oder Liste ein, wähle unter **Seat that saved it** den Seat, gib optional einen Namen an und wähle **Add**. Zur Auswahl stehen nur Seats, deren LinkedIn-Login Sales Navigator hat, denn nur der Seat, der eine Suche gespeichert hat, kann sie importieren.
 2. Schalte in der Karte **ICP Targeting** **Import from Sales Navigator** ein; der Import ist aus, bis ein Admin ihn einschaltet. Lege unter **Up to** fest, wie viele neue Personen pro Tag hinzukommen (höchstens 100). Speichere mit **Save targeting**.
 
-Jede Suche hat einen eigenen Schalter und zeigt, wie viele ihrer Ergebnisse bereits gelesen wurden. LinkedIn zeigt nur die ersten 2.500 Ergebnisse einer Suche; grenze eine größere Suche ein, um den Rest zu erreichen. Der Import ist kostenlos. Importierte Personen werden wie jeder andere Kontakt geprüft, gefiltert und bewertet; die Suche nach ihren Kontaktdaten wird wie üblich berechnet.
+Jede Suche hat einen eigenen Schalter und zeigt, wie viele ihrer Ergebnisse bereits gelesen wurden. LinkedIn zeigt nur die ersten 2.500 Ergebnisse einer Suche; grenze eine größere Suche ein, um den Rest zu erreichen. Der Import ist kostenlos. Importierte Personen werden wie jeder andere Kontakt geprüft, gefiltert und bewertet; die Suche nach ihren Kontaktdaten wird wie üblich berechnet. Personen ohne Arbeitgeber, zum Beispiel Selbstständige, werden übersprungen: Sie werden kein Kontakt, und für sie entsteht kein Unternehmen.
+
+Bei einer Unternehmensliste oder einer gespeicherten Unternehmenssuche schlägt der Sales Agent zuerst jedes Unternehmen nach und bewertet seinen **Company Fit**. Danach findet er Personen bei den Unternehmen, die deinen **Pipeline ICP threshold** erreichen, mit einer Sales-Navigator-Suche nach deinen Jobtiteln, bis zu **Max Contacts per Company**. Die Zeile unter jeder Suche zählt ihre Unternehmen, wie viele davon einen **Company Fit** auf oder über deinem Schwellenwert haben, und die gefundenen Personen. Ein Unternehmen erhält seinen **Company Fit**, sobald seine Daten vollständig sind.
 
 ## CSV hochladen
 
-Lege im Tab **Upload CSV** eine Datei mit Kopfzeile ab. Komma, Semikolon und Tabulator funktionieren als Trennzeichen, und deutsche Spaltennamen wie **Vorname**, **Nachname**, **Unternehmen** oder **Webseite** werden erkannt. Die Vorschau zeigt die erkannten Spalten.
+Lege im Tab **Upload CSV** eine Datei mit Kopfzeile ab. Komma, Semikolon und Tabulator funktionieren als Trennzeichen. Die Datei kann Personen oder Unternehmen enthalten.
 
-Jede Zeile benötigt eine LinkedIn-Profil-URL oder den Namen einer Person zusammen mit der Domain des Unternehmens. Eine reine Unternehmensliste ohne Personen lässt sich hier noch nicht importieren; das Dashboard nennt den Grund, wenn keine Zeile bereit ist. Zeilen mit nur einem Namen oder einer E-Mail-Adresse kann keinsaas mit **Request enrichment** vervollständigen, für 1 Credit pro Zeile.
+Der Tab zeigt jede Spalte deiner Datei mit einem Beispielwert und dem Feld, das sie füllt, damit du die Zuordnung vor dem Import prüfen kannst:
+
+1. Wähle neben **This file lists** **People** oder **Companies**. Der Sales Agent wählt anhand deiner Spalten eine Option vor: Eine Datei mit Unternehmensspalten und ohne Personenspalte ist eine Unternehmensliste. Eine Wahl, die du selbst triffst, bleibt erhalten.
+2. Prüfe in der Spalte **Our field** jeden Vorschlag. Ändere ihn im Dropdown oder wähle **ignore**, um eine Spalte wegzulassen. Ein Feld, das du wählst, hat immer Vorrang vor einem Vorschlag.
+
+Der Sales Agent erkennt Spaltennamen, die er kennt, darunter deutsche wie **Vorname**, **Nachname**, **Unternehmen** oder **Webseite**. Bei Spalten, deren Namen er nicht erkennt, schlägt eine AI-Prüfung anhand der Spaltennamen und von bis zu drei Beispielzeilen ein Feld vor. **Checking the columns…** erscheint, solange sie läuft, und der Import-Button wartet, bis sie fertig ist.
+
+Diese Felder kannst du zuordnen:
+
+| Die Datei enthält | Felder |
+| --- | --- |
+| **People** | **First name**, **Last name**, **Full name**, **Job title**, **Headline**, **Person location**, **Country**, **Language**, **Email**, **LinkedIn profile**, **LinkedIn member id**, **Sales Navigator link**, **Company name**, **Website**, **Company LinkedIn page**, **Company location**, **Industry**, **Employees**, **Owner** |
+| **Companies** | **Company name**, **Website**, **Company LinkedIn page**, **Company location**, **Country**, **Industry**, **Employees**, **Description**, **Owner** |
+
+**Employees** nimmt eine Zahl wie `1.200` oder einen Größenbereich wie `51-200`.
+
+### Personen
+
+Jede Zeile benötigt eine LinkedIn-Profil-URL oder den Namen einer Person zusammen mit der Website des Unternehmens. Zeilen ohne LinkedIn-Profil-URL werden trotzdem importiert; der Sales Agent ergänzt ihre LinkedIn-Profile anschließend, was du auf **Jobs** verfolgen kannst. Der Tab zählt die Zeilen, die er nicht importieren kann; der Hinweis neben der Zahl nennt den Grund. Zeilen mit nur einem Namen oder einer E-Mail-Adresse kann keinsaas mit **Request enrichment** vervollständigen, für 1 Credit pro Zeile.
+
+### Unternehmen
+
+Jede Zeile benötigt einen Unternehmensnamen oder eine Website. Der Import fügt die Unternehmen hinzu und berechnet keine Credits. Er sucht keine Personen: Personen bei diesen Unternehmen kommen aus deiner automatischen Suche, deshalb schaltet ein Admin **Keep my pipeline full** unter **Settings → Targeting** ein (Members fragen einen Admin). Ein Unternehmen ohne Website wird hinzugefügt, aber dort wird noch niemand gesucht, weil Personen über die Website eines Unternehmens gefunden werden. Ein Unternehmen, das schon im Dashboard ist, wird zugeordnet, und nur seine leeren Felder werden gefüllt.
+
+### Owner und Ergebnis
 
 Jede Zeile benötigt außerdem einen Owner. Gib ihn in einer Spalte `owner` mit dem Owner-Key des Seats an oder wähle beim Import einen Seat. Der Owner wird auch dem Unternehmen zugewiesen und bestimmt, welche verbundenen Konten die Ansprache ausführen.
 
-Das Ergebnis zeigt, wie viele Kontakte eingefügt wurden, wie viele bereits vorhanden waren (**Already there**) und wie viele übersprungen wurden, zum Beispiel weil das Unternehmen auf deiner Blacklist steht. Kontakte außerhalb deiner Targeting-Filter werden ohne Seat hinzugefügt; für sie startet keine Ansprache.
+Bei Personen zeigt das Ergebnis, wie viele Kontakte eingefügt wurden, wie viele bereits vorhanden waren (**Already there**) und wie viele übersprungen wurden, zum Beispiel weil das Unternehmen auf deiner Blacklist steht. Bei Unternehmen zeigt es, wie viele hinzugefügt wurden, bereits vorhanden sind, auf deiner Blacklist stehen oder keine Website haben. Kontakte außerhalb deiner Targeting-Filter werden ohne Seat hinzugefügt; für sie startet keine Ansprache.
 
 Der CSV-Import selbst verbraucht keine Credits. Das Vervollständigen von Zeilen, E-Mail- oder Telefonsuche und Profilanreicherung können Credits verbrauchen.
 
@@ -65,7 +91,7 @@ Vor dem Import:
 
 ## In bestehenden Unternehmen suchen
 
-Wähle im Tab **Search** entweder **Top N by priority**, um die bestbewerteten Unternehmen ohne Kontakte zu durchsuchen, oder **Pick specific companies**, um sie selbst auszuwählen. Ein bereits ohne Ergebnis durchsuchtes Unternehmen wird übersprungen, solange du es nicht erneut auswählst.
+Wähle im Tab **People from Companies** entweder **Top N by priority**, um die bestbewerteten Unternehmen ohne Kontakte zu durchsuchen, oder **Pick specific companies**, um sie selbst auszuwählen. Ein bereits ohne Ergebnis durchsuchtes Unternehmen wird übersprungen, solange du es nicht erneut auswählst.
 
 Lege **Contacts per company** fest (der Standard kommt aus **Max Contacts per Company**) und schalte optional **Find emails** oder **Find phones** für die besten neuen Kontakte ein. **Estimated cost** aktualisiert sich bei jeder Änderung, und eine Bestätigung zeigt deinen Kontostand nach der Suche.
 
@@ -77,13 +103,13 @@ Die Suche benötigt mindestens einen Tier-1-Titel unter **Settings → Targeting
 
 ## Nach Zeitplan suchen
 
-Admins können unter **Settings → Targeting** **Keep my pipeline full** einschalten und mit **Save targeting** speichern. Die Funktion durchsucht an jedem Werktag einmal deine nächstbesten Unternehmen nach ICP-Score, ab der gewählten Uhrzeit:
+Admins können unter **Settings → Targeting** **Keep my pipeline full** einschalten und mit **Save targeting** speichern. Die Funktion durchsucht an jedem Werktag einmal deine nächstbesten Unternehmen nach **Company Fit**, ab der gewählten Uhrzeit:
 
 - **Search** legt fest, wie viele Unternehmen pro Tag durchsucht werden.
 - **Pause when** legt fest, wie viele Personen bereits warten dürfen, bevor die Suche pausiert. Sie läuft weiter, sobald die Queue kleiner wird.
 - **Email addresses** und **Phone numbers** suchen Kontaktdaten direkt nach der Suche statt erst beim Eintritt in die Ansprache.
 
-Der Block zeigt, wie viele Credits ein Lauf reserviert und für wie viele Läufe dein Guthaben reicht. Reicht es nicht einmal für den kleinsten Lauf, bleibt der Schalter aus. Durchsucht werden nur Unternehmen ab deinem Pipeline-ICP-Schwellenwert, ohne Kontakte und mit Owner-Seat.
+Der Block zeigt, wie viele Credits ein Lauf reserviert und für wie viele Läufe dein Guthaben reicht. Reicht es nicht einmal für den kleinsten Lauf, bleibt der Schalter aus. Durchsucht werden nur Unternehmen ohne Kontakte und mit Owner-Seat, und nur solche, deren **Company Fit** auf oder über deinem **Pipeline ICP threshold** liegt oder noch nicht bewertet ist.
 
 ## So gelangen Kontakte in die Queue
 

@@ -1,7 +1,7 @@
 ---
 title: "Sales Agent Glossar: Wichtige Begriffe und Konzepte erklärt"
 sidebarTitle: "Glossar"
-description: "Verständliche Definitionen von 17 zentralen Begriffen im Sales Agent Dashboard, in der Pipeline, in der Konfiguration und in der Dokumentation."
+description: "Verständliche Definitionen von 18 zentralen Begriffen im Sales Agent Dashboard, in der Pipeline, in der Konfiguration und in der Dokumentation."
 icon: "book-a"
 ---
 
@@ -20,6 +20,10 @@ Nutze dieses Glossar, wenn dir im Dashboard oder in der Dokumentation ein unbeka
     Ein Ereignis in einem Unternehmen, das jetzt einen Bedarf für dein Angebot nahelegt, etwa eine Übernahme, eine neue Führungskraft, Einstellungen, eine Finanzierung oder eine Expansion. Admins legen unter **Settings → Targeting → Buying signals** fest, welche Ereignisse zählen. Unternehmen mit frischem Signal werden zuerst kontaktiert, und die Nachricht kann darauf aufbauen. **Buying intent** (0–100) unter **Companies** und **Intent** bei Kontakten zeigen, wie viele frische, starke Signale ein Unternehmen hat; die Spalten erscheinen nur, wenn ein Unternehmen eines hat. Die Suche läuft, sobald keinsaas sie mit dir einschaltet; jedes durchsuchte Unternehmen kostet 1 Credit.
   </Accordion>
 
+  <Accordion title="Company Fit">
+    Der eigene Score eines Unternehmens von 0 bis 100 dafür, wie gut es zu deinem ICP passt. Du siehst ihn in der Spalte **Company Fit** unter **Companies** und in den Panels von Unternehmen, Kontakt und Prospect. Er ist die Hälfte des **ICP**-Scores jedes Kontakts. Scores erscheinen als Chip, eingefärbt nach Band: **Low** unter 50, **Medium** 50 bis 69, **High** 70 bis 85, **Excellent** über 85. Siehe [ICP und Scoring](/de/configure/icp-and-scoring#score-chips-lesen).
+  </Accordion>
+
   <Accordion title="Contact">
     Eine Person, die für dein Konto importiert, gesammelt oder gefunden wurde, bevor die Ansprache begonnen hat. Ein Contact wird zum **Prospect**, sobald ihn die Outreach-Pipeline aktiv bearbeitet. Contacts, die den Pipeline-Schwellenwert nicht erreichen oder aus anderen Gründen nicht infrage kommen, bleiben als Contacts bestehen, ohne Outreach-Aktionen zu verbrauchen.
   </Accordion>
@@ -33,7 +37,7 @@ Nutze dieses Glossar, wenn dir im Dashboard oder in der Dokumentation ein unbeka
   </Accordion>
 
   <Accordion title="ICP score">
-    Ein normalisierter Fit-Score von 0 bis 100 dafür, wie gut ein Kontakt zu deinen konfigurierten ICP-Kriterien und deren relativer Gewichtung passt. Unternehmen haben einen eigenen ICP-Score, den du unter **Companies** siehst, und der Score eines Kontakts berücksichtigt den seines Unternehmens. Änderst du deine ICP-Kriterien, zeigt das Dashboard **ICP scores need updating**; die Aktualisierung läuft dann im Hintergrund. Mit dem **Pipeline threshold** steuerst du, welche Scores einen Kontakt für automatisierte Ansprache qualifizieren.
+    Ein normalisierter Fit-Score von 0 bis 100 dafür, wie gut ein Kontakt zu deinen konfigurierten ICP-Kriterien und deren relativer Gewichtung passt. Der Score eines Kontakts heißt **ICP**. Unternehmen haben einen eigenen Score, den **Company Fit**, den du unter **Companies** siehst, und der Score eines Kontakts berücksichtigt den seines Unternehmens. Änderst du deine ICP-Kriterien, zeigt das Dashboard **ICP scores need updating**; die Aktualisierung läuft dann im Hintergrund. Mit dem **Pipeline threshold** steuerst du, welche Scores einen Kontakt für automatisierte Ansprache qualifizieren.
   </Accordion>
 
   <Accordion title="In play">
@@ -41,7 +45,7 @@ Nutze dieses Glossar, wenn dir im Dashboard oder in der Dokumentation ein unbeka
   </Accordion>
 
   <Accordion title="Needs review">
-    Ein Unternehmen, über das der Sales Agent nicht allein entscheiden kann: Es ist möglicherweise dasselbe Unternehmen wie ein anderes unter anderem Namen oder anderer Website, oder es ist möglicherweise insolvent. Admins öffnen **Companies**, wählen **Needs review** und entscheiden jeden Fall (**Same company** oder **Different companies**, **Confirmed** oder **Not insolvent**). Eine bestätigte Insolvenz setzt das Unternehmen auf deine Blacklist. Bei Kontakten markiert **Needs review** Personen, die möglicherweise für ein anderes Unternehmen arbeiten als hinterlegt.
+    Ein Unternehmen, über das der Sales Agent nicht allein entscheiden kann: Es ist möglicherweise dasselbe Unternehmen wie ein anderes unter anderem Namen oder anderer Website, oder es ist möglicherweise insolvent. Admins öffnen **Companies**, wählen **Needs review** und entscheiden jeden Fall (**Same company** oder **Different companies**, **Confirmed** oder **Not insolvent**). **Same company** führt die beiden sofort zusammen; siehe [Doppelte Unternehmen klären](/de/operate/prospects-and-companies#doppelte-unternehmen-klären). Eine bestätigte Insolvenz setzt das Unternehmen auf deine Blacklist. Bei Kontakten markiert **Needs review** Personen, die möglicherweise für ein anderes Unternehmen arbeiten als hinterlegt.
   </Accordion>
 
   <Accordion title="Next run queue">
