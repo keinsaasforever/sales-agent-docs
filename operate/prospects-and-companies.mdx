@@ -5,11 +5,23 @@ description: "Find people and companies, read a prospect's record, keep notes an
 icon: "users"
 ---
 
-**Prospects** holds every person you know, in two tabs: **Contacts** lists everyone added or found, and **Prospects** lists the people the outreach pipeline works. **Companies** shows the same people grouped by company.
+**Prospects** holds every person you know, in two tabs: **Contacts** lists everyone added or found, and **Prospects** lists the people the outreach pipeline works. **Companies** shows the same people grouped by company. To add people or companies yourself, open **Add Prospects** or **Add Companies**; see [Add people or companies by hand](/configure/add-prospects#add-people-or-companies-by-hand).
 
 ## Contacts and prospects
 
 On the **Contacts** tab, the **Stage** column shows the stage of each contact who is already a prospect. A contact who is not in outreach yet shows **Queued** when the first pipeline step will pick them up, or **Not in pipeline** when it will not. Hover the badge to see why. The **Company match** column shows **Needs review**, **Confirmed wrong**, or **Changed employer** for [contacts held back](#contacts-held-back). The **ICP** column shows the contact's score as a chip colored by its band; see [Read the score chips](/configure/icp-and-scoring#read-the-score-chips).
+
+**Phone** and **Email** sit after **Job Title** on both tabs. **Email** is the address the Sales Agent would send to. **Phone** is the number to dial: select it to call, or read **Not working** for a number that was tried and does not work, and **Not found** once a lookup came back empty.
+
+The **Intent** column shows the buying intent of the person's company, from 0 to 100: how many fresh, strong [buying signals](/configure/icp-and-scoring#set-buying-signals) it shows, counting the signals their persona hears about. From 60, the number carries a flame. The column appears on **Contacts** and **Prospects** only once someone has intent. On **Companies**, the column is called **Buying intent**.
+
+Chips next to the view picker filter a list in one click, and select a pressed chip again to clear it:
+
+- **Buying signals · N** keeps the rows with buying intent, on **Companies**, **Contacts**, and **Prospects**.
+- **Needs review · N** keeps the companies that need a decision, on **Companies**.
+- **Email to check · N** keeps the contacts with an address waiting for a check, on **Contacts**.
+
+A chip shows only while it has rows, and its number is what a click shows. On **Prospects**, it counts within the open stage tab.
 
 The **Prospects** tab has one tab per stage (see [Stages and outcomes](/operate/stages-and-outcomes)). Select a row to open the prospect. On the list, select the **Email Sent** or **LinkedIn Sent** date or the **Reply** badge to open the prospect's timeline directly, or hover them to open the email or LinkedIn thread.
 
@@ -22,6 +34,7 @@ A prospect opens in a side panel with the outcome selector and **Archive** next 
 ### Info
 
 - **They replied** and **Call**: the reply and the call cards, when they apply. See [Replies and handoff](/operate/replies-and-handoff).
+- **Why now**: appears when signals were found for the person's company. See [Why now](#why-now).
 - **Contact**: select a field to edit it. **Language**, **Country**, and **Seniority** are chosen from a list, so a value is always stored the same way. **Language** offers the languages the contact's seat writes in, and **Country** is the person's own, not the company's. **Persona** decides which message prompt the contact is written with. A **Skipped** row means LinkedIn is closed for this prospect and outreach continues by email only.
 - **Enrichment**: every email address and phone number found, each with its status. Select **Bad** on an email address that is wrong: the Sales Agent marks it and looks for another one. For phone numbers, see [when the number is wrong](/operate/replies-and-handoff#when-the-number-is-wrong). **Find email**, **Find phone**, and **Find both** appear when something is missing.
 - **Company**: the company's details, editable, and **Open company page**. The size **Range** is chosen from LinkedIn's headcount ranges.
@@ -55,19 +68,43 @@ When addresses wait for a check, admins see a task on Home and in **Tasks** sayi
 
 Open a company to see:
 
+- **Why now**: the company's buying intent and the signals behind it. See [Why now](#why-now).
 - **Deal**: the company's stage. See [the deal lives on the company](/operate/stages-and-outcomes#the-deal-lives-on-the-company).
 - **Identity** and **Firmographics**: website, LinkedIn page, location, industry, headcount, and similar details.
-- **Scoring**: the company's **Company Fit** and, when available, **Why**.
+- **Scoring**: the company's **Company Fit** and, when available, **Why**. Hover the info icon next to **Company Fit** (**About this score**) to see what it is made of: the fit from the facts it is scored on, the AI check (for example **AI check +10**, or **No AI check yet**), and a line like **Not known: size, counts as a pass** when a filter you set could not be judged because the fact is missing. Admins can set **Company Fit** by hand; see [Set a company's fit by hand](#set-a-companys-fit-by-hand).
 - **Contacts**: everyone at the company with their stage, **Make primary**, and **Keep in outreach** for colleagues stopped by the deal stage.
+
+### Why now
+
+When signals were found for a company, the company, contact, and prospect panels show a **Why now** section near the top; on a person it reads **Why now at** and the company's name. Next to its title, the number is the company's buying intent. It never shows for a company without signals.
+
+Each card is one signal: its type, such as **Acquisition**, **New leader**, **Funding**, **Expansion**, or **Job ads**, its date or **no date**, a short summary, a score from 0 to 100, and a link to the source. The counting signals come first, newest first, and three show at once; select **Show all** for the rest. A signal that no longer counts is dimmed and reads **ended**, or **not counted** when its type is not one you picked. The section ends with the date the company was last checked. On a person, only the signals their persona hears about count. Set what counts under [Settings → Signals](/configure/icp-and-scoring#set-buying-signals).
+
+### Set a company's fit by hand
+
+Admins can replace the AI's judgment of a company. In the company panel, under **Scoring**, select the **Company Fit** number, type a whole number from 0 to 100, and press `Enter`. The number then shows **by hand** and a pencil mark. The AI check skips the company from then on, and its people blend 50/50 with your number. A number below 50 also caps their scores at that number. Hover the info icon next to the number for the date.
+
+To give the decision back to the AI, select the number, empty the field, and press `Enter`; the company is scored again. The option is not offered where your scores come from outside the Sales Agent.
 
 ### Review duplicate companies
 
-When the Sales Agent suspects that two companies in your list are one, the company shows a **Needs review** box that names the other one. **Needs review · N** above the list filters to these companies, and admins see a task on Home. Only admins decide:
+When the Sales Agent suspects that two companies in your list are one, the company shows a **Needs review** box that names the other one. The **Needs review · N** chip above the list filters to these companies, and admins see a task on Home. Only admins decide:
 
 - **Same company** merges the two at once. The people, signals, and history of the newer company move to the older one, and the older one fills only the details it lacks. The newer company leaves **Companies**, search, and the **Add to Pipeline** company picker. A toast says how many people, signals, and history entries moved. The dashboard has no undo for a merge, so contact support if you merged by mistake.
 - **Different companies** keeps both and ends the question.
 
 If one of the two companies has a deal stage, it applies to everyone at the merged company. The same box also asks whether a company may be insolvent; see the [glossary](/reference/glossary).
+
+## Export a list as CSV
+
+Admins can download a list with **Export** in the toolbar of **Companies**, **Prospects → Contacts**, and **Prospects → Prospects**. The file holds the rows the table shows, in its order, with more columns than the table has. For prospects, that includes every message with its subject, text, status, and sent date, the stage and outreach dates, the replies, call results, and notes.
+
+When no filter, stage tab, or toggle narrows the list, **Export** asks only for the format. Otherwise, **Export as CSV** shows how many rows the view holds and the filters as chips: **Export N** downloads the view, and **Export all N** downloads the whole list. Pick the format that matches where you open the file:
+
+- **For Excel or a CRM import** separates columns with commas, as CRM imports and Excel in an English region expect. It is preselected.
+- **For German Excel** separates columns with semicolons, which Excel opens in columns in a German region.
+
+Members do not see **Export**.
 
 ## Hand people or a company to another seat
 

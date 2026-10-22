@@ -4,11 +4,23 @@ description: "Finde Personen und Unternehmen, lies den Datensatz eines Prospects
 icon: "users"
 ---
 
-**Prospects** enthält alle Personen, die du kennst, in zwei Tabs: **Kontakte** listet alle hinzugefügten oder gefundenen Personen, **Prospects** die Personen, die die Outreach-Pipeline bearbeitet. **Unternehmen** zeigt dieselben Personen nach Unternehmen gruppiert.
+**Prospects** enthält alle Personen, die du kennst, in zwei Tabs: **Kontakte** listet alle hinzugefügten oder gefundenen Personen, **Prospects** die Personen, die die Outreach-Pipeline bearbeitet. **Unternehmen** zeigt dieselben Personen nach Unternehmen gruppiert. Um Personen oder Unternehmen selbst hinzuzufügen, öffne **Prospects hinzufügen** oder **Unternehmen hinzufügen**; siehe [Personen oder Unternehmen von Hand hinzufügen](/de/configure/add-prospects#personen-oder-unternehmen-von-hand-hinzufügen).
 
 ## Kontakte und Prospects
 
 Im Tab **Kontakte** zeigt die Spalte **Phase** die Phase jedes Kontakts, der bereits Prospect ist. Ein Kontakt, der noch nicht in der Ansprache ist, zeigt **In Warteschlange**, wenn der erste Pipeline-Schritt ihn übernimmt, oder **Nicht in der Pipeline**, wenn nicht. Fahre mit der Maus über das Badge, um den Grund zu sehen. Die Spalte **Unternehmensabgleich** zeigt **Zu prüfen**, **Als falsch bestätigt** oder **Arbeitgeber gewechselt** für [angehaltene Kontakte](#angehaltene-kontakte). Die Spalte **ICP** zeigt den Score des Kontakts als Chip, eingefärbt nach seinem Band; siehe [Score-Chips lesen](/de/configure/icp-and-scoring#score-chips-lesen).
+
+**Telefon** und **E-Mail** stehen in beiden Tabs nach **Jobtitel**. **E-Mail** ist die Adresse, an die der Sales Agent senden würde. **Telefon** ist die Nummer zum Anrufen: Wähle sie, um anzurufen, oder lies **Funktioniert nicht** bei einer Nummer, die probiert wurde und nicht funktioniert, und **Nicht gefunden**, wenn eine Suche leer zurückkam.
+
+Die Spalte **Intent** zeigt die Kaufabsicht des Unternehmens der Person von 0 bis 100: wie viele frische, starke [Kaufsignale](/de/configure/icp-and-scoring#kaufsignale-festlegen) es zeigt, gezählt über die Signale, die ihre Persona zu hören bekommt. Ab 60 trägt die Zahl eine Flamme. Die Spalte erscheint unter **Kontakte** und **Prospects** erst, wenn jemand Intent hat. Unter **Unternehmen** heißt die Spalte **Kaufabsicht**.
+
+Chips neben der Ansichtsauswahl filtern eine Liste mit einem Klick; wähle einen aktiven Chip erneut, um ihn zu lösen:
+
+- **Kaufsignale · N** zeigt nur Zeilen mit Kaufabsicht, unter **Unternehmen**, **Kontakte** und **Prospects**.
+- **Zu prüfen · N** zeigt nur Unternehmen, über die du entscheiden musst, unter **Unternehmen**.
+- **E-Mail prüfen · N** zeigt nur Kontakte mit einer Adresse, die auf ihre Prüfung wartet, unter **Kontakte**.
+
+Ein Chip erscheint nur, solange er Zeilen hat, und seine Zahl ist das, was ein Klick zeigt. Unter **Prospects** zählt er innerhalb des geöffneten Phasen-Tabs.
 
 Der Tab **Prospects** hat einen Tab pro Phase (siehe [Phasen und Ergebnisse](/de/operate/stages-and-outcomes)). Wähle eine Zeile, um den Prospect zu öffnen. In der Liste öffnet ein Klick auf das Datum **E-Mail gesendet** oder **LinkedIn gesendet** oder auf das **Antworten**-Badge direkt den Tab **Verlauf** des Prospects, ein Hover bietet den E-Mail- oder LinkedIn-Verlauf an.
 
@@ -21,6 +33,7 @@ Ein Prospect öffnet sich in einem Seitenpanel mit der Ergebnis-Auswahl und **Ar
 ### Info
 
 - **Hat geantwortet** und **Call**: die Antwort- und die Anrufkarte, wenn sie zutreffen. Siehe [Antworten und Übergabe](/de/operate/replies-and-handoff).
+- **Warum jetzt**: erscheint, wenn für das Unternehmen der Person Signale gefunden wurden. Siehe [Warum jetzt](#warum-jetzt).
 - **Kontakt**: Wähle ein Feld, um es zu bearbeiten. **Sprache**, **Land** und **Seniorität** wählst du aus einer Liste, damit ein Wert immer gleich gespeichert wird. **Sprache** bietet die Sprachen, in denen der Seat des Kontakts schreibt, und **Land** ist das Land der Person, nicht des Unternehmens. **Persona** bestimmt, mit welchem Nachrichten-Prompt der Kontakt angeschrieben wird. Eine Zeile **Übersprungen** bedeutet, dass LinkedIn für diesen Prospect geschlossen ist und die Ansprache nur per E-Mail weiterläuft.
 - **Anreicherung**: alle gefundenen E-Mail-Adressen und Telefonnummern mit ihrem Status. Wähle **Falsch** bei einer falschen E-Mail-Adresse: Der Sales Agent markiert sie und sucht eine andere. Zu Telefonnummern siehe [Wenn die Nummer falsch ist](/de/operate/replies-and-handoff#wenn-die-nummer-falsch-ist). **E-Mail finden**, **Telefon finden** und **Beides finden** erscheinen, wenn etwas fehlt.
 - **Unternehmen**: die Unternehmensdaten, bearbeitbar, und **Unternehmensseite öffnen**. Die Größe **Spanne** wählst du aus den Mitarbeiterbereichen von LinkedIn.
@@ -54,19 +67,43 @@ Warten Adressen auf eine Prüfung, sehen Admins auf **Start** und in **Aufgaben*
 
 Ein geöffnetes Unternehmen zeigt:
 
+- **Warum jetzt**: die Kaufabsicht des Unternehmens und die Signale dahinter. Siehe [Warum jetzt](#warum-jetzt).
 - **Deal**: die Phase des Unternehmens. Siehe [Der Deal liegt beim Unternehmen](/de/operate/stages-and-outcomes#der-deal-liegt-beim-unternehmen).
 - **Identität** und **Unternehmensdaten**: Website, LinkedIn-Seite, Standort, Branche, Mitarbeiterzahl und ähnliche Angaben.
-- **Scoring**: den **Unternehmens-Fit** des Unternehmens und, wenn vorhanden, **Begründung**.
+- **Scoring**: den **Unternehmens-Fit** des Unternehmens und, wenn vorhanden, **Begründung**. Fahre mit der Maus über das Info-Symbol neben dem **Unternehmens-Fit** (**Zu diesem Score**), um zu sehen, woraus er besteht: der Fit aus den Fakten, nach denen bewertet wird, die KI-Prüfung (zum Beispiel **KI-Prüfung +10** oder **Noch keine KI-Prüfung**) und eine Zeile wie **Nicht bekannt: Größe, gilt als erfüllt**, wenn ein von dir gesetzter Filter mangels Fakt nicht beurteilt werden konnte. Admins können den **Unternehmens-Fit** manuell festlegen; siehe [Unternehmens-Fit manuell festlegen](#unternehmens-fit-manuell-festlegen).
 - **Kontakte**: alle Personen im Unternehmen mit ihrer Phase, **Als primär festlegen** und **Im Outreach behalten** für Personen, die durch die Deal-Phase gestoppt wurden.
+
+### Warum jetzt
+
+Wurden für ein Unternehmen Signale gefunden, zeigen die Panels von Unternehmen, Kontakt und Prospect weit oben einen Abschnitt **Warum jetzt**; bei einer Person heißt er **Warum jetzt bei** mit dem Namen des Unternehmens. Die Zahl neben dem Titel ist die Kaufabsicht des Unternehmens. Bei einem Unternehmen ohne Signale erscheint der Abschnitt nie.
+
+Jede Karte ist ein Signal: seine Art, etwa **Übernahme**, **Neue Führungskraft**, **Finanzierung**, **Expansion** oder **Jobanzeigen**, sein Datum oder **kein Datum**, eine kurze Zusammenfassung, ein Score von 0 bis 100 und ein Link zur Quelle. Die zählenden Signale stehen zuerst, das neueste vorn, und drei werden auf einmal gezeigt; wähle **Alle anzeigen** für den Rest. Ein Signal, das nicht mehr zählt, ist abgedunkelt und zeigt **beendet**, oder **nicht gezählt**, wenn seine Art nicht zu denen gehört, die du gewählt hast. Der Abschnitt endet mit dem Datum, an dem das Unternehmen zuletzt geprüft wurde. Bei einer Person zählen nur die Signale, die ihre Persona zu hören bekommt. Lege unter [Einstellungen → Signale](/de/configure/icp-and-scoring#kaufsignale-festlegen) fest, was zählt.
+
+### Unternehmens-Fit manuell festlegen
+
+Admins können die Einschätzung der KI für ein Unternehmen ersetzen. Wähle im Panel des Unternehmens unter **Scoring** die Zahl des **Unternehmens-Fit**, gib eine ganze Zahl von 0 bis 100 ein und drücke `Enter`. Die Zahl zeigt dann **manuell** und ein Stiftsymbol. Die KI-Prüfung überspringt das Unternehmen ab da, und seine Kontakte werden 50/50 mit deiner Zahl verrechnet. Eine Zahl unter 50 deckelt außerdem ihre Scores auf diese Zahl. Fahre mit der Maus über das Info-Symbol neben der Zahl, um das Datum zu sehen.
+
+Um die Entscheidung der KI zurückzugeben, wähle die Zahl, leere das Feld und drücke `Enter`; das Unternehmen wird dann wieder bewertet. Die Option gibt es nicht, wo deine Scores von außerhalb des Sales Agent kommen.
 
 ### Doppelte Unternehmen klären
 
-Vermutet der Sales Agent, dass zwei Unternehmen in deiner Liste eins sind, zeigt das Unternehmen eine Box **Zu prüfen**, die das andere nennt. **Zu prüfen · N** über der Liste filtert diese Unternehmen, und Admins sehen auf **Start** eine Aufgabe. Nur Admins entscheiden:
+Vermutet der Sales Agent, dass zwei Unternehmen in deiner Liste eins sind, zeigt das Unternehmen eine Box **Zu prüfen**, die das andere nennt. Der Chip **Zu prüfen · N** über der Liste filtert diese Unternehmen, und Admins sehen auf **Start** eine Aufgabe. Nur Admins entscheiden:
 
 - **Dasselbe Unternehmen** führt die beiden sofort zusammen. Personen, Signale und Verlauf des neueren Unternehmens gehen auf das ältere über, und das ältere füllt nur die Angaben, die ihm fehlen. Das neuere Unternehmen verschwindet aus **Unternehmen**, der Suche und der Unternehmensauswahl unter **Zur Pipeline hinzufügen**. Ein Hinweis nennt, wie viele Personen, Signale und Verlaufseinträge übergegangen sind. Das Dashboard kennt kein Rückgängigmachen einer Zusammenführung; wende dich an den Support, wenn du versehentlich zusammengeführt hast.
 - **Verschiedene Unternehmen** behält beide und beendet die Frage.
 
 Hat eines der beiden Unternehmen eine Deal-Phase, gilt sie für alle im zusammengeführten Unternehmen. Dieselbe Box fragt auch, ob ein Unternehmen insolvent sein könnte; siehe das [Glossar](/de/reference/glossary).
+
+## Eine Liste als CSV exportieren
+
+Admins laden eine Liste über **Export** in der Werkzeugleiste von **Unternehmen**, **Prospects → Kontakte** und **Prospects → Prospects** herunter. Die Datei enthält die Zeilen, die die Tabelle zeigt, in ihrer Reihenfolge, mit mehr Spalten, als die Tabelle hat. Bei Prospects gehören dazu jede Nachricht mit Betreff, Text, Status und Sendedatum, die Phase und die Outreach-Daten, die Antworten, Anrufergebnisse und Notizen.
+
+Schränkt kein Filter, kein Phasen-Tab und kein Schalter die Liste ein, fragt **Export** nur nach dem Format. Sonst zeigt **Als CSV exportieren**, wie viele Zeilen die Ansicht enthält, und die Filter als Chips: **N exportieren** lädt die Ansicht herunter, **Alle N exportieren** die ganze Liste. Wähle das Format passend dazu, wo du die Datei öffnest:
+
+- **Für Excel** trennt Spalten mit Semikolons, die Excel in einer deutschen Region in Spalten öffnet. Es ist vorausgewählt.
+- **Für einen CRM-Import** trennt Spalten mit Kommas, wie CRM-Importe sie erwarten.
+
+Mitglieder sehen **Export** nicht.
 
 ## Personen oder ein Unternehmen an einen anderen Seat abgeben
 
