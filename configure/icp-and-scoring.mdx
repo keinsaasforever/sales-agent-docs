@@ -38,10 +38,13 @@ The AI scores every company and contact against this description together with t
 | **DACH only** | Only people living in Germany, Austria, Switzerland, or Liechtenstein. Overrides **Locations** for people, not for company headquarters, and stops LinkedIn invites to people outside that region. |
 | **Industries** | LinkedIn industries to focus on. Leave empty for no industry filter. |
 | **Company Size** | Headcount ranges to target. Nothing selected means no size filter. Companies whose headcount is unknown are never filtered out. The ranges also feed **Size fit** in the score. |
+| **Customers** | Whether the companies you look for sell to businesses or consumers: **Both**, **B2B only**, or **B2C only**. It applies only when you search for new companies in [**Our search**](/configure/add-prospects#search-at-your-companies). **B2B only** or **B2C only** uses fewer of our search sources, so a search finds fewer people. |
 | **ICP Keywords** | Specialties, business models, or other terms that indicate a fitting company. |
 | **Max Contacts per Company** | Hard cap on the number of people searched at each company. Three to four is a normal starting point; ten is the maximum. |
 | **Fill up to the max** | When the first source finds fewer people than your maximum, the next sources are asked too. Costs about three times the search credits. |
 | **Retry bad emails at another source** | When a found email turns out invalid, bounces, or sits on a domain that is not the company's, the contact is looked up again at the next source. Each retry costs extra credits. |
+
+Two rows on the page are collapsed and show their current values: **Scoring** holds the score weights and the two thresholds, and **Search and lookups** holds **Max Contacts per Company**, **Fill up to the max**, **Retry bad emails at another source**, **Queue order**, and **Export LinkedIn posts and comments**. Open a row to change it.
 
 ## Contacts outside your filters
 
@@ -78,7 +81,7 @@ Set the factors under **ICP Score Weights**. The weights are relative and do not
 | **High** | 70 to 85 |
 | **Excellent** | above 85 |
 
-Tables show the number; hover the chip to see the band. Panels show the number and the band. A **!** next to a score means it is outdated: you changed your targeting after it was calculated (see [Refresh existing scores](#refresh-existing-scores)).
+Tables show the number; hover the chip to see the band. Panels show the number and the band. A **!** next to a score means it is outdated: you changed your targeting after it was calculated (see [Refresh existing scores](#refresh-existing-scores)). A pencil mark means an admin set a company's **Company Fit** by hand; see [Set a company's fit by hand](/operate/prospects-and-companies#set-a-companys-fit-by-hand).
 
 ## Use the two thresholds
 
@@ -116,24 +119,28 @@ If the instant recalculation did not finish, the to-do **ICP scores need updatin
 
 ## Set buying signals
 
-The **Buying signals** card defines what counts as a reason to write to a company now. Companies with a fresh signal are contacted first, and the message builds on the signal.
+Open **Settings → Signals** to define what counts as a reason to write to a company now. Only admins see this page. Companies with a fresh signal are contacted first, and the message builds on the signal. The signal search runs only once keinsaas switches it on with you; each company searched costs 1 credit.
 
-- **What you sell** — a few sentences on your offer and who buys it. Every event found is judged against it.
-- **Which events count** — pick three to five questions. An event counts only when it answers yes to one of them. Each question shows its strength and, once there is data, how many first messages that used it were answered in the last 90 days.
-- **Which signals each persona hears about** — limit which signals are used in messages to each persona.
-- **Not a signal** — events that should never count, such as awards.
-- **Minimum signal score** — a signal scoring below this never reaches a message.
-- **Use a signal for (days)** — how long a signal is used in messages, counted from the day it happened. A signal without a date gets half that time.
+- **What you sell**: a few sentences on your offer and who buys it. Every event found is judged against it.
+- **Sources**: each source has its own switch.
+  - **News and web** looks for anything that makes what you sell more urgent. Hints sharpen the search, and none is required. Switch on the standard events **Acquisition**, **New leader**, **Funding**, or **Expansion**, add your own events in your own words (up to 20, each up to 200 characters), or select **Suggest from what I sell** and add the ideas you like with one click; nothing is added until you click. Hover a standard event to see its strength and, once there is data, how many first messages that used it were answered in the last 90 days. With nothing set, the search still looks for anything that makes your offer more urgent.
+  - **Job ads** looks at open roles. Add the roles or teams that count, or leave it empty for any team you sell to. Your **Tier 1** job titles from **Targeting** are offered as one-click hints.
+  - **LinkedIn page followers** finds people who follow your company page, through one of your seats with Sales Navigator. It is free. A follow counts toward buying intent, but a message never mentions it.
+  - **Website visitors** is marked **soon**.
+- **Not a signal**: events that should never count, such as awards.
+- **Scoring**, a collapsed row: **Minimum signal score**, where a signal scoring below it never reaches a message; **Use a signal for (days)**, which is how long a signal is used in messages, counted from the day it happened, with half that time for a signal without a date; and **Which signals each persona hears about**. The persona chips decide which signals a message to that persona may use. The search is the same for every persona. Untick them all for people who should get no signal at all.
 
-Save the card with **Save signals**. The signal search runs only once keinsaas switches it on with you; each company searched costs 1 credit.
+Save the page with **Save signals**. Companies with signals show a [**Why now**](/operate/prospects-and-companies#why-now) section in their panels, and the **Buying intent** and **Intent** columns appear.
 
 ## Other targeting settings
+
+The first setting below sits in the **Search and lookups** row; the last two sit in the **Phones and calls** card.
 
 - **Export LinkedIn posts and comments** — when on, the agent reads what each prospect recently posted or commented on LinkedIn before writing to them. It takes a few minutes per prospect. Turning it off also disables the **Settings → Schedule** rule **No posts or comments in the last 30 days**.
 - **Phone lookups per seat** — whether each seat buys phone numbers at all, for contacts at or above the phone enrichment threshold. Email is always looked up. A lookup you start yourself runs regardless, and credits are charged only when a number is found.
 - **Call list** — **Show a lead on the To Call tab** decides how early a lead with a phone number appears there, from **When the invite is sent** to **When all follow-ups are done (default)**, or **Never**. A lead you can no longer reach any other way always appears. This setting never changes what the agent sends.
 
-The **Sales Navigator searches** card and **Keep my pipeline full** bring in new contacts automatically. See [Add prospects](/configure/add-prospects).
+Automatic imports and searches live on **Add to Pipeline**, not here: see [Add prospects](/configure/add-prospects).
 
 ## Credits and filtering
 

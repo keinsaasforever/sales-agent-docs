@@ -35,10 +35,13 @@ Die AI bewertet jedes Unternehmen und jeden Kontakt anhand dieser Beschreibung u
 | **Nur DACH** | Nur Personen mit Wohnort in Deutschland, Österreich, der Schweiz oder Liechtenstein. Überschreibt **Regionen** für Personen, nicht für den Firmensitz, und stoppt LinkedIn-Einladungen an Personen außerhalb dieser Region. |
 | **Branchen** | LinkedIn-Branchen, auf die du dich konzentrierst. Leer lassen, wenn kein Branchenfilter gelten soll. |
 | **Unternehmensgröße** | Zielgrößen nach Mitarbeiterzahl. Ohne Auswahl gilt kein Größenfilter. Unternehmen mit unbekannter Größe werden nie herausgefiltert. Die Bereiche fließen auch über **Größenpassung** in den Score ein. |
+| **Kunden** | Ob die gesuchten Unternehmen an Unternehmen oder an Verbraucher verkaufen: **Beides**, **Nur B2B** oder **Nur B2C**. Es gilt nur, wenn du in [**Unsere Suche**](/de/configure/add-prospects#bei-deinen-unternehmen-suchen) nach neuen Unternehmen suchst. **Nur B2B** oder **Nur B2C** nutzt weniger unserer Suchquellen, sodass eine Suche weniger Personen findet. |
 | **ICP-Schlüsselwörter** | Spezialisierungen, Geschäftsmodelle oder weitere Begriffe, die ein passendes Unternehmen anzeigen. |
 | **Max. Kontakte pro Unternehmen** | Feste Obergrenze für gesuchte Personen je Unternehmen. Drei bis vier sind ein normaler Startwert, zehn das Maximum. |
 | **Bis zum Maximum auffüllen** | Findet die erste Quelle weniger Personen als dein Maximum, werden auch die nächsten Quellen gefragt. Kostet etwa das Dreifache an Such-Credits. |
 | **Fehlerhafte E-Mails bei einer anderen Quelle erneut abfragen** | Erweist sich eine gefundene E-Mail-Adresse als ungültig, prallt sie ab oder liegt sie auf einer fremden Domain, wird der Kontakt bei der nächsten Quelle erneut gesucht. Jeder neue Versuch kostet zusätzliche Credits. |
+
+Zwei Zeilen auf der Seite sind eingeklappt und zeigen ihre aktuellen Werte: **Scoring** enthält die Score-Gewichtung und die beiden Schwellenwerte, **Suche und Abfragen** enthält **Max. Kontakte pro Unternehmen**, **Bis zum Maximum auffüllen**, **Fehlerhafte E-Mails bei einer anderen Quelle erneut abfragen**, **Reihenfolge in der Warteschlange** und **LinkedIn-Beiträge und -Kommentare exportieren**. Öffne eine Zeile, um sie zu ändern.
 
 ## Kontakte außerhalb deiner Filter
 
@@ -75,7 +78,7 @@ Die Faktoren stellst du unter **ICP-Score-Gewichtung** ein. Die Gewichtungen sin
 | **Hoch** | 70 bis 85 |
 | **Exzellent** | über 85 |
 
-Tabellen zeigen die Zahl; fahre mit der Maus über den Chip, um das Band zu sehen. Panels zeigen Zahl und Band. Ein **!** neben einem Score bedeutet, dass er veraltet ist: Du hast dein Targeting geändert, nachdem er berechnet wurde (siehe [Bestehende Scores aktualisieren](#bestehende-scores-aktualisieren)).
+Tabellen zeigen die Zahl; fahre mit der Maus über den Chip, um das Band zu sehen. Panels zeigen Zahl und Band. Ein **!** neben einem Score bedeutet, dass er veraltet ist: Du hast dein Targeting geändert, nachdem er berechnet wurde (siehe [Bestehende Scores aktualisieren](#bestehende-scores-aktualisieren)). Ein Stiftsymbol bedeutet, dass ein Admin den **Unternehmens-Fit** eines Unternehmens manuell festgelegt hat; siehe [Unternehmens-Fit manuell festlegen](/de/operate/prospects-and-companies#unternehmens-fit-manuell-festlegen).
 
 ## Die zwei Schwellenwerte verwenden
 
@@ -90,7 +93,7 @@ Nur Kontakte mit mindestens diesem Score erhalten eine Telefonsuche: in automati
 Liegt dieser Schwellenwert unter dem Pipeline-Schwellenwert, warnt das Dashboard: Diese Kontakte bekämen eine bezahlte Telefonsuche, gelangten aber nie in die Pipeline. Mit dem Link **Auf … erhöhen**, der den Zielwert nennt, gleichst du beide an.
 
 <Warning>
-  Senke einen Schwellenwert nicht nur, um eine Queue zu füllen. Prüfe zuerst Quelle, Zuweisung des Inhabers, Ausschlüsse und Score-Kriterien. Eine größere Queue mit schwächeren Kandidaten verbraucht Kapazität und Credits, ohne den Fit zu verbessern.
+  Senke einen Schwellenwert nicht nur, um eine Queue zu füllen. Prüfe zuerst Quelle, Zuweisung des Owners, Ausschlüsse und Score-Kriterien. Eine größere Queue mit schwächeren Kandidaten verbraucht Kapazität und Credits, ohne den Fit zu verbessern.
 </Warning>
 
 ## Reihenfolge der Queue wählen
@@ -113,24 +116,28 @@ Ist die sofortige Neuberechnung nicht durchgelaufen, erscheint in deinen Benachr
 
 ## Kaufsignale festlegen
 
-Die Karte **Kaufsignale** legt fest, was als Anlass gilt, ein Unternehmen jetzt anzuschreiben. Unternehmen mit einem frischen Signal werden zuerst kontaktiert, und die Nachricht baut darauf auf.
+Öffne **Einstellungen → Signale**, um festzulegen, was als Anlass gilt, ein Unternehmen jetzt anzuschreiben. Nur Admins sehen diese Seite. Unternehmen mit einem frischen Signal werden zuerst kontaktiert, und die Nachricht baut auf dem Signal auf. Die Signalsuche läuft erst, wenn keinsaas sie mit dir einschaltet; jedes durchsuchte Unternehmen kostet 1 Credit.
 
-- **Was du verkaufst** — ein paar Sätze zu deinem Angebot und wer es kauft. Jedes gefundene Ereignis wird daran gemessen.
-- **Welche Ereignisse zählen** — wähle drei bis fünf Fragen. Ein Ereignis zählt nur, wenn es eine davon mit Ja beantwortet. Jede Frage zeigt ihre Stärke und, sobald Daten vorliegen, wie viele erste Nachrichten damit in den letzten 90 Tagen beantwortet wurden.
-- **Welche Signale jede Persona zu hören bekommt** — schränkt ein, welche Signale in Nachrichten an jede Persona genutzt werden.
-- **Kein Signal** — Ereignisse, die nie zählen sollen, etwa Auszeichnungen.
-- **Mindest-Score für Signale** — ein Signal unter diesem Wert erreicht nie eine Nachricht.
-- **Signal verwenden für (Tage)** — wie lange ein Signal in Nachrichten genutzt wird, gezählt ab dem Tag des Ereignisses. Ein Signal ohne Datum erhält die halbe Zeit.
+- **Was du verkaufst**: ein paar Sätze zu deinem Angebot und wer es kauft. Jedes gefundene Ereignis wird daran gemessen.
+- **Quellen**: Jede Quelle hat einen eigenen Schalter.
+  - **News und Web** sucht nach allem, was dein Angebot dringlicher macht. Hinweise schärfen die Suche, keiner ist Pflicht. Schalte die Standardereignisse **Übernahme**, **Neue Führungskraft**, **Finanzierung** oder **Expansion** ein, füge eigene Ereignisse in eigenen Worten hinzu (bis zu 20, jedes bis zu 200 Zeichen) oder wähle **Aus meinem Angebot vorschlagen** und übernimm die Ideen, die dir gefallen, mit einem Klick; ohne Klick wird nichts hinzugefügt. Fahre mit der Maus über ein Standardereignis, um seine Stärke zu sehen und, sobald Daten vorliegen, wie viele erste Nachrichten damit in den letzten 90 Tagen beantwortet wurden. Ist nichts eingestellt, sucht die Suche trotzdem nach allem, was dein Angebot dringlicher macht.
+  - **Jobanzeigen** schaut auf offene Stellen. Trage die Rollen oder Teams ein, die zählen, oder lass das Feld leer für jedes Team, an das du verkaufst. Deine **Tier-1**-Jobtitel aus der **Zielgruppe** werden als Hinweise mit einem Klick angeboten.
+  - **Follower der LinkedIn-Seite** findet Personen, die deiner Unternehmensseite folgen, über einen deiner Seats mit Sales Navigator. Das ist kostenlos. Ein Follow zählt für die Kaufabsicht, aber eine Nachricht erwähnt ihn nie.
+  - **Website-Besucher** ist mit **bald** markiert.
+- **Kein Signal**: Ereignisse, die nie zählen sollen, etwa Auszeichnungen.
+- **Scoring**, eine eingeklappte Zeile: **Mindest-Score für Signale**, unter dem ein Signal nie eine Nachricht erreicht; **Signal verwenden für (Tage)**, also wie lange ein Signal in Nachrichten genutzt wird, gezählt ab dem Tag des Ereignisses, wobei ein Signal ohne Datum die halbe Zeit erhält; und **Welche Signale jede Persona zu hören bekommt**. Die Persona-Chips legen fest, welche Signale eine Nachricht an diese Persona nutzen darf. Die Suche ist für alle Personas dieselbe. Entferne alle Häkchen für Personen, die gar kein Signal bekommen sollen.
 
-Speichere die Karte mit **Signale speichern**. Die Signalsuche läuft erst, wenn keinsaas sie mit dir einschaltet; jedes durchsuchte Unternehmen kostet 1 Credit.
+Speichere die Seite mit **Signale speichern**. Unternehmen mit Signalen zeigen in ihren Panels den Abschnitt [**Warum jetzt**](/de/operate/prospects-and-companies#warum-jetzt), und die Spalten **Kaufabsicht** und **Intent** erscheinen.
 
 ## Weitere Einstellungen unter Zielgruppe
 
+Die erste Einstellung unten liegt in der Zeile **Suche und Abfragen**, die letzten beiden in der Karte **Telefonnummern und Calls**.
+
 - **LinkedIn-Beiträge und -Kommentare exportieren** — ist die Option aktiv, liest der Agent vor dem Schreiben, was ein Prospect kürzlich auf LinkedIn gepostet oder kommentiert hat. Das dauert einige Minuten pro Prospect. Schaltest du sie aus, wirkt auch die Regel **Keine Beiträge oder Kommentare in den letzten 30 Tagen** unter **Einstellungen → Zeitplan** nicht mehr.
 - **Telefonnummern-Suchen pro Seat** — ob ein Seat überhaupt Telefonnummern kauft, für Kontakte ab dem **ICP-Schwellenwert für die Telefonanreicherung**. E-Mail-Adressen werden immer gesucht. Eine selbst gestartete Suche läuft unabhängig davon; Credits werden nur berechnet, wenn eine Nummer gefunden wird.
-- **Call-Liste** — **Lead im Tab „Anrufen“ anzeigen** legt fest, wie früh ein Lead mit Telefonnummer dort erscheint, von **Wenn die Kontaktanfrage gesendet wird** bis **Wenn alle Follow-ups abgeschlossen sind (Standard)**, oder **Nie**. Ein Lead, den du auf keinem anderen Weg mehr erreichst, erscheint immer. Diese Einstellung ändert nie, was der Agent sendet.
+- **Call-Liste** — **Lead im Tab „Anzurufen“ anzeigen** legt fest, wie früh ein Lead mit Telefonnummer dort erscheint, von **Wenn die Kontaktanfrage gesendet wird** bis **Wenn alle Follow-ups abgeschlossen sind (Standard)**, oder **Nie**. Ein Lead, den du auf keinem anderen Weg mehr erreichst, erscheint immer. Diese Einstellung ändert nie, was der Agent sendet.
 
-Die Karte **Sales-Navigator-Suchen** und **Meine Pipeline gefüllt halten** bringen neue Kontakte automatisch herein. Siehe [Prospects hinzufügen](/de/configure/add-prospects).
+Automatische Importe und Suchen findest du unter **Zur Pipeline hinzufügen**, nicht hier: siehe [Prospects hinzufügen](/de/configure/add-prospects).
 
 ## Credits und Filterung
 
