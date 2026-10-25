@@ -27,6 +27,7 @@ A reply on email or LinkedIn stops automated outreach on both channels. The stag
 | Stage | Meaning |
 | --- | --- |
 | **Replied** | A positive or neutral reply, or one not yet read by the assistant. It waits for you to answer. |
+| **In conversation** | You answered a reply that wanted an answer, with **Reply now** or **Mark answered**, or the prospect's call ended on **Send more info**. It is not an outcome. A new LinkedIn message from the person brings the stage back to **Replied**. |
 | **Declined** | A negative reply. It is not an outcome: you can still approach the person yourself later. |
 | **Not right now** | A timing objection: the prospect named a later time. |
 
@@ -36,7 +37,7 @@ Outcomes record the real-world result of a conversation. Every outcome immediate
 
 | Outcome | Meaning |
 | --- | --- |
-| **Meeting** | A meeting is booked or the conversation has moved to a human-to-human interaction. |
+| **Meeting** | A meeting is agreed, booked in a calendar or not, or the conversation has moved to a human-to-human interaction. |
 | **Offer Sent** | A commercial proposal has been sent to the prospect. |
 | **Closed Deal** | The opportunity was won. |
 | **Not interesting** | You decided the lead is not interesting for you. |
@@ -51,7 +52,7 @@ Marking **Meeting**, **Offer Sent**, or **Closed Deal**, or marking a reply as p
 
 ## To Call list
 
-**To Call** is a tab on **Prospects**, not a stage: a lead can be **Messaged** and due a call at the same time. A lead with a usable phone number lands there at the moment you choose under **Settings → Targeting → Call list** (by default when all follow-ups are done). A lead marked **Unreachable** with a phone number is on the list whatever you choose. A reply or any other outcome takes the lead off it.
+**To Call** is a tab on **Prospects**, not a stage: a lead can be **Messaged** and due a call at the same time. A lead with a usable phone number lands there at the moment you choose under **Settings → Targeting → Call list** (by default when all follow-ups are done). A lead marked **Unreachable** with a phone number is on the list whatever you choose. A reply, a call that ended on **Send more info**, or any other outcome takes the lead off it.
 
 ## Archived
 
@@ -68,7 +69,7 @@ When multiple facts apply to the same prospect, the displayed stage follows thes
 
 1. **Archived takes precedence over everything.** An archived prospect is never shown as active, regardless of any other fact.
 2. **An outcome other than Unreachable takes precedence over a reply.** If you have recorded **Closed Deal** but a reply was also detected, the outcome is displayed.
-3. **A detected reply takes precedence over everything below.** A prospect who replied shows **Replied**, **Declined**, or **Not right now**, even if it was later marked **Unreachable**.
+3. **A detected reply takes precedence over everything below.** A prospect who replied shows **Replied**, **In conversation**, **Declined**, or **Not right now**, even if it was later marked **Unreachable**.
 4. **Unreachable comes next.** A phone number does not change the stage; it puts the lead on the **To Call** list.
 5. **Otherwise, the stage reflects the furthest recorded automated action.**
 

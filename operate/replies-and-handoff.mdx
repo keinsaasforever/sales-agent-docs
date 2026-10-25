@@ -31,11 +31,13 @@ The Sales Agent reads each reply and sorts it. The **Reply** column on **Prospec
 
 **Declined** and **Not right now** keep the prospect in play, so you can approach them again later. **Asked to stop** is an outcome and keeps them out of all automated outreach.
 
+A reply that waits for your answer shows **Replied**. Once you answer it, the stage becomes **In conversation**; see [Take over the conversation](#take-over-the-conversation).
+
 ## Check the verdict
 
-Open a prospect who replied. The **Info** tab starts with a **They replied** card that shows the reply and its date, with the automatic verdict already selected. Select **Positive**, **Not right now**, or **Negative** to correct it, or select the chosen one again to clear it. A reply that ended as **Asked to stop**, **Wrong person**, or **Email bounced** is shown but cannot be changed here: change the outcome instead. **Later** hides the card until you open the prospect again.
+Open a prospect who replied. The **Info** tab starts with a **They replied** card that shows the reply and its date, with the automatic verdict already selected. Select **Positive**, **Not right now**, or **Negative** to correct it, or select the chosen one again to clear it. A reply that ended as **Asked to stop**, **Wrong person**, or **Email bounced** is shown but cannot be changed here: change the outcome instead. **Later** hides the card until you open the prospect again. On a reply that asks for no answer, such as a no, a later time, a request to stop, or the wrong person, **Skip** takes the place of **Later**.
 
-Marking a reply **Positive** puts the company **In conversation** and stops outreach to the prospect's colleagues. See [the deal lives on the company](/operate/stages-and-outcomes#the-deal-lives-on-the-company).
+Marking a reply **Positive** puts the company **Interested** and stops outreach to the prospect's colleagues. See [the deal lives on the company](/operate/stages-and-outcomes#the-deal-lives-on-the-company). While the prospect has no outcome, a **Positive** reply also shows **Meeting agreed**, which sets the outcome **Meeting** in one click.
 
 ## Take over the conversation
 
@@ -43,7 +45,11 @@ When a reply arrives, move quickly and personally:
 
 <Steps>
   <Step title="Open the thread">
-    Select **Reply now** on the reply card to open the exact email or LinkedIn thread in a new tab. The **Timeline** tab has **View Email** and **View LinkedIn**, each naming the mailbox or seat it belongs to. On the **Prospects** list, hover the **Email Sent** or **LinkedIn Sent** date or the **Reply** badge for the same buttons. A thread opens only if you are signed in to that mailbox or that seat's LinkedIn. When the exact thread is not known, the button is hidden.
+    Select **Reply now** on the reply card to open the exact email or LinkedIn thread in a new tab. The **Timeline** tab has **View Email** and **View LinkedIn**, each naming the mailbox or seat it belongs to. On the **Prospects** list, hover the **Email Sent** or **LinkedIn Sent** date or the **Reply** badge for the same buttons. A thread opens only if you are signed in to that mailbox or that seat's LinkedIn.
+
+    **Reply now** also marks the reply answered, and a prospect whose reply wanted an answer moves from **Replied** to **In conversation**. When the exact thread is not known, the button is hidden and **Mark answered** takes its place: select it once you have answered elsewhere. The card then shows **Answered** with the date and **Undo**, for a click that only read the reply.
+
+    On a reply that asks for no answer, **Reply now** is offered quietly next to **Skip**. **Skip** closes the card without an answer and sets no outcome. Neither changes the prospect's stage.
   </Step>
   <Step title="Respond personally">
     Reply directly from your connected LinkedIn or email account. Your personal reply is the handoff. Do not use the Sales Agent to send further automated messages once a conversation is live.
@@ -52,20 +58,22 @@ When a reply arrives, move quickly and personally:
     On the **Notes** tab, use **Add note** to record next steps or background. Each note shows who wrote it, and only the author can edit or delete it.
   </Step>
   <Step title="Set the Meeting outcome">
-    As soon as the conversation enters your sales process, set the outcome to **Meeting**. This confirms the handoff and ensures automation does not reclaim the prospect.
+    As soon as the conversation enters your sales process, set the outcome to **Meeting**: select **Meeting agreed** on a **Positive** reply, or use the outcome selector. This confirms the handoff and ensures automation does not reclaim the prospect.
   </Step>
   <Step title="Advance the outcome as the deal progresses">
     Update to **Offer Sent**, **Closed Deal**, **Not interesting**, or **Lost Deal** as the opportunity moves forward. Keeping the outcome current gives you accurate pipeline visibility.
   </Step>
 </Steps>
 
-Home and **Tasks** show how many prospects replied and are waiting on you. A prospect leaves that count when you set an outcome or mark the reply **Negative** or **Not right now**.
+Home and **Tasks** show how many prospects replied and are waiting on you. A prospect leaves that count when you answer the reply, set an outcome, or mark the reply **Negative** or **Not right now**.
+
+If the person writes again on LinkedIn, the prospect returns to **Replied**. A later email in the same thread is not read, so an email conversation stays **In conversation** until you set an outcome.
 
 ## Call the To Call list
 
 The **To Call** tab on **Prospects** lists prospects with a working phone number who are due a call. By default, a prospect joins once all follow-ups are done. Admins can change this in **Settings → Targeting** under **Call list** (**Show a lead on the To Call tab**): **Never**, **When the invite is sent**, **When the invite is accepted**, **When the first message goes out**, or **When all follow-ups are done (default)**. The setting never changes what the agent sends or when.
 
-A prospect marked **Unreachable** who has a number is always on the list. A prospect who replied is not.
+A prospect marked **Unreachable** who has a number is always on the list. A prospect who replied, or whose call ended on **Send more info**, is not.
 
 **To Call** is a signal, not an automated action. It means the next step belongs to you.
 
@@ -75,12 +83,21 @@ The **Call** card on the prospect's **Info** tab shows the number to dial. Selec
 
 | Result | What happens |
 | --- | --- |
-| **Positive** | Outcome **Meeting**. Stops outreach. |
+| **Meeting agreed** | A meeting is agreed, booked in a calendar or not. Outcome **Meeting**. Stops outreach. |
+| **Send more info** | They are interested but want information first. No outcome: the prospect moves to **In conversation**, outreach stops so you can send the information yourself, and the company becomes **Interested**, which pauses outreach to its other contacts. |
 | **Negative** | Outcome **Asked to stop**. Stops outreach. |
 | **Wrong person** | Outcome **Wrong person**. Stops outreach. |
 | **Nobody answered** | Logged with your note. Outreach goes on and the prospect stays on **To Call**. |
 
-If the prospect already has **Offer Sent**, **Closed Deal**, or **Lost Deal**, a logged call keeps that outcome. The card counts unanswered tries. **Not yet** hides the card for now. A recorded call shows who logged it, and **Clear outcome** removes the result and restores the earlier outcome.
+If the prospect already has **Offer Sent**, **Closed Deal**, or **Lost Deal**, a logged call keeps that outcome, and **Send more info** keeps **Meeting** too. A company that already has a stage keeps it. The card counts unanswered tries. **Not yet** hides the card for now. A recorded call shows who logged it, and **Clear outcome** removes the result and restores the earlier outcome.
+
+### Log a call on a contact
+
+A contact who is not in outreach yet has a **Call** card too, once a number is on file. Logging a call makes the person a prospect and opens their prospect panel, so the call and your note have a place to live. **Nobody answered** also starts outreach for them, as it does for any prospect; your pipeline threshold does not apply, because you chose to call them. It is refused, with a message, where the Sales Agent would not contact the person anyway: the contact has no seat, is held for review, or works at a company that has a deal stage or is on your blacklist.
+
+**Clear outcome** on such a call turns the person back into a plain contact. If they have received notes, messages, or replies since the call, it is refused: change the outcome instead.
+
+Phone numbers and email addresses of people who asked to stop, and of people at a blacklisted company, show greyed instead of as links; see [Prospects and companies](/operate/prospects-and-companies#contacts-and-prospects).
 
 ### When the number is wrong
 
