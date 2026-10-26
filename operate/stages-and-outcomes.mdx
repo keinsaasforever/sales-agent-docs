@@ -14,7 +14,7 @@ Understanding the distinction helps you know when to intervene and what each sta
 
 ## Stages are automatic
 
-Stages update as the pipeline acts on a prospect or as the prospect responds. You cannot select **Invite Sent**, **Connected**, **Messaged**, or **Replied** from a dropdown. They appear when the corresponding event is recorded.
+Stages update as the pipeline acts on a prospect or as the prospect responds. You cannot select **Invite Sent**, **Connected**, **Messaged**, **Replied**, or **In conversation** from a dropdown. They appear when the corresponding event is recorded.
 
 For example:
 
@@ -22,10 +22,11 @@ For example:
 - Detecting an accepted connection produces **Connected**
 - Sending an initial email or LinkedIn message produces **Messaged**
 - Detecting a reply on either channel produces **Replied**, **Declined**, or **Not right now**, depending on what the reply says
+- Answering a reply that wanted an answer, with **Reply now** or **Mark answered**, produces **In conversation**
 
-**Declined** and **Not right now** are not outcomes. The sequence has stopped because the person replied, but the prospect stays in play and can be approached again later. See [Replies and handoff](/operate/replies-and-handoff) for how replies are sorted.
+**Declined** and **Not right now** are not outcomes. The sequence has stopped because the person replied, but the prospect stays in play and can be approached again later. **In conversation** is not an outcome either: it means the reply was answered and you are waiting on them. See [Replies and handoff](/operate/replies-and-handoff) for how replies are sorted.
 
-On **Prospects → Prospects**, each stage has its own tab with a count. The tab bar shows the outreach stages, **To Call**, **Replied**, **Declined**, and **Not right now**. Use **Tabs** to add others, such as **Meeting** or **Archived**. **To Call** is a call list, not a stage: a prospect on it also appears under its stage.
+On **Prospects → Prospects**, each stage has its own tab with a count. The tab bar shows the outreach stages, **To Call**, **Replied**, **In conversation**, **Declined**, and **Not right now**. **In conversation** appears with **Replied** and has no entry of its own in **Tabs**. Use **Tabs** to add others, such as **Meeting** or **Archived**. **To Call** is a call list, not a stage: a prospect on it also appears under its stage.
 
 See the [pipeline stage reference](/reference/pipeline-stages) for a complete list of every stage and the conditions that trigger it.
 
@@ -35,7 +36,7 @@ Open a prospect and use the outcome selector next to the name. Every outcome imm
 
 | Outcome | When to use it |
 | --- | --- |
-| **Meeting** | A meeting is booked or the conversation has entered your direct sales process. |
+| **Meeting** | A meeting is agreed, booked in a calendar or not, or the conversation has entered your direct sales process. |
 | **Offer Sent** | You have sent a commercial proposal to the prospect. |
 | **Closed Deal** | The opportunity was won and the deal is complete. |
 | **Not interesting** | The lead is not interesting for you and should receive no further automated outreach. |
@@ -44,9 +45,9 @@ Open a prospect and use the outcome selector next to the name. Every outcome imm
 | **Lost Deal** | A progressed opportunity was lost after a proposal or active discussion. |
 | **Unreachable** | All available automated channels are exhausted or invalid for this contact. |
 
-Every option shows "stops outreach" in the menu. The Sales Agent also sets some outcomes itself: **Asked to stop** when a reply asks to stop, and **Unreachable** when no email address or LinkedIn profile is left to use. A logged call can set **Meeting**, **Asked to stop**, or **Wrong person** (see [calls](/operate/replies-and-handoff#call-the-to-call-list)).
+Every option shows "stops outreach" in the menu. The Sales Agent also sets some outcomes itself: **Asked to stop** when a reply asks to stop, and **Unreachable** when no email address or LinkedIn profile is left to use. A logged call can set **Meeting**, **Asked to stop**, or **Wrong person**; a call that ends on **Send more info** sets no outcome and moves the prospect to **In conversation** (see [calls](/operate/replies-and-handoff#call-the-to-call-list)).
 
-When a reply is on file and no outcome is set, the selector shows **Replied** instead of **In play**, because the reply has already stopped the sequence.
+When a reply is on file and no outcome is set, the selector shows the stage the reply gave the prospect, such as **Replied**, **In conversation**, or **Declined**, instead of **In play**, because the reply has already stopped the sequence.
 
 ### Add a reason
 
@@ -76,9 +77,9 @@ A deal is with a company, not only with one person. When you set **Meeting**, **
 - stops outreach to everyone else at that company
 - adds the company to your blacklist, so a later search does not bring it back
 
-Marking a reply **Positive** does the same with the company stage **In conversation**. Colleagues stopped this way show **Stopped — the company has a deal stage**. Select **Keep in outreach** next to a colleague to put that one person back.
+Marking a reply **Positive** does the same with the company stage **Interested**, and so does a call that ends on **Send more info** while the company has no stage. Colleagues stopped this way show **Stopped — the company has a deal stage**. Select **Keep in outreach** next to a colleague to put that one person back.
 
-To manage the stage yourself, open the company on **Companies** and use the **Deal** selector: **In conversation**, **Meeting**, **Offer sent**, **Closed deal**, **Lost deal**, or **Not interesting**. If no primary contact is set yet, choose **Make primary** next to the person the deal is with. Set the stage back to **Reaching out — automatic** to undo it: stopped colleagues return to outreach and the blacklist entry is removed. Returning the primary contact to **In play** clears the company stage that the outcome set.
+To manage the stage yourself, open the company on **Companies** and use the **Deal** selector: **Interested**, **Meeting**, **Offer sent**, **Closed deal**, **Lost deal**, or **Not interesting**. If no primary contact is set yet, the panel asks **Who is your contact at this company?**; choose **Make primary** next to the person the deal is with. Set the stage back to **Reaching out — automatic** to undo it: stopped colleagues return to outreach and the blacklist entry is removed. Returning the primary contact to **In play** clears the company stage that the outcome set.
 
 ### Stop a whole company
 

@@ -11,7 +11,7 @@ Phasen und Ergebnisse beantworten unterschiedliche Fragen:
 
 ## Phasen sind automatisch
 
-Du kannst **Kontaktanfrage gesendet**, **Verbunden**, **Angeschrieben** oder **Geantwortet** nicht manuell auswählen. Diese Phasen erscheinen, wenn die entsprechende Aktion oder das Ereignis aufgezeichnet wird.
+Du kannst **Kontaktanfrage gesendet**, **Verbunden**, **Angeschrieben**, **Geantwortet** oder **Im Gespräch** nicht manuell auswählen. Diese Phasen erscheinen, wenn die entsprechende Aktion oder das Ereignis aufgezeichnet wird.
 
 Beispiele:
 
@@ -19,10 +19,11 @@ Beispiele:
 - eine erkannte Annahme ergibt **Verbunden**
 - eine erste E-Mail oder LinkedIn-Nachricht ergibt **Angeschrieben**
 - eine erkannte Antwort ergibt je nach Inhalt **Geantwortet**, **Abgelehnt** oder **Nicht jetzt**
+- das Beantworten einer Antwort, die eine Antwort brauchte, mit **Jetzt antworten** oder **Als beantwortet markieren**, ergibt **Im Gespräch**
 
-**Abgelehnt** und **Nicht jetzt** sind keine Ergebnisse. Die Sequenz ist gestoppt, weil die Person geantwortet hat, der Prospect bleibt aber im Spiel und kann später erneut angesprochen werden. Wie Antworten eingeordnet werden, steht unter [Antworten und Übergabe](/de/operate/replies-and-handoff).
+**Abgelehnt** und **Nicht jetzt** sind keine Ergebnisse. Die Sequenz ist gestoppt, weil die Person geantwortet hat, der Prospect bleibt aber im Spiel und kann später erneut angesprochen werden. **Im Gespräch** ist ebenfalls kein Ergebnis: Es bedeutet, dass die Antwort beantwortet ist und du auf die Person wartest. Wie Antworten eingeordnet werden, steht unter [Antworten und Übergabe](/de/operate/replies-and-handoff).
 
-Unter **Prospects → Prospects** hat jede Phase einen eigenen Tab mit Anzahl. Die Tab-Leiste zeigt die Outreach-Phasen, **Anzurufen**, **Geantwortet**, **Abgelehnt** und **Nicht jetzt**. Über **Tabs** fügst du weitere hinzu, etwa **Termin** oder **Archiviert**. **Anzurufen** ist eine Call-Liste, keine Phase: Ein Prospect darauf erscheint zusätzlich unter seiner Phase.
+Unter **Prospects → Prospects** hat jede Phase einen eigenen Tab mit Anzahl. Die Tab-Leiste zeigt die Outreach-Phasen, **Anzurufen**, **Geantwortet**, **Im Gespräch**, **Abgelehnt** und **Nicht jetzt**. **Im Gespräch** erscheint zusammen mit **Geantwortet** und hat unter **Tabs** keinen eigenen Eintrag. Über **Tabs** fügst du weitere hinzu, etwa **Termin** oder **Archiviert**. **Anzurufen** ist eine Call-Liste, keine Phase: Ein Prospect darauf erscheint zusätzlich unter seiner Phase.
 
 Alle Phasen findest du in der [Referenz der Pipeline-Phasen](/de/reference/pipeline-stages).
 
@@ -32,7 +33,7 @@ Alle Phasen findest du in der [Referenz der Pipeline-Phasen](/de/reference/pipel
 
 | Ergebnis | Verwendung |
 | --- | --- |
-| **Termin** | Ein Termin wurde vereinbart oder das Gespräch ist in deinen direkten Vertriebsprozess übergegangen. |
+| **Termin** | Ein Termin ist vereinbart, ob im Kalender eingetragen oder nicht, oder das Gespräch ist in deinen direkten Vertriebsprozess übergegangen. |
 | **Angebot gesendet** | Du hast ein kommerzielles Angebot gesendet. |
 | **Deal abgeschlossen** | Die Opportunity wurde gewonnen. |
 | **Nicht interessant** | Der Lead ist für dich nicht interessant und soll keine automatisierte Ansprache mehr erhalten. |
@@ -41,9 +42,9 @@ Alle Phasen findest du in der [Referenz der Pipeline-Phasen](/de/reference/pipel
 | **Deal verloren** | Eine fortgeschrittene Opportunity wurde verloren. |
 | **Nicht erreichbar** | Die verfügbaren automatisierten Kanäle sind ausgeschöpft oder ungültig. |
 
-Jede Option zeigt „stoppt Outreach“ im Menü. Einige Ergebnisse setzt der Sales Agent selbst: **Stopp gewünscht**, wenn eine Antwort darum bittet, und **Nicht erreichbar**, wenn weder E-Mail-Adresse noch LinkedIn-Profil übrig ist. Ein erfasster Anruf kann **Termin**, **Stopp gewünscht** oder **Falsche Person** setzen (siehe [Anrufe](/de/operate/replies-and-handoff#die-call-liste-abtelefonieren)).
+Jede Option zeigt „stoppt Outreach“ im Menü. Einige Ergebnisse setzt der Sales Agent selbst: **Stopp gewünscht**, wenn eine Antwort darum bittet, und **Nicht erreichbar**, wenn weder E-Mail-Adresse noch LinkedIn-Profil übrig ist. Ein erfasster Anruf kann **Termin**, **Stopp gewünscht** oder **Falsche Person** setzen; ein Anruf, der mit **Mehr Infos senden** endet, setzt kein Ergebnis und stellt den Prospect auf **Im Gespräch** (siehe [Anrufe](/de/operate/replies-and-handoff#die-call-liste-abtelefonieren)).
 
-Liegt eine Antwort vor und ist kein Ergebnis gesetzt, zeigt die Auswahl **Geantwortet** statt **Im Outreach**, weil die Antwort die Sequenz bereits gestoppt hat.
+Liegt eine Antwort vor und ist kein Ergebnis gesetzt, zeigt die Auswahl die Phase, in die die Antwort den Prospect gebracht hat, etwa **Geantwortet**, **Im Gespräch** oder **Abgelehnt**, statt **Im Outreach**, weil die Antwort die Sequenz bereits gestoppt hat.
 
 ### Grund ergänzen
 
@@ -73,9 +74,9 @@ Ein Deal läuft mit einem Unternehmen, nicht nur mit einer Person. Wenn du bei e
 - stoppt die Ansprache aller anderen Personen in diesem Unternehmen
 - kommt das Unternehmen auf deine Sperrliste, damit eine spätere Suche es nicht zurückbringt
 
-Wenn du eine Antwort als **Positiv** markierst, passiert dasselbe mit der Deal-Phase **Im Gespräch**. So gestoppte Kolleginnen und Kollegen zeigen **Gestoppt – das Unternehmen hat eine Deal-Phase**. Mit **Im Outreach behalten** neben einer Person holst du nur diese eine Person zurück.
+Wenn du eine Antwort als **Positiv** markierst, passiert dasselbe mit der Deal-Phase **Interessiert**, ebenso bei einem Anruf, der mit **Mehr Infos senden** endet, solange das Unternehmen keine Phase hat. So gestoppte Kolleginnen und Kollegen zeigen **Gestoppt – das Unternehmen hat eine Deal-Phase**. Mit **Im Outreach behalten** neben einer Person holst du nur diese eine Person zurück.
 
-Um die Phase selbst zu verwalten, öffne das Unternehmen unter **Unternehmen** und nutze die Auswahl **Deal**: **Im Gespräch**, **Termin**, **Angebot gesendet**, **Deal abgeschlossen**, **Deal verloren** oder **Nicht interessant**. Ist noch kein **Hauptkontakt** gesetzt, wähle **Als primär festlegen** bei der Person, mit der der Deal läuft. Setze die Phase auf **Im Outreach – automatisch** zurück, um alles rückgängig zu machen: Gestoppte Kolleginnen und Kollegen kehren in die Ansprache zurück und der Eintrag auf der Sperrliste wird entfernt. Setzt du den **Hauptkontakt** auf **Im Outreach** zurück, wird die Deal-Phase des Unternehmens gelöscht, die sein Ergebnis gesetzt hat.
+Um die Phase selbst zu verwalten, öffne das Unternehmen unter **Unternehmen** und nutze die Auswahl **Deal**: **Interessiert**, **Termin**, **Angebot gesendet**, **Deal abgeschlossen**, **Deal verloren** oder **Nicht interessant**. Ist noch kein **Hauptkontakt** gesetzt, fragt das Panel **Wer ist dein Ansprechpartner bei diesem Unternehmen?**; wähle **Als primär festlegen** bei der Person, mit der der Deal läuft. Setze die Phase auf **Im Outreach – automatisch** zurück, um alles rückgängig zu machen: Gestoppte Kolleginnen und Kollegen kehren in die Ansprache zurück und der Eintrag auf der Sperrliste wird entfernt. Setzt du den **Hauptkontakt** auf **Im Outreach** zurück, wird die Deal-Phase des Unternehmens gelöscht, die sein Ergebnis gesetzt hat.
 
 ### Ein ganzes Unternehmen stoppen
 
