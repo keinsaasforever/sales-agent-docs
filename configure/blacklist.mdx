@@ -5,7 +5,7 @@ description: "Block specific companies by name or domain so the Sales Agent neve
 icon: "ban"
 ---
 
-Use **Settings → Blacklist** to prevent the Sales Agent from contacting companies you should never reach. Only admins of your account see this page. The blacklist is checked during every search, import, and pipeline run.
+Use **Settings → Blacklist** to prevent the Sales Agent from contacting companies you should never reach, and, under **Do not contact**, single people who asked not to be contacted. Only admins of your account see this page. The blacklist is checked during every search, import, and pipeline run.
 
 Typical entries include:
 
@@ -29,6 +29,10 @@ The Sales Agent normalizes names and domains and silently skips entries that alr
 
 **Prefer domains over names.** Company names vary across sources — the same business may appear as "Acme Corp," "Acme Corporation," or "ACME." A domain is a more reliable identifier and produces fewer missed matches.
 
+Free email domains such as `gmail.com` are refused. Blocking one would stop nobody, because matching works per company. If you add one on its own, the line under the form says so: **gmail.com is a free email provider, so blocking it would not stop anyone.** If you add a company name together with a free domain, or upload a file that has some, the entry goes in without the domain, and the summary reads **Left out N free email domains**. A row left with neither a name nor a domain is skipped. To stop one person, use [**Do not contact**](#stop-outreach-to-one-person).
+
+The result of **Add** or **Upload CSV** appears right under the form, so you see it without scrolling past the list. The list below scrolls in its own box, with the column headings in view.
+
 Companies also land on the list automatically when you mark a **Meeting**, **Offer Sent**, or **Closed Deal** with them. See [When a company says yes](/configure/schedule-and-limits#choose-delivery-and-company-stops).
 
 ## Understand the immediate effect
@@ -43,12 +47,18 @@ Stopped prospects are archived rather than deleted. Their full history — messa
 
 ## Remove an entry
 
-To remove a company from the blacklist, find the entry in **Settings → Blacklist** and delete it. Removal triggers a re-evaluation of prospects that were archived because of that block, and the summary shows how many were reactivated.
+To remove a company from the blacklist, find the entry in **Settings → Blacklist** and delete it with the trash icon. Removal triggers a re-evaluation of prospects that were archived because of that block, and a message pops up with **Entry removed** and how many prospects were reactivated. A failed delete also shows as a message, so the list never shifts under your cursor.
 
 Archived prospects can become active again if:
 
 - no other blacklist entry still matches them, and
 - no separate outcome (reply, manual stop, or archive) is already recorded for them.
+
+## Stop outreach to one person
+
+The **Do not contact** card, below the blacklist, holds people who asked not to be contacted again. It shows how many people are on the list. Nobody on it is contacted or comes back as a lead, even after their contact is deleted, and a person the Sales Agent marks **Asked to stop** goes on it too.
+
+For an objection that reached you by phone or letter, enter the person's email address or LinkedIn profile URL and select **Add a person**. The line under the card says **Added**, **Added · N prospects in your pipeline stopped**, or **Already on the list**. Only a fingerprint of what you enter is kept, so the list cannot show it back to you. To remove someone's data altogether on their request, see [Delete a person everywhere](/operate/prospects-and-companies#delete-a-person-everywhere).
 
 ## Plan ahead before large imports
 

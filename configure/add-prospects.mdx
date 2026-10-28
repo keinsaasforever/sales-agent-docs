@@ -9,7 +9,7 @@ Open **Add to Pipeline** to supply the Sales Agent with contacts. You can add Sa
 
 <CardGroup cols={3}>
   <Card title="Sales Navigator" icon="link">
-    Collect people or companies from saved Sales Navigator searches and lists.
+    Collect people or companies from saved Sales Navigator searches and lists. Needs a seat whose LinkedIn login has Sales Navigator.
   </Card>
   <Card title="Upload CSV" icon="file-spreadsheet">
     Import a list of people or companies and map every row to a seat.
@@ -19,28 +19,50 @@ Open **Add to Pipeline** to supply the Sales Agent with contacts. You can add Sa
   </Card>
 </CardGroup>
 
+## See where you stand
+
+Four tiles sit above the tabs, so you see the situation before you pick a way in:
+
+- **Companies to search**: the companies with an owner seat that were never searched, whose **Company Fit** is at or above your **Pipeline ICP threshold** or not scored yet. The tile turns amber, then red, as they run low.
+- **Waiting for outreach**: people found but not contacted yet.
+- **Found in 30 days**: the people your searches found in the last 30 days.
+- **Credits**: your balance.
+
+When few companies are left to search, a line under the tiles reads **Few of your companies are left to search. Add companies:** and links the ways to bring in more:
+
+- **Upload CSV** opens the **Upload CSV** tab.
+- **Find new companies** starts a search for new companies, where that search is switched on for you. It is not offered while a search is being set up or a search for new companies is running.
+- **Sales Navigator account list** opens the form on the **Sales Navigator** tab. It shows only when one of your seats has Sales Navigator.
+
 ## Add Sales Navigator searches and lists
 
-On the **Sales Navigator** tab, paste one or more Sales Navigator URLs. The agent accepts three source types:
+On the **Sales Navigator** tab, paste one or more Sales Navigator URLs. The tab needs a seat whose LinkedIn login has Sales Navigator; without one it is locked, see [Connect Sales Navigator](#connect-sales-navigator). The agent accepts three source types:
 
 - a **saved search** whose URL contains `savedSearchId`
 - a **people list** whose path contains `/lists/people/`
 - a **company list** whose path contains `/lists/company/`
 
-The URL sets whether the source holds **Contacts** or **Companies**. For each URL, add an optional expected result count and segment label. The expected count helps estimate size and potential credit use — it is not a guaranteed outcome. Then pick the **Owner** seat and select **Submit URLs**.
+The URL sets whether the source holds **Contacts** or **Companies**. For each URL, add an optional expected result count and segment label. The expected count helps estimate size and potential credit use — it is not a guaranteed outcome. Then select **Submit URLs**. If you have several seats with Sales Navigator, pick one first under **Saved in the Sales Navigator of**. The URLs are added to that seat's saved searches, and new people from them are imported every day once an admin switches on **Import automatically** (see below). Only the seat that saved a search can import it.
 
-What happens next depends on the seat:
+People sources already point to specific contacts but can still require research, enrichment, scoring, and filtering before anyone enters the pipeline. Company sources identify organizations: the daily import also finds the people (see below).
 
-- **The seat's LinkedIn login has Sales Navigator:** the URLs are added to that seat's saved searches, and new people from them are imported every day once an admin switches on **Import automatically** (see below).
-- **Any other seat:** keinsaas processes the searches and adds the results to your pipeline. Track progress on the **Jobs** page.
+### Connect Sales Navigator
 
-People sources already point to specific contacts but can still require research, enrichment, scoring, and filtering before anyone enters the pipeline. Company sources identify organizations: on a seat with Sales Navigator, the daily import also finds the people (see below). For any other seat, a company source still needs a contact search to find individuals.
+When none of your seats has a LinkedIn login with Sales Navigator, the tab shows a **Connect Sales Navigator** card over a dimmed copy of the tab, and **Upload CSV** opens first. An admin sees the card when no seat on the account has Sales Navigator; a member, when none of their own seats has it. What the card offers depends on the seat:
+
+- On your own seat, or for an admin without one on an unclaimed seat, **Connect LinkedIn**, **Reconnect**, or **Reconnect with Sales Navigator**: you sign in on a guided page. Reconnecting a live login without Sales Navigator keeps the same account and picks up a subscription. Back on the tab, **Connected. Checking for Sales Navigator…** shows for up to a minute, then **Sales Navigator connected.** If the account has none, the card says **This LinkedIn account has no Sales Navigator subscription.** and offers **Use a different LinkedIn account**.
+- When the account has no seat yet, admins see **Create a new seat** and members read **You don't have a seat yet. Ask your admin to assign one.** When every seat belongs to a colleague, the card reads **Ask a seat's owner to connect Sales Navigator under Settings › Account.**
+- A seat that is connected but does not import yet, because it is inactive, is still switching over, or has LinkedIn switched off, says so in the card.
+
+The card also says what connecting starts. On a seat that runs on a schedule, LinkedIn invites and messages start with its next run, so pause the schedule under **Settings → Schedule** first if you do not want that. On a seat without a schedule, nothing is sent until you turn the schedule on or select **Run Now**. A seat with LinkedIn switched off sends nothing on LinkedIn, and an inactive seat sends nothing until it is activated.
+
+When your own seats have no Sales Navigator but a colleague's seat does, only the form is locked. The card names the colleagues, suggests asking them to add their saved Sales Navigator searches, and offers to connect your own seat. The saved searches below stay visible and usable.
 
 ## Import from Sales Navigator every day
 
-Admins manage daily imports in the **Your searches and lists** card at the top of the **Sales Navigator** tab. Members see only the form to add a search or list.
+Admins manage daily imports in the **Your searches and lists** card, below the form on the **Sales Navigator** tab. Members see only the form to add a search or list.
 
-1. Add each search or list with the form below the card, and pick a seat whose LinkedIn login has Sales Navigator as **Owner**. Only the seat that saved a search can import it. If no seat has Sales Navigator, the card tells you to connect one under **Settings → Account**.
+1. Add each search or list with the form above the card. A search belongs to the Sales Navigator seat that saved it, and only that seat can import it. The card lists every saved search.
 2. In the card, switch on **Import automatically**; the import is off until an admin switches it on. Set **Up to** how many new people arrive per day (at most 100), the hour it **Runs daily from**, and **Pause when** how many people may already be waiting; leave that empty for no limit. Then select **Save**.
 3. Optionally switch on **Email addresses** and **Phone numbers** to look up contact details right after the import instead of when contacts enter outreach.
 
@@ -97,16 +119,9 @@ The CSV import itself does not consume credits. Subsequent steps — completing 
 
 The **Our search** tab finds people at companies already in the dashboard. It opens on the status of your searches. Select **New search** to set one up.
 
-Four tiles show where you stand:
+The tiles above the tabs show where you stand; see [See where you stand](#see-where-you-stand).
 
-- **Companies to search**: the companies with an owner seat that were never searched, whose **Company Fit** is at or above your **Pipeline ICP threshold** or not scored yet. The tile turns amber, then red, as they run low.
-- **Waiting for outreach**: people found but not contacted yet.
-- **Found in 30 days**: the people your searches found in the last 30 days.
-- **Credits**: your balance.
-
-When few companies are left, a banner suggests **Upload companies**, or **Find new companies** where that search is switched on for you.
-
-**Your search jobs** lists the automatic search and any search running now, with a link to [**Jobs**](/operate/jobs) for every run, what it found, and what it cost.
+**Your search jobs** lists the automatic search, the **Signal search** once keinsaas has switched it on with you, and any search running now, with a link to [**Jobs**](/operate/jobs) for every run, what it found, and what it cost. The signal search row counts the companies watched, shows the date of the last search, and counts the companies with a signal in the last 30 days. Admins also see **What counts as a signal**, a link to **Settings → Signals**.
 
 **New search** has five steps. A step opens once you confirm the one before it, and a finished step folds to a summary with **Edit**.
 

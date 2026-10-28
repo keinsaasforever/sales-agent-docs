@@ -5,7 +5,7 @@ description: "Sperre Unternehmen nach Name oder Domain, damit der Sales Agent ni
 icon: "ban"
 ---
 
-Nutze **Einstellungen → Sperrliste**, um zu verhindern, dass der Sales Agent Unternehmen kontaktiert, die du nie ansprechen solltest. Nur Admins deines Kontos sehen diese Seite. Die Sperrliste wird bei jeder Suche, jedem Import und jedem Pipeline-Lauf geprüft.
+Nutze **Einstellungen → Sperrliste**, um zu verhindern, dass der Sales Agent Unternehmen kontaktiert, die du nie ansprechen solltest, und unter **Nicht kontaktieren** einzelne Personen, die darum gebeten haben, nicht kontaktiert zu werden. Nur Admins deines Kontos sehen diese Seite. Die Sperrliste wird bei jeder Suche, jedem Import und jedem Pipeline-Lauf geprüft.
 
 Typische Einträge sind:
 
@@ -29,6 +29,10 @@ Der Sales Agent normalisiert Namen und Domains und überspringt Einträge, die s
 
 **Nutze lieber Domains als Namen.** Unternehmensnamen variieren je nach Quelle: Dasselbe Unternehmen kann als „Acme Corp“, „Acme Corporation“ oder „ACME“ auftauchen. Eine Domain ist eine verlässlichere Kennung und führt zu weniger verpassten Treffern.
 
+Kostenlose E-Mail-Domains wie `gmail.com` werden abgelehnt. Eine solche Sperre würde niemanden aufhalten, weil der Abgleich pro Unternehmen läuft. Fügst du eine allein hinzu, sagt es die Zeile unter dem Formular: **gmail.com ist ein kostenloser E-Mail-Anbieter, eine Sperre würde also niemanden aufhalten.** Fügst du einen Unternehmensnamen zusammen mit einer kostenlosen Domain hinzu oder lädst du eine Datei mit solchen hoch, wird der Eintrag ohne die Domain aufgenommen, und die Zusammenfassung zeigt **N kostenlose E-Mail-Domains ausgelassen**. Eine Zeile, die weder Namen noch Domain behält, wird übersprungen. Um eine einzelne Person zu sperren, nutze [**Nicht kontaktieren**](#outreach-an-eine-person-stoppen).
+
+Das Ergebnis von **Hinzufügen** oder **CSV hochladen** erscheint direkt unter dem Formular, du musst also nicht an der Liste vorbeiscrollen. Die Liste darunter scrollt in einem eigenen Feld, die Spaltenüberschriften bleiben sichtbar.
+
 Unternehmen landen auch automatisch auf der Liste, wenn du eine Person des Unternehmens als **Termin**, **Angebot gesendet** oder **Deal abgeschlossen** markierst. Siehe [Wenn ein Unternehmen zusagt](/de/configure/schedule-and-limits#versand-und-unternehmensstopps-wählen).
 
 ## Sofortige Wirkung verstehen
@@ -43,12 +47,18 @@ Gestoppte Prospects werden archiviert und nicht gelöscht. Ihre gesamte Historie
 
 ## Eintrag entfernen
 
-Um ein Unternehmen von der Sperrliste zu nehmen, suche den Eintrag unter **Einstellungen → Sperrliste** und lösche ihn. Das Entfernen löst eine erneute Bewertung der Prospects aus, die wegen dieses Eintrags archiviert wurden, und die Zusammenfassung zeigt, wie viele wieder aktiviert wurden.
+Um ein Unternehmen von der Sperrliste zu nehmen, suche den Eintrag unter **Einstellungen → Sperrliste** und lösche ihn mit dem Papierkorb-Symbol. Das Entfernen löst eine erneute Bewertung der Prospects aus, die wegen dieses Eintrags archiviert wurden, und eine Meldung zeigt **Eintrag entfernt** und wie viele Prospects wieder aktiviert wurden. Auch ein fehlgeschlagenes Löschen erscheint als Meldung, damit sich die Liste nie unter deinem Cursor verschiebt.
 
 Archivierte Prospects können wieder aktiv werden, wenn:
 
 - kein anderer Eintrag auf der Sperrliste mehr auf sie passt und
 - für sie nicht bereits ein separates Ergebnis (Antwort, manueller Stopp oder Archivierung) erfasst ist.
+
+## Outreach an eine Person stoppen
+
+Die Karte **Nicht kontaktieren** unter der Sperrliste enthält Personen, die darum gebeten haben, nicht mehr kontaktiert zu werden. Sie zeigt, wie viele Personen auf der Liste stehen. Niemand darauf wird kontaktiert oder kommt als Lead zurück, auch nicht, nachdem der Kontakt gelöscht wurde, und auch eine Person, die der Sales Agent mit **Stopp gewünscht** markiert, landet darauf.
+
+Für einen Widerspruch, der dich per Telefon oder Brief erreicht hat, gib die E-Mail-Adresse oder die LinkedIn-Profil-URL der Person ein und wähle **Person hinzufügen**. Die Zeile unter der Karte zeigt **Hinzugefügt**, **Hinzugefügt · N Prospects in deiner Pipeline gestoppt** oder **Bereits auf der Liste**. Es wird nur ein Fingerabdruck des Eingegebenen gespeichert, die Liste kann es dir also nicht wieder anzeigen. Um die Daten einer Person auf ihren Wunsch ganz zu entfernen, siehe [Eine Person überall löschen](/de/operate/prospects-and-companies#eine-person-überall-löschen).
 
 ## Vor großen Importen vorausplanen
 
