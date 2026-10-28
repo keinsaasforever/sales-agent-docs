@@ -31,7 +31,7 @@ Each seat works through these steps in order:
   </Step>
 </Steps>
 
-Each step picks up its own eligible contacts, so a step with nothing to do does not stop the next one. On a seat with LinkedIn switched off or paused, the LinkedIn actions are skipped and email continues.
+Each step picks up its own eligible contacts, so a step with nothing to do does not stop the next one. On a seat with LinkedIn switched off, not connected, or paused, the LinkedIn actions are skipped and email continues. A message to someone on their public holiday is held for a later run; see [Public holidays](/configure/schedule-and-limits#public-holidays).
 
 The run executes in the background. While it is active, the row shows **Pipeline running** with the number of active flows and a link, **View activity**, to **Activity**, and its dot blinks green. When it ends, a line below the row reads **Pipeline finished — see Activity for results.** A full run can take a few hours, because LinkedIn actions are spaced out.
 

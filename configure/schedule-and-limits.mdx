@@ -19,6 +19,8 @@ In the **Outreach channel** card, set **LinkedIn outreach** for the seat:
 
 The card warns you when the seat has no LinkedIn account or mailbox connected. Connect them under **Settings → Account**.
 
+A seat with no connected LinkedIn account does no LinkedIn work, whatever the channel says: its runs skip the LinkedIn steps and email continues. **LinkedIn first** has no invite to wait for there, so first emails go out on the next run instead of a week later. The wait returns once LinkedIn is connected.
+
 ## Configure the run time
 
 In the **Workflow Schedule** card, complete these steps:
@@ -68,6 +70,15 @@ No limit rises on its own. When a seat reaches the next LinkedIn warm-up week, a
 A normal Sales Navigator plan supports roughly 100 contacts per week per account as a ceiling. Higher SSI may allow more, but neither reach nor account safety is guaranteed. keinsaas applies available safety measures; you remain responsible for following [LinkedIn hygiene rules](/safety/linkedin-hygiene).
 
 The **Sent per day** card shows the most the scheduled runs can send on each day of the week, for all active seats together. Fewer usually go out, because each message needs someone ready for it. Runs started by hand come on top.
+
+## Public holidays
+
+The Sales Agent holds outreach to a person on their public holiday: a first email, a connection request, a LinkedIn message, and both kinds of follow-up. There is nothing to switch on.
+
+- The holidays are those of the person's country. The country comes from their location, or from the contact's **Country** when the location names none. Where the location names a region, such as Bavaria, that region's holidays count too; otherwise the national holidays count. When no country is known, outreach goes out as usual.
+- A held contact is not skipped or lost. It stays in line and goes out with the next run on a day that is not a holiday for that person. It does not use up the day's limit: the next contact in line takes the slot. A seat that writes to several countries can still send fewer than its limit on a day when one country's holiday holds many contacts.
+- Replies are still read on a holiday, and old invites are still withdrawn.
+- The date is the date in Berlin, whatever the person's country. The **Next run** forecast does not know about holidays, so it can still count a contact who is held that day.
 
 ## Set LinkedIn options
 

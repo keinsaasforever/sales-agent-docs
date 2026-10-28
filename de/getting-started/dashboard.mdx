@@ -9,7 +9,7 @@ Auf dieser Seite erfährst du, wo das Dashboard zeigt, was dein Agent erledigt h
 
 ## Das Menü
 
-Das Menü links enthält **Start**, **Aufgaben**, **Unternehmen**, **Prospects**, **Nachrichten** und **Aktivität**, danach eine Gruppe **Kontakte hinzufügen** mit **Zur Pipeline hinzufügen** und **Jobs** sowie die **Einstellungen**-Seiten. Zähler zeigen offene Aufgaben, Nachrichten, die auf Freigabe warten, und laufende Runs.
+Das Menü links enthält **Start**, **Aufgaben**, **Unternehmen**, **Prospects**, **Nachrichten** und **Aktivität**, danach eine Gruppe **Kontakte hinzufügen** mit **Zur Pipeline hinzufügen** sowie die **Einstellungen**-Seiten. Zähler zeigen offene Aufgaben, Nachrichten, die auf Freigabe warten, und laufende Runs.
 
 - Admins sehen zusätzlich **Credits** mit dem aktuellen Stand sowie die Einstellungen **Zielgruppe**, **Signale**, **Sperrliste** und **Prompts**. Siehe [Seats, Rollen und Konten](/de/getting-started/seats-and-accounts).
 - Wähle das Suchsymbol oder drücke **⌘K** (**Strg+K**), um Personen, Unternehmen und Notizen zu durchsuchen.
@@ -23,7 +23,7 @@ Das Menü links enthält **Start**, **Aufgaben**, **Unternehmen**, **Prospects**
 
 <Steps>
   <Step title="Warnungen">
-    Rote und gelbe Hinweise stehen ganz oben, wenn Arbeit gestoppt ist oder gleich stoppt: **LinkedIn ist pausiert**, **Outlook ist getrennt**, **E-Mail-Versand pausiert**, **Credits werden knapp** oder **Anreicherung ist pausiert**. Jeder verlinkt zur Lösung.
+    Rote und gelbe Hinweise stehen ganz oben, wenn Arbeit gestoppt ist oder gleich stoppt: **LinkedIn ist pausiert**, **Outlook ist getrennt** oder **E-Mail-Versand pausiert**. Jeder verlinkt zur Lösung. Knappe Credits zeigt das Dashboard anders: Ein Banner am oberen Rand jeder Seite lautet **Credits werden knapp** oder **Anreicherung ist pausiert**, mit **Jetzt aufladen** für Admins und **Bitte deinen Admin, Credits aufzuladen** für Mitglieder.
   </Step>
   <Step title="Aktivitätskarten">
     Sieben Karten zählen **Gefundene Signale**, **Gefundene Kontakte**, **Angefragt**, **Angenommen**, **Angeschrieben**, **Nachgefasst** und **Geantwortet** für **Letzte 24 Stunden**, **Letzte 7 Tage** oder **Letzte 30 Tage**. Personen zählen einmal, auch wenn sie über beide Kanäle erreicht wurden.
@@ -31,11 +31,13 @@ Das Menü links enthält **Start**, **Aufgaben**, **Unternehmen**, **Prospects**
     Jede Karte zeigt die Veränderung gegenüber einem früheren Zeitraum: den vorherigen 7 oder 30 Tagen, bei **Letzte 24 Stunden** denselben 24 Stunden eine Woche zuvor, weil Outreach an Werktagen läuft. Fahre mit der Maus über den Prozentwert, um den früheren Wert zu sehen. Liegt der frühere Wert unter 5, erscheint kein Prozentwert.
   </Step>
   <Step title="Jobs und Nächster Durchlauf">
-    Eine Zeile pro Job zeigt, was läuft: zuerst **Pipeline**, dann **Automatische Suche bei meinen Unternehmen**, **Automatischer Import aus Sales Navigator** und **Signalsuche**, jeweils sobald sie eingerichtet sind. Ein Punkt blinkt grün, solange der Job läuft, bleibt grün, solange er eingeschaltet ist, und ist grau, wenn er ausgeschaltet ist. Eine Zeile zeigt den Zeitplan in Worten und einen Countdown bis zum nächsten Lauf, etwa **in 2 h 15 min**, oder **Aus**. Läuft ein Job gerade, steht dort **Läuft**.
+    Eine Zeile pro Job zeigt, was läuft: zuerst **Pipeline**, dann **Automatische Suche bei meinen Unternehmen**, **Automatischer Import aus Sales Navigator** und **Signalsuche**, jeweils sobald sie eingerichtet sind. Ein Punkt blinkt grün, solange der Job läuft, bleibt grün, solange er eingeschaltet ist, und ist grau, wenn er ausgeschaltet ist. Eine Zeile zeigt den Zeitplan in Worten und einen Countdown bis zum nächsten Lauf, etwa **in 2 h 15 min**, oder **Aus**. Der Sales-Navigator-Import hat keine eigene Uhrzeit: Seine Zeile lautet **Startet mit deiner täglichen Pipeline**. Läuft ein Job gerade, steht dort **Läuft**.
+
+    Wähle eine Zeile, um ihre Einstellungen zu öffnen. **Pipeline** öffnet **Einstellungen → Zeitplan**, **Automatische Suche bei meinen Unternehmen** öffnet **Unsere Suche**, **Signalsuche** öffnet dort ihre Karte, und **Automatischer Import aus Sales Navigator** öffnet den Tab **Sales Navigator**, für Admins. Schalter und Buttons in einer Zeile behalten ihre eigene Aktion. **Sieh dir an, wie alles läuft** unter den Zeilen öffnet [Aktivität](/de/operate/activity-and-troubleshooting).
 
     - **Pipeline**: Der Schalter **Zeitplan ein- oder ausschalten** schaltet den Zeitplan deines Seats ein oder aus. **Jetzt starten** (Play-Symbol) startet die Pipeline für deine eigenen Seats, **Stoppen** erscheint, solange sie läuft, und der Pfeil öffnet **Erweitert**. Siehe [Pipeline ausführen](/de/operate/run-the-pipeline).
     - **Automatische Suche bei meinen Unternehmen** und **Automatischer Import aus Sales Navigator**: Admins schalten sie hier ein oder aus, Mitglieder sehen den Schalter, können ihn aber nicht ändern. Siehe [Prospects hinzufügen](/de/configure/add-prospects).
-    - **Signalsuche** hat hier keinen Schalter. Sie läuft, sobald keinsaas sie mit dir einschaltet, und der Link **Job öffnen** öffnet sie unter **Zur Pipeline hinzufügen**.
+    - **Signalsuche** hat hier keinen Schalter. Sie läuft, sobald keinsaas sie mit dir einschaltet.
 
     Eine Zeile sagt, warum ein Job nicht läuft, zum Beispiel **Läuft nicht in einem Demo-Konto**, **Startet, sobald dein Konto aktiviert ist** oder **Kein aktiver Seat**. Die Karten unter **Nächster Durchlauf** zeigen die bereitstehende Arbeit je Schritt; siehe [Nächster Durchlauf](/de/operate/next-run-queue).
   </Step>
@@ -69,7 +71,7 @@ Auf anderen Seiten zeigt ein Button **Offene Aufgaben** unten rechts die Zahl of
 
 Die Glocke neben dem Suchsymbol zeigt eine rote Zahl neuer Einträge. Beim Öffnen gelten sie als gesehen. Sie gruppiert:
 
-- **Handlungsbedarf**: offene Fragen, eine pausierte LinkedIn-Session, ein getrenntes Postfach, ein Postfach, für das dein Anbieter den Versand blockiert hat, oder aufgebrauchte InMail-Credits.
+- **Handlungsbedarf**: offene Fragen, eine pausierte LinkedIn-Session, ein getrenntes Postfach, ein Postfach, für das dein Anbieter den Versand blockiert hat oder das wegen zu vieler Zustellfehler pausiert wurde, oder aufgebrauchte InMail-Credits.
 - **Vorschläge**: ein Warm-up-Schritt für LinkedIn, den du mit einem Klick übernimmst.
 - **Neue Antworten**, **Ausstehende Freigaben** und **Prospect anrufen**: eine Zeile pro Person, die den Prospect oder die Nachrichten-Queue öffnet.
 - **Abgeschlossen**: abgeschlossene Suchen, Importe und Anreicherungen, auch fehlgeschlagene oder solche mit Problemen.
@@ -82,9 +84,9 @@ Der Sales Agent schreibt dir auch per E-Mail, auf Deutsch oder Englisch, und jed
 - **Neue Kontakte gefunden**: nach einer Kontaktsuche oder einem Listenimport, der jemanden gefunden hat. Die Mail listet bis zu 10 Personen nach Titel und Unternehmen, die besten ICP-Treffer zuerst, mit einem Button, der genau diese Personen unter **Kontakte** öffnet (der Filter **Hinzugefügt seit …**). Credits erscheinen nur, wenn welche verbraucht wurden.
 - **Signale gefunden**: nach einer Kaufsignal-Suche, die etwas Neues gefunden hat. Die Mail listet bis zu 10 Unternehmen mit Art und Datum des Ereignisses, nur für Signale, die zählen: mit mindestens deinem Mindest-Score für Signale, innerhalb von **Signal verwenden für (Tage)** und von einer Art, die du gewählt hast. Ein Button öffnet **Unternehmen**, gefiltert auf **Kaufsignale**. Sie wird nie für null Treffer gesendet.
 - **Wochenübersicht**: einmal pro Woche, gesendet vom ersten Pipeline-Lauf der Woche (die Woche beginnt am Montag, Berliner Zeit). Sie geht an jeden Login deines Kontos und deckt die letzte Woche von Montag bis Sonntag ab, verglichen mit der Woche davor: Highlights wie Termine und positive Antworten und eine Zeile für jede Zahl, die nicht null ist, etwa Antworten, verschickte Nachrichten, Kontaktanfragen, neue Kontakte und Unternehmen mit Kaufsignal. Eine prozentuale Veränderung erscheint nur, wenn die Woche davor mindestens 5 hatte. Ein Termin, ein Angebot oder ein Deal zählt einmal pro Unternehmen, und zwar in der Woche, in der das Unternehmen diese Phase zum ersten Mal erreicht. Ergebnisse und Antworten, die du lange nach dem Ereignis erfasst, zählen nicht als die dieser Woche, und Personen, die du per CSV hochlädst oder von Hand hinzufügst, zählen nicht als neue Kontakte. Eine Zeile **Wartet auf dich** ergänzt die eigenen Aufgaben des Empfängers. Ein Konto, dessen Agent in dieser Woche nicht läuft, erhält keine Wochenübersicht, ebenso eine Woche, in der nichts passiert ist.
-- **E-Mail-Versand pausiert**: wenn dein E-Mail-Anbieter ein Postfach blockiert. Siehe [Aktivität und Fehlerbehebung](/de/operate/activity-and-troubleshooting#wenn-dein-e-mail-anbieter-den-versand-blockiert).
+- **E-Mail-Versand pausiert**: wenn dein E-Mail-Anbieter ein Postfach blockiert oder wenn zu viele seiner E-Mails nicht zugestellt wurden. Siehe [Aktivität und Fehlerbehebung](/de/operate/activity-and-troubleshooting#wenn-dein-e-mail-anbieter-den-versand-blockiert) und [wenn zu viele E-Mails nicht zugestellt werden](/de/operate/activity-and-troubleshooting#wenn-zu-viele-e-mails-nicht-zugestellt-werden).
 
-Ein Anreicherungslauf sendet keine Mail. Die Glocke zeigt **Anreicherung abgeschlossen**, und **Jobs** listet den Lauf.
+Ein Anreicherungslauf sendet keine Mail. Die Glocke zeigt **Anreicherung abgeschlossen**, und **Aktivität** listet den Lauf.
 
 ## Sprache
 

@@ -9,7 +9,7 @@ Use this page to learn where the dashboard shows what your agent did, what needs
 
 ## The menu
 
-The menu on the left holds **Home**, **Tasks**, **Companies**, **Prospects**, **Messages**, and **Activity**, then an **Add Contacts** group with **Add to Pipeline** and **Jobs**, and the **Settings** pages. Badges show open tasks, messages waiting for approval, and runs in progress.
+The menu on the left holds **Home**, **Tasks**, **Companies**, **Prospects**, **Messages**, and **Activity**, then an **Add Contacts** group with **Add to Pipeline**, and the **Settings** pages. Badges show open tasks, messages waiting for approval, and runs in progress.
 
 - Admins also see **Credits** with the current balance, and the **Targeting**, **Signals**, **Blacklist**, and **Prompts** settings. See [Seats, roles, and accounts](/getting-started/seats-and-accounts).
 - Select the search icon or press **⌘K** (**Ctrl+K**) to search people, companies, and notes.
@@ -23,7 +23,7 @@ Home opens with a summary of what your agent did and what needs you.
 
 <Steps>
   <Step title="Warnings">
-    Red and amber banners appear above everything else when work has stopped or is about to: **LinkedIn is paused**, **Outlook is disconnected**, **Email sending paused**, **Credits running low**, or **Enrichment is paused**. Each links to the fix.
+    Red and amber banners appear above everything else when work has stopped or is about to: **LinkedIn is paused**, **Outlook is disconnected**, or **Email sending paused**. Each links to the fix. Low credits show differently: a banner across the top of every page reads **Credits running low** or **Enrichment is paused**, with **Top up now** for admins and **Ask your admin to top up** for members.
   </Step>
   <Step title="Activity cards">
     Seven cards count **Signals found**, **Contacts found**, **Invited**, **Accepted**, **Messaged**, **Followed up**, and **Replied** for **Last 24 hours**, **Last 7 days**, or **Last 30 days**. People count once, even when they were reached on both channels.
@@ -31,11 +31,13 @@ Home opens with a summary of what your agent did and what needs you.
     Each card shows the change against an earlier span: the previous 7 or 30 days, or for **Last 24 hours** the same 24 hours one week earlier, because outreach runs on working days. Hover over the percentage to see the earlier count. No percentage appears when the earlier count is below 5.
   </Step>
   <Step title="Jobs and Next run">
-    One row per job shows what runs: **Pipeline** first, then **Automatic search at my companies**, **Automatic Sales Navigator import**, and **Signal search**, each once it is set up. A dot blinks green while the job runs, stays green while it is on, and is grey when it is off. A row shows the schedule in words and a countdown to the next run, such as **in 2 h 15 min**, or **Off**. While a job runs, it reads **Running**.
+    One row per job shows what runs: **Pipeline** first, then **Automatic search at my companies**, **Automatic Sales Navigator import**, and **Signal search**, each once it is set up. A dot blinks green while the job runs, stays green while it is on, and is grey when it is off. A row shows the schedule in words and a countdown to the next run, such as **in 2 h 15 min**, or **Off**. The Sales Navigator import has no time of its own: its row reads **Starts with your daily pipeline**. While a job runs, it reads **Running**.
+
+    Select a row to open its settings. **Pipeline** opens **Settings → Schedule**, **Automatic search at my companies** opens **Our search**, **Signal search** opens its card there, and **Automatic Sales Navigator import** opens the **Sales Navigator** tab, for admins. Switches and buttons on a row keep their own action. **See how it all runs**, under the rows, opens [Activity](/operate/activity-and-troubleshooting).
 
     - **Pipeline**: the switch **Schedule on or off** turns your seat's schedule on or off. **Run Now** (play icon) starts the pipeline for your own seats, **Stop** appears while it runs, and the arrow opens **Advanced**. See [Run the pipeline](/operate/run-the-pipeline).
     - **Automatic search at my companies** and **Automatic Sales Navigator import**: admins switch them on or off here, and members see the switch but cannot change it. See [Add prospects](/configure/add-prospects).
-    - **Signal search** has no switch here. It runs once keinsaas switches it on with you, and the link **Open the job** opens it under **Add to Pipeline**.
+    - **Signal search** has no switch here. It runs once keinsaas switches it on with you.
 
     A row says why a job does not run, for example **Doesn't run on a demo account**, **Starts once your account is activated**, or **No active seat**. The **Next run** cards below forecast the work ready for each step; see [Next run queue](/operate/next-run-queue).
   </Step>
@@ -69,7 +71,7 @@ On other pages, a **Todo list** button in the bottom-right corner shows the open
 
 The bell next to the search icon shows a red count of new items. Opening it marks them as seen. It groups:
 
-- **Needs attention**: open questions, a paused LinkedIn session, a disconnected mailbox, a mailbox your provider blocked from sending, or no InMail credits left.
+- **Needs attention**: open questions, a paused LinkedIn session, a disconnected mailbox, a mailbox your provider blocked from sending or that paused for too many bounces, or no InMail credits left.
 - **Suggestions**: a LinkedIn warm-up step you can accept with one click.
 - **New Replies**, **Pending Approvals**, and **Call Prospect**: one line per person, opening that prospect or the message queue.
 - **Completed**: finished searches, imports, and enrichments, including ones that failed or finished with issues.
@@ -82,9 +84,9 @@ The Sales Agent also writes to you, in English or German, and each mail links ba
 - **New people found**: after a contact search or a list import that found someone. It lists up to 10 people by title and company, best ICP match first, with a button that opens exactly those people on **Contacts** (the **Added since …** filter). Credits appear only when some were used.
 - **Signals found**: after a buying-signal search that found something new. It lists up to 10 companies with the type and date of the event, only for signals that count: at or above your minimum signal score, still within **Use a signal for (days)**, and of a type you picked. A button opens **Companies** filtered to **Buying signals**. It is never sent for zero.
 - **Weekly digest**: once a week, sent by the first pipeline run of the week (weeks start on Monday, Berlin time). It goes to every login on your account and covers last week, Monday to Sunday, compared with the week before: highlights such as meetings and positive replies, and one row for each count that is not zero, such as replies, messages sent, connection requests, new contacts, and companies with a buying signal. A percentage change shows only when the week before had at least 5. A meeting, offer, or deal counts once per company, in the week the company first reaches that stage. Outcomes and replies you file long after they happened do not count as that week's, and people you upload in a CSV or add by hand do not count as new contacts. A **Waiting for you** line adds the recipient's own to-dos. An account whose agent does not run that week gets no digest, and neither does a week with nothing in it.
-- **Email sending paused**: when your mail provider blocks a mailbox. See [Activity and troubleshooting](/operate/activity-and-troubleshooting#if-your-mail-provider-blocks-sending).
+- **Email sending paused**: when your mail provider blocks a mailbox, or when too many of its emails bounced. See [Activity and troubleshooting](/operate/activity-and-troubleshooting#if-your-mail-provider-blocks-sending) and [if too many emails bounce](/operate/activity-and-troubleshooting#if-too-many-emails-bounce).
 
-An enrichment run sends no mail. The bell shows **Enrichment finished** and **Jobs** lists the run.
+An enrichment run sends no mail. The bell shows **Enrichment finished** and **Activity** lists the run.
 
 ## Language
 

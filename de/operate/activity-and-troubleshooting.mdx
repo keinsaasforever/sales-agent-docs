@@ -1,29 +1,89 @@
 ---
 title: "Aktivität und Fehlerbehebung"
-sidebarTitle: "Fehlerbehebung"
-description: "Lies den Laufstatus unter Aktivität, untersuche leere Queues und übersprungene Schritte, verbinde LinkedIn oder dein Postfach neu und erfahre, wann du den Support kontaktierst."
+sidebarTitle: "Aktivität"
+description: "Sieh, wie dein Agent für jeden Seat arbeitet, lies jeden Lauf im Verlauf, lade herunter, was eine Suche gefunden hat, untersuche leere Queues und übersprungene Schritte und verbinde LinkedIn oder dein Postfach neu."
 icon: "activity"
 ---
 
-Öffne **Aktivität**, um deine 50 letzten Läufe zu sehen: Suchen, Anreicherung, Importe und Pipeline-Läufe. Dort schaust du zuerst nach, wenn ein Lauf unerwartete Ergebnisse liefert: zu wenig gesendet, gar nichts gesendet oder ein glatter Fehlschlag.
+Öffne **Aktivität**, um zu sehen, was dein Agent tut und was er getan hat. **So arbeitet dein Agent** zeigt oben, was in welcher Reihenfolge läuft, für jeweils einen Seat. Der **Verlauf** darunter listet die Läufe: Pipeline-Läufe, Suchen, Importe und Anreicherung. Dort schaust du zuerst nach, wenn ein Lauf unerwartete Ergebnisse liefert: zu wenig gesendet, gar nichts gesendet oder ein glatter Fehlschlag.
 
-## Tabelle unter Aktivität lesen
+Suchen und Importe hatten früher eine eigene Seite, **Jobs**. Sie stehen jetzt im Verlauf unter **Suchen & Importe**.
 
-Jeder Pipeline-Lauf ist eine Zeile, darunter stehen seine Schritte in der Reihenfolge, in der sie liefen, etwa **Anreicherung**, **Nachrichten verfassen**, **E-Mail-Versand** oder **LinkedIn-Nachrichten**. Für jede Zeile siehst du:
+## Sehen, wie dein Agent arbeitet
 
-- **Betroffen**: die Kontakte oder Unternehmen, die der Lauf betroffen hat, verlinkt zum Öffnen
-- **Auslöser**: wie der Lauf gestartet wurde
-- **Status**: das Ergebnis, mit einem kurzen Grund darunter, wenn etwas schiefging
-- **Verarbeitet**, **Erfolgreich** und **Fehlgeschlagen**: die Anzahl der Einträge
-- **Gestartet** und **Dauer**
+**So arbeitet dein Agent** zeichnet den Tag eines Seats als Kette von Schritten. Hast du mehrere Seats, wähle den Seat oben rechts im Abschnitt. Der Verlauf darunter ändert sich nicht mit dem Seat. Wähle einen Schritt, um seine Einstellungen zu öffnen. Das Bild aktualisiert sich live: Ein Schritt, der gerade läuft, zeigt **Läuft gerade**.
 
-Admins sehen zusätzlich die Spalte **Seat**. Mitglieder sehen nur die Läufe ihrer eigenen Seats. Suchen und CSV-Importe stehen unter **Jobs**, im Menü unter **Kontakte hinzufügen**.
+**Vor dem Durchlauf · ganzes Konto** zeigt, wie Unternehmen und Personen hereinkommen. Ein Weg, der eingeschaltet ist, steht zuerst:
 
-## Laufstatus
+- **Signalsuche** zeigt **Aus: Wir schalten es auf Anfrage für dich ein**, bis keinsaas sie mit dir einschaltet.
+- **Sales-Navigator-Import** holt die Personen aus deinen gespeicherten Sales-Navigator-Suchen und -Listen. Er startet mit deiner täglichen Pipeline.
+- **Unternehmenssuche** erscheint, wo sie für dein Konto eingeschaltet ist.
+- **Von dir hinzugefügt** umfasst CSV-Uploads, Sales-Navigator-Links und Suchen, die du von Hand gestartet hast.
+- **Automatische Suche bei meinen Unternehmen** folgt danach, mit **dann** markiert: Sie findet die Personen bei diesen Unternehmen.
+
+Admins schalten **Sales-Navigator-Import** und **Automatische Suche bei meinen Unternehmen** direkt auf der Karte ein oder aus. Mitglieder sehen den Schalter, können ihn aber nicht ändern.
+
+**Der Durchlauf · {Seat}** zeigt den Zeitplan des Seats in Worten, mit dem Schalter **Zeitplan ein- oder ausschalten** oder einem Link zu **Zeitplan-Einstellungen**. Auf deinem eigenen Seat bekommst du außerdem **Jetzt starten**, **Stoppen** und **Erweitert**, wie auf **Start**. Die Schritte folgen in der Reihenfolge, in der der Durchlauf sie nimmt:
+
+1. **Antworten prüfen**: Jeder Thread wird zuerst gelesen, daher stoppt eine Antwort alles Weitere.
+2. **Neue Personen**, dann **Kontaktanfragen**, dann **E-Mail und Telefonnummer finden**. **Alte Kontaktanfragen zurückziehen** hängt unter **Kontaktanfragen**: Samstags zieht es Kontaktanfragen zurück, die 30 Tage oder länger offen sind. Es erscheint nur bei einem Seat mit verbundenem LinkedIn-Konto.
+3. **Entwürfe**, dann **Deine Freigabe**.
+4. Zwei Spuren: auf LinkedIn **LinkedIn-Nachricht**, dann **LinkedIn-Follow-ups**; per E-Mail **Erste E-Mail**, dann **E-Mail-Follow-ups**. E-Mail-Follow-ups werden zu Beginn jedes Durchlaufs nach der Antwortprüfung gesendet.
+
+Jede Karte zeigt:
+
+- einen Punkt für ihren Zustand: grün **Ein**, blau **Läuft gerade**, gelb **Wartet auf dich**, rot **Muss behoben werden** oder grau **Aus**
+- was sie heute tut, etwa **3 / 10 heute** gegenüber dem Tageslimit oder **Der nächste Durchlauf nimmt bis zu 12 Personen auf**
+- **Kostet Credits**, wo der Schritt Credits verbraucht
+- **Zuletzt:** mit dem, was der letzte Lauf getan hat, und wann
+
+Ein Schritt wird gelb und sagt, was auf dich wartet und wo du es behebst: freizugebende Entwürfe, zu prüfende Kontakte, knappe Credits, ein Postfach, das dein Anbieter blockiert hat, oder ein Lauf, der mit Problemen endete. Er wird rot, wenn sein letzter Lauf fehlschlug oder sein Kanal eine neue Anmeldung braucht. Ein Schritt, den du auf keinen setzt, etwa Follow-ups auf 0, zeigt **Aus**. Bei einem Seat mit ausgeschaltetem LinkedIn zeigen die LinkedIn-Schritte **Aus** mit **LinkedIn ist für diesen Seat ausgeschaltet.** Bei einem Seat ohne verbundenes LinkedIn-Konto zeigen sie **LinkedIn ist nicht verbunden: Verbinde es unter Konto.**
+
+Um die Kette als Bild zu speichern, wähle das Download-Symbol in der oberen rechten Ecke des Kastens und dann **PNG-Bild** oder **SVG-Bild**. Das Bild verwendet immer das volle Desktop-Layout, egal wie groß dein Bildschirm ist.
+
+## Verlauf lesen
+
+Der **Verlauf** listet die 100 jüngsten Einträge deines Kontos, neueste zuerst, Pipeline-Schritte eingeschlossen. Admins sehen die Läufe aller Seats. Mitglieder sehen nur die Läufe ihrer eigenen Seats. Über der Liste stehen drei Filter:
+
+- **Alle**: jeder Lauf
+- **Outreach**: Pipeline-Läufe, ihre Schritte und das Zurückziehen von Kontaktanfragen
+- **Suchen & Importe**: Kontaktsuchen, CSV- und URL-Importe, Anreicherung für sich allein und die Signalsuche. Dieser Filter fügt einen Button hinzu, **Deine Suchjobs**, der [**Unsere Suche**](/de/configure/add-prospects#bei-deinen-unternehmen-suchen) öffnet.
+
+Wähle **Aktualisieren**, um die Liste zu aktualisieren, während ein Lauf läuft. Jede Zeile zeigt:
+
+- **Durchlauf**: die Art des Laufs, darunter bei einem Pipeline-Lauf, wie er gestartet wurde (**Manuell** oder **Zeitplan**), oder bei einer Suche, was sie abgedeckt hat. Ein Pipeline-Lauf ist eine Zeile, darunter stehen seine Schritte in der Reihenfolge, in der sie liefen, etwa **Anreicherung**, **Nachrichten verfassen**, **E-Mail-Versand** oder **LinkedIn-Nachrichten**. Suchen und Importe heißen unter anderem **Kontaktsuche**, **Automatische Suche**, **Automatischer Import aus Sales Navigator**, **CSV-Import**, **Kontaktanreicherung** oder **Profilvervollständigung**.
+- **Seat**: der Seat, zu dem der Lauf gehört, für Admins.
+- **Ergebnis**: bei einem Pipeline-Schritt **N von M erfolgreich** mit der Zahl der Fehlschläge; bei einer Suche die gelieferten Leads → die behaltenen und zu deinen Kontakten hinzugefügten Leads. Die Kontakte oder Unternehmen, die ein Lauf betroffen hat, sind darunter verlinkt, damit du sie öffnen kannst.
+- **Status**: das Ergebnis, mit einem kurzen Grund darunter, wenn etwas schiefging.
+- **Credits**: die für den Lauf berechneten Credits.
+- **Gestartet** und **Dauer**.
+- **CSV**: ein Download für eine abgeschlossene Suche.
+
+Eine Suche kann Leads liefern, die an den Filtern deines Ideal Customer Profile (ICP) scheitern. Die Zahl der behaltenen Leads liegt deshalb oft unter der Zahl der gelieferten. Credits bezahlen gelieferte Ergebnisse, nicht nur behaltene Leads.
+
+### Suche als CSV herunterladen
+
+Wähle **CSV** bei einer abgeschlossenen Suche, um alle gelieferten Leads herunterzuladen, behaltene und abgelehnte. Jede Zeile sagt, ob der Lead behalten wurde und, falls nicht, warum er abgelehnt wurde. So prüfst du, wie gut dein Targeting zu den Suchergebnissen passt.
+
+### Wenn eine Suche früher endet
+
+Gehen während einer Suche die Credits aus, wird der Lauf trotzdem abgeschlossen und sein Status zeigt, wie viele Unternehmen **nicht durchsucht: nicht genug Credits** blieben. Admins können über den Link zu **Credits** aufladen; Mitglieder fragen einen Admin.
+
+Findet die Suche eines Mitglieds Leads, die zum Gebiet eines Kollegen gehören, gehen diese an den Seat des Kollegen und die Zeile nennt, wie viele es waren.
+
+### Laufstatus
 
 Jeder Lauf und jeder Schritt endet mit **Erfolgreich**, **Mit Problemen abgeschlossen**, **Übersprungen**, **Gestoppt** oder **Fehlgeschlagen**. [Pipeline ausführen](/de/operate/run-the-pipeline#lauf-stoppen) erklärt jeden Status. Der Status eines Laufs fasst seine Schritte zusammen, daher kann ein Lauf mit **Erfolgreich** Schritte mit **Übersprungen** enthalten.
 
-Wenn du die Ursache selbst beheben kannst, sagt es der Grund unter dem Status, etwa **LinkedIn-Sitzung abgelaufen – verbinde dein LinkedIn-Konto unter Einstellungen → Konto erneut.**, **E-Mail-Konto getrennt – verbinde es unter Einstellungen → Konto erneut.** oder **Credits konnten nicht abgebucht werden – prüfe dein Guthaben unter Credits.** Jeder andere Fehler lautet **Etwas ist schiefgelaufen – wir wurden benachrichtigt.** Die [Jobs-Seite](/de/operate/jobs#wenn-ein-job-scheitert) verwendet dieselben Worte.
+Wenn du die Ursache selbst beheben kannst, sagt es der Grund unter dem Status. Ein fehlgeschlagener Lauf zeigt, was du tun kannst:
+
+- **LinkedIn-Sitzung abgelaufen – verbinde dein LinkedIn-Konto unter Einstellungen → Konto erneut.**
+- **E-Mail-Konto getrennt – verbinde es unter Einstellungen → Konto erneut.**
+- **Eine andere Suche lief bereits – starte sie erneut, sobald diese abgeschlossen ist.**
+- **Credits konnten nicht abgebucht werden – prüfe dein Guthaben unter Credits.**
+- **Die Sperrliste konnte nicht gelesen werden, deshalb wurde nichts gesucht – versuche es erneut.**
+
+Jeder andere Fehler lautet **Etwas ist schiefgelaufen – wir wurden benachrichtigt.**
 
 ## Wenn die Warteschlange unter Nächster Durchlauf leer ist
 
@@ -33,7 +93,7 @@ Gehe diese Checkliste der Reihe nach durch, bevor du einen Lauf startest:
 2. **ICP gate**: Prüfe, ob der Kontakt den aktuellen ICP-Schwellenwert und die Pipeline-Kriterien erfüllt.
 3. **Sperrliste**: Prüfe, dass weder der Unternehmensname noch die Domain auf deiner Sperrliste stehen.
 4. **Stop state**: Prüfe, dass für den Prospect kein Ergebnis gesetzt und er nicht archiviert ist.
-5. **Required data**: Stelle sicher, dass der nächste Schritt die nötigen Recherche-, Kanal- oder Nachrichtendaten hat.
+5. **Required data**: Stelle sicher, dass der nächste Schritt die nötigen Recherche-, Kanal- oder Nachrichtendaten hat. Ein Kontakt braucht außerdem Vorname, Nachname, Jobtitel und eine E-Mail-Adresse, ein LinkedIn-Profil oder eine Unternehmenswebsite, um Prospect zu werden, und sein Unternehmen muss unter **Max. Kontakte pro Unternehmen** noch Platz haben; siehe [So gelangen Kontakte in die Queue](/de/configure/add-prospects#so-gelangen-kontakte-in-die-queue).
 6. **Freigabe**: Ist die Freigabe aktiv, prüfe, ob erstellte Nachrichten freigegeben wurden und in der Outreach-Queue warten.
 7. **Cadence**: Prüfe, ob das nächste Follow-up tatsächlich heute fällig ist, nicht erst morgen oder später.
 8. **Limits**: Prüfe, ob das relevante Tageslimit über `0` liegt und die heutige Zuteilung nicht schon aufgebraucht ist.
@@ -42,18 +102,19 @@ Gehe diese Checkliste der Reihe nach durch, bevor du einen Lauf startest:
 
 Die meisten Fälle einer leeren Queue gehen auf Punkt 1, 6, 8 oder 9 zurück. Kläre diese zuerst.
 
-Um zu sehen, warum ein einzelner Kontakt nicht weiterkommt, öffne **Prospects → Kontakte**. Ein Kontakt, der noch kein Prospect ist, zeigt in der Spalte **Phase** **In Warteschlange** oder **Nicht in der Pipeline**. Fahre mit der Maus über das Badge, um den Grund zu sehen, etwa kein zugewiesener Seat, ein ICP-Score unter dem Pipeline-Minimum oder ein Unternehmensabgleich, der geprüft werden muss (siehe [Prospects und Unternehmen](/de/operate/prospects-and-companies#angehaltene-kontakte)).
+Um zu sehen, warum ein einzelner Kontakt nicht weiterkommt, öffne **Prospects → Kontakte**. Ein Kontakt, der noch kein Prospect ist, zeigt in der Spalte **Phase** **In Warteschlange** oder **Nicht in der Pipeline**. Fahre mit der Maus über das Badge, um den Grund zu sehen, etwa kein zugewiesener Seat, ein ICP-Score unter dem Pipeline-Minimum, **Jobtitel oder Name fehlt**, **Keine E-Mail, kein LinkedIn-Profil und keine Unternehmenswebsite** oder ein Unternehmensabgleich, der geprüft werden muss (siehe [Prospects und Unternehmen](/de/operate/prospects-and-companies#angehaltene-kontakte)).
 
 ## Wenn ein Lauf nichts sendet
 
 Zeigt ein Versandschritt wie **E-Mail-Versand**, **LinkedIn-Nachrichten** oder **E-Mail-Follow-ups** **Übersprungen**, hatte er nichts zu tun oder hat jeden Eintrag aus einem erfassten Grund übersprungen. Kaputt ist nichts. Der Lauf selbst kann trotzdem **Erfolgreich** zeigen, weil ein anderer Schritt gearbeitet hat. Prüfe:
 
 - **Neu erkannte Antworten**: Prospects, die seit dem letzten Lauf geantwortet haben, werden automatisch von Follow-ups ausgeschlossen.
-- **Verbindungsstatus**: Ein getrennter Seat blockiert die LinkedIn-Schritte.
-- **Freigabestatus**: Nachrichten, die in der Queue auf Freigabe warten, werden erst nach der Freigabe gesendet.
+- **Verbindungsstatus**: Ein Seat ohne verbundenes LinkedIn-Konto oder mit einer nötigen neuen Anmeldung blockiert die LinkedIn-Schritte.
+- **Freigabestatus**: Nachrichten, die in der Queue auf Freigabe warten, werden erst nach der Freigabe gesendet. Bei aktiver Freigabe pausieren außerdem neue Entwürfe, solange Nachrichten für zwei Tage auf dich warten; siehe [Nachrichten prüfen](/de/operate/review-messages#freigabe-an-oder-aus).
 - **Bereits gesendete Nachrichten**: Dubletten werden erkannt und stillschweigend übersprungen.
 - **Gestoppte oder archivierte Prospects**: Prospects, die zwischen Queue-Vorschau und Laufzeit gestoppt oder archiviert wurden, werden übersprungen.
 - **Tageslimits und Fälligkeiten**: Ein geplanter Lauf kann die Limits schon früher am Tag erreicht haben.
+- **Feiertage**: Eine erste E-Mail, Kontaktanfrage, LinkedIn-Nachricht oder ein Follow-up wird am gesetzlichen Feiertag des Empfängers zurückgehalten und geht mit einem späteren Lauf raus. Siehe [Feiertage](/de/configure/schedule-and-limits#feiertage).
 
 Das System überspringt einen unsicheren Versand eher, als eine Dublette zu senden oder jemanden nach einer Antwort weiter zu kontaktieren. Ein übersprungener Versand ist sicherer als eine falsche Zustellung.
 
@@ -137,6 +198,29 @@ Du siehst das an mehreren Stellen:
   </Step>
   <Step title="Fortsetzen">
     Ist das Postfach entsperrt, wähle **Versand fortsetzen**. Verweigert der Anbieter es weiterhin, pausiert der Versand erneut. Oder wähle **Trennen** und verbinde ein anderes Postfach.
+  </Step>
+</Steps>
+
+## Wenn zu viele E-Mails nicht zugestellt werden
+
+Wurden 5 % oder mehr der letzten 100 E-Mails eines Postfachs nicht zugestellt (Bounce) und mindestens 20 gesendet, pausiert der Sales Agent E-Mails für dieses Postfach. E-Mails und E-Mail-Follow-ups aller Seats, die das Postfach nutzen, sind angehalten, bis jemand sie fortsetzt. LinkedIn ist nicht betroffen. Follow-ups zählen als Sendungen. Ein Bounce heißt: Die Adresse konnte die Mail nicht empfangen; eine Verweigerung durch deinen E-Mail-Anbieter zählt nie als Bounce.
+
+Du siehst das an mehreren Stellen:
+
+- in der Benachrichtigungsglocke: **E-Mail-Versand pausiert: zu viele Zustellfehler**, mit dem Postfach
+- als rotes Banner auf **Start** und als Eintrag in **Aufgaben**, jeweils mit **Optionen ansehen**: **Pausiert, weil zu viele E-Mails nicht zugestellt werden konnten. Deshalb sind E-Mails und E-Mail-Follow-ups angehalten. LinkedIn ist nicht betroffen. Prüfe die Kontaktliste und klicke dann auf „Versand fortsetzen“.**
+- unter **Einstellungen → Konto**: Die E-Mail-Karte zeigt **Versand pausiert** mit demselben Grund
+- in einer E-Mail an den Owner des Seats oder, wenn der Seat keinen Owner hat, an deine Admins, mit der Zahl der Bounces
+
+<Steps>
+  <Step title="Kontaktliste prüfen">
+    Sieh dir die Adressen an, an die deine E-Mails gingen, etwa eine importierte Liste mit veralteten Adressen. Korrigiere oder entferne die fehlerhaften.
+  </Step>
+  <Step title="Einstellungen → Konto öffnen">
+    Öffne den betroffenen Seat. Die E-Mail-Karte bietet **Versand fortsetzen**. **Eine Notiz für deine IT** gilt hier nicht, weil dein Anbieter nichts blockiert hat.
+  </Step>
+  <Step title="Fortsetzen">
+    Wähle **Versand fortsetzen**. Die Zählung beginnt in diesem Moment neu: Die Bounces, die die Pause ausgelöst haben, zählen nicht erneut. Werden danach 5 % oder mehr der gesendeten E-Mails nicht zugestellt, bei mindestens 20 gesendeten, pausiert das Postfach erneut. **Trennen** hebt diese Pause nicht auf.
   </Step>
 </Steps>
 

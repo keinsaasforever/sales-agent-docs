@@ -22,7 +22,7 @@ icon: "user-plus"
 
 Vier Kacheln stehen über den Tabs, damit du die Lage siehst, bevor du einen Weg wählst:
 
-- **Zu durchsuchende Unternehmen**: Unternehmen mit Seat als Owner, die noch nie durchsucht wurden und deren **Unternehmens-Fit** auf oder über deinem **ICP-Schwellenwert für die Pipeline** liegt oder noch nicht bewertet ist. Die Kachel wird orange, dann rot, je weniger übrig sind.
+- **Zu durchsuchende Unternehmen**: Unternehmen mit Seat als Owner, die noch nie durchsucht wurden, bei denen noch niemand steht, den die Pipeline übernehmen könnte (eine Person mit Namen, Jobtitel und einem Weg, sie zu erreichen), und deren **Unternehmens-Fit** auf oder über deinem **ICP-Schwellenwert für die Pipeline** liegt oder noch nicht bewertet ist. Die Kachel wird orange, dann rot, je weniger übrig sind.
 - **Warten auf Outreach**: gefundene, aber noch nicht kontaktierte Personen.
 - **In 30 Tagen gefunden**: die Personen, die deine Suchen in den letzten 30 Tagen gefunden haben.
 - **Credits**: dein Guthaben.
@@ -51,7 +51,7 @@ Hat keiner deiner Seats einen LinkedIn-Login mit Sales Navigator, zeigt der Tab 
 
 - Auf deinem eigenen Seat, oder bei einem Admin ohne eigenen auf einem noch nicht vergebenen Seat: **LinkedIn verbinden**, **Erneut verbinden** oder **Mit Sales Navigator neu verbinden**. Du meldest dich auf einer geführten Seite an. Beim erneuten Verbinden eines aktiven Logins ohne Sales Navigator bleibt das Konto dasselbe und ein Abonnement wird erkannt. Zurück im Tab erscheint bis zu eine Minute lang **Verbunden. Sales Navigator wird geprüft…**, dann **Sales Navigator verbunden.** Hat das Konto keins, sagt die Karte **Dieses LinkedIn-Konto hat kein Sales-Navigator-Abonnement.** und bietet **Anderes LinkedIn-Konto verwenden** an.
 - Hat das Konto noch keinen Seat, sehen Admins **Neuen Seat anlegen**, und Mitglieder lesen **Du hast noch keinen Seat. Bitte deinen Admin, dir einen zuzuweisen.** Gehören alle Seats Kollegen, steht in der Karte **Bitte den Owner eines Seats, Sales Navigator unter Einstellungen › Konto zu verbinden.**
-- Ein Seat, der verbunden ist, aber noch nicht importiert, weil er nicht aktiv ist, noch umgestellt wird oder LinkedIn dafür ausgeschaltet ist, sagt das in der Karte.
+- Ein Seat, der verbunden ist, aber noch nicht importiert, weil er nicht aktiv ist oder LinkedIn dafür ausgeschaltet ist, sagt das in der Karte.
 
 Die Karte nennt auch, was das Verbinden auslöst. Bei einem Seat mit Zeitplan starten LinkedIn-Kontaktanfragen und Nachrichten mit seinem nächsten Durchlauf; pausiere den Zeitplan also zuerst unter **Einstellungen → Zeitplan**, wenn du das nicht möchtest. Bei einem Seat ohne Zeitplan wird nichts gesendet, bis du den Zeitplan einschaltest oder **Jetzt starten** wählst. Ein Seat mit ausgeschaltetem LinkedIn sendet nichts auf LinkedIn, und ein nicht aktiver Seat sendet nichts, bis er aktiviert wird.
 
@@ -62,10 +62,9 @@ Haben deine eigenen Seats kein Sales Navigator, der Seat eines Kollegen aber sch
 Admins steuern den täglichen Import in der Karte **Deine Suchen und Listen** unter dem Formular im Tab **Sales Navigator**. Mitglieder sehen nur das Formular zum Hinzufügen einer Suche oder Liste.
 
 1. Füge jede Suche oder Liste über das Formular über der Karte hinzu. Eine Suche gehört zu dem Sales-Navigator-Seat, der sie gespeichert hat, und nur dieser Seat kann sie importieren. Die Karte listet jede gespeicherte Suche.
-2. Schalte in der Karte **Automatisch importieren** ein; der Import ist aus, bis ein Admin ihn einschaltet. Lege unter **Bis zu** fest, wie viele neue Personen pro Tag hinzukommen (höchstens 100), ab wann er **Läuft täglich ab** und **Pausieren, wenn** wie viele Personen bereits warten dürfen; lässt du das Feld leer, gibt es keine Grenze. Wähle dann **Speichern**.
-3. Schalte optional **E-Mail-Adressen** und **Telefonnummern** ein, um Kontaktdaten direkt nach dem Import statt erst beim Eintritt in die Ansprache zu suchen.
+2. Schalte in der Karte **Automatisch importieren** ein; der Import ist aus, bis ein Admin ihn einschaltet. Lege unter **Bis zu** fest, wie viele neue Personen pro Tag hinzukommen (höchstens 100). Wähle dann **Speichern**.
 
-Die Karte zeigt, wie viele Credits ein Lauf reserviert und für wie viele Läufe dein Guthaben reicht. Uhrzeit, Pause und die Suche nach Kontaktdaten teilt sich der Import mit deiner [automatischen Suche](#nach-zeitplan-suchen): Eine Änderung an einer wirkt auch auf die andere.
+Der Import startet mit dem täglichen Durchlauf des Seats, der die Suche gespeichert hat, höchstens einmal am Tag. Bei **Jetzt starten** läuft er nicht, und ein Seat mit ausgeschaltetem Zeitplan importiert nichts: Schalte den Zeitplan unter **Einstellungen → Zeitplan** ein. **Läuft täglich ab**, **Pausieren, wenn** und die Schalter für **E-Mail-Adressen** und **Telefonnummern** auf derselben Karte gehören zu deiner [automatischen Suche](#nach-zeitplan-suchen), nicht zum Import. Der Import reserviert keine Credits. Die Personen, die er hereinholt, werden wie jeder andere Kontakt nach E-Mail und Telefonnummer nachgeschlagen, sobald sie Prospects werden.
 
 Jede gespeicherte Suche hat einen eigenen Schalter (**Aus dieser Suche importieren**) und ein Papierkorb-Symbol (**Suche entfernen**) und zeigt, wie viele ihrer Ergebnisse bereits gelesen wurden. LinkedIn zeigt nur die ersten 2.500 Ergebnisse einer Suche; grenze eine größere Suche ein, um den Rest zu erreichen. Der Import ist kostenlos. Importierte Personen werden wie jeder andere Kontakt geprüft, gefiltert und bewertet; die Suche nach ihren Kontaktdaten wird wie üblich berechnet. Personen ohne Arbeitgeber, zum Beispiel Selbstständige, werden übersprungen: Sie werden kein Kontakt, und für sie entsteht kein Unternehmen.
 
@@ -93,7 +92,7 @@ Diese Felder kannst du zuordnen:
 
 ### Personen
 
-Jede Zeile benötigt eine LinkedIn-Profil-URL oder den Namen einer Person zusammen mit der Website des Unternehmens. Zeilen ohne LinkedIn-Profil-URL werden trotzdem importiert; der Sales Agent ergänzt ihre LinkedIn-Profile anschließend, was du auf **Jobs** verfolgen kannst. Der Tab zählt die Zeilen, die er nicht importieren kann; der Hinweis neben der Zahl nennt den Grund. Zeilen mit nur einem Namen oder einer E-Mail-Adresse kann keinsaas mit **Anreicherung anfordern** vervollständigen, für 1 Credit pro Zeile.
+Jede Zeile benötigt eine LinkedIn-Profil-URL oder den Namen einer Person zusammen mit der Website des Unternehmens. Zeilen ohne LinkedIn-Profil-URL werden trotzdem importiert; der Sales Agent ergänzt ihre LinkedIn-Profile anschließend, was du in [**Aktivität**](/de/operate/activity-and-troubleshooting#verlauf-lesen) verfolgen kannst. Der Tab zählt die Zeilen, die er nicht importieren kann; der Hinweis neben der Zahl nennt den Grund. Zeilen mit nur einem Namen oder einer E-Mail-Adresse kann keinsaas mit **Anreicherung anfordern** vervollständigen, für 1 Credit pro Zeile.
 
 ### Unternehmen
 
@@ -120,15 +119,15 @@ Der Tab **Unsere Suche** findet Personen bei Unternehmen, die bereits im Dashboa
 
 Die Kacheln über den Tabs zeigen, wo du stehst; siehe [Sehen, wo du stehst](#sehen-wo-du-stehst).
 
-**Deine Suchjobs** listet die automatische Suche, die **Signalsuche**, sobald keinsaas sie mit dir eingeschaltet hat, und jede gerade laufende Suche, mit einem Link zu [**Jobs**](/de/operate/jobs) für jeden Durchlauf, sein Ergebnis und seine Kosten. Die Zeile der Signalsuche zählt die beobachteten Unternehmen, zeigt das Datum der letzten Suche und zählt die Unternehmen mit einem Signal in den letzten 30 Tagen. Admins sehen außerdem **Was als Signal zählt**, einen Link zu **Einstellungen → Signale**.
+**Deine Suchjobs** listet die automatische Suche, die **Signalsuche**, sobald keinsaas sie mit dir eingeschaltet hat, und jede gerade laufende Suche, mit einem Link zu [**Aktivität**](/de/operate/activity-and-troubleshooting#verlauf-lesen) für jeden Durchlauf, sein Ergebnis und seine Kosten. Die Zeile der Signalsuche zählt die beobachteten Unternehmen, zeigt das Datum der letzten Suche und zählt die Unternehmen mit einem Signal in den letzten 30 Tagen. Admins sehen außerdem **Was als Signal zählt**, einen Link zu **Einstellungen → Signale**.
 
 **Neue Suche** hat fünf Schritte. Ein Schritt öffnet sich, sobald du den vorigen bestätigt hast, und ein abgeschlossener Schritt klappt zu einer Zusammenfassung mit **Bearbeiten** zu.
 
 1. **Wo du suchst**: **Personen bei meinen Unternehmen** oder **Neue Unternehmen und die Personen dort**. Die zweite Option findet Unternehmen, die zu deinem Targeting passen, und die richtigen Personen dort in einer Suche. Sie läuft, sobald keinsaas sie mit dir einschaltet; bis dahin steht dort **Für dein Konto noch nicht aktiviert.** Der Start mit einem aktuellen Ereignis, etwa einer Finanzierungsrunde oder einer neuen Führungskraft, ist mit **bald** markiert.
-2. **Wen du suchst**: deine Werte aus der Zielgruppe (**Jobtitel (Tier 1)**, **Seniorität**, **Regionen**, **Branchen**, **Größen**). Eine Suche nach neuen Unternehmen zeigt zusätzlich **Kunden**. Admins ändern sie mit **Im Targeting ändern**; Mitglieder fragen einen Admin. Die Suche benötigt mindestens einen Tier-1-Titel unter **Einstellungen → Zielgruppe**.
+2. **Wen du suchst**: deine Werte aus der Zielgruppe (**Jobtitel (Tier 1)**, **Seniorität**, **Regionen**, **Branchen**, **Größen**). Eine Suche nach neuen Unternehmen zeigt zusätzlich **Auszuschließende Branchen** und **Kunden**. Admins ändern sie mit **Im Targeting ändern**; Mitglieder fragen einen Admin. Die Suche benötigt mindestens einen Tier-1-Titel unter **Einstellungen → Zielgruppe**.
 3. **Wie viele**: **Beste Passung zuerst** nimmt die nächsten Unternehmen nach **Unternehmens-Fit**, mit **Unternehmen auswählen** wählst du sie selbst. Lege dann **Personen pro Unternehmen** fest; der Standard kommt aus **Max. Kontakte pro Unternehmen**. Ein bereits durchsuchtes Unternehmen wird übersprungen, solange du es nicht erneut auswählst. Bei neuen Unternehmen wählst du **Zu findende Personen**: 25, 50 oder 100.
 4. **E-Mails und Telefonnummern**: Schalte **E-Mail-Adressen** oder **Telefonnummern** ein, um Personen direkt nach der Suche nachzuschlagen, und zwar alle, die sie findet. Ausgeschaltet werden sie nachgeschlagen, sobald eine Person in die Ansprache kommt. Bei einer Suche nach neuen Unternehmen passiert das immer erst dann.
-5. **Einmalig oder automatisch**: **Einmalig, jetzt** läuft sofort, und das Ergebnis findest du unter [**Jobs**](/de/operate/jobs). **Geschätzte Credits** und **Guthaben danach** zeigen vorab die Kosten. **Automatisch, jeden Werktag** ist unter [Nach Zeitplan suchen](#nach-zeitplan-suchen) beschrieben.
+5. **Einmalig oder automatisch**: **Einmalig, jetzt** läuft sofort, und das Ergebnis findest du in [**Aktivität**](/de/operate/activity-and-troubleshooting#verlauf-lesen). **Geschätzte Credits** und **Guthaben danach** zeigen vorab die Kosten. **Automatisch, jeden Werktag** ist unter [Nach Zeitplan suchen](#nach-zeitplan-suchen) beschrieben.
 
 Die Suche sucht zuerst nach Tier-1-Titeln und nach Tier-2-Titeln nur dort, wo kein Tier-1-Kontakt gefunden wurde, und berücksichtigt deine Standorte, Filter und die Grenze **Max. Kontakte pro Unternehmen**. Jedes Unternehmen braucht einen Seat als Owner; Unternehmen ohne Owner werden übersprungen, und der Schritt sagt es dir. Kontakte außerhalb deiner Filter bleiben ohne Seat erhalten.
 
@@ -144,9 +143,9 @@ Admins richten die automatische Suche in Schritt 5 von **Neue Suche** ein: Wähl
 - **Pausieren, wenn** legt fest, wie viele Personen bereits warten dürfen, bevor die Suche pausiert. Sie läuft weiter, sobald die Queue kleiner wird. Lässt du das Feld leer, gibt es keine Grenze.
 - **E-Mail-Adressen** und **Telefonnummern** in Schritt 4 suchen Kontaktdaten direkt nach der Suche statt erst beim Eintritt in die Ansprache.
 
-Der Schritt zeigt, wie viele Credits ein Lauf reserviert und für wie viele Läufe dein Guthaben reicht. Reicht es nicht einmal für einen Lauf, wird nichts durchsucht, bis du Credits aufstockst. Durchsucht werden nur Unternehmen ohne Kontakte und mit Seat als Owner, und nur solche, deren **Unternehmens-Fit** auf oder über deinem **ICP-Schwellenwert für die Pipeline** liegt oder noch nicht bewertet ist.
+Der Schritt zeigt, wie viele Credits ein Lauf reserviert und für wie viele Läufe dein Guthaben reicht. Reicht es nicht einmal für einen Lauf, wird nichts durchsucht, bis du Credits aufstockst. Durchsucht werden nur Unternehmen mit Seat als Owner, bei denen noch niemand steht, den die Pipeline übernehmen könnte, also dieselben, die die Kachel **Zu durchsuchende Unternehmen** zählt, und nur solche, deren **Unternehmens-Fit** auf oder über deinem **ICP-Schwellenwert für die Pipeline** liegt oder noch nicht bewertet ist.
 
-Ein Konto hat eine automatische Suche bei deinen Unternehmen; eine neu gespeicherte ersetzt deren Einstellungen. Sie erscheint unter **Deine Suchjobs** als **Personen bei meinen Unternehmen, automatisch** mit ihrem Status, etwa **Läuft jeden Werktag ab 04:00 Uhr**, und ihrem letzten Lauf. Admins können sie ausschalten, mit **Jetzt ausführen** starten, mit **Bearbeiten** ändern oder mit **Löschen** beenden. Mitglieder sehen sie, solange sie an ist, können sie aber nicht ändern. Uhrzeit, Pause und die Suche nach Kontaktdaten teilt sie sich mit dem [Sales-Navigator-Import](#täglich-aus-sales-navigator-importieren). Eine automatische Suche nach neuen Unternehmen ist mit **bald** markiert: Vorerst läuft sie einmalig.
+Ein Konto hat eine automatische Suche bei deinen Unternehmen; eine neu gespeicherte ersetzt deren Einstellungen. Sie erscheint unter **Deine Suchjobs** als **Personen bei meinen Unternehmen, automatisch** mit ihrem Status, etwa **Läuft jeden Werktag ab 04:00 Uhr**, und ihrem letzten Lauf. Admins können sie ausschalten, mit **Jetzt ausführen** starten, mit **Bearbeiten** ändern oder mit **Löschen** beenden. Mitglieder sehen sie, solange sie an ist, können sie aber nicht ändern. Eine automatische Suche nach neuen Unternehmen ist mit **bald** markiert: Vorerst läuft sie einmalig.
 
 ## Personen oder Unternehmen von Hand hinzufügen
 
@@ -157,7 +156,7 @@ Nutze **Schnell hinzufügen** für eine Person, die du auf einer Messe getroffen
 Schnell hinzufügen durchläuft dieselben Prüfungen wie ein CSV-Import: Personen, die schon in deiner Liste sind, werden zugeordnet, und Personen bei einem gesperrten Unternehmen werden übersprungen. Zwei Schalter bestimmen, was danach passiert:
 
 - **Zuerst kontaktieren** (Personen): Die Person gilt als perfekte Passung. Sie überspringt deinen ICP-Mindestscore und deine Filter, kommt im nächsten Durchlauf zuerst dran, Kollegen im Unternehmen rücken mit nach oben, und Telefonnummern werden nachgeschlagen, wenn du das eingeschaltet hast. Der Schalter ist standardmäßig an. Ausgeschaltet wird die Person wie jeder Import anhand deines Targetings bewertet, und Personen außerhalb deiner Filter werden zurückgehalten. Der Schalter erscheint nur, wo der Sales Agent deine ICP-Scores berechnet.
-- **Jetzt Personen finden** (Unternehmen): eine Suche für alle, mit Kosten und deinem Guthaben. Durchsucht werden nur Unternehmen, die noch nie durchsucht wurden und keine Kontakte haben. Ausgeschaltet werden die Unternehmen ohne Personen gespeichert; deine automatische Suche oder eine spätere Suche findet sie.
+- **Jetzt Personen finden** (Unternehmen): eine Suche für alle, mit Kosten und deinem Guthaben. Durchsucht werden nur Unternehmen, die noch nie durchsucht wurden und bei denen noch niemand steht, den die Pipeline übernehmen könnte. Ausgeschaltet werden die Unternehmen ohne Personen gespeichert; deine automatische Suche oder eine spätere Suche findet sie.
 
 **Hinzufügen** bleibt klickbar, wenn etwas fehlt. Wähle es, und jedes Problem steht unter seiner Zeile, zum Beispiel **Vor- und Nachname werden benötigt.** oder **Das ist keine Website: Gib sie im Format acme.de ein.** Gesendet wird nichts, bevor alles stimmt.
 
@@ -172,8 +171,9 @@ Ein neu hinzugefügter Kontakt erscheint nicht zwingend sofort in jeder Queue. D
 3. den Unternehmensabgleich: Die Daten des Kontakts dürfen nicht auf einen anderen Arbeitgeber hinweisen
 4. Zuweisung von Owner und Seat; Kontakte eines pausierten Seats warten, bis er wieder eingeschaltet ist
 5. den Pipeline-ICP-Schwellenwert
-6. verfügbare Kanäle und Kontaktdaten
+6. vollständige Daten und einen Weg, sie zu erreichen: Der Kontakt braucht Vorname, Nachname und Jobtitel sowie eine E-Mail-Adresse, ein LinkedIn-Profil oder eine Unternehmenswebsite, die die E-Mail-Suche braucht; andernfalls steht unter **Nicht in der Pipeline** **Jobtitel oder Name fehlt** oder **Keine E-Mail, kein LinkedIn-Profil und keine Unternehmenswebsite**
 7. ob die Person aktiv, gestoppt oder archiviert ist
-8. ob neue Personen noch in die **Neue Personen pro Tag**-Limits des Seats passen
+8. Platz im Unternehmen: Ein Unternehmen hat höchstens **Max. Kontakte pro Unternehmen** Personen gleichzeitig im Outreach, über alle Seats gezählt. Eine Person mit Ergebnis oder im Archiv gibt einen Platz frei. Ein Kontakt, den diese Grenze zurückhält, zeigt weiter **In Warteschlange**, und die Vorschau unter **Nächster Durchlauf** zählt ihn weiter mit, bis ein Platz frei wird
+9. ob neue Personen noch in die **Neue Personen pro Tag**-Limits des Seats passen
 
 Unter **Prospects** zeigt der Tab **Kontakte** wartende Kontakte als **In Warteschlange** und die übrigen als **Nicht in der Pipeline**; fahre mit der Maus über das Badge, um den Grund zu sehen. Die Karten unter **Start → Nächster Durchlauf** zeigen aktuell bereite Kontakte. Erfahre, wie du [die Queue liest](/de/operate/next-run-queue).
