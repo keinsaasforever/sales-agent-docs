@@ -8,7 +8,7 @@ icon: "user-plus"
 
 <Columns cols={3}>
   <Card title="Sales Navigator" icon="link">
-    Sammle Personen oder Unternehmen aus gespeicherten Sales-Navigator-Suchen und -Listen.
+    Sammle Personen oder Unternehmen aus gespeicherten Sales-Navigator-Suchen und -Listen. Braucht einen Seat, dessen LinkedIn-Login Sales Navigator hat.
   </Card>
   <Card title="CSV hochladen" icon="file-spreadsheet">
     Importiere eine Liste mit Personen oder Unternehmen und ordne jede Zeile einem Seat zu.
@@ -18,28 +18,50 @@ icon: "user-plus"
   </Card>
 </Columns>
 
+## Sehen, wo du stehst
+
+Vier Kacheln stehen über den Tabs, damit du die Lage siehst, bevor du einen Weg wählst:
+
+- **Zu durchsuchende Unternehmen**: Unternehmen mit Seat als Owner, die noch nie durchsucht wurden und deren **Unternehmens-Fit** auf oder über deinem **ICP-Schwellenwert für die Pipeline** liegt oder noch nicht bewertet ist. Die Kachel wird orange, dann rot, je weniger übrig sind.
+- **Warten auf Outreach**: gefundene, aber noch nicht kontaktierte Personen.
+- **In 30 Tagen gefunden**: die Personen, die deine Suchen in den letzten 30 Tagen gefunden haben.
+- **Credits**: dein Guthaben.
+
+Sind nur noch wenige Unternehmen zu durchsuchen, steht unter den Kacheln die Zeile **Nur wenige deiner Unternehmen sind noch zu durchsuchen. Füge Unternehmen hinzu:** mit den Wegen, mehr hereinzuholen:
+
+- **CSV hochladen** öffnet den Tab **CSV hochladen**.
+- **Neue Unternehmen finden** startet eine Suche nach neuen Unternehmen, wo diese Suche für dich eingeschaltet ist. Sie wird nicht angeboten, solange eine Suche eingerichtet wird oder eine Suche nach neuen Unternehmen läuft.
+- **Sales-Navigator-Unternehmensliste** öffnet das Formular im Tab **Sales Navigator**. Sie erscheint nur, wenn einer deiner Seats Sales Navigator hat.
+
 ## Sales-Navigator-Suchen und -Listen hinzufügen
 
-Füge im Tab **Sales Navigator** eine oder mehrere Sales-Navigator-URLs ein. Verwende einen dieser Quelltypen:
+Füge im Tab **Sales Navigator** eine oder mehrere Sales-Navigator-URLs ein. Der Tab braucht einen Seat, dessen LinkedIn-Login Sales Navigator hat; ohne ihn ist er gesperrt, siehe [Sales Navigator verbinden](#sales-navigator-verbinden). Verwende einen dieser Quelltypen:
 
 - eine gespeicherte Suche, deren URL `savedSearchId` enthält
 - eine Personenliste mit `/lists/people/` im Pfad
 - eine Unternehmensliste mit `/lists/company/` im Pfad
 
-Die URL bestimmt, ob die Quelle **Kontakte** oder **Unternehmen** enthält. Füge für jede URL optional eine erwartete Ergebnisanzahl und eine Segmentbezeichnung hinzu. Die erwartete Anzahl hilft, Größe und möglichen Credit-Verbrauch einzuschätzen; sie ist keine Ergebnisgarantie. Wähle dann unter **Owner** den Seat und wähle **URLs abschicken**.
+Die URL bestimmt, ob die Quelle **Kontakte** oder **Unternehmen** enthält. Füge für jede URL optional eine erwartete Ergebnisanzahl und eine Segmentbezeichnung hinzu. Die erwartete Anzahl hilft, Größe und möglichen Credit-Verbrauch einzuschätzen; sie ist keine Ergebnisgarantie. Wähle dann **URLs abschicken**. Hast du mehrere Seats mit Sales Navigator, wähle vorher unter **Gespeichert im Sales Navigator von** einen aus. Die URLs landen bei den gespeicherten Suchen dieses Seats, und neue Personen daraus werden täglich importiert, sobald ein Admin **Automatisch importieren** einschaltet (siehe unten). Nur der Seat, der eine Suche gespeichert hat, kann sie importieren.
 
-Was danach passiert, hängt vom Seat ab:
+Personenquellen identifizieren bereits Personen, können aber weiterhin Recherche, Anreicherung, Scoring und Filterung erfordern. Unternehmensquellen identifizieren Organisationen: Der tägliche Import findet auch die Personen (siehe unten).
 
-- **Der LinkedIn-Login des Seats hat Sales Navigator:** Die URLs landen bei den gespeicherten Suchen dieses Seats. Neue Personen daraus werden täglich importiert, sobald ein Admin **Automatisch importieren** einschaltet (siehe unten).
-- **Jeder andere Seat:** keinsaas verarbeitet die Suchen und fügt die Ergebnisse deiner Pipeline hinzu. Den Fortschritt siehst du auf der Seite **Jobs**.
+### Sales Navigator verbinden
 
-Personenquellen identifizieren bereits Personen, können aber weiterhin Recherche, Anreicherung, Scoring und Filterung erfordern. Unternehmensquellen identifizieren Organisationen: Bei einem Seat mit Sales Navigator findet der tägliche Import auch die Personen (siehe unten). Bei jedem anderen Seat braucht eine Unternehmensquelle weiterhin eine Kontaktsuche.
+Hat keiner deiner Seats einen LinkedIn-Login mit Sales Navigator, zeigt der Tab eine Karte **Sales Navigator verbinden** über einer abgedunkelten Kopie des Tabs, und zuerst öffnet sich **CSV hochladen**. Ein Admin sieht die Karte, wenn kein Seat des Kontos Sales Navigator hat; ein Mitglied, wenn keiner seiner eigenen Seats es hat. Was die Karte anbietet, hängt vom Seat ab:
+
+- Auf deinem eigenen Seat, oder bei einem Admin ohne eigenen auf einem noch nicht vergebenen Seat: **LinkedIn verbinden**, **Erneut verbinden** oder **Mit Sales Navigator neu verbinden**. Du meldest dich auf einer geführten Seite an. Beim erneuten Verbinden eines aktiven Logins ohne Sales Navigator bleibt das Konto dasselbe und ein Abonnement wird erkannt. Zurück im Tab erscheint bis zu eine Minute lang **Verbunden. Sales Navigator wird geprüft…**, dann **Sales Navigator verbunden.** Hat das Konto keins, sagt die Karte **Dieses LinkedIn-Konto hat kein Sales-Navigator-Abonnement.** und bietet **Anderes LinkedIn-Konto verwenden** an.
+- Hat das Konto noch keinen Seat, sehen Admins **Neuen Seat anlegen**, und Mitglieder lesen **Du hast noch keinen Seat. Bitte deinen Admin, dir einen zuzuweisen.** Gehören alle Seats Kollegen, steht in der Karte **Bitte den Owner eines Seats, Sales Navigator unter Einstellungen › Konto zu verbinden.**
+- Ein Seat, der verbunden ist, aber noch nicht importiert, weil er nicht aktiv ist, noch umgestellt wird oder LinkedIn dafür ausgeschaltet ist, sagt das in der Karte.
+
+Die Karte nennt auch, was das Verbinden auslöst. Bei einem Seat mit Zeitplan starten LinkedIn-Kontaktanfragen und Nachrichten mit seinem nächsten Durchlauf; pausiere den Zeitplan also zuerst unter **Einstellungen → Zeitplan**, wenn du das nicht möchtest. Bei einem Seat ohne Zeitplan wird nichts gesendet, bis du den Zeitplan einschaltest oder **Jetzt starten** wählst. Ein Seat mit ausgeschaltetem LinkedIn sendet nichts auf LinkedIn, und ein nicht aktiver Seat sendet nichts, bis er aktiviert wird.
+
+Haben deine eigenen Seats kein Sales Navigator, der Seat eines Kollegen aber schon, ist nur das Formular gesperrt. Die Karte nennt die Kollegen, schlägt vor, sie zu bitten, ihre gespeicherten Sales-Navigator-Suchen hinzuzufügen, und bietet an, deinen eigenen Seat zu verbinden. Die gespeicherten Suchen darunter bleiben sichtbar und nutzbar.
 
 ## Täglich aus Sales Navigator importieren
 
-Admins steuern den täglichen Import in der Karte **Deine Suchen und Listen** oben im Tab **Sales Navigator**. Mitglieder sehen nur das Formular zum Hinzufügen einer Suche oder Liste.
+Admins steuern den täglichen Import in der Karte **Deine Suchen und Listen** unter dem Formular im Tab **Sales Navigator**. Mitglieder sehen nur das Formular zum Hinzufügen einer Suche oder Liste.
 
-1. Füge jede Suche oder Liste über das Formular unter der Karte hinzu und wähle als **Owner** einen Seat, dessen LinkedIn-Login Sales Navigator hat. Nur der Seat, der eine Suche gespeichert hat, kann sie importieren. Hat kein Seat Sales Navigator, fordert dich die Karte auf, unter **Einstellungen → Konto** einen zu verbinden.
+1. Füge jede Suche oder Liste über das Formular über der Karte hinzu. Eine Suche gehört zu dem Sales-Navigator-Seat, der sie gespeichert hat, und nur dieser Seat kann sie importieren. Die Karte listet jede gespeicherte Suche.
 2. Schalte in der Karte **Automatisch importieren** ein; der Import ist aus, bis ein Admin ihn einschaltet. Lege unter **Bis zu** fest, wie viele neue Personen pro Tag hinzukommen (höchstens 100), ab wann er **Läuft täglich ab** und **Pausieren, wenn** wie viele Personen bereits warten dürfen; lässt du das Feld leer, gibt es keine Grenze. Wähle dann **Speichern**.
 3. Schalte optional **E-Mail-Adressen** und **Telefonnummern** ein, um Kontaktdaten direkt nach dem Import statt erst beim Eintritt in die Ansprache zu suchen.
 
@@ -96,16 +118,9 @@ Vor dem Import:
 
 Der Tab **Unsere Suche** findet Personen bei Unternehmen, die bereits im Dashboard sind. Er öffnet mit dem Stand deiner Suchen. Wähle **Neue Suche**, um eine einzurichten.
 
-Vier Kacheln zeigen, wo du stehst:
+Die Kacheln über den Tabs zeigen, wo du stehst; siehe [Sehen, wo du stehst](#sehen-wo-du-stehst).
 
-- **Zu durchsuchende Unternehmen**: Unternehmen mit Seat als Owner, die noch nie durchsucht wurden und deren **Unternehmens-Fit** auf oder über deinem **ICP-Schwellenwert für die Pipeline** liegt oder noch nicht bewertet ist. Die Kachel wird orange, dann rot, je weniger übrig sind.
-- **Warten auf Outreach**: gefundene, aber noch nicht kontaktierte Personen.
-- **In 30 Tagen gefunden**: die Personen, die deine Suchen in den letzten 30 Tagen gefunden haben.
-- **Credits**: dein Guthaben.
-
-Sind nur noch wenige Unternehmen übrig, schlägt ein Hinweis **Unternehmen hochladen** vor, oder **Neue Unternehmen finden**, wo diese Suche für dich eingeschaltet ist.
-
-**Deine Suchjobs** listet die automatische Suche und jede gerade laufende Suche, mit einem Link zu [**Jobs**](/de/operate/jobs) für jeden Durchlauf, sein Ergebnis und seine Kosten.
+**Deine Suchjobs** listet die automatische Suche, die **Signalsuche**, sobald keinsaas sie mit dir eingeschaltet hat, und jede gerade laufende Suche, mit einem Link zu [**Jobs**](/de/operate/jobs) für jeden Durchlauf, sein Ergebnis und seine Kosten. Die Zeile der Signalsuche zählt die beobachteten Unternehmen, zeigt das Datum der letzten Suche und zählt die Unternehmen mit einem Signal in den letzten 30 Tagen. Admins sehen außerdem **Was als Signal zählt**, einen Link zu **Einstellungen → Signale**.
 
 **Neue Suche** hat fünf Schritte. Ein Schritt öffnet sich, sobald du den vorigen bestätigt hast, und ein abgeschlossener Schritt klappt zu einer Zusammenfassung mit **Bearbeiten** zu.
 

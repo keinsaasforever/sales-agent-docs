@@ -4,11 +4,11 @@ description: "Starte die vollständige Pipeline, führe einen Teil einzeln aus, 
 icon: "play"
 ---
 
-Du kannst die Pipeline jederzeit manuell über die Karte **Pipeline starten** auf **Start** starten oder automatisch nach dem Zeitplan eines Seats ausführen lassen. In beiden Fällen gelten dieselben Eignungsregeln, Tageslimits und Versandmodi.
+Du kannst die Pipeline jederzeit manuell über die Zeile **Pipeline** auf **Start** starten oder automatisch nach dem Zeitplan eines Seats ausführen lassen. In beiden Fällen gelten dieselben Eignungsregeln, Tageslimits und Versandmodi.
 
 ## Vollständige Pipeline ausführen
 
-Wähle **Jetzt starten**, um einen vollständigen Lauf für deine eigenen aktiven Seats zu starten. Das gilt für Mitglieder und Admins gleichermaßen: Der Seat eines Kollegen läuft nach seinem eigenen Zeitplan oder wenn sein Owner **Jetzt starten** wählt.
+Wähle **Jetzt starten**, das Play-Symbol in der Zeile **Pipeline**, um einen vollständigen Lauf für deine eigenen aktiven Seats zu starten. Das gilt für Mitglieder und Admins gleichermaßen: Der Seat eines Kollegen läuft nach seinem eigenen Zeitplan oder wenn sein Owner **Jetzt starten** wählt.
 
 Jeder Seat arbeitet diese Schritte der Reihe nach ab:
 
@@ -20,7 +20,7 @@ Jeder Seat arbeitet diese Schritte der Reihe nach ab:
 
 Jeder Schritt holt sich seine eigenen geeigneten Kontakte. Ein Schritt ohne Arbeit hält den nächsten also nicht auf. Auf einem Seat mit ausgeschaltetem oder pausiertem LinkedIn werden die LinkedIn-Aktionen übersprungen, E-Mail läuft weiter.
 
-Die Arbeit läuft im Hintergrund. Solange sie aktiv ist, zeigt die Karte **Pipeline läuft** mit einem Link zu **Aktivität**. Am Ende zeigt sie **Pipeline abgeschlossen – Ergebnisse findest du unter Aktivität.** Ein vollständiger Lauf kann einige Stunden dauern, weil LinkedIn-Aktionen zeitlich verteilt werden.
+Die Arbeit läuft im Hintergrund. Solange sie aktiv ist, zeigt die Zeile **Pipeline läuft** mit der Anzahl aktiver Abläufe und einem Link, **Aktivität ansehen**, zu **Aktivität**, und ihr Punkt blinkt grün. Am Ende steht unter der Zeile **Pipeline abgeschlossen – Ergebnisse findest du unter Aktivität.** Ein vollständiger Lauf kann einige Stunden dauern, weil LinkedIn-Aktionen zeitlich verteilt werden.
 
 <Warning>
   Lass LinkedIn geschlossen, solange die Pipeline läuft. Führe während des Automatisierungsfensters keine manuelle LinkedIn-Arbeit mit demselben Konto aus.
@@ -30,7 +30,7 @@ Zeigt **Start** für einen Seat **LinkedIn ist pausiert**, wähle zuerst **Linke
 
 ## Einen Teil einzeln ausführen
 
-Öffne **Erweitert** in der Karte **Pipeline starten**, um einen einzelnen Teil der Pipeline auszuführen:
+Öffne **Erweitert**, den Pfeil neben **Jetzt starten** in der Zeile **Pipeline**, um unter **Starte einen Teil der Pipeline einzeln:** einen einzelnen Teil der Pipeline auszuführen:
 
 - **Nachrichten** — schreibt Erstnachrichten für recherchierte Prospects. Sendet nichts.
 - **Outreach** — sendet freigegebene E-Mails und LinkedIn-Nachrichten. Nimmt keine neuen Kontakte auf und schreibt keine neuen Nachrichten.
@@ -46,7 +46,7 @@ Jeder Seat führt nur einen Lauf gleichzeitig aus. Solange auf einem Seat ein La
 
 ## Lauf stoppen
 
-**Stoppen** erscheint in der Karte **Pipeline starten**, solange ein Lauf aktiv ist. Als Mitglied stoppst du die Läufe deiner eigenen Seats. Als Admin stoppst du alle Läufe deines Kontos, auch die von Kollegen. Ein Admin ohne eigenen Seat sieht die Karte nur mit **Stoppen**.
+**Stoppen**, ein Quadrat-Symbol in der Zeile **Pipeline**, erscheint, solange ein Lauf aktiv ist. Als Mitglied stoppst du die Läufe deiner eigenen Seats. Als Admin stoppst du alle Läufe deines Kontos, auch die von Kollegen. Ein Admin ohne eigenen Seat sieht die Zeile nur mit **Stoppen** und dem Hinweis **Kein eigener Seat: Du kannst hier Durchläufe stoppen.**
 
 - Ein Lauf, der in den ersten rund 30 Sekunden gestoppt wird, wird abgebrochen, bevor etwas hinausgeht: **Durchlauf gestoppt. Es wurde nichts gesendet.**
 - Ein weiter fortgeschrittener Lauf schließt den Kontakt ab, den er gerade bearbeitet, speichert ihn und nimmt keinen neuen mehr: **Wird gestoppt – der aktuelle Schritt wird noch abgeschlossen, damit nichts verloren geht.**
@@ -66,10 +66,10 @@ Der Status jedes Laufs erscheint unter **Aktivität**, jeder Schritt unter seine
 
 ## Geplante Läufe
 
-Ist **Zeitplan aktiviert** für einen Seat unter **Einstellungen → Zeitplan** aktiv, startet die Pipeline automatisch an den gewählten Tagen, bis zu 20 Minuten nach der Startzeit. Die Karte **Zeitplan** auf **Start** zeigt, ob Zeitpläne aktiv sind und wann sie laufen.
+Ist **Zeitplan aktiviert** für einen Seat unter **Einstellungen → Zeitplan** aktiv, startet die Pipeline automatisch an den gewählten Tagen, bis zu 20 Minuten nach der Startzeit. Auf **Start** zeigt die Zeile **Pipeline** den Zeitplan in Worten und einen Countdown bis zum nächsten Lauf, zum Beispiel **in 2 h 15 min**. **Startet gleich** heißt, dass die Startzeit erreicht ist und der Lauf innerhalb von 20 Minuten beginnt. Der Schalter in der Zeile, **Zeitplan ein- oder ausschalten**, schaltet den Zeitplan deines Seats ein oder aus, genau wie **Zeitplan aktiviert**; bei mehreren Seats ersetzt ihn ein Link zu **Zeitplan-Einstellungen**. Die Karte **Zeitplan** zeigt dieselbe Einstellung.
 
 Ist zur geplanten Zeit noch ein Lauf auf dem Seat aktiv, beginnt der geplante Start nicht. Scheitert der Start eines geplanten Laufs aus technischen Gründen, wird er bis zu 30 Minuten lang automatisch wiederholt.
 
-**Jetzt starten** bleibt immer verfügbar, auch mit Zeitplan. Hat keiner deiner Seats einen Zeitplan, sagt die Karte **Pipeline starten** das und verlinkt auf **Richte einen täglichen Zeitplan ein**.
+**Jetzt starten** bleibt immer verfügbar, auch mit Zeitplan. Hat keiner deiner Seats einen Zeitplan, steht in der Zeile **Pipeline**: **Läuft nur, wenn du sie mit** dem Play-Symbol **startest**. In einem Demo-Konto steht dort **Läuft nicht in einem Demo-Konto**, in einem noch nicht aktivierten Konto **Startet, sobald dein Konto aktiviert ist**.
 
 Nutze [Aktivität und Fehlerbehebung](/de/operate/activity-and-troubleshooting), wenn ein Lauf nicht die erwartete Arbeit ausführt.
