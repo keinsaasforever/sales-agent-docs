@@ -9,7 +9,7 @@ Open **Add to Pipeline** to supply the Sales Agent with contacts. You can add Sa
 
 <CardGroup cols={3}>
   <Card title="Sales Navigator" icon="link">
-    Collect people or companies from saved Sales Navigator searches and lists.
+    Collect people or companies from saved Sales Navigator searches and lists. Needs a seat whose LinkedIn login has Sales Navigator.
   </Card>
   <Card title="Upload CSV" icon="file-spreadsheet">
     Import a list of people or companies and map every row to a seat.
@@ -19,32 +19,53 @@ Open **Add to Pipeline** to supply the Sales Agent with contacts. You can add Sa
   </Card>
 </CardGroup>
 
+## See where you stand
+
+Four tiles sit above the tabs, so you see the situation before you pick a way in:
+
+- **Companies to search**: the companies with an owner seat that were never searched, hold nobody the pipeline could take yet (a person with a name, a job title, and a way to reach them), and whose **Company Fit** is at or above your **Pipeline ICP threshold** or not scored yet. The tile turns amber, then red, as they run low.
+- **Waiting for outreach**: people found but not contacted yet.
+- **Found in 30 days**: the people your searches found in the last 30 days.
+- **Credits**: your balance.
+
+When few companies are left to search, a line under the tiles reads **Few of your companies are left to search. Add companies:** and links the ways to bring in more:
+
+- **Upload CSV** opens the **Upload CSV** tab.
+- **Find new companies** starts a search for new companies, where that search is switched on for you. It is not offered while a search is being set up or a search for new companies is running.
+- **Sales Navigator account list** opens the form on the **Sales Navigator** tab. It shows only when one of your seats has Sales Navigator.
+
 ## Add Sales Navigator searches and lists
 
-On the **Sales Navigator** tab, paste one or more Sales Navigator URLs. The agent accepts three source types:
+On the **Sales Navigator** tab, paste one or more Sales Navigator URLs. The tab needs a seat whose LinkedIn login has Sales Navigator; without one it is locked, see [Connect Sales Navigator](#connect-sales-navigator). The agent accepts three source types:
 
 - a **saved search** whose URL contains `savedSearchId`
 - a **people list** whose path contains `/lists/people/`
 - a **company list** whose path contains `/lists/company/`
 
-The URL sets whether the source holds **Contacts** or **Companies**. For each URL, add an optional expected result count and segment label. The expected count helps estimate size and potential credit use — it is not a guaranteed outcome. Then pick the **Owner** seat and select **Submit URLs**.
+The URL sets whether the source holds **Contacts** or **Companies**. For each URL, add an optional expected result count and segment label. The expected count helps estimate size and potential credit use — it is not a guaranteed outcome. Then select **Submit URLs**. If you have several seats with Sales Navigator, pick one first under **Saved in the Sales Navigator of**. The URLs are added to that seat's saved searches, and new people from them are imported every day once an admin switches on **Import automatically** (see below). Only the seat that saved a search can import it.
 
-What happens next depends on the seat:
+People sources already point to specific contacts but can still require research, enrichment, scoring, and filtering before anyone enters the pipeline. Company sources identify organizations: the daily import also finds the people (see below).
 
-- **The seat's LinkedIn login has Sales Navigator:** the URLs are added to that seat's saved searches, and new people from them are imported every day once an admin switches on **Import automatically** (see below).
-- **Any other seat:** keinsaas processes the searches and adds the results to your pipeline. Track progress on the **Jobs** page.
+### Connect Sales Navigator
 
-People sources already point to specific contacts but can still require research, enrichment, scoring, and filtering before anyone enters the pipeline. Company sources identify organizations: on a seat with Sales Navigator, the daily import also finds the people (see below). For any other seat, a company source still needs a contact search to find individuals.
+When none of your seats has a LinkedIn login with Sales Navigator, the tab shows a **Connect Sales Navigator** card over a dimmed copy of the tab, and **Upload CSV** opens first. An admin sees the card when no seat on the account has Sales Navigator; a member, when none of their own seats has it. What the card offers depends on the seat:
+
+- On your own seat, or for an admin without one on an unclaimed seat, **Connect LinkedIn**, **Reconnect**, or **Reconnect with Sales Navigator**: you sign in on a guided page. Reconnecting a live login without Sales Navigator keeps the same account and picks up a subscription. Back on the tab, **Connected. Checking for Sales Navigator…** shows for up to a minute, then **Sales Navigator connected.** If the account has none, the card says **This LinkedIn account has no Sales Navigator subscription.** and offers **Use a different LinkedIn account**.
+- When the account has no seat yet, admins see **Create a new seat** and members read **You don't have a seat yet. Ask your admin to assign one.** When every seat belongs to a colleague, the card reads **Ask a seat's owner to connect Sales Navigator under Settings › Account.**
+- A seat that is connected but does not import yet, because it is inactive or has LinkedIn switched off, says so in the card.
+
+The card also says what connecting starts. On a seat that runs on a schedule, LinkedIn invites and messages start with its next run, so pause the schedule under **Settings → Schedule** first if you do not want that. On a seat without a schedule, nothing is sent until you turn the schedule on or select **Run Now**. A seat with LinkedIn switched off sends nothing on LinkedIn, and an inactive seat sends nothing until it is activated.
+
+When your own seats have no Sales Navigator but a colleague's seat does, only the form is locked. The card names the colleagues, suggests asking them to add their saved Sales Navigator searches, and offers to connect your own seat. The saved searches below stay visible and usable.
 
 ## Import from Sales Navigator every day
 
-Admins manage daily imports in the **Your searches and lists** card at the top of the **Sales Navigator** tab. Members see only the form to add a search or list.
+Admins manage daily imports in the **Your searches and lists** card, below the form on the **Sales Navigator** tab. Members see only the form to add a search or list.
 
-1. Add each search or list with the form below the card, and pick a seat whose LinkedIn login has Sales Navigator as **Owner**. Only the seat that saved a search can import it. If no seat has Sales Navigator, the card tells you to connect one under **Settings → Account**.
-2. In the card, switch on **Import automatically**; the import is off until an admin switches it on. Set **Up to** how many new people arrive per day (at most 100), the hour it **Runs daily from**, and **Pause when** how many people may already be waiting; leave that empty for no limit. Then select **Save**.
-3. Optionally switch on **Email addresses** and **Phone numbers** to look up contact details right after the import instead of when contacts enter outreach.
+1. Add each search or list with the form above the card. A search belongs to the Sales Navigator seat that saved it, and only that seat can import it. The card lists every saved search.
+2. In the card, switch on **Import automatically**; the import is off until an admin switches it on. Set **Up to** how many new people arrive per day (at most 100). Then select **Save**.
 
-The card shows how many credits a run reserves and how many runs your balance covers. The hour, the pause, and the lookups are shared with your [automatic search](#search-on-a-schedule): a change on one changes the other.
+The import starts with the daily run of the seat that saved the search, at most once a day. It does not run on **Run Now**, and a seat whose schedule is off imports nothing: switch the schedule on under **Settings → Schedule**. **Runs daily from**, **Pause when**, and the switches for **Email addresses** and **Phone numbers** on the same card set your [automatic search](#search-on-a-schedule), not the import. Importing reserves no credits. The people it brings in are looked up for email and phone like every other contact, once they become prospects.
 
 Each saved search has its own switch (**Import from this search**) and a trash icon (**Remove search**), and shows how many of its results have been read. LinkedIn shows only the first 2,500 results of a search, so narrow a larger search to reach the rest. Importing is free. Imported people are checked, filtered, and scored like every other contact; lookups for their contact details are charged as usual. People who list no employer, for example self-employed, are skipped: they do not become contacts and no company is created for them.
 
@@ -65,14 +86,16 @@ The fields you can map:
 
 | File lists | Fields |
 | --- | --- |
-| **People** | **First name**, **Last name**, **Full name**, **Job title**, **Headline**, **Person location**, **Country**, **Language**, **Email**, **LinkedIn profile**, **LinkedIn member id**, **Sales Navigator link**, **Company name**, **Website**, **Company LinkedIn page**, **Company location**, **Industry**, **Employees**, **Owner** |
+| **People** | **First name**, **Last name**, **Full name**, **Job title**, **Headline**, **About**, **Person location**, **Country**, **Language**, **Email**, **LinkedIn profile**, **LinkedIn member id**, **Sales Navigator link**, **Company name**, **Website**, **Company LinkedIn page**, **Company location**, **Industry**, **Employees**, **Owner** |
 | **Companies** | **Company name**, **Website**, **Company LinkedIn page**, **Company location**, **Country**, **Industry**, **Employees**, **Description**, **Owner** |
+
+**About** is the person's LinkedIn About text; a Sales Navigator export's `summary` column fills it.
 
 **Employees** takes a number such as `1,200` or a size range such as `51-200`.
 
 ### People
 
-Every row needs a LinkedIn profile URL, or a person's name together with the company's website. Rows without a LinkedIn profile URL are imported all the same; the Sales Agent completes their LinkedIn profiles afterwards, which you can follow on **Jobs**. The tab counts the rows it cannot import; open the hint next to the count to see why. Rows that only have a name or an email can be completed for you with **Request enrichment**, at 1 credit per row.
+Every row needs a LinkedIn profile URL, or a person's name together with the company's website. Rows without a LinkedIn profile URL are imported all the same; the Sales Agent completes their LinkedIn profiles afterwards, which you can follow in [**Activity**](/operate/activity-and-troubleshooting#read-the-history). The tab counts the rows it cannot import; open the hint next to the count to see why. Rows that only have a name or an email can be completed for you with **Request enrichment**, at 1 credit per row.
 
 ### Companies
 
@@ -97,24 +120,17 @@ The CSV import itself does not consume credits. Subsequent steps — completing 
 
 The **Our search** tab finds people at companies already in the dashboard. It opens on the status of your searches. Select **New search** to set one up.
 
-Four tiles show where you stand:
+The tiles above the tabs show where you stand; see [See where you stand](#see-where-you-stand).
 
-- **Companies to search**: the companies with an owner seat that were never searched, whose **Company Fit** is at or above your **Pipeline ICP threshold** or not scored yet. The tile turns amber, then red, as they run low.
-- **Waiting for outreach**: people found but not contacted yet.
-- **Found in 30 days**: the people your searches found in the last 30 days.
-- **Credits**: your balance.
-
-When few companies are left, a banner suggests **Upload companies**, or **Find new companies** where that search is switched on for you.
-
-**Your search jobs** lists the automatic search and any search running now, with a link to [**Jobs**](/operate/jobs) for every run, what it found, and what it cost.
+**Your search jobs** lists the automatic search, the **Signal search** once keinsaas has switched it on with you, and any search running now, with a link to [**Activity**](/operate/activity-and-troubleshooting#read-the-history) for every run, what it found, and what it cost. The signal search row counts the companies watched, shows the date of the last search, and counts the companies with a signal in the last 30 days. Admins also see **What counts as a signal**, a link to **Settings → Signals**.
 
 **New search** has five steps. A step opens once you confirm the one before it, and a finished step folds to a summary with **Edit**.
 
 1. **Where to look**: **People at my companies**, or **New companies and their people**. The second finds companies that match your targeting, and the right people at them, in one search. It runs once keinsaas switches it on with you; until then it reads **Not switched on for your account yet.** Starting from a fresh event, such as funding or a new leader, is marked **soon**.
-2. **Who you look for**: your targeting values (job titles, seniority, locations, industries, company sizes). A search for new companies also shows **Customers**. Admins change them with **Change on Targeting**; members ask an admin. The search needs at least one Tier 1 title in **Settings → Targeting**.
+2. **Who you look for**: your targeting values (job titles, seniority, locations, industries, company sizes). A search for new companies also shows **Industries to leave out** and **Customers**. Admins change them with **Change on Targeting**; members ask an admin. The search needs at least one Tier 1 title in **Settings → Targeting**.
 3. **How many**: **Highest fit first** takes the next companies by **Company Fit**, and **Pick companies** lets you choose them yourself. Then set **People per company**; the default comes from **Max Contacts per Company**. A company already searched is skipped unless you pick it again. For new companies, choose **People to find**: 25, 50, or 100.
 4. **Emails and phones**: switch on **Email addresses** or **Phone numbers** to look people up right after the search, for everyone it finds. Off, they are looked up when each person enters outreach. A search for new companies always waits until then.
-5. **Once or automatically**: **Once, now** runs right away, and you find it under [**Jobs**](/operate/jobs). **Estimated credits** and **Balance after** show the cost first. **Automatically, every weekday** is described in [Search on a schedule](#search-on-a-schedule).
+5. **Once or automatically**: **Once, now** runs right away, and you find it in [**Activity**](/operate/activity-and-troubleshooting#read-the-history). **Estimated credits** and **Balance after** show the cost first. **Automatically, every weekday** is described in [Search on a schedule](#search-on-a-schedule).
 
 The search looks for Tier 1 titles first and Tier 2 titles only where no Tier 1 contact was found, and applies your locations, filters, and the **Max Contacts per Company** cap. Every company needs an owner seat; companies without one are skipped, and the step says so. Contacts outside your filters are kept without a seat.
 
@@ -130,9 +146,9 @@ Admins set up the automatic search in step 5 of **New search**: choose **Automat
 - **Pause when** sets how many people may already be waiting before the search pauses. It resumes once the queue drops. Leave it empty for no limit.
 - **Email addresses** and **Phone numbers** in step 4 look up contact details right after the search instead of when contacts enter outreach.
 
-The step shows how many credits a run reserves and how many runs your balance covers. If the balance cannot cover even one run, nothing is searched until you top up. Only companies without contacts and with an owner seat are searched, and only those whose **Company Fit** is at or above your **Pipeline ICP threshold** or not scored yet.
+The step shows how many credits a run reserves and how many runs your balance covers. If the balance cannot cover even one run, nothing is searched until you top up. Only companies with an owner seat and nobody the pipeline could take yet are searched, the same ones the **Companies to search** tile counts, and only those whose **Company Fit** is at or above your **Pipeline ICP threshold** or not scored yet.
 
-An account has one automatic search at your companies; saving a new one replaces its settings. It appears under **Your search jobs** as **People at my companies, automatically** with its status, for example **Runs every weekday from 04:00**, and its last run. Admins can switch it off, select **Run now**, **Edit** it, or **Delete** it, which stops it. Members see it while it is on but cannot change it. The hour, the pause, and the lookups are shared with the [Sales Navigator import](#import-from-sales-navigator-every-day). An automatic search for new companies is marked **soon**: for now it runs once.
+An account has one automatic search at your companies; saving a new one replaces its settings. It appears under **Your search jobs** as **People at my companies, automatically** with its status, for example **Runs every weekday from 04:00**, and its last run. Admins can switch it off, select **Run now**, **Edit** it, or **Delete** it, which stops it. Members see it while it is on but cannot change it. An automatic search for new companies is marked **soon**: for now it runs once.
 
 ## Add people or companies by hand
 
@@ -143,7 +159,7 @@ Use **Quick add** for a person you met at a fair or a company a colleague named.
 Quick add goes through the same checks as a CSV import: people already in your list are matched, and people at a blocked company are skipped. Two switches decide what happens next:
 
 - **Contact first** (people): the person counts as a perfect fit. They skip your ICP minimum and filters, go first in the next run, colleagues at the company move up with them, and phone numbers are looked up where you have that on. It is on by default. Off, they are scored against your targeting like any import, and people outside your filters are held back. The switch appears only where the Sales Agent calculates your ICP scores.
-- **Find people now** (companies): one search for all of them, with the cost and your balance shown. Only companies never searched and without contacts are searched. Off, the companies are saved without people; your automatic search or a later search finds them.
+- **Find people now** (companies): one search for all of them, with the cost and your balance shown. Only companies never searched and holding nobody the pipeline could take yet are searched. Off, the companies are saved without people; your automatic search or a later search finds them.
 
 **Add** stays clickable when something is missing. Select it, and each problem is named under its row, for example **First and last name are needed.** or **That is no website: enter it like acme.de.** Nothing is sent until they are fixed.
 
@@ -158,8 +174,9 @@ Adding a contact does not guarantee immediate appearance in every queue. Before 
 3. **Company match** — the contact's data must not point to another employer.
 4. **Owner and seat assignment** — the contact must be assigned to a seat. Contacts of a paused seat wait until the seat is switched back on.
 5. **Pipeline ICP threshold** — the contact's score must meet or exceed the configured minimum.
-6. **Available channel and contact data** — a reachable LinkedIn profile or valid email address must be present.
+6. **Complete data and a way to reach them** — the contact needs a first name, a last name, and a job title, and an email address, a LinkedIn profile, or a company website, which the email lookup needs. Otherwise **Not in pipeline** reads **Missing job title or name** or **No email, LinkedIn or company website**.
 7. **Current status** — the contact must not already be active, stopped, or archived.
-8. **Daily limit headroom** — new people enter only within the seat's **New people per day** limits.
+8. **Room at the company** — a company holds at most **Max Contacts per Company** people in outreach at once, counted across all seats. A person who gets an outcome, or is archived, frees a place. A contact held back by this cap still reads **Queued**, and the **Next run** forecast still counts it, until a place frees up.
+9. **Daily limit headroom** — new people enter only within the seat's **New people per day** limits.
 
 On **Prospects**, the **Contacts** tab shows waiting contacts as **Queued** and the rest as **Not in pipeline**; hover the badge to see why. The **Home → Next run** cards show every contact that is ready for the upcoming run. Learn how to [read the queue](/operate/next-run-queue).

@@ -5,7 +5,7 @@ description: "Shape your positioning, proof points, writing style, and sign-offs
 icon: "message-square-text"
 ---
 
-The messaging playbook tells the Sales Agent what to say about you. Configure it under **Settings → Prompts**; only admins of your account see this page. How the agent writes — structure, length, and tone rules — is maintained by keinsaas and applies to every message. Each seat's writing style and sign-offs live under **Settings → Account**.
+The messaging playbook tells the Sales Agent what to say about you. Configure it under **Settings → Prompts**; only admins of your account see this page. How the agent writes — structure and tone rules — is maintained by keinsaas and applies to every message; you can change the default lengths and add never-say rules for each persona. Each seat's writing style and sign-offs live under **Settings → Account**.
 
 Prompt changes apply to new messages generated after you save; messages already drafted are not rewritten.
 
@@ -19,25 +19,54 @@ Stories show as a compact list: one line each with the company, the result, and 
 
 ## Write a prompt for each persona
 
-Select **New Prompt** to describe your company for one persona, or edit an existing one. Each prompt has these fields:
+Select **New Prompt** to describe your company for one persona, or edit an existing one. A new prompt starts from a copy of your fallback persona's text, so your offer, CTA, and rules carry over; change what differs. Each persona needs its own name. Each prompt has these fields:
 
 | Field | What to put in it |
 |---|---|
-| **Persona** | The persona this prompt is for. |
-| **Your company & offer** | What you sell and why it is worth a reply: your positioning and the problem you solve. |
-| **Who you target & what signals matter** | The pains to look for and which buying signals rank highest. |
-| **Persona notes (optional)** | What lands with this persona: emphasis and wording, not strategy. Champions and economic decision-makers usually need different notes. |
+| **Persona** | The persona this prompt is for, for example Office Managers. |
+| **Who is this persona?** | Their role and the kind of company they work at. It helps sort contacts into this persona. Shown once you have two or more personas. |
+| **Example job titles** | Words from the titles of people who belong here, each added with `Enter`. A short word such as People matches more titles than a whole title. Shown once you have two or more personas. |
+| **Your company & offer** | What your customers gain: the problem you solve and the result, ideally with a number. |
+| **Who you target & their pains** | The pains to look for and how to approach them. Which signals a persona hears about is set under **Settings → Signals**; here you can say which of those count most. |
+| **Persona notes (optional)** | What lands with this persona: emphasis and proof, not strategy. The wording comes from each seat's writing style. Champions and economic decision-makers usually need different notes. |
 | **CTA / offer** | What the message closes on, ideally a value you offer before asking for a meeting. Leave it empty to close on a low-barrier question instead. |
 
 Use these fields to make your audience hooks, language guardrails, and compliance requirements explicit.
 
-By default, keinsaas's rules for structure, length, subject, CTA, and opening win where your notes disagree. Tick **My notes above win over the default writing rules** to let your notes apply for that persona; the prompt then shows **Your rules win**. Either way, the agent never invents a fact, a number, or a customer, and never writes a closing.
+With two or more personas, each contact gets the persona that fits them best. A contact who fits none gets the fallback persona, the first one that is on, which its card marks with a life-buoy icon. Select the icon on another persona to make that one the fallback. The fallback's prompt reaches everyone who fits no persona, so keep it neutral.
+
+By default, keinsaas's rules for structure, length, subject, CTA, and opening win where your texts or a seat's writing style disagree. Tick **My texts and the writing style win over the default writing rules** to let yours apply for that persona; the prompt then shows **Your rules win**. Either way, the agent never invents a fact, a number, or a customer, and never writes a closing. Lengths and never-say rules always apply.
 
 The default rules also shape what a message says. It leads with what the reader gains, not with what your product does, uses the prospect's name once, in the greeting, and skips small talk such as "hope you're well". It closes on an ask that costs the reader nothing to answer, such as a yes; anything your offer needs from them comes after they agree. A first LinkedIn message starts short, about three sentences, and runs longer only when a strong signal and rich context carry it. When a formal German (**Sie**) message goes to someone whose last name LinkedIn shows only as an initial, it opens with "Guten Tag," instead of guessing a surname.
+
+When a message reacts to someone's post, it says what the post's point means for them. It never pastes their sentence back, and it does not open by agreeing with or praising the post, unless the post is exactly about the problem you solve. The second email follow-up brings your offer back as a fresh offer, not as a check-in that assumes the reader showed interest.
+
+Before a message is saved, the Sales Agent checks it. A dash between words is replaced by a comma, and a draft with a leftover placeholder such as `[Name]` or `{{first_name}}` is refused and written again.
 
 A message does not build on a person's private life. Their own health, family, religion, politics, and similar topics are not used as a hook, even when a post mentions them, and a signal about them is dropped. Business topics, such as a healthcare market, are fine. Text the Sales Agent reads from outside, such as replies, posts, and web pages, is treated as content to read, never as instructions.
 
 A persona marked **Custom** uses a prompt keinsaas wrote for you. Only its CTA can be edited here.
+
+## Set the length and never-say rules
+
+Open **Length & rules for this persona** at the bottom of a prompt; on an A/B variant it reads **Length & rules for this variant**. The lengths apply to first messages, **Never say** to follow-ups too. Empty fields keep keinsaas's defaults:
+
+- **LinkedIn message length (characters)** and **Email length (characters)** take a range such as `250-430`. A cold email may be as short as 100 characters. A range must stay between 100 and 1,000 characters for LinkedIn and between 100 and 1,100 for email, or the save is refused.
+- **Never say** takes the words, claims, or promises a message must never contain, one rule per line.
+
+## Switch a persona off or archive it
+
+Each persona card has a switch. On, new contacts can get the persona. Off, nobody new gets it, and its text and example titles stay for when you switch it back on. The fallback persona stays on until you make another persona the fallback. On an account where keinsaas manages the personas, the switch is locked; ask keinsaas.
+
+A new persona that is not finished stays off as a draft, and its card says **Missing before it can go live:** and names the fields still empty: **Your company & offer**, **Who you target & their pains**, **Who this persona is**, or **Example job titles**. Closing the editor without saving keeps your work as a draft too.
+
+When you switch off or archive a persona that has contacts nobody has written to yet, the card asks where they go:
+
+- **Give them** and the fallback persona's name: their unsent drafts that you did not edit are deleted, and the fallback persona writes them again.
+- **Archive them**: outreach to them stops. A confirmation comes first, because switching the persona back on does not undo it; only unarchiving each person by hand does. Their stage then reads **Its persona was switched off**.
+- **Keep it on** cancels.
+
+**Archive** switches a persona off and moves it to **Archived (N)** at the bottom of the page. **Bring back** returns it, switched off. **Delete**, then **Delete for good?**, removes an archived persona for good.
 
 ## Go back to an older version
 
@@ -47,7 +76,7 @@ To bring back an older text, select **Restore** next to it. The text opens in th
 
 ## Test two prompts against each other
 
-Select the copy icon (**Duplicate as A/B variant**) on a prompt to create a second prompt for the same persona. It opens in the editor as **A/B variant** with a letter: change what you want to test and select **Save**. From then on, new messages for that persona are split evenly across its variants, and the cards show **A/B · 1 in 2** and **Variant A**, **Variant B**. A prospect keeps the variant of their first message, so an email and the LinkedIn message after it come from the same text. Compare the numbers of each variant in its versions. Delete a variant to end the test.
+Select the copy icon (**Duplicate as A/B variant**) on a prompt to create a second prompt for the same persona. It opens in the editor as **A/B variant** with a letter: change what you want to test and select **Save**. From then on, new messages for that persona are split evenly across its variants, and the cards show **A/B · 1 in 2** and **Variant A**, **Variant B**. A prospect keeps the variant of their first message, so an email and the LinkedIn message after it come from the same text. Compare the numbers of each variant in its versions. Archive a variant to end the test.
 
 Writing style is not part of the test: a seat's style applies to every variant.
 
@@ -61,6 +90,8 @@ Under **Settings → Account**, the **Writing style** card holds **Email — wri
 - sentence rhythm and structure
 
 The seat's owner edits its writing style. Concrete examples teach tone far more effectively than adjectives such as "professional" or "friendly."
+
+A message is written in the contact's **Language** when the seat writes that language. When it does not, the message is written in English if the seat writes English, and otherwise in the seat's first language. A seat that writes only German therefore writes German, also to a contact the Sales Agent detects as English.
 
 ## Keep sign-offs and signatures separate
 

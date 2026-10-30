@@ -5,11 +5,11 @@ description: "Start the complete pipeline, run one part on its own, stop safely,
 icon: "play"
 ---
 
-You can start the pipeline manually at any time from the **Run pipeline** card on **Home**, or let a seat's schedule start it automatically. Either way, the same eligibility rules, daily limits, and delivery modes apply.
+You can start the pipeline manually at any time from the **Pipeline** row on **Home**, or let a seat's schedule start it automatically. Either way, the same eligibility rules, daily limits, and delivery modes apply.
 
 ## Run the complete pipeline
 
-Select **Run Now** to start a full run for your own active seats. This is the same for members and admins: a colleague's seat runs on its own schedule or when its owner selects **Run Now**.
+Select **Run Now**, the play icon in the **Pipeline** row, to start a full run for your own active seats. This is the same for members and admins: a colleague's seat runs on its own schedule or when its owner selects **Run Now**.
 
 Each seat works through these steps in order:
 
@@ -31,9 +31,9 @@ Each seat works through these steps in order:
   </Step>
 </Steps>
 
-Each step picks up its own eligible contacts, so a step with nothing to do does not stop the next one. On a seat with LinkedIn switched off or paused, the LinkedIn actions are skipped and email continues.
+Each step picks up its own eligible contacts, so a step with nothing to do does not stop the next one. On a seat with LinkedIn switched off, not connected, or paused, the LinkedIn actions are skipped and email continues. A message to someone on their public holiday is held for a later run; see [Public holidays](/configure/schedule-and-limits#public-holidays).
 
-The run executes in the background. While it is active, the card shows **Pipeline running** with a link to **Activity**. When it ends, the card shows **Pipeline finished — see Activity for results.** A full run can take a few hours, because LinkedIn actions are spaced out.
+The run executes in the background. While it is active, the row shows **Pipeline running** with the number of active flows and a link, **View activity**, to **Activity**, and its dot blinks green. When it ends, a line below the row reads **Pipeline finished — see Activity for results.** A full run can take a few hours, because LinkedIn actions are spaced out.
 
 <Warning>
   Keep LinkedIn closed while the pipeline is running. Performing manual LinkedIn actions from the same account during the automation window can interfere with the run and trigger platform-level friction.
@@ -43,7 +43,7 @@ If **Home** shows **LinkedIn is paused** for a seat, select **Reconnect LinkedIn
 
 ## Run one part on its own
 
-Open **Advanced** in the **Run pipeline** card to run a single part of the pipeline:
+Open **Advanced**, the arrow next to **Run Now** in the **Pipeline** row, to run a single part of the pipeline under **Run one part of the pipeline on its own:**
 
 - **Messages** — writes first messages for researched prospects. Sends nothing.
 - **Outreach** — sends approved emails and LinkedIn messages. Takes on no new contacts and writes no new messages.
@@ -59,7 +59,7 @@ Each seat runs one pipeline at a time. While a run is active on a seat, a new st
 
 ## Stop a run
 
-**Stop** appears in the **Run pipeline** card while a run is active. As a member, it stops the runs on your own seats. As an admin, it stops every run in your account, including colleagues' seats. An admin without a seat of their own sees the card with **Stop** only.
+**Stop**, a square icon in the **Pipeline** row, appears while a run is active. As a member, it stops the runs on your own seats. As an admin, it stops every run in your account, including colleagues' seats. An admin without a seat of their own sees the row with **Stop** only, and the note **No seat of your own: you can stop runs here.**
 
 - A run stopped within about 30 seconds of starting is cancelled before anything goes out: **Run stopped. Nothing was sent.**
 - A run that is further along finishes the contact it is working on, saves it, and takes no new one: **Stopping — finishing the current step so nothing is lost.**
@@ -81,10 +81,10 @@ The status of every run appears in **Activity**, with each step listed under its
 
 ## Scheduled runs
 
-When **Schedule enabled** is on for a seat under **Settings → Schedule**, the pipeline starts automatically on the selected days, up to 20 minutes after the start time. The **Schedule** card on **Home** shows whether schedules are active and when they run.
+When **Schedule enabled** is on for a seat under **Settings → Schedule**, the pipeline starts automatically on the selected days, up to 20 minutes after the start time. On **Home**, the **Pipeline** row shows the schedule in words and a countdown to the next run, for example **in 2 h 15 min**. **Starting soon** means the start time has come and the run begins within 20 minutes. The switch in the row, **Schedule on or off**, turns your seat's schedule on or off, the same as **Schedule enabled**; with several seats, a link to **Schedule settings** replaces it. The **Schedule** card shows the same setting.
 
 If a run is still active on the seat at the scheduled time, the scheduled start does not begin. If a scheduled run fails to start for a technical reason, it is retried automatically for up to 30 minutes.
 
-**Run Now** is always available, even when a schedule is configured. Use it to process urgent work outside normal hours without disabling the schedule. If no seat of yours has a schedule, the **Run pipeline** card says so and links to **Set up a daily schedule**.
+**Run Now** is always available, even when a schedule is configured. Use it to process urgent work outside normal hours without disabling the schedule. If no seat of yours has a schedule, the **Pipeline** row reads **Only runs when you start it with** the play icon. On a demo account the row says **Doesn't run on a demo account**, and on an account that is not activated yet **Starts once your account is activated**.
 
 For diagnosing runs that finish without producing the expected work, see [Activity and troubleshooting](/operate/activity-and-troubleshooting).

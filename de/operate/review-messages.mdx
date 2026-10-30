@@ -33,7 +33,7 @@ Die geöffnete Nachricht zeigt Kontakt, Unternehmen, Seat und Erstellungsdatum. 
 
 ### Bearbeiten
 
-Ändere Betreff oder Text direkt in der geöffneten Nachricht. Änderungen werden gespeichert, wenn du `⌘S` (`Ctrl+S` unter Windows) drückst, freigibst oder zu einer anderen Nachricht wechselst. **Verwerfen** verwirft ungespeicherte Änderungen. Bei LinkedIn-Nachrichten wird der Betreff nur genutzt, wenn LinkedIn die Nachricht als InMail zustellt.
+Ändere Betreff oder Text direkt in der geöffneten Nachricht. Änderungen werden gespeichert, wenn du `⌘S` (`Ctrl+S` unter Windows) drückst, freigibst oder zu einer anderen Nachricht wechselst. **Verwerfen** verwirft ungespeicherte Änderungen. Bei LinkedIn-Nachrichten wird der Betreff nur genutzt, wenn LinkedIn die Nachricht als InMail zustellt. Eine Nachricht mit einem übrig gebliebenen Platzhalter wie `[Name]` oder `{{first_name}}` wird nicht gespeichert: **Diese Nachricht enthält noch einen Platzhalter**, gefolgt vom Platzhalter, fordert dich auf, ihn zuerst zu ersetzen.
 
 Nutze die Bearbeitung für gezielte Korrekturen am Wortlaut, etwa einen Namen korrigieren, den Ton anpassen oder einen Satz kürzen, wenn der Ansatz stimmt. Der Agent überschreibt eine bearbeitete Nachricht nie, und sie wird nie wegen ihres Alters zurückgehalten. Ist die Freigabe aus, versendet der nächste Lauf die gespeicherte Fassung.
 
@@ -72,6 +72,8 @@ Eine LinkedIn-Nachricht wird geschrieben, sobald die Kontaktanfrage versendet is
 ## Freigabe an oder aus
 
 Ein Admin wählt den Versandmodus unter **Einstellungen → Zeitplan → Outreach-Versand (alle Seats)**: **Jede Nachricht im Dashboard freigeben** oder **Alles automatisch senden**. Neue Konten starten mit aktiver Freigabe.
+
+Bei aktiver Freigabe sendet der Lauf eines Seats die Entwürfe, die du freigegeben hast, und schreibt am selben Tag neue: Die freigegebenen Entwürfe, die er gleich sendet, halten die neuen nicht zurück. Bis zu einem Tag an Entwürfen, die auf dich warten, also das Tageslimit des Seats für den Kanal, kann warten, ohne dass etwas langsamer wird. Danach werden neue Entwürfe und neue Personen weniger, und bei zwei Tagen hören sie auf. Oben auf **Nachrichten** steht das, solange die Freigabe aktiv ist: **Neue Entwürfe pausieren, solange Nachrichten für zwei Tage auf deine Freigabe warten.** Gib frei, was wartet, und der nächste Lauf schreibt mehr. Ein Entwurf kann nicht in dem Lauf rausgehen, der ihn schreibt: Er wartet zuerst auf deine Freigabe.
 
 Ist die Freigabe aus, werden neue Nachrichten beim Schreiben freigegeben. Sie erscheinen unter **In Warteschlange**, und du kannst sie bis zum nächsten Lauf noch bearbeiten.
 

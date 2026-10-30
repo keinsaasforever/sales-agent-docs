@@ -4,7 +4,7 @@ description: "Steuere Positionierung, Proof Points, Schreibstil, Calls-to-Action
 icon: "message-square-text"
 ---
 
-Das Messaging-Playbook sagt dem Sales Agent, was er über dich schreiben soll. Konfiguriere es unter **Einstellungen → Prompts**; nur Admins deines Kontos sehen diese Seite. Wie der Agent schreibt, also Struktur-, Längen- und Tonregeln, pflegt keinsaas für alle Nachrichten. Schreibstil und Grußformeln jedes Seats liegen unter **Einstellungen → Konto**.
+Das Messaging-Playbook sagt dem Sales Agent, was er über dich schreiben soll. Konfiguriere es unter **Einstellungen → Prompts**; nur Admins deines Kontos sehen diese Seite. Wie der Agent schreibt, also Struktur- und Tonregeln, pflegt keinsaas für alle Nachrichten; die Standardlängen kannst du ändern, und Tabu-Regeln legst du pro Persona fest. Schreibstil und Grußformeln jedes Seats liegen unter **Einstellungen → Konto**.
 
 Änderungen an Prompts gelten für Nachrichten, die nach dem Speichern erstellt werden; bereits erstellte Entwürfe werden nicht neu geschrieben.
 
@@ -18,25 +18,54 @@ Die Geschichten erscheinen als kompakte Liste: eine Zeile pro Geschichte mit Unt
 
 ## Einen Prompt pro Persona schreiben
 
-Wähle **Neuer Prompt**, um dein Unternehmen für eine Persona zu beschreiben, oder bearbeite einen bestehenden Prompt. Jeder Prompt hat diese Felder:
+Wähle **Neuer Prompt**, um dein Unternehmen für eine Persona zu beschreiben, oder bearbeite einen bestehenden Prompt. Ein neuer Prompt beginnt als Kopie des Textes deiner Fallback-Persona, sodass Angebot, CTA und Regeln übernommen werden; ändere, was abweicht. Jede Persona braucht einen eigenen Namen. Jeder Prompt hat diese Felder:
 
 | Feld | Inhalt |
 | --- | --- |
-| **Persona** | Die Persona, für die der Prompt gilt. |
-| **Dein Unternehmen & Angebot** | Was du verkaufst und warum sich eine Antwort lohnt: Positionierung und gelöstes Problem. |
-| **Wen du ansprichst und welche Signale wichtig sind** | Die Probleme, nach denen gesucht wird, und welche Kaufsignale am meisten zählen. |
-| **Persona-Notizen (optional)** | Was bei dieser Persona ankommt: Schwerpunkte und Formulierungen, keine Strategie. Champions und wirtschaftliche Entscheider brauchen meist unterschiedliche Notizen. |
+| **Persona** | Die Persona, für die der Prompt gilt, zum Beispiel Office Manager. |
+| **Wer ist diese Persona?** | Ihre Rolle und die Art Unternehmen, in dem sie arbeitet. Das hilft, Kontakte dieser Persona zuzuordnen. Erscheint ab zwei Personas. |
+| **Beispiel-Jobtitel** | Wörter aus den Titeln von Personen, die hierher gehören, jedes mit `Enter` hinzugefügt. Ein kurzes Wort wie People trifft mehr Titel als ein ganzer Titel. Erscheint ab zwei Personas. |
+| **Dein Unternehmen & Angebot** | Was deine Kunden gewinnen: das Problem, das du löst, und das Ergebnis, idealerweise mit einer Zahl. |
+| **Zielgruppe & ihre Schmerzpunkte** | Schmerzpunkte, auf die es zu achten gilt, und wie du sie ansprichst. Über welche Signale eine Persona informiert wird, legst du unter **Einstellungen → Signale** fest; hier kannst du angeben, welche davon am meisten zählen. |
+| **Persona-Notizen (optional)** | Was bei dieser Persona ankommt: Schwerpunkte und Belege, keine Strategie. Die Formulierung kommt aus dem Schreibstil jedes Seats. Champions und wirtschaftliche Entscheider brauchen meist unterschiedliche Notizen. |
 | **CTA / Angebot** | Womit die Nachricht schließt, idealerweise ein Mehrwert vor der Bitte um einen Termin. Leer lassen, um mit einer niedrigschwelligen Frage zu schließen. |
 
 Halte in diesen Feldern Hooks für die Zielgruppe, sprachliche Leitplanken und Compliance-Vorgaben ausdrücklich fest.
 
-Standardmäßig gelten die Regeln von keinsaas für Struktur, Länge, Betreff, CTA und Einstieg, wo deine Notizen ihnen widersprechen. Aktivierst du **Meine Notizen oben haben Vorrang vor den Standard-Schreibregeln**, gelten für diese Persona deine Notizen; der Prompt zeigt dann **Deine Regeln haben Vorrang**. In beiden Fällen erfindet der Agent nie Fakten, Zahlen oder Kunden und schreibt nie eine Grußformel.
+Mit zwei oder mehr Personas bekommt jeder Kontakt die Persona, die am besten zu ihm passt. Wer zu keiner passt, bekommt die Fallback-Persona, die erste eingeschaltete, die ihre Karte mit einem Rettungsring-Symbol markiert. Wähle das Symbol bei einer anderen Persona, um sie zum Fallback zu machen. Der Prompt des Fallbacks erreicht alle, die zu keiner Persona passen, halte ihn also neutral.
+
+Standardmäßig gelten die Regeln von keinsaas für Struktur, Länge, Betreff, CTA und Einstieg, wo deine Texte oder der Schreibstil eines Seats ihnen widersprechen. Aktivierst du **Meine Texte und der Schreibstil haben Vorrang vor den Standard-Schreibregeln**, gelten für diese Persona deine; der Prompt zeigt dann **Deine Regeln haben Vorrang**. In beiden Fällen erfindet der Agent nie Fakten, Zahlen oder Kunden und schreibt nie eine Grußformel. Längen und Tabu-Regeln gelten immer.
 
 Die Standardregeln prägen auch, was eine Nachricht sagt. Sie beginnt mit dem, was der Leser gewinnt, nicht damit, was dein Produkt tut, nennt den Namen des Prospects einmal, in der Anrede, und verzichtet auf Smalltalk wie „ich hoffe, es geht dir gut“. Sie schließt mit einer Bitte, die den Leser nichts kostet, etwa mit einem Ja; was dein Angebot von ihm braucht, kommt erst nach seiner Zusage. Eine erste LinkedIn-Nachricht beginnt kurz, etwa drei Sätze, und wird nur länger, wenn ein starkes Signal und reicher Kontext sie tragen. Geht eine formelle deutsche Nachricht (**Sie**) an jemanden, dessen Nachname bei LinkedIn nur als Initial steht, beginnt sie mit „Guten Tag,“ statt einen Nachnamen zu erraten.
+
+Reagiert eine Nachricht auf den Post einer Person, sagt sie, was die Aussage des Posts für sie bedeutet. Sie fügt nie ihren Satz wieder ein und beginnt nicht damit, dem Post zuzustimmen oder ihn zu loben, es sei denn, der Post handelt genau von dem Problem, das du löst. Das zweite E-Mail-Follow-up bringt dein Angebot als frisches Angebot zurück, nicht als Nachfrage, die voraussetzt, dass der Leser Interesse gezeigt hat.
+
+Bevor eine Nachricht gespeichert wird, prüft der Sales Agent sie. Ein Gedankenstrich zwischen Wörtern wird durch ein Komma ersetzt, und ein Entwurf mit einem übrig gebliebenen Platzhalter wie `[Name]` oder `{{first_name}}` wird abgelehnt und neu geschrieben.
 
 Eine Nachricht baut nicht auf dem Privatleben einer Person auf. Die eigene Gesundheit, Familie, Religion, Politik und ähnliche Themen dienen nicht als Hook, auch wenn ein Post sie erwähnt, und ein Signal dazu wird verworfen. Geschäftliche Themen, etwa ein Gesundheitsmarkt, sind in Ordnung. Text, den der Sales Agent von außen liest, etwa Antworten, Posts und Webseiten, wird als Inhalt zum Lesen behandelt, nie als Anweisung.
 
 Eine Persona mit dem Badge **Individuell** nutzt einen Prompt, den keinsaas für dich geschrieben hat. Dort lässt sich nur der CTA bearbeiten.
+
+## Länge und Tabu-Regeln festlegen
+
+Öffne **Länge & Regeln für diese Persona** unten in einem Prompt; bei einer A/B-Variante heißt es **Länge & Regeln für diese Variante**. Die Längen gelten für Erstnachrichten, **Tabu** auch für Follow-ups. Leere Felder behalten die Standardwerte von keinsaas:
+
+- **Länge der LinkedIn-Nachricht (Zeichen)** und **Länge der E-Mail (Zeichen)** nehmen einen Bereich wie `250-430`. Eine Cold-E-Mail darf schon ab 100 Zeichen lang sein. Ein Bereich muss bei LinkedIn zwischen 100 und 1.000 Zeichen und bei E-Mail zwischen 100 und 1.100 liegen, sonst wird das Speichern abgelehnt.
+- **Tabu** nimmt die Wörter, Behauptungen oder Versprechen, die eine Nachricht nie enthalten darf, eine Regel pro Zeile.
+
+## Eine Persona ausschalten oder archivieren
+
+Jede Persona-Karte hat einen Schalter. Eingeschaltet können neue Kontakte die Persona bekommen. Ausgeschaltet bekommt sie niemand Neues, und ihr Text und ihre Beispiel-Jobtitel bleiben erhalten, falls du sie wieder einschaltest. Die Fallback-Persona bleibt eingeschaltet, bis du eine andere zum Fallback machst. Bei einem Konto, dessen Personas keinsaas vorgibt, ist der Schalter gesperrt; frag keinsaas.
+
+Eine neue Persona, die nicht fertig ist, bleibt als Entwurf ausgeschaltet, und ihre Karte sagt **Zum Einschalten fehlt noch:** und nennt die noch leeren Felder: **Dein Unternehmen & Angebot**, **Zielgruppe & ihre Schmerzpunkte**, **Wer ist diese Persona?** oder **Beispiel-Jobtitel**. Auch wenn du den Editor ohne Speichern schließt, bleibt deine Arbeit als Entwurf erhalten.
+
+Schaltest du eine Persona aus oder archivierst sie, obwohl Kontakte noch nicht angeschrieben wurden, fragt die Karte, wohin sie sollen:
+
+- Die Schaltfläche mit dem Namen der Fallback-Persona, **… zuweisen**: Ihre ungesendeten Entwürfe, die du nicht bearbeitet hast, werden gelöscht, und die Fallback-Persona schreibt sie neu.
+- **Kontakte archivieren**: Die Ansprache an sie stoppt. Zuerst kommt eine Bestätigung, weil das erneute Einschalten der Persona das nicht rückgängig macht; nur das Zurückholen jeder Person von Hand tut das. Ihre Phase lautet dann **Die zugehörige Persona wurde ausgeschaltet**.
+- **Eingeschaltet lassen** bricht ab.
+
+**Archivieren** schaltet eine Persona aus und verschiebt sie nach **Archiviert (N)** unten auf der Seite. **Wiederherstellen** holt sie ausgeschaltet zurück. **Löschen** und dann **Endgültig löschen?** entfernt eine archivierte Persona endgültig.
 
 ## Zu einer älteren Version zurückgehen
 
@@ -46,7 +75,7 @@ Um einen älteren Text zurückzuholen, wähle daneben **Wiederherstellen**. Der 
 
 ## Zwei Prompts gegeneinander testen
 
-Wähle bei einem Prompt das Kopiersymbol (**Als A/B-Variante duplizieren**), um einen zweiten Prompt für dieselbe Persona anzulegen. Er öffnet sich im Editor als **A/B-Variante** mit einem Buchstaben: Ändere, was du testen willst, und wähle **Speichern**. Ab dann werden neue Nachrichten für diese Persona gleichmäßig auf ihre Varianten verteilt, und die Karten zeigen **A/B · 1 von 2** sowie **Variante A**, **Variante B**. Ein Prospect behält die Variante seiner ersten Nachricht, sodass eine E-Mail und die darauf folgende LinkedIn-Nachricht aus demselben Text stammen. Vergleiche die Zahlen jeder Variante in ihren Versionen. Lösche eine Variante, um den Test zu beenden.
+Wähle bei einem Prompt das Kopiersymbol (**Als A/B-Variante duplizieren**), um einen zweiten Prompt für dieselbe Persona anzulegen. Er öffnet sich im Editor als **A/B-Variante** mit einem Buchstaben: Ändere, was du testen willst, und wähle **Speichern**. Ab dann werden neue Nachrichten für diese Persona gleichmäßig auf ihre Varianten verteilt, und die Karten zeigen **A/B · 1 von 2** sowie **Variante A**, **Variante B**. Ein Prospect behält die Variante seiner ersten Nachricht, sodass eine E-Mail und die darauf folgende LinkedIn-Nachricht aus demselben Text stammen. Vergleiche die Zahlen jeder Variante in ihren Versionen. Archiviere eine Variante, um den Test zu beenden.
 
 Der Schreibstil ist nicht Teil des Tests: Der Stil eines Seats gilt für jede Variante.
 
@@ -55,6 +84,8 @@ Der Schreibstil ist nicht Teil des Tests: Der Stil eines Seats gilt für jede Va
 Unter **Einstellungen → Konto** enthält die Karte **Schreibstil** die Felder **E-Mail – Schreibstil** und **LinkedIn – Schreibstil** für den gewählten Seat. Die Kanäle haben getrennte Felder, weil sie sich in Länge, Formalität und Format unterscheiden. Die Stile wurden aus den Beispielnachrichten bei der Einrichtung erstellt. Passe darin Ton, Anrede, Länge, Formalität und Satzstil an die Person an, der der Seat gehört.
 
 Der Schreibstil eines Seats wird von seinem Owner bearbeitet. Konkrete Beispiele vermitteln Stil besser als Adjektive wie „professionell“ oder „freundlich“.
+
+Eine Nachricht wird in der **Sprache** des Kontakts geschrieben, wenn der Seat diese Sprache schreibt. Schreibt er sie nicht, wird die Nachricht auf Englisch geschrieben, wenn der Seat Englisch schreibt, und sonst in der ersten Sprache des Seats. Ein Seat, der nur Deutsch schreibt, schreibt deshalb Deutsch, auch an einen Kontakt, den der Sales Agent als englischsprachig erkennt.
 
 ## Grußformeln und Signaturen trennen
 

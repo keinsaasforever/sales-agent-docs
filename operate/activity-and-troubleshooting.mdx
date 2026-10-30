@@ -1,29 +1,89 @@
 ---
 title: "Activity and troubleshooting"
-sidebarTitle: "Troubleshooting"
-description: "Read run statuses in Activity, diagnose empty queues and skipped steps, reconnect LinkedIn or your mailbox, and know when to contact support."
+sidebarTitle: "Activity"
+description: "See how your agent works for each seat, read every run in the history, download what a search found, diagnose empty queues and skipped steps, and reconnect LinkedIn or your mailbox."
 icon: "activity"
 ---
 
-Open **Activity** to see your 50 most recent runs: searches, enrichment, imports, and pipeline runs. It is the first place to check whenever a run produces unexpected results: too little sent, nothing sent at all, or an outright failure.
+Open **Activity** to see what your agent does and what it did. **How your agent works** at the top shows what runs, in the order it runs, for one seat. **History** below lists the runs: pipeline runs, searches, imports, and enrichment. Check it first whenever a run produces unexpected results: too little sent, nothing sent at all, or an outright failure.
 
-## Read the Activity table
+Searches and imports used to have a page of their own, **Jobs**. They are now in the history, under **Searches & imports**.
 
-Each pipeline run is one row, with its steps listed underneath it in the order they ran, such as **Enrichment**, **Message writing**, **Email sending**, or **LinkedIn messages**. For every row you see:
+## See how your agent works
 
-- **Affected**: the contacts or companies the run touched, linked so you can open them
-- **Trigger**: how the run started
-- **Status**: the result, with a short reason underneath when something went wrong
-- **Processed**, **Succeeded**, and **Failed**: the item counts
-- **Started** and **Duration**
+**How your agent works** draws one seat's day as a chain of steps. With more than one seat, pick the seat at the top right of the section. The history below does not change with the seat. Select a step to open its settings. The picture updates live: a step that is running shows **Running now**.
 
-Admins also see a **Seat** column. Members see only their own seats' runs. Searches and CSV imports are listed under **Jobs**, in the menu under **Add Contacts**.
+**Before the run · whole account** shows how companies and people come in. A way that is switched on comes first:
 
-## Run statuses
+- **Signal search** shows **Off: we switch it on for you on request** until keinsaas switches it on with you.
+- **Sales Navigator import** brings in the people from your saved Sales Navigator searches and lists. It starts with your daily pipeline.
+- **Company search** appears where it is switched on for your account.
+- **Added by you** covers CSV uploads, Sales Navigator links, and searches you started by hand.
+- **Automatic search at my companies** comes after them, marked **then**: it finds the people at those companies.
+
+Admins switch **Sales Navigator import** and **Automatic search at my companies** on or off right on the card. Members see the switch but cannot change it.
+
+**The run · {seat}** shows the seat's schedule in words, with the switch **Schedule on or off** or a link to **Schedule settings**. On your own seat you also get **Run Now**, **Stop**, and **Advanced**, the same as on **Home**. The steps follow in the order the run takes them:
+
+1. **Check replies**: every thread is read first, so a reply stops what follows.
+2. **New people**, then **Invites**, then **Find email and phone**. **Withdraw old invites** hangs under **Invites**: on Saturdays it withdraws invites that have been open 30 days or longer. It appears only on a seat with a connected LinkedIn account.
+3. **Drafts**, then **Your approval**.
+4. Two lanes: on LinkedIn, **LinkedIn message** then **LinkedIn follow-ups**; on email, **First email** then **Email follow-ups**. Email follow-ups are sent at the start of each run, after the reply check.
+
+Each card shows:
+
+- a dot for its state: green **On**, blue **Running now**, amber **Waiting on you**, red **Needs fixing**, or grey **Off**
+- what it does today, for example **3 / 10 today** against the daily limit, or **Next run takes on up to 12 people**
+- **Costs credits** where the step uses credits
+- **Last:** with what the last run did and when
+
+A step turns amber and says what waits for you and where to fix it: drafts to approve, contacts to review, low credits, a mailbox your provider blocked, or a run that finished with issues. It turns red when its last run failed or its channel needs a new sign-in. A step you set to none, such as follow-ups set to 0, reads **Off**. On a seat with LinkedIn switched off, the LinkedIn steps read **Off** with **LinkedIn is off for this seat.** On a seat with no connected LinkedIn account, they read **LinkedIn is not connected: connect it on Account.**
+
+To keep a picture of the chain, select the download icon in the top-right corner of the box and choose **PNG image** or **SVG image**. The picture always uses the full desktop layout, whatever your screen.
+
+## Read the history
+
+**History** lists the 100 most recent entries of your account, newest first, pipeline steps included. Admins see every seat's runs. Members see only their own seats' runs. Three filters sit above the list:
+
+- **All**: every run
+- **Outreach**: pipeline runs, their steps, and invite withdrawals
+- **Searches & imports**: contact searches, CSV and URL imports, enrichment on its own, and the signal search. This filter adds a button, **Your search jobs**, that opens [**Our search**](/configure/add-prospects#search-at-your-companies).
+
+Select **Refresh** to update the list while a run is going. Each row shows:
+
+- **Run**: the kind of run, with how it started underneath for a pipeline run (**Manual** or **Schedule**) or what a search covered. A pipeline run is one row with its steps listed underneath it in the order they ran, such as **Enrichment**, **Message writing**, **Email sending**, or **LinkedIn messages**. Searches and imports read **Contact search**, **Automatic search**, **Automatic Sales Navigator import**, **CSV import**, **Contact enrichment**, or **Profile completion**, among others.
+- **Seat**: the seat the run belongs to, for admins.
+- **Result**: for a pipeline step, **N of M succeeded** with the failed count; for a search, the leads returned → the leads kept and added to your contacts. The contacts or companies a run touched are linked underneath, so you can open them.
+- **Status**: the outcome, with a short reason underneath when something went wrong.
+- **Credits**: the credits charged for the run.
+- **Started** and **Duration**.
+- **CSV**: a download for a finished search.
+
+A search can return leads that fail your ideal customer profile (ICP) filters, so the kept number is often lower than the returned number. Credits pay for returned results, not only for the leads kept.
+
+### Download a search as CSV
+
+Select **CSV** on a finished search to download every lead it returned, kept and rejected. Each row says whether the lead was kept and, if not, why it was rejected. Use it to check how well your targeting matches what the search finds.
+
+### When a search stops early
+
+If credits run out during a search, the run still finishes and its status shows how many companies were **not searched: not enough credits**. Admins can follow the link to **Credits** to top up; members ask an admin.
+
+When a member's search finds leads that belong to a colleague's territory, those leads go to the colleague's seat and the row says how many went there.
+
+### Run statuses
 
 Each run and each step closes as **Succeeded**, **Completed with issues**, **Skipped**, **Stopped**, or **Failed**. [Run the pipeline](/operate/run-the-pipeline#stop-a-run) explains each one. A run's status sums up its steps, so a **Succeeded** run can contain **Skipped** steps.
 
-When you can fix the cause yourself, the reason under the status says so, for example **LinkedIn session expired — reconnect it under Settings → Account.**, **Email account disconnected — reconnect it under Settings → Account.**, or **Credits could not be charged — check your balance under Credits.** Any other error reads **Something went wrong — we've been notified.** The [Jobs page](/operate/jobs#when-a-job-fails) uses the same words.
+When you can fix the cause yourself, the reason under the status says so. A failed run shows what you can do about it:
+
+- **LinkedIn session expired — reconnect it under Settings → Account.**
+- **Email account disconnected — reconnect it under Settings → Account.**
+- **Another search was already running — start it again once that one is done.**
+- **Credits could not be charged — check your balance under Credits.**
+- **The blacklist could not be read, so nothing was searched — try again.**
+
+Any other error reads **Something went wrong — we've been notified.**
 
 ## If the Next run queue is empty
 
@@ -33,7 +93,7 @@ Work through this checklist in order before starting a run:
 2. **ICP gate**: verify the contact meets the current ICP threshold and pipeline criteria.
 3. **Blacklist**: check that neither the company name nor its domain appears on your blacklist.
 4. **Stop state**: confirm the prospect has no outcome set and has not been archived.
-5. **Required data**: ensure the next step has the research, channel, or message data it needs to proceed.
+5. **Required data**: ensure the next step has the research, channel, or message data it needs to proceed. A contact also needs a first name, a last name, a job title, and an email address, a LinkedIn profile, or a company website to become a prospect, and its company must have room under **Max Contacts per Company**; see [How contacts reach the queue](/configure/add-prospects#how-contacts-reach-the-queue).
 6. **Approval**: if approval mode is on, check that generated messages have been approved and are waiting in the outreach queue.
 7. **Cadence**: verify the next follow-up date is actually due today, not tomorrow or later.
 8. **Limits**: confirm the relevant daily limit is above `0` and that today's allocation has not already been consumed.
@@ -42,18 +102,19 @@ Work through this checklist in order before starting a run:
 
 Most empty-queue cases trace back to items 1, 6, 8, or 9. Resolve those first.
 
-To see why one contact is not moving, open **Prospects → Contacts**. A contact without a prospect yet shows **Queued** or **Not in pipeline** in the **Stage** column. Hover the badge for the reason, such as no seat assigned, an ICP score below the pipeline minimum, or a company match that needs review (see [Prospects and companies](/operate/prospects-and-companies#contacts-held-back)).
+To see why one contact is not moving, open **Prospects → Contacts**. A contact without a prospect yet shows **Queued** or **Not in pipeline** in the **Stage** column. Hover the badge for the reason, such as no seat assigned, an ICP score below the pipeline minimum, **Missing job title or name**, **No email, LinkedIn or company website**, or a company match that needs review (see [Prospects and companies](/operate/prospects-and-companies#contacts-held-back)).
 
 ## If a run sends nothing
 
 When a sending step such as **Email sending**, **LinkedIn messages**, or **Email follow-ups** shows **Skipped**, it had nothing to do or skipped every item for a recorded reason. Nothing broke. The run itself can still read **Succeeded** because another step did work. Review:
 
 - **Newly detected replies**: prospects who replied since the last run are automatically excluded from follow-ups.
-- **Connection state**: a disconnected seat blocks LinkedIn steps.
-- **Approval state**: messages awaiting approval in the queue are not sent until approved.
+- **Connection state**: a seat with no connected LinkedIn account, or one that needs a new sign-in, blocks LinkedIn steps.
+- **Approval state**: messages awaiting approval in the queue are not sent until approved. With approval on, new drafts also pause while two days' worth wait for you; see [Review messages](/operate/review-messages#approval-on-or-off).
 - **Already-sent messages**: duplicates are detected and skipped silently.
 - **Stopped or archived prospects**: prospects stopped or archived between queue preview and run time are skipped.
 - **Daily limits and due dates**: limits may have been reached earlier in the day by a scheduled run.
+- **Public holidays**: a first email, invite, LinkedIn message, or follow-up is held on the recipient's public holiday and goes with a later run. See [Public holidays](/configure/schedule-and-limits#public-holidays).
 
 The system prefers skipping an uncertain send over delivering a duplicate or contacting someone after a reply. A skipped send is safer than an incorrect delivery.
 
@@ -137,6 +198,29 @@ You see it in several places:
   </Step>
   <Step title="Resume">
     Once the mailbox is unblocked, select **Resume sending**. If the provider still refuses it, sending pauses again. Or select **Disconnect** and connect a different mailbox.
+  </Step>
+</Steps>
+
+## If too many emails bounce
+
+When a mailbox has sent at least 100 emails and 5% or more of its last 100 bounced, the Sales Agent pauses email for that mailbox. Emails and email follow-ups on every seat that uses the mailbox are on hold until someone resumes them. LinkedIn is unaffected. Follow-ups count as sends. A bounce means the address could not receive the mail; a refusal by your mail provider never counts as one.
+
+You see it in several places:
+
+- the notification bell: **Email sending paused: too many bounces**, with the mailbox
+- a red banner on Home and an item in **Tasks**, each with **See options**: **Paused because too many emails bounced, so emails and email follow-ups are on hold. LinkedIn is unaffected. Check the contact list, then press Resume sending.**
+- **Settings → Account**: the email card shows **Sending paused** with the same reason
+- an email to the seat's owner, or to your admins when the seat has no owner, with the number of bounces
+
+<Steps>
+  <Step title="Check the contact list">
+    Look at the addresses your emails went to, for example an imported list with out-of-date addresses. Fix or remove the bad ones.
+  </Step>
+  <Step title="Open Settings → Account">
+    Open the affected seat. The email card offers **Resume sending**. **A note for your IT** does not apply, because your provider did not block anything.
+  </Step>
+  <Step title="Resume">
+    Select **Resume sending**. The count starts over at that moment: the bounces that caused the pause are not counted again. If 5% or more of the emails sent after it bounce, once at least 100 were sent, the mailbox pauses again. **Disconnect** does not lift this pause.
   </Step>
 </Steps>
 
