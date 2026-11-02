@@ -29,13 +29,15 @@ Jede Karte zeigt:
 
 | Karte | Bereit, wenn |
 | --- | --- |
-| **Neue Prospects** | Der Kontakt hat einen Owner, erreicht den Mindest-ICP-Score, ist noch nicht in der Pipeline und sein Unternehmen hat keine Deal-Phase. Ist LinkedIn aktiv, zählt die Karte auch Prospects, die auf ihre LinkedIn-Einladung warten. |
+| **Neue Prospects** | Der Kontakt hat einen Owner, erreicht den Mindest-ICP-Score, hat Vorname, Nachname, Jobtitel und eine E-Mail-Adresse, ein LinkedIn-Profil oder eine Unternehmenswebsite, ist noch nicht in der Pipeline und sein Unternehmen hat keine Deal-Phase. Ist LinkedIn aktiv, zählt die Karte auch Prospects, die auf ihre LinkedIn-Einladung warten. |
 | **Nachricht** | Die Recherche ist abgeschlossen und der Prospect braucht noch eine Erstnachricht auf einem Kanal, den sein Seat senden kann. |
 | **Outreach** | Eine E-Mail oder LinkedIn-Nachricht ist freigegeben, noch nicht gesendet und wird nicht zurückgehalten. Eine LinkedIn-Nachricht braucht außerdem eine bereits versendete Einladung. |
 | **Follow-up-E-Mail** | Eine E-Mail wurde gesendet, das nächste Follow-up ist fällig, das Maximum ist nicht erreicht und es liegt weder eine Antwort noch ein beendeter Thread vor. |
 | **LinkedIn-Follow-up** | Eine LinkedIn-Nachricht wurde gesendet, das Follow-up ist fällig, das Maximum ist nicht erreicht und keiner der Kanäle hat eine Antwort. |
 
-**Neue Prospects** nimmt weniger neue Personen auf, wenn bereits Kontakte auf eine Einladung oder eine erste E-Mail warten. So wächst der Rückstau nicht schneller, als deine Seats senden können. Ist LinkedIn auf allen Seats aus oder pausiert, zählt **Neue Prospects** nur neue Kontakte und **LinkedIn-Follow-up** bleibt bei 0.
+**Neue Prospects** nimmt weniger neue Personen auf, wenn bereits Kontakte auf eine Einladung oder eine erste E-Mail warten. So wächst der Rückstau nicht schneller, als deine Seats senden können. Bei aktiver Freigabe zählen freigegebene Entwürfe nicht als wartend und bremsen daher keine neuen Personen. **Neue Prospects** nimmt erst weniger auf, wenn Nachrichten für mehr als einen Tag auf deine Freigabe warten, und gar keine, wenn es zwei Tage sind; siehe [Nachrichten prüfen](/de/operate/review-messages#freigabe-an-oder-aus). Ist LinkedIn auf allen Seats aus, nicht verbunden oder pausiert, zählt **Neue Prospects** nur neue Kontakte und **LinkedIn-Follow-up** bleibt bei 0.
+
+Zwei Dinge kennen die Karten nicht. Ein Kontakt, der an einem Feiertag zurückgehalten wird, zählt an diesem Tag trotzdem als bereit (siehe [Feiertage](/de/configure/schedule-and-limits#feiertage)), und ein Kontakt, dessen Unternehmen bereits **Max. Kontakte pro Unternehmen** Personen im Outreach hat, zählt weiter, bis ein Platz frei wird.
 
 Recherche und Anreicherung können zwischen den sichtbaren Karten stattfinden. Sie haben keine eigene konfigurierbare Queue-Kachel.
 
@@ -44,6 +46,7 @@ Recherche und Anreicherung können zwischen den sichtbaren Karten stattfinden. S
 Ein Kontakt kann zurückgehalten werden, weil:
 
 - sein ICP-Score unter dem Pipeline-Schwellenwert liegt
+- Vorname, Nachname oder Jobtitel fehlen oder es weder eine E-Mail-Adresse noch ein LinkedIn-Profil noch eine Unternehmenswebsite gibt
 - kein aktiver Owner oder nutzbarer Kanal vorhanden ist
 - sein Unternehmen bereits eine Phase hat, etwa **Termin** oder **Nicht interessant**, und Kollegen deshalb nicht aufgenommen werden
 - er geparkt ist, weil er möglicherweise nicht mehr im Unternehmen arbeitet

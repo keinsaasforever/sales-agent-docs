@@ -9,16 +9,16 @@ icon: "users"
 
 ## Contacts and prospects
 
-On the **Contacts** tab, the **Stage** column shows the stage of each contact who is already a prospect. A contact who is not in outreach yet shows **Queued** when the first pipeline step will pick them up, or **Not in pipeline** when it will not. Hover the badge to see why. The **Company match** column shows **Needs review**, **Confirmed wrong**, or **Changed employer** for [contacts held back](#contacts-held-back). The **ICP** column shows the contact's score as a chip colored by its band; see [Read the score chips](/configure/icp-and-scoring#read-the-score-chips).
+On the **Contacts** tab, the **Stage** column shows the stage of each contact who is already a prospect. A contact who is not in outreach yet shows **Queued** when the first pipeline step will pick them up, or **Not in pipeline** when it will not. Hover the badge to see why: no seat assigned, an ICP score below the pipeline minimum, **Missing job title or name**, **No email, LinkedIn or company website**, or a company match that needs review. A contact becomes a prospect only with a first name, a last name, a job title, and one way to reach them; see [How contacts reach the queue](/configure/add-prospects#how-contacts-reach-the-queue). The **Company match** column shows **Needs review**, **Confirmed wrong**, **Changed employer**, **Check employer**, or **Works elsewhere** for [contacts held back](#contacts-held-back). The **ICP** column shows the contact's score as a chip colored by its band; see [Read the score chips](/configure/icp-and-scoring#read-the-score-chips).
 
 **Phone** and **Email** sit after **Job Title** on both tabs. **Email** is the address the Sales Agent would send to. **Phone** is the number to dial: select it to call, or read **Not working** for a number that was tried and does not work, and **Not found** once a lookup came back empty. For a person who asked to stop, or whose company is on your blacklist, the number and the address show greyed instead of as links; hover one to see why. **Not interesting** is your own verdict, so those links stay.
 
-The **Intent** column shows the buying intent of the person's company, from 0 to 100: how many fresh, strong [buying signals](/configure/icp-and-scoring#set-buying-signals) it shows, counting the signals their persona hears about. From 60, the number carries a flame. The column appears on **Contacts** and **Prospects** only once someone has intent. On **Companies**, the column is called **Buying intent**.
+The **Intent** column shows the buying intent of the person's company as a flame and a number out of 100, such as **70/100**: how many fresh, strong [buying signals](/configure/icp-and-scoring#set-buying-signals) it shows, counting the signals their persona hears about. Each signal weighs in with its own score and counts less as it ages, so the number falls over time. The flame is grey up to 50, yellow from 51 to 80, and dark red from 81. A company with a higher number is contacted first. The column appears on **Contacts** and **Prospects** only once someone has intent. On **Companies**, the column is called **Buying intent**.
 
 Chips next to the view picker filter a list in one click, and select a pressed chip again to clear it:
 
 - **Buying signals · N** keeps the rows with buying intent, on **Companies**, **Contacts**, and **Prospects**.
-- **Needs review · N** keeps the companies that need a decision, on **Companies**.
+- **Needs review · N** keeps the companies that need a decision, on **Companies**. A company with people to check also counts here.
 - **Email to check · N** keeps the contacts with an address waiting for a check, on **Contacts**.
 
 A chip shows only while it has rows, and its number is what a click shows. On **Prospects**, it counts within the open stage tab.
@@ -29,16 +29,20 @@ Select several rows to act on them together: **Set outcome…**, **Archive**, **
 
 ## The prospect record
 
-A prospect opens in a side panel with the outcome selector and **Archive** next to the name, and four tabs.
+A prospect opens in a side panel. Next to the name sit the company's buying intent (when it has any), the outcome selector, and icons for **Archive**, **Hand over** (admins), and **Delete this person everywhere** (admins). Below are up to five tabs: **Info**, **Signals** (once signals were found for the company), **Timeline**, **Notes**, and **Colleagues**.
 
 ### Info
 
 - **They replied** and **Call**: the reply and the call cards, when they apply. See [Replies and handoff](/operate/replies-and-handoff).
-- **Why now**: appears when signals were found for the person's company. See [Why now](#why-now).
+- **Why now at** and the company's name: a short card with the AI's summary and the company's buying intent, shown while the company holds a signal that counts. **See all signals (N)** opens the **Signals** tab. See [Why now](#why-now).
 - **Contact**: select a field to edit it. **Language**, **Country**, and **Seniority** are chosen from a list, so a value is always stored the same way. **Language** offers the languages the contact's seat writes in, and **Country** is the person's own, not the company's. **Persona** decides which message prompt the contact is written with. A **Skipped** row means LinkedIn is closed for this prospect and outreach continues by email only.
 - **Enrichment**: every email address and phone number found, each with its status. Select **Bad** on an email address that is wrong: the Sales Agent marks it and looks for another one. For phone numbers, see [when the number is wrong](/operate/replies-and-handoff#when-the-number-is-wrong). **Find email**, **Find phone**, and **Find both** appear when something is missing.
 - **Company**: the company's details, editable, and **Open company page**. The size **Range** is chosen from LinkedIn's headcount ranges.
 - **Cheat sheet**: prep notes for a call. Select **Edit** to change them.
+
+### Signals
+
+The **Signals** tab sits after **Info** and appears once signals were found for the person's company. It lists every signal found, newest first, so you can see what a message can build on and rate each one. See [Why now](#why-now) for what a signal shows and how rating works.
 
 ### Timeline
 
@@ -58,6 +62,7 @@ The Sales Agent keeps some contacts out of outreach until you decide. Open the c
 
 - **Needs review**: the email address belongs to another company, so the person may not work at the company you targeted. Select **This is the right company — add to outreach**, or **Confirm wrong — keep out**. A contact you confirmed shows **Confirmed wrong** and can still be added with **Actually the right company — add to outreach**.
 - **Changed employer**: the person's job history, or an automatic reply from their mailbox, says they left the company. A person who asks not to be contacted in such a reply is never filed here. The notice names the new employer when it is known, and their old address is not used. If they still work there, select **Still works here — keep in outreach**.
+- **Check employer**: a search found the person at this company by name only, with no matching website or LinkedIn company page, so the Sales Agent cannot confirm that they work there. The notice links the person's LinkedIn profile, the company website, and its LinkedIn page, so you can check. Select **Works here** to clear the check, or **Works elsewhere, keep out**. A person you ruled out shows **Works elsewhere**, and **Actually the right company — add to outreach** brings them back.
 - **Email address to check**: a search, an import, or an enrichment returned an address on a domain not confirmed as the company's, so it was not used. The person is not set aside for it. Admins can select **Use this email**, which saves the address for that company and checks it once, or **Not their address**. Members see the address and can ask an admin.
 
 When addresses wait for a check, admins see a task on Home and in **Tasks** saying how many contacts have an email address waiting for your check. **Check** opens the **Contacts** tab filtered to **Email to check**.
@@ -76,9 +81,26 @@ Open a company to see:
 
 ### Why now
 
-When signals were found for a company, the company, contact, and prospect panels show a **Why now** section near the top; on a person it reads **Why now at** and the company's name. Next to its title, the number is the company's buying intent. It never shows for a company without signals.
+Signals are the events found for a company that make it a reason to write now. They show in the prospect, company, and contact panels, and never for a company without signals:
 
-Each card is one signal: its type, such as **Acquisition**, **New leader**, **Funding**, **Expansion**, or **Job ads**, its date or **no date**, a short summary, a score from 0 to 100, and a link to the source. The counting signals come first, newest first, and three show at once; select **Show all** for the rest. A signal that no longer counts is dimmed and reads **ended**, or **not counted** when its type is not one you picked. The section ends with the date the company was last checked. On a person, only the signals their persona hears about count. Set what counts under [Settings → Signals](/configure/icp-and-scoring#set-buying-signals).
+- **Prospect panel**: the **Info** tab holds a short **Why now at** card with the AI's summary and the company's buying intent, shown while the company holds a signal that counts. **See all signals (N)** opens the **Signals** tab, which lists every signal.
+- **Company and contact panels** have no tabs. They show a **Why now** section near the top, on a person **Why now at** and the company's name, with the summary and the same list. It stays hidden while every signal found has ended or scored too low.
+The number next to a title is the company's buying intent, a flame and a score out of 100.
+
+Each signal shows:
+
+- its type with an icon, such as **Acquisition**, **New leader**, **Funding**, **Expansion**, or **Job ads**. A signal without a type reads **Company news**.
+- its date, or **no date**, and a short summary.
+- its own score, with a radio icon and a number out of 100, in the same colors as the intent. It is the AI's rating of how strong a reason to reach out the event is, and it does not change with age. The company's buying intent fades as its signals age.
+- the icon **Open the source**, a link to the page the signal comes from.
+
+Signals are sorted by the date of the event, newest first and undated last. A signal that does not count is dimmed and marked: **ended** when its time is over, **low score** when it scores under your **Minimum signal score**, **not counted** when its type is not one you picked, or **not used** when you rated it down. Expired and low-scored signals wait behind **See expired and low-scored signals (N)**; **Hide expired and low-scored signals** folds them again. The AI's summary sits on top, and the list ends with **Last checked** and the date. On a person, only the signals their persona hears about count. Set what counts under [Settings → Signals](/configure/icp-and-scoring#set-buying-signals).
+
+### Rate a signal
+
+Under each signal, **Good signal** (thumbs up) and **Wrong signal: don't use it** (thumbs down) tell the Sales Agent what you think of it. A thumbs-down offers a reason, **Wrong company**, **Too old**, **Not relevant for us**, or **Other**; pick one or skip it. **Your response is saved** confirms the rating. Members can rate too, and a rating applies to the company for everyone on your account.
+
+A signal rated down never counts: it adds nothing to the buying intent, and no new message uses it. The AI's summary hides until the next search writes a new one. The signal stays in the list, dimmed and marked **not used**, so you can select the thumb again to take the rating back. Messages already written are not changed.
 
 ### Set a company's fit by hand
 
@@ -88,7 +110,7 @@ To give the decision back to the AI, select the number, empty the field, and pre
 
 ### Review duplicate companies
 
-When the Sales Agent suspects that two companies in your list are one, the company shows a **Needs review** box that names the other one. The **Needs review · N** chip above the list filters to these companies, and admins see a task on Home. Only admins decide:
+When the Sales Agent suspects that two companies in your list are one, the company shows a **Needs review** box that names the other one. The **Needs review · N** chip above the list filters to these companies, and admins see a task on Home. A company can also show **N people found here without a confirmed employer**; **Check their employer** opens those people on **Contacts**, filtered to **Check employer · N**, and you decide on each person under [Contacts held back](#contacts-held-back). Only admins decide between the two companies:
 
 - **Same company** merges the two at once. The people, signals, and history of the newer company move to the older one, and the older one fills only the details it lacks. The newer company leaves **Companies**, search, and the **Add to Pipeline** company picker. A toast says how many people, signals, and history entries moved. The dashboard has no undo for a merge, so contact support if you merged by mistake.
 - **Different companies** keeps both and ends the question.
@@ -108,7 +130,7 @@ Members do not see **Export**.
 
 ## Hand people or a company to another seat
 
-Admins can hand people to another seat, so that seat's LinkedIn account and mailbox reach them. Select **Hand over** in a contact, prospect, or company panel. On **Contacts** and **Prospects**, select rows and use **Hand over (N)**. The button appears only when that person would move.
+Admins can hand people to another seat, so that seat's LinkedIn account and mailbox reach them. Select the **Hand over** icon (**Hand over to another seat**) in a contact, prospect, or company panel. On **Contacts** and **Prospects**, select rows and use **Hand over (N)**. The button appears only when that person would move.
 
 1. Choose the seat. Your own seat is not in the list, because you hand people away.
 2. Choose the scope: **Their whole company (recommended)** moves everyone there who has not been contacted yet, together with the company itself. **Only this person** or **Only these people** moves just them. Handing over whole companies works for up to 50 companies at a time.
@@ -117,3 +139,9 @@ Admins can hand people to another seat, so that seat's LinkedIn account and mail
 Only people nobody has contacted yet change seat. A person with a sent message, a reply, a call, or a deal outcome stays, because that conversation lives in the old seat's LinkedIn account and mailbox. When a company is split between two seats, the summary warns you: someone who sees only one seat does not see the other seat's replies, and a meeting or positive reply on either one stops outreach to everyone at the company.
 
 Unsent drafts of the people who move are deleted, and the new seat writes its own. New people found in a country that belongs to another seat still go to that seat; the summary names it. While a run is active on one of the seats involved, wait until it has finished.
+
+## Delete a person everywhere
+
+When someone asks you to delete their data, admins remove them with the **Delete this person everywhere** icon (a scale) next to the name in a contact or prospect panel. Use it only for such a request (GDPR); to stop outreach without deleting, use an outcome or **Archive**. Read the confirmation, then select **Delete everywhere**. The contact, messages, notes, conversations, and history go from the Sales Agent, duplicates included. If the person has replied, that conversation is deleted too. If they are the main contact of a company's deal, the company keeps its stage, without a main contact. The company stays, and emails in your own mailbox stay there. It cannot be undone.
+
+The Sales Agent keeps only a fingerprint of the person's email address and LinkedIn profile, so they are never contacted again and never come back as a lead. For an objection that reached you by phone or letter, use **Do not contact** on [**Settings → Blacklist**](/configure/blacklist#stop-outreach-to-one-person).

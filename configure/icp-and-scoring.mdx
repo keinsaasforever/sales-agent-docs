@@ -32,15 +32,16 @@ The AI scores every company and contact against this description together with t
 |---|---|
 | **Job Titles — Tier 1 (primary ICP)** | The roles you actually want. Searched first at every company. |
 | **Job Titles — Tier 2 (fallback)** | Roles you would take instead, such as Managing Director at a small company or an adjacent role. Searched only at companies where no Tier 1 title was found. |
-| **Seniority Levels** | The levels you want to talk to, from **C-level / Owner** to **Entry / Junior**. Leave everything unticked for no preference. |
+| **Seniority Levels** | The levels you want to talk to, from **C-level / Owner** to **Entry / Junior**. Leave everything unticked for no preference. **Decision-makers only** ticks **C-level / Owner** and **VP / Head of / Director** in one click; selling mostly to small companies, add **Manager / Team Lead**, where managers often decide. Selecting it again keeps your selection, and ticking another level leaves the preset. |
 | **Excluded Job Titles** | Titles to keep out of outreach, even when they appear in search results. |
 | **Locations** | Countries to target. Leave empty for no location filter. |
 | **DACH only** | Only people living in Germany, Austria, Switzerland, or Liechtenstein. Overrides **Locations** for people, not for company headquarters, and stops LinkedIn invites to people outside that region. |
 | **Industries** | LinkedIn industries to focus on. Leave empty for no industry filter. |
+| **Industries to leave out** | LinkedIn industries the Sales Agent leaves out when it searches for new companies. They do not apply to CSV imports or your own Sales Navigator searches. Use LinkedIn's industry names, such as Banking or Law Practice. The setup wizard asks for the same field. |
 | **Company Size** | Headcount ranges to target. Nothing selected means no size filter. Companies whose headcount is unknown are never filtered out. The ranges also feed **Size fit** in the score. |
 | **Customers** | Whether the companies you look for sell to businesses or consumers: **Both**, **B2B only**, or **B2C only**. It applies only when you search for new companies in [**Our search**](/configure/add-prospects#search-at-your-companies). **B2B only** or **B2C only** uses fewer of our search sources, so a search finds fewer people. |
 | **ICP Keywords** | Specialties, business models, or other terms that indicate a fitting company. |
-| **Max Contacts per Company** | Hard cap on the number of people searched at each company. Three to four is a normal starting point; ten is the maximum. |
+| **Max Contacts per Company** | Hard cap per company: the contact search finds at most this many people there, and at most this many are in outreach at once. Three to four is a normal starting point; ten is the maximum. |
 | **Fill up to the max** | When the first source finds fewer people than your maximum, the next sources are asked too. Costs about three times the search credits. |
 | **Retry bad emails at another source** | When a found email turns out invalid, bounces, or sits on a domain that is not the company's, the contact is looked up again at the next source. Each retry costs extra credits. |
 
@@ -119,18 +120,18 @@ If the instant recalculation did not finish, the to-do **ICP scores need updatin
 
 ## Set buying signals
 
-Open **Settings → Signals** to define what counts as a reason to write to a company now. Only admins see this page. Companies with a fresh signal are contacted first, and the message builds on the signal. The signal search runs only once keinsaas switches it on with you; each company searched costs 1 credit.
+Open **Settings → Signals** to define what counts as a reason to write to a company now. Only admins see this page. Companies with a fresh signal are contacted first, and the message builds on the signal. A company's buying intent follows the AI's score of each signal: a strong signal moves it up more than a weak one, and a signal counts less as it ages. The signal search runs only once keinsaas switches it on with you; each company searched costs 1 credit.
 
 - **What you sell**: a few sentences on your offer and who buys it. Every event found is judged against it.
-- **Sources**: each source has its own switch.
-  - **News and web** looks for anything that makes what you sell more urgent. Hints sharpen the search, and none is required. Switch on the standard events **Acquisition**, **New leader**, **Funding**, or **Expansion**, add your own events in your own words (up to 20, each up to 200 characters), or select **Suggest from what I sell** and add the ideas you like with one click; nothing is added until you click. Hover a standard event to see its strength and, once there is data, how many first messages that used it were answered in the last 90 days. With nothing set, the search still looks for anything that makes your offer more urgent.
+- **Sources**: each source has its own switch, and says whether messages build on it: **Used in messages** for **News and web** and **Job ads**, **Not used in messages** for **LinkedIn page followers**.
+  - **News and web** looks for anything that makes what you sell more urgent. Hints sharpen the search, and none is required. Switch on the standard events **Acquisition**, **New leader**, **Funding**, or **Expansion**, add your own events in your own words (up to 20, each up to 200 characters), or select **Suggest from what I sell** and add the ideas you like with one click; nothing is added until you click. Hover a standard event to see, once there is data, how many first messages that used it were answered in the last 90 days. With nothing set, the search still looks for anything that makes your offer more urgent.
   - **Job ads** looks at open roles. Add the roles or teams that count, or leave it empty for any team you sell to. Your **Tier 1** job titles from **Targeting** are offered as one-click hints.
-  - **LinkedIn page followers** finds people who follow your company page, through one of your seats with Sales Navigator. It is free. A follow counts toward buying intent, but a message never mentions it.
+  - **LinkedIn page followers** finds people who follow your company page. It reads once a day, in the scheduled run of one of your seats with Sales Navigator. A follower at a company you do not have yet is added with the company and scored against your **Targeting** like any import. It is free. A follow counts toward buying intent and the **Buying signals** filter, but it only moves the company up the list: a message never mentions it.
   - **Website visitors** is marked **soon**.
 - **Not a signal**: events that should never count, such as awards.
-- **Scoring**, a collapsed row: **Minimum signal score**, where a signal scoring below it never reaches a message; **Use a signal for (days)**, which is how long a signal is used in messages, counted from the day it happened, with half that time for a signal without a date; and **Which signals each persona hears about**. The persona chips decide which signals a message to that persona may use. The search is the same for every persona. Untick them all for people who should get no signal at all.
+- **Scoring**, a collapsed row: **Minimum signal score**, where a signal scoring below it never counts and never reaches a message; **Use a signal for (days)**, which is how long a signal is used in messages, counted from the day it happened, with half that time for a signal without a date; and **Which signals each persona hears about**. The persona chips decide which signals a message to that persona may use. The search is the same for every persona. Untick them all for people who should get no signal at all.
 
-Save the page with **Save signals**. Companies with signals show a [**Why now**](/operate/prospects-and-companies#why-now) section in their panels, and the **Buying intent** and **Intent** columns appear.
+Save the page with **Save signals**. Companies with signals show a [**Why now**](/operate/prospects-and-companies#why-now) section in their panels and a **Signals** tab on prospects, where everyone can [rate each signal](/operate/prospects-and-companies#rate-a-signal). The **Buying intent** and **Intent** columns appear.
 
 ## Other targeting settings
 

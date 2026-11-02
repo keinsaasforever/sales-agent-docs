@@ -8,16 +8,16 @@ icon: "users"
 
 ## Kontakte und Prospects
 
-Im Tab **Kontakte** zeigt die Spalte **Phase** die Phase jedes Kontakts, der bereits Prospect ist. Ein Kontakt, der noch nicht in der Ansprache ist, zeigt **In Warteschlange**, wenn der erste Pipeline-Schritt ihn übernimmt, oder **Nicht in der Pipeline**, wenn nicht. Fahre mit der Maus über das Badge, um den Grund zu sehen. Die Spalte **Unternehmensabgleich** zeigt **Zu prüfen**, **Als falsch bestätigt** oder **Arbeitgeber gewechselt** für [angehaltene Kontakte](#angehaltene-kontakte). Die Spalte **ICP** zeigt den Score des Kontakts als Chip, eingefärbt nach seinem Band; siehe [Score-Chips lesen](/de/configure/icp-and-scoring#score-chips-lesen).
+Im Tab **Kontakte** zeigt die Spalte **Phase** die Phase jedes Kontakts, der bereits Prospect ist. Ein Kontakt, der noch nicht in der Ansprache ist, zeigt **In Warteschlange**, wenn der erste Pipeline-Schritt ihn übernimmt, oder **Nicht in der Pipeline**, wenn nicht. Fahre mit der Maus über das Badge, um den Grund zu sehen: kein zugewiesener Seat, ein ICP-Score unter dem Pipeline-Minimum, **Jobtitel oder Name fehlt**, **Keine E-Mail, kein LinkedIn-Profil und keine Unternehmenswebsite** oder ein Unternehmensabgleich, der geprüft werden muss. Ein Kontakt wird nur Prospect, wenn er Vorname, Nachname, Jobtitel und einen Weg hat, ihn zu erreichen; siehe [So gelangen Kontakte in die Queue](/de/configure/add-prospects#so-gelangen-kontakte-in-die-queue). Die Spalte **Unternehmensabgleich** zeigt **Zu prüfen**, **Als falsch bestätigt**, **Arbeitgeber gewechselt**, **Arbeitgeber prüfen** oder **Arbeitet woanders** für [angehaltene Kontakte](#angehaltene-kontakte). Die Spalte **ICP** zeigt den Score des Kontakts als Chip, eingefärbt nach seinem Band; siehe [Score-Chips lesen](/de/configure/icp-and-scoring#score-chips-lesen).
 
 **Telefon** und **E-Mail** stehen in beiden Tabs nach **Jobtitel**. **E-Mail** ist die Adresse, an die der Sales Agent senden würde. **Telefon** ist die Nummer zum Anrufen: Wähle sie, um anzurufen, oder lies **Funktioniert nicht** bei einer Nummer, die probiert wurde und nicht funktioniert, und **Nicht gefunden**, wenn eine Suche leer zurückkam. Bei einer Person, die um Stopp gebeten hat oder deren Unternehmen auf deiner Sperrliste steht, erscheinen Nummer und Adresse grau statt als Links; fahre mit der Maus darüber, um den Grund zu sehen. **Nicht interessant** ist dein eigenes Urteil, deshalb bleiben diese Links bestehen.
 
-Die Spalte **Intent** zeigt die Kaufabsicht des Unternehmens der Person von 0 bis 100: wie viele frische, starke [Kaufsignale](/de/configure/icp-and-scoring#kaufsignale-festlegen) es zeigt, gezählt über die Signale, die ihre Persona zu hören bekommt. Ab 60 trägt die Zahl eine Flamme. Die Spalte erscheint unter **Kontakte** und **Prospects** erst, wenn jemand Intent hat. Unter **Unternehmen** heißt die Spalte **Kaufabsicht**.
+Die Spalte **Intent** zeigt die Kaufabsicht des Unternehmens der Person als Flamme und Zahl von 100, etwa **70/100**: wie viele frische, starke [Kaufsignale](/de/configure/icp-and-scoring#kaufsignale-festlegen) es zeigt, gezählt über die Signale, die ihre Persona zu hören bekommt. Jedes Signal geht mit seinem eigenen Score ein und zählt weniger, je älter es wird, die Zahl sinkt also mit der Zeit. Die Flamme ist bis 50 grau, von 51 bis 80 gelb und ab 81 dunkelrot. Ein Unternehmen mit höherer Zahl wird zuerst angeschrieben. Die Spalte erscheint unter **Kontakte** und **Prospects** erst, wenn jemand Intent hat. Unter **Unternehmen** heißt die Spalte **Kaufabsicht**.
 
 Chips neben der Ansichtsauswahl filtern eine Liste mit einem Klick; wähle einen aktiven Chip erneut, um ihn zu lösen:
 
 - **Kaufsignale · N** zeigt nur Zeilen mit Kaufabsicht, unter **Unternehmen**, **Kontakte** und **Prospects**.
-- **Zu prüfen · N** zeigt nur Unternehmen, über die du entscheiden musst, unter **Unternehmen**.
+- **Zu prüfen · N** zeigt nur Unternehmen, über die du entscheiden musst, unter **Unternehmen**. Auch ein Unternehmen mit zu prüfenden Personen zählt hier.
 - **E-Mail prüfen · N** zeigt nur Kontakte mit einer Adresse, die auf ihre Prüfung wartet, unter **Kontakte**.
 
 Ein Chip erscheint nur, solange er Zeilen hat, und seine Zahl ist das, was ein Klick zeigt. Unter **Prospects** zählt er innerhalb des geöffneten Phasen-Tabs.
@@ -28,16 +28,20 @@ Wähle mehrere Zeilen, um sie gemeinsam zu bearbeiten: **Ergebnis festlegen…**
 
 ## Der Datensatz eines Prospects
 
-Ein Prospect öffnet sich in einem Seitenpanel mit der Ergebnis-Auswahl und **Archivieren** neben dem Namen und vier Tabs.
+Ein Prospect öffnet sich in einem Seitenpanel. Neben dem Namen stehen die Kaufabsicht des Unternehmens (wenn es eine hat), die Ergebnis-Auswahl und Symbole für **Archivieren**, **Übergeben** (Admins) und **Diese Person überall löschen** (Admins). Darunter folgen bis zu fünf Tabs: **Info**, **Signale** (sobald für das Unternehmen Signale gefunden wurden), **Verlauf**, **Notizen** und **Kollegen**.
 
 ### Info
 
 - **Hat geantwortet** und **Call**: die Antwort- und die Anrufkarte, wenn sie zutreffen. Siehe [Antworten und Übergabe](/de/operate/replies-and-handoff).
-- **Warum jetzt**: erscheint, wenn für das Unternehmen der Person Signale gefunden wurden. Siehe [Warum jetzt](#warum-jetzt).
+- **Warum jetzt bei** und der Name des Unternehmens: eine kurze Karte mit der Zusammenfassung der KI und der Kaufabsicht des Unternehmens, solange das Unternehmen ein Signal hat, das zählt. **Alle Signale anzeigen (N)** öffnet den Tab **Signale**. Siehe [Warum jetzt](#warum-jetzt).
 - **Kontakt**: Wähle ein Feld, um es zu bearbeiten. **Sprache**, **Land** und **Seniorität** wählst du aus einer Liste, damit ein Wert immer gleich gespeichert wird. **Sprache** bietet die Sprachen, in denen der Seat des Kontakts schreibt, und **Land** ist das Land der Person, nicht des Unternehmens. **Persona** bestimmt, mit welchem Nachrichten-Prompt der Kontakt angeschrieben wird. Eine Zeile **Übersprungen** bedeutet, dass LinkedIn für diesen Prospect geschlossen ist und die Ansprache nur per E-Mail weiterläuft.
 - **Anreicherung**: alle gefundenen E-Mail-Adressen und Telefonnummern mit ihrem Status. Wähle **Falsch** bei einer falschen E-Mail-Adresse: Der Sales Agent markiert sie und sucht eine andere. Zu Telefonnummern siehe [Wenn die Nummer falsch ist](/de/operate/replies-and-handoff#wenn-die-nummer-falsch-ist). **E-Mail finden**, **Telefon finden** und **Beides finden** erscheinen, wenn etwas fehlt.
 - **Unternehmen**: die Unternehmensdaten, bearbeitbar, und **Unternehmensseite öffnen**. Die Größe **Spanne** wählst du aus den Mitarbeiterbereichen von LinkedIn.
 - **Spickzettel**: Vorbereitungsnotizen für einen Anruf. Mit **Bearbeiten** änderst du sie.
+
+### Signale
+
+Der Tab **Signale** steht nach **Info** und erscheint, sobald für das Unternehmen der Person Signale gefunden wurden. Er listet alle gefundenen Signale, das neueste zuerst, damit du siehst, worauf eine Nachricht aufbauen kann, und jedes bewerten kannst. Was ein Signal zeigt und wie das Bewerten funktioniert, steht unter [Warum jetzt](#warum-jetzt).
 
 ### Verlauf
 
@@ -57,6 +61,7 @@ Der Sales Agent hält manche Kontakte aus der Ansprache heraus, bis du entscheid
 
 - **Zu prüfen**: Die E-Mail-Adresse gehört zu einem anderen Unternehmen, die Person arbeitet also eventuell nicht beim Zielunternehmen. Wähle **Das ist das richtige Unternehmen – zum Outreach hinzufügen** oder **Als falsch bestätigen – ausschließen**. Ein bestätigter Kontakt zeigt **Als falsch bestätigt** und lässt sich mit **Doch das richtige Unternehmen – zum Outreach hinzufügen** trotzdem aufnehmen.
 - **Arbeitgeber gewechselt**: Laut Lebenslauf oder laut einer automatischen Antwort aus ihrem Postfach hat die Person das Unternehmen verlassen. Wer in einer solchen Antwort bittet, nicht kontaktiert zu werden, wird hier nie eingeordnet. Der Hinweis nennt den neuen Arbeitgeber, wenn er bekannt ist, und die alte Adresse wird nicht verwendet. Arbeitet die Person noch dort, wähle **Arbeitet noch hier – im Outreach behalten**.
+- **Arbeitgeber prüfen**: Eine Suche hat die Person nur über den Namen bei diesem Unternehmen gefunden, ohne passende Website oder LinkedIn-Unternehmensseite, der Sales Agent kann also nicht bestätigen, dass sie dort arbeitet. Der Hinweis verlinkt das LinkedIn-Profil der Person, die Website des Unternehmens und seine LinkedIn-Seite, damit du prüfen kannst. Wähle **Arbeitet hier**, um die Prüfung aufzuheben, oder **Arbeitet woanders, ausschließen**. Eine ausgeschlossene Person zeigt **Arbeitet woanders**, und **Doch das richtige Unternehmen – zum Outreach hinzufügen** holt sie zurück.
 - **Zu prüfende E-Mail-Adresse**: Eine Suche, ein Import oder eine Anreicherung hat eine Adresse auf einer Domain geliefert, die nicht als Domain des Unternehmens bestätigt ist, und sie wurde deshalb nicht verwendet. Die Person wird dafür nicht zurückgestellt. Admins wählen **Diese E-Mail verwenden**, das die Adresse für dieses Unternehmen speichert und einmal prüft, oder **Falsche Adresse**. Mitglieder sehen die Adresse und können einen Admin fragen.
 
 Warten Adressen auf eine Prüfung, sehen Admins auf **Start** und in **Aufgaben** eine Aufgabe mit der Anzahl der Kontakte, deren E-Mail-Adresse auf ihre Prüfung wartet. **Prüfen** öffnet den Tab **Kontakte** gefiltert auf **E-Mail prüfen**.
@@ -75,9 +80,26 @@ Ein geöffnetes Unternehmen zeigt:
 
 ### Warum jetzt
 
-Wurden für ein Unternehmen Signale gefunden, zeigen die Panels von Unternehmen, Kontakt und Prospect weit oben einen Abschnitt **Warum jetzt**; bei einer Person heißt er **Warum jetzt bei** mit dem Namen des Unternehmens. Die Zahl neben dem Titel ist die Kaufabsicht des Unternehmens. Bei einem Unternehmen ohne Signale erscheint der Abschnitt nie.
+Signale sind die Ereignisse, die für ein Unternehmen gefunden wurden und einen Grund liefern, jetzt zu schreiben. Sie erscheinen in den Panels von Prospect, Unternehmen und Kontakt, und nie bei einem Unternehmen ohne Signale:
 
-Jede Karte ist ein Signal: seine Art, etwa **Übernahme**, **Neue Führungskraft**, **Finanzierung**, **Expansion** oder **Jobanzeigen**, sein Datum oder **kein Datum**, eine kurze Zusammenfassung, ein Score von 0 bis 100 und ein Link zur Quelle. Die zählenden Signale stehen zuerst, das neueste vorn, und drei werden auf einmal gezeigt; wähle **Alle anzeigen** für den Rest. Ein Signal, das nicht mehr zählt, ist abgedunkelt und zeigt **beendet**, oder **nicht gezählt**, wenn seine Art nicht zu denen gehört, die du gewählt hast. Der Abschnitt endet mit dem Datum, an dem das Unternehmen zuletzt geprüft wurde. Bei einer Person zählen nur die Signale, die ihre Persona zu hören bekommt. Lege unter [Einstellungen → Signale](/de/configure/icp-and-scoring#kaufsignale-festlegen) fest, was zählt.
+- **Prospect-Panel**: Der Tab **Info** enthält eine kurze Karte **Warum jetzt bei** mit der Zusammenfassung der KI und der Kaufabsicht des Unternehmens, solange das Unternehmen ein Signal hat, das zählt. **Alle Signale anzeigen (N)** öffnet den Tab **Signale**, der jedes Signal listet.
+- **Unternehmens- und Kontakt-Panel** haben keine Tabs. Sie zeigen weit oben einen Abschnitt **Warum jetzt**, bei einer Person **Warum jetzt bei** mit dem Namen des Unternehmens, mit der Zusammenfassung und derselben Liste. Er bleibt verborgen, solange alle gefundenen Signale beendet sind oder zu niedrig bewertet wurden.
+Die Zahl neben einem Titel ist die Kaufabsicht des Unternehmens, eine Flamme und ein Score von 100.
+
+Jedes Signal zeigt:
+
+- seine Art mit einem Symbol, etwa **Übernahme**, **Neue Führungskraft**, **Finanzierung**, **Expansion** oder **Jobanzeigen**. Ein Signal ohne Art heißt **Unternehmensnews**.
+- sein Datum oder **kein Datum** und eine kurze Zusammenfassung.
+- seinen eigenen Score, mit einem Funk-Symbol und einer Zahl von 100, in denselben Farben wie der Intent. Es ist die Einstufung der KI, wie stark das Ereignis als Grund für eine Kontaktaufnahme ist, und sie ändert sich nicht mit dem Alter. Die Kaufabsicht des Unternehmens sinkt, wenn seine Signale altern.
+- das Symbol **Quelle öffnen**, ein Link zur Seite, von der das Signal stammt.
+
+Signale sind nach dem Datum des Ereignisses sortiert, das neueste zuerst und ohne Datum zuletzt. Ein Signal, das nicht zählt, ist abgedunkelt und markiert: **beendet**, wenn seine Zeit um ist, **niedriger Score**, wenn sein Score unter deinem **Mindest-Score für Signale** liegt, **nicht gezählt**, wenn seine Art nicht zu denen gehört, die du gewählt hast, oder **nicht verwendet**, wenn du es negativ bewertet hast. Abgelaufene und niedrig bewertete Signale warten hinter **Abgelaufene und niedrig bewertete Signale anzeigen (N)**; **Abgelaufene und niedrig bewertete Signale ausblenden** klappt sie wieder zu. Oben steht die Zusammenfassung der KI, und die Liste endet mit **Zuletzt geprüft** und dem Datum. Bei einer Person zählen nur die Signale, die ihre Persona zu hören bekommt. Lege unter [Einstellungen → Signale](/de/configure/icp-and-scoring#kaufsignale-festlegen) fest, was zählt.
+
+### Ein Signal bewerten
+
+Unter jedem Signal sagen dir **Gutes Signal** (Daumen hoch) und **Falsches Signal: nicht verwenden** (Daumen runter) dem Sales Agent, was du davon hältst. Ein Daumen runter bietet einen Grund an: **Falsches Unternehmen**, **Zu alt**, **Für uns nicht relevant** oder **Sonstiges**; wähle einen oder lass es. **Deine Bewertung ist gespeichert** bestätigt sie. Auch Mitglieder können bewerten, und eine Bewertung gilt für das Unternehmen und für alle in deinem Konto.
+
+Ein negativ bewertetes Signal zählt nie: Es trägt nichts zur Kaufabsicht bei, und keine neue Nachricht verwendet es. Die Zusammenfassung der KI bleibt verborgen, bis die nächste Suche eine neue schreibt. Das Signal bleibt in der Liste, abgedunkelt und mit **nicht verwendet** markiert, sodass du den Daumen erneut wählen kannst, um die Bewertung zurückzunehmen. Bereits geschriebene Nachrichten ändern sich nicht.
 
 ### Unternehmens-Fit manuell festlegen
 
@@ -87,7 +109,7 @@ Um die Entscheidung der KI zurückzugeben, wähle die Zahl, leere das Feld und d
 
 ### Doppelte Unternehmen klären
 
-Vermutet der Sales Agent, dass zwei Unternehmen in deiner Liste eins sind, zeigt das Unternehmen eine Box **Zu prüfen**, die das andere nennt. Der Chip **Zu prüfen · N** über der Liste filtert diese Unternehmen, und Admins sehen auf **Start** eine Aufgabe. Nur Admins entscheiden:
+Vermutet der Sales Agent, dass zwei Unternehmen in deiner Liste eins sind, zeigt das Unternehmen eine Box **Zu prüfen**, die das andere nennt. Der Chip **Zu prüfen · N** über der Liste filtert diese Unternehmen, und Admins sehen auf **Start** eine Aufgabe. Ein Unternehmen kann auch **N Personen hier ohne bestätigten Arbeitgeber gefunden** zeigen; **Arbeitgeber prüfen** öffnet diese Personen unter **Kontakte**, gefiltert auf **Arbeitgeber prüfen · N**, und du entscheidest über jede Person unter [Angehaltene Kontakte](#angehaltene-kontakte). Zwischen den beiden Unternehmen entscheiden nur Admins:
 
 - **Dasselbe Unternehmen** führt die beiden sofort zusammen. Personen, Signale und Verlauf des neueren Unternehmens gehen auf das ältere über, und das ältere füllt nur die Angaben, die ihm fehlen. Das neuere Unternehmen verschwindet aus **Unternehmen**, der Suche und der Unternehmensauswahl unter **Zur Pipeline hinzufügen**. Ein Hinweis nennt, wie viele Personen, Signale und Verlaufseinträge übergegangen sind. Das Dashboard kennt kein Rückgängigmachen einer Zusammenführung; wende dich an den Support, wenn du versehentlich zusammengeführt hast.
 - **Verschiedene Unternehmen** behält beide und beendet die Frage.
@@ -107,7 +129,7 @@ Mitglieder sehen **Export** nicht.
 
 ## Personen oder ein Unternehmen an einen anderen Seat abgeben
 
-Admins können Personen an einen anderen Seat übergeben, damit dessen LinkedIn-Konto und Postfach sie erreicht. Wähle **Übergeben** im Panel eines Kontakts, Prospects oder Unternehmens. Wähle in **Kontakte** und **Prospects** Zeilen aus und nutze **Übergeben (N)**. Der Button erscheint nur, wenn die Person tatsächlich wechseln würde.
+Admins können Personen an einen anderen Seat übergeben, damit dessen LinkedIn-Konto und Postfach sie erreicht. Wähle das Symbol **Übergeben** (**An einen anderen Seat übergeben**) im Panel eines Kontakts, Prospects oder Unternehmens. Wähle in **Kontakte** und **Prospects** Zeilen aus und nutze **Übergeben (N)**. Der Button erscheint nur, wenn die Person tatsächlich wechseln würde.
 
 1. Wähle den Seat. Dein eigener Seat steht nicht in der Liste, weil du Personen abgibst.
 2. Wähle den Umfang: **Das ganze Unternehmen (empfohlen)** verschiebt alle dort, die noch nicht kontaktiert wurden, zusammen mit dem Unternehmen selbst. **Nur diese Person** oder **Nur diese Personen** verschiebt nur sie. Ganze Unternehmen lassen sich bis zu 50 Unternehmen auf einmal übergeben.
@@ -116,3 +138,9 @@ Admins können Personen an einen anderen Seat übergeben, damit dessen LinkedIn-
 Nur Personen, die noch niemand kontaktiert hat, wechseln den Seat. Wer eine gesendete Nachricht, eine Antwort, einen Anruf oder ein Deal-Ergebnis hat, bleibt, denn dieses Gespräch liegt im LinkedIn-Konto und Postfach des alten Seats. Wird ein Unternehmen auf zwei Seats aufgeteilt, warnt dich die Zusammenfassung: Wer nur einen Seat sieht, sieht die Antworten des anderen nicht, und ein Termin oder eine positive Antwort auf einem von beiden stoppt die Ansprache aller Personen im Unternehmen.
 
 Ungesendete Entwürfe der Personen, die wechseln, werden gelöscht, und der neue Seat schreibt eigene. Neue Personen aus einem Land, das zum Gebiet eines anderen Seats gehört, gehen weiterhin an diesen Seat; die Zusammenfassung nennt ihn. Läuft gerade ein Durchlauf auf einem der beteiligten Seats, warte, bis er beendet ist.
+
+## Eine Person überall löschen
+
+Bittet jemand darum, seine Daten zu löschen, entfernen Admins die Person mit dem Symbol **Diese Person überall löschen** (eine Waage) neben dem Namen im Panel eines Kontakts oder Prospects. Nutze es nur für eine solche Bitte (DSGVO); um die Ansprache zu stoppen, ohne zu löschen, nutze ein Ergebnis oder **Archivieren**. Lies die Bestätigung und wähle dann **Überall löschen**. Kontakt, Nachrichten, Notizen, Unterhaltungen und Verlauf verschwinden aus dem Sales Agent, Dubletten eingeschlossen. Hat die Person geantwortet, wird auch diese Unterhaltung gelöscht. Ist sie der Hauptkontakt des Deals eines Unternehmens, behält das Unternehmen seine Phase, ohne Hauptkontakt. Das Unternehmen bleibt, und E-Mails in deinem eigenen Postfach bleiben dort. Das lässt sich nicht rückgängig machen.
+
+Der Sales Agent behält nur einen Fingerabdruck der E-Mail-Adresse und des LinkedIn-Profils der Person, damit sie nie wieder kontaktiert wird und nie wieder als Lead zurückkommt. Für einen Widerspruch, der dich per Telefon oder Brief erreicht hat, nutze **Nicht kontaktieren** unter [**Einstellungen → Sperrliste**](/de/configure/blacklist#outreach-an-eine-person-stoppen).

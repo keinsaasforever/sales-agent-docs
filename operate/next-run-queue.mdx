@@ -30,13 +30,15 @@ Each card shows:
 
 | Card | A contact is ready when… |
 | --- | --- |
-| **New Prospects** | The contact has an owner, meets the minimum ICP score, has not entered the pipeline yet, and its company has no deal stage. With LinkedIn on, the card also counts prospects waiting for their LinkedIn invite. |
+| **New Prospects** | The contact has an owner, meets the minimum ICP score, has a first name, a last name, a job title, and an email address, a LinkedIn profile, or a company website, has not entered the pipeline yet, and its company has no deal stage. With LinkedIn on, the card also counts prospects waiting for their LinkedIn invite. |
 | **Message** | Research is complete and the prospect still needs a first message on a channel its seat can send. |
 | **Outreach** | An email or LinkedIn message is approved, not sent yet, and not held back. A LinkedIn message also needs its invite to have gone out. |
 | **Follow-up Email** | An email was sent, the next follow-up is due, the follow-up cap is not reached, and there is no reply or closed thread. |
 | **Follow-up LinkedIn** | A LinkedIn message was sent, the follow-up is due, the cap is not reached, and neither channel has recorded a reply. |
 
-**New Prospects** takes on fewer new people when contacts are already waiting for an invite or a first email, so the backlog cannot grow faster than your seats can send. When LinkedIn is off or paused on every seat, **New Prospects** counts only new contacts and **Follow-up LinkedIn** stays at 0.
+**New Prospects** takes on fewer new people when contacts are already waiting for an invite or a first email, so the backlog cannot grow faster than your seats can send. With approval on, drafts you approved do not count as waiting, so they do not hold back new people. **New Prospects** takes on fewer only once more than a day's worth of drafts wait for your approval, and none at two days' worth; see [Review messages](/operate/review-messages#approval-on-or-off). When LinkedIn is off, not connected, or paused on every seat, **New Prospects** counts only new contacts and **Follow-up LinkedIn** stays at 0.
+
+The cards do not know two things. A contact held back on a public holiday still counts as ready that day (see [Public holidays](/configure/schedule-and-limits#public-holidays)), and a contact whose company already holds **Max Contacts per Company** people in outreach still counts until a place frees up.
 
 Research and enrichment steps can occur between visible cards. They do not have a separate user-configurable queue tile.
 
@@ -45,6 +47,7 @@ Research and enrichment steps can occur between visible cards. They do not have 
 If a contact is absent from the queue, one of these conditions is holding it back:
 
 - Its ICP score falls below the pipeline threshold
+- It has no first name, last name, or job title, or no email address, LinkedIn profile, or company website
 - It has no active owner or no usable outreach channel
 - Its company already has a stage, such as **Meeting** or **Not interesting**, so colleagues are not taken on
 - It is parked because it may no longer work at the company

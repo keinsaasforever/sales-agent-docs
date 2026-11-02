@@ -69,8 +69,7 @@
               "operate/prospects-and-companies",
               "operate/stages-and-outcomes",
               "operate/replies-and-handoff",
-              "operate/activity-and-troubleshooting",
-              "operate/jobs"
+              "operate/activity-and-troubleshooting"
             ]
           },
           {
@@ -143,8 +142,7 @@
               "de/operate/prospects-and-companies",
               "de/operate/stages-and-outcomes",
               "de/operate/replies-and-handoff",
-              "de/operate/activity-and-troubleshooting",
-              "de/operate/jobs"
+              "de/operate/activity-and-troubleshooting"
             ]
           },
           {
@@ -169,6 +167,16 @@
       }
     ]
   },
+  "redirects": [
+    {
+      "source": "/operate/jobs",
+      "destination": "/operate/activity-and-troubleshooting"
+    },
+    {
+      "source": "/de/operate/jobs",
+      "destination": "/de/operate/activity-and-troubleshooting"
+    }
+  ],
   "contextual": {
     "options": [
       "copy",
