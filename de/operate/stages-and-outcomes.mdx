@@ -42,7 +42,7 @@ Alle Phasen findest du in der [Referenz der Pipeline-Phasen](/de/reference/pipel
 | **Deal verloren** | Eine fortgeschrittene Opportunity wurde verloren. |
 | **Nicht erreichbar** | Die verfügbaren automatisierten Kanäle sind ausgeschöpft oder ungültig. |
 
-Jede Option zeigt „stoppt Outreach“ im Menü. Einige Ergebnisse setzt der Sales Agent selbst: **Stopp gewünscht**, wenn eine Antwort darum bittet, und **Nicht erreichbar**, wenn weder E-Mail-Adresse noch LinkedIn-Profil übrig ist. Ein erfasster Anruf kann **Termin**, **Stopp gewünscht** oder **Falsche Person** setzen; ein Anruf, der mit **Mehr Infos senden** endet, setzt kein Ergebnis und stellt den Prospect auf **Im Gespräch** (siehe [Anrufe](/de/operate/replies-and-handoff#die-call-liste-abtelefonieren)).
+Jede Option zeigt „stoppt Outreach“ im Menü. Einige Ergebnisse setzt der Sales Agent selbst: **Stopp gewünscht**, wenn eine Antwort darum bittet, und **Nicht erreichbar**, wenn weder E-Mail-Adresse noch LinkedIn-Profil übrig ist und eine nutzbare Telefonnummer vorliegt; dann steht der Prospect auf der Liste **Anzurufen**. Ohne Telefonnummer archiviert er den Prospect stattdessen, siehe [Archivierung und Ergebnis](#archivierung-und-ergebnis). Ein erfasster Anruf kann **Termin**, **Stopp gewünscht** oder **Falsche Person** setzen; ein Anruf, der mit **Mehr Infos senden** endet, setzt kein Ergebnis und stellt den Prospect auf **Im Gespräch** (siehe [Anrufe](/de/operate/replies-and-handoff#die-call-liste-abtelefonieren)).
 
 Liegt eine Antwort vor und ist kein Ergebnis gesetzt, zeigt die Auswahl die Phase, in die die Antwort den Prospect gebracht hat, etwa **Geantwortet**, **Im Gespräch** oder **Abgelehnt**, statt **Im Outreach**, weil die Antwort die Sequenz bereits gestoppt hat.
 
@@ -87,6 +87,8 @@ Wenn du jemanden als **Nicht interessant** markierst oder archivierst, fragt das
 Archivieren blendet einen Prospect aus und stoppt die Automatisierung, ohne sein Ergebnis zu ändern oder Historie zu löschen. Beim Wiederherstellen kehrt der vorherige Zustand zurück. Hat der Prospect weiterhin ein Ergebnis, bleibt er auch nach dem Wiederherstellen gestoppt.
 
 Archivierte Prospects findest du im Tab **Archiviert**. Hat der Sales Agent sie archiviert, nennt ihre Phase den Grund, etwa **Unternehmen auf der Sperrliste**, **Das Unternehmen hat eine Deal-Phase**, **Die zugehörige Persona wurde ausgeschaltet**, **Auf der Liste „Nicht kontaktieren“** oder **Duplikat zusammengeführt**, das keinsaas setzt, wenn es zwei Datensätze derselben Person zusammenführt.
+
+Hat der Sales Agent für einen Prospect weder E-Mail-Adresse noch LinkedIn-Profil noch Telefonnummer zur Verfügung, archiviert er ihn mit der Phase **Weder E-Mail noch LinkedIn-Profil gefunden**, statt ihm ein Ergebnis zu geben. Die Archivierung hebt sich von selbst auf, sobald der Kontakt ein LinkedIn-Profil hat. Wurde eine E-Mail-Adresse zur Prüfung zurückgestellt, hebt sie auch **Diese E-Mail verwenden** auf, siehe [Angehaltene Kontakte](/de/operate/prospects-and-companies#angehaltene-kontakte).
 
 Bittet jemand in der eigenen Headline oder im Info-Text darum, keine Vertriebsnachrichten zu bekommen, schreibt der Sales Agent ihm nichts und archiviert den Prospect mit der Phase **Laut Profil keine Vertriebsnachrichten erwünscht**. Solange das Profil das sagt, archiviert ihn der nächste Lauf nach dem Wiederherstellen erneut. Willst du trotzdem schreiben, schreib von Hand.
 
