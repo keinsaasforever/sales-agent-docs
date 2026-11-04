@@ -16,7 +16,7 @@ A seat is one sales representative: one LinkedIn account and one mailbox, with i
 | **Stop** | Stops own seats | Stops any run on the account |
 | **Settings → Schedule** | Own seat's channel, schedule, and daily limits | Also the sections marked **(all reps)** |
 | **Credits**, **Settings → Targeting**, **Signals**, **Blacklist**, **Prompts** | Not shown | Full access |
-| **Seats** and **Billing** on **Settings → Account** | Not shown | Full access |
+| **Seats**, **Billing**, and **IT contact for technical alerts** on **Settings → Account** | Not shown | Full access |
 | **Hand over** people or a company to another seat | Not shown | Full access |
 | **Export** a list as CSV, and set a company's **Company Fit** by hand | Not shown | Full access |
 
@@ -32,7 +32,7 @@ To add a seat, select **Create a new seat**. This opens the support dialog with 
 
 ## Settings → Account
 
-The top of the page holds your **Profile**, your **Organization**, **Billing** for admins (select **Manage billing** for invoices, the payment method, or cancelling a monthly plan), and **Password**.
+The top of the page holds your **Profile**, your **Organization**, **Billing** for admins (select **Manage billing** for invoices, the payment method, or cancelling a monthly plan), the [**IT contact for technical alerts**](/getting-started/seats-and-accounts#it-contact-for-technical-alerts) for admins, and **Password**.
 
 Below, everything belongs to one seat. If you see several seats, pick one first; the cards below then show that seat:
 
@@ -51,6 +51,13 @@ Under **Email connection**, select **Connect Gmail** or **Connect Outlook** and 
 - When an Outlook sign-in expires, the card shows **Sign-in expired** and Home shows **Outlook is disconnected**. Emails, email follow-ups, and reply checks stop until you sign in again with the sending mailbox. LinkedIn is unaffected.
 - If you connect a different mailbox to a seat with email conversations in progress, the dashboard offers to stop their email follow-ups, because those threads live in the old mailbox. It asks first when it cannot tell whether the mailbox changed. Their LinkedIn path keeps running, and new conversations start from the new mailbox.
 - For a mailbox without its own LinkedIn account, select **add another email account** to send a request to keinsaas.
+
+## IT contact for technical alerts
+
+Admins choose who hears about technical problems your IT can fix, for example when your mail provider stops a mailbox from sending, or no email went out for two working days. On **Settings → Account**, enter up to 5 addresses under **IT addresses**, one per line or separated by commas, and select **Save**. Leave it empty and your account's admins get these alerts. Members do not see the card.
+
+- **Sending is blocked**: when your mail provider refuses to send for a mailbox. The mail says since when, shows the emails sent on each of the last 7 days, and says what to check in your mail provider's admin console, with four specific checks for Microsoft 365. Sending stays paused until someone selects **Resume sending**. The seat's owner still gets the usual **Email sending paused** mail, unless the owner's address is on the IT list.
+- **Nothing went out**: when a mailbox that should send has sent nothing for two working days, although emails are ready to go. Weekends do not count. The mail comes once, until the mailbox sends again.
 
 ## Connect LinkedIn
 
