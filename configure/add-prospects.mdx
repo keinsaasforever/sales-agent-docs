@@ -1,71 +1,73 @@
 ---
 title: "Import and Add Prospects to the Sales Agent Pipeline"
 sidebarTitle: "Add Prospects"
-description: "Import contacts from Sales Navigator, CSV uploads of people or companies, or our own search, add people by hand, bring them in on a schedule, and understand exactly how a contact qualifies for the queue."
+description: "Import contacts from Sales Navigator, CSV uploads of people or companies, or a search of our database, add people by hand, bring them in on a schedule, and understand exactly how a contact qualifies for the queue."
 icon: "user-plus"
 ---
 
-Open **Add to Pipeline** to supply the Sales Agent with contacts. You can add Sales Navigator searches and lists, upload a list of people or companies you already own, or let **Our search** find people at your companies, once or automatically. To add a few people or companies yourself, use [Quick add](#add-people-or-companies-by-hand).
+Open **Add to Pipeline** to supply the Sales Agent with contacts. You can add Sales Navigator searches and lists, upload a list of people or companies you already own, or use **Search our database** to find people at your companies, once or automatically. To add a few people or companies yourself, use [Quick add](#add-people-or-companies-by-hand). What runs on its own, such as the automatic search and the daily Sales Navigator import, is under [**My jobs**](#run-jobs-on-their-own).
 
 <CardGroup cols={3}>
-  <Card title="Sales Navigator" icon="link">
-    Collect people or companies from saved Sales Navigator searches and lists. Needs a seat whose LinkedIn login has Sales Navigator.
+  <Card title="Search our database" icon="database">
+    People at the companies you have, or new companies that match your Targeting where that is switched on for you. Once or every weekday.
   </Card>
-  <Card title="Upload CSV" icon="file-spreadsheet">
-    Import a list of people or companies and map every row to a seat.
+  <Card title="Sales Navigator search or list" icon="link">
+    A saved search or list keeps importing its new people every day. Needs a seat whose LinkedIn login has Sales Navigator.
   </Card>
-  <Card title="Our search" icon="search">
-    Find matching contacts at companies already in the dashboard, once or every weekday.
+  <Card title="Upload a CSV" icon="file-spreadsheet">
+    Import a list of people or companies and map every row to a seat. The import charges no credits.
   </Card>
 </CardGroup>
 
 ## See where you stand
 
-Four tiles sit above the tabs, so you see the situation before you pick a way in:
+Four tiles sit above the cards, so you see the situation before you pick a way in:
 
 - **Companies to search**: the companies with an owner seat that were never searched, hold nobody the pipeline could take yet (a person with a name, a job title, and a way to reach them), and whose **Company Fit** is at or above your **Pipeline ICP threshold** or not scored yet. The tile turns amber, then red, as they run low.
 - **Waiting for outreach**: people found but not contacted yet.
 - **Found in 30 days**: the people your searches found in the last 30 days.
 - **Credits**: your balance.
 
-When few companies are left to search, a line under the tiles reads **Few of your companies are left to search. Add companies:** and links the ways to bring in more:
+Under the tiles, the **Automatic search** line shows whether your one automatic search is **On**, **Off**, or **Not set up**. Admins select **Edit** or **Set up** to open it on **My jobs**.
 
-- **Upload CSV** opens the **Upload CSV** tab.
-- **Find new companies** starts a search for new companies, where that search is switched on for you. It is not offered while a search is being set up or a search for new companies is running.
-- **Sales Navigator account list** opens the form on the **Sales Navigator** tab. It shows only when one of your seats has Sales Navigator.
+When the automatic search is on and fewer than 15 weekdays of companies are left to search, admins get a to-do on **Tasks**, for example **12 companies left to search** with **About 4 weekdays of the automatic search. Add companies to keep it going.** **Add companies** opens **Add to Pipeline**, where you can bring in more:
+
+- **Upload a CSV** with a company list.
+- **Sales Navigator search or list** with a company list, when one of your seats has Sales Navigator.
+- **Search our database** for new companies, where that search is switched on for you.
 
 ## Add Sales Navigator searches and lists
 
-On the **Sales Navigator** tab, paste one or more Sales Navigator URLs. The tab needs a seat whose LinkedIn login has Sales Navigator; without one it is locked, see [Connect Sales Navigator](#connect-sales-navigator). The agent accepts three source types:
+On the **Sales Navigator search or list** card, paste one or more Sales Navigator URLs. The card needs a seat whose LinkedIn login has Sales Navigator; without one it is locked, see [Connect Sales Navigator](#connect-sales-navigator). The agent accepts three source types:
 
 - a **saved search** whose URL contains `savedSearchId`
 - a **people list** whose path contains `/lists/people/`
 - a **company list** whose path contains `/lists/company/`
 
-The URL sets whether the source holds **Contacts** or **Companies**. For each URL, add an optional expected result count and segment label. The expected count helps estimate size and potential credit use — it is not a guaranteed outcome. Then select **Submit URLs**. If you have several seats with Sales Navigator, pick one first under **Saved in the Sales Navigator of**. The URLs are added to that seat's saved searches, and new people from them are imported every day once an admin switches on **Import automatically** (see below). Only the seat that saved a search can import it.
+The URL sets whether the source holds **Contacts** or **Companies**. For each URL, add an optional expected result count and segment label. The expected count helps estimate size and potential credit use — it is not a guaranteed outcome. Then select **Submit URLs**. If you have several seats with Sales Navigator, pick one first under **Saved in the Sales Navigator of**. The URLs are added to that seat's saved searches, and new people from them are imported every day once an admin switches on **Import automatically** on **My jobs** (see below). Only the seat that saved a search can import it.
 
 People sources already point to specific contacts but can still require research, enrichment, scoring, and filtering before anyone enters the pipeline. Company sources identify organizations: the daily import also finds the people (see below).
 
 ### Connect Sales Navigator
 
-When none of your seats has a LinkedIn login with Sales Navigator, the tab shows a **Connect Sales Navigator** card over a dimmed copy of the tab, and **Upload CSV** opens first. An admin sees the card when no seat on the account has Sales Navigator; a member, when none of their own seats has it. What the card offers depends on the seat:
+When none of your seats has a LinkedIn login with Sales Navigator, the form shows a **Connect Sales Navigator** card over a dimmed copy of it, and **Upload a CSV** opens first. An admin sees the card when no seat on the account has Sales Navigator; a member, when none of their own seats has it. What the card offers depends on the seat:
 
-- On your own seat, or for an admin without one on an unclaimed seat, **Connect LinkedIn**, **Reconnect**, or **Reconnect with Sales Navigator**: you sign in on a guided page. Reconnecting a live login without Sales Navigator keeps the same account and picks up a subscription. Back on the tab, **Connected. Checking for Sales Navigator…** shows for up to a minute, then **Sales Navigator connected.** If the account has none, the card says **This LinkedIn account has no Sales Navigator subscription.** and offers **Use a different LinkedIn account**.
+- On your own seat, or for an admin without one on an unclaimed seat, **Connect LinkedIn**, **Reconnect**, or **Reconnect with Sales Navigator**: you sign in on a guided page. Reconnecting a live login without Sales Navigator keeps the same account and picks up a subscription. Back on the page, **Connected. Checking for Sales Navigator…** shows for up to a minute, then **Sales Navigator connected.** If the account has none, the card says **This LinkedIn account has no Sales Navigator subscription.** and offers **Use a different LinkedIn account**.
 - When the account has no seat yet, admins see **Create a new seat** and members read **You don't have a seat yet. Ask your admin to assign one.** When every seat belongs to a colleague, the card reads **Ask a seat's owner to connect Sales Navigator under Settings › Account.**
 - A seat that is connected but does not import yet, because it is inactive or has LinkedIn switched off, says so in the card.
 
 The card also says what connecting starts. On a seat that runs on a schedule, LinkedIn invites and messages start with its next run, so pause the schedule under **Settings → Schedule** first if you do not want that. On a seat without a schedule, nothing is sent until you turn the schedule on or select **Run Now**. A seat with LinkedIn switched off sends nothing on LinkedIn, and an inactive seat sends nothing until it is activated.
 
-When your own seats have no Sales Navigator but a colleague's seat does, only the form is locked. The card names the colleagues, suggests asking them to add their saved Sales Navigator searches, and offers to connect your own seat. The saved searches below stay visible and usable.
+When your own seats have no Sales Navigator but a colleague's seat does, only the form is locked. The card names the colleagues, suggests asking them to add their saved Sales Navigator searches, and offers to connect your own seat. The saved searches on **My jobs** stay visible and usable.
 
 ## Import from Sales Navigator every day
 
-Admins manage daily imports in the **Your searches and lists** card, below the form on the **Sales Navigator** tab. Members see only the form to add a search or list.
+Admins manage daily imports in the **Sales Navigator import** card on **My jobs**. Members see only the form to add a search or list.
 
-1. Add each search or list with the form above the card. A search belongs to the Sales Navigator seat that saved it, and only that seat can import it. The card lists every saved search.
-2. In the card, switch on **Import automatically**; the import is off until an admin switches it on. Set **Up to** how many new people arrive per day (at most 100). Then select **Save**.
+1. Add each search or list with the **Sales Navigator search or list** card on **Add to Pipeline**, or with **+ Add a search or list** on **My jobs**. A search belongs to the Sales Navigator seat that saved it, and only that seat can import it. The **Sales Navigator import** card lists every saved search.
+2. On the card, switch on **Import automatically**; the import is off until an admin switches it on. Set **Up to** how many new people arrive per day (at most 100). There is no **Save** button: the switch saves when you flip it, and the number saves when you leave the field or press `Enter`.
 
-The import starts with the daily run of the seat that saved the search, at most once a day. It does not run on **Run Now**, and a seat whose schedule is off imports nothing: switch the schedule on under **Settings → Schedule**. **Runs daily from**, **Pause when**, and the switches for **Email addresses** and **Phone numbers** on the same card set your [automatic search](#search-on-a-schedule), not the import. Importing reserves no credits. The people it brings in are looked up for email and phone like every other contact, once they become prospects.
+The import starts with the daily run of the seat that saved the search, as its first step, at most once a day. The card says **Starts with your daily pipeline**. It does not run on **Run Now**, and a seat whose schedule is off imports nothing: switch the schedule on under **Settings → Schedule**. The hour, the pause, and the email and phone lookups belong to your [automatic search](#search-on-a-schedule), not to the import. Importing reserves no credits. The people it brings in are looked up for email and phone like every other contact, once they become prospects.
 
 Each saved search has its own switch (**Import from this search**) and a trash icon (**Remove search**), and shows how many of its results have been read. LinkedIn shows only the first 2,500 results of a search, so narrow a larger search to reach the rest.
 
@@ -75,9 +77,9 @@ For a company list or a saved company search, the Sales Agent first looks each c
 
 ## Upload a CSV
 
-On the **Upload CSV** tab, drop a file with a header row. Commas, semicolons, and tabs all work as separators. The file can list people or companies.
+On the **Upload a CSV** card, drop a file with a header row. Commas, semicolons, and tabs all work as separators. The file can list people or companies.
 
-The tab shows every column of your file with a sample value and the field it fills, so you can check the mapping before you import:
+The card shows every column of your file with a sample value and the field it fills, so you can check the mapping before you import:
 
 1. Next to **This file lists**, choose **People** or **Companies**. The Sales Agent picks one from your columns: a file with company columns and no person column is a company list. A choice you make yourself is kept.
 2. In the **Our field** column, check each suggestion. Change it from the dropdown, or choose **ignore** to leave a column out. A field you pick always wins over a suggestion.
@@ -97,11 +99,11 @@ The fields you can map:
 
 ### People
 
-Every row needs a LinkedIn profile URL, or a person's name together with the company's website. Rows without a LinkedIn profile URL are imported all the same; the Sales Agent completes their LinkedIn profiles afterwards, which you can follow in [**Activity**](/operate/activity-and-troubleshooting#read-the-history). The tab counts the rows it cannot import; open the hint next to the count to see why. Rows that only have a name or an email can be completed for you with **Request enrichment**, at 1 credit per row.
+Every row needs a LinkedIn profile URL, or a person's name together with the company's website. Rows without a LinkedIn profile URL are imported all the same; the Sales Agent completes their LinkedIn profiles afterwards, which you can follow in [**Activity**](/operate/activity-and-troubleshooting#read-the-history). The card counts the rows it cannot import; open the hint next to the count to see why. Rows that only have a name or an email can be completed for you with **Request enrichment**, at 1 credit per row.
 
 ### Companies
 
-Every row needs a company name or a website. The import adds the companies and charges no credits. It does not look for people. When the import finishes, select **Search people** to open [**Our search**](#search-at-your-companies) with the new companies ticked; the ones you already searched or that already have contacts are left unticked. Or leave it: when an admin has switched on the automatic search, it reaches them too, by **Company Fit**. A company without a website is added, but nobody is searched there yet, because people are found through a company's website. A company that is already in the dashboard is matched, and only its empty fields are filled.
+Every row needs a company name or a website. The import adds the companies and charges no credits. It does not look for people. When the import finishes, select **Search people** to open [**Search our database**](#search-at-your-companies) with the new companies ticked; the ones you already searched or that already have contacts are left unticked. Or leave it: when an admin has switched on the automatic search, it reaches them too, by **Company Fit**. A company without a website is added, but nobody is searched there yet, because people are found through a company's website. A company that is already in the dashboard is matched, and only its empty fields are filled.
 
 ### Owner and result
 
@@ -120,19 +122,15 @@ The CSV import itself does not consume credits. Subsequent steps — completing 
 
 ## Search at your companies
 
-The **Our search** tab finds people at companies already in the dashboard. It opens on the status of your searches. Select **New search** to set one up.
+The **Search our database** card finds people at companies already in the dashboard and, where it is switched on for you, new companies that match your Targeting. A search runs once, or every weekday as your [automatic search](#search-on-a-schedule). The tiles above the cards show where you stand; see [See where you stand](#see-where-you-stand). A search that is running shows under [**My jobs**](#run-jobs-on-their-own) while it runs, and [**Activity**](/operate/activity-and-troubleshooting#read-the-history) holds every run, what it found, and what it cost.
 
-The tiles above the tabs show where you stand; see [See where you stand](#see-where-you-stand).
+The search has five steps. A step opens once you confirm the one before it, and a finished step folds to a summary with **Edit**.
 
-**Your search jobs** lists the automatic search, the **Signal search** once keinsaas has switched it on with you, and any search running now, with a link to [**Activity**](/operate/activity-and-troubleshooting#read-the-history) for every run, what it found, and what it cost. The signal search row counts the companies watched, shows the date of the last search, and counts the companies with a signal in the last 30 days. Admins also see **What counts as a signal**, a link to **Settings → Signals**.
-
-**New search** has five steps. A step opens once you confirm the one before it, and a finished step folds to a summary with **Edit**.
-
-1. **Where to look**: **People at my companies**, or **New companies and their people**. The second finds companies that match your targeting, and the right people at them, in one search. It runs once keinsaas switches it on with you; until then it reads **Not switched on for your account yet.** Starting from a fresh event, such as funding or a new leader, is marked **soon**.
+1. **What and how often**: choose **People at my companies**, **New companies and their people**, or **Build a company list**, then **Once, now** or **Automatically, every weekday**. **New companies and their people** finds companies that match your targeting, and the right people at them, in one search. **Build a company list** adds companies only and finds their people later. A choice that is not switched on for you reads **Not switched on for your account yet.** The automatic search is your account's only one; saving a new one replaces the old.
 2. **Who you look for**: your targeting values (job titles, seniority, locations, industries, company sizes). A search for new companies also shows **Industries to leave out** and **Customers**. Admins change them with **Change on Targeting**; members ask an admin. The search needs at least one Tier 1 title in **Settings → Targeting**.
-3. **How many**: **Highest fit first** takes the next companies by **Company Fit**, and **Pick companies** lets you choose them yourself. Then set **People per company**; the default comes from **Max Contacts per Company**. A company already searched is skipped unless you pick it again. For new companies, choose **People to find**: 25, 50, or 100.
-4. **Emails and phones**: switch on **Email addresses** or **Phone numbers** to look people up right after the search, for everyone it finds. Off, they are looked up when each person enters outreach. A search for new companies always waits until then.
-5. **Once or automatically**: **Once, now** runs right away, and you find it in [**Activity**](/operate/activity-and-troubleshooting#read-the-history). **Estimated credits** and **Balance after** show the cost first. **Automatically, every weekday** is described in [Search on a schedule](#search-on-a-schedule).
+3. **Companies and signals**: for people at your companies, **Highest fit first** takes the next companies by **Company Fit**, and **Pick companies** lets you choose them yourself (for a search you run once). An automatic search sets **Companies a day** instead, at most 500. Then set **People per company**; the default comes from **Max Contacts per Company**. A company already searched is skipped unless you pick it again. For new companies, choose **People to find**: 25, 50, or 100. Where signals are switched on for you, this step also holds their sources; see [Set buying signals](/configure/icp-and-scoring#set-buying-signals).
+4. **Emails and phones**: switch on **Email addresses** or **Phone numbers** to look people up right after the search, for everyone it finds. Off, they are looked up when each person enters outreach. A search that only adds companies finds their people, and their emails and phones, later.
+5. **Time and price**: **Estimated credits** and **Balance after** show the cost first. **Start search** runs a one-time search right away, and you find it in [**Activity**](/operate/activity-and-troubleshooting#read-the-history). An automatic search also sets **Every weekday from** and **Pause when**, and **Save automatic search** saves it; see [Search on a schedule](#search-on-a-schedule).
 
 The search looks for Tier 1 titles first and Tier 2 titles only where no Tier 1 contact was found, and applies your locations, filters, and the **Max Contacts per Company** cap. Every company needs an owner seat; companies without one are skipped, and the step says so. Contacts outside your filters are kept without a seat.
 
@@ -140,23 +138,36 @@ The search looks for Tier 1 titles first and Tier 2 titles only where no Tier 1 
   Search results can consume credits even when a returned candidate later fails granular ideal customer profile (ICP) filters or is removed as a duplicate. Review a small sample before running a large search.
 </Warning>
 
+## Run jobs on their own
+
+**My jobs**, next to **Add to Pipeline** in the **Add Contacts** group of the menu, lists what runs on its own to fill your pipeline and keep it fresh. Each job is a card with a tag such as **On** or **Off**, one summary line, and its actions; **Details** shows the rest. The cards come in this order:
+
+- **People at my companies**: your automatic search; see [Search on a schedule](#search-on-a-schedule).
+- **New companies from signals**, **Watch your companies**, and **Followers and engagement**: the signal jobs. **New companies from signals** and **Watch your companies** show once keinsaas switches them on with you. Where **New companies from signals** is not on, admins see **Followers and engagement** (page followers and post engagement) on its own card. See [Run signal searches from My jobs](/configure/icp-and-scoring#run-signal-searches-from-my-jobs).
+- **Sales Navigator import**: for admins; see [Import from Sales Navigator every day](#import-from-sales-navigator-every-day).
+- **Done once**: the searches you started by hand in the last 30 days, running ones first. **Every run in Activity** opens the full history.
+
+Only admins switch, edit, or delete a job. Members see the cards read-only. The job rows on **Home** open the matching card; see [Dashboard tour](/getting-started/dashboard).
+
 ## Search on a schedule
 
-Admins set up the automatic search in step 5 of **New search**: choose **Automatically, every weekday** and select **Save automatic search**. It searches your next-best companies by **Company Fit** once every weekday, from the hour you pick, and needs **Highest fit first** in step 3:
+Admins set up the automatic search in the **Search our database** card: choose **People at my companies** and **Automatically, every weekday**, and select **Save automatic search** in step 5. It searches your next-best companies by **Company Fit** once every weekday, from the hour you pick:
 
-- **Every weekday from** sets the hour. **Companies** in step 3 sets how many companies are searched per day, at most 500.
-- **Pause when** sets how many people may already be waiting before the search pauses. It resumes once the queue drops. Leave it empty for no limit.
+- **Every weekday from** (step 5) sets the hour. **Companies a day** (step 3) sets how many companies are searched per day, at most 500.
+- **Pause when** (step 5) sets how many people may already be waiting before the search pauses. It resumes once the queue drops. Leave it empty for no limit.
 - **Email addresses** and **Phone numbers** in step 4 look up contact details right after the search instead of when contacts enter outreach.
 
 The step shows how many credits a run reserves and how many runs your balance covers. If the balance cannot cover even one run, nothing is searched until you top up. Only companies with an owner seat and nobody the pipeline could take yet are searched, the ones the **Companies to search** tile counts, and only those whose **Company Fit** is at or above your **Pipeline ICP threshold** or not scored yet.
 
-The day's companies are split evenly over the seats that run on a schedule: one company per seat in turn, each seat's best **Company Fit** first. A seat that runs out of companies hands its turns to the others. The companies of a seat that is inactive or whose schedule is off are left out, so a seat that only runs with **Run Now** gets no automatic search, and a single-seat account whose schedule is off searches nothing.
+The day's companies are split evenly over the seats that run on a schedule: one company per seat in turn, each seat's best **Company Fit** first. A seat that runs out of companies hands its turns to the others. The companies of an inactive seat are left out. So are those of a seat whose schedule is off, unless that seat works by phone: it has **Phone lookups per seat** switched on and the automatic search looks up phone numbers (step 4). A seat that only runs with **Run Now** gets no automatic search, and a single-seat account whose schedule is off searches nothing, unless its seat works by phone in this way.
 
-An account has one automatic search at your companies; saving a new one replaces its settings. It appears under **Your search jobs** as **People at my companies, automatically** with its status, for example **Runs every weekday from 04:00**, and its last run. Admins can switch it off, select **Run now**, **Edit** it, or **Delete** it, which stops it. Members see it while it is on but cannot change it. An automatic search for new companies is marked **soon**: for now it runs once.
+An account has one automatic search at your companies; saving a new one replaces its settings. On **My jobs** it is the **People at my companies** card. The tag shows **On** or **Off**, and the summary line reads, for example, **25 companies a day · up to 3 people each · Email + phone**, followed by when it runs. Admins switch it off with the card's switch, select **Run now**, **Edit** (the steps open inside the card), or **Delete**, which stops it. **Details** shows how many companies are left to search, how many people wait for outreach, the last run, and the order the companies are taken in.
+
+The card says why a run waits: **Paused: N people are waiting, the limit is M**, **Not enough credits for the next run**, or **No companies left to search**. Members see the card while the search exists but cannot change it. Where signals are not switched on for you, an automatic search for new companies is marked **soon**: that search runs once.
 
 ## Add people or companies by hand
 
-Use **Quick add** for a person you met at a fair or a company a colleague named. On **Prospects**, open **Add Prospects** and select **Quick add**; on **Companies**, open **Add Companies**. The same menu opens **Sales Navigator**, **Upload CSV**, and **Our search** (**Search companies** on **Companies**).
+Use **Quick add** for a person you met at a fair or a company a colleague named. On **Prospects**, open **Add Prospects** and select **Quick add**; on **Companies**, open **Add Companies**. The same menu opens **Sales Navigator**, **Upload CSV**, and **Search our database** (**Search companies** on **Companies**).
 
 **People** need a first and last name, the company's website, and a LinkedIn profile URL or an email. The company name, job title, and **Persona** are optional; **Persona: from the job title** lets the Sales Agent choose. **Companies** need a name and a website; the LinkedIn company page, industry, company size, and country help the score. Select **Add another person** or **Add another company** to add several at once. Pick the **Seat** they go to; you see it when you can add to more than one seat.
 

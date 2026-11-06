@@ -36,7 +36,7 @@ A prospect opens in a side panel. Next to the name sit the company's buying inte
 - **They replied** and **Call**: the reply and the call cards, when they apply. See [Replies and handoff](/operate/replies-and-handoff).
 - **Why now at** and the company's name: a short card with the AI's summary and the company's buying intent, shown while the company holds a signal that counts. **See all signals (N)** opens the **Signals** tab. See [Why now](#why-now).
 - **Contact**: select a field to edit it. **Language**, **Country**, and **Seniority** are chosen from a list, so a value is always stored the same way. **Language** offers the languages the contact's seat writes in, and **Country** is the person's own, not the company's. **Persona** decides which message prompt the contact is written with. A **Skipped** row means LinkedIn is closed for this prospect and outreach continues by email only.
-- **Enrichment**: every email address and phone number found, each with its status. Select **Bad** on an email address that is wrong: the Sales Agent marks it and looks for another one. For phone numbers, see [when the number is wrong](/operate/replies-and-handoff#when-the-number-is-wrong). **Find email**, **Find phone**, and **Find both** appear when something is missing.
+- **Enrichment**: every email address and phone number found, each with its status. The address the Sales Agent sends to is on top, with **Bad**. The others are behind **N more addresses**, outdated and not working ones last and struck through, like older phone numbers. An address reads **Verified**, **Risky**, **Invalid**, **Bounced**, or **Doesn't work**, or **Replaced** when a new-address notice gave the person a newer one. Select **Bad** on an email address that is wrong: the Sales Agent marks it and looks for another one. For phone numbers, see [when the number is wrong](/operate/replies-and-handoff#when-the-number-is-wrong). **Find email**, **Find phone**, and **Find both** appear when something is missing.
 - **Company**: the company's details, editable, and **Open company page**. The size **Range** is chosen from LinkedIn's headcount ranges.
 - **Cheat sheet**: prep notes for a call. Select **Edit** to change them.
 
@@ -116,6 +116,15 @@ When the Sales Agent suspects that two companies in your list are one, the compa
 - **Different companies** keeps both and ends the question.
 
 If one of the two companies has a deal stage, it applies to everyone at the merged company. The same box also asks whether a company may be insolvent; see the [glossary](/reference/glossary).
+
+## Filter a list
+
+Select **Filter** above **Companies**, **Prospects → Contacts**, or **Prospects → Prospects**, then **Add filter**: pick a column, an operator, and a value. A saved view keeps its filters.
+
+- **Numbers**, such as **Headcount** or **Growth (1y)**, use **Is between**. Type **From** and **Up to**, or move the slider, which steps through the values your list really holds. Leave one end open for "at least" or "at most".
+- **Dates** use **Is between** two dates, or count back from today, so a saved view stays current: **Is in the last … days** and **Is more than … days ago** take a whole number of days.
+- **Company facts** are filters on every list. On **Companies**: **Employee Range**, **Headcount**, **Location**, **Revenue**, **Growth (1y)**, and **Segment**. On **Contacts** and **Prospects**: **Company Headcount**, **Company Employee Range**, and **Company Location**. **Location** is a list with a search box, and countries show by name in your dashboard language.
+- **Revenue** is one of five bands, from **$0-$1M** to **$1B+**. **Revenue** and **Growth (1y)** are filled only when a source returns them, so many companies leave them empty. **Is empty** and **Is not empty** find them.
 
 ## Export a list as CSV
 

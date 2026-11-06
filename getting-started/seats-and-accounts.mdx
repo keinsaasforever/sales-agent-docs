@@ -15,7 +15,7 @@ A seat is one sales representative: one LinkedIn account and one mailbox, with i
 | **Run Now** | Starts own seats | Starts own seats |
 | **Stop** | Stops own seats | Stops any run on the account |
 | **Settings → Schedule** | Own seat's channel, schedule, and daily limits | Also the sections marked **(all reps)** |
-| **Credits**, **Settings → Targeting**, **Signals**, **Blacklist**, **Prompts** | Not shown | Full access |
+| **Credits**, **Settings → Targeting**, **Signal criteria**, **Blacklist**, **Prompts** | Not shown | Full access |
 | **Seats**, **Billing**, and **IT contact for technical alerts** on **Settings → Account** | Not shown | Full access |
 | **Hand over** people or a company to another seat | Not shown | Full access |
 | **Export** a list as CSV, and set a company's **Company Fit** by hand | Not shown | Full access |
@@ -58,6 +58,7 @@ Admins choose who hears about technical problems your IT can fix, for example wh
 
 - **Sending is blocked**: when your mail provider refuses to send for a mailbox. The mail says since when, shows the emails sent on each of the last 7 days, and says what to check in your mail provider's admin console, with four specific checks for Microsoft 365. Sending stays paused until someone selects **Resume sending**. The seat's owner still gets the usual **Email sending paused** mail, unless the owner's address is on the IT list.
 - **Nothing went out**: when a mailbox that should send has sent nothing for two working days, although emails are ready to go. Weekends do not count. The mail comes once, until the mailbox sends again.
+- **Delivery numbers**: a daily mail for each mailbox that sent emails, with the emails sent, delivered, and not delivered on each of the last 7 days. Only the addresses on this list get it, so with an empty list nobody does. A week without sends gets no mail.
 
 ## Connect LinkedIn
 

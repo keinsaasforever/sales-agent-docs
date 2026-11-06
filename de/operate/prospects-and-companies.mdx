@@ -35,7 +35,7 @@ Ein Prospect öffnet sich in einem Seitenpanel. Neben dem Namen stehen die Kaufa
 - **Hat geantwortet** und **Call**: die Antwort- und die Anrufkarte, wenn sie zutreffen. Siehe [Antworten und Übergabe](/de/operate/replies-and-handoff).
 - **Warum jetzt bei** und der Name des Unternehmens: eine kurze Karte mit der Zusammenfassung der KI und der Kaufabsicht des Unternehmens, solange das Unternehmen ein Signal hat, das zählt. **Alle Signale anzeigen (N)** öffnet den Tab **Signale**. Siehe [Warum jetzt](#warum-jetzt).
 - **Kontakt**: Wähle ein Feld, um es zu bearbeiten. **Sprache**, **Land** und **Seniorität** wählst du aus einer Liste, damit ein Wert immer gleich gespeichert wird. **Sprache** bietet die Sprachen, in denen der Seat des Kontakts schreibt, und **Land** ist das Land der Person, nicht des Unternehmens. **Persona** bestimmt, mit welchem Nachrichten-Prompt der Kontakt angeschrieben wird. Eine Zeile **Übersprungen** bedeutet, dass LinkedIn für diesen Prospect geschlossen ist und die Ansprache nur per E-Mail weiterläuft.
-- **Anreicherung**: alle gefundenen E-Mail-Adressen und Telefonnummern mit ihrem Status. Wähle **Falsch** bei einer falschen E-Mail-Adresse: Der Sales Agent markiert sie und sucht eine andere. Zu Telefonnummern siehe [Wenn die Nummer falsch ist](/de/operate/replies-and-handoff#wenn-die-nummer-falsch-ist). **E-Mail finden**, **Telefon finden** und **Beides finden** erscheinen, wenn etwas fehlt.
+- **Anreicherung**: alle gefundenen E-Mail-Adressen und Telefonnummern mit ihrem Status. Die Adresse, an die der Sales Agent sendet, steht oben, mit **Falsch**. Die anderen liegen hinter **N weitere Adressen**, veraltete und nicht funktionierende zuletzt und durchgestrichen, wie ältere Telefonnummern. Eine Adresse lautet **Verifiziert**, **Riskant**, **Ungültig**, **Unzustellbar** oder **Funktioniert nicht**, oder **Ersetzt**, wenn eine Hinweis-Mail zur neuen Adresse der Person eine neuere gegeben hat. Wähle **Falsch** bei einer falschen E-Mail-Adresse: Der Sales Agent markiert sie und sucht eine andere. Zu Telefonnummern siehe [Wenn die Nummer falsch ist](/de/operate/replies-and-handoff#wenn-die-nummer-falsch-ist). **E-Mail finden**, **Telefon finden** und **Beides finden** erscheinen, wenn etwas fehlt.
 - **Unternehmen**: die Unternehmensdaten, bearbeitbar, und **Unternehmensseite öffnen**. Die Größe **Spanne** wählst du aus den Mitarbeiterbereichen von LinkedIn.
 - **Spickzettel**: Vorbereitungsnotizen für einen Anruf. Mit **Bearbeiten** änderst du sie.
 
@@ -115,6 +115,15 @@ Vermutet der Sales Agent, dass zwei Unternehmen in deiner Liste eins sind, zeigt
 - **Verschiedene Unternehmen** behält beide und beendet die Frage.
 
 Hat eines der beiden Unternehmen eine Deal-Phase, gilt sie für alle im zusammengeführten Unternehmen. Dieselbe Box fragt auch, ob ein Unternehmen insolvent sein könnte; siehe das [Glossar](/de/reference/glossary).
+
+## Eine Liste filtern
+
+Wähle **Filter** über **Unternehmen**, **Prospects → Kontakte** oder **Prospects → Prospects**, dann **Filter hinzufügen**: Wähle eine Spalte, einen Operator und einen Wert. Eine gespeicherte Ansicht behält ihre Filter.
+
+- **Zahlen**, etwa **Mitarbeiterzahl** oder **Wachstum (1 Jahr)**, nutzen **Liegt zwischen**. Gib **Von** und **Bis zu** ein oder bewege den Regler, der durch die Werte springt, die deine Liste tatsächlich enthält. Lass ein Ende offen für „mindestens“ oder „höchstens“.
+- **Datumsangaben** nutzen **Liegt zwischen** zwei Daten oder zählen ab heute zurück, sodass eine gespeicherte Ansicht aktuell bleibt: **Ist in den letzten … Tagen** und **Ist vor mehr als … Tagen** nehmen eine ganze Zahl von Tagen.
+- **Unternehmensangaben** sind in jeder Liste Filter. Unter **Unternehmen**: **Mitarbeiterspanne**, **Mitarbeiterzahl**, **Standort**, **Umsatz**, **Wachstum (1 Jahr)** und **Segment**. Unter **Kontakte** und **Prospects**: **Mitarbeiterzahl Unternehmen**, **Mitarbeiterspanne Unternehmen** und **Unternehmensstandort**. **Standort** ist eine Liste mit Suchfeld, und Länder erscheinen mit ihrem Namen in der Sprache deines Dashboards.
+- **Umsatz** ist eines von fünf Bändern, von **$0-$1M** bis **$1B+**. **Umsatz** und **Wachstum (1 Jahr)** werden nur gefüllt, wenn eine Quelle sie liefert, daher bleiben sie bei vielen Unternehmen leer. Mit **Ist leer** und **Ist nicht leer** findest du sie.
 
 ## Eine Liste als CSV exportieren
 
