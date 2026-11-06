@@ -71,7 +71,7 @@ If the person writes again on LinkedIn, the prospect returns to **Replied**. A l
 
 ## Call the To Call list
 
-The **To Call** tab on **Prospects** lists prospects with a working phone number who are due a call. By default, a prospect joins once all follow-ups are done. Admins can change this in **Settings → Targeting** under **Call list** (**Show a lead on the To Call tab**): **Never**, **When the invite is sent**, **When the invite is accepted**, **When the first message goes out**, or **When all follow-ups are done (default)**. The setting never changes what the agent sends or when.
+The **To Call** tab on **Prospects** lists prospects with a working phone number who are due a call. By default, a prospect joins once all follow-ups are done, which means no channel has anything left to send. A LinkedIn invitation with no answer after 30 days no longer holds a prospect back, so the prospect joins **To Call** and the **Follow-ups done** tab. Admins can change this in **Settings → Targeting** under **Call list** (**Show a lead on the To Call tab**): **Never**, **When the invite is sent**, **When the invite is accepted**, **When the first message goes out**, or **When all follow-ups are done (default)**. The setting never changes what the agent sends or when.
 
 A prospect marked **Unreachable** who has a number is always on the list. A prospect who replied, or whose call ended on **Send more info**, is not.
 
@@ -111,8 +111,8 @@ Not all replies indicate real engagement:
 
 - An **out-of-office** reply is not a reply. The Sales Agent reads the return date and holds both email and LinkedIn follow-ups until the working day after it, for at most 90 days. Without a readable date, it waits five working days. The timeline's **Current state** shows **Paused — out of office** with the first possible follow-up date, and the **Reply** column shows **Out of office**. A real reply or a bounce ends the pause.
 - An auto-reply saying the person has **left the company** is treated as not the right person, not as an absence.
-- When an auto-reply gives the person's **new email address**, follow-ups go to that address.
-- A **bounced email** marks that address as not working, and it is never used again. The Sales Agent looks for another address, which may use credits. If it finds one, the sequence continues there. If not, the prospect continues on LinkedIn only, or becomes **Unreachable** when LinkedIn is not available.
+- When an auto-reply gives the person's **new email address**, that address becomes the contact's email and follow-ups go to it. The old one stays in the contact's email history as **Replaced**.
+- A **bounced email** marks that address as not working, and it is never used again. The Sales Agent looks for another address, which may use credits. If it finds one, the sequence continues there. If not, the prospect continues on LinkedIn only. When LinkedIn is not available either, the prospect becomes **Unreachable** if a usable phone number is on file, and is archived as **No email or LinkedIn found** if not.
 
 These cases are handled automatically. You do not need to intervene unless the prospect remains stuck after the expected return date or after the address lookup completes.
 

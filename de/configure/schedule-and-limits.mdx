@@ -18,7 +18,7 @@ Lege in der Karte **Outreach-Kanal** unter **LinkedIn-Outreach** fest:
 
 Die Karte warnt dich, wenn für den Seat kein LinkedIn-Konto oder Postfach verbunden ist. Verbinde sie unter **Einstellungen → Konto**.
 
-Ein Seat ohne verbundenes LinkedIn-Konto macht keine LinkedIn-Arbeit, egal was der Kanal sagt: Seine Läufe überspringen die LinkedIn-Schritte, und E-Mail läuft weiter. Bei **Zuerst LinkedIn** gibt es dort keine Kontaktanfrage, auf die gewartet wird, daher gehen erste E-Mails mit dem nächsten Durchlauf raus statt eine Woche später. Die Wartezeit kehrt zurück, sobald LinkedIn verbunden ist.
+Ein Seat ohne verbundenes LinkedIn-Konto macht keine LinkedIn-Arbeit, egal was der Kanal sagt: Seine Läufe überspringen die LinkedIn-Schritte, und E-Mail läuft weiter. Bei **Zuerst LinkedIn** gibt es dort keine Kontaktanfrage, auf die gewartet wird, daher gehen erste E-Mails über den Arbeitstag verteilt raus statt eine Woche später. Die Wartezeit kehrt zurück, sobald LinkedIn verbunden ist.
 
 ## Laufzeit konfigurieren
 
@@ -32,8 +32,28 @@ In der Karte **Workflow-Zeitplan**:
 Ist der Zeitplan deaktiviert, läuft der Seat nur, wenn du **Jetzt starten** auswählst. Das Dashboard plant einen Lauf pro ausgewähltem Tag.
 
 <Warning>
-  Behandle die geplante Zeit als Automatisierungsfenster. Nutze LinkedIn nicht manuell, während der Lauf aktiv ist. Die Karte **Tageslimits** zeigt, wann ein Lauf üblicherweise fertig ist. Ein einzelner Lauf darf höchstens fünf Stunden dauern; bräuchten deine Limits länger, fordert dich die Karte auf, sie zu senken.
+  Behandle die geplante Zeit als Automatisierungsfenster. Nutze LinkedIn nicht manuell, während der Lauf aktiv ist. **Auf einen Blick** unten in der Karte **Tageslimits** zeigt, wann LinkedIn in der Regel fertig ist; dann geht die Laufzusammenfassung raus. Ein einzelner Lauf darf höchstens fünf Stunden dauern; bräuchten deine Limits länger, fordert dich die Karte auf, sie zu senken.
 </Warning>
+
+## Wann E-Mails rausgehen
+
+Bei einem Seat, der nach Zeitplan läuft, versendet der Lauf selbst keine E-Mails. Erste E-Mails und E-Mail-Follow-ups gehen einzeln über den Arbeitstag verteilt raus, damit dein E-Mail-Anbieter nicht viele E-Mails auf einmal sieht:
+
+- von etwa 08:00 bis etwa 17:00 Uhr in der Zeitzone des Seats, an den Tagen, an denen der Seat läuft. Das Zeitfenster verschiebt sich jeden Tag ein wenig, und ab und zu beginnt es gegen 07:00 Uhr oder reicht bis etwa 20:00 Uhr.
+- mit mindestens 5 Minuten Abstand. Seats, die sich ein Postfach teilen, teilen sich auch seine Versandzeiten.
+- nie in den 10 Minuten, bevor der Lauf des Seats startet.
+
+Der Lauf prüft weiterhin Antworten, nimmt neue Personen auf, schreibt Entwürfe und erledigt die gesamte LinkedIn-Arbeit. Die E-Mails, die er vorbereitet, warten auf die Versandzeiten des Tages, und jedes E-Mail-Follow-up wird direkt vor dem Versand noch einmal auf eine Antwort geprüft. Startet der Lauf am Nachmittag, gehen seine E-Mails danach bis etwa 17:00 Uhr raus und der Rest am nächsten Tag. Auch E-Mails aus einem Lauf, den du mit **Jetzt starten** startest, warten auf die Versandzeiten.
+
+Die Tageslimits gelten weiter pro Tag. Bei 5 Minuten Abstand passen etwa 108 E-Mails in den Tag eines Postfachs. Summieren sich die E-Mail-Limits aller Seats auf einem Postfach auf mehr, sagt **Auf einen Blick** das, und der Rest wartet auf den nächsten Tag.
+
+Ein Postfach bekommt mehr Versandzeiten, als die Tageslimits seiner Seats zusammen ergeben, etwa anderthalb Mal so viele im selben Fenster, sodass eine E-Mail, die spät fertig wird, noch am selben Tag rausgeht. Eine Zeit, zu der keine E-Mail wartet, sendet nichts. Die Tageslimits und der Abstand von 5 Minuten bleiben, sodass ein Postfach sein Limit früher am Tag erreichen kann.
+
+- Die Laufzusammenfassung geht raus, wenn der Lauf endet, und nennt, wie viele E-Mails über den Tag verteilt rausgehen.
+- **Aktivität** zeigt die Versände des Tages als eine Zeile pro Seat, **E-Mail-Versandzeiten**, zum Beispiel mit **E-Mails heute: 7 von 16, über den Tag verteilt**.
+- Stoppst du einen vollständigen Lauf eines Seats mit **Stoppen**, enden auch die restlichen E-Mail-Versandzeiten dieses Tages für den Seat. Ein inaktiver Seat, ein ausgeschalteter Zeitplan oder ein getrenntes oder pausiertes Postfach beendet sie ebenfalls.
+
+Ein Seat, dessen Zeitplan aus ist, versendet seine E-Mails in den Läufen, die du startest.
 
 ## Tageslimits festlegen
 
@@ -49,14 +69,30 @@ Die Limits gelten pro Seat und Kalendertag. Die Karte **Tageslimits** gruppiert 
 
 Ist LinkedIn auf **Aus** gestellt, sind die LinkedIn-Limits ausgeblendet. Pro Tag gelangen höchstens so viele neue Personen in die Pipeline, wie der höhere der beiden **Neue Personen pro Tag**-Werte erlaubt, denn LinkedIn und E-Mail erreichen dieselben Personen. Personen, die noch auf ihre erste Nachricht warten, zählen mit; ein Lauf füllt die Pipeline also auf, statt sie wachsen zu lassen. Die **Nächster Durchlauf**-Anzahl ist der kleinere Wert aus geeigneten Kontakten und relevantem Tageslimit. Weitere Kontakte bleiben in der Queue.
 
+Bei **Zuerst LinkedIn** lassen mehr neue Personen per E-Mail als per Kontaktanfrage die zusätzlichen nur eine Woche warten; danach bekommen sie eine E-Mail ohne Kontaktanfrage. LinkedIn-Nachrichten und LinkedIn-Follow-ups teilen sich das Nachrichtenkontingent von LinkedIn. Follow-ups beginnen einige Werktage nach der ersten Nachricht, daher sendet ein neuer Seat in seiner ersten Woche weniger als diese Zahlen. Ein Lauf endet, wenn die Mengen erreicht sind, nicht zu einer festen Uhrzeit.
+
 Beginne niedrig und erhöhe die Limits über die ersten Wochen:
 
-- **LinkedIn** wärmt sich ab der ersten Einladung des Seats auf: etwa 3 pro Tag in Woche 1, 10 pro Tag ab Woche 2 und bis zu 20 pro Tag ab Woche 4. Nach dem Warm-up bleiben Free- und Premium-Konten bei etwa 10 pro Tag. Nach 30 Tagen ohne Einladung beginnt das Warm-up von vorn. Trage den **Social Selling Index (SSI)** des Seats aus Sales Navigator ein, um besser einzuschätzen, wie hoch er gehen kann.
-- **E-Mail** richtet sich nach dem gewählten Postfachstatus: **Neues Postfach** (etwa 3 pro Tag), **Etwas Versandhistorie** (etwa 10 pro Tag) oder **Postfach aufgewärmt** (kein Warm-up-Limit).
+- **LinkedIn** wärmt sich ab der ersten Einladung des Seats auf: etwa 3 pro Tag (15 pro Woche) in Woche 1, 10 pro Tag (50 pro Woche) ab Woche 2 und bis zu 20 pro Tag ab Woche 4. Nach dem Warm-up bleiben Free- und Premium-Konten bei 50 pro Woche (etwa 10 pro Tag), und Sales Navigator geht auf etwa 100 pro Woche. Läuft ein Seat an mehr als fünf Tagen pro Woche, verteilt sich die Wochenzahl dünner. Nach 30 Tagen ohne Einladung beginnt das Warm-up von vorn. Trage den **Social Selling Index (SSI)** des Seats aus Sales Navigator ein, um besser einzuschätzen, wie hoch er gehen kann.
+- **E-Mail** richtet sich nach dem gewählten Postfachstatus: **Neues Postfach** (etwa 3 pro Tag, 15 pro Woche), **Etwas Versandhistorie** (etwa 10 pro Tag, 50 pro Woche) oder **Postfach aufgewärmt** (kein Warm-up-Limit). Die Limits gelten pro Seat: Zwei Seats, die sich ein Postfach teilen, senden doppelt so viel daraus.
 
 Kein Limit steigt von selbst. Erreicht ein Seat die nächste LinkedIn-Warm-up-Woche, bieten eine Aufgabe und die Benachrichtigungsglocke **Auf … erhöhen** mit einem Klick an.
 
-Ein normaler Sales-Navigator-Plan unterstützt als Obergrenze ungefähr 100 Kontakte pro Woche und Konto. Ein höherer SSI kann mehr ermöglichen, aber weder Reichweite noch Kontosicherheit sind garantiert. keinsaas setzt verfügbare Schutzmaßnahmen ein; du bleibst für die Einhaltung der [LinkedIn-Hygieneregeln](/de/safety/linkedin-hygiene) verantwortlich.
+Ein normaler Sales-Navigator-Plan unterstützt als Obergrenze ungefähr 100 Kontakte pro Woche und Konto. Ab einem SSI von 70 kann Sales Navigator mit der Zeit bis zu 200 pro Woche ermöglichen, aber weder Reichweite noch Kontosicherheit sind garantiert. keinsaas setzt verfügbare Schutzmaßnahmen ein; du bleibst für die Einhaltung der [LinkedIn-Hygieneregeln](/de/safety/linkedin-hygiene) verantwortlich.
+
+### Auf einen Blick
+
+Unten in der Karte **Tageslimits** fasst **Auf einen Blick** zusammen, was die Zahlen des Seats ergeben. Eine Zeile wird nur gelb oder rot, wenn sie dich braucht:
+
+- Wann LinkedIn in der Regel fertig ist. Dann geht die Laufzusammenfassung raus: Warte darauf, bevor du LinkedIn selbst nutzt. Bei einem Seat ohne LinkedIn nennt die Zeile, wann der Lauf in der Regel fertig ist.
+- **E-Mails gehen einzeln von 08:00 bis etwa 17:00 Uhr raus, mit mindestens 5 Minuten Abstand.** Siehe [Wann E-Mails rausgehen](/de/configure/schedule-and-limits#wann-e-mails-rausgehen).
+- Wie viele E-Mails der Seat höchstens pro Tag sendet, sobald Follow-ups laufen.
+- Wie viele LinkedIn-Nachrichten er höchstens pro Tag sendet. Mit **InMail-Fallback** bei einem Sales-Navigator-Seat bekommt, wer die Kontaktanfrage nach der Wartezeit nicht angenommen hat, stattdessen eine InMail, bezahlt mit deinen InMail-Credits aus Sales Navigator. Sonst gehen Nachrichten nur an Personen, die die Kontaktanfrage angenommen haben oder ein offenes Profil haben, daher gehen meist weniger raus.
+- Wenn der nächste Lauf weniger neue Personen aufnimmt als dein Limit: wie viele und warum. Personen, die schon in der Pipeline sind, haben Vorrang. Warten erste E-Mails auf deine Freigabe, nennt die Zeile die Anzahl, mit **In Nachrichten freigeben**. Sonst musst du nichts tun: Mit jeder E-Mail und jeder Kontaktanfrage, die rausgeht, wird wieder Platz frei.
+- Wenn LinkedIn getrennt ist: Der Lauf überspringt die LinkedIn-Schritte und läuft nur per E-Mail, bis LinkedIn verbunden ist.
+- Wenn der Lauf länger dauern würde, als ein einzelner Lauf darf: eine rote Warnung, die sagt, was du senken solltest.
+
+**So funktionieren Tageslimits** öffnet diesen Abschnitt.
 
 Die Karte **Gesendet pro Tag** zeigt, wie viel die geplanten Läufe an jedem Wochentag höchstens senden können, für alle aktiven Seats zusammen. Meist geht weniger raus, weil jede Nachricht jemanden braucht, der bereit ist. Manuell gestartete Läufe kommen hinzu.
 

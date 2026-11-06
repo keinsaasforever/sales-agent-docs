@@ -19,7 +19,7 @@ In the **Outreach channel** card, set **LinkedIn outreach** for the seat:
 
 The card warns you when the seat has no LinkedIn account or mailbox connected. Connect them under **Settings → Account**.
 
-A seat with no connected LinkedIn account does no LinkedIn work, whatever the channel says: its runs skip the LinkedIn steps and email continues. **LinkedIn first** has no invite to wait for there, so first emails go out on the next run instead of a week later. The wait returns once LinkedIn is connected.
+A seat with no connected LinkedIn account does no LinkedIn work, whatever the channel says: its runs skip the LinkedIn steps and email continues. **LinkedIn first** has no invite to wait for there, so first emails go out over the working day instead of a week later. The wait returns once LinkedIn is connected.
 
 ## Configure the run time
 
@@ -43,8 +43,28 @@ In the **Workflow Schedule** card, complete these steps:
 The dashboard schedules one run per selected day. When scheduling is off, the seat remains inactive until you trigger **Run Now** manually.
 
 <Warning>
-  Treat the scheduled window as an automation period. Do not use LinkedIn manually while a run is active — concurrent activity can cause unexpected behavior. The **Daily Limits** card shows when a run is usually done. A single run may take at most five hours; if your limits would need longer, the card tells you to lower them.
+  Treat the scheduled window as an automation period. Do not use LinkedIn manually while a run is active: concurrent activity can cause unexpected behavior. **At a glance**, at the bottom of the **Daily Limits** card, shows when LinkedIn is usually done; the run summary mail goes out then. A single run may take at most five hours; if your limits would need longer, the card tells you to lower them.
 </Warning>
+
+## When emails go out
+
+On a seat that runs on a schedule, the run does not send emails itself. First emails and email follow-ups go out one at a time over the working day, so your mail provider does not see a burst of emails at once:
+
+- from about 08:00 until about 17:00 in the seat's timezone, on the days the seat runs. The window moves a little each day, and now and then it starts around 07:00 or runs until about 20:00.
+- at least 5 minutes apart. Seats that share a mailbox share its times.
+- never in the 10 minutes before the seat's run starts.
+
+The run still checks replies, takes on new people, writes drafts, and does all the LinkedIn work. The emails it gets ready wait for the day's times, and each email follow-up is checked for a reply once more right before it goes out. When the run starts in the afternoon, its emails go out after it until about 17:00, and the rest the next day. Emails from a run you start with **Run Now** wait for the times too.
+
+The daily limits still count per day. About 108 emails fit into one mailbox's day at 5 minutes apart. When the email limits of all seats on a mailbox add up to more, **At a glance** says so, and the rest wait for the next day.
+
+A mailbox gets more send times than its seats' daily limits add up to, about one and a half times as many within the same window, so an email that is ready late still goes out that day. A time with no email waiting sends nothing. The daily limits and the 5-minute gap stay as they are, so a mailbox can reach its limit earlier in the day.
+
+- The run summary mail goes out when the run ends and says how many emails go out over the day.
+- **Activity** shows the day's sends as one line per seat, **Email send times**, for example with **Emails today: 7 of 16, spread over the day**.
+- Selecting **Stop** on a seat's full run also ends the rest of that day's email times for the seat. An inactive seat, a schedule switched off, or a disconnected or paused mailbox stops them too.
+
+A seat whose schedule is off sends its emails during the runs you start.
 
 ## Set daily limits
 
@@ -60,14 +80,30 @@ Limits are per seat and reset each calendar day. The **Daily Limits** card group
 
 The LinkedIn limits are hidden when LinkedIn outreach is **Off**. At most the higher of the two **New people per day** numbers enter the pipeline each day, because LinkedIn and email reach the same people. People still waiting for their first message count toward it, so a run tops the pipeline up instead of growing it. The **Next run** count shown on the Home dashboard is the smaller of your eligible contacts and the relevant daily limit. Contacts beyond the cap remain queued and are picked up in a later run.
 
+With **LinkedIn first**, more new people by email than by invite only makes the extra ones wait a week; then they are emailed without an invite. LinkedIn messages and LinkedIn follow-ups share LinkedIn's message allowance. Follow-ups start a few working days after the first message, so a new seat sends less than these numbers in its first week. A run stops when the amounts are reached, not at a fixed time.
+
 Start low and raise the limits over the first weeks:
 
-- **LinkedIn** warms up from the seat's first invite: about 3 a day in week 1, 10 a day from week 2, and up to 20 a day from week 4. After the warm-up, Free and Premium accounts stay at about 10 a day. The warm-up starts over after 30 days without an invite. Enter the seat's **Social Selling Index (SSI)** from Sales Navigator to help judge how high it can go.
-- **Email** follows the mailbox state you select: **New mailbox** (about 3 a day), **Some sending history** (about 10 a day), or **Mailbox warmed** (no warm-up limit).
+- **LinkedIn** warms up from the seat's first invite: about 3 a day (15 a week) in week 1, 10 a day (50 a week) from week 2, and up to 20 a day from week 4. After the warm-up, Free and Premium accounts stay at 50 a week (about 10 a day), and Sales Navigator goes to about 100 a week. A seat that runs more than five days a week spreads the weekly number thinner. The warm-up starts over after 30 days without an invite. Enter the seat's **Social Selling Index (SSI)** from Sales Navigator to help judge how high it can go.
+- **Email** follows the mailbox state you select: **New mailbox** (about 3 a day, 15 a week), **Some sending history** (about 10 a day, 50 a week), or **Mailbox warmed** (no warm-up limit). The limits are per seat, so two seats that share a mailbox send twice as much from it.
 
 No limit rises on its own. When a seat reaches the next LinkedIn warm-up week, a to-do and the notification bell offer **Raise to** the new number in one click.
 
-A normal Sales Navigator plan supports roughly 100 contacts per week per account as a ceiling. Higher SSI may allow more, but neither reach nor account safety is guaranteed. keinsaas applies available safety measures; you remain responsible for following [LinkedIn hygiene rules](/safety/linkedin-hygiene).
+A normal Sales Navigator plan supports roughly 100 contacts per week per account as a ceiling. With an SSI of 70 or more, Sales Navigator may allow up to 200 a week over time, but neither reach nor account safety is guaranteed. keinsaas applies available safety measures; you remain responsible for following [LinkedIn hygiene rules](/safety/linkedin-hygiene).
+
+### At a glance
+
+At the bottom of the **Daily Limits** card, **At a glance** sums up what the seat's numbers add up to. A line turns amber or red only when it needs you:
+
+- When LinkedIn is usually done. The run summary mail goes out then, so wait for it before you use LinkedIn yourself. On a seat without LinkedIn, the line says when the run is usually done.
+- **Emails go out one at a time from 08:00 until about 17:00, at least 5 minutes apart.** See [When emails go out](/configure/schedule-and-limits#when-emails-go-out).
+- How many emails a day the seat sends at most once follow-ups are running.
+- How many LinkedIn messages a day it sends at most. With **InMail fallback** on a Sales Navigator seat, anyone who has not accepted the invite after the waiting period gets an InMail instead, paid from your Sales Navigator InMail credits. Otherwise messages go only to people who accepted the invite or have an open profile, so usually fewer go out.
+- When the next run takes on fewer new people than your limit: how many, and why. People already in the pipeline go first. When first emails wait for your approval, the line says how many, with **Approve in Messages**. Otherwise there is nothing to do: each email or invite that goes out makes room again.
+- When LinkedIn is disconnected: the run skips the LinkedIn steps and is email only until it is connected.
+- When the run would take longer than a single run may take: a red warning that says what to lower.
+
+**How daily limits work** opens this section.
 
 The **Sent per day** card shows the most the scheduled runs can send on each day of the week, for all active seats together. Fewer usually go out, because each message needs someone ready for it. Runs started by hand come on top.
 

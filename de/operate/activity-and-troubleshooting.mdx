@@ -15,20 +15,20 @@ Suchen und Importe hatten früher eine eigene Seite, **Jobs**. Sie stehen jetzt 
 
 **Vor dem Durchlauf · ganzes Konto** zeigt, wie Unternehmen und Personen hereinkommen. Ein Weg, der eingeschaltet ist, steht zuerst:
 
-- **Signalsuche** zeigt **Aus: Wir schalten es auf Anfrage für dich ein**, bis keinsaas sie mit dir einschaltet.
+- **Beobachte deine Unternehmen** zeigt **Aus: Wir schalten es auf Anfrage für dich ein**, bis keinsaas sie mit dir einschaltet.
 - **Sales-Navigator-Import** holt die Personen aus deinen gespeicherten Sales-Navigator-Suchen und -Listen. Er startet mit deiner täglichen Pipeline.
 - **Unternehmenssuche** erscheint, wo sie für dein Konto eingeschaltet ist.
 - **Von dir hinzugefügt** umfasst CSV-Uploads, Sales-Navigator-Links und Suchen, die du von Hand gestartet hast.
-- **Automatische Suche bei meinen Unternehmen** folgt danach, mit **dann** markiert: Sie findet die Personen bei diesen Unternehmen.
+- **Personen bei meinen Unternehmen** folgt danach, mit **dann** markiert: Sie findet die Personen bei diesen Unternehmen.
 
-Admins schalten **Sales-Navigator-Import** und **Automatische Suche bei meinen Unternehmen** direkt auf der Karte ein oder aus. Mitglieder sehen den Schalter, können ihn aber nicht ändern.
+Admins schalten **Sales-Navigator-Import** und **Personen bei meinen Unternehmen** direkt auf der Karte ein oder aus. Mitglieder sehen den Schalter, können ihn aber nicht ändern.
 
 **Der Durchlauf · {Seat}** zeigt den Zeitplan des Seats in Worten, mit dem Schalter **Zeitplan ein- oder ausschalten** oder einem Link zu **Zeitplan-Einstellungen**. Auf deinem eigenen Seat bekommst du außerdem **Jetzt starten**, **Stoppen** und **Erweitert**, wie auf **Start**. Die Schritte folgen in der Reihenfolge, in der der Durchlauf sie nimmt:
 
 1. **Antworten prüfen**: Jeder Thread wird zuerst gelesen, daher stoppt eine Antwort alles Weitere.
 2. **Neue Personen**, dann **Kontaktanfragen**, dann **E-Mail und Telefonnummer finden**. **Alte Kontaktanfragen zurückziehen** hängt unter **Kontaktanfragen**: Samstags zieht es Kontaktanfragen zurück, die 30 Tage oder länger offen sind. Es erscheint nur bei einem Seat mit verbundenem LinkedIn-Konto.
 3. **Entwürfe**, dann **Deine Freigabe**.
-4. Zwei Spuren: auf LinkedIn **LinkedIn-Nachricht**, dann **LinkedIn-Follow-ups**; per E-Mail **Erste E-Mail**, dann **E-Mail-Follow-ups**. E-Mail-Follow-ups werden zu Beginn jedes Durchlaufs nach der Antwortprüfung gesendet.
+4. Zwei Spuren: auf LinkedIn **LinkedIn-Nachricht**, dann **LinkedIn-Follow-ups**; per E-Mail **Erste E-Mail**, dann **E-Mail-Follow-ups**. E-Mails gehen einzeln über den Arbeitstag verteilt raus: **Erste E-Mail** zeigt **Über den Arbeitstag verteilt, nacheinander**, und jedes E-Mail-Follow-up wird nach einer Antwortprüfung gesendet. Siehe [Wann E-Mails rausgehen](/de/configure/schedule-and-limits#wann-e-mails-rausgehen).
 
 Jede Karte zeigt:
 
@@ -47,7 +47,7 @@ Der **Verlauf** listet die 100 jüngsten Einträge deines Kontos, neueste zuerst
 
 - **Alle**: jeder Lauf
 - **Outreach**: Pipeline-Läufe, ihre Schritte und das Zurückziehen von Kontaktanfragen
-- **Suchen & Importe**: Kontaktsuchen, CSV- und URL-Importe, Anreicherung für sich allein und die Signalsuche. Dieser Filter fügt einen Button hinzu, **Deine Suchjobs**, der [**Unsere Suche**](/de/configure/add-prospects#bei-deinen-unternehmen-suchen) öffnet.
+- **Suchen & Importe**: Kontaktsuchen, CSV- und URL-Importe, Anreicherung für sich allein und die Signalsuchen. Dieser Filter fügt einen Button hinzu, **Meine Jobs**, der [**Meine Jobs**](/de/configure/add-prospects#jobs-von-selbst-laufen-lassen) öffnet.
 
 Wähle **Aktualisieren**, um die Liste zu aktualisieren, während ein Lauf läuft. Jede Zeile zeigt:
 
@@ -58,6 +58,8 @@ Wähle **Aktualisieren**, um die Liste zu aktualisieren, während ein Lauf läuf
 - **Credits**: die für den Lauf berechneten Credits.
 - **Gestartet** und **Dauer**.
 - **CSV**: ein Download für eine abgeschlossene Suche.
+
+Die E-Mails, die zu den [E-Mail-Versandzeiten](/de/configure/schedule-and-limits#wann-e-mails-rausgehen) des Tages rausgehen, sind keine eigenen Zeilen. Eine Zeile pro Seat und Tag, **E-Mail-Versandzeiten**, zeigt sie, unter **Ergebnis** mit **E-Mails heute: 7 von 16, über den Tag verteilt**, gemessen an den täglichen E-Mail-Limits des Seats.
 
 Eine Suche kann Leads liefern, die an den Filtern deines Ideal Customer Profile (ICP) scheitern. Die Zahl der behaltenen Leads liegt deshalb oft unter der Zahl der gelieferten. Credits bezahlen gelieferte Ergebnisse, nicht nur behaltene Leads.
 
@@ -115,12 +117,15 @@ Zeigt ein Versandschritt wie **E-Mail-Versand**, **LinkedIn-Nachrichten** oder *
 - **Gestoppte oder archivierte Prospects**: Prospects, die zwischen Queue-Vorschau und Laufzeit gestoppt oder archiviert wurden, werden übersprungen.
 - **Tageslimits und Fälligkeiten**: Ein geplanter Lauf kann die Limits schon früher am Tag erreicht haben.
 - **Feiertage**: Eine erste E-Mail, Kontaktanfrage, LinkedIn-Nachricht oder ein Follow-up wird am gesetzlichen Feiertag des Empfängers zurückgehalten und geht mit einem späteren Lauf raus. Siehe [Feiertage](/de/configure/schedule-and-limits#feiertage).
+- **E-Mail-Versandzeiten**: Bei einem Seat, der nach Zeitplan läuft, senden die E-Mail-Schritte des Laufs selbst nichts; die E-Mails gehen über den Arbeitstag verteilt raus. Sieh dir die Zeile **E-Mail-Versandzeiten** im Verlauf an. Siehe [Wann E-Mails rausgehen](/de/configure/schedule-and-limits#wann-e-mails-rausgehen).
 
 Das System überspringt einen unsicheren Versand eher, als eine Dublette zu senden oder jemanden nach einer Antwort weiter zu kontaktieren. Ein übersprungener Versand ist sicherer als eine falsche Zustellung.
 
 ## Wenn LinkedIn für einen Prospect übersprungen wurde
 
 Manche Prospects laufen nur per E-Mail weiter, etwa wenn LinkedIn das Profil nicht öffnen konnte oder die Einladung nicht angenommen wurde. Die Spalte **LinkedIn** unter **Prospects** zeigt dann **Übersprungen** mit dem Grund, und der Tab **Verlauf** zeigt **LinkedIn gestoppt** mit dem Grund.
+
+Schließt sich LinkedIn endgültig für einen Prospect ohne hinterlegte E-Mail-Adresse, sucht der Sales Agent nach einer Adresse, bevor der Prospect endet. Er macht eine Suche mit den Quellen, die er noch nicht versucht hat, und eine gefundene Adresse wird wie jede E-Mail-Suche berechnet, siehe [Credits](/de/safety/credits). Findet er keine, wird der Prospect **Nicht erreichbar**, wenn eine nutzbare Telefonnummer vorliegt, und andernfalls als **Weder E-Mail noch LinkedIn-Profil gefunden** archiviert, siehe [Archivierung und Ergebnis](/de/operate/stages-and-outcomes#archivierung-und-ergebnis).
 
 Trifft der Grund nicht mehr zu, wähle diese Prospects aus und wähle **LinkedIn erneut versuchen**. Sie kommen für den nächsten Lauf zurück in die LinkedIn-Queue. Gilt der Grund weiterhin, überspringt der nächste Lauf sie erneut.
 
@@ -188,6 +193,7 @@ Du siehst das an mehreren Stellen:
 - als rotes Banner auf **Start** und als Eintrag in **Aufgaben**, jeweils mit **Optionen ansehen**
 - unter **Einstellungen → Konto**: Die E-Mail-Karte zeigt **Versand pausiert**
 - in einer E-Mail an den Owner des Seats oder, wenn der Seat keinen Owner hat, an deine Admins
+- in einer E-Mail an deinen [IT-Kontakt](/de/getting-started/seats-and-accounts#it-kontakt-für-technische-warnungen) oder, wenn keiner eingetragen ist, an deine Admins, mit dem Zeitpunkt der ersten Ablehnung und den gesendeten E-Mails an jedem der letzten 7 Tage
 
 <Steps>
   <Step title="Einstellungen → Konto öffnen">
@@ -200,6 +206,10 @@ Du siehst das an mehreren Stellen:
     Ist das Postfach entsperrt, wähle **Versand fortsetzen**. Verweigert der Anbieter es weiterhin, pausiert der Versand erneut. Oder wähle **Trennen** und verbinde ein anderes Postfach.
   </Step>
 </Steps>
+
+## Wenn ein Postfach zwei Werktage lang nichts sendet
+
+Hat ein Postfach, das senden sollte, zwei Werktage lang keine E-Mail gesendet, obwohl E-Mails bereitliegen, bekommt dein [IT-Kontakt](/de/getting-started/seats-and-accounts#it-kontakt-für-technische-warnungen) eine Mail, dass nichts rausgegangen ist. Wochenenden zählen nicht, und die Mail kommt einmal, bis das Postfach wieder sendet. Prüfe, ob das Postfach noch senden kann, etwa nach einer Sperre durch deinen E-Mail-Anbieter oder einer abgelaufenen Anmeldung. **Einstellungen → Konto** zeigt den Zustand des Postfachs.
 
 ## Wenn zu viele E-Mails nicht zugestellt werden
 

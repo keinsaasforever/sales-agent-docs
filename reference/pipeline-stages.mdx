@@ -46,13 +46,17 @@ Outcomes record the real-world result of a conversation. Every outcome immediate
 | **Lost Deal** | A progressed opportunity did not result in a sale. |
 | **Unreachable** | No configured automated channel remains usable for this prospect. |
 
-You set outcomes yourself. The Sales Agent sets two on its own: **Unreachable** when no channel is left, and **Asked to stop** when a reply asks it to stop.
+You set outcomes yourself. The Sales Agent sets two on its own: **Unreachable** when no email or LinkedIn channel is left and a usable phone number is on file, and **Asked to stop** when a reply asks it to stop. With no phone number either, it archives the prospect as **No email or LinkedIn found** instead.
 
 Marking **Meeting**, **Offer Sent**, or **Closed Deal**, or marking a reply as positive, also sets the company's stage on **Companies**, stops outreach to its other contacts, and puts the company on your blocked list. Under **Settings → Schedule → When a company says yes** you decide whether a reply the assistant reads as interested does the same.
 
 ## To Call list
 
-**To Call** is a tab on **Prospects**, not a stage: a lead can be **Messaged** and due a call at the same time. A lead with a usable phone number lands there at the moment you choose under **Settings → Targeting → Call list** (by default when all follow-ups are done). A lead marked **Unreachable** with a phone number is on the list whatever you choose. A reply, a call that ended on **Send more info**, or any other outcome takes the lead off it.
+**To Call** is a tab on **Prospects**, not a stage: a lead can be **Messaged** and due a call at the same time. A lead with a usable phone number lands there at the moment you choose under **Settings → Targeting → Call list** (by default when all follow-ups are done, that is, when no channel has anything left to send; a LinkedIn invitation with no answer after 30 days no longer holds the lead back). A lead marked **Unreachable** with a phone number is on the list whatever you choose. A reply, a call that ended on **Send more info**, or any other outcome takes the lead off it.
+
+## Follow-ups done tab
+
+**Follow-ups done** is a second worklist tab on **Prospects**, not a stage. It lists leads you contacted, nobody answered, and no channel has anything left to send. A lead there keeps its **Messaged** or **Followed Up** stage, and also stays on **To Call** when it has a usable phone number. The tab is off the tab bar by default: add it with **Tabs**.
 
 ## Archived
 
