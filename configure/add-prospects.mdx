@@ -30,7 +30,7 @@ Four tiles sit above the cards, so you see the situation before you pick a way i
 
 Under the tiles, the **Automatic search** line shows whether your one automatic search is **On**, **Off**, or **Not set up**. Admins select **Edit** or **Set up** to open it on **My jobs**.
 
-When the automatic search is on and fewer than 15 weekdays of companies are left to search, admins get a to-do on **Tasks**, for example **12 companies left to search** with **About 4 weekdays of the automatic search. Add companies to keep it going.** **Add companies** opens **Add to Pipeline**, where you can bring in more:
+When the automatic search **People at my companies** is on and fewer than 15 weekdays of companies are left to search, admins get a to-do on **Tasks**, for example **12 companies left to search** with **About 4 weekdays of the automatic search. Add companies to keep it going.** **Add companies** opens **Add to Pipeline**, where you can bring in more:
 
 - **Upload a CSV** with a company list.
 - **Sales Navigator search or list** with a company list, when one of your seats has Sales Navigator.
@@ -126,11 +126,22 @@ The **Search our database** card finds people at companies already in the dashbo
 
 The search has five steps. A step opens once you confirm the one before it, and a finished step folds to a summary with **Edit**.
 
-1. **What and how often**: choose **People at my companies**, **New companies and their people**, or **Build a company list**, then **Once, now** or **Automatically, every weekday**. **New companies and their people** finds companies that match your targeting, and the right people at them, in one search. **Build a company list** adds companies only and finds their people later. A choice that is not switched on for you reads **Not switched on for your account yet.** The automatic search is your account's only one; saving a new one replaces the old.
+1. **What and how often**: choose **People at my companies**, **New companies and their people**, or **Build a company list**, then **Once, now** or **Automatically, every weekday**. **New companies and their people** finds people who match your Targeting at companies not on your list yet, and adds their companies. **Build a company list** adds companies only and finds their people later; it is built once. A choice that is not switched on for you reads **Not switched on for your account yet.** Where signals are switched on for you, **Automatically, every weekday** carries **incl. signals** for new companies: signals come only with the automatic search. Your account has one automatic search, of either kind; saving a new one replaces the old.
 2. **Who you look for**: your targeting values (job titles, seniority, locations, industries, company sizes). A search for new companies also shows **Industries to leave out** and **Customers**. Admins change them with **Change on Targeting**; members ask an admin. The search needs at least one Tier 1 title in **Settings → Targeting**.
-3. **Companies and signals**: for people at your companies, **Highest fit first** takes the next companies by **Company Fit**, and **Pick companies** lets you choose them yourself (for a search you run once). An automatic search sets **Companies a day** instead, at most 500. Then set **People per company**; the default comes from **Max Contacts per Company**. A company already searched is skipped unless you pick it again. For new companies, choose **People to find**: 25, 50, or 100. Where signals are switched on for you, this step also holds their sources; see [Set buying signals](/configure/icp-and-scoring#set-buying-signals).
+3. The third step is named after what it holds:
+   - **Companies and people**, for people at your companies: **Highest fit first** takes the next companies by **Company Fit**, and **Pick companies** lets you choose them yourself (for a search you run once). An automatic search sets **Companies a day** instead, at most 500. Then set **People per company**; the default comes from **Max Contacts per Company**. A company already searched is skipped unless you pick it again.
+   - **How many people**, for new companies: **People to find**, 25, 50, or 100, for a search you run once, or **New people a day** for an automatic search; see [New companies and their people](#new-companies-and-their-people).
+   - **Companies and signals**: the automatic search for new companies where signals are switched on for you. It holds **New people a day** and the signals.
+   - **How many companies**, for a company list: **Companies to find**, 25, 50, or 100.
+
+   An automatic search ends the step with an **At a glance** box: what runs every weekday, with signals each source and its limit, and what needs your attention.
 4. **Emails and phones**: switch on **Email addresses** or **Phone numbers** to look people up right after the search, for everyone it finds. Off, they are looked up when each person enters outreach. A search that only adds companies finds their people, and their emails and phones, later.
 5. **Time and price**: **Estimated credits** and **Balance after** show the cost first. **Start search** runs a one-time search right away, and you find it in [**Activity**](/operate/activity-and-troubleshooting#read-the-history). An automatic search also sets **Every weekday from** and **Pause when**, and **Save automatic search** saves it; see [Search on a schedule](#search-on-a-schedule).
+
+**Build a company list** searches one of two places, which step 2 names under **Where we search**:
+
+- **Public lists**: published lists that match your Targeting, such as an association's members, a fair's exhibitors, a register, or a directory. The Sales Agent uses them when it finds one for your Targeting. Only new companies that fit are added and charged, at 0.1 credits per company added; one already on your list or not a fit costs nothing. If the lists cannot be read, nothing is charged.
+- **Company databases**: 0.25 credits per company found, also for one already on your list or not a fit; only new companies that fit are added.
 
 The search looks for Tier 1 titles first and Tier 2 titles only where no Tier 1 contact was found, and applies your locations, filters, and the **Max Contacts per Company** cap. Every company needs an owner seat; companies without one are skipped, and the step says so. Contacts outside your filters are kept without a seat.
 
@@ -142,8 +153,8 @@ The search looks for Tier 1 titles first and Tier 2 titles only where no Tier 1 
 
 **My jobs**, next to **Add to Pipeline** in the **Add Contacts** group of the menu, lists what runs on its own to fill your pipeline and keep it fresh. Each job is a card with a tag such as **On** or **Off**, one summary line, and its actions; **Details** shows the rest. The cards come in this order:
 
-- **People at my companies**: your automatic search; see [Search on a schedule](#search-on-a-schedule).
-- **New companies from signals**, **Watch your companies**, and **Followers and engagement**: the signal jobs. **New companies from signals** and **Watch your companies** show once keinsaas switches them on with you. Where **New companies from signals** is not on, admins see **Followers and engagement** (page followers and post engagement) on its own card. See [Run signal searches from My jobs](/configure/icp-and-scoring#run-signal-searches-from-my-jobs).
+- Your automatic search, titled after its kind: **People at my companies** or **New companies and their people**; see [Search on a schedule](#search-on-a-schedule).
+- **New companies from signals**, **Watch your companies**, and **Followers and engagement**: the signal jobs. **New companies from signals** and **Watch your companies** show once keinsaas switches them on with you, and **New companies from signals** only while your automatic search is **New companies and their people**. Where signals are not switched on for you, admins see **Followers and engagement** (page followers and post engagement) on its own card. See [Run signal searches from My jobs](/configure/icp-and-scoring#run-signal-searches-from-my-jobs).
 - **Sales Navigator import**: for admins; see [Import from Sales Navigator every day](#import-from-sales-navigator-every-day).
 - **Done once**: the searches you started by hand in the last 30 days, running ones first. **Every run in Activity** opens the full history.
 
@@ -151,19 +162,39 @@ Only admins switch, edit, or delete a job. Members see the cards read-only. The 
 
 ## Search on a schedule
 
-Admins set up the automatic search in the **Search our database** card: choose **People at my companies** and **Automatically, every weekday**, and select **Save automatic search** in step 5. It searches your next-best companies by **Company Fit** once every weekday, from the hour you pick:
+Admins set up the automatic search in the **Search our database** card: choose **People at my companies** or **New companies and their people**, then **Automatically, every weekday**, and select **Save automatic search** in step 5. Your account has one automatic search, of either kind; saving a new one replaces its settings. Both kinds share these settings:
 
-- **Every weekday from** (step 5) sets the hour. **Companies a day** (step 3) sets how many companies are searched per day, at most 500.
+- **Every weekday from** (step 5) sets the hour.
 - **Pause when** (step 5) sets how many people may already be waiting before the search pauses. It resumes once the queue drops. Leave it empty for no limit.
 - **Email addresses** and **Phone numbers** in step 4 look up contact details right after the search instead of when contacts enter outreach.
 
-The step shows how many credits a run reserves and how many runs your balance covers. If the balance cannot cover even one run, nothing is searched until you top up. Only companies with an owner seat and nobody the pipeline could take yet are searched, the ones the **Companies to search** tile counts, and only those whose **Company Fit** is at or above your **Pipeline ICP threshold** or not scored yet.
+Step 5 shows what a day costs and how many runs your balance covers. If the balance cannot cover even one run, nothing is searched until you top up.
+
+On **My jobs**, the automatic search is the first card, titled after its kind. The tag shows **On** or **Off**, and the summary line says what it does, followed by when it runs. Admins switch it off with the card's switch, select **Run now**, **Edit** (the steps open inside the card), or **Delete**, which stops it. Members see the card while the search exists but cannot change it. The card says why a run waits, for example **Paused: N people are waiting, the limit is M** or **Not enough credits for the next run**.
+
+### People at my companies
+
+It searches your next-best companies by **Company Fit** once every weekday. **Companies a day** (step 3) sets how many, at most 500, and step 5 reads, for example, **Searches 25 companies a day, about N credits a run, charged only for what we find.** Where signals are switched on for you, companies with a fresh signal go first; signals on your companies come from [**Watch your companies**](/configure/icp-and-scoring#watch-your-companies).
+
+Only companies with an owner seat and nobody the pipeline could take yet are searched, the ones the **Companies to search** tile counts, and only those whose **Company Fit** is at or above your **Pipeline ICP threshold** or not scored yet.
 
 The day's companies are split evenly over the seats that run on a schedule: one company per seat in turn, each seat's best **Company Fit** first. A seat that runs out of companies hands its turns to the others. The companies of an inactive seat are left out. So are those of a seat whose schedule is off, unless that seat works by phone: it has **Phone lookups per seat** switched on and the automatic search looks up phone numbers (step 4). A seat that only runs with **Run Now** gets no automatic search, and a single-seat account whose schedule is off searches nothing, unless its seat works by phone in this way.
 
-An account has one automatic search at your companies; saving a new one replaces its settings. On **My jobs** it is the **People at my companies** card. The tag shows **On** or **Off**, and the summary line reads, for example, **25 companies a day · up to 3 people each · Email + phone**, followed by when it runs. Admins switch it off with the card's switch, select **Run now**, **Edit** (the steps open inside the card), or **Delete**, which stops it. **Details** shows how many companies are left to search, how many people wait for outreach, the last run, and the order the companies are taken in.
+The card's summary line reads, for example, **25 companies a day · up to 3 people each · Email + phone**. **Details** shows how many companies are left to search, how many people wait for outreach, the last run, and the order the companies are taken in. When no company is left, the card reads **No companies left to search**.
 
-The card says why a run waits: **Paused: N people are waiting, the limit is M**, **Not enough credits for the next run**, or **No companies left to search**. Members see the card while the search exists but cannot change it. Where signals are not switched on for you, an automatic search for new companies is marked **soon**: that search runs once.
+### New companies and their people
+
+Every weekday it finds people who match your Targeting at companies not on your list yet, and adds their companies to your list. **New people a day** (step 3, from 1 to 100) sets how many; it takes up to **Max Contacts per Company** people at each company. The search needs job titles and locations on **Settings → Targeting**. Step 5 reads, for example, **Finds up to 25 new people a day for up to N credits, charged only for what we find.** The new companies are shared among the seats that run on a schedule.
+
+Where signals are switched on for you, step 3 is **Companies and signals** and holds a **Signals** switch:
+
+- **Signals first, then Targeting**: people at companies with a fresh signal come first, up to **Max Contacts per Company** each. Your Targeting finds the rest.
+- **Only companies with a signal**: only people at companies with a fresh signal. Tick at least one source that can run, or keep **Watch your companies** on; otherwise the step reads **Tick at least one source: without one, no new companies come in.**
+- Switched off: your Targeting alone.
+
+Under the choice, tick the sources the signals come from; see [New companies from signals](/configure/icp-and-scoring#new-companies-from-signals). Signals and Targeting share the day's **New people a day**. Where only signals are switched on for you, not the search by Targeting, the search takes only companies with a signal.
+
+On **My jobs**, the summary line reads, for example, **Up to 25 new people a day who match your Targeting · Email + phone**, or **Up to 25 new people a day, companies with a fresh signal first**. **Run now** opens a one-time search by Targeting for the day's number. Signals do not run once, so **Only companies with a signal** has no **Run now**. When your Targeting has no new people left, the card reads **No new people left for your Targeting. Change Targeting to find more.**
 
 ## Add people or companies by hand
 
