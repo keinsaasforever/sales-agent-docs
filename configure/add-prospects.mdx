@@ -220,7 +220,7 @@ Adding a contact does not guarantee immediate appearance in every queue. Before 
 3. **Company match** — the contact's data must not point to another employer.
 4. **Owner and seat assignment** — the contact must be assigned to a seat. Contacts of a paused seat wait until the seat is switched back on.
 5. **Pipeline ICP threshold** — the contact's score must meet or exceed the configured minimum.
-6. **Complete data and a way to reach them** — the contact needs a first name, a last name, and a job title, and an email address, a LinkedIn profile, or a company website, which the email lookup needs. Otherwise **Not in pipeline** reads **Missing job title or name** or **No email, LinkedIn or company website**.
+6. **Complete data and a way to reach them** — the contact needs a first name, a last name, and a job title, and an email address, a LinkedIn profile, or a company website, which the email lookup needs. Otherwise **Not in pipeline** reads **Missing job title or name** or **No email, LinkedIn or company website**. On a seat set to **LinkedIn only**, the contact also needs a LinkedIn profile URL; without one it reads **No LinkedIn URL, and this seat is set to LinkedIn only**.
 7. **Current status** — the contact must not already be active, stopped, or archived.
 8. **Room at the company** — a company holds at most **Max Contacts per Company** people in outreach at once, counted across all seats. A person who gets an outcome, or is archived, frees a place. A contact held back by this cap still reads **Queued**, and the **Next run** forecast still counts it, until a place frees up.
 9. **Daily limit headroom** — new people enter only within the seat's **New people per day** limits.

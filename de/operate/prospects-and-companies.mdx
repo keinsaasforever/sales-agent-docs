@@ -8,7 +8,7 @@ icon: "users"
 
 ## Kontakte und Prospects
 
-Im Tab **Kontakte** zeigt die Spalte **Phase** die Phase jedes Kontakts, der bereits Prospect ist. Ein Kontakt, der noch nicht in der Ansprache ist, zeigt **In Warteschlange**, wenn der erste Pipeline-Schritt ihn übernimmt, oder **Nicht in der Pipeline**, wenn nicht. Fahre mit der Maus über das Badge, um den Grund zu sehen: kein zugewiesener Seat, ein ICP-Score unter dem Pipeline-Minimum, **Jobtitel oder Name fehlt**, **Keine E-Mail, kein LinkedIn-Profil und keine Unternehmenswebsite** oder ein Unternehmensabgleich, der geprüft werden muss. Ein Kontakt wird nur Prospect, wenn er Vorname, Nachname, Jobtitel und einen Weg hat, ihn zu erreichen; siehe [So gelangen Kontakte in die Queue](/de/configure/add-prospects#so-gelangen-kontakte-in-die-queue). Die Spalte **Unternehmensabgleich** zeigt **Zu prüfen**, **Als falsch bestätigt**, **Arbeitgeber gewechselt**, **Arbeitgeber prüfen** oder **Arbeitet woanders** für [angehaltene Kontakte](#angehaltene-kontakte). Die Spalte **ICP** zeigt den Score des Kontakts als Chip, eingefärbt nach seinem Band; siehe [Score-Chips lesen](/de/configure/icp-and-scoring#score-chips-lesen).
+Im Tab **Kontakte** zeigt die Spalte **Phase** die Phase jedes Kontakts, der bereits Prospect ist. Ein Kontakt, der noch nicht in der Ansprache ist, zeigt **In Warteschlange**, wenn der erste Pipeline-Schritt ihn übernimmt, oder **Nicht in der Pipeline**, wenn nicht. Fahre mit der Maus über das Badge, um den Grund zu sehen: kein zugewiesener Seat, ein ICP-Score unter dem Pipeline-Minimum, **Jobtitel oder Name fehlt**, **Keine E-Mail, kein LinkedIn-Profil und keine Unternehmenswebsite**, **Keine LinkedIn-URL, und dieser Seat ist auf „Nur LinkedIn“ eingestellt** oder ein Unternehmensabgleich, der geprüft werden muss. Ein Kontakt wird nur Prospect, wenn er Vorname, Nachname, Jobtitel und einen Weg hat, ihn zu erreichen; siehe [So gelangen Kontakte in die Queue](/de/configure/add-prospects#so-gelangen-kontakte-in-die-queue). Die Spalte **Unternehmensabgleich** zeigt **Zu prüfen**, **Als falsch bestätigt**, **Arbeitgeber gewechselt**, **Arbeitgeber prüfen** oder **Arbeitet woanders** für [angehaltene Kontakte](#angehaltene-kontakte). Die Spalte **ICP** zeigt den Score des Kontakts als Chip, eingefärbt nach seinem Band; siehe [Score-Chips lesen](/de/configure/icp-and-scoring#score-chips-lesen).
 
 **Telefon** und **E-Mail** stehen in beiden Tabs nach **Jobtitel**. **E-Mail** ist die Adresse, an die der Sales Agent senden würde. **Telefon** ist die Nummer zum Anrufen: Wähle sie, um anzurufen, oder lies **Funktioniert nicht** bei einer Nummer, die probiert wurde und nicht funktioniert, und **Nicht gefunden**, wenn eine Suche leer zurückkam. Bei einer Person, die um Stopp gebeten hat oder deren Unternehmen auf deiner Sperrliste steht, erscheinen Nummer und Adresse grau statt als Links; fahre mit der Maus darüber, um den Grund zu sehen. **Nicht interessant** ist dein eigenes Urteil, deshalb bleiben diese Links bestehen.
 
@@ -28,7 +28,7 @@ Wähle mehrere Zeilen, um sie gemeinsam zu bearbeiten: **Ergebnis festlegen…**
 
 ## Der Datensatz eines Prospects
 
-Ein Prospect öffnet sich in einem Seitenpanel. Neben dem Namen stehen die Kaufabsicht des Unternehmens (wenn es eine hat), die Ergebnis-Auswahl und Symbole für **Archivieren**, **Übergeben** (Admins) und **Diese Person überall löschen** (Admins). Darunter folgen bis zu fünf Tabs: **Info**, **Signale** (sobald für das Unternehmen Signale gefunden wurden), **Verlauf**, **Notizen** und **Kollegen**.
+Ein Prospect öffnet sich in einem Seitenpanel. Neben dem Namen stehen die Kaufabsicht des Unternehmens (wenn es eine hat), die Ergebnis-Auswahl und Symbole für **Archivieren**, **Übergeben** (Admins) und **Diese Person überall löschen**. Darunter folgen bis zu fünf Tabs: **Info**, **Signale** (sobald für das Unternehmen Signale gefunden wurden), **Verlauf**, **Notizen** und **Kollegen**.
 
 ### Info
 
@@ -127,14 +127,14 @@ Wähle **Filter** über **Unternehmen**, **Prospects → Kontakte** oder **Prosp
 
 ## Eine Liste als CSV exportieren
 
-Admins laden eine Liste über **Export** in der Werkzeugleiste von **Unternehmen**, **Prospects → Kontakte** und **Prospects → Prospects** herunter. Die Datei enthält die Zeilen, die die Tabelle zeigt, in ihrer Reihenfolge, mit mehr Spalten, als die Tabelle hat. Bei Prospects gehören dazu jede Nachricht mit Betreff, Text, Status und Sendedatum, die Phase und die Outreach-Daten, die Antworten, Anrufergebnisse und Notizen.
+Über **Export** in der Werkzeugleiste von **Unternehmen**, **Prospects → Kontakte** und **Prospects → Prospects** lädst du eine Liste herunter. Die Datei enthält die Zeilen, die die Tabelle zeigt, in ihrer Reihenfolge, mit mehr Spalten, als die Tabelle hat. Bei Prospects gehören dazu jede Nachricht mit Betreff, Text, Status und Sendedatum, die Phase und die Outreach-Daten, die Antworten, Anrufergebnisse und Notizen.
 
 Schränkt kein Filter, kein Phasen-Tab und kein Schalter die Liste ein, fragt **Export** nur nach dem Format. Sonst zeigt **Als CSV exportieren**, wie viele Zeilen die Ansicht enthält, und die Filter als Chips: **N exportieren** lädt die Ansicht herunter, **Alle N exportieren** die ganze Liste. Wähle das Format passend dazu, wo du die Datei öffnest:
 
 - **Für Excel** trennt Spalten mit Semikolons, die Excel in einer deutschen Region in Spalten öffnet. Es ist vorausgewählt.
 - **Für einen CRM-Import** trennt Spalten mit Kommas, wie CRM-Importe sie erwarten.
 
-Mitglieder sehen **Export** nicht.
+Mitglieder exportieren die Listen, die sie sehen: nur ihre eigenen Seats.
 
 ## Personen oder ein Unternehmen an einen anderen Seat abgeben
 
@@ -150,6 +150,8 @@ Ungesendete Entwürfe der Personen, die wechseln, werden gelöscht, und der neue
 
 ## Eine Person überall löschen
 
-Bittet jemand darum, seine Daten zu löschen, entfernen Admins die Person mit dem Symbol **Diese Person überall löschen** (eine Waage) neben dem Namen im Panel eines Kontakts oder Prospects. Nutze es nur für eine solche Bitte (DSGVO); um die Ansprache zu stoppen, ohne zu löschen, nutze ein Ergebnis oder **Archivieren**. Lies die Bestätigung und wähle dann **Überall löschen**. Kontakt, Nachrichten, Notizen, Unterhaltungen und Verlauf verschwinden aus dem Sales Agent, Dubletten eingeschlossen. Hat die Person geantwortet, wird auch diese Unterhaltung gelöscht. Ist sie der Hauptkontakt des Deals eines Unternehmens, behält das Unternehmen seine Phase, ohne Hauptkontakt. Das Unternehmen bleibt, und E-Mails in deinem eigenen Postfach bleiben dort. Das lässt sich nicht rückgängig machen.
+Bittet jemand darum, seine Daten zu löschen, entfernst du die Person mit dem Symbol **Diese Person überall löschen** (eine Waage) neben dem Namen im Panel eines Kontakts oder Prospects. Nutze es nur für eine solche Bitte (DSGVO); um die Ansprache zu stoppen, ohne zu löschen, nutze ein Ergebnis oder **Archivieren**. Lies die Bestätigung und wähle dann **Überall löschen**. Kontakt, Nachrichten, Notizen, Unterhaltungen und Verlauf verschwinden aus dem Sales Agent, Dubletten eingeschlossen. Hat die Person geantwortet, wird auch diese Unterhaltung gelöscht. Ist sie der Hauptkontakt des Deals eines Unternehmens, behält das Unternehmen seine Phase, ohne Hauptkontakt. Das Unternehmen bleibt, und E-Mails in deinem eigenen Postfach bleiben dort. Das lässt sich nicht rückgängig machen.
+
+Admins können jede Person löschen. Ein Mitglied kann eine Person löschen, die nur auf seinen eigenen Seats liegt. Ist die Person auch auf dem Seat einer Kollegin oder eines Kollegen, sagt das Dashboard **Diese Person ist auch auf dem Seat einer Kollegin oder eines Kollegen. Bitte einen Admin, sie zu löschen.** Das Löschen funktioniert auch, solange das Dashboard **Agent pausiert — Zahlung fehlgeschlagen.** zeigt.
 
 Der Sales Agent behält nur einen Fingerabdruck der E-Mail-Adresse und des LinkedIn-Profils der Person, damit sie nie wieder kontaktiert wird und nie wieder als Lead zurückkommt. Für einen Widerspruch, der dich per Telefon oder Brief erreicht hat, nutze **Nicht kontaktieren** unter [**Einstellungen → Sperrliste**](/de/configure/blacklist#outreach-an-eine-person-stoppen).
