@@ -23,7 +23,7 @@ Gib in der Karte **Gesperrte Unternehmen & Domains** eines der folgenden Felder 
 - **Unternehmensname**: wird mit den Namen abgeglichen, die in den Quellen auftauchen
 - **Domain**: wird mit der Web-Domain des Unternehmens abgeglichen (z. B. `acme.com`)
 
-Für viele Einträge auf einmal wähle **CSV hochladen**. Die Datei braucht eine Spalte für Unternehmensnamen, für Domains oder beide; eine einzelne Spalte ohne Kopfzeile wird als Unternehmensnamen gelesen.
+Für viele Einträge auf einmal wähle **CSV hochladen**. Die Datei braucht eine Spalte für Unternehmensnamen, für Domains oder beide; eine einzelne Spalte ohne Kopfzeile wird als Unternehmensnamen gelesen. Ein Titelblock über der Kopfzeile wird übersprungen. Eine Spalte kann Domains oder E-Mail-Adressen enthalten, auch mehrere pro Zelle, und jede Domain der Datei bleibt erhalten: Ein Unternehmen mit mehr als einer Domain bekommt für jede einen Eintrag. Ein privates Postfach, etwa ein kostenloser E-Mail-Anbieter oder der Mail-Host eines Internetanbieters, wird nie zur Unternehmensdomain, eine Adresse dort fügt also nichts hinzu. Die Zeile unter dem Upload sagt **N private E-Mail-Domains ausgelassen**.
 
 Der Sales Agent normalisiert Namen und Domains und überspringt Einträge, die schon auf der Liste stehen, ohne Meldung. Ein Eintrag greift auch bei einem Unternehmen unter den anderen Domains und Namen, unter denen es bekannt ist, etwa einer Länderseite.
 

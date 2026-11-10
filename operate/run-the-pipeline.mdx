@@ -33,6 +33,8 @@ Each seat works through these steps in order:
 
 Each step picks up its own eligible contacts, so a step with nothing to do does not stop the next one. On a seat with LinkedIn switched off, not connected, or paused, the LinkedIn actions are skipped and email continues. A message to someone on their public holiday is held for a later run; see [Public holidays](/configure/schedule-and-limits#public-holidays).
 
+On a seat that runs on a schedule, the run sends no emails itself. The first emails and email follow-ups it gets ready go out one at a time over the working day, and the LinkedIn work stays in the run. See [When emails go out](/configure/schedule-and-limits#when-emails-go-out).
+
 The run executes in the background. While it is active, the row shows **Pipeline running** with the number of active flows and a link, **View activity**, to **Activity**, and its dot blinks green. When it ends, a line below the row reads **Pipeline finished — see Activity for results.** A full run can take a few hours, because LinkedIn actions are spaced out.
 
 <Warning>
@@ -49,7 +51,7 @@ Open **Advanced**, the arrow next to **Run Now** in the **Pipeline** row, to run
 - **Outreach** — sends approved emails and LinkedIn messages. Takes on no new contacts and writes no new messages.
 - **Follow-ups** — checks for replies and sends due email and LinkedIn follow-ups only.
 
-Each part stops at its end; it does not continue into later steps. Every part still applies its normal gates, daily limits, and delivery mode. With approval switched off, messages written by a **Messages** run go out on the next **Outreach** or full run.
+Each part stops at its end; it does not continue into later steps. Every part still applies its normal gates, daily limits, and delivery mode. With approval switched off, messages written by a **Messages** run go out on the next **Outreach** or full run. On a seat that runs on a schedule, the emails among them go out at the day's email times instead.
 
 ## Daily limits and repeated runs
 
@@ -63,6 +65,7 @@ Each seat runs one pipeline at a time. While a run is active on a seat, a new st
 
 - A run stopped within about 30 seconds of starting is cancelled before anything goes out: **Run stopped. Nothing was sent.**
 - A run that is further along finishes the contact it is working on, saves it, and takes no new one: **Stopping — finishing the current step so nothing is lost.**
+- Stopping a full run also ends the rest of that day's [email send times](/configure/schedule-and-limits#when-emails-go-out) for the seat.
 
 <Warning>
   Stopping a run prevents further work in that run. It does not undo or recall anything that has already been sent.

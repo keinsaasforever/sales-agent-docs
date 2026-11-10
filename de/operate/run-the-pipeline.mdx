@@ -20,6 +20,8 @@ Jeder Seat arbeitet diese Schritte der Reihe nach ab:
 
 Jeder Schritt holt sich seine eigenen geeigneten Kontakte. Ein Schritt ohne Arbeit hält den nächsten also nicht auf. Auf einem Seat mit ausgeschaltetem, nicht verbundenem oder pausiertem LinkedIn werden die LinkedIn-Aktionen übersprungen, E-Mail läuft weiter. Eine Nachricht an jemanden an seinem gesetzlichen Feiertag wird für einen späteren Lauf zurückgehalten; siehe [Feiertage](/de/configure/schedule-and-limits#feiertage).
 
+Bei einem Seat, der nach Zeitplan läuft, versendet der Lauf selbst keine E-Mails. Die ersten E-Mails und E-Mail-Follow-ups, die er vorbereitet, gehen einzeln über den Arbeitstag verteilt raus, und die LinkedIn-Arbeit bleibt im Lauf. Siehe [Wann E-Mails rausgehen](/de/configure/schedule-and-limits#wann-e-mails-rausgehen).
+
 Die Arbeit läuft im Hintergrund. Solange sie aktiv ist, zeigt die Zeile **Pipeline läuft** mit der Anzahl aktiver Abläufe und einem Link, **Aktivität ansehen**, zu **Aktivität**, und ihr Punkt blinkt grün. Am Ende steht unter der Zeile **Pipeline abgeschlossen – Ergebnisse findest du unter Aktivität.** Ein vollständiger Lauf kann einige Stunden dauern, weil LinkedIn-Aktionen zeitlich verteilt werden.
 
 <Warning>
@@ -36,7 +38,7 @@ Zeigt **Start** für einen Seat **LinkedIn ist pausiert**, wähle zuerst **Linke
 - **Outreach** — sendet freigegebene E-Mails und LinkedIn-Nachrichten. Nimmt keine neuen Kontakte auf und schreibt keine neuen Nachrichten.
 - **Follow-ups** — prüft auf Antworten und sendet nur fällige E-Mail- und LinkedIn-Follow-ups.
 
-Jeder Teil endet mit seinem eigenen Schritt und läuft nicht in spätere Schritte weiter. Jeder Teil wendet weiterhin seine normalen Gates, Tageslimits und den Versandmodus an. Ist die Freigabe ausgeschaltet, gehen Nachrichten aus einem **Nachrichten**-Lauf mit dem nächsten **Outreach**- oder vollständigen Lauf hinaus.
+Jeder Teil endet mit seinem eigenen Schritt und läuft nicht in spätere Schritte weiter. Jeder Teil wendet weiterhin seine normalen Gates, Tageslimits und den Versandmodus an. Ist die Freigabe ausgeschaltet, gehen Nachrichten aus einem **Nachrichten**-Lauf mit dem nächsten **Outreach**- oder vollständigen Lauf hinaus. Bei einem Seat, der nach Zeitplan läuft, gehen die E-Mails darunter stattdessen zu den E-Mail-Versandzeiten des Tages raus.
 
 ## Tageslimits und wiederholte Läufe
 
@@ -50,6 +52,7 @@ Jeder Seat führt nur einen Lauf gleichzeitig aus. Solange auf einem Seat ein La
 
 - Ein Lauf, der in den ersten rund 30 Sekunden gestoppt wird, wird abgebrochen, bevor etwas hinausgeht: **Durchlauf gestoppt. Es wurde nichts gesendet.**
 - Ein weiter fortgeschrittener Lauf schließt den Kontakt ab, den er gerade bearbeitet, speichert ihn und nimmt keinen neuen mehr: **Wird gestoppt – der aktuelle Schritt wird noch abgeschlossen, damit nichts verloren geht.**
+- Stoppst du einen vollständigen Lauf, enden auch die restlichen [E-Mail-Versandzeiten](/de/configure/schedule-and-limits#wann-e-mails-rausgehen) dieses Tages für den Seat.
 
 <Warning>
   Das Stoppen verhindert weitere Arbeit in diesem Lauf. Bereits Versendetes wird nicht rückgängig gemacht oder zurückgerufen.

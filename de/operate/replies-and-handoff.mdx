@@ -49,7 +49,7 @@ Schreibt die Person erneut auf LinkedIn, kehrt der Prospect zu **Geantwortet** z
 
 ## Die Call-Liste abtelefonieren
 
-Der Tab **Anzurufen** unter **Prospects** listet Prospects mit funktionierender Telefonnummer, die für einen Anruf fällig sind. Standardmäßig kommt ein Prospect auf die Liste, wenn alle Follow-ups gesendet sind. Admins ändern das unter **Einstellungen → Zielgruppe** im Bereich **Call-Liste** (**Lead im Tab „Anzurufen“ anzeigen**): **Nie**, **Wenn die Kontaktanfrage gesendet wird**, **Wenn die Kontaktanfrage angenommen wird**, **Wenn die erste Nachricht gesendet wird** oder **Wenn alle Follow-ups abgeschlossen sind (Standard)**. Die Einstellung ändert nie, was der Agent sendet oder wann.
+Der Tab **Anzurufen** unter **Prospects** listet Prospects mit funktionierender Telefonnummer, die für einen Anruf fällig sind. Standardmäßig kommt ein Prospect auf die Liste, wenn alle Follow-ups abgeschlossen sind, das heißt, wenn auf keinem Kanal mehr etwas zu senden ist. Eine LinkedIn-Einladung ohne Antwort nach 30 Tagen hält einen Prospect nicht mehr zurück, sodass er in **Anzurufen** und im Tab **Follow-ups erledigt** landet. Admins ändern das unter **Einstellungen → Zielgruppe** im Bereich **Call-Liste** (**Lead im Tab „Anzurufen“ anzeigen**): **Nie**, **Wenn die Kontaktanfrage gesendet wird**, **Wenn die Kontaktanfrage angenommen wird**, **Wenn die erste Nachricht gesendet wird** oder **Wenn alle Follow-ups abgeschlossen sind (Standard)**. Die Einstellung ändert nie, was der Agent sendet oder wann.
 
 Ein Prospect mit **Nicht erreichbar** und Telefonnummer steht immer auf der Liste. Ein Prospect, der geantwortet hat oder dessen Call mit **Mehr Infos senden** endete, nicht.
 
@@ -87,8 +87,8 @@ Hat die Suche nichts gefunden, steht dort **Keine Telefonnummer gefunden**. Mit 
 
 - Eine **Abwesenheitsnotiz** ist keine Antwort. Der Sales Agent liest das Rückkehrdatum und hält E-Mail- und LinkedIn-Follow-ups bis zum Werktag danach zurück, höchstens 90 Tage. Ohne lesbares Datum wartet er fünf Werktage. Unter **Aktueller Stand** im Tab **Verlauf** steht **Pausiert – abwesend** mit dem frühesten Follow-up-Datum, die Spalte **Antworten** zeigt **Abwesend**. Eine echte Antwort oder ein Bounce beendet die Pause.
 - Eine automatische Antwort, laut der die Person das **Unternehmen verlassen** hat, gilt als falsche Person, nicht als Abwesenheit.
-- Nennt eine automatische Antwort die **neue E-Mail-Adresse** der Person, gehen Follow-ups an diese Adresse.
-- Ein **Bounce** markiert die Adresse als nicht funktionierend und sie wird nie wieder verwendet. Der Sales Agent sucht eine andere Adresse, was Credits verbrauchen kann. Findet er eine, läuft die Sequenz dort weiter. Sonst geht es nur über LinkedIn weiter, oder der Prospect wird **Nicht erreichbar**, wenn LinkedIn nicht verfügbar ist.
+- Nennt eine automatische Antwort die **neue E-Mail-Adresse** der Person, wird diese Adresse zur E-Mail-Adresse des Kontakts, und Follow-ups gehen an sie. Die alte bleibt im E-Mail-Verlauf des Kontakts als **Ersetzt** stehen.
+- Ein **Bounce** markiert die Adresse als nicht funktionierend und sie wird nie wieder verwendet. Der Sales Agent sucht eine andere Adresse, was Credits verbrauchen kann. Findet er eine, läuft die Sequenz dort weiter. Sonst geht es nur über LinkedIn weiter. Ist LinkedIn ebenfalls nicht verfügbar, wird der Prospect **Nicht erreichbar**, wenn eine nutzbare Telefonnummer vorliegt, und andernfalls als **Weder E-Mail noch LinkedIn-Profil gefunden** archiviert.
 
 Diese Fälle laufen automatisch. Greife nur ein, wenn ein Prospect nach dem Rückkehrdatum oder nach der Adresssuche hängen bleibt.
 

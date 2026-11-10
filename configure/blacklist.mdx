@@ -23,7 +23,7 @@ In the **Blocked Companies & Domains** card, enter one or both of the following 
 - **Company name** — matched against names found across sources
 - **Domain** — matched against the company's web domain (e.g., `acme.com`)
 
-To add many entries at once, select **Upload CSV**. The file needs a company name column, a domain column, or both; a single column without a header is read as company names.
+To add many entries at once, select **Upload CSV**. The file needs a company name column, a domain column, or both; a single column without a header is read as company names. A title block above the header row is skipped. A column can hold domains or email addresses, several to a cell, and every domain in the file is kept: a company with more than one domain gets one entry for each. A private mailbox, such as a free email provider or an internet provider's mail host, never becomes a company domain, so an address there adds nothing. The line under the upload says **Left out N private email domains**.
 
 The Sales Agent normalizes names and domains and silently skips entries that already exist on the list. An entry also matches a company under the other domains and names it is known by, such as a country site.
 
