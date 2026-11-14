@@ -9,7 +9,7 @@ icon: "users"
 
 ## Contacts and prospects
 
-On the **Contacts** tab, the **Stage** column shows the stage of each contact who is already a prospect. A contact who is not in outreach yet shows **Queued** when the first pipeline step will pick them up, or **Not in pipeline** when it will not. Hover the badge to see why: no seat assigned, an ICP score below the pipeline minimum, **Missing job title or name**, **No email, LinkedIn or company website**, or a company match that needs review. A contact becomes a prospect only with a first name, a last name, a job title, and one way to reach them; see [How contacts reach the queue](/configure/add-prospects#how-contacts-reach-the-queue). The **Company match** column shows **Needs review**, **Confirmed wrong**, **Changed employer**, **Check employer**, or **Works elsewhere** for [contacts held back](#contacts-held-back). The **ICP** column shows the contact's score as a chip colored by its band; see [Read the score chips](/configure/icp-and-scoring#read-the-score-chips).
+On the **Contacts** tab, the **Stage** column shows the stage of each contact who is already a prospect. A contact who is not in outreach yet shows **Queued** when the first pipeline step will pick them up, or **Not in pipeline** when it will not. Hover the badge to see why: no seat assigned, an ICP score below the pipeline minimum, **Missing job title or name**, **No email, LinkedIn or company website**, **No LinkedIn URL, and this seat is set to LinkedIn only**, or a company match that needs review. A contact becomes a prospect only with a first name, a last name, a job title, and one way to reach them; see [How contacts reach the queue](/configure/add-prospects#how-contacts-reach-the-queue). The **Company match** column shows **Needs review**, **Confirmed wrong**, **Changed employer**, **Check employer**, or **Works elsewhere** for [contacts held back](#contacts-held-back). The **ICP** column shows the contact's score as a chip colored by its band; see [Read the score chips](/configure/icp-and-scoring#read-the-score-chips).
 
 **Phone** and **Email** sit after **Job Title** on both tabs. **Email** is the address the Sales Agent would send to. **Phone** is the number to dial: select it to call, or read **Not working** for a number that was tried and does not work, and **Not found** once a lookup came back empty. For a person who asked to stop, or whose company is on your blacklist, the number and the address show greyed instead of as links; hover one to see why. **Not interesting** is your own verdict, so those links stay.
 
@@ -29,7 +29,7 @@ Select several rows to act on them together: **Set outcome…**, **Archive**, **
 
 ## The prospect record
 
-A prospect opens in a side panel. Next to the name sit the company's buying intent (when it has any), the outcome selector, and icons for **Archive**, **Hand over** (admins), and **Delete this person everywhere** (admins). Below are up to five tabs: **Info**, **Signals** (once signals were found for the company), **Timeline**, **Notes**, and **Colleagues**.
+A prospect opens in a side panel. Next to the name sit the company's buying intent (when it has any), the outcome selector, and icons for **Archive**, **Hand over** (admins), and **Delete this person everywhere**. Below are up to five tabs: **Info**, **Signals** (once signals were found for the company), **Timeline**, **Notes**, and **Colleagues**.
 
 ### Info
 
@@ -128,14 +128,14 @@ Select **Filter** above **Companies**, **Prospects → Contacts**, or **Prospect
 
 ## Export a list as CSV
 
-Admins can download a list with **Export** in the toolbar of **Companies**, **Prospects → Contacts**, and **Prospects → Prospects**. The file holds the rows the table shows, in its order, with more columns than the table has. For prospects, that includes every message with its subject, text, status, and sent date, the stage and outreach dates, the replies, call results, and notes.
+Download a list with **Export** in the toolbar of **Companies**, **Prospects → Contacts**, and **Prospects → Prospects**. The file holds the rows the table shows, in its order, with more columns than the table has. For prospects, that includes every message with its subject, text, status, and sent date, the stage and outreach dates, the replies, call results, and notes.
 
 When no filter, stage tab, or toggle narrows the list, **Export** asks only for the format. Otherwise, **Export as CSV** shows how many rows the view holds and the filters as chips: **Export N** downloads the view, and **Export all N** downloads the whole list. Pick the format that matches where you open the file:
 
 - **For Excel or a CRM import** separates columns with commas, as CRM imports and Excel in an English region expect. It is preselected.
 - **For German Excel** separates columns with semicolons, which Excel opens in columns in a German region.
 
-Members do not see **Export**.
+Members export the lists they see: their own seats only.
 
 ## Hand people or a company to another seat
 
@@ -151,6 +151,8 @@ Unsent drafts of the people who move are deleted, and the new seat writes its ow
 
 ## Delete a person everywhere
 
-When someone asks you to delete their data, admins remove them with the **Delete this person everywhere** icon (a scale) next to the name in a contact or prospect panel. Use it only for such a request (GDPR); to stop outreach without deleting, use an outcome or **Archive**. Read the confirmation, then select **Delete everywhere**. The contact, messages, notes, conversations, and history go from the Sales Agent, duplicates included. If the person has replied, that conversation is deleted too. If they are the main contact of a company's deal, the company keeps its stage, without a main contact. The company stays, and emails in your own mailbox stay there. It cannot be undone.
+When someone asks you to delete their data, remove them with the **Delete this person everywhere** icon (a scale) next to the name in a contact or prospect panel. Use it only for such a request (GDPR); to stop outreach without deleting, use an outcome or **Archive**. Read the confirmation, then select **Delete everywhere**. The contact, messages, notes, conversations, and history go from the Sales Agent, duplicates included. If the person has replied, that conversation is deleted too. If they are the main contact of a company's deal, the company keeps its stage, without a main contact. The company stays, and emails in your own mailbox stay there. It cannot be undone.
+
+Admins can delete anyone. A member can delete a person who sits only on their own seats. For a person who is also on a colleague's seat, the dashboard says **This person is also on a colleague's seat. Ask an admin to delete them.** Deleting also works while the dashboard shows **Agent paused — payment failed.**
 
 The Sales Agent keeps only a fingerprint of the person's email address and LinkedIn profile, so they are never contacted again and never come back as a lead. For an objection that reached you by phone or letter, use **Do not contact** on [**Settings → Blacklist**](/configure/blacklist#stop-outreach-to-one-person).

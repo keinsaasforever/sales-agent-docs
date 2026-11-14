@@ -15,9 +15,10 @@ In the **Outreach channel** card, set **LinkedIn outreach** for the seat:
 
 - **Both together** — LinkedIn and email run in parallel, so more prospects enter the pipeline each day.
 - **LinkedIn first** — the connection request goes out before the first email. Prospects you cannot reach on LinkedIn are emailed right away, and anyone still waiting after a week is emailed too.
+- **LinkedIn only** — no email for this seat. Outreach and scheduled searches look up no email addresses, no emails or email follow-ups are written or sent, and only people with a LinkedIn profile are taken in. Replies to emails sent earlier still come in, and a lookup you start yourself still runs.
 - **Off** — no LinkedIn actions for this seat; email outreach still runs.
 
-The card warns you when the seat has no LinkedIn account or mailbox connected. Connect them under **Settings → Account**.
+The card warns you when the seat has no LinkedIn account or mailbox connected; with **LinkedIn only** it does not ask for a mailbox. Connect them under **Settings → Account**.
 
 A seat with no connected LinkedIn account does no LinkedIn work, whatever the channel says: its runs skip the LinkedIn steps and email continues. **LinkedIn first** has no invite to wait for there, so first emails go out over the working day instead of a week later. The wait returns once LinkedIn is connected.
 
@@ -78,7 +79,7 @@ Limits are per seat and reset each calendar day. The **Daily Limits** card group
 | Email | **New people per day** | First emails sent. |
 | Email | **Follow-ups per day** | Email follow-ups when an email gets no answer. It cannot be 0, because the same step picks up replies and bounces. To send no email follow-ups, set **Email follow-ups** to 0 instead. |
 
-The LinkedIn limits are hidden when LinkedIn outreach is **Off**. At most the higher of the two **New people per day** numbers enter the pipeline each day, because LinkedIn and email reach the same people. People still waiting for their first message count toward it, so a run tops the pipeline up instead of growing it. The **Next run** count shown on the Home dashboard is the smaller of your eligible contacts and the relevant daily limit. Contacts beyond the cap remain queued and are picked up in a later run.
+The LinkedIn limits are hidden when LinkedIn outreach is **Off**, and the **Email** limits and email lines under **At a glance** are hidden when it is **LinkedIn only**. At most the higher of the two **New people per day** numbers enter the pipeline each day, because LinkedIn and email reach the same people. People still waiting for their first message count toward it, so a run tops the pipeline up instead of growing it. The **Next run** count shown on the Home dashboard is the smaller of your eligible contacts and the relevant daily limit. Contacts beyond the cap remain queued and are picked up in a later run.
 
 With **LinkedIn first**, more new people by email than by invite only makes the extra ones wait a week; then they are emailed without an invite. LinkedIn messages and LinkedIn follow-ups share LinkedIn's message allowance. Follow-ups start a few working days after the first message, so a new seat sends less than these numbers in its first week. A run stops when the amounts are reached, not at a fixed time.
 
@@ -115,6 +116,15 @@ The Sales Agent holds outreach to a person on their public holiday: a first emai
 - A held contact is not skipped or lost. It stays in line and goes out with the next run on a day that is not a holiday for that person. It does not use up the day's limit: the next contact in line takes the slot. A seat that writes to several countries can still send fewer than its limit on a day when one country's holiday holds many contacts.
 - Replies are still read on a holiday, and old invites are still withdrawn.
 - The date is the date in Berlin, whatever the person's country. The **Next run** forecast does not know about holidays, so it can still count a contact who is held that day.
+
+## Pause for a vacation
+
+To stop a seat while its owner is away, set **From** and **Until** in the **Vacation pause** card and save. Both days are included, in the seat's timezone. Each seat has its own pause.
+
+- Nothing goes out from the seat in that time: no first messages, invites, or follow-ups. Replies still come in.
+- **Run Now** does not start a paused seat, and the **Pipeline** row on **Home** reads **Paused until** the last day.
+- **Also pause search jobs** is on by default and pauses the seat's search jobs too. Your automatic search pauses only while every active seat pauses its searches.
+- The card reads **Paused from … to …** before the pause, **Paused until …** during it, and **Ended on …** after it. The seat picks up again on its own. **Remove pause** clears both dates.
 
 ## Set LinkedIn options
 

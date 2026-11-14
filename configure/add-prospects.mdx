@@ -153,8 +153,8 @@ The search looks for Tier 1 titles first and Tier 2 titles only where no Tier 1 
 
 **My jobs**, next to **Add to Pipeline** in the **Add Contacts** group of the menu, lists what runs on its own to fill your pipeline and keep it fresh. Each job is a card with a tag such as **On** or **Off**, one summary line, and its actions; **Details** shows the rest. The cards come in this order:
 
-- Your automatic search, titled after its kind: **People at my companies** or **New companies and their people**; see [Search on a schedule](#search-on-a-schedule).
-- **New companies from signals**, **Watch your companies**, and **Followers and engagement**: the signal jobs. **New companies from signals** and **Watch your companies** show once keinsaas switches them on with you, and **New companies from signals** only while your automatic search is **New companies and their people**. Where signals are not switched on for you, admins see **Followers and engagement** (page followers and post engagement) on its own card. See [Run signal searches from My jobs](/configure/icp-and-scoring#run-signal-searches-from-my-jobs).
+- Your automatic search, one card: **People at my companies**, or for new companies a title that says where they come from, such as **New companies from your Targeting**; see [Search on a schedule](#search-on-a-schedule). Where signals are switched on for you, the new companies' signals sit on this card too.
+- **Followers and engagement** and **Watch your companies**: the other signal jobs. Where signals are not switched on for you, **Followers and engagement** (page followers and post engagement) has its own card. **Watch your companies** shows once keinsaas switches it on with you. See [Run signal searches from My jobs](/configure/icp-and-scoring#run-signal-searches-from-my-jobs).
 - **Sales Navigator import**: for admins; see [Import from Sales Navigator every day](#import-from-sales-navigator-every-day).
 - **Done once**: the searches you started by hand in the last 30 days, running ones first. **Every run in Activity** opens the full history.
 
@@ -170,7 +170,7 @@ Admins set up the automatic search in the **Search our database** card: choose *
 
 Step 5 shows what a day costs and how many runs your balance covers. If the balance cannot cover even one run, nothing is searched until you top up.
 
-On **My jobs**, the automatic search is the first card, titled after its kind. The tag shows **On** or **Off**, and the summary line says what it does, followed by when it runs. Admins switch it off with the card's switch, select **Run now**, **Edit** (the steps open inside the card), or **Delete**, which stops it. Members see the card while the search exists but cannot change it. The card says why a run waits, for example **Paused: N people are waiting, the limit is M** or **Not enough credits for the next run**.
+On **My jobs**, the automatic search is the first card. The tag shows **On** or **Off**, and the summary line says what it does, followed by when it runs, also while it is off. A new automatic search you leave before saving stays as a card tagged **Draft**: **Finish** opens the steps where you stopped, and **Delete** drops it. Admins switch it off with the card's switch, select **Run now**, **Edit** (the steps open inside the card), or **Delete**, which stops it. Members see the card while the search exists but cannot change it. The card says why a run waits, for example **Paused: N people are waiting, the limit is M** or **Not enough credits for the next run**.
 
 ### People at my companies
 
@@ -194,7 +194,7 @@ Where signals are switched on for you, step 3 is **Companies and signals** and h
 
 Under the choice, tick the sources the signals come from; see [New companies from signals](/configure/icp-and-scoring#new-companies-from-signals). Signals and Targeting share the day's **New people a day**. Where only signals are switched on for you, not the search by Targeting, the search takes only companies with a signal.
 
-On **My jobs**, the summary line reads, for example, **Up to 25 new people a day who match your Targeting · Email + phone**, or **Up to 25 new people a day, companies with a fresh signal first**. **Run now** opens a one-time search by Targeting for the day's number. Signals do not run once, so **Only companies with a signal** has no **Run now**. When your Targeting has no new people left, the card reads **No new people left for your Targeting. Change Targeting to find more.**
+On **My jobs**, the card is titled after where the new companies come from: **New companies from your Targeting**, **New companies from signals and your Targeting**, or **New companies from signals**. The summary line reads, for example, **Up to 25 new people a day who match your Targeting · Email + phone**, or **Up to 25 new people a day, companies with a fresh signal first**. **Run now** opens a one-time search by Targeting for the day's number. With **Only companies with a signal**, **Run now** starts the news and job ads search instead; see [New companies from signals](/configure/icp-and-scoring#new-companies-from-signals). When your Targeting has no new people left, the card reads **No new people left for your Targeting. Change Targeting to find more.**
 
 ## Add people or companies by hand
 
@@ -220,9 +220,11 @@ Adding a contact does not guarantee immediate appearance in every queue. Before 
 3. **Company match** — the contact's data must not point to another employer.
 4. **Owner and seat assignment** — the contact must be assigned to a seat. Contacts of a paused seat wait until the seat is switched back on.
 5. **Pipeline ICP threshold** — the contact's score must meet or exceed the configured minimum.
-6. **Complete data and a way to reach them** — the contact needs a first name, a last name, and a job title, and an email address, a LinkedIn profile, or a company website, which the email lookup needs. Otherwise **Not in pipeline** reads **Missing job title or name** or **No email, LinkedIn or company website**.
+6. **Complete data and a way to reach them** — the contact needs a first name, a last name, and a job title, and an email address, a LinkedIn profile, or a company website, which the email lookup needs. Otherwise **Not in pipeline** reads **Missing job title or name** or **No email, LinkedIn or company website**. On a seat set to **LinkedIn only**, the contact also needs a LinkedIn profile URL; without one it reads **No LinkedIn URL, and this seat is set to LinkedIn only**.
 7. **Current status** — the contact must not already be active, stopped, or archived.
 8. **Room at the company** — a company holds at most **Max Contacts per Company** people in outreach at once, counted across all seats. A person who gets an outcome, or is archived, frees a place. A contact held back by this cap still reads **Queued**, and the **Next run** forecast still counts it, until a place frees up.
 9. **Daily limit headroom** — new people enter only within the seat's **New people per day** limits.
+
+Each night, **Contacts completed** fills in what it can for contacts held back by a missing job title, name, or way to reach them, at the companies of seats that run on a schedule. It reads the company's legal notice for job titles and the managers it names, and looks up company websites, LinkedIn profiles, and company LinkedIn pages. It shows in **Activity** with what it completed. A contact titled or added from the legal notice costs 0.25 credits, a job title from a LinkedIn profile 0.1 credits; see [Credits](/safety/credits#what-uses-credits).
 
 On **Prospects**, the **Contacts** tab shows waiting contacts as **Queued** and the rest as **Not in pipeline**; hover the badge to see why. The **Home → Next run** cards show every contact that is ready for the upcoming run. Learn how to [read the queue](/operate/next-run-queue).
