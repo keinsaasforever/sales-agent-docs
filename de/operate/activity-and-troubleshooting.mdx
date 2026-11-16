@@ -15,7 +15,7 @@ Suchen und Importe hatten früher eine eigene Seite, **Jobs**. Sie stehen jetzt 
 
 **Vor dem Durchlauf · ganzes Konto** zeigt, wie Unternehmen und Personen hereinkommen. Ein Weg, der eingeschaltet ist, steht zuerst:
 
-- **Beobachte deine Unternehmen** zeigt **Aus: Wir schalten es auf Anfrage für dich ein**, bis keinsaas sie mit dir einschaltet.
+- **Beobachte deine Unternehmen** erscheint, wo Signale für dein Konto an sind. Admins schalten es unter [**Meine Jobs**](/de/configure/icp-and-scoring#beobachte-deine-unternehmen) ein oder aus.
 - **Sales-Navigator-Import** holt die Personen aus deinen gespeicherten Sales-Navigator-Suchen und -Listen. Er startet mit deiner täglichen Pipeline.
 - **Unternehmenssuche** erscheint, wo sie für dein Konto eingeschaltet ist.
 - **Von dir hinzugefügt** umfasst CSV-Uploads, Sales-Navigator-Links und Suchen, die du von Hand gestartet hast.
@@ -76,6 +76,8 @@ Findet die Suche eines Mitglieds Leads, die zum Gebiet eines Kollegen gehören, 
 ### Laufstatus
 
 Jeder Lauf und jeder Schritt endet mit **Erfolgreich**, **Mit Problemen abgeschlossen**, **Übersprungen**, **Gestoppt** oder **Fehlgeschlagen**. [Pipeline ausführen](/de/operate/run-the-pipeline#lauf-stoppen) erklärt jeden Status. Der Status eines Laufs fasst seine Schritte zusammen, daher kann ein Lauf mit **Erfolgreich** Schritte mit **Übersprungen** enthalten.
+
+Ein Pipeline-Lauf hat ein Zeitlimit. Ist es erreicht, steht unter seinem Status **Nicht alles hat in diesen Durchlauf gepasst. Der Rest folgt im nächsten.** Nichts wird mittendrin abgebrochen: Jeder Schritt macht die Person fertig, an der er gerade arbeitet, und was nicht mehr gepasst hat, wartet auf den nächsten Lauf.
 
 Wenn du die Ursache selbst beheben kannst, sagt es der Grund unter dem Status. Ein fehlgeschlagener Lauf zeigt, was du tun kannst:
 
