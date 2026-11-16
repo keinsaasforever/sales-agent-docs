@@ -15,7 +15,7 @@ Searches and imports used to have a page of their own, **Jobs**. They are now in
 
 **Before the run · whole account** shows how companies and people come in. A way that is switched on comes first:
 
-- **Watch your companies** shows **Off: we switch it on for you on request** until keinsaas switches it on with you.
+- **Watch your companies** shows where signals are on for your account. Admins switch it on or off on [**My jobs**](/configure/icp-and-scoring#watch-your-companies).
 - **Sales Navigator import** brings in the people from your saved Sales Navigator searches and lists. It starts with your daily pipeline.
 - **Company search** appears where it is switched on for your account.
 - **Added by you** covers CSV uploads, Sales Navigator links, and searches you started by hand.
@@ -76,6 +76,8 @@ When a member's search finds leads that belong to a colleague's territory, those
 ### Run statuses
 
 Each run and each step closes as **Succeeded**, **Completed with issues**, **Skipped**, **Stopped**, or **Failed**. [Run the pipeline](/operate/run-the-pipeline#stop-a-run) explains each one. A run's status sums up its steps, so a **Succeeded** run can contain **Skipped** steps.
+
+A pipeline run has a time limit. When it runs out, the run reads **Not everything fit into this run. The rest follows in the next one.** under its status. Nothing is cut short halfway: each step finishes the person it is working on, and what didn't fit waits for the next run.
 
 When you can fix the cause yourself, the reason under the status says so. A failed run shows what you can do about it:
 
