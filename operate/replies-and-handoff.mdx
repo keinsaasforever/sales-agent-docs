@@ -45,7 +45,7 @@ When a reply arrives, move quickly and personally:
 
 <Steps>
   <Step title="Open the thread">
-    Select **Reply now** on the reply card to open the exact email or LinkedIn thread in a new tab. The **Timeline** tab has **View Email** and **View LinkedIn**, each naming the mailbox or seat it belongs to. On the **Prospects** list, hover the **Email Sent** or **LinkedIn Sent** date or the **Reply** badge for the same buttons. A thread opens only if you are signed in to that mailbox or that seat's LinkedIn.
+    Select **Reply now** on the reply card to open the exact email or LinkedIn thread in a new tab. The **Timeline** tab has **View Email** and **View LinkedIn**, each naming the mailbox or seat it belongs to. On the **Prospects** list, hover the **Email Sent** or **LinkedIn Sent** date or the **Reply** badge for the same buttons. A thread opens only if you are signed in to that mailbox or that seat's LinkedIn. On a seat with Sales Navigator, a LinkedIn conversation can sit in the Sales Navigator inbox, and the link then opens it there.
 
     **Reply now** also marks the reply answered, and a prospect whose reply wanted an answer moves from **Replied** to **In conversation**. When the exact thread is not known, the button is hidden and **Mark answered** takes its place: select it once you have answered elsewhere. The card then shows **Answered** with the date and **Undo**, for a click that only read the reply.
 
@@ -110,6 +110,7 @@ If the lookup found nothing, the section says **No phone found**. Select **Add n
 Not all replies indicate real engagement:
 
 - An **out-of-office** reply is not a reply. The Sales Agent reads the return date and holds both email and LinkedIn follow-ups until the working day after it, for at most 90 days. Without a readable date, it waits five working days. The timeline's **Current state** shows **Paused — out of office** with the first possible follow-up date, and the **Reply** column shows **Out of office**. A real reply or a bounce ends the pause.
+- An automatic receipt from a helpdesk or ticket system, such as "We have received your request", is treated like an out-of-office reply: it is not a reply and gives no return date, so follow-ups wait five working days. The Sales Agent recognizes these receipts in English and German.
 - An auto-reply saying the person has **left the company** is treated as not the right person, not as an absence.
 - When an auto-reply gives the person's **new email address**, that address becomes the contact's email and follow-ups go to it. The old one stays in the contact's email history as **Replaced**.
 - A **bounced email** marks that address as not working, and it is never used again. The Sales Agent looks for another address, which may use credits. If it finds one, the sequence continues there. If not, the prospect continues on LinkedIn only. When LinkedIn is not available either, the prospect becomes **Unreachable** if a usable phone number is on file, and is archived as **No email or LinkedIn found** if not.
