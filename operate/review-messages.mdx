@@ -16,8 +16,10 @@ The list sits on the left and the open message on the right. On a phone, the mes
 | Tab | What it lists |
 | --- | --- |
 | **Needs approval** | Messages waiting for your decision. Shown only while approval is required. |
-| **Next to send** | Approved messages. Called **Queued** when approval is off. The count includes only messages the next run will send; a line under the tabs says how many listed messages are not going out on the next run. |
-| **Not going out** | Drafts that cannot be sent: the seat is switched off, LinkedIn is off for the seat, the seat is set to **LinkedIn only** (an email draft), LinkedIn is closed for this contact, or there is no deliverable address. |
+| **Next to send** | Approved messages. Called **Queued** when approval is off. The ones the next run sends come first; messages that wait for something sit below them. The count includes only messages the next run will send; a line under the tabs says how many listed messages are not going out on the next run. |
+| **Not going out** | Drafts that cannot be sent: the seat is switched off, LinkedIn is off for the seat, the seat is set to **LinkedIn only** (an email draft), the seat has no mailbox connected (an email draft), LinkedIn is closed for this contact, or there is no deliverable address. |
+
+**Messages** opens on **Needs approval** when approval is required and a message waits for you. Otherwise it opens on **Next to send**, or on **Not going out** when every draft sits there.
 
 A badge on a row shows its state:
 
@@ -25,10 +27,10 @@ A badge on a row shows its state:
 | --- | --- |
 | **Sending** | A running pipeline is sending this message. |
 | **Held back** | The message is not sent as it stands. See [Held-back messages](#held-back-messages). |
-| **Waiting** | The message waits for something first, for example its LinkedIn invite or a reconnected LinkedIn account. The open message says what. |
+| **Waiting** | The message waits for something first, for example its LinkedIn invite, a reconnected LinkedIn account or mailbox, a paused mailbox you resume, the end of the seat's vacation pause, or the date you set to [get back to the person](/operate/replies-and-handoff#get-back-to-a-prospect-later). The open message says what. |
 | **Approve to send** | Approval is off, but this message was written while it was on, so it waits for your approval. |
 
-The open message shows the contact, company, seat, and the date it was generated. A line at the top says what the message was built on, such as a signal from the contact's LinkedIn posts, or that it was written from their role and company. Email messages show the **To** address. Expand **Strategy brief** to see why the message was written.
+The open message shows the contact, company, seat, and the date it was generated. Its badge always matches the one on its row. Select the contact's name, which shows in blue, to open their prospect panel over **Messages**. A line at the top says what the message was built on, such as a signal from the contact's LinkedIn posts, or that it was written from their role and company. Email messages show the **To** address. Expand **Strategy brief** to see why the message was written.
 
 ## Message actions
 
@@ -52,9 +54,13 @@ Before you confirm, describe what was wrong in **Optional: what was wrong with i
 
 **Regenerate** is unavailable when nothing would rewrite the draft, for example when the contact has not been researched yet, the seat has no mailbox connected, or the LinkedIn invite has not gone out. The open message says why.
 
+### Archive
+
+Select the **Archive** icon, the first button in the bar, to take a person out of outreach without a verdict, for example when you are already in touch with them outside the Sales Agent. Their drafts leave the queue. A confirmation comes first, and an unsaved edit is saved before it archives. Select **Confirm** to archive only this person. Select **All of** the company to also set the company's stage to **Not interesting**, stop outreach to everyone there, and add it to your blacklist. Unarchive the person to bring the draft back.
+
 ### Not interesting
 
-Select **Not interesting** to stop outreach to this person. Their outcome becomes **Not interesting** and their drafts leave the queue; the contact and company records stay. Select **All of** the company instead to do the same for everyone there: the company's stage becomes **Not interesting** and the company is added to your blacklist.
+Select **Not interesting** to stop outreach to this person. A confirmation comes first. Their outcome becomes **Not interesting** and their drafts leave the queue; the contact and company records stay. Select **All of** the company instead to do the same for everyone there: the company's stage becomes **Not interesting** and the company is added to your blacklist.
 
 To fix a bad draft without stopping the person, use **Regenerate** instead.
 
@@ -68,19 +74,21 @@ When approval is required and **Hold back stale drafts** is on under **Settings 
 
 A banner at the top of **Messages** counts held-back messages. Each one is rewritten from current research on the next message run. To send the copy as it stands, select **Send anyway** in the open message. This approves the copy and restarts its 30-day window.
 
+**Send anyway** shows only when the approved message would then go out. While something holds the message, such as a company mismatch, an invite that has not gone out, a paused mailbox, or a date to get back, the button stays hidden and returns when the hold lifts. If the agent rewrote the copy after you opened the page, **Send anyway** refuses and the new copy shows, so you never approve text you have not seen. The banner leaves out messages that are on hold or that nothing can rewrite yet; their cards say why.
+
 ## LinkedIn messages and the invite
 
 A LinkedIn message is written once the connection request has gone out, and it is sent after the invite, not before. Until then it shows **Waiting**. If the invite is still pending, the message shows the date of the next try. If LinkedIn refuses the send to one person, the message reads **LinkedIn refused this message, so it is tried again on** a date a week later, and the run goes on with the next message. On a seat set to send the LinkedIn invite first, the email waits until the invite is out, for 7 days at most.
 
 ## Approval on or off
 
-An admin chooses the delivery mode under **Settings → Schedule → Outreach delivery**: **Approve every message from the dashboard** or **Send everything automatically**. New accounts start with approval on.
+Each seat has its own delivery mode. The seat's owner chooses it under **Settings → Schedule → Outreach delivery**, with the seat picked under **Rep**: **Approve every message from the dashboard** or **Send everything automatically**. New seats start with approval on.
 
 With approval on, a seat's run sends the drafts you approved and writes new ones on the same day: the approved drafts it is about to send do not hold the new ones back. Up to one day's worth of drafts waiting for you, the seat's daily limit for the channel, can wait without slowing anything. After that, new drafts slow down, and they stop at two days' worth; new people for email slow down and stop with them. The top of **Messages** says so while approval is on: **New drafts pause while two days' worth wait for your approval.** Approve what waits, and the next run writes more. Invites need no approval, so new people for LinkedIn invites keep coming in while LinkedIn messages wait, up to the seat's invite limit for the day. A draft cannot go out in the run that writes it: it waits for your approval first.
 
 With approval off, new messages are approved as they are written. They appear under **Queued**, and you can still edit them before the next run sends them.
 
-When an admin switches approval off, messages still waiting for approval are approved on save. With **Hold back stale drafts** on, those written from a post or signal more than 30 days ago are rewritten first; where nothing can rewrite them yet, they stay held back for you to decide.
+When approval is switched off for a seat, that seat's messages still waiting for approval are approved on save. With **Hold back stale drafts** on, those written from a post or signal more than 30 days ago are rewritten first; where nothing can rewrite them yet, they stay held back for you to decide.
 
 ## Review the strategy, not only grammar
 

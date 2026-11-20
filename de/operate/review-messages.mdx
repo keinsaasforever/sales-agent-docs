@@ -15,8 +15,10 @@ Links steht die Liste, rechts die geöffnete Nachricht. Auf dem Smartphone öffn
 | Tab | Inhalt |
 | --- | --- |
 | **Freigabe nötig** | Nachrichten, die auf deine Entscheidung warten. Nur sichtbar, solange die Freigabe aktiv ist. |
-| **Als Nächstes im Versand** | Freigegebene Nachrichten. Heißt **In Warteschlange**, wenn die Freigabe aus ist. Die Zahl zählt nur Nachrichten, die der nächste Lauf versendet; eine Zeile unter den Tabs nennt, wie viele gelistete Nachrichten beim nächsten Lauf nicht hinausgehen. |
-| **Wird nicht gesendet** | Entwürfe, die nicht versendet werden können: Der Seat ist ausgeschaltet, LinkedIn ist für den Seat aus, der Seat ist auf **Nur LinkedIn** eingestellt (bei einem E-Mail-Entwurf), LinkedIn ist für diesen Kontakt geschlossen oder es gibt keine zustellbare Adresse. |
+| **Als Nächstes im Versand** | Freigegebene Nachrichten. Heißt **In Warteschlange**, wenn die Freigabe aus ist. Die Nachrichten, die der nächste Lauf versendet, stehen oben; Nachrichten, die noch auf etwas warten, stehen darunter. Die Zahl zählt nur Nachrichten, die der nächste Lauf versendet; eine Zeile unter den Tabs nennt, wie viele gelistete Nachrichten beim nächsten Lauf nicht hinausgehen. |
+| **Wird nicht gesendet** | Entwürfe, die nicht versendet werden können: Der Seat ist ausgeschaltet, LinkedIn ist für den Seat aus, der Seat ist auf **Nur LinkedIn** eingestellt (bei einem E-Mail-Entwurf), der Seat hat kein Postfach verbunden (bei einem E-Mail-Entwurf), LinkedIn ist für diesen Kontakt geschlossen oder es gibt keine zustellbare Adresse. |
+
+**Nachrichten** öffnet auf **Freigabe nötig**, wenn die Freigabe aktiv ist und eine Nachricht auf dich wartet. Sonst öffnet es auf **Als Nächstes im Versand**, oder auf **Wird nicht gesendet**, wenn alle Entwürfe dort stehen.
 
 Ein Badge in der Zeile zeigt den Zustand:
 
@@ -24,10 +26,10 @@ Ein Badge in der Zeile zeigt den Zustand:
 | --- | --- |
 | **Wird gesendet** | Ein laufender Pipeline-Lauf versendet diese Nachricht. |
 | **Zurückgehalten** | Die Nachricht wird so nicht versendet. Siehe [Zurückgehaltene Nachrichten](#zurückgehaltene-nachrichten). |
-| **Wartet** | Die Nachricht wartet erst auf etwas, etwa auf ihre LinkedIn-Einladung oder ein neu verbundenes LinkedIn-Konto. Die geöffnete Nachricht sagt, worauf. |
+| **Wartet** | Die Nachricht wartet erst auf etwas, etwa auf ihre LinkedIn-Einladung, ein neu verbundenes LinkedIn-Konto oder Postfach, ein pausiertes Postfach, das du fortsetzt, das Ende der Urlaubspause des Seats oder die [Wiedervorlage](/de/operate/replies-and-handoff#wiedervorlage-setzen), die du gesetzt hast. Die geöffnete Nachricht sagt, worauf. |
 | **Zum Senden freigeben** | Die Freigabe ist aus, aber diese Nachricht entstand, als sie aktiv war. Sie wartet deshalb auf deine Freigabe. |
 
-Die geöffnete Nachricht zeigt Kontakt, Unternehmen, Seat und Erstellungsdatum. Eine Zeile oben sagt, worauf die Nachricht aufbaut, etwa auf ein Signal aus den LinkedIn-Posts des Kontakts oder nur auf Rolle und Unternehmen. E-Mails zeigen die Adresse unter **An**. Klappe **Strategie-Briefing** auf, um zu sehen, warum die Nachricht so geschrieben wurde.
+Die geöffnete Nachricht zeigt Kontakt, Unternehmen, Seat und Erstellungsdatum. Ihr Badge stimmt immer mit dem Badge ihrer Zeile überein. Wähle den Namen des Kontakts, er steht in Blau, um sein Prospect-Panel über **Nachrichten** zu öffnen. Eine Zeile oben sagt, worauf die Nachricht aufbaut, etwa auf ein Signal aus den LinkedIn-Posts des Kontakts oder nur auf Rolle und Unternehmen. E-Mails zeigen die Adresse unter **An**. Klappe **Strategie-Briefing** auf, um zu sehen, warum die Nachricht so geschrieben wurde.
 
 ## Nachrichtenaktionen
 
@@ -51,9 +53,13 @@ Beschreibe vor dem Bestätigen unter **Optional: Was stimmte daran nicht?**, was
 
 **Neu generieren** ist nicht verfügbar, wenn nichts den Entwurf neu schreiben würde, etwa weil der Kontakt noch nicht recherchiert ist, der Seat kein Postfach verbunden hat oder die LinkedIn-Einladung noch nicht versendet ist. Die geöffnete Nachricht nennt den Grund.
 
+### Archivieren
+
+Wähle das Symbol **Archivieren**, die erste Schaltfläche in der Leiste, um eine Person ohne Urteil aus dem Outreach zu nehmen, etwa weil du schon außerhalb des Sales Agents mit ihr in Kontakt bist. Ihre Entwürfe verlassen die Queue. Zuerst kommt eine Bestätigung, und eine ungespeicherte Änderung wird vor dem Archivieren gespeichert. Wähle **Bestätigen**, um nur diese Person zu archivieren. Wähle **Alle bei …** (mit dem Namen des Unternehmens), um außerdem die Phase des Unternehmens auf **Nicht interessant** zu setzen, die Ansprache aller dort zu stoppen und es auf deine Sperrliste zu setzen. Stelle die Person wieder her, damit der Entwurf wiederkommt.
+
 ### Nicht interessant
 
-Wähle **Nicht interessant**, um die Ansprache dieser Person zu stoppen. Ihr Ergebnis wird **Nicht interessant** und ihre Entwürfe verlassen die Queue; Kontakt und Unternehmen bleiben erhalten. Wähle stattdessen **Alle bei …** (mit dem Namen des Unternehmens), um dasselbe für alle dort zu tun: Die Phase des Unternehmens wird **Nicht interessant** und das Unternehmen kommt auf deine Sperrliste.
+Wähle **Nicht interessant**, um die Ansprache dieser Person zu stoppen. Zuerst kommt eine Bestätigung. Ihr Ergebnis wird **Nicht interessant** und ihre Entwürfe verlassen die Queue; Kontakt und Unternehmen bleiben erhalten. Wähle stattdessen **Alle bei …** (mit dem Namen des Unternehmens), um dasselbe für alle dort zu tun: Die Phase des Unternehmens wird **Nicht interessant** und das Unternehmen kommt auf deine Sperrliste.
 
 Einen schlechten Entwurf korrigierst du ohne Stopp mit **Neu generieren**.
 
@@ -67,19 +73,21 @@ Ist die Freigabe aktiv und **Veraltete Entwürfe zurückhalten** unter **Einstel
 
 Ein Hinweis oben auf **Nachrichten** zählt die zurückgehaltenen Nachrichten. Jede wird beim nächsten Nachrichtenlauf aus aktueller Recherche neu geschrieben. Um die Fassung so zu versenden, wie sie ist, wähle **Trotzdem senden** in der geöffneten Nachricht. Das gibt diese Fassung frei und startet ihr 30-Tage-Fenster neu.
 
+**Trotzdem senden** erscheint nur, wenn die freigegebene Nachricht danach auch hinausgeht. Solange etwas die Nachricht festhält, etwa ein Unternehmensabgleich, eine Einladung, die noch nicht raus ist, ein pausiertes Postfach oder eine Wiedervorlage, bleibt der Button verborgen und kommt zurück, sobald die Sperre endet. Hat der Agent die Fassung neu geschrieben, nachdem du die Seite geöffnet hast, lehnt **Trotzdem senden** ab und die neue Fassung erscheint, damit du nie einen Text freigibst, den du nicht gesehen hast. Der Hinweis lässt Nachrichten aus, die festgehalten werden oder die noch nichts neu schreiben kann; ihre Karten nennen den Grund.
+
 ## LinkedIn-Nachrichten und die Einladung
 
 Eine LinkedIn-Nachricht wird geschrieben, sobald die Kontaktanfrage versendet ist, und geht erst nach der Einladung hinaus. Bis dahin zeigt sie **Wartet**. Ist die Einladung noch offen, zeigt die Nachricht das Datum des nächsten Versuchs. Lehnt LinkedIn den Versand an eine Person ab, zeigt die Nachricht **LinkedIn hat diese Nachricht abgelehnt, deshalb versuchen wir es am** (Datum) **noch einmal**. Der neue Versuch liegt eine Woche später, und der Lauf geht mit der nächsten Nachricht weiter. Auf einem Seat, der zuerst die LinkedIn-Einladung sendet, wartet die E-Mail, bis die Einladung versendet ist, höchstens 7 Tage.
 
 ## Freigabe an oder aus
 
-Ein Admin wählt den Versandmodus unter **Einstellungen → Zeitplan → Outreach-Versand (alle Seats)**: **Jede Nachricht im Dashboard freigeben** oder **Alles automatisch senden**. Neue Konten starten mit aktiver Freigabe.
+Jeder Seat hat seinen eigenen Versandmodus. Der Owner des Seats wählt ihn unter **Einstellungen → Zeitplan → Outreach-Versand**, mit dem Seat unter **Seat**: **Jede Nachricht im Dashboard freigeben** oder **Alles automatisch senden**. Neue Seats starten mit aktiver Freigabe.
 
 Bei aktiver Freigabe sendet der Lauf eines Seats die Entwürfe, die du freigegeben hast, und schreibt am selben Tag neue: Die freigegebenen Entwürfe, die er gleich sendet, halten die neuen nicht zurück. Bis zu einem Tag an Entwürfen, die auf dich warten, also das Tageslimit des Seats für den Kanal, kann warten, ohne dass etwas langsamer wird. Danach werden neue Entwürfe weniger, und bei zwei Tagen hören sie auf; neue Personen für E-Mail werden damit ebenfalls weniger und hören auf. Oben auf **Nachrichten** steht das, solange die Freigabe aktiv ist: **Neue Entwürfe pausieren, solange Nachrichten für zwei Tage auf deine Freigabe warten.** Gib frei, was wartet, und der nächste Lauf schreibt mehr. Einladungen brauchen keine Freigabe: Neue Personen für LinkedIn-Einladungen kommen weiter herein, während LinkedIn-Nachrichten warten, bis zum Einladungslimit des Seats für den Tag. Ein Entwurf kann nicht in dem Lauf rausgehen, der ihn schreibt: Er wartet zuerst auf deine Freigabe.
 
 Ist die Freigabe aus, werden neue Nachrichten beim Schreiben freigegeben. Sie erscheinen unter **In Warteschlange**, und du kannst sie bis zum nächsten Lauf noch bearbeiten.
 
-Schaltet ein Admin die Freigabe aus, werden Nachrichten, die noch auf Freigabe warten, beim Speichern freigegeben. Ist **Veraltete Entwürfe zurückhalten** an, werden solche, die aus einem Post oder Signal von vor mehr als 30 Tagen entstanden, vorher neu geschrieben; wo noch nichts sie neu schreiben kann, bleiben sie zurückgehalten, bis du entscheidest.
+Wird die Freigabe für einen Seat ausgeschaltet, werden die Nachrichten dieses Seats, die noch auf Freigabe warten, beim Speichern freigegeben. Ist **Veraltete Entwürfe zurückhalten** an, werden solche, die aus einem Post oder Signal von vor mehr als 30 Tagen entstanden, vorher neu geschrieben; wo noch nichts sie neu schreiben kann, bleiben sie zurückgehalten, bis du entscheidest.
 
 ## Strategie statt nur Grammatik prüfen
 

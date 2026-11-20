@@ -5,9 +5,9 @@ description: "Set channels, run times, daily limits, LinkedIn options, and follo
 icon: "calendar-clock"
 ---
 
-Open **Settings → Schedule** to configure each seat individually. A seat owns its outreach channel, run schedule, and daily limits. Cards marked **(all reps)** hold shared settings that apply across all seats. With more than one seat, pick the seat under **Rep** at the top.
+Open **Settings → Schedule** to configure each seat individually. A seat owns its outreach channel, run schedule, daily limits, follow-up counts, and delivery mode. Cards marked **(all reps)** hold shared settings that apply across all seats. With more than one seat, pick the seat under **Rep** at the top.
 
-You can change your own seat's channel, schedule, and daily limits. Only admins can change the shared settings.
+You can change your own seat's channel, schedule, daily limits, follow-ups, and delivery mode. Only admins can change the shared settings. An admin can also set up a seat that has no owner yet.
 
 ## Choose the outreach channel
 
@@ -18,7 +18,7 @@ In the **Outreach channel** card, set **LinkedIn outreach** for the seat:
 - **LinkedIn only** — no email for this seat. Outreach and scheduled searches look up no email addresses, no emails or email follow-ups are written or sent, and only people with a LinkedIn profile are taken in. Replies to emails sent earlier still come in, and a lookup you start yourself still runs.
 - **Off** — no LinkedIn actions for this seat; email outreach still runs.
 
-The card warns you when the seat has no LinkedIn account or mailbox connected; with **LinkedIn only** it does not ask for a mailbox. Connect them under **Settings → Account**.
+The card shows a tag for each channel the seat uses. For LinkedIn it reads **LinkedIn connected**, or **LinkedIn not connected**, **LinkedIn paused**, **LinkedIn login needed**, or **LinkedIn unavailable**. For email it reads **Mailbox connected**, or **No mailbox**, **Mailbox sign-in expired**, or **Email sending paused**. A tag that needs a fix links to that seat on **Settings → Account**, where you connect or reconnect the account. With **LinkedIn only** the card does not ask for a mailbox.
 
 A seat with no connected LinkedIn account does no LinkedIn work, whatever the channel says: its runs skip the LinkedIn steps and email continues. **LinkedIn first** has no invite to wait for there, so first emails go out over the working day instead of a week later. The wait returns once LinkedIn is connected.
 
@@ -41,7 +41,7 @@ In the **Workflow Schedule** card, complete these steps:
   </Step>
 </Steps>
 
-The dashboard schedules one run per selected day. When scheduling is off, the seat remains inactive until you trigger **Run Now** manually.
+The dashboard schedules one run per selected day. When scheduling is off, the seat remains inactive until you trigger **Run Now** manually. A tag on the card shows what runs now: **On**, **Paused** during a vacation pause, or **Off**.
 
 <Warning>
   Treat the scheduled window as an automation period. Do not use LinkedIn manually while a run is active: concurrent activity can cause unexpected behavior. **At a glance**, at the bottom of the **Daily Limits** card, shows when LinkedIn is usually done; the run summary mail goes out then. A single run may take at most five hours; if your limits would need longer, the card tells you to lower them.
@@ -138,12 +138,12 @@ The **LinkedIn options (all reps)** card controls how LinkedIn behaves for every
 
 ## Configure follow-ups
 
-In the **Follow-ups (all reps)** card, the client-wide maximum follow-up counts are:
+In the **Follow-ups** card, set how many follow-ups each prospect of the selected seat gets per channel:
 
 - up to **3 email follow-ups**
 - up to **1 LinkedIn follow-up**
 
-Set either channel's follow-up count to `0` to turn it off entirely. Follow-ups are spaced by working days, not calendar days:
+New seats start at those maximums. Set either channel's follow-up count to `0` to turn it off entirely. A channel the seat does not use hides its field; the count you set stays. Follow-ups are spaced by working days, not calendar days:
 
 | Follow-up | When it sends |
 |---|---|
@@ -155,13 +155,15 @@ A reply on either channel stops all automated follow-ups across both channels fo
 
 ## Choose delivery and company stops
 
-**Outreach delivery (all reps)** sets whether you approve every message first. See [Messaging](/configure/messaging-playbook#decide-how-much-to-review).
+**Outreach delivery** sets, for the selected seat, whether you approve every message first, and holds **Hold back stale drafts**. See [Messaging](/configure/messaging-playbook#decide-how-much-to-review).
+
+**When a contract ends (all reps)** sets **Get back before a contract ends (months)**, from 0 to 24, 3 by default. When a reply says a contract ends on a day, you get back to the person that many months before it. See [Get back to a prospect later](/operate/replies-and-handoff#get-back-to-a-prospect-later).
 
 **When a company says yes (all reps)** decides what stops outreach to a whole company. Marking a **Meeting**, **Offer Sent**, or **Closed Deal**, or marking a reply as positive, sets the company's stage, stops outreach to its other contacts, and adds it to your blacklist. Under **What counts as a yes**, choose **Only what you mark yourself**, or **Also a reply the assistant reads as interested** to let a positive reply start this on its own.
 
 ## Save and verify
 
-Select **Save schedule**, then return to **Home** and confirm:
+Select **Save schedule**. One save covers every seat and the shared settings you changed. While you have unsaved edits, the save bar stays at the bottom of the screen, with **Discard changes** next to it, which resets all of them. Then return to **Home** and confirm:
 
 - [ ] **Schedule** shows **Active** for the seats you intended to enable
 - [ ] **Daily Limits** shows the new people per day you expect on LinkedIn and email

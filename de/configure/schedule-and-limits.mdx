@@ -4,9 +4,9 @@ description: "Konfiguriere Kanäle, Laufzeiten, Tageslimits, LinkedIn-Optionen u
 icon: "calendar-clock"
 ---
 
-Öffne **Einstellungen → Zeitplan**, um jeden Seat zu konfigurieren. Ein Seat hat einen eigenen Outreach-Kanal, Zeitplan und eigene Tageslimits. Karten mit **(alle Seats)** enthalten gemeinsame Einstellungen für alle Seats. Bei mehreren Seats wählst du den Seat oben unter **Seat**.
+Öffne **Einstellungen → Zeitplan**, um jeden Seat zu konfigurieren. Ein Seat hat einen eigenen Outreach-Kanal, Zeitplan, eigene Tageslimits, Follow-up-Anzahlen und einen eigenen Versandmodus. Karten mit **(alle Seats)** enthalten gemeinsame Einstellungen für alle Seats. Bei mehreren Seats wählst du den Seat oben unter **Seat**.
 
-Kanal, Zeitplan und Tageslimits deines eigenen Seats kannst du selbst ändern. Die gemeinsamen Einstellungen ändern nur Admins.
+Kanal, Zeitplan, Tageslimits, Follow-ups und Versandmodus deines eigenen Seats kannst du selbst ändern. Die gemeinsamen Einstellungen ändern nur Admins. Ein Admin kann außerdem einen Seat einrichten, der noch keinen Owner hat.
 
 ## Outreach-Kanal wählen
 
@@ -17,7 +17,7 @@ Lege in der Karte **Outreach-Kanal** unter **LinkedIn-Outreach** fest:
 - **Nur LinkedIn** — keine E-Mail für diesen Seat. Outreach und geplante Suchen ermitteln keine E-Mail-Adressen, es werden keine E-Mails oder E-Mail-Follow-ups geschrieben oder gesendet, und aufgenommen werden nur Personen mit LinkedIn-Profil. Antworten auf zuvor gesendete E-Mails kommen weiterhin an, und eine Abfrage, die du selbst startest, läuft trotzdem.
 - **Aus** — keine LinkedIn-Aktionen für diesen Seat; E-Mail-Ansprache läuft weiter.
 
-Die Karte warnt dich, wenn für den Seat kein LinkedIn-Konto oder Postfach verbunden ist; bei **Nur LinkedIn** verlangt sie kein Postfach. Verbinde sie unter **Einstellungen → Konto**.
+Die Karte zeigt für jeden Kanal, den der Seat nutzt, ein Tag. Für LinkedIn steht dort **LinkedIn verbunden**, oder **LinkedIn nicht verbunden**, **LinkedIn pausiert**, **LinkedIn-Anmeldung nötig** oder **LinkedIn nicht verfügbar**. Für E-Mail steht dort **Postfach verbunden**, oder **Kein Postfach**, **Postfach-Anmeldung abgelaufen** oder **E-Mail-Versand pausiert**. Ein Tag, das eine Korrektur braucht, verlinkt auf diesen Seat unter **Einstellungen → Konto**, wo du das Konto verbindest oder erneut verbindest. Bei **Nur LinkedIn** verlangt die Karte kein Postfach.
 
 Ein Seat ohne verbundenes LinkedIn-Konto macht keine LinkedIn-Arbeit, egal was der Kanal sagt: Seine Läufe überspringen die LinkedIn-Schritte, und E-Mail läuft weiter. Bei **Zuerst LinkedIn** gibt es dort keine Kontaktanfrage, auf die gewartet wird, daher gehen erste E-Mails über den Arbeitstag verteilt raus statt eine Woche später. Die Wartezeit kehrt zurück, sobald LinkedIn verbunden ist.
 
@@ -30,7 +30,7 @@ In der Karte **Workflow-Zeitplan**:
 3. die **Startzeit** festlegen; jeder Lauf startet bis zu 20 Minuten danach
 4. die **Zeitzone** bestätigen
 
-Ist der Zeitplan deaktiviert, läuft der Seat nur, wenn du **Jetzt starten** auswählst. Das Dashboard plant einen Lauf pro ausgewähltem Tag.
+Ist der Zeitplan deaktiviert, läuft der Seat nur, wenn du **Jetzt starten** auswählst. Das Dashboard plant einen Lauf pro ausgewähltem Tag. Ein Tag in der Karte zeigt, was gerade läuft: **Ein**, **Pausiert** während einer Urlaubspause oder **Aus**.
 
 <Warning>
   Behandle die geplante Zeit als Automatisierungsfenster. Nutze LinkedIn nicht manuell, während der Lauf aktiv ist. **Auf einen Blick** unten in der Karte **Tageslimits** zeigt, wann LinkedIn in der Regel fertig ist; dann geht die Laufzusammenfassung raus. Ein einzelner Lauf darf höchstens fünf Stunden dauern; bräuchten deine Limits länger, fordert dich die Karte auf, sie zu senken.
@@ -127,12 +127,12 @@ Die Karte **LinkedIn-Optionen (alle Seats)** steuert LinkedIn für alle Seats:
 
 ## Follow-ups konfigurieren
 
-Das kundenweite Maximum in der Karte **Follow-ups (alle Seats)** beträgt:
+In der Karte **Follow-ups** legst du fest, wie viele Follow-ups jeder Prospect des gewählten Seats pro Kanal bekommt:
 
 - bis zu drei E-Mail-Follow-ups
 - bis zu ein LinkedIn-Follow-up
 
-Setze einen Kanal auf `0`, um seine Follow-ups auszuschalten. Follow-ups verwenden Abstände in Arbeitstagen:
+Neue Seats starten mit diesen Maximalwerten. Setze einen Kanal auf `0`, um seine Follow-ups auszuschalten. Nutzt der Seat einen Kanal nicht, ist sein Feld ausgeblendet; die gesetzte Anzahl bleibt. Follow-ups verwenden Abstände in Arbeitstagen:
 
 - erstes Follow-up: 4 Arbeitstage nach der vorherigen Nachricht
 - zweites E-Mail-Follow-up: 7 Arbeitstage nach dem vorherigen E-Mail-Follow-up
@@ -142,13 +142,15 @@ Eine Antwort auf einem Kanal stoppt automatisierte Follow-ups auf beiden Kanäle
 
 ## Versand und Unternehmensstopps wählen
 
-**Outreach-Versand (alle Seats)** legt fest, ob du jede Nachricht vorher freigibst. Siehe [Messaging-Playbook](/de/configure/messaging-playbook#umfang-der-prüfung-festlegen).
+**Outreach-Versand** legt für den gewählten Seat fest, ob du jede Nachricht vorher freigibst, und enthält **Veraltete Entwürfe zurückhalten**. Siehe [Messaging-Playbook](/de/configure/messaging-playbook#umfang-der-prüfung-festlegen).
+
+**Wenn ein Vertrag endet (alle Seats)** enthält **Wiedervorlage vor Vertragsende (Monate)**, von 0 bis 24, standardmäßig 3. Nennt eine Antwort ein Vertragsende, meldest du dich so viele Monate davor bei der Person. Siehe [Wiedervorlage setzen](/de/operate/replies-and-handoff#wiedervorlage-setzen).
 
 **Wenn ein Unternehmen zusagt (alle Seats)** entscheidet, was die Ansprache an ein ganzes Unternehmen stoppt. Setzt du bei einem Prospect **Termin**, **Angebot gesendet** oder **Deal abgeschlossen** oder markierst du eine Antwort als positiv, erhält das Unternehmen diese Phase, die Ansprache an seine übrigen Kontakte stoppt und es landet auf deiner Sperrliste. Wähle unter **Was als Zusage zählt** **Nur, was du selbst markierst** oder **Auch eine Antwort, die der Assistent als Interesse wertet**, damit auch eine positive Antwort das von selbst auslöst.
 
 ## Speichern und prüfen
 
-Wähle **Zeitplan speichern**, kehre zu **Start** zurück und prüfe:
+Wähle **Zeitplan speichern**. Ein Speichern gilt für alle Seats und die gemeinsamen Einstellungen, die du geändert hast. Solange du ungespeicherte Änderungen hast, bleibt die Speicherleiste am unteren Bildschirmrand, mit **Änderungen verwerfen** daneben, was alle zurücksetzt. Kehre dann zu **Start** zurück und prüfe:
 
 - **Zeitplan** zeigt für die vorgesehenen Seats **Aktiv**
 - **Tageslimits** zeigt die erwarteten neuen Personen pro Tag für LinkedIn und E-Mail

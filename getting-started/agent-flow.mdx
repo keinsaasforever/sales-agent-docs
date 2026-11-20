@@ -91,8 +91,9 @@ flowchart TD
 | **ICP setup or change** | Edit targeting, exclusions, weights, or thresholds. Accept the prompt to update scores when it appears. | Uses the current score and threshold for new candidates and future queue eligibility. |
 | **Search or import** | Launch a Sales Navigator source, upload a CSV of people or companies, or search at existing companies. | Retrieves candidates, applies filters, de-duplicates, and scores. Credits apply to found search or enrichment results, not only final matches. |
 | **Run start** | Enable the seat schedule or select **Run Now**, which starts your own seats. | Claims only currently eligible work within the seat's daily limits. |
-| **Message review, when enabled** | Edit, regenerate, or approve the first message, or mark the prospect **Not interesting**. **All of** the company also stops colleagues there and blocks the company. | Sends an approved message only on an eligible run; approval itself does not send. |
+| **Message review, when enabled** | Edit, regenerate, or approve the first message; take the prospect out of outreach with **Archive**; or mark them **Not interesting**. **All of** the company also stops colleagues there and blocks the company. | Sends an approved message only on an eligible run; approval itself does not send. |
 | **Reply** | Read the complete thread, reply personally, and set the appropriate outcome. | Stops automated follow-ups on email and LinkedIn immediately. |
+| **Not right now** | Confirm or set the date to get back to the person, from the reply or from a **Not now** call. | Reminds you on that day in **Get back to**, **To do**, and the bell. It does not restart outreach. |
 | **No reply after follow-ups** | Work prospects in **To Call** when a phone number is available; otherwise review whether **Unreachable** is appropriate. | Leaves the digital sequence stopped once its configured follow-ups are exhausted. By default, prospects join **To Call** at this point; an admin can choose an earlier moment in **Settings → Targeting**. |
 | **Sales progress** | Set **Meeting**, **Offer Sent**, **Closed Deal**, **Not interesting**, **Asked to stop**, **Wrong person**, **Lost Deal**, or **Unreachable**. | Removes the prospect from every automated claim immediately. |
 
@@ -100,7 +101,7 @@ flowchart TD
 
 <AccordionGroup>
   <Accordion title="Approval on or off">
-    With **Approve every message from the dashboard**, first email and LinkedIn messages wait for your review in **Messages**. Follow-ups always send automatically. With **Send everything automatically**, the approval step disappears, but you remain responsible for the generated content. Only admins change this setting.
+    With **Approve every message from the dashboard**, first email and LinkedIn messages wait for your review in **Messages**. Follow-ups always send automatically. With **Send everything automatically**, the approval step disappears, but you remain responsible for the generated content. Each seat has its own setting, which the seat's owner changes.
   </Accordion>
   <Accordion title="Scheduled or manual runs">
     A schedule starts a complete run on the configured days and time. **Run Now** starts the same guarded pipeline on demand for your own seats. Under **Advanced** you can run one part on its own: **Messages** writes drafts without sending, **Outreach** sends messages that are ready, and **Follow-ups** only sends due follow-ups. None of them bypasses eligibility checks. On a seat that runs on a schedule, emails go out one at a time over the working day instead of during the run; see [When emails go out](/configure/schedule-and-limits#when-emails-go-out).
