@@ -23,7 +23,7 @@ Das Menü links enthält **Start**, **Aufgaben**, **Unternehmen**, **Prospects**
 
 <Steps>
   <Step title="Warnungen">
-    Rote und gelbe Hinweise stehen ganz oben, wenn Arbeit gestoppt ist oder gleich stoppt: **LinkedIn ist pausiert**, **Outlook ist getrennt** oder **E-Mail-Versand pausiert**. Jeder verlinkt zur Lösung. Knappe Credits zeigt das Dashboard anders: Ein Banner am oberen Rand jeder Seite lautet **Credits werden knapp** oder **Anreicherung ist pausiert**, mit **Jetzt aufladen** für Admins und **Bitte deinen Admin, Credits aufzuladen** für Mitglieder.
+    Eine orangefarbene Leiste steht am oberen Rand jeder Seite und zeigt jeweils einen Hinweis, den dringendsten zuerst: **Agent pausiert — Zahlung fehlgeschlagen.**, dann **LinkedIn ist pausiert**, **Outlook ist getrennt** und **E-Mail-Versand pausiert** (je einer pro Seat oder Postfach), dann **Credits werden knapp** oder **Anreicherung ist pausiert**. Bei mehreren Hinweisen steht dort zum Beispiel **1 von 3**; mit den Pfeilen blätterst du durch. Jeder Hinweis hat einen Button zur Lösung, etwa **LinkedIn erneut verbinden**, **Outlook erneut verbinden**, **Optionen ansehen** oder **Zahlung aktualisieren**. Bei Credits erhalten Admins **Jetzt aufladen**, Mitglieder lesen **Bitte deinen Admin, Credits aufzuladen**. Die Leiste bleibt bei einer kurzen Zeile; unter **Einstellungen → Konto** und in den Aufgabenkarten steht der volle Text.
   </Step>
   <Step title="Aktivitätskarten">
     Sieben Karten zählen **Gefundene Signale**, **Gefundene Kontakte**, **Angefragt**, **Angenommen**, **Angeschrieben**, **Nachgefasst** und **Geantwortet** für **Letzte 24 Stunden**, **Letzte 7 Tage** oder **Letzte 30 Tage**. Personen zählen einmal, auch wenn sie über beide Kanäle erreicht wurden.
@@ -48,7 +48,7 @@ Das Menü links enthält **Start**, **Aufgaben**, **Unternehmen**, **Prospects**
     **Pipeline-Übersicht** zählt Prospects nach Phase; ein Klick auf eine Phase öffnet diese Liste. **Letzte Aktivität** listet die letzten fünf Runs.
   </Step>
   <Step title="Zu erledigen">
-    Eine Zeile pro Arbeitsliste: freizugebende Nachrichten, Prospects, die geantwortet haben und auf dich warten, und anzurufende Prospects. Auch Fragen von keinsaas, Vorschläge zum LinkedIn-Warm-up und für Admins anstehende ICP-Score-Aktualisierungen erscheinen hier. Während deiner ersten Einrichtung steht hier auch die Liste **Erste Schritte**, eine pro Seat; siehe [Quickstart](/de/getting-started/quickstart). Eine Zeile bleibt, bis die Arbeit dahinter erledigt ist, nicht bis du sie gelesen hast. **Alle anzeigen** öffnet **Aufgaben**.
+    Eine Zeile pro Arbeitsliste: freizugebende Nachrichten, Prospects, die geantwortet haben und auf dich warten, anzurufende Prospects und Prospects, deren [Wiedervorlage](/de/operate/replies-and-handoff#wiedervorlage-setzen) erreicht ist, mit **Liste öffnen**. Auch Fragen von keinsaas, Vorschläge zum LinkedIn-Warm-up und für Admins anstehende ICP-Score-Aktualisierungen erscheinen hier. Brauchen deine gespeicherten Sales-Navigator-Suchen oder **Interesse an eurem Unternehmen** ein LinkedIn-Konto mit Sales Navigator, das kein Seat hat, sehen Admins **Sales Navigator verbinden** mit **LinkedIn verbinden**. Die Erinnerung verschwindet, sobald ein Seat eines verbindet. Während deiner ersten Einrichtung steht hier auch die Liste **Erste Schritte**, eine pro Seat; siehe [Quickstart](/de/getting-started/quickstart). Eine Zeile bleibt, bis die Arbeit dahinter erledigt ist, nicht bis du sie gelesen hast. **Alle anzeigen** öffnet **Aufgaben**.
   </Step>
 </Steps>
 
@@ -74,7 +74,10 @@ Die Glocke neben dem Suchsymbol zeigt eine rote Zahl neuer Einträge. Beim Öffn
 - **Handlungsbedarf**: offene Fragen, eine pausierte LinkedIn-Session, ein getrenntes Postfach, ein Postfach, für das dein Anbieter den Versand blockiert hat oder das wegen zu vieler Zustellfehler pausiert wurde, oder aufgebrauchte InMail-Credits.
 - **Vorschläge**: ein Warm-up-Schritt für LinkedIn, den du mit einem Klick übernimmst.
 - **Neue Antworten**, **Ausstehende Freigaben** und **Prospect anrufen**: eine Zeile pro Person, die den Prospect oder die Nachrichten-Queue öffnet.
+- **Wiedervorlage**: eine Zeile pro Tag, an dem Prospects fällig wurden; sie öffnet den Tab **Wiedervorlage**.
 - **Abgeschlossen**: abgeschlossene Suchen, Importe und Anreicherungen, auch fehlgeschlagene oder solche mit Problemen.
+
+Ein Listenabschnitt zeigt seine drei neuesten Einträge, danach eine Zeile **Alle anzeigen**, die die Seite mit dem Rest öffnet.
 
 ## E-Mails vom Sales Agent
 
@@ -84,11 +87,18 @@ Der Sales Agent schreibt dir auch per E-Mail, auf Deutsch oder Englisch, und jed
 - **Neue Kontakte gefunden**: nach einer Kontaktsuche oder einem Listenimport, der jemanden gefunden hat. Die Mail listet bis zu 10 Personen nach Titel und Unternehmen, die besten ICP-Treffer zuerst, mit einem Button, der genau diese Personen unter **Kontakte** öffnet (der Filter **Hinzugefügt seit …**). Credits erscheinen nur, wenn welche verbraucht wurden.
 - **Signale gefunden**: nach einer Kaufsignal-Suche, die etwas Neues gefunden hat. Die Mail listet bis zu 10 Unternehmen mit Art und Datum des Ereignisses, nur für Signale, die zählen: mit mindestens deinem Mindest-Score für Signale, innerhalb von **Signal verwenden für (Tage)** und von einer Art, die du gewählt hast. Ein Button öffnet **Unternehmen**, gefiltert auf **Kaufsignale**. Sie wird nie für null Treffer gesendet.
 - **Wochenübersicht**: einmal pro Woche, gesendet vom ersten Pipeline-Lauf der Woche (die Woche beginnt am Montag, Berliner Zeit). Sie geht an jeden Login deines Kontos und deckt die letzte Woche von Montag bis Sonntag ab, verglichen mit der Woche davor: Highlights wie Termine und positive Antworten und eine Zeile für jede Zahl, die nicht null ist, etwa Antworten, verschickte Nachrichten, Kontaktanfragen, neue Kontakte und Unternehmen mit Kaufsignal. Eine prozentuale Veränderung erscheint nur, wenn die Woche davor mindestens 5 hatte. Ein Termin, ein Angebot oder ein Deal zählt einmal pro Unternehmen, und zwar in der Woche, in der das Unternehmen diese Phase zum ersten Mal erreicht. Ergebnisse und Antworten, die du lange nach dem Ereignis erfasst, zählen nicht als die dieser Woche, und Personen, die du per CSV hochlädst oder von Hand hinzufügst, zählen nicht als neue Kontakte. Eine Zeile **Wartet auf dich** ergänzt die eigenen Aufgaben des Empfängers. Ein Konto, dessen Agent in dieser Woche nicht läuft, erhält keine Wochenübersicht, ebenso eine Woche, in der nichts passiert ist.
+- **Bald keine neuen Kontakte mehr** und **Keine neuen Kontakte mehr**: an den Owner eines Seats, wenn die Personen eines Seats bei seinem Tagestempo weniger als 3 Tage reichen, und noch einmal, wenn keine mehr übrig sind. Jede kommt einmal pro Absinken; nach einer sendet ein Nachfüllen, das unter der Grenze bleibt, nichts mehr. Follow-ups laufen weiter. Die Mail verlinkt zu **Zur Pipeline hinzufügen**.
 - **E-Mail-Versand pausiert**: wenn dein E-Mail-Anbieter ein Postfach blockiert oder wenn zu viele seiner E-Mails nicht zugestellt wurden. Siehe [Aktivität und Fehlerbehebung](/de/operate/activity-and-troubleshooting#wenn-dein-e-mail-anbieter-den-versand-blockiert) und [wenn zu viele E-Mails nicht zugestellt werden](/de/operate/activity-and-troubleshooting#wenn-zu-viele-e-mails-nicht-zugestellt-werden). Blockiert dein Anbieter ein Postfach, bekommt dein [IT-Kontakt](/de/getting-started/seats-and-accounts#it-kontakt-für-technische-warnungen) eine eigene Mail.
 - **Nichts rausgegangen**: an deinen IT-Kontakt, wenn ein Postfach, das senden sollte, zwei Werktage lang nichts gesendet hat, obwohl E-Mails bereitliegen.
 - **Zustellzahlen**: einmal täglich für jedes Postfach, das E-Mails gesendet hat, nur an die Adressen deines [IT-Kontakts](/de/getting-started/seats-and-accounts#it-kontakt-für-technische-warnungen). Sie zeigt, wie viele E-Mails an jedem der letzten 7 Tage versendet, zugestellt und nicht zugestellt wurden, und beginnt mit dem letzten Tag, an dem etwas versendet wurde. Eine Woche ohne Versand bekommt keine Mail, und ist keine IT-Adresse eingetragen, bekommt sie niemand.
 
 Ein Anreicherungslauf sendet keine Mail. Die Glocke zeigt **Anreicherung abgeschlossen**, und **Aktivität** listet den Lauf.
+
+### Wählen, welche E-Mails du bekommst
+
+Jeder Login schaltet seine eigenen E-Mails unter **Einstellungen → Konto → Benachrichtigungen** um. Die Karte hat eine Zeile pro Art und zwei Spalten, **In-App** und **E-Mail**. Der Haken unter **In-App** heißt, dass das Dashboard diese Art immer zeigt; nur der Schalter unter **E-Mail** ändert sich. **Du bist gefragt** enthält **Rückfragen von uns** und **Kontakte gehen aus**. **Updates** enthält **Nach jedem Durchlauf**, **Wöchentliche Zusammenfassung**, **Suchergebnisse** und **Neue Signale**. Ein Schalter speichert sofort, und jede Art ist an, bis du sie ausschaltest.
+
+Ein Schalter gilt nur für deinen Login. Schaltet der Owner eines Seats eine Art aus, bekommt sie niemand anderes an seiner Stelle. Probleme, die dein Outreach stoppen, etwa ein LinkedIn-Login, der neu verbunden werden muss, sowie Abrechnungs- und Anmelde-Mails erreichen dich immer.
 
 ## Sprache
 
