@@ -8,7 +8,7 @@ icon: "user-plus"
 
 <Columns cols={3}>
   <Card title="Unsere Datenbank durchsuchen" icon="database">
-    Personen bei den Unternehmen, die du hast, oder neue Unternehmen, die zu deinem Targeting passen, wo das für dich eingeschaltet ist. Einmalig oder jeden Werktag.
+    Personen bei den Unternehmen, die du hast, oder neue Unternehmen, die zu deiner Zielgruppe passen, wo das für dich eingeschaltet ist. Einmalig oder jeden Werktag.
   </Card>
   <Card title="Sales-Navigator-Suche oder -Liste" icon="link">
     Eine gespeicherte Suche oder Liste importiert täglich ihre neuen Personen. Braucht einen Seat, dessen LinkedIn-Login Sales Navigator hat.
@@ -89,7 +89,7 @@ Diese Felder kannst du zuordnen:
 
 | Die Datei enthält | Felder |
 | --- | --- |
-| **Personen** | **Vorname**, **Nachname**, **Vollständiger Name**, **Jobtitel**, **Headline**, **Info**, **Standort der Person**, **Land**, **Sprache**, **E-Mail**, **LinkedIn-Profil**, **LinkedIn-Mitglieds-ID**, **Sales-Navigator-Link**, **Unternehmensname**, **Website**, **LinkedIn-Seite des Unternehmens**, **Unternehmensstandort**, **Branche**, **Mitarbeiter**, **Owner** |
+| **Personen** | **Vorname**, **Nachname**, **Vollständiger Name**, **Jobtitel**, **Überschrift**, **Info**, **Standort der Person**, **Land**, **Sprache**, **E-Mail**, **LinkedIn-Profil**, **LinkedIn-Mitglieds-ID**, **Sales-Navigator-Link**, **Unternehmensname**, **Website**, **LinkedIn-Seite des Unternehmens**, **Unternehmensstandort**, **Branche**, **Mitarbeiter**, **Owner** |
 | **Unternehmen** | **Unternehmensname**, **Website**, **LinkedIn-Seite des Unternehmens**, **Unternehmensstandort**, **Land**, **Branche**, **Mitarbeiter**, **Beschreibung**, **Owner** |
 
 **Info** ist der Info-Text des LinkedIn-Profils; die Spalte `summary` eines Sales-Navigator-Exports füllt es.
@@ -108,7 +108,7 @@ Jede Zeile benötigt einen Unternehmensnamen oder eine Website. Der Import fügt
 
 Jede Zeile benötigt außerdem einen Owner. Gib ihn in einer Spalte `owner` mit dem Owner-Schlüssel des Seats an oder wähle beim Import einen Seat. Der Owner wird auch dem Unternehmen zugewiesen und bestimmt, welche verbundenen Konten die Ansprache ausführen.
 
-Bei Personen zeigt das Ergebnis, wie viele Kontakte eingefügt wurden, wie viele bereits vorhanden waren (**Bereits vorhanden**) und wie viele übersprungen wurden, zum Beispiel weil das Unternehmen auf deiner Sperrliste steht. Bei Unternehmen zeigt es, wie viele hinzugefügt wurden, bereits vorhanden sind, auf deiner Sperrliste stehen oder keine Website haben. Kontakte außerhalb deiner Targeting-Filter werden ohne Seat hinzugefügt; für sie startet keine Ansprache.
+Bei Personen zeigt das Ergebnis, wie viele Kontakte eingefügt wurden, wie viele bereits vorhanden waren (**Bereits vorhanden**) und wie viele übersprungen wurden, zum Beispiel weil das Unternehmen auf deiner Sperrliste steht. Bei Unternehmen zeigt es, wie viele hinzugefügt wurden, bereits vorhanden sind, auf deiner Sperrliste stehen oder keine Website haben. Kontakte außerhalb deiner Zielgruppen-Filter werden ohne Seat hinzugefügt; für sie startet keine Ansprache.
 
 Der CSV-Import selbst verbraucht keine Credits. Das Vervollständigen von Zeilen, E-Mail- oder Telefonsuche und Profilanreicherung können Credits verbrauchen.
 
@@ -121,12 +121,12 @@ Vor dem Import:
 
 ## Bei deinen Unternehmen suchen
 
-Die Karte **Unsere Datenbank durchsuchen** findet Personen bei Unternehmen, die bereits im Dashboard sind, und, wo es für dich eingeschaltet ist, neue Unternehmen, die zu deinem Targeting passen. Eine Suche läuft einmalig oder jeden Werktag als deine [automatische Suche](#nach-zeitplan-suchen). Die Kacheln über den Karten zeigen, wo du stehst; siehe [Sehen, wo du stehst](#sehen-wo-du-stehst). Eine laufende Suche erscheint, solange sie läuft, unter [**Meine Jobs**](#jobs-von-selbst-laufen-lassen), und [**Aktivität**](/de/operate/activity-and-troubleshooting#verlauf-lesen) hält jeden Durchlauf, sein Ergebnis und seine Kosten fest.
+Die Karte **Unsere Datenbank durchsuchen** findet Personen bei Unternehmen, die bereits im Dashboard sind, und, wo es für dich eingeschaltet ist, neue Unternehmen, die zu deiner Zielgruppe passen. Eine Suche läuft einmalig oder jeden Werktag als deine [automatische Suche](#nach-zeitplan-suchen). Die Kacheln über den Karten zeigen, wo du stehst; siehe [Sehen, wo du stehst](#sehen-wo-du-stehst). Eine laufende Suche erscheint, solange sie läuft, unter [**Meine Jobs**](#jobs-von-selbst-laufen-lassen), und [**Aktivität**](/de/operate/activity-and-troubleshooting#verlauf-lesen) hält jeden Durchlauf, sein Ergebnis und seine Kosten fest.
 
 Die Suche hat fünf Schritte. Ein Schritt öffnet sich, sobald du den vorigen bestätigt hast, und ein abgeschlossener Schritt klappt zu einer Zusammenfassung mit **Bearbeiten** zu.
 
-1. **Was und wie oft**: Wähle **Personen bei meinen Unternehmen**, **Neue Unternehmen und die Personen dort** oder **Unternehmensliste aufbauen**, dann **Einmalig, jetzt** oder **Automatisch, jeden Werktag**. **Neue Unternehmen und die Personen dort** findet Personen, die zu deinem Targeting passen, bei Unternehmen, die noch nicht auf deiner Liste stehen, und fügt ihre Unternehmen hinzu. **Unternehmensliste aufbauen** fügt nur Unternehmen hinzu und findet ihre Personen später; die Liste wird einmalig aufgebaut. Eine Wahl, die für dich nicht eingeschaltet ist, lautet **Für dein Konto noch nicht aktiviert.** Wo Signale für dich eingeschaltet sind, trägt **Automatisch, jeden Werktag** bei neuen Unternehmen den Hinweis **inkl. Signale**: Signale kommen nur mit der automatischen Suche. Dein Konto hat eine automatische Suche, von der einen oder der anderen Art; eine neu gespeicherte ersetzt die alte.
-2. **Wen du suchst**: deine Werte aus der Zielgruppe (**Jobtitel (Tier 1)**, **Seniorität**, **Regionen**, **Branchen**, **Größen**). Eine Suche nach neuen Unternehmen zeigt zusätzlich **Auszuschließende Branchen** und **Kunden**. Admins ändern sie mit **Im Targeting ändern**; Mitglieder fragen einen Admin. Die Suche benötigt mindestens einen Tier-1-Titel unter **Einstellungen → Zielgruppe**.
+1. **Was und wie oft**: Wähle **Personen bei meinen Unternehmen**, **Neue Unternehmen und die Personen dort** oder **Unternehmensliste aufbauen**, dann **Einmalig, jetzt** oder **Automatisch, jeden Werktag**. **Neue Unternehmen und die Personen dort** findet Personen, die zu deiner Zielgruppe passen, bei Unternehmen, die noch nicht auf deiner Liste stehen, und fügt ihre Unternehmen hinzu. **Unternehmensliste aufbauen** fügt nur Unternehmen hinzu und findet ihre Personen später; die Liste wird einmalig aufgebaut. Eine Wahl, die für dich nicht eingeschaltet ist, lautet **Für dein Konto noch nicht aktiviert.** Wo Signale für dich eingeschaltet sind, trägt **Automatisch, jeden Werktag** bei neuen Unternehmen den Hinweis **inkl. Signale**: Signale kommen nur mit der automatischen Suche. Dein Konto hat eine automatische Suche, von der einen oder der anderen Art; eine neu gespeicherte ersetzt die alte.
+2. **Wen du suchst**: deine Werte aus der Zielgruppe (**Jobtitel (Tier 1)**, **Seniorität**, **Regionen**, **Branchen**, **Größen**). Eine Suche nach neuen Unternehmen zeigt zusätzlich **Auszuschließende Branchen**, **Umsatz (geschätzt)** und **Kunden**. Admins ändern sie mit **Unter „Zielgruppe“ ändern**; Mitglieder fragen einen Admin. Die Suche benötigt mindestens einen Tier-1-Titel unter **Einstellungen → Zielgruppe**.
 3. Der dritte Schritt heißt nach dem, was er enthält:
    - **Unternehmen und Personen**, für Personen bei deinen Unternehmen: **Beste Passung zuerst** nimmt die nächsten Unternehmen nach **Unternehmens-Fit**, mit **Unternehmen auswählen** wählst du sie selbst (bei einer Suche, die du einmalig startest). Eine automatische Suche legt stattdessen **Unternehmen pro Tag** fest, höchstens 500. Lege dann **Personen pro Unternehmen** fest; der Standard kommt aus **Max. Kontakte pro Unternehmen**. Ein bereits durchsuchtes Unternehmen wird übersprungen, solange du es nicht erneut auswählst.
    - **Wie viele Personen**, für neue Unternehmen: **Zu findende Personen**, 25, 50 oder 100, bei einer Suche, die du einmalig startest, oder **Neue Personen pro Tag** bei einer automatischen Suche; siehe [Neue Unternehmen und die Personen dort](#neue-unternehmen-und-die-personen-dort).
@@ -139,8 +139,8 @@ Die Suche hat fünf Schritte. Ein Schritt öffnet sich, sobald du den vorigen be
 
 **Unternehmensliste aufbauen** sucht an einem von zwei Orten, den Schritt 2 unter **Wo wir suchen** nennt:
 
-- **Öffentliche Listen**: veröffentlichte Listen, die zu deinem Targeting passen, etwa die Mitglieder eines Verbands, die Aussteller einer Messe, ein Register oder ein Verzeichnis. Der Sales Agent nutzt sie, wenn er eine für dein Targeting findet. Nur neue passende Unternehmen werden hinzugefügt und berechnet, mit 0,1 Credits pro hinzugefügtem Unternehmen; ein Unternehmen, das schon auf deiner Liste steht oder nicht passt, kostet nichts. Können die Listen nicht gelesen werden, wird nichts berechnet.
-- **Unternehmensdatenbanken**: bis zu 0,25 Credits pro gefundenem Unternehmen. Auch ein Unternehmen, das schon auf deiner Liste steht oder nicht passt, kann berechnet werden; hinzugefügt werden nur neue passende Unternehmen.
+- **Öffentliche Listen**: veröffentlichte Listen, die zu deiner Zielgruppe passen, etwa die Mitglieder eines Verbands, die Aussteller einer Messe, ein Register oder ein Verzeichnis. Der Sales Agent nutzt sie, wenn er eine für deine Zielgruppe findet. Nur neue passende Unternehmen werden hinzugefügt und berechnet, mit 0,1 Credits pro hinzugefügtem Unternehmen; ein Unternehmen, das schon auf deiner Liste steht oder nicht passt, kostet nichts. Können die Listen nicht gelesen werden, wird nichts berechnet.
+- **Unternehmensdatenbanken**: einmalig 0,1–0,25 Credits pro gefundenem Unternehmen. Auch ein Unternehmen, das schon auf deiner Liste steht oder nicht passt, kann berechnet werden; hinzugefügt werden nur neue passende Unternehmen.
 
 Die Suche sucht zuerst nach Tier-1-Titeln und nach Tier-2-Titeln nur dort, wo kein Tier-1-Kontakt gefunden wurde, und berücksichtigt deine Standorte, Filter und die Grenze **Max. Kontakte pro Unternehmen**. Jedes Unternehmen braucht einen Seat als Owner; Unternehmen ohne Owner werden übersprungen, und der Schritt sagt es dir. Kontakte außerhalb deiner Filter bleiben ohne Seat erhalten.
 
@@ -152,7 +152,7 @@ Die Suche sucht zuerst nach Tier-1-Titeln und nach Tier-2-Titeln nur dort, wo ke
 
 **Meine Jobs** steht in der Gruppe **Kontakte hinzufügen** des Menüs neben **Zur Pipeline hinzufügen** und listet, was von selbst läuft, um deine Pipeline zu füllen und aktuell zu halten. Jeder Job ist eine Karte mit einem Status wie **Ein** oder **Aus**, einer Zusammenfassungszeile und seinen Aktionen; **Details** zeigt den Rest. Die Karten kommen in dieser Reihenfolge:
 
-- Deine automatische Suche, eine Karte: **Personen bei meinen Unternehmen** oder, für neue Unternehmen, ein Titel, der sagt, woher sie kommen, etwa **Neue Unternehmen aus deinem Targeting**; siehe [Nach Zeitplan suchen](#nach-zeitplan-suchen). Wo Signale für dich eingeschaltet sind, stehen die Signale der neuen Unternehmen auch auf dieser Karte.
+- Deine automatische Suche, eine Karte: **Personen bei meinen Unternehmen** oder, für neue Unternehmen, ein Titel, der sagt, woher sie kommen, etwa **Neue Unternehmen aus deiner Zielgruppe**; siehe [Nach Zeitplan suchen](#nach-zeitplan-suchen). Wo Signale für dich eingeschaltet sind, stehen die Signale der neuen Unternehmen auch auf dieser Karte.
 - **Beobachte deine Unternehmen** und **Interesse an eurem Unternehmen**: die übrigen Signal-Jobs, wo Signale für dein Konto an sind. Siehe [Signalsuchen unter Meine Jobs](/de/configure/icp-and-scoring#signalsuchen-unter-meine-jobs).
 - **Sales-Navigator-Import**: für Admins; siehe [Täglich aus Sales Navigator importieren](#täglich-aus-sales-navigator-importieren).
 - **Einmalig ausgeführt**: die Suchen, die du in den letzten 30 Tagen von Hand gestartet hast, laufende zuerst. **Alle Durchläufe in Aktivität** öffnet den vollständigen Verlauf.
@@ -183,17 +183,17 @@ Die Zusammenfassungszeile der Karte lautet zum Beispiel **25 Unternehmen pro Tag
 
 ### Neue Unternehmen und die Personen dort
 
-Sie findet jeden Werktag Personen, die zu deinem Targeting passen, bei Unternehmen, die noch nicht auf deiner Liste stehen, und fügt ihre Unternehmen deiner Liste hinzu. **Neue Personen pro Tag** (Schritt 3, von 1 bis 100) legt fest, wie viele; je Unternehmen nimmt sie bis zu **Max. Kontakte pro Unternehmen** Personen. Die Suche braucht Jobtitel und Standorte unter **Einstellungen → Zielgruppe**. Schritt 5 lautet zum Beispiel **Findet bis zu 25 neue Personen am Tag für bis zu N Credits. Abgerechnet wird nur, was wir finden.** Die neuen Unternehmen werden auf die Seats verteilt, die nach Zeitplan laufen.
+Sie findet jeden Werktag Personen, die zu deiner Zielgruppe passen, bei Unternehmen, die noch nicht auf deiner Liste stehen, und fügt ihre Unternehmen deiner Liste hinzu. **Neue Personen pro Tag** (Schritt 3, von 1 bis 100) legt fest, wie viele; je Unternehmen nimmt sie bis zu **Max. Kontakte pro Unternehmen** Personen. Die Suche braucht Jobtitel und Standorte unter **Einstellungen → Zielgruppe**. Schritt 5 lautet zum Beispiel **Findet bis zu 25 neue Personen am Tag für bis zu N Credits. Abgerechnet wird nur, was wir finden.** Die neuen Unternehmen werden auf die Seats verteilt, die nach Zeitplan laufen.
 
 Wo Signale für dich eingeschaltet sind, heißt Schritt 3 **Unternehmen und Signale** und enthält einen Schalter **Signale**:
 
-- **Zuerst Signale, dann Targeting**: Personen bei Unternehmen mit frischem Signal kommen zuerst, bis zu **Max. Kontakte pro Unternehmen** je Unternehmen. Den Rest findet dein Targeting.
+- **Zuerst Signale, dann Zielgruppe**: Personen bei Unternehmen mit frischem Signal kommen zuerst, bis zu **Max. Kontakte pro Unternehmen** je Unternehmen. Den Rest findet deine Zielgruppe.
 - **Nur Unternehmen mit Signal**: nur Personen bei Unternehmen mit frischem Signal. Wähle mindestens eine Quelle, die laufen kann, oder schalte [**Interesse an eurem Unternehmen**](/de/configure/icp-and-scoring#interesse-an-eurem-unternehmen) ein; sonst zeigt der Schritt **Wähle mindestens eine Quelle: Ohne Quelle kommen keine neuen Unternehmen dazu.** Ist auch **Beobachte deine Unternehmen** aus, lässt sich die Suche nicht speichern.
-- Ausgeschaltet: nur dein Targeting.
+- Ausgeschaltet: nur deine Zielgruppe.
 
-Unter der Wahl hakst du die Quellen ab, aus denen die Signale kommen: **News und Ereignisse**, **Jobanzeigen**, **LinkedIn: Finanzierung**, **LinkedIn: neue Führungskräfte** und **LinkedIn: Recruiting**; siehe [Neue Unternehmen aus Signalen](/de/configure/icp-and-scoring#neue-unternehmen-aus-signalen). Signale und Targeting teilen sich die Zahl unter **Neue Personen pro Tag**. Wo für dich nur Signale eingeschaltet sind, nicht die Suche nach deinem Targeting, nimmt die Suche nur Unternehmen mit Signal.
+Unter der Wahl hakst du die Quellen ab, aus denen die Signale kommen: **News und Ereignisse**, **Jobanzeigen**, **LinkedIn: Finanzierung**, **LinkedIn: neue Führungskräfte** und **LinkedIn: Recruiting**; siehe [Neue Unternehmen aus Signalen](/de/configure/icp-and-scoring#neue-unternehmen-aus-signalen). Signale und Zielgruppe teilen sich die Zahl unter **Neue Personen pro Tag**. Wo für dich nur Signale eingeschaltet sind, nicht die Suche nach deiner Zielgruppe, nimmt die Suche nur Unternehmen mit Signal.
 
-Unter **Meine Jobs** heißt die Karte danach, woher die neuen Unternehmen kommen: **Neue Unternehmen aus deinem Targeting**, **Neue Unternehmen aus Signalen und deinem Targeting** oder **Neue Unternehmen aus Signalen**. Die Zusammenfassungszeile lautet zum Beispiel **Bis zu 25 neue Personen pro Tag, die zu deinem Targeting passen · E-Mail + Telefon** oder **Bis zu 25 neue Personen pro Tag, Unternehmen mit frischem Signal zuerst**. **Jetzt ausführen** öffnet eine einmalige Suche nach deinem Targeting für die Zahl des Tages. Bei **Nur Unternehmen mit Signal** startet **Jetzt ausführen** stattdessen die Suche nach News und Jobanzeigen; siehe [Neue Unternehmen aus Signalen](/de/configure/icp-and-scoring#neue-unternehmen-aus-signalen). Hat dein Targeting keine neuen Personen mehr, zeigt die Karte **Keine neuen Personen mehr für dein Targeting. Ändere dein Targeting, um mehr zu finden.**
+Unter **Meine Jobs** heißt die Karte danach, woher die neuen Unternehmen kommen: **Neue Unternehmen aus deiner Zielgruppe**, **Neue Unternehmen aus Signalen und deiner Zielgruppe** oder **Neue Unternehmen aus Signalen**. Die Zusammenfassungszeile lautet zum Beispiel **Bis zu 25 neue Personen pro Tag, die zu deiner Zielgruppe passen · E-Mail + Telefon** oder **Bis zu 25 neue Personen pro Tag, Unternehmen mit frischem Signal zuerst**. **Jetzt ausführen** öffnet eine einmalige Suche nach deiner Zielgruppe für die Zahl des Tages. Bei **Nur Unternehmen mit Signal** startet **Jetzt ausführen** stattdessen die Suche nach News und Jobanzeigen; siehe [Neue Unternehmen aus Signalen](/de/configure/icp-and-scoring#neue-unternehmen-aus-signalen). Hat deine Zielgruppe keine neuen Personen mehr, zeigt die Karte **Keine neuen Personen mehr für deine Zielgruppe. Ändere deine Zielgruppe, um mehr zu finden.**
 
 ## Personen oder Unternehmen von Hand hinzufügen
 
@@ -203,7 +203,7 @@ Nutze **Schnell hinzufügen** für eine Person, die du auf einer Messe getroffen
 
 Schnell hinzufügen durchläuft dieselben Prüfungen wie ein CSV-Import: Personen, die schon in deiner Liste sind, werden zugeordnet, und Personen bei einem gesperrten Unternehmen werden übersprungen. Zwei Schalter bestimmen, was danach passiert:
 
-- **Zuerst kontaktieren** (Personen): Die Person gilt als perfekte Passung. Sie überspringt deinen ICP-Mindestscore und deine Filter, kommt im nächsten Durchlauf zuerst dran, Kollegen im Unternehmen rücken mit nach oben, und Telefonnummern werden nachgeschlagen, wenn du das eingeschaltet hast. Der Schalter ist standardmäßig an. Ausgeschaltet wird die Person wie jeder Import anhand deines Targetings bewertet, und Personen außerhalb deiner Filter werden zurückgehalten. Der Schalter erscheint nur, wo der Sales Agent deine ICP-Scores berechnet.
+- **Zuerst kontaktieren** (Personen): Die Person gilt als perfekte Passung. Sie überspringt deinen ICP-Mindestscore und deine Filter, kommt im nächsten Durchlauf zuerst dran, Kollegen im Unternehmen rücken mit nach oben, und Telefonnummern werden nachgeschlagen, wenn du das eingeschaltet hast. Der Schalter ist standardmäßig an. Ausgeschaltet wird die Person wie jeder Import anhand deiner Zielgruppe bewertet, und Personen außerhalb deiner Filter werden zurückgehalten. Der Schalter erscheint nur, wo der Sales Agent deine ICP-Scores berechnet.
 - **Jetzt Personen finden** (Unternehmen): eine Suche für alle, mit Kosten und deinem Guthaben. Durchsucht werden nur Unternehmen, die noch nie durchsucht wurden und bei denen noch niemand steht, den die Pipeline übernehmen könnte. Ausgeschaltet werden die Unternehmen ohne Personen gespeichert; deine automatische Suche oder eine spätere Suche findet sie.
 
 **Hinzufügen** bleibt klickbar, wenn etwas fehlt. Wähle es, und jedes Problem steht unter seiner Zeile, zum Beispiel **Vor- und Nachname werden benötigt.** oder **Das ist keine Website: Gib sie im Format acme.de ein.** Gesendet wird nichts, bevor alles stimmt.
@@ -215,7 +215,7 @@ Um es später zu ändern, wähle unter **Prospects → Kontakte** Personen aus u
 Ein neu hinzugefügter Kontakt erscheint nicht zwingend sofort in jeder Queue. Der Agent prüft:
 
 1. die Sperrliste für Unternehmen
-2. deine Targeting-Filter: ausgeschlossene Titel, Senioritätsstufen, Standorte und Unternehmensgrößen
+2. deine Zielgruppen-Filter: ausgeschlossene Titel, Senioritätsstufen, Standorte und Unternehmensgrößen
 3. den Unternehmensabgleich: Die Daten des Kontakts dürfen nicht auf einen anderen Arbeitgeber hinweisen
 4. Zuweisung von Owner und Seat; Kontakte eines pausierten Seats warten, bis er wieder eingeschaltet ist
 5. den Pipeline-ICP-Schwellenwert
