@@ -24,8 +24,8 @@ The Sales Agent reads each reply and sorts it. The **Reply** column on **Prospec
 | --- | --- |
 | Interested, or not judged yet | Stage **Replied** |
 | A LinkedIn pleasantry such as "thanks for connecting" | Stage **Replied**, shown as **Neutral**. The next message is judged again. |
-| A no | Stage **Declined**, no outcome |
-| A later time, such as "next quarter" | Stage **Not right now**, no outcome |
+| A no | Stage **Declined**, no outcome. A reason that still holds next year counts as a no. "No need right now" stays **Not right now**. |
+| A later time, such as "next quarter" | Stage **Not right now**, no outcome. The Sales Agent reads the time they name and sets a date to [get back to them](#get-back-to-a-prospect-later). |
 | A request to stop | Outcome **Asked to stop** |
 | Not the right person | Stage **Declined**. If the reply names someone else, the **Reply** column shows **Referral** and the timeline shows **Referred to** with the name. When the reply gives a first and last name, the Sales Agent adds that person as a contact at the same company and seat, writes to them first, even past **Max Contacts per Company**, and the entry reads **Referred to …, added as a contact**. An automatic reply saying the person has left the company also sets them aside as **Changed employer**; see [Contacts held back](/operate/prospects-and-companies#contacts-held-back). |
 
@@ -38,6 +38,24 @@ A reply that waits for your answer shows **Replied**. Once you answer it, the st
 Open a prospect who replied. The **Info** tab starts with a **They replied** card that shows the reply and its date, with the automatic verdict already selected. Select **Positive**, **Not right now**, or **Negative** to correct it, or select the chosen one again to clear it. A reply that ended as **Asked to stop**, **Wrong person**, or **Email bounced** is shown but cannot be changed here: change the outcome instead. **Later** hides the card until you open the prospect again. On a reply that asks for no answer, such as a no, a later time, a request to stop, or the wrong person, **Skip** takes the place of **Later**.
 
 Marking a reply **Positive** puts the company **Interested** and stops outreach to the prospect's colleagues. See [the deal lives on the company](/operate/stages-and-outcomes#the-deal-lives-on-the-company). While the prospect has no outcome, a **Positive** reply also shows **Meeting agreed**, which sets the outcome **Meeting** in one click.
+
+## Get back to a prospect later
+
+When a person says "not now" in a reply or on the phone, you can set a date to get back to them. The date is a reminder for you: it does not start outreach again.
+
+- **From a reply:** the Sales Agent reads the time out of a **Not right now** reply, or out of an interested reply that puts the next step off. A day they name is that day. A period such as "Q3" is 7 days after it starts. A contract that ends on a day they name is that day less the lead time under **Settings → Schedule → When a contract ends (all reps)**, **Get back before a contract ends (months)**, 3 months by default. Meeting times they offer are no date to get back. A day without a time is 09:00 in the seat's timezone.
+- **By hand:** select **Not right now** on the **They replied** card. A prompt asks for the date: **Tomorrow**, **In 1 week**, **In 1 month**, **In 3 months**, or a **Date** with an optional **Time (optional)**, then **Save**. **Skip** sets none. **Not now** on a call asks the same ([Log a call](#log-a-call)).
+- **Change it later:** after a reply or a call, the **Get back to** row in the prospect panel shows the date, with the words of the reply in quotes when the Sales Agent read it. Select it to change it, or choose **Set a date** where none is set. **Remove** deletes it. **Prospects → Prospects** has a **Get back to** column once any prospect has a date, in amber when it is due.
+
+When the date has come, the prospect appears in three places:
+
+- the **Get back to** tab on **Prospects**, which shows wherever **To Call** shows and lists every prospect with a date, the oldest first
+- the **To do** card on **Home** and **Tasks**, one row for the prospects that are due, with **Open list**
+- the notification bell, in **Get back to**, one line per day
+
+A due prospect with a phone number also leads **To Call**, oldest date first.
+
+The date counts only while the prospect has no outcome, is not archived, and has not said no. It goes when you set an outcome, mark the reply **Negative**, log a call with any result other than **Call back**, or answer the reply after the date has come. **Undo** on **Answered** brings it back.
 
 ## Take over the conversation
 
@@ -73,7 +91,7 @@ If the person writes again on LinkedIn, the prospect returns to **Replied**. A l
 
 The **To Call** tab on **Prospects** lists prospects with a working phone number who are due a call. By default, a prospect joins once all follow-ups are done, which means no channel has anything left to send. A LinkedIn invitation with no answer after 30 days no longer holds a prospect back, so the prospect joins **To Call** and the **Follow-ups done** tab. Admins can change this in **Settings → Targeting** under **Call list** (**Show a lead on the To Call tab**): **Never**, **When the invite is sent**, **When the invite is accepted**, **When the first message goes out**, or **When all follow-ups are done (default)**. The setting never changes what the agent sends or when.
 
-A prospect marked **Unreachable** who has a number is always on the list. A prospect who replied, or whose call ended on **Send more info**, is not.
+A prospect marked **Unreachable** who has a number is always on the list. A prospect who replied, or whose call ended on **Send more info** or **Not now**, is not, until the date to get back has come. A date still ahead keeps a prospect off the list.
 
 **To Call** is a signal, not an automated action. It means the next step belongs to you.
 
@@ -85,11 +103,16 @@ The **Call** card on the prospect's **Info** tab shows the number to dial. Selec
 | --- | --- |
 | **Meeting agreed** | A meeting is agreed, booked in a calendar or not. Outcome **Meeting**. Stops outreach. |
 | **Send more info** | They are interested but want information first. No outcome: the prospect moves to **In conversation**, outreach stops so you can send the information yourself, and the company becomes **Interested**, which pauses outreach to its other contacts. |
+| **Not now** | Maybe later. No outcome: outreach stops, and a prompt asks for a [date to get back](#get-back-to-a-prospect-later). **Skip** sets none. |
 | **Negative** | Outcome **Asked to stop**. Stops outreach. |
 | **Wrong person** | Outcome **Wrong person**. Stops outreach. |
-| **Nobody answered** | Logged with your note. Outreach goes on and the prospect stays on **To Call**. |
+| **Call back** | Nobody picked up, or they asked you to call again. Logged with your note, and the prospect stays on **To Call**. A prompt offers a date and time: with one, outreach waits until then, on every channel. Without one, outreach goes on. |
 
-If the prospect already has **Offer Sent**, **Closed Deal**, or **Lost Deal**, a logged call keeps that outcome, and **Send more info** keeps **Meeting** too. A company that already has a stage keeps it. The card counts unanswered tries. **Not yet** hides the card for now. A recorded call shows who logged it, and **Clear outcome** removes the result and restores the earlier outcome.
+If the prospect already has **Offer Sent**, **Closed Deal**, or **Lost Deal**, a logged call keeps that outcome, and **Send more info** keeps **Meeting** too. A company that already has a stage keeps it. The card counts **Call back** tries. **Not yet** hides the card for now. A recorded call shows who logged it. **Clear outcome** turns into **Yes, clear it** on the first click, and a second click removes the result and restores the earlier outcome.
+
+After a call that left the lead open, **Send more info** or **Not now**, select **Called again?** to record the next call. All six results are offered. **Call back** keeps the first result and can move its date; any other result replaces it. Clearing the second call does not bring the first one back.
+
+Where a prospect has a date still ahead from **Call back**, **Messages** shows its held first message as **Waiting**, with **Paused until …, your date to get back to them.**
 
 ### Log a call on a contact
 
@@ -101,7 +124,7 @@ Phone numbers and email addresses of people who asked to stop, and of people at 
 
 ### When the number is wrong
 
-Under the number, select **Number doesn't work** or **Wrong person on this number** (someone else answers). These mark the number, not the person: outreach continues and the next number on file takes over. In the **Enrichment** section, every number has **Works**, **Doesn't work**, and **Wrong person** buttons, and older numbers are behind **more numbers**. When you mark the last number as not working, the Sales Agent asks whether to look for a new one, which may use credits.
+Under the number, select **Number doesn't work** or **Wrong person on this number** (someone else answers, shown with its own icon). These mark the number, not the person: outreach continues and the next number on file takes over. In the **Enrichment** section, every number has **Works**, **Doesn't work**, and **Wrong person** buttons, and older numbers are behind **more numbers**. When you mark the last number as not working, the Sales Agent asks whether to look for a new one, which may use credits.
 
 If the lookup found nothing, the section says **No phone found**. Select **Add number** to enter a number you already know, or **Find phone** to start a lookup.
 

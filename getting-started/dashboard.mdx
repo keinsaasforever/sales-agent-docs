@@ -9,7 +9,7 @@ Use this page to learn where the dashboard shows what your agent did, what needs
 
 ## The menu
 
-The menu on the left holds **Home**, **Tasks**, **Companies**, **Prospects**, **Messages**, and **Activity**, then an **Add Contacts** group with **Add to Pipeline** and **My jobs**, and the **Settings** pages. Badges show open tasks, messages waiting for approval, and runs in progress.
+The menu on the left holds **Home**, **Tasks**, **Companies**, **Prospects**, **Messages**, and **Activity**, then an **Add Contacts** group with **Add to Pipeline** and **My jobs**, and **Settings**. Badges show open tasks, messages waiting for approval, and runs in progress.
 
 - Admins also see **Credits** with the current balance, and the **Targeting**, **Signal criteria**, **Blacklist**, and **Prompts** settings. See [Seats, roles, and accounts](/getting-started/seats-and-accounts).
 - Select the search icon or press **⌘K** (**Ctrl+K**) to search people, companies, and notes.
@@ -17,13 +17,19 @@ The menu on the left holds **Home**, **Tasks**, **Companies**, **Prospects**, **
 - On a phone, open the menu with the button in the top-right corner. It fills the screen; close it with the **X**.
 - **Support**, **Sign out**, the light or dark theme switch, and the language menu sit at the bottom. See [Language](#language).
 
+### Settings
+
+**Settings** opens a view of its own, with its own menu. The menu lists the settings pages: **Account** and **Schedule** for everyone, and for admins **Targeting**, **Signal criteria**, **Blacklist**, and **Prompts**. Under the open page it lists that page's sections, such as **Email**, **LinkedIn**, and **How messages end** on **Account**. Select a section to jump to it; your unsaved changes stay.
+
+**Back to dashboard** at the top of the menu, or the **X** at the top right, takes you back to the page you came from. On a phone, the bar at the top holds a picker of the settings pages, search, **Support**, and the **X**.
+
 ## Home
 
 Home opens with a summary of what your agent did and what needs you.
 
 <Steps>
   <Step title="Warnings">
-    Red and amber banners appear above everything else when work has stopped or is about to: **LinkedIn is paused**, **Outlook is disconnected**, or **Email sending paused**. Each links to the fix. Low credits show differently: a banner across the top of every page reads **Credits running low** or **Enrichment is paused**, with **Top up now** for admins and **Ask your admin to top up** for members.
+    One bar sits at the top of every page and shows one notice at a time, the most urgent first: **Agent paused — payment failed.**, then **Out of credits**, then **LinkedIn is paused**, **Outlook is disconnected**, and **Email sending paused** (one for each seat or mailbox), then **Credits running low** or **Enrichment is paused**. The bar takes the color of the notice it shows: orange, yellow for **Credits running low** and **Enrichment is paused**, and red for **Out of credits**. With more than one notice, a pager reads **1 of 3**; use the arrows to step through them. Each notice has one button to the fix, such as **Reconnect LinkedIn**, **Reconnect Outlook**, **See options**, or **Update payment**. For credits, admins get **Top up now** and members read **Ask your admin to top up**. The bar keeps to one short line; **Settings → Account** and the to-do cards hold the full text.
   </Step>
   <Step title="Activity cards">
     Seven cards count **Signals found**, **Contacts found**, **Invited**, **Accepted**, **Messaged**, **Followed up**, and **Replied** for **Last 24 hours**, **Last 7 days**, or **Last 30 days**. People count once, even when they were reached on both channels.
@@ -48,7 +54,7 @@ Home opens with a summary of what your agent did and what needs you.
     **Pipeline Summary** counts prospects by stage; select a stage to open that list. **Recent Activity** lists the last five runs.
   </Step>
   <Step title="To do">
-    One row per worklist: messages to approve, prospects who replied and wait on you, and prospects to call. Questions from keinsaas, LinkedIn warm-up suggestions, and, for admins, ICP score updates appear here too. During your first setup, the **Getting started** list sits here as well, one per seat; see [Quickstart](/getting-started/quickstart). A row stays until the work behind it is done, not until you read it. **See all** opens **Tasks**.
+    One row per worklist: messages to approve, prospects who replied and wait on you, prospects to call, and prospects whose [date to get back](/operate/replies-and-handoff#get-back-to-a-prospect-later) has come, with **Open list**. Questions from keinsaas, LinkedIn warm-up suggestions, and, for admins, ICP score updates appear here too. When your saved Sales Navigator searches, or **Interest in your business**, need a LinkedIn login with Sales Navigator that no seat has, admins see **Connect Sales Navigator** with **Connect LinkedIn**. The reminder goes once a seat connects one. During your first setup, the **Getting started** list sits here as well, one per seat; see [Quickstart](/getting-started/quickstart). A row stays until the work behind it is done, not until you read it. **See all** opens **Tasks**.
   </Step>
 </Steps>
 
@@ -74,7 +80,10 @@ The bell next to the search icon shows a red count of new items. Opening it mark
 - **Needs attention**: open questions, a paused LinkedIn session, a disconnected mailbox, a mailbox your provider blocked from sending or that paused for too many bounces, or no InMail credits left.
 - **Suggestions**: a LinkedIn warm-up step you can accept with one click.
 - **New Replies**, **Pending Approvals**, and **Call Prospect**: one line per person, opening that prospect or the message queue.
+- **Get back to**: one line per day on which prospects came due, opening the **Get back to** tab.
 - **Completed**: finished searches, imports, and enrichments, including ones that failed or finished with issues.
+
+A list section shows its newest three entries, then a **Show all** row that opens the page holding the rest.
 
 ## Emails from the Sales Agent
 
@@ -84,11 +93,18 @@ The Sales Agent also writes to you, in English or German, and each mail links ba
 - **New people found**: after a contact search or a list import that found someone. It lists up to 10 people by title and company, best ICP match first, with a button that opens exactly those people on **Contacts** (the **Added since …** filter). Credits appear only when some were used.
 - **Signals found**: after a buying-signal search that found something new. It lists up to 10 companies with the type and date of the event, only for signals that count: at or above your minimum signal score, still within **Use a signal for (days)**, and of a type you picked. A button opens **Companies** filtered to **Buying signals**. It is never sent for zero.
 - **Weekly digest**: once a week, sent by the first pipeline run of the week (weeks start on Monday, Berlin time). It goes to every login on your account and covers last week, Monday to Sunday, compared with the week before: highlights such as meetings and positive replies, and one row for each count that is not zero, such as replies, messages sent, connection requests, new contacts, and companies with a buying signal. A percentage change shows only when the week before had at least 5. A meeting, offer, or deal counts once per company, in the week the company first reaches that stage. Outcomes and replies you file long after they happened do not count as that week's, and people you upload in a CSV or add by hand do not count as new contacts. A **Waiting for you** line adds the recipient's own to-dos. An account whose agent does not run that week gets no digest, and neither does a week with nothing in it.
+- **Running low on people to contact** and **No new people left to contact**: to a seat's owner, when the people left for a seat would last fewer than 3 days at its daily pace, and again when none are left. Each comes once per drop; after one, a refill that stays under the line sends nothing more. Follow-ups keep going. The mail links to **Add to Pipeline**.
 - **Email sending paused**: when your mail provider blocks a mailbox, or when too many of its emails bounced. See [Activity and troubleshooting](/operate/activity-and-troubleshooting#if-your-mail-provider-blocks-sending) and [if too many emails bounce](/operate/activity-and-troubleshooting#if-too-many-emails-bounce). When your provider blocks a mailbox, your [IT contact](/getting-started/seats-and-accounts#it-contact-for-technical-alerts) gets a mail of its own.
 - **Nothing went out**: to your IT contact, when a mailbox that should send has sent nothing for two working days, although emails are ready to go.
 - **Delivery numbers**: once a day for each mailbox that sent emails, only to the addresses of your [IT contact](/getting-started/seats-and-accounts#it-contact-for-technical-alerts). It shows how many emails were sent, delivered, and not delivered on each of the last 7 days, and leads with the latest day that had sends. A week without sends gets no mail, and with no IT address set nobody gets it.
 
 An enrichment run sends no mail. The bell shows **Enrichment finished** and **Activity** lists the run.
+
+### Choose which emails you get
+
+Every login switches its own emails under **Settings → Account → Notifications**. The card has one row per kind and two columns, **In app** and **Email**. The check mark under **In app** means the dashboard always shows that kind; only the **Email** switch changes. **Needs you** holds **Questions from us** and **Running out of people**. **Updates** holds **After each run**, **Weekly summary**, **Search results**, and **New signals**. A switch saves at once, and every kind is on until you switch it off.
+
+A switch covers your login only. When a seat's owner switches a kind off, nobody else is mailed in their place. Problems that stop your outreach, such as a LinkedIn login to reconnect, and billing and sign-in mails always reach you.
 
 ## Language
 

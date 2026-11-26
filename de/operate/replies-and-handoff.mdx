@@ -18,8 +18,8 @@ Der Sales Agent liest jede Antwort und ordnet sie ein. Die Spalte **Antworten** 
 | --- | --- |
 | Interessiert oder noch nicht bewertet | Phase **Geantwortet** |
 | Eine LinkedIn-Floskel wie „danke fürs Vernetzen“ | Phase **Geantwortet**, angezeigt als **Neutral**. Die nächste Nachricht wird neu bewertet. |
-| Ein Nein | Phase **Abgelehnt**, kein Ergebnis |
-| Ein späterer Zeitpunkt, etwa „nächstes Quartal“ | Phase **Nicht jetzt**, kein Ergebnis |
+| Ein Nein | Phase **Abgelehnt**, kein Ergebnis. Ein Grund, der auch nächstes Jahr noch gilt, zählt als Nein. „Aktuell kein Bedarf“ bleibt **Nicht jetzt**. |
+| Ein späterer Zeitpunkt, etwa „nächstes Quartal“ | Phase **Nicht jetzt**, kein Ergebnis. Der Sales Agent liest den genannten Zeitpunkt und setzt eine [Wiedervorlage](#wiedervorlage-setzen). |
 | Eine Bitte, nicht mehr zu schreiben | Ergebnis **Stopp gewünscht** |
 | Nicht die richtige Person | Phase **Abgelehnt**. Nennt die Antwort jemand anderen, zeigt die Spalte **Antworten** den Wert **Empfehlung** und der Tab **Verlauf** den Eintrag **Verwiesen an** mit dem Namen. Nennt die Antwort Vor- und Nachnamen, fügt der Sales Agent diese Person als Kontakt beim selben Unternehmen und Seat hinzu, schreibt sie zuerst an, auch über **Max. Kontakte pro Unternehmen** hinaus, und der Eintrag lautet **Verwiesen an …, als Kontakt hinzugefügt**. Eine automatische Antwort, dass die Person das Unternehmen verlassen hat, stellt sie außerdem als **Arbeitgeber gewechselt** zurück; siehe [Angehaltene Kontakte](/de/operate/prospects-and-companies#angehaltene-kontakte). |
 
@@ -32,6 +32,24 @@ Eine Antwort, die auf deine Antwort wartet, zeigt **Geantwortet**. Sobald du sie
 Öffne einen Prospect, der geantwortet hat. Der Tab **Info** beginnt mit der Karte **Hat geantwortet**, die Antwort und Datum zeigt, mit bereits ausgewählter automatischer Bewertung. Wähle **Positiv**, **Nicht jetzt** oder **Negativ**, um sie zu korrigieren, oder wähle die markierte Bewertung erneut, um sie zu entfernen. Eine Antwort, die als **Stopp gewünscht**, **Falsche Person** oder **E-Mail unzustellbar** endete, wird angezeigt, lässt sich hier aber nicht ändern: Ändere stattdessen das Ergebnis. **Später** blendet die Karte aus, bis du den Prospect erneut öffnest. Bei einer Antwort, die keine Antwort braucht, etwa ein Nein, ein späterer Zeitpunkt, eine Bitte, nicht mehr zu schreiben, oder die falsche Person, steht **Überspringen** statt **Später**.
 
 Wenn du eine Antwort als **Positiv** markierst, kommt das Unternehmen auf **Interessiert** und die Ansprache der Kolleginnen und Kollegen des Prospects stoppt. Siehe [Der Deal liegt beim Unternehmen](/de/operate/stages-and-outcomes#der-deal-liegt-beim-unternehmen). Solange der Prospect kein Ergebnis hat, zeigt eine **Positiv**-Antwort außerdem **Termin vereinbart**, das mit einem Klick das Ergebnis **Termin** setzt.
+
+## Wiedervorlage setzen
+
+Sagt eine Person in einer Antwort oder am Telefon „nicht jetzt“, kannst du eine Wiedervorlage setzen, also ein Datum, an dem du dich wieder meldest. Das Datum ist eine Erinnerung für dich: Es startet keinen Outreach neu.
+
+- **Aus einer Antwort:** Der Sales Agent liest den Zeitpunkt aus einer Antwort mit **Nicht jetzt** oder aus einer interessierten Antwort, die den nächsten Schritt verschiebt. Ein genannter Tag ist dieser Tag. Ein Zeitraum wie „Q3“ ist 7 Tage nach seinem Beginn. Endet ein Vertrag an einem genannten Tag, ist es dieser Tag abzüglich der Vorlaufzeit unter **Einstellungen → Zeitplan → Wenn ein Vertrag endet (alle Seats)**, **Wiedervorlage vor Vertragsende (Monate)**, standardmäßig 3 Monate. Angebotene Terminvorschläge sind keine Wiedervorlage. Ein Tag ohne Uhrzeit gilt als 09:00 Uhr in der Zeitzone des Seats.
+- **Von Hand:** Wähle auf der Karte **Hat geantwortet** **Nicht jetzt**. Ein Fenster fragt nach dem Datum: **Morgen**, **In 1 Woche**, **In 1 Monat**, **In 3 Monaten** oder ein **Datum** mit optionaler **Uhrzeit (optional)**, dann **Speichern**. **Überspringen** setzt keins. **Nicht jetzt** bei einem Call fragt dasselbe ([Anruf erfassen](#anruf-erfassen)).
+- **Später ändern:** Nach einer Antwort oder einem Call zeigt die Zeile **Wiedervorlage** im Prospect-Panel das Datum, bei einer vom Sales Agent gelesenen Antwort mit deren Worten in Anführungszeichen. Wähle sie, um das Datum zu ändern, oder **Datum setzen**, wenn noch keins gesetzt ist. **Entfernen** löscht es. Unter **Prospects → Prospects** gibt es eine Spalte **Wiedervorlage**, sobald ein Prospect ein Datum hat, in Gelb, wenn es fällig ist.
+
+Ist das Datum erreicht, erscheint der Prospect an drei Stellen:
+
+- im Tab **Wiedervorlage** unter **Prospects**, der überall erscheint, wo **Anzurufen** erscheint, und jeden Prospect mit Datum auflistet, das älteste zuerst
+- in der Karte **Zu erledigen** auf **Start** und unter **Aufgaben**, eine Zeile für die fälligen Prospects, mit **Liste öffnen**
+- in der Glocke unter **Wiedervorlage**, eine Zeile pro Tag
+
+Ein fälliger Prospect mit Telefonnummer steht außerdem ganz oben in **Anzurufen**, das älteste Datum zuerst.
+
+Das Datum zählt nur, solange der Prospect kein Ergebnis hat, nicht archiviert ist und nicht abgesagt hat. Es verschwindet, wenn du ein Ergebnis setzt, die Antwort als **Negativ** markierst, einen Call mit einem anderen Ergebnis als **Nochmal anrufen** erfasst oder die Antwort beantwortest, nachdem das Datum erreicht ist. **Rückgängig** bei **Beantwortet** bringt es zurück.
 
 ## Gespräch übernehmen
 
@@ -51,7 +69,7 @@ Schreibt die Person erneut auf LinkedIn, kehrt der Prospect zu **Geantwortet** z
 
 Der Tab **Anzurufen** unter **Prospects** listet Prospects mit funktionierender Telefonnummer, die für einen Anruf fällig sind. Standardmäßig kommt ein Prospect auf die Liste, wenn alle Follow-ups abgeschlossen sind, das heißt, wenn auf keinem Kanal mehr etwas zu senden ist. Eine LinkedIn-Einladung ohne Antwort nach 30 Tagen hält einen Prospect nicht mehr zurück, sodass er in **Anzurufen** und im Tab **Follow-ups erledigt** landet. Admins ändern das unter **Einstellungen → Zielgruppe** im Bereich **Call-Liste** (**Lead im Tab „Anzurufen“ anzeigen**): **Nie**, **Wenn die Kontaktanfrage gesendet wird**, **Wenn die Kontaktanfrage angenommen wird**, **Wenn die erste Nachricht gesendet wird** oder **Wenn alle Follow-ups abgeschlossen sind (Standard)**. Die Einstellung ändert nie, was der Agent sendet oder wann.
 
-Ein Prospect mit **Nicht erreichbar** und Telefonnummer steht immer auf der Liste. Ein Prospect, der geantwortet hat oder dessen Call mit **Mehr Infos senden** endete, nicht.
+Ein Prospect mit **Nicht erreichbar** und Telefonnummer steht immer auf der Liste. Ein Prospect, der geantwortet hat oder dessen Call mit **Mehr Infos senden** oder **Nicht jetzt** endete, steht nicht darauf, bis die Wiedervorlage erreicht ist. Ein Datum, das noch bevorsteht, hält einen Prospect von der Liste fern.
 
 **Anzurufen** ist ein Signal, keine automatisierte Aktion. Der nächste Schritt liegt bei dir.
 
@@ -63,11 +81,16 @@ Die Karte **Call** im Tab **Info** zeigt die Nummer zum Wählen. Wähle **Ja, ic
 | --- | --- |
 | **Termin vereinbart** | Ein Termin ist vereinbart, ob im Kalender eingetragen oder nicht. Ergebnis **Termin**. Stoppt die Ansprache. |
 | **Mehr Infos senden** | Die Person ist interessiert, möchte aber zuerst mehr Informationen. Kein Ergebnis: Der Prospect wechselt zu **Im Gespräch**, die Ansprache stoppt, damit du die Informationen selbst sendest, und das Unternehmen wird **Interessiert**, wodurch die Ansprache an seine anderen Kontakte pausiert. |
+| **Nicht jetzt** | Vielleicht später. Kein Ergebnis: Die Ansprache stoppt, und ein Fenster fragt nach einer [Wiedervorlage](#wiedervorlage-setzen). **Überspringen** setzt keine. |
 | **Negativ** | Ergebnis **Stopp gewünscht**. Stoppt die Ansprache. |
 | **Falsche Person** | Ergebnis **Falsche Person**. Stoppt die Ansprache. |
-| **Niemand erreicht** | Wird mit deiner Notiz erfasst. Die Ansprache läuft weiter und der Prospect bleibt auf **Anzurufen**. |
+| **Nochmal anrufen** | Niemand ist rangegangen, oder du sollst nochmal anrufen. Wird mit deiner Notiz erfasst, und der Prospect bleibt auf **Anzurufen**. Ein Fenster bietet Datum und Uhrzeit an: Mit Datum pausiert die Ansprache bis dahin, auf allen Kanälen. Ohne Datum läuft sie weiter. |
 
-Hat der Prospect bereits **Angebot gesendet**, **Deal abgeschlossen** oder **Deal verloren**, behält ein erfasster Anruf dieses Ergebnis, und **Mehr Infos senden** behält auch **Termin**. Hat das Unternehmen bereits eine Phase, behält es sie. Die Karte zählt unbeantwortete Versuche. **Noch nicht** blendet die Karte vorerst aus. Ein erfasster Anruf zeigt, wer ihn eingetragen hat, und **Ergebnis entfernen** entfernt das Ergebnis und stellt das vorherige Ergebnis wieder her.
+Hat der Prospect bereits **Angebot gesendet**, **Deal abgeschlossen** oder **Deal verloren**, behält ein erfasster Anruf dieses Ergebnis, und **Mehr Infos senden** behält auch **Termin**. Hat das Unternehmen bereits eine Phase, behält es sie. Die Karte zählt die Versuche mit **Nochmal anrufen**. **Noch nicht** blendet die Karte vorerst aus. Ein erfasster Anruf zeigt, wer ihn eingetragen hat. **Ergebnis entfernen** wird beim ersten Klick zu **Ja, entfernen**, und ein zweiter Klick entfernt das Ergebnis und stellt das vorherige Ergebnis wieder her.
+
+Nach einem Call, der den Lead offen lässt, also **Mehr Infos senden** oder **Nicht jetzt**, hältst du mit **Nochmal angerufen?** den nächsten Call fest. Alle sechs Ergebnisse stehen zur Wahl. **Nochmal anrufen** behält das erste Ergebnis und kann sein Datum verschieben; jedes andere Ergebnis ersetzt es. Entfernst du den zweiten Call, kommt der erste nicht zurück.
+
+Steht bei einem Prospect nach **Nochmal anrufen** noch ein Datum aus, zeigt **Nachrichten** seine zurückgehaltene erste Nachricht als **Wartet**, mit **Pausiert bis zur Wiedervorlage am …**.
 
 ### Anruf bei einem Kontakt erfassen
 
@@ -79,7 +102,7 @@ Telefonnummern und E-Mail-Adressen von Personen, die um Stopp gebeten haben, und
 
 ### Wenn die Nummer falsch ist
 
-Wähle unter der Nummer **Nummer funktioniert nicht** oder **Falsche Person unter dieser Nummer** (jemand anderes nimmt ab). Das markiert die Nummer, nicht die Person: Die Ansprache läuft weiter und die nächste hinterlegte Nummer übernimmt. Im Bereich **Anreicherung** hat jede Nummer die Buttons **Funktioniert**, **Funktioniert nicht** und **Falsche Person**, ältere Nummern liegen hinter **weitere Nummern**. Markierst du die letzte Nummer als nicht funktionierend, fragt der Sales Agent, ob er eine neue suchen soll. Das kann Credits verbrauchen.
+Wähle unter der Nummer **Nummer funktioniert nicht** oder **Falsche Person unter dieser Nummer** (jemand anderes nimmt ab, mit eigenem Symbol). Das markiert die Nummer, nicht die Person: Die Ansprache läuft weiter und die nächste hinterlegte Nummer übernimmt. Im Bereich **Anreicherung** hat jede Nummer die Buttons **Funktioniert**, **Funktioniert nicht** und **Falsche Person**, ältere Nummern liegen hinter **weitere Nummern**. Markierst du die letzte Nummer als nicht funktionierend, fragt der Sales Agent, ob er eine neue suchen soll. Das kann Credits verbrauchen.
 
 Hat die Suche nichts gefunden, steht dort **Keine Telefonnummer gefunden**. Mit **Nummer hinzufügen** trägst du eine Nummer ein, die du schon kennst, mit **Telefon finden** startest du eine Suche.
 
